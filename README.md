@@ -1,8 +1,8 @@
 YiiXL - The Yii Extension Library of Doom!
 ===============================
-Thanks for checking out '''YiiXL'''! This is brand-spanking-new version of the Pogostick Yii Extensions Library. We're re-branding the library as YiiXL and rewriting some core features. We considered a major version upgrade but it could possibly affect too many people using these extensions. 
+Thanks for checking out *YiiXL*! This is brand-spanking-new version of the Pogostick Yii Extensions Library. We're re-branding the library as YiiXL and rewriting some core features. We considered a major version upgrade but it could possibly affect too many people using these extensions. 
 
-Why the goofy name you ask? Because the word '''Yii''' is just too damned hard to squeeze into a catchy acronym or phrase. I said screw it and came up with YiiXL. The "of Doom!" part is just for sensationalism. I'm tired of not having fun any more. lol
+Why the goofy name you ask? Because the word *Yii* is just too damned hard to squeeze into a catchy acronym or phrase. I said screw it and came up with YiiXL. The "<i>of Doom!</i>" part is just for sensationalism. I'm tired of not having fun any more. lol
 
 If you are looking for the original library, it can be found here: <http://github.com/Pogostick/ps-yii-extensions>
 
