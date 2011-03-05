@@ -15,8 +15,9 @@
  * @filesource
  */
 
-//	Our namespace
-//namespace yiixl\core;
+//	Requirements
+Yii::import( 'yiixl.core.interfaces.IXLComponent' );
+Yii::import( 'yiixl.core.exceptions.CPSException' );
 
 /**
  * CPSComponent class
@@ -30,7 +31,7 @@
  * @property integer $debugLevel A user-defined debugging level
  * @property-read array $options The options passed to this object during construction
  */
-class CPSComponent extends CApplicationComponent implements IPSComponent
+class CPSComponent extends CApplicationComponent implements IXLComponent
 {
 	//********************************************************************************
 	//* Properties
