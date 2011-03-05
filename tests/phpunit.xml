@@ -5,9 +5,9 @@
                 convertWarningsToExceptions="true"
                 stopOnFailure="false">
 	<testsuites>
-		<testsuite name="YiiXL">
-			<file>base/CPSComponentTest.php</file>
+		<testsuite name="YiiXL Core">
+			<file>core/CPSComponentTest.php</file>
 		</testsuite>
 	</testsuites>
-                
+
 </phpunit>

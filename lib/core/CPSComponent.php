@@ -16,7 +16,7 @@
  */
 
 //	Our namespace
-namespace yiixl;
+//namespace yiixl\core;
 
 /**
  * CPSComponent class

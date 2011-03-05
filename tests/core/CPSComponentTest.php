@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname( __FILE__ ) . '/../../../../lib/base/CPSComponent.php';
+require_once dirname( __FILE__ ) . '/../../lib/core/CPSComponent.php';
 
 /**
  * Test class for CPSComponent.

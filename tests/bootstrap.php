@@ -20,28 +20,21 @@
  *
  * You don’t have to do anything special to choose one license or the other,
  * and you don’t have to notify anyone which license you are using.
- */
-
-//	Include Files
-//	Constants
-//	Global Settings
-
-/**
- * bootstrap
- *
  * @package 	yiixl
- * @subpackage
+ * @subpackage tests
  *
  * @author 		Jerry Ablan <jablan@pogostick.com>
  * @version 	SVN $Id$
  * @since 		v1.0.0
  *
  * @filesource
+*/
+/**
+ * bootstrap for unit tests
  */
-
 require_once '/usr/local/yii/framework/yii.php';
 
 //	Load our alias
-Yii::setPathOfAlias( 'pogostick', dirname( __FILE__ ) . '/../lib' );
-Yii::import( 'pogostick.base.*' );
-Yii::import( 'pogostick.helpers.*' );
+\Yii::setPathOfAlias( 'yiixl', dirname( __FILE__ ) . '/../lib' );
+\Yii::import( 'yiixl.core.*' );
+\Yii::import( 'yiixl.core.helpers.*' );

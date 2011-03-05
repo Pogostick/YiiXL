@@ -9,14 +9,14 @@
  */
 
 //	All components require these
-Yii::import( 'pogostick.helpers.PS', true );
-Yii::import( 'pogostick.base.CPSException', true );
+Yii::import( 'yiixl.core.helpers.*', true );
+Yii::import( 'yiixl.core.exceptions.*', true );
 
 /**
  * This interface identifies and object as a YiiXL component
  *
  * @package		psYiiExtensions
- * @subpackage 	base.interfaces
+ * @subpackage 	core.interfaces
  *
  * @author			Jerry Ablan <jablan@pogostick.com>
  * @version		SVN $Id: IPSComponent.php 358 2010-01-02 23:33:40Z jerryablan@gmail.com $
