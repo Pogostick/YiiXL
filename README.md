@@ -1,6 +1,6 @@
 YiiXL - The Yii Extension Library of Doom!
 ===============================
-Thanks for checking out YiiXL! This is brand-spanking-new version of the Pogostick Yii Extensions Library. We're re-branding the library as YiiXL and rewriting some core features. We considered a major version upgrade but it could possibly affect too many people using these extensions. 
+Thanks for checking out _YiiXL_! This is brand-spanking-new version of the Pogostick Yii Extensions Library. We're re-branding the library as YiiXL and rewriting some core features. We considered a major version upgrade but it could possibly affect too many people using these extensions.
 
 If you are looking for the original library, it can be found here: <http://github.com/Pogostick/ps-yii-extensions>
 
@@ -10,8 +10,8 @@ The first release was back in 2009 with several additional releases culminating 
 a bit of work with the library since then, and I've found many things that were in my initial design, that I thought were cool,
 have become either antiquated, unnecessary, or annoying.
 
-With the advent of Yii v1.1.6,a few of my features have been incorporated into the
-code base (behavior methods and properties being accessible by the owner for example). These really need to come out of the PYEL now.
+With the advent of _Yii v1.1.6_, a few of my features have been incorporated into the
+code base (behavior methods and properties being accessible by the owner for example).
 
 In addition, I've built an entire form framework that is poorly documented and sits alongside the original forms system I devised. This new
 framework is much easier to use. So I want to get that into the library as well.
@@ -22,7 +22,7 @@ The original library made available, and extensive use of, runtime-defined objec
 has now become annoying and has two drawbacks I dislike. The first being that you cannot use constructs (empty() for instance) with them.
 The second being the inability for IDEs to pull up phpdoc on these properties. Two bogus things IMHO.
 
-This new version, when released will '''NOT BE''' backward-compatible with the Pogostick Yii Extension Library. While some aspects of the library will function the same, I cannot (and will not) guarantee they will work.
+This new version, when released will _NOT BE_ backward-compatible with the Pogostick Yii Extension Library. While some aspects of the library will function the same, I cannot (and will not) guarantee they will work.
 
 Well, if you've read this far, thanks, you're awesome! I enjoy building tools like this and it warms my cockles to know that there are people out there
 in the community that can (and do) benefit from my work. I suppose it's my little karma contribution.

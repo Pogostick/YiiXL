@@ -1,0 +1,6 @@
+.svn
+assets/
+*.log
+protected/runtime/
+private.*
+/nbproject/private/
