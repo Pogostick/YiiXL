@@ -63,27 +63,59 @@ interface IXLComponent
 
 /**
  * This interface indicates that a class is a behavior in YiiXL
- *
- * @package 	yiixl
- * @subpackage 	base
- *
- * @author 		Jerry Ablan <jablan@pogostick.com>
- * @version 	SVN $Id: IXL
- * @since 		v1.0.6
- *
- * @filesource
  */
 interface IXLBehavior extends IXLComponent
 {
 }
 
 /**
- * This interface defines a YiiXL Helper class
+ * This interface defines a logger
+ */
+interface IXLLogger
+{
+	//********************************************************************************
+	//* Constants for all helpers
+	//********************************************************************************
+
+	/**
+	 * Logging Constants
+	 */
+	const
+		LOG_EMERG = 0,
+		LOG_ALERT = 1,
+		LOG_CRIT = 2,
+		LOG_ERR = 3,
+		LOG_WARNING = 4,
+		LOG_NOTICE = 5,
+		LOG_INFO = 6,
+		LOG_DEBUG = 7,
+		LOG_USER = 8,
+		LOG_AUTH = 32,
+		LOG_SYSLOG = 40,
+		LOG_AUTHPRIV = 80;
+}
+
+/**
+ * This interface defines a static helper class that can be mixed into the main
+ * YiiXL system.
  */
 interface IXLHelper
 {
 	//********************************************************************************
-	//* Constants for all helpers
+	//* Public Methods
+	//********************************************************************************
+
+	public static function init();
+}
+
+/**
+ * This interface defines a static UI helper class that can be mixed into the main
+ * YiiXL system.
+ */
+interface IXLUIHelper extends IXLHelper
+{
+	//********************************************************************************
+	//* Constants for UI helpers
 	//********************************************************************************
 
 	/**
@@ -124,4 +156,5 @@ interface IXLHelper
 		ACTION_RETURN 		= 997,
 		ACTION_CANCEL 		= 998,
 		ACTION_GENERIC 		= 999;
+
 }

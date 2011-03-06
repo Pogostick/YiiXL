@@ -13,8 +13,9 @@
  */
 
 //	Our core imports
+Yii::import( 'yiixl.core.*' );
+Yii::import( 'yiixl.core.components.interfaces', true );
 Yii::import( 'yiixl.core.exceptions.CXLException', true );
-Yii::import( 'yiixl.core.helpers.CXLHash', true );
 
 //	Requirements
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'components' . DIRECTORY_SEPARATOR . 'CXLComponent.php';
@@ -24,7 +25,7 @@ require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'components' . DIRECTOR
  *
  * The Mother Of All YiiXL Classes!
  */
-class YiiXLBase extends YiiBase
+class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 {
 	//********************************************************************************
 	//* Private Members
@@ -32,37 +33,41 @@ class YiiXLBase extends YiiBase
 
 	/**
 	 * Cache the current app for speed
-	 * @static CWebApplication $thisApp
+	 * @staticvar CWebApplication $thisApp
 	 */
 	protected static $_thisApp = null;
 	/**
 	 * Cache the current request
-	 * @var CHttpRequest $thisRequest
+	 * @staticvar CHttpRequest $thisRequest
 	 */
 	protected static $_thisRequest = null;
 	/**
 	 * Cache the client script object for speed
-	 * @static CClientScript $clientScript
+	 * @staticvar CClientScript $clientScript
 	 */
 	protected static $_clientScript = null;
 	/**
 	 * Cache the user object for speed
-	 * @static CWebUser $thisUser
+	 * @staticvar CWebUser $thisUser
 	 */
 	protected static $_thisUser = null;
 	/**
 	 * Cache the current controller for speed
-	 * @static CController $thisController
+	 * @staticvar CController $thisController
 	 */
 	protected static $_thisController = null;
 	/**
+	 * @staticvar array $_validLogLevels Our valid log levels based on interface definition
+	 */
+	protected static $_validLogLevels;
+	/**
 	 * A static ID counter for generating unique names
-	 * @static integer $_uniqueIdCounter
+	 * @staticvar integer $_uniqueIdCounter
 	 */
 	protected static $_uniqueIdCounter = 1000;
 	/**
 	 * Cache the application parameters for speed
-	 * @static CAttributeCollection $appParameters
+	 * @staticvar CAttributeCollection $appParameters
 	 */
 	protected static $_appParameters = null;
 	/**
@@ -78,7 +83,7 @@ class YiiXLBase extends YiiBase
 	 * An array of class names to search in for missing static methods.
 	 * This is a quick an dirty little polymorpher.
 	 *
-	 * @static array $classPath
+	 * @staticvar array $classPath
 	 */
 	protected static $_classPath = array(
 		'CHtml',
@@ -96,7 +101,7 @@ class YiiXLBase extends YiiBase
 
 	public static function addClassToPath( $className )
 	{
-		self::$_classPath[] = $className;
+		self::$_classPath[] = self::import( $className );
 	}
 
 	//********************************************************************************
@@ -119,7 +124,6 @@ class YiiXLBase extends YiiBase
 		}
 		catch ( CXLException $_ex )
 		{
-
 		}
 
 		try
@@ -129,7 +133,6 @@ class YiiXLBase extends YiiBase
 		}
 		catch ( CXLException $_ex )
 		{
-
 		}
 
 		try
@@ -139,8 +142,8 @@ class YiiXLBase extends YiiBase
 		}
 		catch ( CXLException $_ex )
 		{
-
 		}
+
 		try
 		{
 			if ( null !== self::$_thisApp )
@@ -148,8 +151,11 @@ class YiiXLBase extends YiiBase
 		}
 		catch ( CXLException $_ex )
 		{
-
 		}
+
+		//	Add our logging class to the class path
+		self::addClassToPath( 'yiixl.core.helpers.CXLHash' );
+		self::addClassToPath( 'yiixl.core.helpers.CXLLogHelper' );
 	}
 
 	/**
@@ -1138,15 +1144,15 @@ class YiiXLBase extends YiiBase
 	 * Only available in PHP 5.3+
 	 *
 	 * @param string $method
-	 * @param array $options
+	 * @param array $parameters
 	 * @return mixed
 	 */
-	public static function __callStatic( $method, $options )
+	public static function __callStatic( $method, $parameters )
 	{
 		foreach ( self::$_classPath as $_class )
 		{
 			if ( method_exists( $_class, $method ) )
-				return call_user_func_array( $_class . '::' . $method, $options );
+				return call_user_func_array( $_class . '::' . $method, $parameters );
 		}
 	}
 
@@ -1207,3 +1213,6 @@ class YiiXLBase extends YiiBase
 	}
 
 }
+
+//	Initialize our base...
+YiiXLBase::init();

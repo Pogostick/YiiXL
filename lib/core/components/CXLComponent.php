@@ -33,6 +33,15 @@ require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'interfaces.php';
 class CXLComponent extends CApplicationComponent implements IXLComponent
 {
 	//********************************************************************************
+	//* Constants
+	//********************************************************************************
+
+	/**
+	 * Our class's logging tag
+	 */
+	const CLASS_LOG_TAG = 'yiixl.core.components';
+
+	//********************************************************************************
 	//* Properties
 	//********************************************************************************
 
@@ -45,6 +54,16 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	 * @var array $_options Our configuration options
 	 */
 	protected $_options;
+
+	/**
+	 * @var array $_behaviors Attached behaviors. We have to copy here because Yii is private instead of protected
+	 */
+	protected $_behaviorCache;
+
+	/**
+	 * @var array $_behaviorMethods Imported attached behavior methods
+	 */
+	protected $_behaviorMethods;
 
 	//********************************************************************************
 	//* Property Accessors
@@ -101,6 +120,80 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 		return YiiXL::o( $this->_options, $key, $defaultValue, $unsetAfter );
 	}
 
+	/**
+	 * Attaches a behavior to this component.
+	 * Calls the Yii implementation of this method, then injects the
+	 * behaviors methods into our class.
+	 * @param string $name The behavior's name. It should uniquely identify this behavior.
+	 * @param mixed $behavior the behavior configuration. This is passed as the first
+	 * parameter to {@link YiiBase::createComponent} to create the behavior object.
+	 * @return IBehavior the behavior object
+	 */
+	public function attachBehavior( $name, $behavior )
+	{
+		if ( null !== ( $_behavior = parent::attachBehavior( $name, $behavior ) ) )
+		{
+			//	Import the behavior methods
+			$_class = get_class( $_behavior );
+			$_methods = get_class_methods( $_behavior );
+
+			array_push(
+				$this->_behaviors,
+				array(
+					$_class,
+					$_behavior
+				)
+			);
+
+			foreach ( $_methods as $_method )
+				$this->_behaviorMethods[ $_method] = &$_behavior;
+		}
+	}
+
+	/**
+	 * Detaches a behavior from the component.
+	 * The behavior's {@link IBehavior::detach} method will be invoked.
+	 * @param string $name the behavior's name. It uniquely identifies the behavior.
+	 * @return IBehavior the detached behavior. Null if the behavior does not exist.
+	 * @since 1.0.2
+	 * @todo Implement un-importing methods
+	 */
+	public function detachBehavior( $name )
+	{
+		if ( null !== ( $_behavior = parent::detachBehavior( $name ) ) )
+		{
+			//	Unimport...
+		}
+	}
+
+	/**
+	 *
+	 * @param string $name
+	 * @param array $parameters
+	 * @return mixed
+	 */
+	public function __call( $name, $parameters )
+	{
+		//	Make sure the function exists
+		if ( isset( $this->_behaviorMethods, $this->_behaviorMethods[$name] ) || isset( $this->_behaviorMethods['__call'] ) )
+		{
+			//	Throw myself at the end of the arguments
+			$parameters[] = $this;
+
+			//	And call the method
+			return call_user_func_array(
+				array(
+					$this->_behavirorMethods[$name],
+					$name
+				),
+				$parameters
+			);
+		}
+
+		//	Otherwise let Yii deal with it...
+		return parent::__call( $name, $parameters );
+	}
+
 	//********************************************************************************
 	//* Private Methods
 	//********************************************************************************
@@ -111,6 +204,8 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	 */
 	protected function _loadConfiguration( $options = array(), $overwriteExisting = true )
 	{
+		XL::logDebug( 'Loading configuration options: ' . print_r( $options, true ), self::CLASS_LOG_TAG );
+
 		//	Make a copy for posterity
 		if ( $overwriteExisting || empty( $this->_options ) )
 			$this->_options = $options;
@@ -138,7 +233,7 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 		}
 		catch ( Exception $_ex )
 		{
-			Yii::log( 'Error while loading configuration options: ' . $_ex->getMessage(), 'error', 'yiixl.base' );
+			XL::logError( 'Error while loading configuration options: ' . $_ex->getMessage(), self::CLASS_LOG_TAG );
 		}
 	}
 

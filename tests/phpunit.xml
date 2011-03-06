@@ -5,8 +5,9 @@
                 convertWarningsToExceptions="true"
                 stopOnFailure="false">
 	<testsuites>
-		<testsuite name="YiiXL Core">
-			<file>core/CXLHelperBase
+		<testsuite name="YiiXL">
+			<file>lib/core/components/CXLComponentTest.php</file>
+			<file>lib/core/ui/CXLWidgetTest.php</file>
 		</testsuite>
 	</testsuites>
 

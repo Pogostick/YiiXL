@@ -71,6 +71,13 @@ class CXLHash implements IXLHelper
 	//********************************************************************************
 
 	/**
+	 * Our init function, nothing to do here...
+	 */
+	public static function init()
+	{
+	}
+
+	/**
 	 * Generates a unique hash code
 	 *
 	 * @param int $hashLength
