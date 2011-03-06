@@ -10,17 +10,16 @@
  * @since v1.0.0
  *
  * @package yiixl
- * @subpackage core
+ * @subpackage core.components
  *
  * @filesource
  */
 
 //	Requirements
-Yii::import( 'yiixl.core.interfaces.IXLComponent' );
-Yii::import( 'yiixl.core.exceptions.CPSException' );
+require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'interfaces.php';
 
 /**
- * CPSComponent class
+ * CXLComponent class
  * This is the base class for all YiiXL library objects. It extends the base
  * functionality of the Yii Framework without replacing core code.
  *
@@ -31,7 +30,7 @@ Yii::import( 'yiixl.core.exceptions.CPSException' );
  * @property integer $debugLevel A user-defined debugging level
  * @property-read array $options The options passed to this object during construction
  */
-class CPSComponent extends CApplicationComponent implements IXLComponent
+class CXLComponent extends CApplicationComponent implements IXLComponent
 {
 	//********************************************************************************
 	//* Properties
@@ -85,7 +84,7 @@ class CPSComponent extends CApplicationComponent implements IXLComponent
 	/**
 	 * Constructs a component.
 	 * All components accept an array of configuration options. These options are placed into accessible
-	 * members (via "setter"). The entire array is stored in the member {@see CPSComponent::options}.
+	 * members (via "setter"). The entire array is stored in the member {@see IXLComponent::options}.
 	 */
 	public function __construct( $options = array() )
 	{
@@ -99,7 +98,7 @@ class CPSComponent extends CApplicationComponent implements IXLComponent
 	 */
 	public function getOption( $key, $defaultValue = null, $unsetAfter = false )
 	{
-		return PS::o( $this->_options, $key, $defaultValue, $unsetAfter );
+		return YiiXL::o( $this->_options, $key, $defaultValue, $unsetAfter );
 	}
 
 	//********************************************************************************

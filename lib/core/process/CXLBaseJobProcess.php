@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the psYiiExtensions package.
+ * This file is part of the YiiXL package.
  *
  * @copyright Copyright (c) 2009-2011 Pogostick, LLC.
  * @link http://www.pogostick.com Pogostick, LLC.
@@ -9,7 +9,7 @@
  */
 
 /**
- * CPSJobProcess encapulates a work unit.
+ * CXLBaseJobProcess encapulates a work unit.
  *
  * Work unit lifecycle is as follows:
  *
@@ -21,11 +21,11 @@
  *
  * When overriding this class, you should only need to create the process() method with your work details.
  *
- * @package		psYiiExtensions
+ * @package		yiixl
  * @subpackage 	base
  *
  * @author			Jerry Ablan <jablan@pogostick.com>
- * @version		SVN $Id: CPSJobProcess.php 390 2010-07-03 04:40:47Z jerryablan@gmail.com $
+ * @version		SVN $Id: CXLBaseJobProcess.php 390 2010-07-03 04:40:47Z jerryablan@gmail.com $
  * @since			v1.0.6
  *
  * @abstract
@@ -36,7 +36,7 @@
  * @property-read string $processingTime The amount of time processing took formated in seconds (i.e. 1.23s)
  *
  */
-abstract class CPSJobProcess extends CPSComponent
+abstract class CXLBaseJobProcess extends IXLComponent
 {
 	//********************************************************************************
 	//* Member Variables
@@ -95,7 +95,7 @@ abstract class CPSJobProcess extends CPSComponent
 	*
 	* @param mixed $oJob Either a row from a job queue or data to process
 	* @param boolean $autoRun If true, initializes and runs the job
-	* @return CPSJobProcess
+	* @return CXLBaseJobProcess
 	*/
 	public function __construct( $oJob = null, $autoRun = false )
 	{
@@ -132,7 +132,7 @@ abstract class CPSJobProcess extends CPSComponent
 	*/
 	public function getProcessingTime( $bRaw = false )
 	{
-		$_fSpan = CPSHelperBase::nvl( $this->m_fEnd, CPSHelperBase::currentTimeMillis() ) - $this->m_fStart;
+		$_fSpan = YiiXL::nvl( $this->m_fEnd, YiiXL::currentTimeMillis() ) - $this->m_fStart;
 		return $bRaw ? $_fSpan : number_format( $_fSpan, 2 ) . 's';
 	}
 
@@ -142,7 +142,7 @@ abstract class CPSJobProcess extends CPSComponent
 	*/
 	public function stopTimer()
 	{
-		$this->m_fEnd = CPSHelperBase::currentTimeMillis();
+		$this->m_fEnd = YiiXL::currentTimeMillis();
 	}
 
 	/**
@@ -151,7 +151,7 @@ abstract class CPSJobProcess extends CPSComponent
 	*/
 	public function startTimer()
 	{
-		$this->m_fStart = CPSHelperBase::currentTimeMillis();
+		$this->m_fStart = YiiXL::currentTimeMillis();
 		$this->m_fEnd = null;
 	}
 
@@ -176,6 +176,6 @@ abstract class CPSJobProcess extends CPSComponent
 	{
 		//	Auto set status
 		if ( ! $bNoStatus && $sLevel == 'error' ) $this->setStatus( $sMessage );
-		Yii::log( $sMessage, $sLevel, CPSHelperBase::nvl( $sCategory, __CLASS__ ) );
+		Yii::log( $sMessage, $sLevel, YiiXL::nvl( $sCategory, __CLASS__ ) );
 	}
 }
