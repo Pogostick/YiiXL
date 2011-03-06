@@ -1,13 +1,13 @@
 <?php
 	$_arOpts = array();
 	
-	$_sTheme = Yii::app()->user->getState( CPSjqUIWrapper::getStateName() );
-	$_iSelected = array_search( $_sTheme, CPSjqUIWrapper::getValidThemes() );
+	$_sTheme = Yii::app()->user->getState( CXLHelperBase
+	$_iSelected = array_search( $_sTheme, CXLHelperBase
 	
-	echo PS::beginForm( array( Yii::app()->defaultController . '/' . ThemeRoller::POST_ACTION ), 'POST', array( 'id' => 'frmThemeRoller' ) );
-		echo PS::hiddenField( 'uri', $this->getOwner()->getRequest()->getRequestUri() );
-		echo PS::dropDown( PS::DD_JQUI_THEMES, 'theme', null, array( 'value' => $_iSelected, 'id' => '_themeRoller', 'style' => 'width:100%' ) );
-	echo PS::endForm();
+	echo YiiXL::beginForm( array( Yii::app()->defaultController . '/' . ThemeRoller::POST_ACTION ), 'POST', array( 'id' => 'frmThemeRoller' ) );
+		echo YiiXL::hiddenField( 'uri', $this->getOwner()->getRequest()->getRequestUri() );
+		echo YiiXL::dropDown( YiiXL::DD_JQUI_THEMES, 'theme', null, array( 'value' => $_iSelected, 'id' => '_themeRoller', 'style' => 'width:100%' ) );
+	echo YiiXL::endForm();
 ?>
 <script type="text/javascript">
 <!--

@@ -1,13 +1,13 @@
 <?php
 /*
- * This file is part of psYiiExtensions examples
+ * This file is part of yiixl examples
  * 
  * @copyright Copyright &copy; 2009 Pogostick, LLC
  * @link http://www.pogostick.com Pogostick, LLC.
  * @license http://www.pogostick.com/licensing
  */
 /**
- * @package 	psYiiExtensions.examples
+ * @package 	yiixl.examples
  * @subpackage 	tests.config
  * 
  * @author 		Jerry Ablan <jablan@pogostick.com>

@@ -1,6 +1,6 @@
 <?php
-	$_sTheme = Yii::app()->user->getState( CPSjqUIWrapper::getStateName() );
-	CPSjqUIWrapper::loadScripts( null, $_sTheme );
+	$_sTheme = Yii::app()->user->getState( CXLHelperBase
+	CXLHelperBase
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -18,7 +18,7 @@
 	<div class="page-wrapper ui-widget-content">
 
 		<div class="page-header ui-widget-header">
-    		<h1><?php echo PS::link( PS::encode( Yii::app()->params['title'] ), Yii::app()->homeUrl ); ?></h1>
+    		<h1><?php echo YiiXL::link( YiiXL::encode( Yii::app()->params['title'] ), Yii::app()->homeUrl ); ?></h1>
   		</div><!-- header -->
 
   		<div class="page-content-wrapper ui-widget-content">
@@ -31,7 +31,7 @@
 				<?php $this->widget( 'UserLogin', array( 'visible' => Yii::app()->user->isGuest ) ); ?>
 				<?php $this->widget( 'UserMenu', array( 'visible' => ! Yii::app()->user->isGuest ) ); ?>
 				<?php $this->widget( 'PostCalendar' ); ?>
-				<?php $this->widget( 'CPSThemeRoller' ); ?>
+				<?php $this->widget( 'CXLHelperBase
 				<?php $this->widget( 'TagCloud' ); ?>
 				<?php $this->widget( 'RecentComments' ); ?>
 			</div><!-- sidebar -->

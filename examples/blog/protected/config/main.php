@@ -1,7 +1,7 @@
 <?php
 
 //	Import the pYe
-Yii::setPathOfAlias( 'pogostick', '/usr/local/psYiiExtensions/extensions/pogostick' );
+Yii::setPathOfAlias( 'pogostick', '/usr/local/yiixl/extensions/pogostick' );
 
 //	Our configuration array
 return array(
@@ -60,7 +60,7 @@ return array(
 		'db' => array(
 			'class' => 'CDbConnection',
 			'autoConnect' => true,
-			'connectionString' => 'mysql:host=localhost;dbname=psYiiExtensions;',
+			'connectionString' => 'mysql:host=localhost;dbname=yiixl;',
 			'username' => 'pye_user',
 			'password' => 'pye_user',
 			//'schemaCachingDuration' => 3600,

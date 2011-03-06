@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of psYiiExtensions Blog example
+ * This file is part of yiixl Blog example
  * 
  * @copyright Copyright &copy; 2009 Pogostick, LLC
  * @link http://www.pogostick.com Pogostick, LLC.
@@ -10,7 +10,7 @@
 /**
  * The base model for our blog
  * 
- * @package 	psYiiExtensions.examples.blog
+ * @package 	yiixl.examples.blog
  * @subpackage 	models
  * 
  * @author 		Jerry Ablan <jablan@pogostick.com>
@@ -19,7 +19,7 @@
  * 
  * @filesource
  */
-class BaseModel extends CPSModel
+class BaseModel extends CXLHelperBase
 {
 	//********************************************************************************
 	//* Public Methods
@@ -59,7 +59,7 @@ class BaseModel extends CPSModel
 			array(
 				//	Timestampper
 				'psTimeStamp' => array(
-					'class' => 'pogostick.behaviors.CPSTimeStampBehavior',
+					'class' => 'pogostick.behaviors.CXLHelperBase
 					'createdColumn' => 'create_date',
 					'lmodColumn' => 'lmod_date',
 				),

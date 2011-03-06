@@ -1,13 +1,13 @@
 <?php
 /*
- * This file is part of psYiiExtensions blog example
+ * This file is part of yiixl blog example
  * 
  * @copyright Copyright &copy; 2009 Pogostick, LLC
  * @link http://www.pogostick.com Pogostick, LLC.
  * @license http://www.pogostick.com/licensing
  */
 /**
- * @package 	psYiiExtensions.examples.blog
+ * @package 	yiixl.examples.blog
  * @subpackage 	components
  * 
  * @author 		Jerry Ablan <jablan@pogostick.com>
@@ -16,7 +16,7 @@
  * 
  * @filesource
  */
-class ThemeRoller extends CPSPortlet
+class ThemeRoller extends CXLHelperBase
 {
 	//********************************************************************************
 	//* Constants

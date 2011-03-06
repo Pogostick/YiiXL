@@ -35,6 +35,7 @@
 require_once '/usr/local/yii/framework/yii.php';
 
 //	Load our alias
-\Yii::setPathOfAlias( 'yiixl', dirname( __FILE__ ) . '/../lib' );
-\Yii::import( 'yiixl.core.*' );
-\Yii::import( 'yiixl.core.helpers.*' );
+Yii::setPathOfAlias( 'yiixl', dirname( __FILE__ ) . '/../lib' );
+Yii::import( 'yiixl.core.*' );
+Yii::import( 'yiixl.core.components.interfaces', true );
+Yii::import( 'yiixl.core.components.CXLComponent', true );

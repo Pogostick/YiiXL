@@ -9,7 +9,7 @@
 /**
  * DDL for example blog application
  * 
- * @package 	psYiiExtensions.examples
+ * @package 	yiixl.examples
  * @subpackage 	blog
  * 
  * @author 		Jerry Ablan <jablan@pogostick.com>
@@ -131,7 +131,7 @@ CREATE TABLE `user_t` (
 insert  into `user_t`(`id`,`user_name_text`,`password_text`,`email_addr_text`,`profile_text`,`create_date`,`lmod_date`) values (1,'demo','fe01ce2a7fbac8fafaed7c982a04e229','webmaster@example.com',NULL,'2009-12-23 22:05:30','2009-12-23 22:05:30');
 
 /* Create a database user for Yii */
-grant all privileges on psYiiExtensions.* to 'pye_user'@'localhost' identified by 'pye_user';
+grant all privileges on yiixl.* to 'pye_user'@'localhost' identified by 'pye_user';
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

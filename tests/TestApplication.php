@@ -1,7 +1,7 @@
 <?php
 
 //	YiiPiS
-Yii::setPathOfAlias( 'pogostick', '/usr/local/psYiiExtensions/extensions/pogostick' );
+Yii::setPathOfAlias( 'pogostick', '/usr/local/yiixl/extensions/pogostick' );
 
 Yii::import( 'pogostick.base.*' );
 Yii::import( 'pogostick.components.*' );

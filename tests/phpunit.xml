@@ -6,7 +6,7 @@
                 stopOnFailure="false">
 	<testsuites>
 		<testsuite name="YiiXL Core">
-			<file>core/CPSComponentTest.php</file>
+			<file>core/CXLHelperBase
 		</testsuite>
 	</testsuites>
 

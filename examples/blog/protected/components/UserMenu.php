@@ -1,13 +1,13 @@
 <?php
 /*
- * This file is part of psYiiExtensions blog example
+ * This file is part of yiixl blog example
  * 
  * @copyright Copyright &copy; 2009 Pogostick, LLC
  * @link http://www.pogostick.com Pogostick, LLC.
  * @license http://www.pogostick.com/licensing
  */
 /**
- * @package 	psYiiExtensions.examples.blog
+ * @package 	yiixl.examples.blog
  * @subpackage 	components
  * 
  * @author 		Jerry Ablan <jablan@pogostick.com>
@@ -16,7 +16,7 @@
  * 
  * @filesource
  */
-class UserMenu extends CPSPortlet
+class UserMenu extends CXLHelperBase
 {
 	//********************************************************************************
 	//* Public Methods
@@ -31,7 +31,7 @@ class UserMenu extends CPSPortlet
 		parent::__construct( $oOwner );
 		
 		//	Proceed
-		$this->title = PS::encode( Yii::app()->user->name );
+		$this->title = YiiXL::encode( Yii::app()->user->name );
 	}
 
 	/***
@@ -41,7 +41,7 @@ class UserMenu extends CPSPortlet
 	{
 		parent::init();
 		
-		if ( PS::o( $_POST, 'command' ) == 'logout' )
+		if ( YiiXL::o( $_POST, 'command' ) == 'logout' )
 		{
 			Yii::app()->user->logout();
 			Yii::app()->controller->redirect( Yii::app()->homeUrl );
