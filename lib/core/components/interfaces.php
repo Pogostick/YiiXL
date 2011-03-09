@@ -158,3 +158,60 @@ interface IXLUIHelper extends IXLHelper
 		ACTION_GENERIC 		= 999;
 
 }
+
+interface IXLController
+{
+	//********************************************************************************
+	//* Constants
+	//********************************************************************************
+
+	/**
+	* The number of items to display per page
+	*/
+	const
+		PAGE_SIZE = 10;
+
+	/**
+	* Indexes into {@link CXLController#m_arUserActionMap}
+	*/
+	const
+		ACCESS_TO_ALL = 0,
+		ACCESS_TO_ANY = 0,
+		ACCESS_TO_ANON = 0,
+		ACCESS_TO_GUEST = 1,
+		ACCESS_TO_AUTH = 2,
+		ACCESS_TO_ADMIN = 3,
+		ACCESS_TO_SUPERADMIN = 5;
+
+	//	Last...
+	const
+		ACCESS_TO_NONE = 6;
+
+	/**
+	 * The name of our command form field
+	 */
+	const
+		COMMAND_FIELD_NAME = '__xlCommand';
+
+	/**
+	 * Standard search text for rendering
+	 */
+	const
+		SEARCH_HELP_TEXT = 'You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>or <b>=</b>) at the beginning of each search value to specify how the comparison should be done.';
+
+}
+
+interface IXLAccessControl
+{
+	/**
+	* Indices into {@link CXLController:actionControlMap}
+	*/
+	const ACCESS_TO_NONE = -1;
+	const ACCESS_TO_ANY = 0;
+	const ACCESS_TO_GUEST = 1;
+	const ACCESS_TO_AUTH = 2;
+	const ACCESS_TO_ADMIN = 3;
+	const ACCESS_TO_ADMIN_LEVEL_0 = 3;
+	const ACCESS_TO_ADMIN_LEVEL_1 = 4;
+	const ACCESS_TO_ADMIN_LEVEL_2 = 5;
+}
