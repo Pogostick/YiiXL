@@ -77,19 +77,19 @@ class CXLTimeStampBehavior extends CXLActiveRecordBehavior
 		if ( $event->sender->isNewRecord )
 		{
 			if ( $this->_createdColumnName && $event->sender->hasAttribute( $this->_createdColumnName ) )
-				$this->owner->setAttribute( $this->_createdColumnName, ( null === $this->_dateTimeFunction ) ? date('Y-m-d H:i:s') : eval('return ' . $this->_dateTimeFunction . ';') );
+				$this->getOwner()->setAttribute( $this->_createdColumnName, ( null === $this->_dateTimeFunction ) ? date('Y-m-d H:i:s') : eval('return ' . $this->_dateTimeFunction . ';') );
 
 			if ( $this->_createdByColumnName && $event->sender->hasAttribute( $this->_createdByColumnName ) && ! $event->sender->getAttribute( $this->_createdByColumnName ) )
-				$this->owner->setAttribute( $this->_createdByColumnName, Yii::app()->user->getId() );
+				$this->getOwner()->setAttribute( $this->_createdByColumnName, Yii::app()->user->getId() );
 		}
 
 		//	Handle lmod stamp
 		if ( $this->_lastModifiedColumnName && $event->sender->hasAttribute( $this->_lastModifiedColumnName ) )
-				$this->owner->setAttribute( $this->_lastModifiedColumnName, ( null === $this->_dateTimeFunction ) ? date('Y-m-d H:i:s') : eval('return ' . $this->_dateTimeFunction . ';') );
+				$this->getOwner()->setAttribute( $this->_lastModifiedColumnName, ( null === $this->_dateTimeFunction ) ? date('Y-m-d H:i:s') : eval('return ' . $this->_dateTimeFunction . ';') );
 
 		//	Handle user id stamp
 		if ( $this->_lastModifiedByColumnName && $event->sender->hasAttribute( $this->_lastModifiedByColumnName ) && ! $event->sender->getAttribute( $this->_lastModifiedByColumnName ) )
-			$this->owner->setAttribute( $this->_lastModifiedByColumnName, Yii::app()->user->getId() );
+			$this->getOwner()->setAttribute( $this->_lastModifiedByColumnName, Yii::app()->user->getId() );
 
 		return parent::beforeValidate( $event );
 	}
@@ -104,8 +104,8 @@ class CXLTimeStampBehavior extends CXLActiveRecordBehavior
     */
     public function showDates()
     {
-    	if ( ! $this->owner->isNewRecord )
-			return XL::showDates( $this->owner, $this->_createdColumnName, $this->_lastModifiedColumnName, 'D M j, Y' );
+    	if ( ! $this->getOwner()->isNewRecord )
+			return XL::showDates( $this->getOwner(), $this->_createdColumnName, $this->_lastModifiedColumnName, 'D M j, Y' );
 	}
 
  	/**
@@ -127,22 +127,22 @@ class CXLTimeStampBehavior extends CXLActiveRecordBehavior
     	{
     		foreach ( XL::makeArray( $additionalColumns ) as $_attribute )
     		{
-    			if ( $this->owner->hasAttribute( $_attribute ) )
+    			if ( $this->getOwner()->hasAttribute( $_attribute ) )
     			{
-    				$this->owner->setAttribute( $_attribute, $_touchValue );
+    				$this->getOwner()->setAttribute( $_attribute, $_touchValue );
     				$_updateList[] = $_attribute;
 				}
     		}
 		}
 
-		if ( $this->_lastModifiedColumnName && $this->owner->hasAttribute( $this->_lastModifiedColumnName ) )
+		if ( $this->_lastModifiedColumnName && $this->getOwner()->hasAttribute( $this->_lastModifiedColumnName ) )
 		{
-			$this->owner->setAttribute( $this->_lastModifiedColumnName, $_touchValue );
+			$this->getOwner()->setAttribute( $this->_lastModifiedColumnName, $_touchValue );
     		$_updateList[] = $this->_lastModifiedColumnName;
 		}
 
 		//	Only update if and what we've touched...
-		return count( $_updateList ) ? $this->owner->update( $_updateList ) : true;
+		return count( $_updateList ) ? $this->getOwner()->update( $_updateList ) : true;
 	}
 
 }

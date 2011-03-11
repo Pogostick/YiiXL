@@ -204,14 +204,15 @@ interface IXLController
 interface IXLAccessControl
 {
 	/**
-	* Indices into {@link CXLController:actionControlMap}
+	* Indices into {@link CXLController::actionControlMap}
 	*/
-	const ACCESS_TO_NONE = -1;
-	const ACCESS_TO_ANY = 0;
-	const ACCESS_TO_GUEST = 1;
-	const ACCESS_TO_AUTH = 2;
-	const ACCESS_TO_ADMIN = 3;
-	const ACCESS_TO_ADMIN_LEVEL_0 = 3;
-	const ACCESS_TO_ADMIN_LEVEL_1 = 4;
-	const ACCESS_TO_ADMIN_LEVEL_2 = 5;
+	const 
+		ACCESS_TO_NONE = -1,
+		ACCESS_TO_ANY = 0,
+		ACCESS_TO_GUEST = 1,
+		ACCESS_TO_AUTH = 2,
+		ACCESS_TO_ADMIN = 3,
+		ACCESS_TO_ADMIN_LEVEL_0 = 3,
+		ACCESS_TO_ADMIN_LEVEL_1 = 4,
+		ACCESS_TO_ADMIN_LEVEL_2 = 5;
 }

@@ -28,6 +28,15 @@ require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'components' . DIRECTOR
 class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 {
 	//********************************************************************************
+	//* Constants
+	//********************************************************************************
+
+	/**
+	 * Our logging tag
+	 */
+	const	CLASS_LOG_TAG = 'yiixl.core.YiiXLBase';
+
+	//********************************************************************************
 	//* Private Members
 	//********************************************************************************
 
@@ -260,7 +269,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 
 		if ( is_array( $options ) )
 		{
-			if ( !array_key_exists( $key, $options ) )
+			if ( ! array_key_exists( $key, $options ) )
 			{
 				//	Ignore case and look...
 				$_newKey = strtolower( $key );
@@ -1132,7 +1141,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 
 		return $_value;
 	}
-
+	
 	//********************************************************************************
 	//* Magic Methods
 	//********************************************************************************

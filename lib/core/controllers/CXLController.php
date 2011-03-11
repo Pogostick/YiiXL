@@ -22,6 +22,15 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 	//********************************************************************************
 
 	/**
+	 * Our logging tag
+	 */
+	const	CLASS_LOG_TAG = 'yiixl.core.components.CXLController';
+
+	//********************************************************************************
+	//* Constants
+	//********************************************************************************
+
+	/**
 	* @var integer The number of items to display per page
 	*/
 	const PAGE_SIZE = 10;
@@ -29,7 +38,7 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 	/**
 	 * The name of our command form field
 	 */
-	const COMMAND_FIELD_NAME = '__psCommand';
+	const COMMAND_FIELD_NAME = '__yxl';
 
 	/**
 	 * Standard search text for rendering
@@ -41,16 +50,19 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 	//********************************************************************************
 
 	/**
-	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
+	 * Context menu items. This property will be assigned to {@link CMenu::items}.
+	 * @var array 
 	 */
 	protected $_menu = array();
 	public function getMenu() { return $this->_menu; }
 	public function setMenu( $value ) { $this->_menu = $value; return $this; }
 
 	/**
-	 * @var array the breadcrumbs of the current page. The value of this property will
-	 * be assigned to {@link CBreadcrumbs::links}. Please refer to {@link CBreadcrumbs::links}
-	 * for more details on how to specify this property.
+	 * The breadcrumbs of the current page. The value of this property will
+	 * be assigned to {@link CBreadcrumbs::links}. Please refer to 
+	 * {@link CBreadcrumbs::links} for more details on how to specify this property.
+	 * 
+	 * @var array 
 	 */
 	protected $_breadcrumbs = array();
 	public function getBreadcrumbs() { return $this->_breadcrumbs; }
@@ -58,6 +70,7 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 
 	/**
 	 * An optional, additional page heading
+	 * 
 	 * @var string
 	 */
 	protected $_pageHeading;
@@ -65,38 +78,40 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 	public function setPageHeading( $value ) { $this->m_sPageHeading = $value; return $this; }
 
 	/***
-	* @var string Allows you to change your action prefix
+	 * Allows you to change your action prefix
+	* @var string 
 	*/
 	protected $_actionMethodPrefix = 'action';
 	public function getActionMethodPrefix() { return $this->_actionMethodPrefix; }
 	public function setActionMethodPrefix( $value ) { $this->_actionMethodPrefix = $value; return $this; }
 
 	/**
-	* @var CActiveRecord The currently loaded data model instance.
-	* @access protected
-	*/
+	 * @var CActiveRecord The currently loaded data model instance.
+	 * @access protected
+	 */
 	protected $_currentModel = null;
 	public function getCurrentModel() { return $this->_currentModel; }
 	protected function setCurrentModel( $value ) { $this->_currentModel = $value; return $this; }
 
 	/**
-	* @var string The name of the model for this controller
-	* @access protected
-	*/
+	 * The name of the model for this controller
+	 * @var string 
+	 * @access protected
+	 */
 	protected $_modelClass = null;
 	public function getModelClass() { return $this->_modelClass; }
 	protected function setModelClass( $value ) { $this->_modelClass = $value; return $this; }
 
 	/**
-	* Convenience access to isPostRequest
-	* @return boolean
-	*/
+	 * Convenience access to isPostRequest
+	 * @return boolean
+	 */
 	public function getIsPostRequest() { return PS::isPostRequest(); }
 
 	/**
-	* Convenience access to isAjaxRequest
-	* @return boolean
-	*/
+	 * Convenience access to isAjaxRequest
+	 * @return boolean
+	 */
 	public function getIsAjaxRequest() { return PS::isAjaxRequest(); }
 
 	/**
@@ -106,38 +121,40 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 	public function getAppBaseUrl() { return PS::_gbu(); }
 
 	/**
-	 * @var string the layout of the content portion of this controller. If specified,
+	 * The layout of the content portion of this controller. If specified,
 	 * content is passed through this layout before it is sent to your main page layout.
+	 * @var string 
 	 */
 	protected $_contentTemplate = null;
 	public function getContentTemplate() { return $this->_contentTemplate; }
 	public function setContentTemplate( $value ) { $this->_contentTemplate = $value; return $this; }
 
 	/**
-	* @var boolean Tries to find proper layout to use based on name
-	* @access protected
-	*/
+	 * Tries to find proper layout to use based on name
+	 * @var boolean 
+	 * @access protected
+	 */
 	protected $_autoFindLayout = true;
 	public function getAutoFindLayout() { return $this->_autoFindLayout; }
 	public function setAutoFindLayout( $value ) { $this->_autoFindLayout = $value; return $this; }
 
 	/**
-	* @var boolean Try to find missing action
-	* @access protected
-	*/
+	 * Try to find missing action
+	 * @var boolean 
+	 * @access protected
+	 */
 	protected $_autoFindAction = true;
 	public function getAutoFindAction() { return $this->_autoFindAction; }
 	public function setAutoFindAction( $value ) { $this->_autoFindAction = $value; }
 
 	/**
-	* @var array An associative array of POST commands and their applicable methods
-	* @access protected
-	*/
+	 * An associative array of POST commands and their applicable methods
+	 * @var array 
+	 * @access protected
+	 */
 	protected $_adminCommandMap = array();
 	public function getAdminCommandMap() { return $this->_adminCommandMap; }
 	public function setAdminCommandMap( $value ) { $this->_adminCommandMap = $value; return $this; }
-
-
 	public function addCommandToMap( $key, $value = null, $property = null ) { $this->_adminCommandMap[ $key ] = $value; if ( $property ) $this->addActionControls( $property, array( $key ) ); return $this; }
 
 	/**
@@ -156,21 +173,26 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 	public function addPortletAction( $sName, $arCallback ) { $this->_portletActions[ $sName ] = $arCallback; return $this; }
 
 	/**
-	 * @var array $viewData The array of data passed to views
+	 * The array of data passed to views
+	 * @var array 
 	 */
 	protected $_viewData = array();
 	protected function getViewData() { return $this->_viewData; }
 	protected function setViewData( $value ) { $this->_viewData = $value; return $this; }
 
 	/**
-	 * @var array Any values in this array will be extracted into each view before it's rendered. The value "currentUser" is added automatically.
+	 * Any values in this array will be extracted into each view before 
+	 * it's rendered. The value "currentUser" is added automatically.
+	 * @var array 
 	 */
 	protected $_extraViewDataList = array();
 	protected function getExtraViewDataList() { return $this->_extraViewDataList; }
 	protected function setExtraViewDataList( $value ) { $this->_extraViewDataList = $value; return $this; }
 
 	/**
-	 * @var string The prefix to prepend to variables extracted into the view from {@link $_extraViewDataList}. Defaults to '_' (single underscore).
+	 * The prefix to prepend to variables extracted into the view from 
+	 * {@link $_extraViewDataList}. Defaults to '_' (single underscore).
+	 * @var string 
 	 */
 	protected $_extraViewDataPrefix = '_';
 	protected function getExtraViewDataPrefix() { return $this->_extraViewDataPrefix; }

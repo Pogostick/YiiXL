@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the psYiiExtensions package.
  *
@@ -27,42 +28,153 @@ class CXLOAuthBehavior extends CBehavior implements IXLBehavior
 	//********************************************************************************
 
 	/**
-	* @var OAuth $_oauthObject Our OAuth object
-	*/
-	protected $_oauthObject = null;
-
-	/**
-	* @var array $_oauthToken The current token list
-	*/
-	protected $_oauthToken = null;
+	 * Our logging tag
+	 */
+	const CLASS_LOG_TAG = 'yxl.core.behaviors.CXLOAuthBehavior';
 
 	//********************************************************************************
 	//* Properties
 	//********************************************************************************
 
 	/**
-	* @return array Retrieves the current OAuth token
-	*/
-	public function getOAuthToken() { return $this->_oauthToken; }
+	 * The current token list
+	 * @var array 
+	 */
+	protected $_oauthToken = null;
 
 	/**
-	* @return OAuth Retrieves the OAuth object
-	*/
-	public function getOAuthObject() { return $this->_oauthObject; }
+	 * Our OAuth object
+	 * @var OAuth 
+	 */
+	protected $_oauthObject = null;
+	
+	/**
+	 *
+	 * @var string
+	 */
+	protected $_callbackUrl;
+	/**
+	 *
+	 * @var boolean
+	 */
+	protected $_isAuthorized;
+	/**
+	 *
+	 * @var string
+	 */
+	protected $_accessTokenUrl;
+	/**
+	 *
+	 * @var string
+	 */
+	protected $_authorizeUrl;
+	/**
+	 *
+	 * @var string
+	 */
+	protected $_requestTokenUrl;
+	
+	//********************************************************************************
+	//* Property Accessors
+	//********************************************************************************
+
+	/**
+	 * Retrieves the current OAuth token
+	 * @return array 
+	 */
+	public function getOAuthToken()
+	{
+		return $this->_oauthToken;
+	}
+
+	/**
+	 * Retrieves the OAuth object
+	 * @return OAuth 
+	 */
+	public function getOAuthObject()
+	{
+		return $this->_oauthObject;
+	}
+	
+	public function getCallbackUrl() 	
+	{
+		return $this->_callbackUrl;
+	}
+
+	public function setCallbackUrl( $callbackUrl )
+	{
+		$this->_callbackUrl = $callbackUrl;
+		return $this;
+	}
+
+	public function getIsAuthorized()
+	{
+		return $this->_isAuthorized;
+	}
+
+	public function setIsAuthorized( $isAuthorized )
+	{
+		$this->_isAuthorized = $isAuthorized;
+		return $this;
+	}
+
+	public function getAccessTokenUrl()
+	{
+		return $this->_accessTokenUrl;
+	}
+
+	public function setAccessTokenUrl( $accessTokenUrl )
+	{
+		$this->_accessTokenUrl = $accessTokenUrl;
+		return $this;
+	}
+
+	/**                                         I
+	 * Appends the current token to the authorizeUrl option
+	 * @return string
+	 */
+	public function getAuthorizeUrl()
+	{
+		$_token = $this->_oauthObject->getRequestToken( $this->_apiBaseUrl . $this->_requestTokenUrl, $this->_callbackUrl );
+		return $this->_apiBaseUrl . $this->_authorizeUrl . '?oauth_token=' . $_token['oauth_token'];
+	}
+
+	public function setAuthorizeUrl( $authorizeUrl )
+	{
+		$this->_authorizeUrl = $authorizeUrl;
+		return $this;
+	}
+
+	public function getRequestTokenUrl()
+	{
+		return $this->_requestTokenUrl;
+	}
+
+	public function setRequestTokenUrl( $requestTokenUrl )
+	{
+		$this->_requestTokenUrl = $requestTokenUrl;
+		return $this;
+	}
 
 	//********************************************************************************
 	//* Constructor
 	//********************************************************************************
 
-	/***
-	* Constructor
-	*
-	*/
+	/**
+	 * Constructor
+	 */
 	public function __construct()
 	{
 		//	No oauth? No run...
 		if ( ! extension_loaded( 'oauth' ) )
-			throw new CXLException( Yii::t( 'yiixl.core.behaviors', 'The "oauth" extension is not loaded. Please install and/or load the oath extension (PECL).' ) );
+		{
+			throw new CXLException(
+				Yii::t(
+					self::CLASS_LOG_TAG, 
+					'The "oauth" extension is not loaded. Please install and/or load the oath extension (PECL).'
+				)
+			);
+		}
 
 		//	Call daddy...
 		parent::__construct();
@@ -73,9 +185,8 @@ class CXLOAuthBehavior extends CBehavior implements IXLBehavior
 	//********************************************************************************
 
 	/**
-	* Initialize this behavior
-	*
-	*/
+	 * Initialize this behavior
+	 */
 	public function init()
 	{
 		//	Events...
@@ -88,109 +199,86 @@ class CXLOAuthBehavior extends CBehavior implements IXLBehavior
 		$this->loadToken();
 
 		//	Have we been authenticated?
-		if ( ! $this->isAuthorized )
+		if ( !$this->isAuthorized )
 		{
-			if ( isset( $_REQUEST[ 'oauth_token' ] ) )
+			if ( isset( $_REQUEST['oauth_token'] ) )
 			{
-				if ( $this->_oauthObject->setToken( $_REQUEST[ 'oauth_token' ], $_REQUEST[ 'oauth_verifier' ] ) )
+				if ( $this->_oauthObject->setToken( $_REQUEST['oauth_token'], $_REQUEST['oauth_verifier'] ) )
 				{
-					$_arToken = $this->_oauthObject->getAccessToken( $this->apiBaseUrl . $this->accessTokenUrl, null, $_REQUEST[ 'oauth_verifier' ] );
-					$this->storeToken( $_arToken );
-					$this->isAuthorized = true;
+					$_token = $this->_oauthObject->getAccessToken( 
+						$this->_apiBaseUrl . $this->_accessTokenUrl,
+						null, 
+						$_REQUEST['oauth_verifier']
+					);
+
+					$this->storeToken( $_token );
+					$this->_isAuthorized = true;
 				}
 
 				//	Raise our event
-				if ( $this->isAuthorized )
+				if ( $this->_isAuthorized ) 
 					$this->onUserAuthorized( new CPSOAuthEvent( $this->_oauthToken ) );
 			}
 		}
 	}
 
-	/**                                         I
-	* Appends the current token to the authorizeUrl option
-	*
-	* @param mixed $oToken
-	*/
-	public function getAuthorizeUrl()
-	{
-		$_arToken = $this->_oauthObject->getRequestToken( $this->apiBaseUrl . $this->requestTokenUrl, $this->callbackUrl );
-		return $this->apiBaseUrl . $this->authorizeUrl . '?oauth_token=' . $_arToken[ 'oauth_token' ];
-	}
-
 	/**
-	* Stores the current token in a member variable and in the user state oAuthToken
-	*
-	* @param array $oToken
-	*/
-	public function storeToken( $oToken = array() )
+	 * Stores the current token in a member variable and in the user state oAuthToken
+	 * @param array $token
+	 */
+	public function storeToken( $token = array() )
 	{
 		try
 		{
-			Yii::app()->user->setState( $this->getInternalName() . '_oAuthToken', $oToken );
-			Yii::app()->user->setState( $this->getInternalName() . '_isAuthorized', $this->isAuthorized );
-			$this->_oauthToken = $oToken;
+			XL::_ss( CXLHash::hash( 'OAuthToken' . $this->_apiBaseUrl ), $token );
+			XL::_ss( CXLHash::hash( 'OAuthorized' . $this->_apiBaseUrl ), (boolean)$this->_isAuthorized );
+
+			$this->_oauthToken = $token;
 		}
 		catch ( Exception $_ex )
 		{
-			$_sName = $this->getInternalName();
-			CPSLog::error( 'pogostick.behaviors', Yii::t( $_sName, 'Error storing OAuth token "{a}/{b}" : {c}', array( "{a}" => $oToken['oauth_token'], "{b}" => $oToken['oauth_token_secret'], "{c}" => $_ex->getMessage() ) ) );
+			XL::logError(
+				self::CLASS_LOG_TAG,
+				Yii::t( 
+					self::CLASS_LOG_TAG, 
+					'Error storing OAuth token "{a}/{b}" : {c}', 
+					array( 
+						"{a}" => $token['oauth_token'], 
+						"{b}" => $token['oauth_token_secret'], 
+						"{c}" => $_ex->getMessage() 
+					) 
+				) 
+			);
 		}
 	}
 
 	/**
-	* Loads a token from the user state oAuthToken
-	*
-	*/
+	 * Loads a token from the user state oAuthToken
+	 */
 	public function loadToken()
 	{
-		$_oUser = Yii::app()->user;
-
-		if ( $_oUser )
+		$_token = array();
+		
+		if ( null != ( $_token = XL::_gs( CXLHash::hash( 'OAuthToken' . $this->_apiBaseUrl ) ) ) )
 		{
-			if ( null != ( $_oToken = $_oUser->getState( $this->getInternalName() . '_oAuthToken' ) ) )
-			{
-				$this->_oauthToken = $_oToken;
-				$this->isAuthorized = ( $_oUser->getState( $this->getInternalName() . '_isAuthorized' ) == true );
-			}
-			else
-				$_oToken = array();
+			$this->_oauthToken = $_token;
+			$this->_isAuthorized = ( true === XL::_gs( CXLHash::hash( 'OAuthorized' . $this->_apiBaseUrl ) ) );
 		}
-	}
-
-	//********************************************************************************
-	//* Private Methods
-	//********************************************************************************
-
-	/**
-	* Our options
-	*/
-	private function getBaseOptions()
-	{
-		return(
-			array(
-				//	Required settings
-				'callbackUrl' => 'string',
-				'isAuthorized' => 'boolean:false',
-
-				//	Urls
-				'accessTokenUrl' => 'string:/oauth/access_token',
-				'authorizeUrl' => 'string:/oauth/authorize',
-				'requestTokenUrl' => 'string:/oauth/request_token',
-			)
-		);
+		
+		return $_token;
 	}
 
 	//********************************************************************************
 	//* Events
 	//********************************************************************************
 
-	/***
+	/**
 	 * User has been authorized event
-	 * @param CPSOAuthEvent $oEvent
+	 * @param CXLOAuthEvent $event
 	 */
-	public function onUserAuthorized( $oEvent )
+	public function onUserAuthorized( $event )
 	{
-		$this->raiseEvent( 'onUserAuthorized', $oEvent );
+		$this->raiseEvent( 'onUserAuthorized', $event );
 	}
 
 }

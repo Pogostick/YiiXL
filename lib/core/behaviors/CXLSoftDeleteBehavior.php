@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the psYiiExtensions package.
  *
@@ -26,51 +27,67 @@ class CXLSoftDeleteBehavior extends CXLActiveRecordBehavior
 	//********************************************************************************
 
 	/**
-	* @var string $_softDeleteColumnName If defined, all deletes are soft
-	*/
+	 * If defined, all deletes are soft
+	 * @var string 
+	 */
 	protected $_softDeleteColumnName = null;
-
 	/**
-	* @var array $_softDeleteValues Soft delete indicator [false,true]
-	*/
-	protected $_softDeleteValues = array( 0, 1 );
+	 * Soft delete indicator [false,true]
+	 * @var array 
+	 */
+	protected $_softDeleteValues = array( 
+		0, 
+		1
+	);
 
 	//********************************************************************************
 	//* Properties
 	//********************************************************************************
 
 	/**
-	* Returns the soft-delete column for this model
-	* @return string
-	*/
-	public function getSoftDeleteColumnName() { return $this->_softDeleteColumnName; }
+	 * Returns the soft-delete column for this model
+	 * @return string
+	 */
+	public function getSoftDeleteColumnName()
+	{
+		return $this->_softDeleteColumnName;
+	}
 
 	/**
-	* Sets the soft-delete column for this model
-	* @var string
-	*/
-	public function setSoftDeleteColumnName( $sValue ) { $this->_softDeleteColumnName = $sValue; }
+	 * Sets the soft-delete column for this model
+	 * @var string
+	 */
+	public function setSoftDeleteColumnName( $value )
+	{
+		$this->_softDeleteColumnName = $value;
+	}
 
 	/**
-	* Returns the soft-delete values for this model [false,true]
-	* @return array
-	*/
-	public function getSoftDeleteValues() { return $this->_softDeleteValues; }
+	 * Returns the soft-delete values for this model [false,true]
+	 * @return array
+	 */
+	public function getSoftDeleteValues()
+	{
+		return $this->_softDeleteValues;
+	}
 
 	/**
-	* Sets the soft-delete values for this model
-	* @var array $arValue The true/false values for soft-deletion.
-	*/
-	public function setSoftDeleteValues( $arValue ) { $this->_softDeleteValues = $arValue; }
+	 * Sets the soft-delete values for this model
+	 * @var array $array The true/false values for soft-deletion.
+	 */
+	public function setSoftDeleteValues( $array )
+	{
+		$this->_softDeleteValues = $array;
+	}
 
 	//********************************************************************************
 	//* Public Methods
 	//********************************************************************************
 
 	/**
-	* Undeletes a soft-deleted model
-	* @return boolean
-	*/
+	 * Undeletes a soft-deleted model
+	 * @return boolean
+	 */
 	public function undelete()
 	{
 		if ( $this->_softDeleteColumnName )
@@ -78,7 +95,7 @@ class CXLSoftDeleteBehavior extends CXLActiveRecordBehavior
 			//	Perform a soft delete if this model allows
 			if ( $this->hasAttribute( $this->_softDeleteColumnName ) )
 			{
-				$this->setAttribute( $this->_softDeleteColumnName, $this->_softDeleteValues[ 0 ] );
+				$this->setAttribute( $this->_softDeleteColumnName, XL::o( $this->_softDeleteValues, 0, 0 ) );
 				return $this->update( array( $this->_softDeleteColumnName ) );
 			}
 		}
@@ -106,14 +123,14 @@ class CXLSoftDeleteBehavior extends CXLActiveRecordBehavior
 			if ( $this->_softDeleteColumnName && $event->isValid && ! $event->handled )
 			{
 				//	Perform a soft delete if this model allows
-				if ( $event->sender->hasAttribute( $this->_softDeleteColumnName ) )
+				if ( $event->getSender()->hasAttribute( $this->_softDeleteColumnName ) )
 				{
 					$event->isValid = false;
 					$event->handled = true;
-					$event->sender->setAttribute( $this->_softDeleteColumnName, $this->_softDeleteValues[ 1 ] );
+					$event->sender->setAttribute( $this->_softDeleteColumnName, XL::o( $this->_softDeleteValues, 1, 1 ) );
 
-					if ( ! $event->sender->update( array( $this->_softDeleteColumnName ) ) )
-						throw new CDbException( 'Error saving soft delete row.' );
+					if ( !$event->sender->update( array( $this->_softDeleteColumnName ) ) ) 
+						throw new CXLDatabaseException( 'Error saving soft delete row.' );
 				}
 			}
 
@@ -129,19 +146,19 @@ class CXLSoftDeleteBehavior extends CXLActiveRecordBehavior
 	 */
 	public function beforeFind( $event )
 	{
-		if ( $this->_softDeleteColumnName && $this->owner->hasAttribute( $this->_softDeleteColumnName ) )
+		if ( $this->_softDeleteColumnName && $this->getOwner()->hasAttribute( $this->_softDeleteColumnName ) )
 		{
 			//	Merge in the soft delete indicator
-			$event->sender->getDbCriteria()->mergeWith(
+			$event->getSender()->getDbCriteria()->mergeWith(
 				array(
 					'condition' => $this->_softDeleteColumnName . ' = :softDeleteValue',
-					'params' => array( ':softDeleteValue' => $this->_softDeleteValues[ 0 ] ),
+					'params' => array( ':softDeleteValue' => XL::o( $this->_softDeleteValues, 0, 0 ) ),
 				)
 			);
 		}
 
 		//	Pass it on...
-    	return parent::beforeFind( $event );
-    }
+		return parent::beforeFind( $event );
+	}
 
 }

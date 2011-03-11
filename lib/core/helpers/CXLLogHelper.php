@@ -26,7 +26,7 @@ class CXLLogHelper implements IXLHelper, IXLLogger
 	/**
 	 * Our logging tag
 	 */
-	const CLASS_LOG_TAG = 'yiixl.core.helpers';
+	const CLASS_LOG_TAG = 'yiixl.core.helpers.CXLLogHelper';
 
 	//********************************************************************************
 	//* Private Members

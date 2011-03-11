@@ -17,18 +17,29 @@
 class CXLLiveLogRoute extends CFileLogRoute
 {
 	//********************************************************************************
+	//* Constants
+	//********************************************************************************
+	
+	/**
+	 * Our logging tag
+	 */
+	const	CLASS_LOG_TAG = 'yiixl.core.components.logging.CXLLiveLogRoute';
+	
+	//********************************************************************************
 	//* Private Members
 	//********************************************************************************
 
 	/**
-	 * @property array $excludeCategories An array of categories to exclude from logging. Regex pattern matching is supported via {@link preg_match}
+	 * An array of categories to exclude from logging. Regex pattern matching is supported via {@link preg_match}
+	 * @var array 
 	 */
 	protected $_excludeCategories = array();
 	public function getExcludeCategories() { return $this->_excludeCategories; }
 	public function setExcludeCategories( $value ) { $this->_excludeCategories = $value; }
 
 	/**
-	 * @property integer $categoryWidth The minimum width of the category column in the log output
+	 * The minimum width of the category column in the log output
+	 * @var integer 
 	 */
 	protected $_categoryWidth = 40;
 	/**

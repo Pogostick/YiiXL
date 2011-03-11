@@ -37,9 +37,9 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	//********************************************************************************
 
 	/**
-	 * Our class's logging tag
+	 * Our logging tag
 	 */
-	const CLASS_LOG_TAG = 'yiixl.core.components';
+	const	CLASS_LOG_TAG = 'yiixl.core.components.CXLComponent';
 
 	//********************************************************************************
 	//* Properties
