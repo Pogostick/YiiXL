@@ -76,6 +76,53 @@ class CXLOptions implements IXLHelper
 			self::setOptions( $object, $options );
 	}
 
+	/**
+	 * Loads an array into properties if they exist.
+	 * @param IXLComponent $object
+	 * @param array $options
+	 * @param boolean $overwriteExisting 
+	 * @return boolean
+	 */
+	public static function loadConfiguration( IXLComponent $object, $options = array(), $overwriteExisting = true )
+	{
+		XL::logDebug( 'Loading configuration options: ' . print_r( $options, true ), $object::CLASS_LOG_TAG );
+		
+		$_objectOptions = $object->getOptions();
+
+		//	Make a copy for posterity
+		if ( $overwriteExisting || empty( $_objectOptions ) )
+			$_objectOptions = $options;
+		else
+			$_objectOptions = array_merge( $_objectOptions, $options );
+
+		//	Try to set each one
+		try
+		{
+			foreach ( $options as $_key => $_value )
+			{
+				try
+				{
+					//	See if __set has a better time with this...
+					if ( method_exists( $object, 'set' . $_key ) )
+						$object->{'set' . $_key}( $_value );
+					else if ( property_exists( $object, $_key ) )
+						$object->{$_key} = $_key;
+				}
+				catch ( Exception $_ex )
+				{
+					//	Completely ignore errors...
+				}
+			}
+		}
+		catch ( Exception $_ex )
+		{
+			XL::logError( 'Exception while loading configuration options: ' . $_ex->getMessage(), $object::CLASS_LOG_TAG );
+			return false;
+		}
+		
+		return true;
+	}
+
 	//********************************************************************************
 	//* Private Methods
 	//********************************************************************************

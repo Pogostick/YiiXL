@@ -63,7 +63,7 @@ class CXLComponentTest extends CTestCase
 	 */
 	public function testGetOptions()
 	{
-		$this->assertEquals( $this->_testOptions, $this->object->getOptions() );
+		$this->assertEquals( &$this->_testOptions, $this->object->getOptions() );
 	}
 
 	/**

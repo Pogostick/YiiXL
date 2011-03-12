@@ -306,8 +306,8 @@ class CXLConfig extends CXLComponent implements Countable, Iterator
 		if ( $this->_readOnly )
 		{
 			throw new CXLReadOnlyException(
-				Yii::t(
-					self::LOG_TAG,
+				XL::t(
+					self::CLASS_LOG_TAG,
 					'Property "{class}.{property}" is read only.',
 					array(
 						'{class}' => get_class( $this ),
@@ -368,8 +368,8 @@ class CXLConfig extends CXLComponent implements Countable, Iterator
 		if ( $this->_readOnly )
 		{
 			throw new CXLReadOnlyException(
-				Yii::t(
-					self::LOG_TAG,
+				XL::t(
+					self::CLASS_LOG_TAG,
 					'Property "{class}.{property}" is read only.',
 					array(
 						'{class}' => get_class( $this ),

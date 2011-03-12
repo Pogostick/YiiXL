@@ -16,6 +16,7 @@
 Yii::import( 'yiixl.core.*' );
 Yii::import( 'yiixl.core.components.interfaces', true );
 Yii::import( 'yiixl.core.exceptions.CXLException', true );
+Yii::import( 'yiixl.core.helpers.CXLOptions' );
 
 //	Requirements
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'components' . DIRECTORY_SEPARATOR . 'CXLComponent.php';
@@ -95,6 +96,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	 * @staticvar array $classPath
 	 */
 	protected static $_classPath = array(
+		'CXLOptions',
 		'CHtml',
 	);
 
@@ -1145,6 +1147,70 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	//********************************************************************************
 	//* Magic Methods
 	//********************************************************************************
+
+	/**
+	 * This is a standardized magic method "helper"
+	 * @param CXLComponent $object
+	 * @param array $behaviors
+	 * @param string $method
+	 * @param array $parameters
+	 * @return mixed
+	 */
+	public static function smartCall( CXLComponent $object, $method, $parameters = array() )
+	{
+		$_methods = $object->getBehaviorMethods();
+		
+		//	Make sure the function exists
+		if ( is_callable( $_methodClass = XL::o( $_methods, $method ) ) )
+		{
+			//	Throw myself at the front of the arguments
+			array_unshift( $parameters, $object );
+
+			//	And call the method
+			return call_user_func_array(
+				array(
+					$_methodClass,
+					$method
+				),
+				$parameters
+			);
+		}
+
+		//	Otherwise let Yii deal with it...
+		return self::smartCallStatic( $object, $name, $parameters );
+	}
+
+	/**
+	 * Calls a static method in classPath if not found here. Allows you to extend this object
+	 * at runtime with additional helpers. Injects $object into parameter list.
+	 * @param CXLComponent $object
+	 * @param string $method
+	 * @param array $parameters
+	 * @return mixed
+	 * @throws CXLMethodNotFoundException
+	 */
+	public static function smartCallStatic( CXLComponent $object, $method, $parameters = array() )
+	{
+		//	Throw myself at the front of the arguments
+		array_unshift( $parameters, $object );
+
+		foreach ( self::$_classPath as $_class )
+		{
+			if ( method_exists( $_class, $method ) )
+				return call_user_func_array( $_class . '::' . $method, $parameters );
+		}
+		
+		throw new CXLMethodNotFoundException(
+			XL::t(
+				self::CLASS_LOG_TAG,
+				'Method "{class}.{method}" is read only.',
+				array(
+					'{class}' => get_class( $object ),
+					'{method}' => $method,
+				)
+			)
+		);
+	}
 
 	/**
 	 * Calls a static method in classPath if not found here. Allows you to extend this object

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the YiiXL package.
  *
@@ -14,44 +15,98 @@
 /**
  * CXLLiveLogRoute
  */
-class CXLLiveLogRoute extends CFileLogRoute
+class CXLLiveLogRoute extends CFileLogRoute implements IXLComponent
 {
 	//********************************************************************************
 	//* Constants
 	//********************************************************************************
-	
+
 	/**
 	 * Our logging tag
 	 */
-	const	CLASS_LOG_TAG = 'yiixl.core.components.logging.CXLLiveLogRoute';
-	
+	const CLASS_LOG_TAG = 'yiixl.core.components.logging.CXLLiveLogRoute';
+
 	//********************************************************************************
 	//* Private Members
 	//********************************************************************************
 
 	/**
+	 * @var integer $_debugLevel User-defined debug flag. false = OFF, anything else is up to you.
+	 */
+	protected $_debugLevel = false;
+	/**
+	 * @var array $_options Our configuration options
+	 */
+	protected $_options;
+	/**
 	 * An array of categories to exclude from logging. Regex pattern matching is supported via {@link preg_match}
 	 * @var array 
 	 */
-	protected $_excludeCategories = array();
-	public function getExcludeCategories() { return $this->_excludeCategories; }
-	public function setExcludeCategories( $value ) { $this->_excludeCategories = $value; }
-
+	protected $_excludeCategories = array( );
 	/**
 	 * The minimum width of the category column in the log output
 	 * @var integer 
 	 */
 	protected $_categoryWidth = 40;
+
+	//********************************************************************************
+	//* Property Accessors
+	//********************************************************************************
+
+	/**
+	 * Gets the debug level
+	 * @return integer
+	 */
+	public function getDebugLevel()
+	{
+		return $this->_debugLevel;
+	}
+
+	/**
+	 * Sets the debug level
+	 * @param integer The new debug level
+	 */
+	public function setDebugLevel( $value = false )
+	{
+		$this->_debugLevel = $value;
+	}
+
+	/**
+	 * Gets configuration options
+	 * @return array
+	 */
+	public function getOptions()
+	{
+		return $this->_options;
+	}
+
+	public function getExcludeCategories()
+	{
+		return $this->_excludeCategories;
+	}
+
+	public function setExcludeCategories( $value )
+	{
+		$this->_excludeCategories = $value;
+	}
+
 	/**
 	 * Get the minimum width of the category column in the log output
 	 * @return integer
 	 */
-	public function getCategoryWidth() { return $this->_categoryWidth; }
+	public function getCategoryWidth()
+	{
+		return $this->_categoryWidth;
+	}
+
 	/**
 	 * Set the minimum width of the category column in the log output
 	 * @return integer
 	 */
-	public function setCategoryWidth( $value ) { $this->_categoryWidth = $value; }
+	public function setCategoryWidth( $value )
+	{
+		$this->_categoryWidth = $value;
+	}
 
 	//********************************************************************************
 	//* Public Methods
@@ -75,14 +130,13 @@ class CXLLiveLogRoute extends CFileLogRoute
 	 * Writes log messages in files.
 	 * @param array $logs list of log messages
 	 */
-	protected function processLogs( $logs = array() )
+	protected function processLogs( $logs = array( ) )
 	{
 		try
 		{
 			$_logFile = $this->getLogPath() . DIRECTORY_SEPARATOR . $this->getLogFile();
 
-			if ( @filesize( $_logFile ) > $this->getMaxFileSize() * 1024 )
-				$this->rotateFiles();
+			if ( @filesize( $_logFile ) > $this->getMaxFileSize() * 1024 ) $this->rotateFiles();
 
 			//	Write out the log entries
 			foreach ( $logs as $_log )
@@ -90,7 +144,7 @@ class CXLLiveLogRoute extends CFileLogRoute
 				$_exclude = false;
 
 				//	Check out the exclusions
-				if ( ! empty( $this->_excludeCategories ) )
+				if ( !empty( $this->_excludeCategories ) )
 				{
 					foreach ( $this->_excludeCategories as $_category )
 					{
@@ -113,8 +167,7 @@ class CXLLiveLogRoute extends CFileLogRoute
 				/**
 				 * 	Use {@link error_log} facility to write out log entry
 				 */
-				if ( ! $_exclude )
-					error_log( $this->formatLogMessage( $_log[0], $_log[1], $_log[2], $_log[3] ), 3, $_logFile );
+				if ( !$_exclude ) error_log( $this->formatLogMessage( $_log[0], $_log[1], $_log[2], $_log[3] ), 3, $_logFile );
 			}
 
 			//	Processed, clear!
@@ -136,11 +189,11 @@ class CXLLiveLogRoute extends CFileLogRoute
 	 */
 	protected function formatLogMessage( $message, $level = 'I', $category = null, $time = null )
 	{
-		if ( null === $time )
-			$time = time();
+		if ( null === $time ) $time = time();
 
 		$level = strtoupper( $level[0] );
 
 		return @date( 'M d H:i:s', $time ) . ' [' . sprintf( '%-' . $this->_categoryWidth . 's', $category ) . '] ' . ': <' . $level . '> ' . $message . PHP_EOL;
 	}
+
 }

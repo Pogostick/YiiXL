@@ -61,6 +61,12 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	 * @var array $_behaviorMethods Imported attached behavior methods
 	 */
 	protected $_behaviorMethods;
+	
+	/**
+	 * A copy of myself for the static
+	 * @staticvar CXLComponent
+	 */
+	protected static $_objectCopy = null;
 
 	//********************************************************************************
 	//* Property Accessors
@@ -85,12 +91,26 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	}
 
 	/**
-	 * Gets configuration options
+	 * Gets a reference to the configuration options
 	 * @return array
 	 */
-	public function getOptions()
+	public function &getOptions()
 	{
 		return $this->_options;
+	}
+	
+	/**
+	 * Gets the list of registered behavior methods
+	 * @return array
+	 */
+	public function getBehaviorMethods()
+	{
+		return $this->_behaviorMethods;
+	}
+	
+	public function getObjectCopy()
+	{
+		return self::$_objectCopy;
 	}
 
 	//********************************************************************************
@@ -104,8 +124,12 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	 */
 	public function __construct( $options = array() )
 	{
+		//	Initialize...
+		$this->_options = $this->_behaviorCache = $this->_behaviorMethods = array();
+		self::$_objectCopy = $this;
+		
 		//	Set any properties via standard config array
-		$this->_loadConfiguration( $options );
+		self::loadConfiguration( $this, $this->_options, $options );
 	}
 
 	/**
@@ -114,7 +138,7 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	 */
 	public function getOption( $key, $defaultValue = null, $unsetAfter = false )
 	{
-		return YiiXL::o( $this->_options, $key, $defaultValue, $unsetAfter );
+		return XL::o( $this->_options, $key, $defaultValue, $unsetAfter );
 	}
 
 	/**
@@ -171,67 +195,38 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	 */
 	public function __call( $name, $parameters )
 	{
-		//	Make sure the function exists
-		if ( isset( $this->_behaviorMethods, $this->_behaviorMethods[$name] ) || isset( $this->_behaviorMethods['__call'] ) )
+		try
 		{
-			//	Throw myself at the end of the arguments
-			$parameters[] = $this;
-
-			//	And call the method
-			return call_user_func_array(
-				array(
-					$this->_behavirorMethods[$name],
-					$name
-				),
-				$parameters
-			);
+			XL::smartCall( $this, $name, $parameters );
+		}
+		catch ( CXLMethodNotFoundException $_ex )
+		{
+			//	Kick it back up the chain in this case
+			return parent::__call( $name, $parameters );
 		}
 
-		//	Otherwise let Yii deal with it...
-		return parent::__call( $name, $parameters );
+		//	Any other exceptions bubble up
+	}
+
+	/**
+	 * Calls a static method in classPath if not found here. Allows you to extend this object
+	 * at runtime with additional helpers.
+	 *
+	 * Only available in PHP 5.3+
+	 *
+	 * @param string $method
+	 * @param array $parameters
+	 * @return mixed
+	 */
+	public static function __callStatic( $method, $parameters )
+	{
+		//	Que sera, sera!
+		if ( null !== ( $_this = self::$_objectCopy ) )
+			return XL::smartCallStatic( $_this, $method, $parameters );
 	}
 
 	//********************************************************************************
 	//* Private Methods
 	//********************************************************************************
-
-	/**
-	 * Loads an array into properties if they exist.
-	 * @param array $options
-	 */
-	protected function _loadConfiguration( $options = array(), $overwriteExisting = true )
-	{
-		XL::logDebug( 'Loading configuration options: ' . print_r( $options, true ), self::CLASS_LOG_TAG );
-
-		//	Make a copy for posterity
-		if ( $overwriteExisting || empty( $this->_options ) )
-			$this->_options = $options;
-		else
-			$this->_options = array_merge( $this->_options, $options );
-
-		//	Try to set each one
-		try
-		{
-			foreach ( $options as $_key => $_value )
-			{
-				try
-				{
-					//	See if __set has a better time with this...
-					if ( method_exists( $this, 'set' . $_key ) )
-						$this->{'set' . $_key}( $_value );
-					else if ( property_exists( $this, $_key ) )
-						$this->{$_key} = $_key;
-				}
-				catch ( Exception $_ex )
-				{
-					//	Completely ignore errors...
-				}
-			}
-		}
-		catch ( Exception $_ex )
-		{
-			XL::logError( 'Error while loading configuration options: ' . $_ex->getMessage(), self::CLASS_LOG_TAG );
-		}
-	}
 
 }

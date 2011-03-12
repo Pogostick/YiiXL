@@ -54,10 +54,16 @@ interface IXLComponent
 	public function setDebugLevel( $value = false );
 
 	/**
-	 * Gets configuration options
+	 * Gets a reference to the configuration options
 	 * @return array
 	 */
-	public function getOptions();
+	public function &getOptions();
+
+	/**
+	 * Gets behavior methods. Needed to implement lightweight helper classes
+	 * @return array
+	 */
+	public function getBehaviorMethods();
 
 }
 
@@ -218,4 +224,17 @@ interface IXLAccessControl
 		ACCESS_TO_ADMIN_LEVEL_0 = 3,
 		ACCESS_TO_ADMIN_LEVEL_1 = 4,
 		ACCESS_TO_ADMIN_LEVEL_2 = 5;
+}
+
+/**
+ * This identifies a class as an object shifter.
+ * Object shifters are typical static function providers (helpers) that
+ * shift the first argument off the parameter stack and use it  as the target 
+ * object of the method called.
+ * 
+ * Obviously, the sender must unshift itself onto the stack. The {@link YiiXL} 
+ * class provides methods to do this.
+ */
+interface IXLShifter extends IXLHelper
+{
 }
