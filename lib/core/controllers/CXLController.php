@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the YiiXL package.
  *
@@ -23,27 +24,31 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 
 	/**
 	 * Our logging tag
+	 * @final string
 	 */
-	const	CLASS_LOG_TAG = 'yiixl.core.components.CXLController';
+	const CLASS_LOG_TAG = 'yiixl.core.components.CXLController';
 
 	//********************************************************************************
 	//* Constants
 	//********************************************************************************
 
-	/**
-	* @var integer The number of items to display per page
-	*/
-	const PAGE_SIZE = 10;
-
-	/**
-	 * The name of our command form field
-	 */
-	const COMMAND_FIELD_NAME = '__yxl';
-
-	/**
-	 * Standard search text for rendering
-	 */
-	const SEARCH_HELP_TEXT = 'You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>or <b>=</b>) at the beginning of each search value to specify how the comparison should be done.';
+	const 
+		/**
+		 * The number of items to display per page
+		 * @final integer 
+		 */
+		PAGE_SIZE = 10,
+		/**
+		 * The name of our command form field
+		 * @final string 
+		 */
+		COMMAND_FIELD_NAME = '__yxl',
+		/**
+		 * Standard search text for rendering
+		 * @final string 
+		*/
+		SEARCH_HELP_TEXT = 'You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>or <b>=</b>) at the beginning of each search value to specify how the comparison should be done.'
+	;
 
 	//********************************************************************************
 	//* Member Variables
@@ -53,10 +58,7 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 	 * Context menu items. This property will be assigned to {@link CMenu::items}.
 	 * @var array 
 	 */
-	protected $_menu = array();
-	public function getMenu() { return $this->_menu; }
-	public function setMenu( $value ) { $this->_menu = $value; return $this; }
-
+	protected $_menu = array( );
 	/**
 	 * The breadcrumbs of the current page. The value of this property will
 	 * be assigned to {@link CBreadcrumbs::links}. Please refer to 
@@ -64,157 +66,98 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 	 * 
 	 * @var array 
 	 */
-	protected $_breadcrumbs = array();
-	public function getBreadcrumbs() { return $this->_breadcrumbs; }
-	public function setBreadcrumbs( $value ) { $this->_breadcrumbs = $value; return $this; }
-
+	protected $_breadcrumbs = array( );
 	/**
 	 * An optional, additional page heading
 	 * 
 	 * @var string
 	 */
 	protected $_pageHeading;
-	public function getPageHeading() { return $this->m_sPageHeading; }
-	public function setPageHeading( $value ) { $this->m_sPageHeading = $value; return $this; }
-
-	/***
+	/**
 	 * Allows you to change your action prefix
-	* @var string 
-	*/
+	 * @var string 
+	 */
 	protected $_actionMethodPrefix = 'action';
-	public function getActionMethodPrefix() { return $this->_actionMethodPrefix; }
-	public function setActionMethodPrefix( $value ) { $this->_actionMethodPrefix = $value; return $this; }
-
 	/**
 	 * @var CActiveRecord The currently loaded data model instance.
 	 * @access protected
 	 */
 	protected $_currentModel = null;
-	public function getCurrentModel() { return $this->_currentModel; }
-	protected function setCurrentModel( $value ) { $this->_currentModel = $value; return $this; }
-
 	/**
 	 * The name of the model for this controller
 	 * @var string 
 	 * @access protected
 	 */
 	protected $_modelClass = null;
-	public function getModelClass() { return $this->_modelClass; }
-	protected function setModelClass( $value ) { $this->_modelClass = $value; return $this; }
-
-	/**
-	 * Convenience access to isPostRequest
-	 * @return boolean
-	 */
-	public function getIsPostRequest() { return PS::isPostRequest(); }
-
-	/**
-	 * Convenience access to isAjaxRequest
-	 * @return boolean
-	 */
-	public function getIsAjaxRequest() { return PS::isAjaxRequest(); }
-
-	/**
-	 * Returns the base url of the current app
-	 * @return string
-	 */
-	public function getAppBaseUrl() { return PS::_gbu(); }
-
 	/**
 	 * The layout of the content portion of this controller. If specified,
 	 * content is passed through this layout before it is sent to your main page layout.
 	 * @var string 
 	 */
 	protected $_contentTemplate = null;
-	public function getContentTemplate() { return $this->_contentTemplate; }
-	public function setContentTemplate( $value ) { $this->_contentTemplate = $value; return $this; }
-
 	/**
 	 * Tries to find proper layout to use based on name
 	 * @var boolean 
 	 * @access protected
 	 */
 	protected $_autoFindLayout = true;
-	public function getAutoFindLayout() { return $this->_autoFindLayout; }
-	public function setAutoFindLayout( $value ) { $this->_autoFindLayout = $value; return $this; }
-
 	/**
 	 * Try to find missing action
 	 * @var boolean 
 	 * @access protected
 	 */
 	protected $_autoFindAction = true;
-	public function getAutoFindAction() { return $this->_autoFindAction; }
-	public function setAutoFindAction( $value ) { $this->_autoFindAction = $value; }
-
 	/**
 	 * An associative array of POST commands and their applicable methods
 	 * @var array 
 	 * @access protected
 	 */
-	protected $_adminCommandMap = array();
-	public function getAdminCommandMap() { return $this->_adminCommandMap; }
-	public function setAdminCommandMap( $value ) { $this->_adminCommandMap = $value; return $this; }
-	public function addCommandToMap( $key, $value = null, $property = null ) { $this->_adminCommandMap[ $key ] = $value; if ( $property ) $this->addActionControls( $property, array( $key ) ); return $this; }
-
+	protected $_adminCommandMap = array( );
 	/**
-	* Action queue for keeping track of where we are...
-	* @var array
-	*/
-	protected $_actionStack = array();
-
+	 * Action queue for keeping track of where we are...
+	 * @var array
+	 */
+	protected $_actionStack = array( );
 	/**
 	 * A list of actions registered by our portlets
 	 * @var array
 	 */
-	protected $_portletActions = array();
-	public function getPortletActions() { return $this->_portletActions; }
-	public function setPortletActions( $value ) { $this->_portletActions = $value; return $this; }
-	public function addPortletAction( $sName, $arCallback ) { $this->_portletActions[ $sName ] = $arCallback; return $this; }
-
+	protected $_portletActions = array( );
 	/**
 	 * The array of data passed to views
 	 * @var array 
 	 */
-	protected $_viewData = array();
-	protected function getViewData() { return $this->_viewData; }
-	protected function setViewData( $value ) { $this->_viewData = $value; return $this; }
-
+	protected $_viewData = array( );
 	/**
 	 * Any values in this array will be extracted into each view before 
 	 * it's rendered. The value "currentUser" is added automatically.
 	 * @var array 
 	 */
-	protected $_extraViewDataList = array();
-	protected function getExtraViewDataList() { return $this->_extraViewDataList; }
-	protected function setExtraViewDataList( $value ) { $this->_extraViewDataList = $value; return $this; }
-
+	protected $_extraViewDataList = array( );
 	/**
 	 * The prefix to prepend to variables extracted into the view from 
 	 * {@link $_extraViewDataList}. Defaults to '_' (single underscore).
 	 * @var string 
 	 */
 	protected $_extraViewDataPrefix = '_';
-	protected function getExtraViewDataPrefix() { return $this->_extraViewDataPrefix; }
-	protected function setExtraViewDataPrefix( $value ) { $this->_extraViewDataPrefix = $value; return $this; }
 
 	//********************************************************************************
 	//* Public Methods
 	//********************************************************************************
 
 	/**
-	* Initialize the controller
-	*
-	*/
+	 * Initialize the controller
+	 *
+	 */
 	public function init()
 	{
 		//	Phone home...
 		parent::init();
 
 		//	Find layout...
-		if ( PHP_SAPI != 'cli' && $this->_autoFindLayout && ! Yii::app() instanceof CConsoleApplication )
+		if ( PHP_SAPI != 'cli' && $this->_autoFindLayout && ! XL::_a() instanceof CConsoleApplication )
 		{
-			if ( file_exists( PS::_gbp() . '/views/layouts/' . $this->getId() . '.php' ) )
+			if ( file_exists( XL::_gbp() . '/views/layouts/' . $this->getId() . '.php' ) ) 
 				$this->_pageLayout = $this->getId();
 		}
 
@@ -222,12 +165,12 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 		$this->addActionControl( self::ACCESS_TO_ANY, 'error' );
 
 		//	Ensure conformity
-		if ( ! is_array( $this->_extraViewDataList ) )
+		if ( !is_array( $this->_extraViewDataList ) ) 
 			$this->_extraViewDataList = array();
 
 		//	Add "currentUser" value to extra view data
-		if ( null === PS::o( $this->_extraViewDataList, $this->_extraViewDataPrefix . 'currentUser' ) )
-			$this->_extraViewDataList[ $this->_extraViewDataPrefix . 'currentUser' ] = PS::_gcu();
+		if ( null === XL::o( $this->_extraViewDataList, $this->_extraViewDataPrefix . 'currentUser' ) ) 
+			$this->_extraViewDataList[$this->_extraViewDataPrefix . 'currentUser'] = XL::_gcu();
 
 		//	And some defaults...
 		$this->defaultAction = 'index';
@@ -238,27 +181,27 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 	 *
 	 * In your configuration file, configure the urlManager as follows:
 	 *
-	 *	'urlManager' => array(
-	 *		'urlFormat' => 'path',
-	 *		'showScriptName' => false,
-	 *		'rules' => array(
-	 *			... all your rules should be first ...
-	 *			//	Add this as the last line in your rules.
-	 *			'<view:\w+>' => 'default/_static',
-	 *		),
+	 * 	'urlManager' => array(
+	 * 		'urlFormat' => 'path',
+	 * 		'showScriptName' => false,
+	 * 		'rules' => array(
+	 * 			... all your rules should be first ...
+	 * 			//	Add this as the last line in your rules.
+	 * 			'<view:\w+>' => 'default/_static',
+	 * 		),
 	 *
 	 * The above assumes your default controller is DefaultController. If is different
 	 * simply change the route above (default/_static) to your default route.
 	 *
 	 * Finally, create a directory under your default controller's view path:
 	 *
-	 *		/path/to/your/app/protected/views/default/_static
+	 * 		/path/to/your/app/protected/views/default/_static
 	 *
 	 * Place your static files in there, for example:
 	 *
-	 *		/path/to/your/app/protected/views/default/_static/aboutUs.php
-	 *		/path/to/your/app/protected/views/default/_static/contactUs.php
-	 *		/path/to/your/app/protected/views/default/_static/help.php
+	 * 		/path/to/your/app/protected/views/default/_static/aboutUs.php
+	 * 		/path/to/your/app/protected/views/default/_static/contactUs.php
+	 * 		/path/to/your/app/protected/views/default/_static/help.php
 	 *
 	 * @return array
 	 */
@@ -270,41 +213,51 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 					'class' => 'CViewAction',
 					'basePath' => '_static',
 				),
-			),
-			parent::actions()
+			), parent::actions()
 		);
 	}
 
 	/**
-	* A generic action that renders a page and passes in the model
-	*
-	* @param string The action id
-	* @param CModel The model
-	* @param array Extra parameters to pass to the view
-	* @param string The name of the variable to pass to the view. Defaults to 'model'
-	*/
-	public function genericAction( $actionId, $oModel = null, $arExtraParams = array(), $sModelVarName = 'model', $sFlashKey = null, $sFlashValue = null, $sFlashDefaultValue = null )
+	 * A generic action that renders a page and passes in the model
+	 *
+	 * @param string The action id
+	 * @param CModel The model
+	 * @param array Extra parameters to pass to the view
+	 * @param string The name of the variable to pass to the view. Defaults to 'model'
+	 */
+	public function genericAction( $actionId, $model = null, $extraParameters = array( ), $modelVariableName = 'model', $flashMessageKey = null, $flashMessageValue = null, $flashMessageDefaultValue = null )
 	{
-		if ( $sFlashKey ) Yii::app()->user->setFlash( $sFlashKey, $sFlashValue, $sFlashDefaultValue );
-		$this->render( $actionId, array_merge( $arExtraParams, array( $sModelVarName => ( $oModel ) ? $oModel : $this->loadCurrentModel() ) ) );
+		if ( $flashMessageKey ) 
+			XL::_sf( $flashMessageKey, $flashMessageValue, $flashMessageDefaultValue );
+		
+		$this->render( 
+			$actionId, 
+			array_merge( 
+				$extraParameters, 
+				array( 
+					$modelVariableName => ( $model ) ? $model : $this->loadCurrentModel() 
+				)
+			)
+		);
 	}
 
 	/**
-	* Returns the data model based on the primary key given in the GET variable.
-	* If the data model is not found, an HTTP exception will be raised.
-	*
-	* @param integer the primary key value. Defaults to null, meaning using the 'id' GET variable
-	* @throws CHttpException
-	*/
-	public function loadCurrentModel( $iId = null )
+	 * Returns the data model based on the primary key given in the GET variable.
+	 * If the data model is not found, an HTTP exception will be raised.
+	 *
+	 * @param integer the primary key value. Defaults to null, meaning using the 'id' GET variable
+	 * @throws CHttpException
+	 */
+	public function loadCurrentModel( $id = null )
 	{
 		if ( null === $this->_currentModel )
 		{
-			$_iId = PS::o( $_GET, 'id', $iId );
-			$this->_currentModel = $this->load( $_iId );
+			$_id = XL::o( $_GET, 'id', $id );
+			$this->_currentModel = $this->load( $_id );
 
 			//	No data? bug out
-			if ( null === $this->_currentModel ) $this->redirect( array( $this->defaultAction ) );
+			if ( null === $this->_currentModel )
+				$this->redirect( array( $this->defaultAction ) );
 
 			//	Get the name of this model...
 			$this->setModelClass( get_class( $this->_currentModel ) );
@@ -315,11 +268,11 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 	}
 
 	/**
-	* Provide automatic missing action mapping...
-	* Also handles a theme change request from any portlets
-	*
-	* @param string $actionId
-	*/
+	 * Provide automatic missing action mapping...
+	 * Also handles a theme change request from any portlets
+	 *
+	 * @param string $actionId
+	 */
 	public function missingAction( $actionId = null )
 	{
 		if ( $this->_autoFindAction )
@@ -337,40 +290,45 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 	}
 
 	/**
-	* Our error handler...
-	*
-	*/
+	 * Our error handler...
+	 *
+	 */
 	public function actionError()
 	{
-		if ( ! $_arError = Yii::app()->errorHandler->error )
+		if ( null === ( $_error = XL::_gco( 'errorHandler' )->error ) )
 		{
-			if ( $this->isAjaxRequest )
-				echo $_arError['message'];
-			else
+			if ( ! $this->isAjaxRequest() ) 
 				throw new CHttpException( 404, 'Page not found.' );
+			
+			echo $_error['message'];
 		}
 
-		$this->render( 'error', array( 'error' => $_arError ) );
+		$this->render( 
+			'error', 
+			array( 
+				'error' => $_error 
+			)
+		);
 	}
 
 	/**
-	* Convenience access to Yii request
-	*
-	*/
+	 * Convenience access to Yii request
+	 *
+	 */
 	public function getRequest()
 	{
-		return Yii::app()->getRequest();
+		return XL::_gr();
 	}
 
 	/**
 	 * See if there are any commands that need processing
-	 * @param CAction $oAction
+	 * @param CAction $action
 	 * @return boolean
 	 */
-	public function beforeAction( $oAction )
+	public function beforeAction( $action )
 	{
 		//	If we have commands, give it a shot...
-		if ( count( $this->_adminCommandMap ) && parent::beforeAction( $oAction ) )
+		if ( count( $this->_adminCommandMap ) && parent::beforeAction( $action ) ) 
 			$this->processCommand();
 
 		return true;
@@ -406,15 +364,13 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 		if ( $this->_pageLayout && false !== ( $_layoutFile = $this->getLayoutFile( $this->_pageLayout ) ) )
 		{
 			//	Process content layout if required
-			if ( $this->_contentTemplate && false !== ( $_contentTemplateFile = $this->getLayoutFile( $this->_contentTemplate ) ) )
-				$_output = $this->renderPartial( $_contentTemplateFile, $viewData, true );
+			if ( $this->_contentTemplate && false !== ( $_contentTemplateFile = $this->getLayoutFile( $this->_contentTemplate ) ) ) $_output = $this->renderPartial( $_contentTemplateFile, $viewData, true );
 
 			$_output = $this->renderFile( $_layoutFile, array( 'content' => $_output ), true );
 			$_output = $this->processOutput( $_output );
 		}
 
-		if ( $returnString )
-			return $_output;
+		if ( $returnString ) return $_output;
 
 		echo $_output;
 	}
@@ -449,8 +405,8 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 		{
 			throw new CException(
 				Yii::t(
-					'yii',
-					'{controller} cannot find the requested view "{view}".',
+					self::CLASS_LOG_TAG,
+					'{controller} cannot find the requested view "{view}".', 
 					array(
 						'{controller}' => get_class( $this ),
 						'{view}' => $view
@@ -459,23 +415,23 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 			);
 		}
 
-		if ( null === $data )
+		if ( null === $data ) 
 			$data = array();
 
 		$_output = $this->renderFile(
-			$_viewFile,
+			$_viewFile, 
 			array_merge(
-				$this->_extraViewDataList,
-				$this->_viewData,
+				$this->_extraViewDataList, 
+				$this->_viewData, 
 				$data
 			),
 			true
 		);
 
-		if ( $processOutput )
+		if ( $processOutput ) 
 			$_output = $this->processOutput( $_output );
 
-		if ( $return )
+		if ( $return ) 
 			return $_output;
 
 		echo $_output;
@@ -487,7 +443,7 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 	 * @param string|array If a string is passed in, it is used as the title.
 	 * @return array
 	 */
-	public function setStandardFormOptions( $model, $optionList = array() )
+	public function setStandardFormOptions( $model, $optionList = array( ) )
 	{
 		//	Shortcut... only passed in the title...
 		if ( is_string( $optionList ) )
@@ -495,107 +451,95 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 			$_title = $optionList;
 
 			$optionList = array(
-				'title' => PS::_gan() . ' :: ' . $_title,
+				'title' => XL::_gan() . ' :: ' . $_title,
 				'breadcrumbs' => array( $_title ),
 			);
 		}
 
 		//	Abbreviated arguments?
-		if ( is_array( $model ) && array() === $optionList )
+		if ( is_array( $model ) && array( ) === $optionList )
 		{
 			$optionList = $model;
-			$model = PS::o( $optionList, 'model' );
+			$model = XL::o( $optionList, 'model' );
 		}
 
 		//	Set the standard nav options
 		$this->setViewNavigationOptions( $optionList );
 
-		$_formId = PS::o( $optionList, 'id', 'ps-edit-form' );
+		$_formId = XL::o( $optionList, 'id', 'ps-edit-form' );
 
 		//	Put a cool flash span on the page
-		if ( PS::o( $options, 'enableFlash', true, true ) )
+		if ( XL::o( $options, 'enableFlash', true, true ) )
 		{
-			$_flashClass = PS::o( $options, 'flashSuccessClass', 'operation-result-success' );
+			$_flashClass = XL::o( $options, 'flashSuccessClass', 'operation-result-success' );
 
-			if ( null === ( $_message = PS::_gf( 'success' ) ) )
+			if ( null === ( $_message = XL::_gf( 'success' ) ) )
 			{
-				if ( null !== ( $_message = PS::_gf( 'failure' ) ) )
-					$_flashClass = PS::o( $options, 'flashFailureClass', 'operation-result-failure' );
+				if ( null !== ( $_message = XL::_gf( 'failure' ) ) ) $_flashClass = XL::o( $options, 'flashFailureClass', 'operation-result-failure' );
 			}
 
-			$_spanId = PS::o( $options, 'flashSpanId', 'operation-result', true );
-			PS::_ss( 'psForm-flash-html', PS::tag( 'span', array( 'id' => $_spanId, 'class' => $_flashClass ), $_message ) );
+			$_spanId = XL::o( $options, 'flashSpanId', 'operation-result', true );
+			XL::_ss( 'psForm-flash-html', XL::tag( 'span', array( 'id' => $_spanId, 'class' => $_flashClass ), $_message ) );
 
 			//	Register a nice little fader...
-			$_fader =<<<SCRIPT
+			$_fader = <<<SCRIPT
 $('#{$_spanId}').fadeIn('500',function(){
 	$(this).delay(3000).fadeOut(3500);
 });
 SCRIPT;
 
-			PS::_rs( $_formId . '.' . $_spanId . '.fader', $_fader, CClientScript::POS_READY );
+			XL::_rs( $_formId . '.' . $_spanId . '.fader', $_fader, CClientScript::POS_READY );
 		}
 
-		PS::setFormFieldContainerClass( PS::o( $optionList, 'rowClass', 'row' ) );
+		XL::setFormFieldContainerClass( XL::o( $optionList, 'rowClass', 'row' ) );
 
 		$_formOptions = array(
 			'id' => $_formId,
-			'showLegend' => PS::o( $optionList, 'showLegend', true ),
-			'showDates' => PS::o( $optionList, 'showDates', false ),
-			'method' => PS::o( $optionList, 'method', 'POST' ),
-
-			'uiStyle' => PS::o( $optionList, 'uiStyle', PS::UI_JQUERY ),
-			'formClass' => PS::o( $optionList, 'formClass', 'form' ),
+			'showLegend' => XL::o( $optionList, 'showLegend', true ),
+			'showDates' => XL::o( $optionList, 'showDates', false ),
+			'method' => XL::o( $optionList, 'method', 'POST' ),
+			'uiStyle' => XL::o( $optionList, 'uiStyle', XL::UI_JQUERY ),
+			'formClass' => XL::o( $optionList, 'formClass', 'form' ),
 			'formModel' => $model,
-			'errorCss' => PS::o( $optionList, 'errorCss', 'error' ),
-
+			'errorCss' => XL::o( $optionList, 'errorCss', 'error' ),
 			//	We want error summary...
-			'errorSummary' => PS::o( $optionList, 'errorSummary', true ),
+			'errorSummary' => XL::o( $optionList, 'errorSummary', true ),
 			'errorSummaryOptions' => array(
 				'header' => '<p>The following problems occurred:</p>',
 			),
-
-			'validate' => PS::o( $optionList, 'validate', true ),
-
-			'validateOptions' => PS::o( $optionList, 'validateOptions',
-				array(
-					'ignoreTitle' => true,
-					'errorClass' => 'ps-validate-error',
+			'validate' => XL::o( $optionList, 'validate', true ),
+			'validateOptions' => XL::o( $optionList, 'validateOptions', array(
+				'ignoreTitle' => true,
+				'errorClass' => 'ps-validate-error',
 				)
 			),
 		);
 
 		//	Do some auto-page-setup...
-		if ( null !== ( $_header = PS::o( $optionList, 'header', PS::o( $optionList, 'title' ) ) ) )
+		if ( null !== ( $_header = XL::o( $optionList, 'header', XL::o( $optionList, 'title' ) ) ) )
 		{
-			if ( null !== ( $_headerIcon = PS::o( $optionList, 'headerIcon' ) ) )
-				$_header = PS::tag( 'span', array(), PS::image( $_headerIcon ) ) . $_header;
+			if ( null !== ( $_headerIcon = XL::o( $optionList, 'headerIcon' ) ) ) $_header = XL::tag( 'span', array( ), XL::image( $_headerIcon ) ) . $_header;
 
-			echo PS::tag( 'h1', array( 'class' => 'ui-generated-header' ), $_header );
+			echo XL::tag( 'h1', array( 'class' => 'ui-generated-header' ), $_header );
 		}
 
 		//	Do some auto-page-setup...
-		if ( null !== ( $_subHeader = PS::o( $optionList, 'subHeader' ) ) )
-			echo PS::tag( 'div', array(), $_subHeader );
+		if ( null !== ( $_subHeader = XL::o( $optionList, 'subHeader' ) ) ) echo XL::tag( 'div', array( ), $_subHeader );
 
-		if ( false !== PS::o( $optionList, 'renderSearch', false ) )
+		if ( false !== XL::o( $optionList, 'renderSearch', false ) )
 		{
-			echo PS::tag( 'p', array(), self::SEARCH_HELP_TEXT );
-			echo PS::link( 'Advanced Search', '#', array( 'class' => 'search-button' ) );
+			echo XL::tag( 'p', array( ), self::SEARCH_HELP_TEXT );
+			echo XL::link( 'Advanced Search', '#', array( 'class' => 'search-button' ) );
 
-			echo PS::tag(
-				'div',
-				array( 'class' => 'search-form' ),
-				$this->renderPartial( '_search', array( 'model' => $model ), true )
+			echo XL::tag(
+				'div', array( 'class' => 'search-form' ), $this->renderPartial( '_search', array( 'model' => $model ), true )
 			);
 
 			//	Register the search script, if any
-			if ( null !== ( $_searchScript = PS::o( $optionList, '__searchScript' ) ) )
-				PS::_rs( 'search', $_searchScript );
+			if ( null !== ( $_searchScript = XL::o( $optionList, '__searchScript' ) ) ) XL::_rs( 'search', $_searchScript );
 		}
 
-		if ( PS::UI_JQUERY == ( $_uiStyle = PS::o( $optionList, 'uiStyle', PS::UI_JQUERY ) ) )
-			CPSjqUIWrapper::loadScripts();
+		if ( XL::UI_JQUERY == ( $_uiStyle = XL::o( $optionList, 'uiStyle', XL::UI_JQUERY ) ) ) CPSjqUIWrapper::loadScripts();
 
 		return $_formOptions;
 	}
@@ -615,41 +559,36 @@ SCRIPT;
 	 * Sets the standard page navigation options (title, crumbs, menu, etc.)
 	 * @param array $options
 	 */
-	public function setViewNavigationOptions( &$options = array() )
+	public function setViewNavigationOptions( &$options = array( ) )
 	{
 		//	Page title
-		$_title = PS::o( $options, 'title', null, true );
-		$_subtitle = PS::o( $options, 'subtitle', null, true );
-		$_header = PS::o( $options, 'header' );
+		$_title = XL::o( $options, 'title', null, true );
+		$_subtitle = XL::o( $options, 'subtitle', null, true );
+		$_header = XL::o( $options, 'header' );
 
 		//	Generate subtitle from header...
-		if ( null === $_title && null === $_subtitle && null !== $_header )
-			$_subtitle = $_header;
+		if ( null === $_title && null === $_subtitle && null !== $_header ) $_subtitle = $_header;
 
-		if ( $_subtitle )
-			$_title = PS::_gan() . ' :: ' . $_subtitle;
+		if ( $_subtitle ) $_title = XL::_gan() . ' :: ' . $_subtitle;
 
-		if ( ! $_title )
-			$_title =  PS::_gan();
+		if ( !$_title ) $_title = XL::_gan();
 
 		$this->setPageTitle( $options['title'] = $_title );
 
 		//	Set crumbs
-		$this->_breadcrumbs = PS::o( $options, 'breadcrumbs' );
+		$this->_breadcrumbs = XL::o( $options, 'breadcrumbs' );
 
 		//	Let side menu be set from here as well...
-		if ( null !== ( $_menuItems = PS::o( $options, 'menu', null ) ) )
+		if ( null !== ( $_menuItems = XL::o( $options, 'menu', null ) ) )
 		{
 			//	Rebuild menu items if not in standard format
-			$_finalMenu = array();
+			$_finalMenu = array( );
 
 			foreach ( $_menuItems as $_itemLabel => $_itemLink )
 			{
-				if ( null === ( $_label = PS::o( $_itemLink, 'label', null, true ) ) )
-					$_label = $_itemLabel;
+				if ( null === ( $_label = XL::o( $_itemLink, 'label', null, true ) ) ) $_label = $_itemLabel;
 
-				if ( null === ( $_link = PS::o( $_itemLink, 'link', null, true ) ) )
-					$_link = $_itemLink;
+				if ( null === ( $_link = XL::o( $_itemLink, 'link', null, true ) ) ) $_link = $_itemLink;
 
 				$_finalMenu[] = array(
 					'label' => $_label,
@@ -660,17 +599,17 @@ SCRIPT;
 			$options['menu'] = $this->_menu = $_finalMenu;
 		}
 
-		$_enableSearch = ( PS::o( $options, 'enableSearch', false ) || PS::o( $options, 'renderSearch', false ) );
+		$_enableSearch = ( XL::o( $options, 'enableSearch', false ) || XL::o( $options, 'renderSearch', false ) );
 
 		//	Drop the search script on the page if enabled...
 		if ( false !== $_enableSearch )
 		{
-			$_searchSelector = PS::o( $options, 'searchSelector', '.search-button' );
-			$_toggleSpeed = PS::o( $options, 'toggleSpeed', 'fast' );
-			$_searchForm = PS::o( $options, 'searchForm', '.search-form' );
-			$_targetFormId = PS::o( $options, 'id', 'ps-edit-form' );
+			$_searchSelector = XL::o( $options, 'searchSelector', '.search-button' );
+			$_toggleSpeed = XL::o( $options, 'toggleSpeed', 'fast' );
+			$_searchForm = XL::o( $options, 'searchForm', '.search-form' );
+			$_targetFormId = XL::o( $options, 'id', 'ps-edit-form' );
 
-			$_searchScript =<<<JS
+			$_searchScript = <<<JS
 $(function(){
 	$('{$_searchSelector}').click(function(){
 		$('{$_searchForm}').slideToggle('{$_toggleSpeed}');
@@ -692,34 +631,228 @@ JS;
 		return $options;
 	}
 
+	/**
+	 * Convenience access to isPostRequest
+	 * @return boolean
+	 */
+	public function getIsPostRequest()
+	{
+		return XL::isPostRequest();
+	}
+
+	/**
+	 * Convenience access to isAjaxRequest
+	 * @return boolean
+	 */
+	public function getIsAjaxRequest()
+	{
+		return XL::isAjaxRequest();
+	}
+
+	/**
+	 * Returns the base url of the current app
+	 * @return string
+	 */
+	public function getAppBaseUrl()
+	{
+		return XL::_gbu();
+	}
+
+	//********************************************************************************
+	//* Property Accessors
+	//********************************************************************************
+
+	public function getMenu()
+	{
+		return $this->_menu;
+	}
+
+	public function setMenu( $value )
+	{
+		$this->_menu = $value;
+		return $this;
+	}
+
+	public function getBreadcrumbs()
+	{
+		return $this->_breadcrumbs;
+	}
+
+	public function setBreadcrumbs( $value )
+	{
+		$this->_breadcrumbs = $value;
+		return $this;
+	}
+
+	public function getPageHeading()
+	{
+		return $this->m_sPageHeading;
+	}
+
+	public function setPageHeading( $value )
+	{
+		$this->m_sPageHeading = $value;
+		return $this;
+	}
+
+	public function getActionMethodPrefix()
+	{
+		return $this->_actionMethodPrefix;
+	}
+
+	public function setActionMethodPrefix( $value )
+	{
+		$this->_actionMethodPrefix = $value;
+		return $this;
+	}
+
+	public function getCurrentModel()
+	{
+		return $this->_currentModel;
+	}
+
+	protected function setCurrentModel( $value )
+	{
+		$this->_currentModel = $value;
+		return $this;
+	}
+
+	public function getModelClass()
+	{
+		return $this->_modelClass;
+	}
+
+	protected function setModelClass( $value )
+	{
+		$this->_modelClass = $value;
+		return $this;
+	}
+
+	public function getContentTemplate()
+	{
+		return $this->_contentTemplate;
+	}
+
+	public function setContentTemplate( $value )
+	{
+		$this->_contentTemplate = $value;
+		return $this;
+	}
+
+	public function getAutoFindLayout()
+	{
+		return $this->_autoFindLayout;
+	}
+
+	public function setAutoFindLayout( $value )
+	{
+		$this->_autoFindLayout = $value;
+		return $this;
+	}
+
+	public function getAutoFindAction()
+	{
+		return $this->_autoFindAction;
+	}
+
+	public function setAutoFindAction( $value )
+	{
+		$this->_autoFindAction = $value;
+	}
+
+	public function getAdminCommandMap()
+	{
+		return $this->_adminCommandMap;
+	}
+
+	public function setAdminCommandMap( $value )
+	{
+		$this->_adminCommandMap = $value;
+		return $this;
+	}
+
+	public function addCommandToMap( $key, $value = null, $property = null )
+	{
+		$this->_adminCommandMap[$key] = $value;
+		if ( $property ) $this->addActionControls( $property, array( $key ) ); return $this;
+	}
+
+	public function getPortletActions()
+	{
+		return $this->_portletActions;
+	}
+
+	public function setPortletActions( $value )
+	{
+		$this->_portletActions = $value;
+		return $this;
+	}
+
+	public function addPortletAction( $sName, $arCallback )
+	{
+		$this->_portletActions[$sName] = $arCallback;
+		return $this;
+	}
+
+	protected function getViewData()
+	{
+		return $this->_viewData;
+	}
+
+	protected function setViewData( $value )
+	{
+		$this->_viewData = $value;
+		return $this;
+	}
+
+	protected function getExtraViewDataList()
+	{
+		return $this->_extraViewDataList;
+	}
+
+	protected function setExtraViewDataList( $value )
+	{
+		$this->_extraViewDataList = $value;
+		return $this;
+	}
+
+	protected function getExtraViewDataPrefix()
+	{
+		return $this->_extraViewDataPrefix;
+	}
+
+	protected function setExtraViewDataPrefix( $value )
+	{
+		$this->_extraViewDataPrefix = $value;
+		return $this;
+	}
+
 	//********************************************************************************
 	//* Private Methods
 	//********************************************************************************
 
 	/**
-	* Executes any commands
-	* Maps to {@link CXLController::commandMap} and calls the appropriate method.
-	*
-	* @return mixed
-	*/
-	protected function processCommand( $arData = array(), $sIndexName = self::COMMAND_FIELD_NAME )
+	 * Executes any commands
+	 * Maps to {@link CXLController::commandMap} and calls the appropriate method.
+	 *
+	 * @return mixed
+	 */
+	protected function processCommand( $arData = array( ), $sIndexName = self::COMMAND_FIELD_NAME )
 	{
 		//	Our return variable
 		$_oResults = null;
 
 		//	Get command's method...
-		$_sCmd = PS::o( $_REQUEST, $sIndexName );
+		$_sCmd = XL::o( $_REQUEST, $sIndexName );
 
 		//	Do we have a command mapping?
-		if ( null !== ( $_arCmd = PS::o( $this->_adminCommandMap, $_sCmd ) ) )
+		if ( null !== ( $_arCmd = XL::o( $this->_adminCommandMap, $_sCmd ) ) )
 		{
 			//	Get any miscellaneous data into the appropriate array
 			if ( count( $arData ) )
 			{
-				if ( $this->getIsPostRequest() )
-					$_POST = array_merge( $_POST, $arData );
-				else
-					$_GET = array_merge( $_GET, $arData );
+				if ( $this->getIsPostRequest() ) $_POST = array_merge( $_POST, $arData );
+				else $_GET = array_merge( $_GET, $arData );
 			}
 
 			$_oResults = call_user_func( $_arCmd[1] );
@@ -730,34 +863,34 @@ JS;
 	}
 
 	/**
-	* Saves the data in the model
-	*
-	* @param CModel $oModel The model to save
-	* @param array $arData The array of data to merge with the model
-	* @param string $sRedirectAction Where to redirect after a successful save
-	* @param boolean $bAttributesSet If true, attributes will not be set from $arData
-	* @param string $sModelName Optional model name
-	* @param string $sSuccessMessage Flash message to set if successful
-	* @param boolean $bNoCommit If true, transaction will not be committed
-	* @return boolean
-	*/
-	protected function saveCurrentModel( &$oModel, $arData = array(), $sRedirectAction = 'show', $bAttributesSet = false, $sModelName = null, $sSuccessMessage = null, $bNoCommit = false, $bSafeOnly = false )
+	 * Saves the data in the model
+	 *
+	 * @param CModel $model The model to save
+	 * @param array $arData The array of data to merge with the model
+	 * @param string $sRedirectAction Where to redirect after a successful save
+	 * @param boolean $bAttributesSet If true, attributes will not be set from $arData
+	 * @param string $sModelName Optional model name
+	 * @param string $sSuccessMessage Flash message to set if successful
+	 * @param boolean $bNoCommit If true, transaction will not be committed
+	 * @return boolean
+	 */
+	protected function saveCurrentModel( &$model, $arData = array( ), $sRedirectAction = 'show', $bAttributesSet = false, $sModelName = null, $sSuccessMessage = null, $bNoCommit = false,
+									  $bSafeOnly = false )
 	{
-		$_sMessage = PS::nvl( $sSuccessMessage, 'Your changes have been saved.' );
-		$_sModelName = PS::nvl( $sModelName, PS::nvl( $oModel->getModelClass(), $this->_modelClass ) );
+		$_sMessage = XL::nvl( $sSuccessMessage, 'Your changes have been saved.' );
+		$_sModelName = XL::nvl( $sModelName, XL::nvl( $model->getModelClass(), $this->_modelClass ) );
 
-		if ( isset( $arData, $arData[ $_sModelName ] ) )
+		if ( isset( $arData, $arData[$_sModelName] ) )
 		{
-			if ( ! $bAttributesSet ) $oModel->setAttributes( $arData[ $_sModelName ], $bSafeOnly );
+			if ( !$bAttributesSet ) $model->setAttributes( $arData[$_sModelName], $bSafeOnly );
 
-			if ( $oModel->save() )
+			if ( $model->save() )
 			{
-				if ( ! $bNoCommit && $oModel instanceof CPSModel && $oModel->hasTransaction() ) $oModel->commitTransaction();
+				if ( !$bNoCommit && $model instanceof CPSModel && $model->hasTransaction() ) $model->commitTransaction();
 
 				Yii::app()->user->setFlash( 'success', $_sMessage );
 
-				if ( $sRedirectAction )
-					$this->redirect( array( $sRedirectAction, 'id' => $oModel->id ) );
+				if ( $sRedirectAction ) $this->redirect( array( $sRedirectAction, 'id' => $model->id ) );
 
 				return true;
 			}
@@ -766,35 +899,36 @@ JS;
 		return false;
 	}
 
-	/***
-	* Just like saveModel, but doesn't commit, and never redirects.
-	*
-	* @param CPSModel $oModel
-	* @param array $arData
-	* @param boolean $bAttributesSet
-	* @param string $sSuccessMessage
-	* @return boolean
-	* @see saveModel
-	*/
-	protected function saveTransactionCurrentModel( &$oModel, $arData = array(), $bAttributesSet = false, $sSuccessMessage = null )
+	/*	 * *
+	 * Just like saveModel, but doesn't commit, and never redirects.
+	 *
+	 * @param CPSModel $model
+	 * @param array $arData
+	 * @param boolean $bAttributesSet
+	 * @param string $sSuccessMessage
+	 * @return boolean
+	 * @see saveModel
+	 */
+
+	protected function saveTransactionCurrentModel( &$model, $arData = array( ), $bAttributesSet = false, $sSuccessMessage = null )
 	{
-		return $this->saveCurrentModel( $oModel, $arData, false, $bAttributesSet, null, $sSuccessMessage, true );
+		return $this->saveCurrentModel( $model, $arData, false, $bAttributesSet, null, $sSuccessMessage, true );
 	}
 
 	/**
-	* Loads a page of models
-	* @param boolean Whether or not to apply a sort. Defaults to false
-	*
-	* @return array Element 0 is the results of the find. Element 1 is the pagination object
-	*/
+	 * Loads a page of models
+	 * @param boolean Whether or not to apply a sort. Defaults to false
+	 *
+	 * @return array Element 0 is the results of the find. Element 1 is the pagination object
+	 */
 	protected function loadPaged( $bSort = false, $oCriteria = null )
 	{
 		$_oSort = $_oCrit = $_oPage = null;
 
 		//	Make criteria
-		$_oCrit = PS::nvl( $oCriteria, new CDbCriteria() );
+		$_oCrit = XL::nvl( $oCriteria, new CDbCriteria() );
 		$_oPage = new CPagination( $this->loadCount( $_oCrit ) );
-		$_oPage->pageSize = PS::o( $_REQUEST, 'perPage', self::PAGE_SIZE );
+		$_oPage->pageSize = XL::o( $_REQUEST, 'perPage', self::PAGE_SIZE );
 		if ( isset( $_REQUEST, $_REQUEST['page'] ) ) $_oPage->setCurrentPage( intval( $_REQUEST['page'] ) - 1 );
 		$_oPage->applyLimit( $_oCrit );
 
@@ -810,101 +944,101 @@ JS;
 	}
 
 	/**
-	* Loads a model(s) based on criteria and scopes.
-	*
-	* @param string The method to append
-	* @param CDbCriteria The criteria for the lookup
-	* @param array Scopes to apply to this request
-	* @param array Options for the data load
-	* @return CActiveRecord|array
-	*/
-	protected function genericModelLoad( $sMethod, &$oCrit = null, $arScope = array(), $arOptions = array() )
+	 * Loads a model(s) based on criteria and scopes.
+	 *
+	 * @param string The method to append
+	 * @param CDbCriteria The criteria for the lookup
+	 * @param array Scopes to apply to this request
+	 * @param array Options for the data load
+	 * @return CActiveRecord|array
+	 */
+	protected function genericModelLoad( $sMethod, &$oCrit = null, $arScope = array( ), $arOptions = array( ) )
 	{
 		$_sMethod = $this->getModelLoadString( $arScope, $arOptions ) . $sMethod;
 		return eval( "return (" . $_sMethod . ");" );
 	}
 
 	/**
-	* This method reads the data from the database and returns the row.
-	* Must override in subclasses.
-	* @var integer $iId The primary key to look up
-	* @return CActiveRecord
-	*/
-	protected function load( $iId = null )
+	 * This method reads the data from the database and returns the row.
+	 * Must override in subclasses.
+	 * @var integer $id The primary key to look up
+	 * @return CActiveRecord
+	 */
+	protected function load( $id = null )
 	{
-		return $this->genericModelLoad( 'findByPk(' . $iId . ')' );
+		return $this->genericModelLoad( 'findByPk(' . $id . ')' );
 	}
 
 	/**
-	* Loads all data using supplied criteria
-	* @param CDbCriteria $oCrit
-	* @return array Array of CActiveRecord
-	* @todo When using PHP v5.3, {@link eval} will no longer be needed
-	*/
+	 * Loads all data using supplied criteria
+	 * @param CDbCriteria $oCrit
+	 * @return array Array of CActiveRecord
+	 * @todo When using PHP v5.3, {@link eval} will no longer be needed
+	 */
 	protected function loadAll( &$oCrit = null )
 	{
 		return $this->genericModelLoad( 'findAll(' . ( null !== $oCrit ? '$oCrit' : '' ) . ')', $oCrit );
 	}
 
 	/**
-	* Returns the count of rows that match the supplied criteria
-	*
-	* @param CDbCriteria $oCrit
-	* @return integer The number of rows
-	*/
+	 * Returns the count of rows that match the supplied criteria
+	 *
+	 * @param CDbCriteria $oCrit
+	 * @return integer The number of rows
+	 */
 	protected function loadCount( &$oCrit = null )
 	{
 		$_sCrit = ( $oCrit ) ? '$oCrit' : null;
-		return $this->genericModelLoad( 'count(' . $_sCrit. ')', $oCrit );
+		return $this->genericModelLoad( 'count(' . $_sCrit . ')', $oCrit );
 	}
 
 	/**
-	* Builds a string suitable for {@link eval}. The verb is intentionally not appeneded.
-	*
-	* @param array $arScope
-	* @return string
-	* @todo Will be deprecated after upgrade to PHP v5.3
-	*/
-	protected function getModelLoadString( $arScope = array(), $arOptions = array() )
+	 * Builds a string suitable for {@link eval}. The verb is intentionally not appeneded.
+	 *
+	 * @param array $arScope
+	 * @return string
+	 * @todo Will be deprecated after upgrade to PHP v5.3
+	 */
+	protected function getModelLoadString( $arScope = array( ), $arOptions = array( ) )
 	{
 		$_sScopes = ( count( $arScope ) ) ? implode( '->', $arScope ) . '->' : null;
 		return $this->_modelClass . '::model()->' . $_sScopes;
 	}
 
 	/**
-	* Pushes an action onto the action queue
-	*
-	* @param CAction $oAction
-	*/
-	protected function pushAction( $oAction )
+	 * Pushes an action onto the action queue
+	 *
+	 * @param CAction $action
+	 */
+	protected function pushAction( $action )
 	{
-		array_push( $this->_actionStack, $oAction );
+		array_push( $this->_actionStack, $action );
 	}
 
 	/**
-	* Retrieves the latest pushed action
-	* @return CAction
-	*/
+	 * Retrieves the latest pushed action
+	 * @return CAction
+	 */
 	protected function popAction()
 	{
 		return array_pop( $this->_actionStack );
 	}
 
 	/**
-	* Pushes a variable onto the view data stack
-	*
-	* @param string $variableName
-	* @param mixed $variableData
-	*/
+	 * Pushes a variable onto the view data stack
+	 *
+	 * @param string $variableName
+	 * @param mixed $variableData
+	 */
 	protected function addViewData( $variableName, $variableData = null )
 	{
 		$this->_viewData[$variableName] = $variableData;
 	}
 
 	/**
-	* Clears the current search criteria
-	* @return null
-	*/
+	 * Clears the current search criteria
+	 * @return null
+	 */
 	protected function clearSearchCriteria()
 	{
 		$this->m_arCurrentSearchCriteria = null;
@@ -923,8 +1057,7 @@ JS;
 	{
 		$this->layout = false;
 
-		if ( false === $payload || true === $payload )
-			$payload = ( $payload ? '1' : '0' );
+		if ( false === $payload || true === $payload ) $payload = ( $payload ? '1' : '0' );
 
 		$_result = json_encode( $payload );
 		if ( $encode ) $_result = htmlspecialchars( $_result, $encodeOptions );

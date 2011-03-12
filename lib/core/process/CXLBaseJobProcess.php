@@ -22,11 +22,11 @@
  * When overriding this class, you should only need to create the process() method with your work details.
  *
  * @package		yiixl
- * @subpackage 	base
+ * @subpackage 	core.process
  *
  * @author			Jerry Ablan <jablan@pogostick.com>
  * @version		SVN $Id: CXLBaseJobProcess.php 390 2010-07-03 04:40:47Z jerryablan@gmail.com $
- * @since			v1.0.6
+ * @since			v1.1.0
  *
  * @abstract
  *
@@ -45,7 +45,7 @@ abstract class CXLBaseJobProcess extends IXLComponent
 	/**
 	 * Our logging tag
 	 */
-	const	CLASS_LOG_TAG = 'yiixl.core.process.CXLBaseJobProcessing';
+	const	CLASS_LOG_TAG = 'yiixl.core.process.CXLBaseJobProcess';
 
 	//********************************************************************************
 	//* Member Variables
@@ -55,45 +55,44 @@ abstract class CXLBaseJobProcess extends IXLComponent
 	* Start time
 	* @var float
 	*/
-	protected $m_fStart = null;
+	protected $_jobEndTime = null;
 
 	/**
 	* End time
 	* @var float
 	*/
-
-	protected $m_fEnd = null;
+	protected $_jobEndTime = null;
 
 	/**
 	* The result code of the ran job
 	* @var integer
 	*/
-	protected $m_iResultCode = null;
-	public function getResultCode() { return $this->m_iResultCode; }
-	public function setResultCode( $iValue ) { $this->m_iResultCode = $iValue; }
+	protected $_jobResultCode = null;
+	public function getResultCode() { return $this->_jobResultCode; }
+	public function setResultCode( $iValue ) { $this->_jobResultCode = $iValue; }
 
 	/**
 	* The result status of job
 	* @var string
 	*/
-	protected $m_sStatus = null;
-	public function getStatus() { return $this->m_sStatus; }
-	public function setStatus( $sValue ) { $this->m_sStatus = $sValue; }
+	protected $_jobStatus = null;
+	public function getStatus() { return $this->_jobStatus; }
+	public function setStatus( $sValue ) { $this->_jobStatus = $sValue; }
 
 	/**
 	* The data for this job
 	* @var mixed
 	*/
-	protected $m_oJobData = null;
-	public function getJobData() { return $this->m_oJobData; }
-	public function setJobData( $oValue ) { $this->m_oJobData = $oValue; }
+	protected $_jobData = null;
+	public function getJobData() { return $this->_jobData; }
+	public function setJobData( $oValue ) { $this->_jobData = $oValue; }
 
 	/**
 	 * The results of this job
 	 * @var mixed
 	 */
-	protected $m_oResult = null;
-	public function getResult() { return $this->m_oResult; }
+	protected $_jobResult = null;
+	public function getResult() { return $this->_jobResult; }
 
 	//********************************************************************************
 	//* Public Methods
@@ -102,17 +101,17 @@ abstract class CXLBaseJobProcess extends IXLComponent
 	/**
 	* Constructor
 	*
-	* @param mixed $oJob Either a row from a job queue or data to process
+	* @param mixed $jobData Either a row from a job queue or data to process
 	* @param boolean $autoRun If true, initializes and runs the job
 	* @return CXLBaseJobProcess
 	*/
-	public function __construct( $oJob = null, $autoRun = false )
+	public function __construct( $jobData = null, $autoRun = false )
 	{
 		//	Phone home...
 		parent::__construct();
 
 		//	Store our data...
-		$this->m_oJobData = $oJob;
+		$this->_jobData = $jobData;
 
 		//	Run?
 		if ( $autoRun )
@@ -128,21 +127,18 @@ abstract class CXLBaseJobProcess extends IXLComponent
 	*/
 	public function run()
 	{
-		$this->startTimer();
-		$_bResult = $this->process();
-		$this->stopTimer();
-
-		return $_bResult;
+		return $this->_runTimedProcess();
 	}
 
 	/**
 	* Returns the amount of time since the timer was started
 	* @return float
 	*/
-	public function getProcessingTime( $bRaw = false )
+	public function getProcessingTime( $rawOutput = false )
 	{
-		$_fSpan = YiiXL::nvl( $this->m_fEnd, YiiXL::currentTimeMillis() ) - $this->m_fStart;
-		return $bRaw ? $_fSpan : number_format( $_fSpan, 2 ) . 's';
+		$_timeSpan = XL::nvl( $this->_jobEndTime, XL::currentTimeMillis() ) - $this->_jobEndTime;
+		
+		return $rawOutput ? $_timeSpan : number_format( $_timeSpan, 2 ) . 's';
 	}
 
 	/**
@@ -151,7 +147,7 @@ abstract class CXLBaseJobProcess extends IXLComponent
 	*/
 	public function stopTimer()
 	{
-		$this->m_fEnd = YiiXL::currentTimeMillis();
+		$this->_jobEndTime = XL::currentTimeMillis();
 	}
 
 	/**
@@ -160,8 +156,8 @@ abstract class CXLBaseJobProcess extends IXLComponent
 	*/
 	public function startTimer()
 	{
-		$this->m_fStart = YiiXL::currentTimeMillis();
-		$this->m_fEnd = null;
+		$this->_jobEndTime = XL::currentTimeMillis();
+		$this->_jobEndTime = null;
 	}
 
 	//********************************************************************************
@@ -174,17 +170,25 @@ abstract class CXLBaseJobProcess extends IXLComponent
 	abstract protected function process();
 
 	/**
-	* Logs a message to the application log
-	*
-	* @param string $sMessage
-	* @param string $sLevel
-	* @param string $sCategory
-	* @param boolean $bNoStatus If true, will NOT set status of job with error message
-	*/
-	protected function log( $sMessage, $sLevel = 'trace', $sCategory = null, $bNoStatus = false )
+	 * Runs the process but stops the timer on the case of an exception
+	 * @return mixed
+	 */
+	protected function _runTimedProcess()
 	{
-		//	Auto set status
-		if ( ! $bNoStatus && $sLevel == 'error' ) $this->setStatus( $sMessage );
-		Yii::log( $sMessage, $sLevel, YiiXL::nvl( $sCategory, __CLASS__ ) );
+		$this->startTimer();
+		try
+		{
+			$_result = $this->process();
+		}
+		catch ( Exception $_ex )
+		{
+			$this->stopTimer();
+			throw $_ex;
+		}
+		
+		$this->stopTimer();
+
+		return $_result;
 	}
+		
 }

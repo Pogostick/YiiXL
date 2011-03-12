@@ -1,7 +1,6 @@
 <?php
-
-//	Import the pYe
-Yii::setPathOfAlias( 'pogostick', '/usr/local/yiixl/extensions/pogostick' );
+//	bootstrap yiixl
+Yii::setPathOfAlias( 'yiixl', '/usr/local/yiixl/lib' );
 
 //	Our configuration array
 return array(
@@ -16,15 +15,7 @@ return array(
 	'import' => array(
 		'application.models.*',
 		'application.components.*',
-		'pogostick.base.*',
-		'pogostick.behaviors.*',
-		'pogostick.components.*',
-		'pogostick.controllers.*',
-		'pogostick.models.*',
-		'pogostick.helpers.*',
-		'pogostick.widgets.*',
-		'pogostick.widgets.pagers.*',
-		'pogostick.widgets.jqui.*',
+		'yiixl.core.componets.config.*',
 	),
 
 	//	application components

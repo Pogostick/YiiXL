@@ -11,6 +11,9 @@
  * @filesource
  */
 
+//	Throw in a convenience alias
+Yii::setPathOfAlias( 'yiixl', '/usr/local/yiixl/lib' );
+
 //	Required interfaces & components
 require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'YiiXLBase.php';
 

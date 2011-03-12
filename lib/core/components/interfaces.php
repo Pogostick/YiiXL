@@ -191,7 +191,7 @@ interface IXLController
 	 * The name of our command form field
 	 */
 	const
-		COMMAND_FIELD_NAME = '__xlCommand';
+		COMMAND_FIELD_NAME = '__yxl';
 
 	/**
 	 * Standard search text for rendering
@@ -201,6 +201,9 @@ interface IXLController
 
 }
 
+/**
+ * This interface defines an object as an access control object
+ */
 interface IXLAccessControl
 {
 	/**

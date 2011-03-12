@@ -1,41 +1,8 @@
 <?php
-/**
- * bootstrap.php
- *
- * Copyright (c) 2011 Jerry Ablan <jablan@pogostick.com>.
- * \@link http://www.pogostick.com Pogostick, LLC.
- * \@license http://www.pogostick.com/licensing
- *
- * This file is part of yiixl.
- *
- * You may use our open source libraries under the terms of either the MIT
- * License or the Gnu General Public License (GPL) Version 2.
- *
- * The MIT License is recommended for most projects. It is simple and easy to
- * understand, and it places almost no restrictions on what you can do with
- * our code.
- *
- * If the GPL suits your project better, you are also free to use our code
- * under that license.
- *
- * You don’t have to do anything special to choose one license or the other,
- * and you don’t have to notify anyone which license you are using.
- * @package 	yiixl
- * @subpackage tests
- *
- * @author 		Jerry Ablan <jablan@pogostick.com>
- * @version 	SVN $Id$
- * @since 		v1.0.0
- *
- * @filesource
-*/
-/**
- * bootstrap for unit tests
- */
-require_once '/usr/local/yii/framework/yii.php';
+$_yii = '/usr/local/yii/framework/yiit.php';
+$_config = 'config/testConfig.php';
 
-//	Load our alias
-Yii::setPathOfAlias( 'yiixl', dirname( __FILE__ ) . '/../lib' );
+require_once( $_yii );
+require_once( dirname( __FILE__ ) . '/WebTestCase.php' );
 
-//	And bootstrap YiiXL
-Yii::import( 'yiixl.core.YiiXL', true );
+Yii::createWebApplication( $_config );

@@ -107,7 +107,7 @@ class CXLConfig extends CXLComponent implements Countable, Iterator
 	 */
 	public function getOption( $key, $defaultValue = null )
 	{
-		return XL::o( $key, $defaultValue );
+		return XL::o( $this->_options, $key, $defaultValue );
 	}
 
 	/**

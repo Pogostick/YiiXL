@@ -1,4 +1,6 @@
 <?php
+//	bootstrap yiixl
+require_once '/usr/local/yiixl/lib/core/YiiXL.php';
 
 class TestController extends CController
 {

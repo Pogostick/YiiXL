@@ -12,7 +12,7 @@
  * 
  * @author 		Jerry Ablan <jablan@pogostick.com>
  * @version 	SVN $Id$
- * @since 		v1.0.6
+ * @since 		v1.1.0
  * 
  * @filesource
  */
@@ -21,7 +21,7 @@
 return array(
 
 	//	This is displayed in the header section
-	'title' => 'Pogostick Yii Extension Tester',
+	'title' => 'YiiXL Tester',
 	
 	//	This is used in the error pages
 	'adminEmail' => 'yii@pogostick.com',
@@ -36,5 +36,5 @@ return array(
 	'@copyright' => 'Copyright &copy; ' . date('Y') . ' Pogostick, LLC.',
 	'@author' => 'Pogostick Yii <yii@pogostick.com>',
 	'@link' => 'http://www.pogostick.com/yii',
-	'@package' => 'tests',
+	'@package' => 'yiixl.tests',
 );

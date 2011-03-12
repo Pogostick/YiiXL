@@ -148,12 +148,7 @@ class CXLLogHelper implements IXLHelper, IXLLogger
 	 * </tr>
 	 * </table>
 	 * </p>
-	 * @param string $message <p>
-	 * The message to log, except that the two characters
-	 * %m will be replaced by the error message string
-	 * (strerror) corresponding to the present value of
-	 * errno.
-	 * </p>
+	 * @param string $category
 	 * @return bool Returns true on success or false on failure.
 	 */
 	protected function _log( $message, $level = LOG_INFO, $category = null )

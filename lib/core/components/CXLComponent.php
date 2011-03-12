@@ -15,9 +15,6 @@
  * @filesource
  */
 
-//	Requirements
-require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'interfaces.php';
-
 /**
  * CXLComponent class
  * This is the base class for all YiiXL library objects. It extends the base

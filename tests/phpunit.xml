@@ -1,12 +1,32 @@
 <phpunit bootstrap="bootstrap.php"
-                colors="true"
-                convertErrorsToExceptions="true"
-                convertNoticesToExceptions="true"
-                convertWarningsToExceptions="true"
-                stopOnFailure="false">
+        colors="false"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        stopOnFailure="false">
+
+    <selenium>
+        <browser name="Internet Explorer" browser="*iexplore" />
+        <browser name="Firefox" browser="*firefox" />
+    </selenium>
+
 	<testsuites>
 		<testsuite name="YiiXL">
+			<!-- yiixl.core.behaviors -->
+			<file>lib/core/components/CXLActionControlBehaviorTest.php</file>
+			<file>lib/core/components/CXLActiveRecordBehaviorTest.php</file>
+			<file>lib/core/components/CXLDataTransformBehaviorTest.php</file>
+			<file>lib/core/components/CXLOAuthBehaviorTest.php</file>
+			<file>lib/core/components/CXLSoftDeleteBehaviorTest.php</file>
+			<file>lib/core/components/CXLTimestampBehaviorTest.php</file>
+			
+			<!-- yiixl.core.components -->
 			<file>lib/core/components/CXLComponentTest.php</file>
+			
+			<!-- yiixl.core.components.config -->
+			<file>lib/core/components/CXLConfigTest.php</file>
+			
+			<!-- yiixl.core.ui -->
 			<file>lib/core/ui/CXLWidgetTest.php</file>
 		</testsuite>
 	</testsuites>

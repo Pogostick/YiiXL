@@ -123,7 +123,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	public static function init( $options = array() )
 	{
 		//	Intialize my variables...
-		self::$_thisApp = self::app();
+		self::$_thisApp = Yii::app();
 
 		//	Individually, each of these may or may not be available...
 		try
