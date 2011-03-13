@@ -17,9 +17,6 @@
 
 /**
  * Provides abstracted options setting functionality
- * 
- * Totally swiped from ZF 2.0 roadmap discussion
- * {@link http://framework.zend.com/wiki/display/ZFDEV2/Zend+Framework+2.0+Roadmap}
  */
 class CXLOptions extends CXLBaseHelper implements IXLShifter, IXLUtilityHelper
 {

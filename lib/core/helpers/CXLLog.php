@@ -17,7 +17,7 @@ php<?php
  * See {@link http://php.net/manual/en/function.syslog.php}
  * for more information.
  */
-class CXLLogHelper extends CXLBaseHelper implements IXLLogger
+class CXLLog extends CXLBaseHelper implements IXLLogger
 {
 	//********************************************************************************
 	//* Private Members
@@ -26,7 +26,7 @@ class CXLLogHelper extends CXLBaseHelper implements IXLLogger
 	/**
 	 * Our logging tag
 	 */
-	const CLASS_LOG_TAG = 'yiixl.core.helpers.CXLLogHelper';
+	const CLASS_LOG_TAG = 'yiixl.core.helpers.CXLLog';
 
 	//********************************************************************************
 	//* Private Members
