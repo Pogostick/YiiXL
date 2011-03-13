@@ -54,10 +54,17 @@ interface IXLComponent
 	public function setDebugLevel( $value = false );
 
 	/**
-	 * Gets a reference to the configuration options
+	 * Gets the configuration options
 	 * @return array
 	 */
-	public function &getOptions();
+	public function getOptions();
+
+	/**
+	 * Loads the configuration options
+	 * @param array $options
+	 * @return CXLComponent
+	 */
+	public function loadOptions( $options = array() );
 
 	/**
 	 * Gets behavior methods. Needed to implement lightweight helper classes
@@ -111,7 +118,8 @@ interface IXLHelper
 	//* Public Methods
 	//********************************************************************************
 
-	public static function init();
+	public static function initialize();
+
 }
 
 /**
@@ -236,5 +244,12 @@ interface IXLAccessControl
  * class provides methods to do this.
  */
 interface IXLShifter extends IXLHelper
+{
+}
+
+/**
+ * This identifies a helper class as a utility provider
+ */
+interface IXLUtilityHelper extends IXLAccessControl
 {
 }

@@ -18,7 +18,7 @@
 /**
  * Hash code/password helpers
  */
-class CXLHash implements IXLHelper
+class CXLHash extends CXLBaseHelper implements IXLUtilityHelper
 {
 	//********************************************************************************
 	//* Constants
@@ -78,13 +78,6 @@ class CXLHash implements IXLHelper
 	//********************************************************************************
 	//* Public Methods
 	//********************************************************************************
-
-	/**
-	 * Our init function, nothing to do here...
-	 */
-	public static function init()
-	{
-	}
 
 	/**
 	 * Generates a unique hash code

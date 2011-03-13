@@ -53,21 +53,10 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	protected $_options;
 
 	/**
-	 * @var array $_behaviors Attached behaviors. We have to copy here because Yii is private instead of protected
-	 */
-	protected $_behaviorCache;
-
-	/**
 	 * @var array $_behaviorMethods Imported attached behavior methods
 	 */
 	protected $_behaviorMethods;
 	
-	/**
-	 * A copy of myself for the static
-	 * @staticvar CXLComponent
-	 */
-	protected static $_objectCopy = null;
-
 	//********************************************************************************
 	//* Property Accessors
 	//********************************************************************************
@@ -91,10 +80,10 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	}
 
 	/**
-	 * Gets a reference to the configuration options
+	 * Gets the configuration options
 	 * @return array
 	 */
-	public function &getOptions()
+	public function getOptions()
 	{
 		return $this->_options;
 	}
@@ -107,12 +96,18 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	{
 		return $this->_behaviorMethods;
 	}
-	
-	public function getObjectCopy()
-	{
-		return self::$_objectCopy;
-	}
 
+	/**
+	 * Loads the configuration options
+	 * @param array
+	 * @return CXLComponent
+	 */
+	public function loadOptions( $options = array() )
+	{
+		$this->_options = $options;
+		return $this;
+	}
+	
 	//********************************************************************************
 	//* Public Methods
 	//********************************************************************************
@@ -125,20 +120,20 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	public function __construct( $options = array() )
 	{
 		//	Initialize...
-		$this->_options = $this->_behaviorCache = $this->_behaviorMethods = array();
-		self::$_objectCopy = $this;
+		$this->_options = $this->_behaviorMethods = array();
 		
 		//	Set any properties via standard config array
-		self::loadConfiguration( $this, $this->_options, $options );
+		CXLOptions::loadConfiguration( $this, $options );
 	}
-
+	
 	/**
 	 * Gets a single configuration option
 	 * @return mixed
 	 */
 	public function getOption( $key, $defaultValue = null, $unsetAfter = false )
 	{
-		return XL::o( $this->_options, $key, $defaultValue, $unsetAfter );
+		$_value = XL::o( $this->_options, $key, $defaultValue, $unsetAfter );
+		return $_value;
 	}
 
 	/**
@@ -208,25 +203,35 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 		//	Any other exceptions bubble up
 	}
 
-	/**
-	 * Calls a static method in classPath if not found here. Allows you to extend this object
-	 * at runtime with additional helpers.
-	 *
-	 * Only available in PHP 5.3+
-	 *
-	 * @param string $method
-	 * @param array $parameters
-	 * @return mixed
-	 */
-	public static function __callStatic( $method, $parameters )
-	{
-		//	Que sera, sera!
-		if ( null !== ( $_this = self::$_objectCopy ) )
-			return XL::smartCallStatic( $_this, $method, $parameters );
-	}
-
 	//********************************************************************************
 	//* Private Methods
 	//********************************************************************************
+
+	/**
+	 * Walks the backtrace to find the calling object
+	 * @param string $instanceFilter Only return objects of this instance
+	 */
+	protected static function _getCallerObject( $instanceFilter = null )
+	{
+		$_stack = debug_backtrace( true );
+		
+		for ( $_i = 0, $_count = count( $_stack ); $_i < $_count; $_i++ )
+		{
+			if ( null !== ( $_caller = XL::o( $_stack[$_i], 'object' ) ) )
+			{
+				if ( null !== $instanceFilter )
+				{
+					if ( $_caller instanceof $instanceFilter )
+						return $_caller;
+						
+					continue;
+				}
+				
+				return $_caller;
+			}
+		}
+		
+		return null;
+	}
 
 }

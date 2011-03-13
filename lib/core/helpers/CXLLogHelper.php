@@ -1,4 +1,4 @@
-<?php
+php<?php
 /**
  * This file is part of the YiiXL package.
  *
@@ -17,7 +17,7 @@
  * See {@link http://php.net/manual/en/function.syslog.php}
  * for more information.
  */
-class CXLLogHelper implements IXLHelper, IXLLogger
+class CXLLogHelper extends CXLBaseHelper implements IXLLogger
 {
 	//********************************************************************************
 	//* Private Members
@@ -54,8 +54,11 @@ class CXLLogHelper implements IXLHelper, IXLLogger
 	/**
 	 * Initializer
 	 */
-	public static function init()
+	public static function initialize()
 	{
+		//	Phone home...
+		parent::initialize();
+		
 		//	Initialize our valid log lvles
 		self::$_validLogLevels = array();
 
@@ -69,36 +72,140 @@ class CXLLogHelper implements IXLHelper, IXLLogger
 		}
 	}
 
+	//*******************************************************************************
+	//* Helper Methods
+	//*******************************************************************************
+
 	/**
-	 * Calls a static method in classPath if not found here. Allows you to extend this object
-	 * at runtime with additional helpers.
-	 *
-	 * Only available in PHP 5.3+
-	 *
-	 * @param string $method
-	 * @param array $parameters
-	 * @return mixed
+	 * Logs a trace message (really a debug)
+	 * @param string $message
+	 * @param string $category
 	 */
-	public static function __callStatic( $method, $parameters )
+	public function logTrace( $message, $category = null )
 	{
-		//	Grab any log requests and redirect...
-		if ( 0 == strncasecmp( $method, 'log', 3 ) )
-		{
-			//	The level
-			$_level = trim( strtolower( substr( $method, 3 ) ) );
-
-			if ( ! empty( $_level ) && in_array( $_level, array_keys( self::$_validLogLevels ) ) )
-			{
-				$_message = array_shift( $parameters );
-
-				if ( null === $_category = array_shift( $parameters ) )
-					$_category = self::CLASS_LOG_TAG;
-
-				return self::_log( $_message, $_level, $_category );
-			}
-		}
+		self::_log( $message, self::LOG_DEBUG, $category );
 	}
-
+	
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 */
+	public function logEmergency( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_EMERG, $category );
+	}
+	
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 */
+	public function logAlert( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_ALERT, $category );
+	}
+	
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 */
+	public function logCritical( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_CRITICAL, $category );
+	}
+	
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 */
+	public function logError( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_ERROR, $category );
+	}
+	
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 */
+	public function logWarning( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_WARNING, $category );
+	}
+	
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 */
+	public function logNotice( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_NOTICE, $category );
+	}
+	
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 */
+	public function logInfo( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_INFO, $category );
+	}
+	
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 */
+	public function logDebug( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_DEBUG, $category );
+	}
+	
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 */
+	public function logUser( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_USER, $category );
+	}
+	
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 */
+	public function logAuth( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_AUTH, $category );
+	}
+	
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 */
+	public function logSyslog( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_SYSLOG, $category );
+	}
+	
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 */
+	public function logAuthPriv( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_AUTHPRIV, $category );
+	}
+	
 	//*******************************************************************************
 	//* Private Methods
 	//*******************************************************************************

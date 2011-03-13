@@ -21,7 +21,7 @@
  * Totally swiped from ZF 2.0 roadmap discussion
  * {@link http://framework.zend.com/wiki/display/ZFDEV2/Zend+Framework+2.0+Roadmap}
  */
-class CXLOptions implements IXLHelper
+class CXLOptions extends CXLBaseHelper implements IXLShifter, IXLUtilityHelper
 {
 	//********************************************************************************
 	//* Constants
@@ -37,18 +37,11 @@ class CXLOptions implements IXLHelper
 	//********************************************************************************
 
 	/**
-	 * Our init function, nothing to do here...
-	 */
-	public static function init()
-	{
-	}
-
-	/**
 	 * Sets options of an object
-	 * @param object $object
+	 * @param IXLComponent $object
 	 * @param array $options
 	 */
-	public static function setOptions( $object, array $options )
+	public static function setOptions( IXLComponent $object, array $options )
 	{
 		if ( ! is_object( $object ) )
 			return;
@@ -57,17 +50,17 @@ class CXLOptions implements IXLHelper
 		{
 			$_method = 'set' . self::_cleanKey( $_key );
 
-			if ( method_exists( $object, $_method ) )
+			if ( is_callable( array( $object, $_method ) ) )
 				$object->$_method( $_value );
 		}
 	}
 
 	/**
 	 * Sets the options in $object
-	 * @param object $object
+	 * @param IXLComponent  $object
 	 * @param array $options 
 	 */
-	public static function setConstructorOptions( $object, $options )
+	public static function setConstructorOptions( IXLComponent $object, $options )
 	{
 		if ( $options instanceof CXLConfig )
 			$options = $options->toArray();
@@ -79,6 +72,7 @@ class CXLOptions implements IXLHelper
 	/**
 	 * Loads an array into properties if they exist.
 	 * @param IXLComponent $object
+	 * @param array $objectOptions
 	 * @param array $options
 	 * @param boolean $overwriteExisting 
 	 * @return boolean
@@ -86,14 +80,17 @@ class CXLOptions implements IXLHelper
 	public static function loadConfiguration( IXLComponent $object, $options = array(), $overwriteExisting = true )
 	{
 		XL::logDebug( 'Loading configuration options: ' . print_r( $options, true ), $object::CLASS_LOG_TAG );
-		
-		$_objectOptions = $object->getOptions();
 
+		//	Get a handle on the options to modify
+		$_objectOptions = $object->getOptions();
+		
 		//	Make a copy for posterity
 		if ( $overwriteExisting || empty( $_objectOptions ) )
 			$_objectOptions = $options;
 		else
 			$_objectOptions = array_merge( $_objectOptions, $options );
+		
+		$object->loadOptions( $_objectOptions );
 
 		//	Try to set each one
 		try
@@ -103,7 +100,7 @@ class CXLOptions implements IXLHelper
 				try
 				{
 					//	See if __set has a better time with this...
-					if ( method_exists( $object, 'set' . $_key ) )
+					if ( is_callable( array( $object, 'set' . $_key ) ) )
 						$object->{'set' . $_key}( $_value );
 					else if ( property_exists( $object, $_key ) )
 						$object->{$_key} = $_key;

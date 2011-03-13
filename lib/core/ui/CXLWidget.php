@@ -45,6 +45,10 @@ class CXLWidget extends CInputWidget implements IXLComponent
 	 */
 	protected $_options;
 	/**
+	 * @var array $_behaviorMethods Imported attached behavior methods
+	 */
+	protected $_behaviorMethods;
+	/**
 	 * @var array $_cssQueue Our CSS files
 	 */
 	protected $_cssQueue = array( );
@@ -85,6 +89,26 @@ class CXLWidget extends CInputWidget implements IXLComponent
 		return $this->_options;
 	}
 
+	/**
+	 * Gets the list of registered behavior methods
+	 * @return array
+	 */
+	public function getBehaviorMethods()
+	{
+		return $this->_behaviorMethods;
+	}
+
+	/**
+	 * Loads the configuration options
+	 * @param array
+	 * @return CXLComponent
+	 */
+	public function loadOptions( $options = array() )
+	{
+		$this->_options = $options;
+		return $this;
+	}
+	
 	/**
 	 * Returns the css file queue
 	 * @return array

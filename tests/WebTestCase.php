@@ -6,9 +6,9 @@
  */
 define( 'TEST_BASE_URL', 'http://localhost/testdrive/index-test.php/' );
 
-require_once '/usr/share/php/PHPUnit/Autoload.php';
+//require_once '/usr/share/php/PHPUnit/Autoload.php';
 
-phpunit_autoload( 'PHPUnit_Framwork_TestCase' );
+//phpunit_autoload( 'PHPUnit_Framwork_TestCase' );
 
 /**
  * The base class for functional test cases.

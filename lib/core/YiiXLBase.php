@@ -122,7 +122,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	/**
 	 * Intialize our private statics
 	 */
-	public static function init( $options = array() )
+	public static function initialize( $options = array() )
 	{
 		//	Intialize my variables...
 		self::$_thisApp = Yii::app();
@@ -1161,10 +1161,12 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 		$_methods = $object->getBehaviorMethods();
 		
 		//	Make sure the function exists
-		if ( is_callable( $_methodClass = XL::o( $_methods, $method ) ) )
+		if ( is_callable( $_methodClass = XL::o( $_methods, $method, null, true ) ) )
 		{
 			//	Throw myself at the front of the arguments
-			array_unshift( $parameters, $object );
+			$_newParameters = $parameters;
+			
+			array_unshift( $_newParameters, $object );
 
 			//	And call the method
 			return call_user_func_array(
@@ -1172,34 +1174,39 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 					$_methodClass,
 					$method
 				),
-				$parameters
+				$_newParameters
 			);
 		}
 
 		//	Otherwise let Yii deal with it...
-		return self::smartCallStatic( $object, $name, $parameters );
+		return self::smartCallStatic( $object, $method, $parameters );
 	}
 
 	/**
 	 * Calls a static method in classPath if not found here. Allows you to extend this object
 	 * at runtime with additional helpers. Injects $object into parameter list.
-	 * @param CXLComponent $object
+	 * @param IXLComponent $object
 	 * @param string $method
 	 * @param array $parameters
 	 * @return mixed
 	 * @throws CXLMethodNotFoundException
 	 */
-	public static function smartCallStatic( CXLComponent $object, $method, $parameters = array() )
+	public static function smartCallStatic( IXLComponent $object, $method, $parameters = array() )
 	{
 		//	Throw myself at the front of the arguments
-		array_unshift( $parameters, $object );
+		$_newParameters = $parameters;
+
+		array_unshift( $_newParameters, $object );
 
 		foreach ( self::$_classPath as $_class )
 		{
-			if ( method_exists( $_class, $method ) )
-				return call_user_func_array( $_class . '::' . $method, $parameters );
+			$_obj = new ReflectionClass( $_class );
+			$_newParameters = ( $_obj->implementsInterface( 'IXLShifter' ) ? $_newParameters : $parameters );
+			
+			if ( is_callable( array( $_class, $method ) ) )
+				return call_user_func_array( $_class . '::' . $method, $_newParameters );
 		}
-		
+
 		throw new CXLMethodNotFoundException(
 			XL::t(
 				self::CLASS_LOG_TAG,
@@ -1226,9 +1233,12 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	{
 		foreach ( self::$_classPath as $_class )
 		{
-			if ( method_exists( $_class, $method ) )
+			if ( is_callable( array( $_class, $method ) ) )
 				return call_user_func_array( $_class . '::' . $method, $parameters );
 		}
+		
+		//	I give, it's all you...
+		parent::__callStatic( $method, $parameters );
 	}
 
 	/**
@@ -1290,4 +1300,4 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 }
 
 //	Initialize our base...
-YiiXLBase::init();
+YiiXLBase::initialize();
