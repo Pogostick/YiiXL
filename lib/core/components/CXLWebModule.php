@@ -1,8 +1,8 @@
 <?php
 /**
- * This file is part of the YiiXL package.
+ * This file is part of YiiXL
+ * Copyright (c) 2009-2011, Pogostick, LLC. All rights reserved.
  *
- * @copyright Copyright (c) 2009-2011 Pogostick, LLC.
  * @link http://www.pogostick.com Pogostick, LLC.
  * @license http://www.pogostick.com/licensing
  * @author Jerry Ablan <jablan@pogostick.com>
@@ -14,7 +14,6 @@
  *
  * @filesource
  */
-
 /**
  * CXLWebModule provides extra functionality to the base module functionality of Yii
  */

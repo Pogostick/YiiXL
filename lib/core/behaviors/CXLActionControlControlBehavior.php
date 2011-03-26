@@ -1,30 +1,31 @@
 <?php
-
 /**
- * This file is part of the YiiXL package.
+ * This file is part of YiiXL
+ * Copyright (c) 2009-2011, Pogostick, LLC. All rights reserved.
  *
- * @copyright		Copyright (c) 2009-2011 Pogostick, LLC.
- * @link			http://www.pogostick.com Pogostick, LLC.
- * @license		http://www.pogostick.com/licensing
- * @package		yiixl
- * @subpackage		core.behaviors
- * @author			Jerry Ablan <jablan@pogostick.com>
+ * @link http://www.pogostick.com Pogostick, LLC.
+ * @license http://www.pogostick.com/licensing
+ * @author Jerry Ablan <jablan@pogostick.com>
+ *
+ * @since v1.0.0
+ *
+ * @package yiixl
+ * @subpackage core.behaviors
+ *
  * @filesource
  */
-
 /**
- * CXLUserActionBehavior
+ * CXLActionControlBehavior
  * Provides an alternative interface to configuring access to your actions
  */
-class CXLUserActionBehavior extends CBehavior implements IXLBehavior, IXLAccessControl
+class CXLActionControlBehavior extends CXLBehavior implements IXLAccessControl
 {
 	//********************************************************************************
 	//* Member Variables
 	//********************************************************************************
 
 	/**
-	 * @var array $_userActionMap An array of actions permitted by any user
-	 * @access protected
+	 * An array of actions permitted by any user
 	 */
 	protected $_userActionMap = array();
 
@@ -34,7 +35,7 @@ class CXLUserActionBehavior extends CBehavior implements IXLBehavior, IXLAccessC
 
 	/**
 	 * Gets an UAM
-	 * @param integer $accessLevel
+	 * @param \$accessLevel Retrieves the UAM for this access level.
 	 * @return array
 	 */
 	public function getUserActionMap( $accessLevel )
@@ -54,9 +55,9 @@ class CXLUserActionBehavior extends CBehavior implements IXLBehavior, IXLAccessC
 
 	/**
 	 * Resets the UAM
-	 * @param integer $accessLevel
-	 * @param array $value
-	 * @return CXLUserActionBehavior 
+	 * @param integer \$accessLevel
+	 * @param array \$value
+	 * @return CXLActionControlBehavior
 	 */
 	protected function setUserActionMap( $accessLevel, $value = array() )
 	{
@@ -66,9 +67,9 @@ class CXLUserActionBehavior extends CBehavior implements IXLBehavior, IXLAccessC
 
 	/**
 	 * Adds a role to an access level/action
-	 * @param integer $accessLevel
-	 * @param string $action
-	 * @param string $role
+	 * @param integer \$accessLevel
+	 * @param string \$action
+	 * @param string \$role
 	 */
 	public function addUserActionRole( $accessLevel, $action, $role )
 	{
@@ -78,8 +79,8 @@ class CXLUserActionBehavior extends CBehavior implements IXLBehavior, IXLAccessC
 
 	/**
 	 * Removes an access level/action pair
-	 * @param integer $accessLevel
-	 * @param string $action
+	 * @param integer \$accessLevel
+	 * @param string \$action
 	 * @return mixed Returns the previous value or null
 	 */
 	public function removeUserAction( $accessLevel, $action )
@@ -88,8 +89,8 @@ class CXLUserActionBehavior extends CBehavior implements IXLBehavior, IXLAccessC
 	}
 
 	/**
-	 * @param type $accessLevel
-	 * @param type $action
+	 * @param type \$accessLevel
+	 * @param type \$action
 	 * @return mixed
 	 */
 	public function addUserAction( $accessLevel, $action )
@@ -110,8 +111,8 @@ class CXLUserActionBehavior extends CBehavior implements IXLBehavior, IXLAccessC
 	}
 
 	/**
-	 * @param integer $accessLevel
-	 * @param array $actions
+	 * @param integer \$accessLevel
+	 * @param array \$actions
 	 */
 	public function addUserActions( $accessLevel, $actions = array() )
 	{

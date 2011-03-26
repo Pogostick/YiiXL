@@ -5,3 +5,4 @@ protected/runtime/
 private.*
 /nbproject/private/
 /lib/core/web/
+/.idea/

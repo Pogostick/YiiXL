@@ -1,27 +1,29 @@
 <?php
-
 /**
- * This file is part of the psYiiExtensions package.
+ * This file is part of YiiXL
+ * Copyright (c) 2009-2011, Pogostick, LLC. All rights reserved.
  *
- * @copyright		Copyright (c) 2009-2011 Pogostick, LLC.
- * @link			http://www.pogostick.com Pogostick, LLC.
- * @license		http://www.pogostick.com/licensing
- * @package		yiixl
- * @subpackage		core.behaviors
- * @author			Jerry Ablan <jablan@pogostick.com>
+ * @link http://www.pogostick.com Pogostick, LLC.
+ * @license http://www.pogostick.com/licensing
+ * @author Jerry Ablan <jablan@pogostick.com>
+ *
+ * @since v1.0.0
+ *
+ * @package yiixl
+ * @subpackage core.behaviors
+ *
  * @filesource
  */
-
 /**
  * CXLOAuthBehavior
  * Provides OAuth support to any YiiXL component
  *
  * Introduces new event: onUserAuthorized raised when a user has been authorized
  *
- * @property-read OAuth $oauthObject The curent OAuth object
+ * @property-read OAuth $oauthObject The current OAuth object
  * @property-read string $oauthToken The current token
  */
-class CXLOAuthBehavior extends CBehavior implements IXLBehavior
+class CXLOAuthBehavior extends CXLBehavior
 {
 	//********************************************************************************
 	//* Constants

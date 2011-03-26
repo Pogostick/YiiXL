@@ -16,10 +16,10 @@
  */
 
 /**
- * CXLActiveRecordBehavior
- * The base class for all AR behaviors in the YiiXL system
+ * CXLBehavior
+ * The base class for all non-AR behaviors in the YiiXL system
  */
-class CXLActiveRecordBehavior extends CActiveRecordBehavior implements IXLBehavior
+class CXLBehavior extends CBehavior implements IXLBehavior
 {
 	//********************************************************************************
 	//* Constants
@@ -28,7 +28,7 @@ class CXLActiveRecordBehavior extends CActiveRecordBehavior implements IXLBehavi
 	/**
 	 * Our logging tag
 	 */
-	const	CLASS_LOG_TAG = 'yiixl.core.behaviors.CXLActiveRecordBehavior';
+	const	CLASS_LOG_TAG = 'yiixl.core.behaviors.CXLBehavior';
 
 	//********************************************************************************
 	//* Properties
@@ -97,7 +97,7 @@ class CXLActiveRecordBehavior extends CActiveRecordBehavior implements IXLBehavi
 	/**
 	 * Loads the configuration options
 	 * @param array
-	 * @return CXLComponent
+	 * @return $this
 	 */
 	public function loadOptions( $options = array() )
 	{

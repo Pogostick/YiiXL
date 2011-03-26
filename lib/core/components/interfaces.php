@@ -1,17 +1,19 @@
 <?php
 /**
- * This file is part of the YiiXL package.
+ * This file is part of YiiXL
+ * Copyright (c) 2009-2011, Pogostick, LLC. All rights reserved.
  *
- * @copyright Copyright (c) 2009-2011 Pogostick, LLC.
  * @link http://www.pogostick.com Pogostick, LLC.
  * @license http://www.pogostick.com/licensing
- * @filesource
+ * @author Jerry Ablan <jablan@pogostick.com>
  *
- * @package		yiixl
- * @subpackage 	core.interfaces
- * @author			Jerry Ablan <jablan@pogostick.com>
+ * @since v1.0.0
+ *
+ * @package yiixl
+ * @subpackage core.components
+ *
+ * @filesource
  */
-
 /**
  * This interface does nothing other than indicate that an exception is
  * part of the YiiXL package.
@@ -173,6 +175,9 @@ interface IXLUIHelper extends IXLHelper
 
 }
 
+/**
+ * An interface for all YiiXL controllers
+ */
 interface IXLController
 {
 	//********************************************************************************
@@ -180,26 +185,21 @@ interface IXLController
 	//********************************************************************************
 
 	/**
+	 * @addtogroup Constants
+	 * @brief CXLController constants
+	 * @{
+	 */
+	/**
+	 * 	@defgroup constants_controller Controller Constants
+	 * 	@brief Various controller defaults
+	 * 	@{
+	 */
+
+	/**
 	* The number of items to display per page
 	*/
 	const
 		PAGE_SIZE = 10;
-
-	/**
-	* Indexes into {@link CXLController#m_arUserActionMap}
-	*/
-	const
-		ACCESS_TO_ALL = 0,
-		ACCESS_TO_ANY = 0,
-		ACCESS_TO_ANON = 0,
-		ACCESS_TO_GUEST = 1,
-		ACCESS_TO_AUTH = 2,
-		ACCESS_TO_ADMIN = 3,
-		ACCESS_TO_SUPERADMIN = 5;
-
-	//	Last...
-	const
-		ACCESS_TO_NONE = 6;
 
 	/**
 	 * The name of our command form field
@@ -213,6 +213,11 @@ interface IXLController
 	const
 		SEARCH_HELP_TEXT = 'You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>or <b>=</b>) at the beginning of each search value to specify how the comparison should be done.';
 
+	/**
+	 * 	@}
+	 * @}
+	 */
+
 }
 
 /**
@@ -221,9 +226,21 @@ interface IXLController
 interface IXLAccessControl
 {
 	/**
-	* Indices into {@link CXLController::actionControlMap}
-	*/
-	const 
+	 * @addtogroup Constants
+	 * @brief CXLController constants
+	 * @{
+	 */
+	/**
+	 *   @addtogroup constants_acl Access Control Constants
+	 *   @brief These constants are useful for access control
+	 *   @{
+	 */
+	/**
+	 *     @defgroup constants_acl_indices Access Control Map Indices
+	 *     @see CXLController::actionControlMap
+	 *     @{
+	 */
+	const
 		ACCESS_TO_NONE = -1,
 		ACCESS_TO_ANY = 0,
 		ACCESS_TO_GUEST = 1,
@@ -231,24 +248,33 @@ interface IXLAccessControl
 		ACCESS_TO_ADMIN = 3,
 		ACCESS_TO_ADMIN_LEVEL_0 = 3,
 		ACCESS_TO_ADMIN_LEVEL_1 = 4,
-		ACCESS_TO_ADMIN_LEVEL_2 = 5;
+		ACCESS_TO_ADMIN_LEVEL_2 = 5
+	;
+	/**
+	 *     @}
+	 *   @}
+	 * @}
+	 */
 }
 
 /**
- * This identifies a class as an object shifter.
+ * @addtogroup interfaces Interfaces
+ * @brief This identifies a class as an object shifter.
  * Object shifters are typical static function providers (helpers) that
  * shift the first argument off the parameter stack and use it  as the target 
  * object of the method called.
  * 
  * Obviously, the sender must unshift itself onto the stack. The {@link YiiXL} 
  * class provides methods to do this.
+ * @see YiiXL
  */
 interface IXLShifter extends IXLHelper
 {
 }
 
 /**
- * This identifies a helper class as a utility provider
+ * @addtogroup interfaces Interfaces
+ * @brief This identifies a helper class as a utility provider
  */
 interface IXLUtilityHelper extends IXLAccessControl
 {

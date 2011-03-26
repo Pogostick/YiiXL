@@ -1,17 +1,23 @@
 <?php
 /**
- * This file is part of the YiiXL package.
+ * This file is part of YiiXL
+ * Copyright (c) 2009-2011, Pogostick, LLC. All rights reserved.
  *
- * @copyright Copyright (c) 2009-2011 Pogostick, LLC.
  * @link http://www.pogostick.com Pogostick, LLC.
  * @license http://www.pogostick.com/licensing
+ * @author Jerry Ablan <jablan@pogostick.com>
+ *
+ * @since v1.0.0
+ *
+ * @package yiixl
+ * @subpackage core.process
+ *
  * @filesource
  */
-
 /**
- * CXLBaseJobProcess encapulates a work unit.
+ * CXLBaseJobProcess encapsulates a work unit.
  *
- * Work unit lifecycle is as follows:
+ * Work unit life-cycle is as follows:
  *
  * 1. __construct()
  * 2. run()
@@ -20,23 +26,15 @@
  * Job can be run during construction by setting $autoRun to true. Otherwise the run() method must be called by the consumer.
  *
  * When overriding this class, you should only need to create the process() method with your work details.
- *
- * @package		yiixl
- * @subpackage 	core.process
- *
- * @author			Jerry Ablan <jablan@pogostick.com>
- * @version		SVN $Id: CXLBaseJobProcess.php 390 2010-07-03 04:40:47Z jerryablan@gmail.com $
- * @since			v1.1.0
- *
+ * 
  * @abstract
- *
  * @property integer $resultCode The result code of the processing
  * @property string $status The status of the processing
  * @property mixed $jobData The job data
  * @property-read string $processingTime The amount of time processing took formated in seconds (i.e. 1.23s)
  *
  */
-abstract class CXLBaseJobProcess extends IXLComponent
+abstract class CXLBaseJobProcess extends CXLComponent
 {
 	//********************************************************************************
 	//* Constants
@@ -45,7 +43,8 @@ abstract class CXLBaseJobProcess extends IXLComponent
 	/**
 	 * Our logging tag
 	 */
-	const	CLASS_LOG_TAG = 'yiixl.core.process.CXLBaseJobProcess';
+	const
+		CLASS_LOG_TAG = 'yiixl.core.process.CXLBaseJobProcess';
 
 	//********************************************************************************
 	//* Member Variables
@@ -55,7 +54,7 @@ abstract class CXLBaseJobProcess extends IXLComponent
 	* Start time
 	* @var float
 	*/
-	protected $_jobEndTime = null;
+	protected $_jobStartTime = null;
 
 	/**
 	* End time
@@ -156,8 +155,8 @@ abstract class CXLBaseJobProcess extends IXLComponent
 	*/
 	public function startTimer()
 	{
-		$this->_jobEndTime = XL::currentTimeMillis();
-		$this->_jobEndTime = null;
+		$this->_jobStartTime = XL::currentTimeMillis();
+		$this->_jobStartTime = null;
 	}
 
 	//********************************************************************************

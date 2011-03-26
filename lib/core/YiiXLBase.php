@@ -1,15 +1,18 @@
 <?php
 /**
- * This file is part of the YiiXL package.
+ * This file is part of YiiXL
+ * Copyright (c) 2009-2011, Pogostick, LLC. All rights reserved.
  *
- * @copyright Copyright (c) 2009-2011 Pogostick, LLC.
  * @link http://www.pogostick.com Pogostick, LLC.
  * @license http://www.pogostick.com/licensing
+ * @author Jerry Ablan <jablan@pogostick.com>
+ *
+ * @since v1.0.0
+ *
  * @package yiixl
  * @subpackage core
  *
  * @filesource
- * @author 		Jerry Ablan <jablan@pogostick.com>
  */
 
 //	Our core imports
@@ -35,7 +38,8 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	/**
 	 * Our logging tag
 	 */
-	const	CLASS_LOG_TAG = 'yiixl.core.YiiXLBase';
+	const
+		CLASS_LOG_TAG = 'yiixl.core.YiiXLBase';
 
 	//********************************************************************************
 	//* Private Members
@@ -120,11 +124,11 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	//********************************************************************************
 
 	/**
-	 * Intialize our private statics
+	 * Initialize our private statics
 	 */
 	public static function initialize( $options = array() )
 	{
-		//	Intialize my variables...
+		//	Initialize my variables...
 		self::$_thisApp = Yii::app();
 
 		//	Individually, each of these may or may not be available...
@@ -302,7 +306,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	}
 
 	/**
-	 * Similar to {@link PS::o} except it will pull a value from a nested array.
+	 * Similar to {@link XL::o} except it will pull a value from a nested array.
 	 *
 	 * @param array $options
 	 * @param integer|string $key
@@ -313,7 +317,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	 */
 	public static function oo( &$options = array( ), $key, $subKey, $defaultValue = null, $unsetValue = false )
 	{
-		return PS::o( PS::o( $options, $key, array( ) ), $subKey, $defaultValue, $unsetValue );
+		return XL::o( XL::o( $options, $key, array( ) ), $subKey, $defaultValue, $unsetValue );
 	}
 
 	/**
@@ -556,7 +560,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	public static function _rsf( $urlList, $pagePosition = CClientScript::POS_HEAD, $fromPublished = false )
 	{
 		if ( !is_array( $urlList ) ) $urlList = array( $urlList );
-		$_prefix = ( $fromPublished ? PS::getExternalLibraryUrl() . DIRECTORY_SEPARATOR : null );
+		$_prefix = ( $fromPublished ? XL::getExternalLibraryUrl() . DIRECTORY_SEPARATOR : null );
 
 		//	Need external library?
 		foreach ( $urlList as $_url )
@@ -592,7 +596,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	public static function _rcf( $urlList, $media = '', $fromPublished = false )
 	{
 		if ( !is_array( $urlList ) ) $urlList = array( $urlList );
-		$_prefix = ( $fromPublished ? PS::getExternalLibraryUrl() . DIRECTORY_SEPARATOR : null );
+		$_prefix = ( $fromPublished ? XL::getExternalLibraryUrl() . DIRECTORY_SEPARATOR : null );
 
 		foreach ( $urlList as $_url )
 		{
@@ -639,7 +643,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 		if ( null === ( $_id = self::o( $options, 'media' ) ) )
 			$_id = self::createUniqueName( $css );
 
-		return self::_rc( $_id, $css, $media );
+		return self::_rc( $_id, $css, $_media );
 	}
 
 	/**
@@ -653,7 +657,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	 */
 	public static function _rc( $sId = null, $sCss, $media = '' )
 	{
-		if ( !self::$_clientScript->isCssRegistered( $sId ) ) return self::$_clientScript->registerCss( PS::nvl( $sId, CPSWidgetHelper::getWidgetId() ), $sCss, $media );
+		if ( !self::$_clientScript->isCssRegistered( $sId ) ) return self::$_clientScript->registerCss( XL::nvl( $sId, CPSWidgetHelper::getWidgetId() ), $sCss, $media );
 	}
 
 	/**
@@ -695,7 +699,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	 */
 	public static function _rs( $sId = null, $sScript, $ePosition = CClientScript::POS_READY )
 	{
-		if ( !self::$_clientScript->isScriptRegistered( $sId ) ) self::$_clientScript->registerScript( PS::nvl( $sId, CPSWidgetHelper::getWidgetId() ), $sScript, $ePosition );
+		if ( !self::$_clientScript->isScriptRegistered( $sId ) ) self::$_clientScript->registerScript( XL::nvl( $sId, CPSWidgetHelper::getWidgetId() ), $sScript, $ePosition );
 	}
 
 	/**
@@ -1019,7 +1023,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	 */
 	public static function _sql( $sql, $dbToUse = null )
 	{
-		if ( null !== ( $_db = PS::nvl( $dbToUse, self::$_thisApp->getDb() ) ) ) return $_db->createCommand( $sql );
+		if ( null !== ( $_db = XL::nvl( $dbToUse, self::$_thisApp->getDb() ) ) ) return $_db->createCommand( $sql );
 
 		return null;
 	}
@@ -1033,7 +1037,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	 */
 	public static function _sqlAll( $sql, $parameterList = array( ), $dbToUse = null )
 	{
-		if ( null !== ( $_db = PS::nvl( $dbToUse, self::$_thisApp->getDb() ) ) ) return $_db->createCommand( $sql )->queryAll( true, $parameterList );
+		if ( null !== ( $_db = XL::nvl( $dbToUse, self::$_thisApp->getDb() ) ) ) return $_db->createCommand( $sql )->queryAll( true, $parameterList );
 
 		return null;
 	}
@@ -1049,7 +1053,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	{
 		$_resultList = null;
 
-		if ( null !== ( $_db = PS::nvl( $dbToUse, self::$_thisApp->getDb() ) ) )
+		if ( null !== ( $_db = XL::nvl( $dbToUse, self::$_thisApp->getDb() ) ) )
 		{
 			if ( null !== ( $_rowList = $_db->createCommand( $sql )->queryAll( true, $parameterList ) ) )
 			{

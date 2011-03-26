@@ -1,17 +1,19 @@
 <?php
-
 /**
- * This file is part of the psYiiExtensions package.
+ * This file is part of YiiXL
+ * Copyright (c) 2009-2011, Pogostick, LLC. All rights reserved.
  *
- * @copyright		Copyright (c) 2009-2011 Pogostick, LLC.
- * @link			http://www.pogostick.com Pogostick, LLC.
- * @license		http://www.pogostick.com/licensing
- * @package		yiixl
- * @subpackage		core.behaviors
- * @author			Jerry Ablan <jablan@pogostick.com>
+ * @link http://www.pogostick.com Pogostick, LLC.
+ * @license http://www.pogostick.com/licensing
+ * @author Jerry Ablan <jablan@pogostick.com>
+ *
+ * @since v1.0.0
+ *
+ * @package yiixl
+ * @subpackage core.behaviors
+ *
  * @filesource
  */
-
 /**
  * CXLDataTransformBehavior
  *
@@ -24,7 +26,7 @@ class CXLDataTransformBehavior extends CXLActiveRecordBehavior
 	//* Member Variables
 	//********************************************************************************
 
-	/**
+	/**!
 	 * Holds the default/configured formats for use when populating fields
 	 *
 	 * array(
@@ -38,7 +40,7 @@ class CXLDataTransformBehavior extends CXLActiveRecordBehavior
 	 * 	),								//		Send array(object,method) for class methods
 	 * 	...
 	 *
-	 * @var array
+	 * @var array $_dateFormat
 	 */
 	protected $_dateFormat = array(
 		//	After a find, the date is reformatted as so
@@ -55,7 +57,7 @@ class CXLDataTransformBehavior extends CXLActiveRecordBehavior
 
 	/**
 	 * Default sort
-	 * @var string
+	 * @var string $_defaultSort
 	 * @see getDefaultSort
 	 * @see setDefaultSort
 	 */
@@ -82,6 +84,7 @@ class CXLDataTransformBehavior extends CXLActiveRecordBehavior
 	 * @param string $eventName
 	 * @param string $formatType
 	 * @param string $format
+	 * @return $this
 	 */
 	public function setFormat( $eventName = 'afterValidate', $formatType = 'date', $format = 'm/d/Y' )
 	{
@@ -89,6 +92,8 @@ class CXLDataTransformBehavior extends CXLActiveRecordBehavior
 			$this->_dateFormat[$eventName] = array( );
 
 		$this->_dateFormat[$eventName][$formatType] = $format;
+
+		return $this;
 	}
 
 	/**
@@ -104,11 +109,13 @@ class CXLDataTransformBehavior extends CXLActiveRecordBehavior
 	/**
 	 * Sets the default sort
 	 * @param string $sValue
+	 * @return $this
 	 * @see getDefaultSort
 	 */
 	public function setDefaultSort( $sValue )
 	{
 		$this->_defaultSort = $sValue;
+		return $this;
 	}
 
 	//********************************************************************************
@@ -124,7 +131,7 @@ class CXLDataTransformBehavior extends CXLActiveRecordBehavior
 	 * @param string $eventName
 	 * @return mixed
 	 */
-	protected function applyFormat( $column, $value, $eventName = 'view' )
+	protected function _applyFormat( $column, $value, $eventName = 'view' )
 	{
 		$_result = $value;
 
@@ -135,7 +142,7 @@ class CXLDataTransformBehavior extends CXLActiveRecordBehavior
 			case 'datetime':
 			case 'timestamp':
 				//	Handle blanks
-				if ( null != $value && $value != '0000-00-00' && $value != '0000-00-00 00:00:00' )
+				if ( null != $value && $value != '0000-00-00' && $value != '0000-00-00 00:00:00' && false !== strtotime( $value ) )
 					$_result = date( $this->getFormat( $eventName, $column->dbType ), strtotime( $value ) );
 				break;
 		}
@@ -145,7 +152,6 @@ class CXLDataTransformBehavior extends CXLActiveRecordBehavior
 
 	/**
 	 * Process the data and apply formats
-	 *
 	 * @param string $eventName
 	 * @param CEvent $event
 	 */
@@ -178,7 +184,7 @@ class CXLDataTransformBehavior extends CXLActiveRecordBehavior
 			{
 				if ( !empty( $_name ) && $_model->hasAttribute( $_name ) && isset( $_schema[$_name], $this->_dateFormat[$eventName][$_column->dbType] ) )
 				{
-					$_value = $this->applyFormat( $_column, $_model->getAttribute( $_name ), $eventName );
+					$_value = $this->_applyFormat( $_column, $_model->getAttribute( $_name ), $eventName );
 					$_model->setAttribute( $_name, $_value );
 				}
 			}
@@ -193,8 +199,20 @@ class CXLDataTransformBehavior extends CXLActiveRecordBehavior
 	//********************************************************************************
 
 	/**
-	 * Apply any formats
-	 * @param CModelEvent event parameter
+	 * @addtogroup core_events Events
+	 * @brief These are the events utilized by YiiXL
+	 * @{
+	 */
+	/**
+	 * 	@defgroup core_events_behavior Behavior Events
+	 * 	@brief These events are handled or triggered by behaviors
+	 * 	@{
+	 */
+
+	/**
+	 * Apply formats before validation
+	 * @param CModelEvent $event parameter
+	 * @return mixed
 	 */
 	public function beforeValidate( $event )
 	{
@@ -204,6 +222,7 @@ class CXLDataTransformBehavior extends CXLActiveRecordBehavior
 	/**
 	 * Apply any formats
 	 * @param CEvent $event
+	 * @return mixed
 	 */
 	public function afterValidate( $event )
 	{
@@ -213,14 +232,15 @@ class CXLDataTransformBehavior extends CXLActiveRecordBehavior
 	/**
 	 * Apply any formats
 	 * @param CEvent $event
+	 * @return mixed
 	 */
 	public function beforeFind( $event )
 	{
 		//	Is a default sort defined?
-		if ( $this->_defaultSort )
+		if ( null !== $this->_defaultSort )
 		{
 			//	Is a sort defined?
-			$_criteria = $event->sender->getDbCriteria();
+			$_criteria = $event->sender()->getDbCriteria();
 
 			//	No sort? Set the default
 			if ( !$_criteria->order )
@@ -247,4 +267,8 @@ class CXLDataTransformBehavior extends CXLActiveRecordBehavior
 		return $this->handleEvent( __FUNCTION__, $event );
 	}
 
+	/**
+	 * 	@}
+	 * @}
+	 */
 }

@@ -1,17 +1,19 @@
 <?php
-
 /**
- * This file is part of the psYiiExtensions package.
+ * This file is part of YiiXL
+ * Copyright (c) 2009-2011, Pogostick, LLC. All rights reserved.
  *
- * @copyright		Copyright (c) 2009-2011 Pogostick, LLC.
- * @link			http://www.pogostick.com Pogostick, LLC.
- * @license		http://www.pogostick.com/licensing
- * @package		yiixl
- * @subpackage		core.behaviors
- * @author			Jerry Ablan <jablan@pogostick.com>
+ * @link http://www.pogostick.com Pogostick, LLC.
+ * @license http://www.pogostick.com/licensing
+ * @author Jerry Ablan <jablan@pogostick.com>
+ *
+ * @since v1.0.0
+ *
+ * @package yiixl
+ * @subpackage core.behaviors
+ *
  * @filesource
  */
-
 /**
  * CXLSoftDeleteBehavior
  * Provides soft-deleting of records

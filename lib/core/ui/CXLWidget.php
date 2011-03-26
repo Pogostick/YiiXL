@@ -1,25 +1,24 @@
 <?php
 /**
- * This file is part of the YiiXL package.
+ * This file is part of YiiXL
+ * Copyright (c) 2009-2011, Pogostick, LLC. All rights reserved.
  *
- * @copyright Copyright (c) 2009-2011 Pogostick, LLC.
  * @link http://www.pogostick.com Pogostick, LLC.
  * @license http://www.pogostick.com/licensing
+ * @author Jerry Ablan <jablan@pogostick.com>
+ *
+ * @since v1.0.0
+ *
+ * @package yiixl
+ * @subpackage core.ui
+ *
+ * @filesource
  */
 /**
  * CXLWidget
  * Pretty much identical to CXLComponent but offers a little bit of extra functionality.
  * Forced to not be a descendent of {@see CIXComponent} because of the depth of the
  * {@see CInputWidget} heirarchy. Thus this object duplicates {@see CXLComponent}.
- *
- * @package		yiixl
- * @subpackage 	core
- *
- * @author 		Jerry Ablan <jablan@pogostick.com>
- * @version		SVN: $Id: CXLHelperBase
- * @since			v1.0.0
- *
- * @filesource
  */
 class CXLWidget extends CInputWidget implements IXLComponent
 {
@@ -30,7 +29,8 @@ class CXLWidget extends CInputWidget implements IXLComponent
 	/**
 	 * Our logging tag
 	 */
-	const	CLASS_LOG_TAG = 'yiixl.core.ui.CXLWidget';
+	const
+		CLASS_LOG_TAG = 'yiixl.core.ui.CXLWidget';
 
 	//********************************************************************************
 	//* Member Variables
@@ -163,11 +163,11 @@ class CXLWidget extends CInputWidget implements IXLComponent
 
 		//	Push any optional script files
 		foreach ( YiiXL::o( $options, '_scriptFiles', array( ), true ) as $_script )
-			$_widget->pushScriptFile( $_script );
+			$this->pushScriptFile( $_script );
 
 		//	And CSS
 		foreach ( YiiXL::o( $options, '_cssFiles', array( ), true ) as $_css )
-			$_widget->pushCssFile( $_css );
+			$this->pushCssFile( $_css );
 	}
 
 	/**

@@ -1,24 +1,19 @@
 <?php
 /**
- * This file is part of the YiiXL package.
+ * This file is part of YiiXL
+ * Copyright (c) 2009-2011, Pogostick, LLC. All rights reserved.
  *
- * @copyright Copyright (c) 2009-2011 Pogostick, LLC.
  * @link http://www.pogostick.com Pogostick, LLC.
  * @license http://www.pogostick.com/licensing
+ * @author Jerry Ablan <jablan@pogostick.com>
+ *
+ * @since v1.0.0
  *
  * @package yiixl
- * @subpackage core.components
- *
- * @author 		Jerry Ablan <jablan@pogostick.com>
- * @since 		v1.0.0
+ * @subpackage core.components.config
  *
  * @filesource
  */
-
-//	Include Files
-//	Constants
-//	Global Settings
-
 /**
  * CXLConfigFile implements the CXLConfig class that stored in a file
  */
@@ -31,15 +26,17 @@ class CXLConfigFile extends CXLConfig implements Countable, Iterator
 	/**
 	 * Our logging tag
 	 */
-	const	CLASS_LOG_TAG = 'yiixl.core.components.config.CXLConfigFile';
+	const
+		CLASS_LOG_TAG = 'yiixl.core.components.config.CXLConfigFile';
 
 	/**
 	 * The output formats available
 	 */
-	const	ASSOC_ARRAY = 0;
-	const	JSON = 1;
-	const	XML = 2;
-	const	INI = 3;
+	const
+		ASSOC_ARRAY = 0,
+		JSON = 1,
+		XML = 2,
+		INI = 3;
 	
 	//********************************************************************************
 	//* Member Variables
@@ -67,12 +64,22 @@ class CXLConfigFile extends CXLConfig implements Countable, Iterator
 	//* Public Methods
 	//********************************************************************************
 
+	/**
+	 * @param string $path
+	 * @return bool
+	 */
 	public function load( $path = null )
 	{
+		return false;
 	}
-	
+
+	/**
+	 * @param string $path
+	 * @return bool
+	 */
 	public function save( $path = null )
 	{
+		return false;
 	}
 
 }

@@ -1,16 +1,19 @@
 php<?php
 /**
- * This file is part of the YiiXL package.
+ * This file is part of YiiXL
+ * Copyright (c) 2009-2011, Pogostick, LLC. All rights reserved.
  *
- * @copyright Copyright (c) 2009-2011 Pogostick, LLC.
  * @link http://www.pogostick.com Pogostick, LLC.
  * @license http://www.pogostick.com/licensing
  * @author Jerry Ablan <jablan@pogostick.com>
+ *
  * @since v1.0.0
+ *
  * @package yiixl
- * @subpackage behaviors
+ * @subpackage core.helpers
+ *
+ * @filesource
  */
-
 /**
  * A logging helper
  * Utilizes the PHP syslog predefined logging constants.

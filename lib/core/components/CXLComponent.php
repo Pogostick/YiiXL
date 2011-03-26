@@ -1,8 +1,8 @@
 <?php
 /**
- * This file is part of the YiiXL package.
+ * This file is part of YiiXL
+ * Copyright (c) 2009-2011, Pogostick, LLC. All rights reserved.
  *
- * @copyright Copyright (c) 2009-2011 Pogostick, LLC.
  * @link http://www.pogostick.com Pogostick, LLC.
  * @license http://www.pogostick.com/licensing
  * @author Jerry Ablan <jablan@pogostick.com>
@@ -14,7 +14,6 @@
  *
  * @filesource
  */
-
 /**
  * CXLComponent class
  * This is the base class for all YiiXL library objects. It extends the base
@@ -56,7 +55,7 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	 * @var array $_behaviorMethods Imported attached behavior methods
 	 */
 	protected $_behaviorMethods;
-	
+
 	//********************************************************************************
 	//* Property Accessors
 	//********************************************************************************
@@ -87,7 +86,7 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	{
 		return $this->_options;
 	}
-	
+
 	/**
 	 * Gets the list of registered behavior methods
 	 * @return array
@@ -107,7 +106,7 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 		$this->_options = $options;
 		return $this;
 	}
-	
+
 	//********************************************************************************
 	//* Public Methods
 	//********************************************************************************
@@ -121,11 +120,11 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	{
 		//	Initialize...
 		$this->_options = $this->_behaviorMethods = array();
-		
+
 		//	Set any properties via standard config array
 		CXLOptions::loadConfiguration( $this, $options );
 	}
-	
+
 	/**
 	 * Gets a single configuration option
 	 * @return mixed
@@ -214,7 +213,7 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 	protected static function _getCallerObject( $instanceFilter = null )
 	{
 		$_stack = debug_backtrace( true );
-		
+
 		for ( $_i = 0, $_count = count( $_stack ); $_i < $_count; $_i++ )
 		{
 			if ( null !== ( $_caller = XL::o( $_stack[$_i], 'object' ) ) )
@@ -223,14 +222,14 @@ class CXLComponent extends CApplicationComponent implements IXLComponent
 				{
 					if ( $_caller instanceof $instanceFilter )
 						return $_caller;
-						
+
 					continue;
 				}
-				
+
 				return $_caller;
 			}
 		}
-		
+
 		return null;
 	}
 

@@ -1,22 +1,24 @@
 <?php
-
 /**
- * This file is part of the YiiXL package.
+ * This file is part of YiiXL
+ * Copyright (c) 2009-2011, Pogostick, LLC. All rights reserved.
  *
- * @copyright Copyright (c) 2009-2011 Pogostick, LLC.
  * @link http://www.pogostick.com Pogostick, LLC.
  * @license http://www.pogostick.com/licensing
+ * @author Jerry Ablan <jablan@pogostick.com>
+ *
+ * @since v1.0.0
+ *
  * @package yiixl
  * @subpackage core.controllers
- * @author 		Jerry Ablan <jablan@pogostick.com>
+ *
  * @filesource
  */
-
 /**
  * CXLController
  * Provides filtered access to resources
  */
-abstract class CXLController extends CController implements IXLComponent, IXLAccessControl
+abstract class CXLController extends CController implements IXLController, IXLAccessControl
 {
 	//********************************************************************************
 	//* Constants
@@ -24,33 +26,11 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 
 	/**
 	 * Our logging tag
-	 * @final string
+	 * @constant string
 	 */
 	const CLASS_LOG_TAG = 'yiixl.core.components.CXLController';
 
-	//********************************************************************************
-	//* Constants
-	//********************************************************************************
-
-	const 
-		/**
-		 * The number of items to display per page
-		 * @final integer 
-		 */
-		PAGE_SIZE = 10,
-		/**
-		 * The name of our command form field
-		 * @final string 
-		 */
-		COMMAND_FIELD_NAME = '__yxl',
-		/**
-		 * Standard search text for rendering
-		 * @final string 
-		*/
-		SEARCH_HELP_TEXT = 'You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>or <b>=</b>) at the beginning of each search value to specify how the comparison should be done.'
-	;
-
-	//********************************************************************************
+	 //********************************************************************************
 	//* Member Variables
 	//********************************************************************************
 
@@ -147,7 +127,6 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 
 	/**
 	 * Initialize the controller
-	 *
 	 */
 	public function init()
 	{
@@ -253,7 +232,7 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 		if ( null === $this->_currentModel )
 		{
 			$_id = XL::o( $_GET, 'id', $id );
-			$this->_currentModel = $this->load( $_id );
+			$this->_currentModel = $this->_load( $_id );
 
 			//	No data? bug out
 			if ( null === $this->_currentModel )
@@ -329,7 +308,7 @@ abstract class CXLController extends CController implements IXLComponent, IXLAcc
 	{
 		//	If we have commands, give it a shot...
 		if ( count( $this->_adminCommandMap ) && parent::beforeAction( $action ) ) 
-			$this->processCommand();
+			$this->_processCommand();
 
 		return true;
 	}
@@ -631,6 +610,21 @@ JS;
 		return $options;
 	}
 
+	//********************************************************************************
+	//* Property Accessors
+	//********************************************************************************
+
+	/**
+	 * @addtogroup Properties
+	 * @brief Properties of YiiXL Classes
+	 * @{
+	 */
+	/**
+	 * 	@defgroup propaccs_cxlcontroller CXLController Properties
+	 * 	@brief These are the properties accessors for the CXLController
+	 * 	@{
+	 */
+
 	/**
 	 * Convenience access to isPostRequest
 	 * @return boolean
@@ -658,174 +652,289 @@ JS;
 		return XL::_gbu();
 	}
 
-	//********************************************************************************
-	//* Property Accessors
-	//********************************************************************************
-
+	/**
+	 * @return array
+	 */
 	public function getMenu()
 	{
 		return $this->_menu;
 	}
 
+	/**
+	 * @param  $value
+	 * @return CXLController
+	 */
 	public function setMenu( $value )
 	{
 		$this->_menu = $value;
 		return $this;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getBreadcrumbs()
 	{
 		return $this->_breadcrumbs;
 	}
 
+	/**
+	 * @param  $value
+	 * @return CXLController
+	 */
 	public function setBreadcrumbs( $value )
 	{
 		$this->_breadcrumbs = $value;
 		return $this;
 	}
 
+	/**
+	 * @return
+	 */
 	public function getPageHeading()
 	{
 		return $this->m_sPageHeading;
 	}
 
+	/**
+	 * @param  $value
+	 * @return CXLController
+	 */
 	public function setPageHeading( $value )
 	{
 		$this->m_sPageHeading = $value;
 		return $this;
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getActionMethodPrefix()
 	{
 		return $this->_actionMethodPrefix;
 	}
 
+	/**
+	 * @param  $value
+	 * @return CXLController
+	 */
 	public function setActionMethodPrefix( $value )
 	{
 		$this->_actionMethodPrefix = $value;
 		return $this;
 	}
 
+	/**
+	 * @return CActiveRecord|null
+	 */
 	public function getCurrentModel()
 	{
 		return $this->_currentModel;
 	}
 
+	/**
+	 * @param  $value
+	 * @return CXLController
+	 */
 	protected function setCurrentModel( $value )
 	{
 		$this->_currentModel = $value;
 		return $this;
 	}
 
+	/**
+	 * @return null|string
+	 */
 	public function getModelClass()
 	{
 		return $this->_modelClass;
 	}
 
+	/**
+	 * @param  $value
+	 * @return CXLController
+	 */
 	protected function setModelClass( $value )
 	{
 		$this->_modelClass = $value;
 		return $this;
 	}
 
+	/**
+	 * @return null|string
+	 */
 	public function getContentTemplate()
 	{
 		return $this->_contentTemplate;
 	}
 
+	/**
+	 * @param  $value
+	 * @return CXLController
+	 */
 	public function setContentTemplate( $value )
 	{
 		$this->_contentTemplate = $value;
 		return $this;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function getAutoFindLayout()
 	{
 		return $this->_autoFindLayout;
 	}
 
+	/**
+	 * @param  $value
+	 * @return CXLController
+	 */
 	public function setAutoFindLayout( $value )
 	{
 		$this->_autoFindLayout = $value;
 		return $this;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function getAutoFindAction()
 	{
 		return $this->_autoFindAction;
 	}
 
+	/**
+	 * @param  $value
+	 * @return $this
+	 */
 	public function setAutoFindAction( $value )
 	{
 		$this->_autoFindAction = $value;
+		return $this;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getAdminCommandMap()
 	{
 		return $this->_adminCommandMap;
 	}
 
+	/**
+	 * @param  $value
+	 * @return CXLController
+	 */
 	public function setAdminCommandMap( $value )
 	{
 		$this->_adminCommandMap = $value;
 		return $this;
 	}
 
+	/**
+	 * @param string $key
+	 * @param mixed $value
+	 * @param string $property
+	 * @return CXLController
+	 */
 	public function addCommandToMap( $key, $value = null, $property = null )
 	{
 		$this->_adminCommandMap[$key] = $value;
-		if ( $property ) $this->addActionControls( $property, array( $key ) ); return $this;
+
+		if ( $property )
+			$this->addActionControls( $property, array( $key ) );
+
+		return $this;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getPortletActions()
 	{
 		return $this->_portletActions;
 	}
 
+	/**
+	 * @param  $value
+	 * @return CXLController
+	 */
 	public function setPortletActions( $value )
 	{
 		$this->_portletActions = $value;
 		return $this;
 	}
 
+	/**
+	 * @param  $sName
+	 * @param  $arCallback
+	 * @return CXLController
+	 */
 	public function addPortletAction( $sName, $arCallback )
 	{
 		$this->_portletActions[$sName] = $arCallback;
 		return $this;
 	}
 
+	/**
+	 * @return array
+	 */
 	protected function getViewData()
 	{
 		return $this->_viewData;
 	}
 
+	/**
+	 * @param  $value
+	 * @return CXLController
+	 */
 	protected function setViewData( $value )
 	{
 		$this->_viewData = $value;
 		return $this;
 	}
 
+	/**
+	 * @return array
+	 */
 	protected function getExtraViewDataList()
 	{
 		return $this->_extraViewDataList;
 	}
 
+	/**
+	 * @param  $value
+	 * @return CXLController
+	 */
 	protected function setExtraViewDataList( $value )
 	{
 		$this->_extraViewDataList = $value;
 		return $this;
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function getExtraViewDataPrefix()
 	{
 		return $this->_extraViewDataPrefix;
 	}
 
+	/**
+	 * @param  $value
+	 * @return CXLController
+	 */
 	protected function setExtraViewDataPrefix( $value )
 	{
 		$this->_extraViewDataPrefix = $value;
 		return $this;
 	}
+
+	/**
+	 *	@}
+	 * @}
+	 */
 
 	//********************************************************************************
 	//* Private Methods
@@ -837,7 +946,7 @@ JS;
 	 *
 	 * @return mixed
 	 */
-	protected function processCommand( $arData = array( ), $sIndexName = self::COMMAND_FIELD_NAME )
+	protected function _processCommand( $arData = array( ), $sIndexName = self::COMMAND_FIELD_NAME )
 	{
 		//	Our return variable
 		$_oResults = null;
@@ -874,7 +983,7 @@ JS;
 	 * @param boolean $bNoCommit If true, transaction will not be committed
 	 * @return boolean
 	 */
-	protected function saveCurrentModel( &$model, $arData = array( ), $sRedirectAction = 'show', $bAttributesSet = false, $sModelName = null, $sSuccessMessage = null, $bNoCommit = false,
+	protected function _saveCurrentModel( &$model, $arData = array( ), $sRedirectAction = 'show', $bAttributesSet = false, $sModelName = null, $sSuccessMessage = null, $bNoCommit = false,
 									  $bSafeOnly = false )
 	{
 		$_sMessage = XL::nvl( $sSuccessMessage, 'Your changes have been saved.' );
@@ -910,9 +1019,9 @@ JS;
 	 * @see saveModel
 	 */
 
-	protected function saveTransactionCurrentModel( &$model, $arData = array( ), $bAttributesSet = false, $sSuccessMessage = null )
+	protected function _saveTransactionCurrentModel( &$model, $arData = array( ), $bAttributesSet = false, $sSuccessMessage = null )
 	{
-		return $this->saveCurrentModel( $model, $arData, false, $bAttributesSet, null, $sSuccessMessage, true );
+		return $this->_saveCurrentModel( $model, $arData, false, $bAttributesSet, null, $sSuccessMessage, true );
 	}
 
 	/**
@@ -921,13 +1030,13 @@ JS;
 	 *
 	 * @return array Element 0 is the results of the find. Element 1 is the pagination object
 	 */
-	protected function loadPaged( $bSort = false, $oCriteria = null )
+	protected function _loadPaged( $bSort = false, $oCriteria = null )
 	{
 		$_oSort = $_oCrit = $_oPage = null;
 
 		//	Make criteria
 		$_oCrit = XL::nvl( $oCriteria, new CDbCriteria() );
-		$_oPage = new CPagination( $this->loadCount( $_oCrit ) );
+		$_oPage = new CPagination( $this->_loadCount( $_oCrit ) );
 		$_oPage->pageSize = XL::o( $_REQUEST, 'perPage', self::PAGE_SIZE );
 		if ( isset( $_REQUEST, $_REQUEST['page'] ) ) $_oPage->setCurrentPage( intval( $_REQUEST['page'] ) - 1 );
 		$_oPage->applyLimit( $_oCrit );
@@ -940,7 +1049,7 @@ JS;
 		}
 
 		//	Return an array of what we've build...
-		return array( $this->loadAll( $_oCrit ), $_oCrit, $_oPage, $_oSort );
+		return array( $this->_loadAll( $_oCrit ), $_oCrit, $_oPage, $_oSort );
 	}
 
 	/**
@@ -952,9 +1061,9 @@ JS;
 	 * @param array Options for the data load
 	 * @return CActiveRecord|array
 	 */
-	protected function genericModelLoad( $sMethod, &$oCrit = null, $arScope = array( ), $arOptions = array( ) )
+	protected function _genericModelLoad( $sMethod, &$oCrit = null, $arScope = array( ), $arOptions = array( ) )
 	{
-		$_sMethod = $this->getModelLoadString( $arScope, $arOptions ) . $sMethod;
+		$_sMethod = $this->_getModelLoadString( $arScope, $arOptions ) . $sMethod;
 		return eval( "return (" . $_sMethod . ");" );
 	}
 
@@ -964,9 +1073,9 @@ JS;
 	 * @var integer $id The primary key to look up
 	 * @return CActiveRecord
 	 */
-	protected function load( $id = null )
+	protected function _load( $id = null )
 	{
-		return $this->genericModelLoad( 'findByPk(' . $id . ')' );
+		return $this->_genericModelLoad( 'findByPk(' . $id . ')' );
 	}
 
 	/**
@@ -975,9 +1084,9 @@ JS;
 	 * @return array Array of CActiveRecord
 	 * @todo When using PHP v5.3, {@link eval} will no longer be needed
 	 */
-	protected function loadAll( &$oCrit = null )
+	protected function _loadAll( &$oCrit = null )
 	{
-		return $this->genericModelLoad( 'findAll(' . ( null !== $oCrit ? '$oCrit' : '' ) . ')', $oCrit );
+		return $this->_genericModelLoad( 'findAll(' . ( null !== $oCrit ? '$oCrit' : '' ) . ')', $oCrit );
 	}
 
 	/**
@@ -986,10 +1095,10 @@ JS;
 	 * @param CDbCriteria $oCrit
 	 * @return integer The number of rows
 	 */
-	protected function loadCount( &$oCrit = null )
+	protected function _loadCount( &$oCrit = null )
 	{
 		$_sCrit = ( $oCrit ) ? '$oCrit' : null;
-		return $this->genericModelLoad( 'count(' . $_sCrit . ')', $oCrit );
+		return $this->_genericModelLoad( 'count(' . $_sCrit . ')', $oCrit );
 	}
 
 	/**
@@ -999,7 +1108,7 @@ JS;
 	 * @return string
 	 * @todo Will be deprecated after upgrade to PHP v5.3
 	 */
-	protected function getModelLoadString( $arScope = array( ), $arOptions = array( ) )
+	protected function _getModelLoadString( $arScope = array( ), $arOptions = array( ) )
 	{
 		$_sScopes = ( count( $arScope ) ) ? implode( '->', $arScope ) . '->' : null;
 		return $this->_modelClass . '::model()->' . $_sScopes;
@@ -1010,7 +1119,7 @@ JS;
 	 *
 	 * @param CAction $action
 	 */
-	protected function pushAction( $action )
+	protected function _pushAction( $action )
 	{
 		array_push( $this->_actionStack, $action );
 	}
@@ -1019,7 +1128,7 @@ JS;
 	 * Retrieves the latest pushed action
 	 * @return CAction
 	 */
-	protected function popAction()
+	protected function _popAction()
 	{
 		return array_pop( $this->_actionStack );
 	}
@@ -1030,7 +1139,7 @@ JS;
 	 * @param string $variableName
 	 * @param mixed $variableData
 	 */
-	protected function addViewData( $variableName, $variableData = null )
+	protected function _addViewData( $variableName, $variableData = null )
 	{
 		$this->_viewData[$variableName] = $variableData;
 	}
@@ -1039,7 +1148,7 @@ JS;
 	 * Clears the current search criteria
 	 * @return null
 	 */
-	protected function clearSearchCriteria()
+	protected function _clearSearchCriteria()
 	{
 		$this->m_arCurrentSearchCriteria = null;
 		Yii::app()->user->clearState( $this->m_sSearchStateId );
