@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classYiiXLBase.html#a8bc323d82e5265f16d9cd356d0a02dba" title="getRequest" alt="" coords="144,5,237,35"/>
+<area shape="rect" id="node5" href="$classCXLController.html#adf1a35ad20e475c59cc0967d5764aa22" title="CXLController::getRequest" alt="" coords="97,59,284,88"/>
+<area shape="rect" id="node7" href="$classYiiXLBase.html#ad29992b5c09cbad51dc5978f09903b28" title="isAjaxRequest" alt="" coords="136,112,245,141"/>
+<area shape="rect" id="node11" href="$classYiiXLBase.html#a58562fcc2fc0a157f361c6eae58b641c" title="isPostRequest" alt="" coords="136,165,245,195"/>
+<area shape="rect" id="node9" href="$classCXLController.html#aed1df55c262bb0238ae6ef0921a2552b" title="CXLController::getIsAjaxRequest" alt="" coords="335,112,559,141"/>
+<area shape="rect" id="node13" href="$classCXLController.html#acea2c7c705d91ba736a41e67314e5ae3" title="CXLController::getIsPostRequest" alt="" coords="333,165,560,195"/>
+<area shape="rect" id="node15" href="$classCXLController.html#ae4991b44dadced9ed4c2548c8a52b72e" title="CXLController::processCommand" alt="" coords="609,165,841,195"/>
+<area shape="rect" id="node17" href="$classCXLController.html#ae348b4354879b012496b19989bf6d9cf" title="CXLController::beforeAction" alt="" coords="891,165,1088,195"/>
+</map>

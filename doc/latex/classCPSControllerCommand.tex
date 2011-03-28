@@ -1,0 +1,596 @@
+\hypertarget{classCPSControllerCommand}{
+\section{CPSControllerCommand Class Reference}
+\label{classCPSControllerCommand}\index{CPSControllerCommand@{CPSControllerCommand}}
+}
+
+
+Inheritance diagram for CPSControllerCommand:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classCPSControllerCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSControllerCommand:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classCPSControllerCommand__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSControllerCommand_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSControllerCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{run} (\$arArgs)
+\item 
+\hyperlink{classCPSControllerCommand_a49dc0a7897a19cca4729069259c39623}{generateController} (\$sSourceFile, \$arParams)
+\item 
+\hyperlink{classCPSControllerCommand_ac91a2aca5e06e754e38f13c4ef1b52f3}{generateAction} (\$sSourceFile, \$arParams)
+\item 
+\hyperlink{classCPSControllerCommand_a3a57c7a7020dbfaab8ae96210650be3e}{generateInputField} (\$sModelClass, \$oColumn)
+\item 
+\hyperlink{classCPSControllerCommand_a4cc928ef4def3a84c181608d31bf7608}{getHelp} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSControllerCommand_af71005841ce53adac00581ab0ba24c1f}{VERSION} = '1.0.6'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSControllerCommand_a1382069941a2f5f3b1491e3e2ae90bbc}{parseControllerId} (\$sModelClass, \$sControllerId, \$oModule)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Command that generates a Pogostick Yii Controller 
+
+Definition at line 23 of file CPSControllerCommand.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSControllerCommand_ac91a2aca5e06e754e38f13c4ef1b52f3}{
+\index{CPSControllerCommand@{CPSControllerCommand}!generateAction@{generateAction}}
+\index{generateAction@{generateAction}!CPSControllerCommand@{CPSControllerCommand}}
+\subsubsection[{generateAction}]{\setlength{\rightskip}{0pt plus 5cm}generateAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSourceFile, }
+\item[{\$}]{ arParams}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSControllerCommand_ac91a2aca5e06e754e38f13c4ef1b52f3}
+Generate an action file
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sSourceFile \item[{\em array}]\$arParams \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 160 of file CPSControllerCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! is_file( $sSourceFile ) ) $sSourceFile = YII_PATH . '/cli/views/sh
+      ell/controller/' . basename( $sSourceFile );
+        return $this->renderFile( $sSourceFile, array(), true );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=384pt]{classCPSControllerCommand_ac91a2aca5e06e754e38f13c4ef1b52f3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSControllerCommand_a49dc0a7897a19cca4729069259c39623}{
+\index{CPSControllerCommand@{CPSControllerCommand}!generateController@{generateController}}
+\index{generateController@{generateController}!CPSControllerCommand@{CPSControllerCommand}}
+\subsubsection[{generateController}]{\setlength{\rightskip}{0pt plus 5cm}generateController (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSourceFile, }
+\item[{\$}]{ arParams}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSControllerCommand_a49dc0a7897a19cca4729069259c39623}
+Generate a controller, ingore lack of PK for views
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$sSourceFile \item[{\em mixed}]\$arParams \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classCPSCrudCommand_a49dc0a7897a19cca4729069259c39623}{CPSCrudCommand}.
+
+
+
+Definition at line 138 of file CPSControllerCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! is_file( $sSourceFile ) ) $sSourceFile = YII_PATH . '/cli/views/sh
+      ell/controller/' . basename( $sSourceFile );
+        
+        return $this->renderFile( 
+            $sSourceFile, 
+            array( 
+                'className' => $arParams[ 0 ], 
+                'actions' => $arParams[ 1 ], 
+                'baseClass' => $this->controllerBaseClass 
+            ), 
+            true
+        );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSControllerCommand_a49dc0a7897a19cca4729069259c39623_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSControllerCommand_a3a57c7a7020dbfaab8ae96210650be3e}{
+\index{CPSControllerCommand@{CPSControllerCommand}!generateInputField@{generateInputField}}
+\index{generateInputField@{generateInputField}!CPSControllerCommand@{CPSControllerCommand}}
+\subsubsection[{generateInputField}]{\setlength{\rightskip}{0pt plus 5cm}generateInputField (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sModelClass, }
+\item[{\$}]{ oColumn}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSControllerCommand_a3a57c7a7020dbfaab8ae96210650be3e}
+Generates an input field
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sModelClass \item[{\em CDbColumnSchema}]\$oColumn \end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classCPSCrudCommand_a3a57c7a7020dbfaab8ae96210650be3e}{CPSCrudCommand}.
+
+
+
+Definition at line 172 of file CPSControllerCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $oColumn->type === 'boolean' ) return "PS::field( PS::CHECK, \$model
+      , '{$oColumn->name}' )";
+        
+        if ( false !== stripos( $oColumn->dbType, 'text' ) )
+            return "PS::field( PS::TEXTAREA, \$model, '{$oColumn->name}', array( 
+      'rows' => 6, 'cols' => 50 ) )";
+            
+        $_sType = ( preg_match( '/^(password|pass|passwd|passcode)$/i', $oColumn-
+      >name ) ) ? 'PS::PASSWORD' : 'PS::TEXT';
+
+        if ( $oColumn->type !== 'string' || $oColumn->size === null )
+            return "PS::field( {$_sType}, \$model, '{$_oColumn->name}' )";
+
+        if ( ( $_iSize = $_iMaxLength = $oColumn->size ) > 60 ) $_iSize = 60;
+
+        return "PS::field( {$_sType}, $model, '{$oColumn->name}', array( 'size' =
+      > $_iSize, 'maxlength' => $_iMaxLength ) )";
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSControllerCommand_a4cc928ef4def3a84c181608d31bf7608}{
+\index{CPSControllerCommand@{CPSControllerCommand}!getHelp@{getHelp}}
+\index{getHelp@{getHelp}!CPSControllerCommand@{CPSControllerCommand}}
+\subsubsection[{getHelp}]{\setlength{\rightskip}{0pt plus 5cm}getHelp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSControllerCommand_a4cc928ef4def3a84c181608d31bf7608}
+Display help 
+
+Reimplemented from \hyperlink{classCPSConsoleCommand_a4cc928ef4def3a84c181608d31bf7608}{CPSConsoleCommand}.
+
+
+
+Reimplemented in \hyperlink{classCPSCrudCommand_a4cc928ef4def3a84c181608d31bf7608}{CPSCrudCommand}.
+
+
+
+Definition at line 193 of file CPSControllerCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sName = $this->bold( $this->name );
+        
+        $_sOptions = $this->getDisplayOptions();
+        
+        return <<<EOD
+USAGE
+    \033[1m{$_sName}\033[0m <\033[1mcontroller-ID\033[0m> [\033[1maction-ID\033[0
+      m]... [options]
+
+DESCRIPTION
+  This command generates a controller and views associated with
+  the specified actions.
+
+PARAMETERS
+ * controller-ID: required, controller ID, e.g., 'post'.
+   If the controller should be located under a subdirectory,
+   please specify the controller ID as 'path/to/ControllerID',
+   e.g., 'admin/user'.
+
+   If the controller belongs to a module, please specify
+   the controller ID as 'ModuleID/ControllerID' or
+   'ModuleID/path/to/Controller' (assuming the controller is
+   under a subdirectory of that module).
+
+ * action-ID: optional, action ID. You may supply one or several
+   action IDs. A default 'index' action will always be generated.
+
+OPTIONS
+
+  -f, --force                  if the files exists, you will be able to 
+                                   optionally overwrite them.
+                                   
+  -d, --database               The database component to use. 
+                                   Defaults to 'db'
+
+  -b, --base-class             The base class to use for generated controllers. 
+                                   Defaults to 'CPSController'
+                                   
+  -t, --template-path          The template path to use.
+  
+  -n, --template-name          The name of the template to use. 
+                                   Defaults to 'controller.php'
+
+{$_sOptions}
+EXAMPLES
+ * Generates the 'post' controller:
+        {$_sName} post
+
+ * Generates the 'post' controller with additional actions 'contact'
+   and 'about':
+        {$_sName} post contact about
+
+ * Generates the 'post' controller which should be located under
+   the 'admin' subdirectory of the base controller path:
+        {$_sName} admin/post
+
+ * Generates the 'post' controller which should belong to
+   the 'admin' module:
+        {$_sName} admin/post
+
+NOTE: in the last two examples, the commands are the same, but
+the generated controller file is located under different directories.
+Yii is able to detect whether 'admin' refers to a module or a subdirectory.
+
+EOD;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=388pt]{classCPSControllerCommand_a4cc928ef4def3a84c181608d31bf7608_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classCPSControllerCommand_a4cc928ef4def3a84c181608d31bf7608_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSControllerCommand_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSControllerCommand@{CPSControllerCommand}!init@{init}}
+\index{init@{init}!CPSControllerCommand@{CPSControllerCommand}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSControllerCommand_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize the command 
+
+Reimplemented from \hyperlink{classCPSConsoleCommand_a4be4055f3361d4800e16bc2e2e38cda6}{CPSConsoleCommand}.
+
+
+
+Reimplemented in \hyperlink{classCPSCrudCommand_a4be4055f3361d4800e16bc2e2e38cda6}{CPSCrudCommand}.
+
+
+
+Definition at line 42 of file CPSControllerCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::init();
+        
+        //  Add our options
+        $this->addOptions( self::getBaseOptions() );
+
+        //  Set base values
+        $this->templatePath = Yii::getPathOfAlias( 'pogostick.templates.crud' );
+        
+        $this->controllerBaseClass = 'CPSController';
+        $this->controllerTemplateName = 'controller.php';
+
+        $this->name = 'pscontroller';
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSControllerCommand_a1382069941a2f5f3b1491e3e2ae90bbc}{
+\index{CPSControllerCommand@{CPSControllerCommand}!parseControllerId@{parseControllerId}}
+\index{parseControllerId@{parseControllerId}!CPSControllerCommand@{CPSControllerCommand}}
+\subsubsection[{parseControllerId}]{\setlength{\rightskip}{0pt plus 5cm}parseControllerId (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sModelClass, }
+\item[{\$}]{ sControllerId, }
+\item[{\$}]{ oModule}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSControllerCommand_a1382069941a2f5f3b1491e3e2ae90bbc}
+
+
+Definition at line 265 of file CPSControllerCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( empty( $sControllerId ) )
+        {
+            $sControllerId = $sModelClass;
+            $_sControllerClass = ucfirst( $sControllerId ) . 'Controller';
+            $_sControllerFile = $oModule->controllerPath . DIRECTORY_SEPARATOR . 
+      $_sControllerClass . '.php';
+            $sControllerId[ 0 ] = strtolower( $sControllerId[ 0 ] );
+        }
+        else
+        {
+            //  Build the controller
+            if ( false === ( $_iPos = strrpos( $sControllerId, '/' ) ) )
+            {
+                $_sControllerClass = ucfirst( $sControllerId ) . 'Controller';
+                $_sControllerFile = $oModule->controllerPath . DIRECTORY_SEPARATO
+      R . $_sControllerClass . '.php';
+                $sControllerId[ 0 ] = strtolower( $sControllerId[ 0 ] );
+            }
+            else
+            {
+                $_sLast = substr( $sControllerId, $_iPos + 1 );
+                $_sLast[ 0 ] = strtolower( $_sLast );
+                $_iPos2 = strpos( $sControllerId, '/' );
+                $_sFirst = substr( $sControllerId, 0, $_iPos2 );
+                $_sMiddle = $_iPos === $_iPos2 ? '' : substr( $sControllerId, $_i
+      Pos2 + 1, $_iPos - $_iPos2 );
+
+                $_sControllerClass = ucfirst( $_sLast ) . 'Controller';
+                $_sControllerFile = ( $_sMiddle === '' ? '' : $_sMiddle . '/' ) .
+       $_sControllerClass . '.php';
+                $sControllerId = empty( $_sMiddle ) ? $_sLast : $_sMiddle . '/' .
+       $_sLast;
+                
+                if ( null !== ( $_oNewModule = Yii::app()->getModule( $_sFirst ) 
+      ) )
+                    $oModule = $_oNewModule;
+                else
+                {
+                    $_sControllerFile = $_sFirst . '/' . $_sControllerFile;
+                    $sControllerId = $_sFirst . '/' . $sControllerId;
+                }
+
+                $_sControllerFile = $oModule->controllerPath . DIRECTORY_SEPARATO
+      R . str_replace( '/', DIRECTORY_SEPARATOR, $_sControllerFile );
+            }
+        }
+        
+        return array( $_sControllerClass, $_sControllerFile, $sControllerId );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classCPSControllerCommand_a1382069941a2f5f3b1491e3e2ae90bbc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSControllerCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{
+\index{CPSControllerCommand@{CPSControllerCommand}!run@{run}}
+\index{run@{run}!CPSControllerCommand@{CPSControllerCommand}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arArgs}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSControllerCommand_a330e31e8c3572ce01a4e1c8485c6aedd}
+Runs the command
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arArgs Command line parameters specific for this command \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classCPSConsoleCommand_acd971ca71798c549bd4f74ed4ee6729e}{CPSConsoleCommand}.
+
+
+
+Reimplemented in \hyperlink{classCPSCrudCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{CPSCrudCommand}.
+
+
+
+Definition at line 63 of file CPSControllerCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Process arguments...
+        $arArgs = $this->processArguments( $arArgs );
+        
+        //  Check args...
+        if ( ! ( $_sControllerId = array_shift( $arArgs ) ) )
+        {
+            echo "\033[1mError\033[0m: controller name is required.\n";
+            echo $this->getHelp();
+            return;
+        }
+        
+        //  Get actions from arguments...
+        $_arActions = array( 'index' );
+
+        //  The rest of the arguments are actions...        
+        while ( $_sAction = array_shift( $arArgs ) )
+            array_push( $_arActions, $_sAction );
+
+        //  Set our actions...
+        $this->actions = $_arActions;
+        
+        //  Load the module
+        $_oModule = Yii::app();
+        $_sModuleId = ( $_oModule instanceof CWebModule ) ? $_oModule->id . '/' :
+       '';
+
+        //  Get controller stuff
+        list( $_sControllerClass, $_sControllerFile, $_sControllerId ) = $this->
+      parseControllerId( $_sControllerId, $_oModule );
+        
+        //  Build our parameter array
+        $_sClasses = $this->boldEchoString( '(' . $_sControllerFile . ')', $_sCon
+      trollerClass, true );
+
+        $_arList = array(
+            basename( $_sControllerFile ) => array(
+                'source' => $this->templatePath . DIRECTORY_SEPARATOR . $this->co
+      ntrollerTemplateName,
+                'target' => $_sControllerFile,
+                'callback' => array( $this, 'generateController' ),
+                'params' => array( $_sControllerClass, $this->actions ),
+            ),
+        );
+
+        $_sViewPath = $_oModule->viewPath . DIRECTORY_SEPARATOR . str_replace( '/
+      ', DIRECTORY_SEPARATOR, $_sControllerId );
+        
+        //  Actions
+        foreach ( $this->actions as $_sAction )
+        {
+            $_arList[ $_sAction . '.php' ] = array(
+                'source' => $this->templatePath . DIRECTORY_SEPARATOR . $this->vi
+      ewTemplateName, 
+                'target' => $_sViewPath . DIRECTORY_SEPARATOR . $_sAction . '.php
+      ',
+                'callback' => array( $this, 'generateAction' ),
+                'params' => array(),
+            );
+            
+            $_sClasses .= $this->boldEchoString( '(' . $_sViewPath . DIRECTORY_SE
+      PARATOR . $_sAction . '.php' . ')', $_sAction, true );
+        }
+
+        $this->displayParameters( 'Controller Generator', array( 'Output Path' =>
+       $_sViewPath ) );
+        
+        $_sPrompt = "Do you want to generate the above classes? [\033[1mY\033[0me
+      s|\033[1mN\033[0mo] ";
+        
+        //  Generate
+        $_arList = $this->copyFiles( $_arList );
+        
+        //  Display results...
+        echo $this->getResultDisplay( $_arList );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSControllerCommand_a330e31e8c3572ce01a4e1c8485c6aedd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSControllerCommand_af71005841ce53adac00581ab0ba24c1f}{
+\index{CPSControllerCommand@{CPSControllerCommand}!VERSION@{VERSION}}
+\index{VERSION@{VERSION}!CPSControllerCommand@{CPSControllerCommand}}
+\subsubsection[{VERSION}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf VERSION} = '1.0.6'}}
+\label{classCPSControllerCommand_af71005841ce53adac00581ab0ba24c1f}
+Our version 
+
+Reimplemented from \hyperlink{classCPSConsoleCommand_af71005841ce53adac00581ab0ba24c1f}{CPSConsoleCommand}.
+
+
+
+Reimplemented in \hyperlink{classCPSCrudCommand_af71005841ce53adac00581ab0ba24c1f}{CPSCrudCommand}.
+
+
+
+Definition at line 32 of file CPSControllerCommand.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/commands/\hyperlink{CPSControllerCommand_8php}{CPSControllerCommand.php}\end{DoxyCompactItemize}

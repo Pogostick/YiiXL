@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classCXLBehavior.html" title="CXLBehavior The base class for all non&#45;AR behaviors in the YiiXL system." alt="" coords="12,160,113,189"/>
+<area shape="rect" id="node4" href="$interfaceIXLBehavior.html" title="This interface indicates that a class is a behavior in YiiXL." alt="" coords="15,83,111,112"/>
+<area shape="rect" id="node6" href="$interfaceIXLComponent.html" title="IXLComponent" alt="" coords="5,5,120,35"/>
+<area shape="rect" id="node8" href="$interfaceIXLAccessControl.html" title="This interface defines an object as an access control object." alt="" coords="137,160,268,189"/>
+</map>

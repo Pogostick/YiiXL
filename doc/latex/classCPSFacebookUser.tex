@@ -1,0 +1,332 @@
+\hypertarget{classCPSFacebookUser}{
+\section{CPSFacebookUser Class Reference}
+\label{classCPSFacebookUser}\index{CPSFacebookUser@{CPSFacebookUser}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFacebookUser_a6bc057a9b0c03f8147a4294936b2494b}{getMe} ()
+\item 
+\hyperlink{classCPSFacebookUser_ae81b7186fb97a7c6457edcc68c9aa2ef}{getUser} ()
+\item 
+\hyperlink{classCPSFacebookUser_a0ef2f4b4ea68bcd957152a5b46a6612e}{getFBUserId} ()
+\item 
+\hyperlink{classCPSFacebookUser_a9ff6cf9ceb9df1eb1fcd60a88db9e9e5}{setFBUserId} (\$value)
+\item 
+\hyperlink{classCPSFacebookUser_a875f91242dde0ebd321a43ec1f555a62}{getfacebookApi} ()
+\item 
+\hyperlink{classCPSFacebookUser_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSFacebookUser_aff132084818e40b18cc758c1bf7bf905}{authenticateUser} (\hyperlink{classCPSFacebook}{CPSFacebook} \$facebookApi, \hyperlink{classCPSFacebookUserIdentity}{CPSFacebookUserIdentity} \$identity=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFacebookUser_a47779b3c93475b9c61f3928bc8247f8d}{afterLogout} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFacebookUser_a45e53d351918dc7cad7136ff44e1724b}{\$\_\-me} = null
+\item 
+\hyperlink{classCPSFacebookUser_a5df5982b9dadc74df05081972cd67fdf}{\$\_\-user} = null
+\item 
+\hyperlink{classCPSFacebookUser_a19e04e69bd6cde6129a45de979954cfa}{\$\_\-fbUserId} = null
+\item 
+\hyperlink{classCPSFacebookUser_a2f481ea63815c4c7e8c6dad8b4d839ec}{\$\_\-facebookApi} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 48 of file CPSFacebookUser.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSFacebookUser_a47779b3c93475b9c61f3928bc8247f8d}{
+\index{CPSFacebookUser@{CPSFacebookUser}!afterLogout@{afterLogout}}
+\index{afterLogout@{afterLogout}!CPSFacebookUser@{CPSFacebookUser}}
+\subsubsection[{afterLogout}]{\setlength{\rightskip}{0pt plus 5cm}afterLogout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUser_a47779b3c93475b9c61f3928bc8247f8d}
+After a user has logged out, clear our data... 
+
+Definition at line 132 of file CPSFacebookUser.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( parent::afterLogout() )
+        {
+            $this->_me = null;
+            PS::_ss( 'currentUser', $this->_user );
+            PS::_ss( 'currentMe', null );
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUser_aff132084818e40b18cc758c1bf7bf905}{
+\index{CPSFacebookUser@{CPSFacebookUser}!authenticateUser@{authenticateUser}}
+\index{authenticateUser@{authenticateUser}!CPSFacebookUser@{CPSFacebookUser}}
+\subsubsection[{authenticateUser}]{\setlength{\rightskip}{0pt plus 5cm}static authenticateUser (
+\begin{DoxyParamCaption}
+\item[{{\bf CPSFacebook} \$}]{ facebookApi, }
+\item[{{\bf CPSFacebookUserIdentity} \$}]{ identity = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSFacebookUser_aff132084818e40b18cc758c1bf7bf905}
+Authenticate a facebook user 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSFacebook}{CPSFacebook}}]\item[{\em \hyperlink{classCPSFacebookUserIdentity}{CPSFacebookUserIdentity}}]You may optionally pass in an identiy object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file CPSFacebookUser.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_result = false;
+        $_identity = ( null === $identity ? new CPSFacebookUserIdentity( $faceboo
+      kApi, null ) : $identity );
+
+        if ( $_identity->authenticate() && CUserIdentity::ERROR_NONE == $_identit
+      y->errorCode )
+        {
+            PS::_gu()->allowAutoLogin = false;
+            PS::_gu()->login( $_identity, 0 );
+
+            //  Set the current user value...
+            if ( null === ( $_user = PS::_gs( 'currentUser' ) ) )
+            {
+                $_me = $_identity->getMe();
+                PS::_gu()->setFBUserId( $_me['id'] );
+
+                if ( null !== ( $_user = User::model()->find( 'pform_user_id_text
+       = :pform_user_id_text', array( ':pform_user_id_text' => $_me['id'] ) ) ) )
+                {
+                    PS::_ss( 'currentUser', $_user );
+                    PS::_ss( 'currentMe', $_me );
+                }
+            }
+
+            $_result = true;
+        }
+
+        return $_result;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookUser_aff132084818e40b18cc758c1bf7bf905_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookUser_a875f91242dde0ebd321a43ec1f555a62}{
+\index{CPSFacebookUser@{CPSFacebookUser}!getfacebookApi@{getfacebookApi}}
+\index{getfacebookApi@{getfacebookApi}!CPSFacebookUser@{CPSFacebookUser}}
+\subsubsection[{getfacebookApi}]{\setlength{\rightskip}{0pt plus 5cm}getfacebookApi (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUser_a875f91242dde0ebd321a43ec1f555a62}
+
+
+Definition at line 77 of file CPSFacebookUser.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_facebookApi; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUser_a0ef2f4b4ea68bcd957152a5b46a6612e}{
+\index{CPSFacebookUser@{CPSFacebookUser}!getFBUserId@{getFBUserId}}
+\index{getFBUserId@{getFBUserId}!CPSFacebookUser@{CPSFacebookUser}}
+\subsubsection[{getFBUserId}]{\setlength{\rightskip}{0pt plus 5cm}getFBUserId (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUser_a0ef2f4b4ea68bcd957152a5b46a6612e}
+
+
+Definition at line 70 of file CPSFacebookUser.php.
+
+
+
+
+\begin{DoxyCode}
+{ return PS::o( $this->_me, 'id' ); }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUser_a6bc057a9b0c03f8147a4294936b2494b}{
+\index{CPSFacebookUser@{CPSFacebookUser}!getMe@{getMe}}
+\index{getMe@{getMe}!CPSFacebookUser@{CPSFacebookUser}}
+\subsubsection[{getMe}]{\setlength{\rightskip}{0pt plus 5cm}getMe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUser_a6bc057a9b0c03f8147a4294936b2494b}
+
+
+Definition at line 58 of file CPSFacebookUser.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_me; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUser_ae81b7186fb97a7c6457edcc68c9aa2ef}{
+\index{CPSFacebookUser@{CPSFacebookUser}!getUser@{getUser}}
+\index{getUser@{getUser}!CPSFacebookUser@{CPSFacebookUser}}
+\subsubsection[{getUser}]{\setlength{\rightskip}{0pt plus 5cm}getUser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUser_ae81b7186fb97a7c6457edcc68c9aa2ef}
+
+
+Definition at line 64 of file CPSFacebookUser.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_user; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUser_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSFacebookUser@{CPSFacebookUser}!init@{init}}
+\index{init@{init}!CPSFacebookUser@{CPSFacebookUser}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUser_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize user and pull anything out of the session that's there... 
+
+Definition at line 86 of file CPSFacebookUser.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::init();
+
+        $this->_user = CPSHelperBase::_gs( 'currentUser' );
+        $this->_me = CPSHelperBase::_gs( 'currentMe' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookUser_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookUser_a9ff6cf9ceb9df1eb1fcd60a88db9e9e5}{
+\index{CPSFacebookUser@{CPSFacebookUser}!setFBUserId@{setFBUserId}}
+\index{setFBUserId@{setFBUserId}!CPSFacebookUser@{CPSFacebookUser}}
+\subsubsection[{setFBUserId}]{\setlength{\rightskip}{0pt plus 5cm}setFBUserId (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUser_a9ff6cf9ceb9df1eb1fcd60a88db9e9e5}
+
+
+Definition at line 71 of file CPSFacebookUser.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_fbUserId = $value; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSFacebookUser_a2f481ea63815c4c7e8c6dad8b4d839ec}{
+\index{CPSFacebookUser@{CPSFacebookUser}!\$\_\-facebookApi@{\$\_\-facebookApi}}
+\index{\$\_\-facebookApi@{\$\_\-facebookApi}!CPSFacebookUser@{CPSFacebookUser}}
+\subsubsection[{\$\_\-facebookApi}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-facebookApi = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUser_a2f481ea63815c4c7e8c6dad8b4d839ec}
+
+
+Definition at line 76 of file CPSFacebookUser.php.
+
+\hypertarget{classCPSFacebookUser_a19e04e69bd6cde6129a45de979954cfa}{
+\index{CPSFacebookUser@{CPSFacebookUser}!\$\_\-fbUserId@{\$\_\-fbUserId}}
+\index{\$\_\-fbUserId@{\$\_\-fbUserId}!CPSFacebookUser@{CPSFacebookUser}}
+\subsubsection[{\$\_\-fbUserId}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-fbUserId = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUser_a19e04e69bd6cde6129a45de979954cfa}
+
+
+Definition at line 69 of file CPSFacebookUser.php.
+
+\hypertarget{classCPSFacebookUser_a45e53d351918dc7cad7136ff44e1724b}{
+\index{CPSFacebookUser@{CPSFacebookUser}!\$\_\-me@{\$\_\-me}}
+\index{\$\_\-me@{\$\_\-me}!CPSFacebookUser@{CPSFacebookUser}}
+\subsubsection[{\$\_\-me}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-me = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUser_a45e53d351918dc7cad7136ff44e1724b}
+
+
+Definition at line 57 of file CPSFacebookUser.php.
+
+\hypertarget{classCPSFacebookUser_a5df5982b9dadc74df05081972cd67fdf}{
+\index{CPSFacebookUser@{CPSFacebookUser}!\$\_\-user@{\$\_\-user}}
+\index{\$\_\-user@{\$\_\-user}!CPSFacebookUser@{CPSFacebookUser}}
+\subsubsection[{\$\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-user = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUser_a5df5982b9dadc74df05081972cd67fdf}
+
+
+Definition at line 63 of file CPSFacebookUser.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/facebook/\hyperlink{CPSFacebookUser_8php}{CPSFacebookUser.php}\end{DoxyCompactItemize}

@@ -1,0 +1,459 @@
+\hypertarget{classCPSOpenCalais}{
+\section{CPSOpenCalais Class Reference}
+\label{classCPSOpenCalais}\index{CPSOpenCalais@{CPSOpenCalais}}
+}
+
+
+Inheritance diagram for CPSOpenCalais:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classCPSOpenCalais__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSOpenCalais:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classCPSOpenCalais__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSOpenCalais_ac0b3a7b2ac4ed8f5d6b100820faedfab}{semanticProxy} (\$url)
+\item 
+\hyperlink{classCPSOpenCalais_a816ea4fdb9191868f2d0f51d182114bd}{enlighten} (\$sExternalID, \$sContent, \$bFetch=false)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSOpenCalais_abd77e417d95ee59b739e54a62fe97fbc}{SOAP} = 0
+\item 
+const \hyperlink{classCPSOpenCalais_a1273e4f6dfecad5cc711360770b7d784}{REST} = 1
+\item 
+const \hyperlink{classCPSOpenCalais_ac124904e08a9542af2a219df5f9472e6}{HTML} = 2
+\item 
+\hyperlink{classCPSOpenCalais_a084e3db37d1b117a3cc7212cf2eed533}{\$apiKey} = null
+\item 
+\hyperlink{classCPSOpenCalais_a07eadf024580d87646e290d38176c8a7}{\$soapUrl} = 'http://api.opencalais.com/enlighten/?wsdl'
+\item 
+\hyperlink{classCPSOpenCalais_ab8c052d0ddebb9f14151f8682916a587}{\$contentType} = 'text/txt'
+\item 
+\hyperlink{classCPSOpenCalais_aad6ca9fda50b25879e53039e23613449}{\$outputFormat} = 'XML/RDF'
+\item 
+\hyperlink{classCPSOpenCalais_a68ec6608c1cf0f23c25f420586e31e77}{\$reltagBaseUrl} = ''
+\item 
+\hyperlink{classCPSOpenCalais_a32ea2c52cbe7a0febc8be98c7ca57195}{\$calculateRelevanceScore} = 'true'
+\item 
+\hyperlink{classCPSOpenCalais_a465299fb5bd9cc610d83d8cc162a69ef}{\$enableMetadataType} = 'false'
+\item 
+\hyperlink{classCPSOpenCalais_a0e3c2633bd75ee4bdb9bc4ad0e498a0c}{\$discardMetadata} = 'false'
+\item 
+\hyperlink{classCPSOpenCalais_a2989023b45237cd246c557e99bf994b6}{\$allowDistribution} = 'false'
+\item 
+\hyperlink{classCPSOpenCalais_a128c7ee55d4a7c1aa84c8b65a88d6862}{\$allowSearch} = 'false'
+\item 
+\hyperlink{classCPSOpenCalais_a03cbdb5a006d142963eb1f513002bdd0}{\$externalID} = ''
+\item 
+\hyperlink{classCPSOpenCalais_a317ab5774a65de21409c3f9715e5c50c}{\$submitter} = ''
+\item 
+\hyperlink{classCPSOpenCalais_ad0c769ee6d064c1c2e3e16ee10b3404e}{\$omitOutputtingOriginalText} = 'true'
+\item 
+\hyperlink{classCPSOpenCalais_a37c866e0dd005b2054896f4c4fb88132}{\$requestMethod} = self::SOAP
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 43 of file CPSOpenCalais.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSOpenCalais_a816ea4fdb9191868f2d0f51d182114bd}{
+\index{CPSOpenCalais@{CPSOpenCalais}!enlighten@{enlighten}}
+\index{enlighten@{enlighten}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{enlighten}]{\setlength{\rightskip}{0pt plus 5cm}enlighten (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sExternalID, }
+\item[{\$}]{ sContent, }
+\item[{\$}]{ bFetch = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOpenCalais_a816ea4fdb9191868f2d0f51d182114bd}
+
+
+Definition at line 195 of file CPSOpenCalais.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Default content...
+        $_sContent = $sContent;
+
+        //  Override external id...
+        if ( $sExternalID != null )
+            $this->externalID = $sExternalID;
+
+        //  Get content if we are passing in an url...
+        if ( $bFetch )
+        {
+            $this->contentType = 'text/html';
+            $_iTryCount = 0;
+            $_sDeepLink = $this->getDeepLink( $sContent );
+
+            //  Try up to five times to pull the real data...
+            while ( $_iTryCount < 5 )
+            {
+                $_sContent = PS::makeHttpRequest( $_sDeepLink );
+
+                //  Error ...
+                if ( $_sContent === false )
+                    break;
+
+                if ( $_sContent == '' || $_sContent == null )
+                {
+                    Yii::log( 'Error fetching url:[' . $_sDeepLink . ']', 'error'
+      , 'system.components.COpenCalaisApi' );
+                }
+                else
+                    break;
+
+                $_iTryCount++;
+            }
+
+            if ( strlen( $_sContent ) > 99999 )
+            {
+                Yii::log( "Content too large, pulling out just the body", 'info',
+       'system.components.COpenCalaisApi' );
+
+                //  Try and pull the body out...
+                $_sContent = PS::suckTag( $_sContent, '<body', '</body>' );
+
+                //  Still too long? Dammit, trim off some characters
+                if ( strlen( $_sContent ) > 99999 )
+                {
+                    $_sContent = substr( $_sContent, 0, 99500 );
+//                  $this->contentType = 'text/raw';
+                    Yii::log( "Content STILL too large, forced trimmed", 'error',
+       'system.components.COpenCalaisApi' );
+                }
+            }
+        }
+
+        //  Empty Content? Bail...
+        if ( $_sContent == '' || $_sContent == null )
+        {
+            Yii::log( 'No content to tag, not calling OC url:[' . $_sDeepLink . '
+      ]', 'error', 'system.components.COpenCalaisApi' );
+            return( null );
+        }
+
+        //  Some temps for blank items...
+        if ( $this->reltagBaseUrl != '' )
+            $_sRelTagBaseUrl = 'c:reltagBaseUrl="' . $this->reltagBaseUrl . '"';
+
+        if ( $this->enableMetadataType != '' )
+            $_sEnableMetaDataType = 'c:enableMetadataType="' . $this->enableMetad
+      ataType . '"';
+
+        if ( $this->discardMetadata != '' )
+            $_sDiscardMetaData = 'c:discardMetaData="' . $this->discardMetadata .
+       '"';
+
+        if ( $this->externalID != '' )
+            $_sExternalID = 'c:externalID="' . $this->externalID . '"';
+
+        $_xmlParams = <<<XML
+<c:params xmlns:c="http://s.opencalais.com/1/pred/" xmlns:rdf="http://www.w3.org/
+      1999/02/22-rdf-syntax-ns#">
+    <c:processingDirectives {$_sRelTagBaseUrl} c:calculateRelevanceScore="{$this-
+      >calculateRelevanceScore}" c:omitOutputtingOriginalText="{$this->omitOutputtingOr
+      iginalText}" c:contentType="{$this->contentType}" {$_sEnableMetaDataType} {$_sDis
+      cardMetaData} c:outputFormat="{$this->outputFormat}">
+    </c:processingDirectives>
+    <c:userDirectives c:allowDistribution="{$this->allowDistribution}" c:allowSea
+      rch="{$this->allowSearch}" {$_sExternalID} c:submitter="{$this->submitter}">
+    </c:userDirectives>
+    <c:externalMetadata>
+    </c:externalMetadata>
+</c:params>
+XML;
+
+        $_oClient = new SoapClient( $this->soapUrl );
+
+        try
+        {
+            $_sEncContent = utf8_encode( $_sContent );
+
+            $_oResponse = $_oClient->Enlighten(
+                array(
+                    'licenseID' => $this->apiKey,
+                    'content' => $_sEncContent,
+                    'paramsXML' => $_xmlParams,
+                )
+            );
+        }
+        catch ( SoapFault $_ex )
+        {
+            Yii::log( "Error calling Open Calais SOAP method:[" . $_ex->getMessag
+      e() . ']', 'error', 'system.components.COpenCalaisApi' );
+            $_oResponse = null;
+        }
+
+        return( $_oResponse );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classCPSOpenCalais_a816ea4fdb9191868f2d0f51d182114bd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOpenCalais_ac0b3a7b2ac4ed8f5d6b100820faedfab}{
+\index{CPSOpenCalais@{CPSOpenCalais}!semanticProxy@{semanticProxy}}
+\index{semanticProxy@{semanticProxy}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{semanticProxy}]{\setlength{\rightskip}{0pt plus 5cm}semanticProxy (
+\begin{DoxyParamCaption}
+\item[{\$}]{ url}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOpenCalais_ac0b3a7b2ac4ed8f5d6b100820faedfab}
+Calls through SemanticProxy to get a JSON encoded result set of tags.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$url \end{DoxyParams}
+
+
+Definition at line 155 of file CPSOpenCalais.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_data = null;
+
+        //  Make the call...
+        if ( $_results = PS::makeHttpRequest( 'http://service.semanticproxy.com/p
+      rocessurl/' . $this->apiKey . '/json/' . $url ) )
+            $_data = json_decode( $_results, true );
+
+        //  No go? Default to soap
+        if ( $_data === null )
+        {
+            //  Let's try and make a soap call...
+            $_sOldOF = $this->outputFormat;
+            $this->outputFormat = 'application/json';
+
+            try
+            {
+                $_oResult = $this->enlighten( '', $url, true );
+                $_data = json_decode( $_oResult->EnlightenResult, true );
+            }
+            catch ( Exception $_ex )
+            {
+                $this->outputFormat = $_sOldOF;
+                Yii::log( "Error getting SOAP request after failed SemanticProxy:
+       " . $_ex->getMessage(), 'error', 'system.components.COpenCalaisApi' );
+                return( null );
+            }
+
+            $this->outputFormat = $_sOldOF;
+        }
+
+//      Yii::log( var_export( $_data, true ), 'info', 'system.components.COpenCal
+      aisApi' );
+
+        //  Return
+        return $_data;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classCPSOpenCalais_ac0b3a7b2ac4ed8f5d6b100820faedfab_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSOpenCalais_a2989023b45237cd246c557e99bf994b6}{
+\index{CPSOpenCalais@{CPSOpenCalais}!\$allowDistribution@{\$allowDistribution}}
+\index{\$allowDistribution@{\$allowDistribution}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{\$allowDistribution}]{\setlength{\rightskip}{0pt plus 5cm}\$allowDistribution = 'false'}}
+\label{classCPSOpenCalais_a2989023b45237cd246c557e99bf994b6}
+
+
+Definition at line 114 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_a128c7ee55d4a7c1aa84c8b65a88d6862}{
+\index{CPSOpenCalais@{CPSOpenCalais}!\$allowSearch@{\$allowSearch}}
+\index{\$allowSearch@{\$allowSearch}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{\$allowSearch}]{\setlength{\rightskip}{0pt plus 5cm}\$allowSearch = 'false'}}
+\label{classCPSOpenCalais_a128c7ee55d4a7c1aa84c8b65a88d6862}
+
+
+Definition at line 120 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_a084e3db37d1b117a3cc7212cf2eed533}{
+\index{CPSOpenCalais@{CPSOpenCalais}!\$apiKey@{\$apiKey}}
+\index{\$apiKey@{\$apiKey}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{\$apiKey}]{\setlength{\rightskip}{0pt plus 5cm}\$apiKey = null}}
+\label{classCPSOpenCalais_a084e3db37d1b117a3cc7212cf2eed533}
+
+
+Definition at line 65 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_a32ea2c52cbe7a0febc8be98c7ca57195}{
+\index{CPSOpenCalais@{CPSOpenCalais}!\$calculateRelevanceScore@{\$calculateRelevanceScore}}
+\index{\$calculateRelevanceScore@{\$calculateRelevanceScore}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{\$calculateRelevanceScore}]{\setlength{\rightskip}{0pt plus 5cm}\$calculateRelevanceScore = 'true'}}
+\label{classCPSOpenCalais_a32ea2c52cbe7a0febc8be98c7ca57195}
+
+
+Definition at line 96 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_ab8c052d0ddebb9f14151f8682916a587}{
+\index{CPSOpenCalais@{CPSOpenCalais}!\$contentType@{\$contentType}}
+\index{\$contentType@{\$contentType}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{\$contentType}]{\setlength{\rightskip}{0pt plus 5cm}\$contentType = 'text/txt'}}
+\label{classCPSOpenCalais_ab8c052d0ddebb9f14151f8682916a587}
+
+
+Definition at line 78 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_a0e3c2633bd75ee4bdb9bc4ad0e498a0c}{
+\index{CPSOpenCalais@{CPSOpenCalais}!\$discardMetadata@{\$discardMetadata}}
+\index{\$discardMetadata@{\$discardMetadata}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{\$discardMetadata}]{\setlength{\rightskip}{0pt plus 5cm}\$discardMetadata = 'false'}}
+\label{classCPSOpenCalais_a0e3c2633bd75ee4bdb9bc4ad0e498a0c}
+
+
+Definition at line 108 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_a465299fb5bd9cc610d83d8cc162a69ef}{
+\index{CPSOpenCalais@{CPSOpenCalais}!\$enableMetadataType@{\$enableMetadataType}}
+\index{\$enableMetadataType@{\$enableMetadataType}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{\$enableMetadataType}]{\setlength{\rightskip}{0pt plus 5cm}\$enableMetadataType = 'false'}}
+\label{classCPSOpenCalais_a465299fb5bd9cc610d83d8cc162a69ef}
+
+
+Definition at line 102 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_a03cbdb5a006d142963eb1f513002bdd0}{
+\index{CPSOpenCalais@{CPSOpenCalais}!\$externalID@{\$externalID}}
+\index{\$externalID@{\$externalID}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{\$externalID}]{\setlength{\rightskip}{0pt plus 5cm}\$externalID = ''}}
+\label{classCPSOpenCalais_a03cbdb5a006d142963eb1f513002bdd0}
+
+
+Definition at line 126 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_ad0c769ee6d064c1c2e3e16ee10b3404e}{
+\index{CPSOpenCalais@{CPSOpenCalais}!\$omitOutputtingOriginalText@{\$omitOutputtingOriginalText}}
+\index{\$omitOutputtingOriginalText@{\$omitOutputtingOriginalText}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{\$omitOutputtingOriginalText}]{\setlength{\rightskip}{0pt plus 5cm}\$omitOutputtingOriginalText = 'true'}}
+\label{classCPSOpenCalais_ad0c769ee6d064c1c2e3e16ee10b3404e}
+
+
+Definition at line 138 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_aad6ca9fda50b25879e53039e23613449}{
+\index{CPSOpenCalais@{CPSOpenCalais}!\$outputFormat@{\$outputFormat}}
+\index{\$outputFormat@{\$outputFormat}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{\$outputFormat}]{\setlength{\rightskip}{0pt plus 5cm}\$outputFormat = 'XML/RDF'}}
+\label{classCPSOpenCalais_aad6ca9fda50b25879e53039e23613449}
+
+
+Definition at line 84 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_a68ec6608c1cf0f23c25f420586e31e77}{
+\index{CPSOpenCalais@{CPSOpenCalais}!\$reltagBaseUrl@{\$reltagBaseUrl}}
+\index{\$reltagBaseUrl@{\$reltagBaseUrl}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{\$reltagBaseUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$reltagBaseUrl = ''}}
+\label{classCPSOpenCalais_a68ec6608c1cf0f23c25f420586e31e77}
+
+
+Definition at line 90 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_a37c866e0dd005b2054896f4c4fb88132}{
+\index{CPSOpenCalais@{CPSOpenCalais}!\$requestMethod@{\$requestMethod}}
+\index{\$requestMethod@{\$requestMethod}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{\$requestMethod}]{\setlength{\rightskip}{0pt plus 5cm}\$requestMethod = self::SOAP}}
+\label{classCPSOpenCalais_a37c866e0dd005b2054896f4c4fb88132}
+
+
+Definition at line 144 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_a07eadf024580d87646e290d38176c8a7}{
+\index{CPSOpenCalais@{CPSOpenCalais}!\$soapUrl@{\$soapUrl}}
+\index{\$soapUrl@{\$soapUrl}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{\$soapUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$soapUrl = 'http://api.opencalais.com/enlighten/?wsdl'}}
+\label{classCPSOpenCalais_a07eadf024580d87646e290d38176c8a7}
+
+
+Definition at line 72 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_a317ab5774a65de21409c3f9715e5c50c}{
+\index{CPSOpenCalais@{CPSOpenCalais}!\$submitter@{\$submitter}}
+\index{\$submitter@{\$submitter}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{\$submitter}]{\setlength{\rightskip}{0pt plus 5cm}\$submitter = ''}}
+\label{classCPSOpenCalais_a317ab5774a65de21409c3f9715e5c50c}
+
+
+Definition at line 132 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_ac124904e08a9542af2a219df5f9472e6}{
+\index{CPSOpenCalais@{CPSOpenCalais}!HTML@{HTML}}
+\index{HTML@{HTML}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{HTML}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf HTML} = 2}}
+\label{classCPSOpenCalais_ac124904e08a9542af2a219df5f9472e6}
+
+
+Definition at line 54 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_a1273e4f6dfecad5cc711360770b7d784}{
+\index{CPSOpenCalais@{CPSOpenCalais}!REST@{REST}}
+\index{REST@{REST}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{REST}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf REST} = 1}}
+\label{classCPSOpenCalais_a1273e4f6dfecad5cc711360770b7d784}
+
+
+Definition at line 53 of file CPSOpenCalais.php.
+
+\hypertarget{classCPSOpenCalais_abd77e417d95ee59b739e54a62fe97fbc}{
+\index{CPSOpenCalais@{CPSOpenCalais}!SOAP@{SOAP}}
+\index{SOAP@{SOAP}!CPSOpenCalais@{CPSOpenCalais}}
+\subsubsection[{SOAP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf SOAP} = 0}}
+\label{classCPSOpenCalais_abd77e417d95ee59b739e54a62fe97fbc}
+Communication methods with the OC Api 
+
+Definition at line 52 of file CPSOpenCalais.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/openCalais/\hyperlink{CPSOpenCalais_8php}{CPSOpenCalais.php}\end{DoxyCompactItemize}

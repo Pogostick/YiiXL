@@ -1,0 +1,384 @@
+\hypertarget{classCPSMenuHelper}{
+\section{CPSMenuHelper Class Reference}
+\label{classCPSMenuHelper}\index{CPSMenuHelper@{CPSMenuHelper}}
+}
+
+
+Inheritance diagram for CPSMenuHelper:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classCPSMenuHelper__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSMenuHelper:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classCPSMenuHelper__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSMenuHelper_a69f1b41a2a95fcc3f76e96e13fcd6985}{getCurrentClass} ()
+\item 
+static \hyperlink{classCPSMenuHelper_a3c73b74ee982e9676097fbd2e42208e1}{setCurrentClass} (\$sValue)
+\item 
+static \hyperlink{classCPSMenuHelper_ad6035e20b3d67fe710a0db2c3d10019e}{getCurrentSection} ()
+\item 
+static \hyperlink{classCPSMenuHelper_a1423d1c85867a2f1f6dbf77a0c051b41}{buildMenuBlock} (\$sTitle, \$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+static \hyperlink{classCPSMenuHelper_a5c720cd125d4437d4ed589278a75046c}{buildMenuFromArray} (\$sIndex, \$arMenu=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+static \hyperlink{classCPSMenuHelper_a93c7eb2cf15e5371d6671031a60629e8}{getMenuLink} (\$sUrl, \$sTitle, \$iActive=0, \$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSMenuHelper_acc409b01c46f516da036994427bb80a2}{\$m\_\-sCurrentClass} = 'ps-\/menu-\/current'
+\item 
+static \hyperlink{classCPSMenuHelper_ab6bcd8d2a1b21bcdeeb554a76305637e}{\$m\_\-iCurrentSection} = 0
+\item 
+static \hyperlink{classCPSMenuHelper_ae2b5f115567bf9c7d2603846b88cff51}{\$m\_\-iHeaderCount} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file CPSMenuHelper.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSMenuHelper_a1423d1c85867a2f1f6dbf77a0c051b41}{
+\index{CPSMenuHelper@{CPSMenuHelper}!buildMenuBlock@{buildMenuBlock}}
+\index{buildMenuBlock@{buildMenuBlock}!CPSMenuHelper@{CPSMenuHelper}}
+\subsubsection[{buildMenuBlock}]{\setlength{\rightskip}{0pt plus 5cm}static buildMenuBlock (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sTitle, }
+\item[{\$}]{ arOptions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSMenuHelper_a1423d1c85867a2f1f6dbf77a0c051b41}
+Builds a single menu block for use with an accordion or some such device.
+
+options:
+
+headerTag The HTML tag for the header element. Defaults to H3 headerOptions Any HTML options for the headerTag $<$linkName$>$ $<$linkUrl$>$ or array( 'url' =$>$ $<$url$>$, other options for link tag )
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sTitle \item[{\em array}]\$arItems \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file CPSMenuHelper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sOut = null;
+        $_sLink = PS::o( $arOptions, 'link', '#', true );
+
+        //  Make the header
+        $_sHeader = PS::tag(
+            PS::o( $arOptions, 'headerTag', 'h3', true ),
+            PS::o( $arOptions, 'headerOptions', array(), true ),
+            PS::link( $sTitle, $_sLink )
+        );
+
+        //  build the links
+        foreach ( $arOptions as $_sLabel => $_arLink )
+        {
+            if ( is_array( $_arLink ) )
+                $_sUrl = PS::o( $_arLink, 'url', null, true );
+            else
+            {
+                $_sUrl = $_arLink;
+                $_arLink = array();
+            }
+
+            $_sOut .= self::getMenuLink( $_sUrl, $_sLabel, self::$m_iHeaderCount,
+       $_arLink );
+        }
+
+        //  And return...
+        return PS::tag( 'div', array( 'id' => PS::ID_PREFIX . '_menu' . self::$m_
+      iHeaderCount++ ), $_sHeader . PS::tag( 'ul', array(), $_sOut ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSMenuHelper_a1423d1c85867a2f1f6dbf77a0c051b41_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classCPSMenuHelper_a1423d1c85867a2f1f6dbf77a0c051b41_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSMenuHelper_a5c720cd125d4437d4ed589278a75046c}{
+\index{CPSMenuHelper@{CPSMenuHelper}!buildMenuFromArray@{buildMenuFromArray}}
+\index{buildMenuFromArray@{buildMenuFromArray}!CPSMenuHelper@{CPSMenuHelper}}
+\subsubsection[{buildMenuFromArray}]{\setlength{\rightskip}{0pt plus 5cm}static buildMenuFromArray (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sIndex, }
+\item[{\$}]{ arMenu = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSMenuHelper_a5c720cd125d4437d4ed589278a75046c}
+Builds a single menu block for use with an accordion or some such device.
+
+options:
+
+headerTag The HTML tag for the header element. Defaults to H3 headerOptions Any HTML options for the headerTag $<$linkName$>$ $<$linkUrl$>$ or array( 'url' =$>$ $<$url$>$, other options for link tag )
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sTitle \item[{\em array}]\$arItems \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 123 of file CPSMenuHelper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $_arMenuBlock = PS::o( $arMenu, $sIndex ) )
+        {
+            $_sTitle = PS::o( $_arMenuBlock, 'title' );
+            $_sLink = PS::o( $_arMenuBlock, 'link', '#', true );
+            $_arItems = PS::o( $_arMenuBlock, 'items' );
+
+            $_arItems['link'] = $_sLink;
+
+            //  If a non-array is passed in, assume it's to be eval'd...
+            if ( ! is_array( $_arItems ) && ! empty( $_arItems ) )
+                $_arItems = eval( 'return ' . $_arItems . ';' );
+
+            return self::buildMenuBlock( $_sTitle, $_arItems );
+        }
+
+        return null;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSMenuHelper_a5c720cd125d4437d4ed589278a75046c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSMenuHelper_a69f1b41a2a95fcc3f76e96e13fcd6985}{
+\index{CPSMenuHelper@{CPSMenuHelper}!getCurrentClass@{getCurrentClass}}
+\index{getCurrentClass@{getCurrentClass}!CPSMenuHelper@{CPSMenuHelper}}
+\subsubsection[{getCurrentClass}]{\setlength{\rightskip}{0pt plus 5cm}static getCurrentClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSMenuHelper_a69f1b41a2a95fcc3f76e96e13fcd6985}
+Retrieves the class that marks a menu item as current. Defaults to ps-\/menu-\/current. \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file CPSMenuHelper.php.
+
+
+
+
+\begin{DoxyCode}
+{ return self::$m_sCurrentClass; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSMenuHelper_ad6035e20b3d67fe710a0db2c3d10019e}{
+\index{CPSMenuHelper@{CPSMenuHelper}!getCurrentSection@{getCurrentSection}}
+\index{getCurrentSection@{getCurrentSection}!CPSMenuHelper@{CPSMenuHelper}}
+\subsubsection[{getCurrentSection}]{\setlength{\rightskip}{0pt plus 5cm}static getCurrentSection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSMenuHelper_ad6035e20b3d67fe710a0db2c3d10019e}
+Retrieves the current index into the menu \begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file CPSMenuHelper.php.
+
+
+
+
+\begin{DoxyCode}
+{ return self::$m_iCurrentSection; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSMenuHelper_a93c7eb2cf15e5371d6671031a60629e8}{
+\index{CPSMenuHelper@{CPSMenuHelper}!getMenuLink@{getMenuLink}}
+\index{getMenuLink@{getMenuLink}!CPSMenuHelper@{CPSMenuHelper}}
+\subsubsection[{getMenuLink}]{\setlength{\rightskip}{0pt plus 5cm}static getMenuLink (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUrl, }
+\item[{\$}]{ sTitle, }
+\item[{\$}]{ iActive = {\ttfamily 0}, }
+\item[{\$}]{ arOptions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSMenuHelper_a93c7eb2cf15e5371d6671031a60629e8}
+Get's a single formatted menu link
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sUrl \item[{\em string}]\$sTitle \item[{\em array}]\$arOptions \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 151 of file CPSMenuHelper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        static $_sCurrent = null;
+        $_sOut = null;
+
+        $_sClass = PS::o( $arOptions, 'class', null, true );
+        $_sCurrentClass = PS::o( $arOptions, 'class', self::$m_sCurrentClass, tru
+      e );
+
+        if ( null === $_sCurrent ) $_sCurrent = Yii::app()->getRequest()->getRequ
+      estUri();
+
+        if ( $sUrl == $_sCurrent || false !== stripos( $_sCurrent, $sUrl ) )
+        {
+            $_sClass = PS::addClass( $_sClass, self::$m_sCurrentClass );
+            self::$m_iCurrentSection = $iActive;
+        }
+
+        $arOptions['class'] = $_sClass;
+
+        return PS::tag( 'li', array(), PS::link( $sTitle, $sUrl, $arOptions ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classCPSMenuHelper_a93c7eb2cf15e5371d6671031a60629e8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSMenuHelper_a93c7eb2cf15e5371d6671031a60629e8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSMenuHelper_a3c73b74ee982e9676097fbd2e42208e1}{
+\index{CPSMenuHelper@{CPSMenuHelper}!setCurrentClass@{setCurrentClass}}
+\index{setCurrentClass@{setCurrentClass}!CPSMenuHelper@{CPSMenuHelper}}
+\subsubsection[{setCurrentClass}]{\setlength{\rightskip}{0pt plus 5cm}static setCurrentClass (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSMenuHelper_a3c73b74ee982e9676097fbd2e42208e1}
+Sets the class that marks a menu item as current. \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file CPSMenuHelper.php.
+
+
+
+
+\begin{DoxyCode}
+{ self::$m_sCurrentClass = $sValue; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSMenuHelper_ab6bcd8d2a1b21bcdeeb554a76305637e}{
+\index{CPSMenuHelper@{CPSMenuHelper}!\$m\_\-iCurrentSection@{\$m\_\-iCurrentSection}}
+\index{\$m\_\-iCurrentSection@{\$m\_\-iCurrentSection}!CPSMenuHelper@{CPSMenuHelper}}
+\subsubsection[{\$m\_\-iCurrentSection}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-iCurrentSection = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSMenuHelper_ab6bcd8d2a1b21bcdeeb554a76305637e}
+The current index into the menu array  integer 
+
+Definition at line 35 of file CPSMenuHelper.php.
+
+\hypertarget{classCPSMenuHelper_ae2b5f115567bf9c7d2603846b88cff51}{
+\index{CPSMenuHelper@{CPSMenuHelper}!\$m\_\-iHeaderCount@{\$m\_\-iHeaderCount}}
+\index{\$m\_\-iHeaderCount@{\$m\_\-iHeaderCount}!CPSMenuHelper@{CPSMenuHelper}}
+\subsubsection[{\$m\_\-iHeaderCount}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-iHeaderCount = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSMenuHelper_ae2b5f115567bf9c7d2603846b88cff51}
+
+
+Definition at line 41 of file CPSMenuHelper.php.
+
+\hypertarget{classCPSMenuHelper_acc409b01c46f516da036994427bb80a2}{
+\index{CPSMenuHelper@{CPSMenuHelper}!\$m\_\-sCurrentClass@{\$m\_\-sCurrentClass}}
+\index{\$m\_\-sCurrentClass@{\$m\_\-sCurrentClass}!CPSMenuHelper@{CPSMenuHelper}}
+\subsubsection[{\$m\_\-sCurrentClass}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sCurrentClass = 'ps-\/menu-\/current'\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSMenuHelper_acc409b01c46f516da036994427bb80a2}
+The class to apply to current menu items.  string 
+
+Definition at line 29 of file CPSMenuHelper.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/helpers/\hyperlink{CPSMenuHelper_8php}{CPSMenuHelper.php}\end{DoxyCompactItemize}

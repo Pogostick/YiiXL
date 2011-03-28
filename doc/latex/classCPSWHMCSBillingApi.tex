@@ -1,0 +1,447 @@
+\hypertarget{classCPSWHMCSBillingApi}{
+\section{CPSWHMCSBillingApi Class Reference}
+\label{classCPSWHMCSBillingApi}\index{CPSWHMCSBillingApi@{CPSWHMCSBillingApi}}
+}
+
+
+Inheritance diagram for CPSWHMCSBillingApi:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classCPSWHMCSBillingApi__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSWHMCSBillingApi:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classCPSWHMCSBillingApi__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSWHMCSBillingApi_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSWHMCSBillingApi_aa4b166b036fc55289d58a6b4a7b00f09}{addOrder} (\$arRequestData=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSWHMCSBillingApi_a0cf52d9874c728d93817bb547bd7e30e}{getOrders} (\$arRequestData=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSWHMCSBillingApi_a7d1087e3f457be095045451fd1ca0c36}{acceptOrder} (\$arRequestData=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSWHMCSBillingApi_a0c6d4db07c7707482e2486b050511dc1}{addBillableItem} (\$arRequestData=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSWHMCSBillingApi_a231c09b003f3e61cdcc91229fa484c26}{addCredit} (\$arRequestData=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSWHMCSBillingApi_aa345b258ae40b84a62e09fdff860fd18}{createInvoice} (\$arRequestData=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSWHMCSBillingApi_a0d0eecd0e180b07fc7f4d4a59ecbf45e}{getInvoice} (\$iInvoiceId)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 20 of file CPSWHMCSBillingApi.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSWHMCSBillingApi_a7d1087e3f457be095045451fd1ca0c36}{
+\index{CPSWHMCSBillingApi@{CPSWHMCSBillingApi}!acceptOrder@{acceptOrder}}
+\index{acceptOrder@{acceptOrder}!CPSWHMCSBillingApi@{CPSWHMCSBillingApi}}
+\subsubsection[{acceptOrder}]{\setlength{\rightskip}{0pt plus 5cm}acceptOrder (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arRequestData = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSBillingApi_a7d1087e3f457be095045451fd1ca0c36}
+Accepts an order in the system
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arRequestData \end{DoxyParams}
+
+
+Definition at line 121 of file CPSWHMCSBillingApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->makeApiCall( self::BILLING_API, 'acceptorder', $arRequestDa
+      ta );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classCPSWHMCSBillingApi_a7d1087e3f457be095045451fd1ca0c36_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSBillingApi_a0c6d4db07c7707482e2486b050511dc1}{
+\index{CPSWHMCSBillingApi@{CPSWHMCSBillingApi}!addBillableItem@{addBillableItem}}
+\index{addBillableItem@{addBillableItem}!CPSWHMCSBillingApi@{CPSWHMCSBillingApi}}
+\subsubsection[{addBillableItem}]{\setlength{\rightskip}{0pt plus 5cm}addBillableItem (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arRequestData = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSBillingApi_a0c6d4db07c7707482e2486b050511dc1}
+Adds an item to an order
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arRequestData \end{DoxyParams}
+
+
+Definition at line 131 of file CPSWHMCSBillingApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->makeApiCall( self::BILLING_API, 'addbillableitem', $arReque
+      stData );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=360pt]{classCPSWHMCSBillingApi_a0c6d4db07c7707482e2486b050511dc1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSBillingApi_a231c09b003f3e61cdcc91229fa484c26}{
+\index{CPSWHMCSBillingApi@{CPSWHMCSBillingApi}!addCredit@{addCredit}}
+\index{addCredit@{addCredit}!CPSWHMCSBillingApi@{CPSWHMCSBillingApi}}
+\subsubsection[{addCredit}]{\setlength{\rightskip}{0pt plus 5cm}addCredit (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arRequestData = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSBillingApi_a231c09b003f3e61cdcc91229fa484c26}
+Adds a credit to an account
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arRequestData \end{DoxyParams}
+
+
+Definition at line 141 of file CPSWHMCSBillingApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->makeApiCall( self::BILLING_API, 'addcredit', $arRequestData
+       );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classCPSWHMCSBillingApi_a231c09b003f3e61cdcc91229fa484c26_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSBillingApi_aa4b166b036fc55289d58a6b4a7b00f09}{
+\index{CPSWHMCSBillingApi@{CPSWHMCSBillingApi}!addOrder@{addOrder}}
+\index{addOrder@{addOrder}!CPSWHMCSBillingApi@{CPSWHMCSBillingApi}}
+\subsubsection[{addOrder}]{\setlength{\rightskip}{0pt plus 5cm}addOrder (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arRequestData = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSBillingApi_aa4b166b036fc55289d58a6b4a7b00f09}
+Adds an order to the system
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arRequestData \end{DoxyParams}
+
+
+Definition at line 101 of file CPSWHMCSBillingApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->makeApiCall( self::BILLING_API, 'addorder', $arRequestData 
+      );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classCPSWHMCSBillingApi_aa4b166b036fc55289d58a6b4a7b00f09_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSBillingApi_aa345b258ae40b84a62e09fdff860fd18}{
+\index{CPSWHMCSBillingApi@{CPSWHMCSBillingApi}!createInvoice@{createInvoice}}
+\index{createInvoice@{createInvoice}!CPSWHMCSBillingApi@{CPSWHMCSBillingApi}}
+\subsubsection[{createInvoice}]{\setlength{\rightskip}{0pt plus 5cm}createInvoice (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arRequestData = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSBillingApi_aa345b258ae40b84a62e09fdff860fd18}
+Creates an invoice
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arRequestData \end{DoxyParams}
+
+
+Definition at line 151 of file CPSWHMCSBillingApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->makeApiCall( self::BILLING_API, 'createinvoice', $arRequest
+      Data );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCPSWHMCSBillingApi_aa345b258ae40b84a62e09fdff860fd18_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSBillingApi_a0d0eecd0e180b07fc7f4d4a59ecbf45e}{
+\index{CPSWHMCSBillingApi@{CPSWHMCSBillingApi}!getInvoice@{getInvoice}}
+\index{getInvoice@{getInvoice}!CPSWHMCSBillingApi@{CPSWHMCSBillingApi}}
+\subsubsection[{getInvoice}]{\setlength{\rightskip}{0pt plus 5cm}getInvoice (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iInvoiceId}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSBillingApi_a0d0eecd0e180b07fc7f4d4a59ecbf45e}
+Retrieves an invoice
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arRequestData \end{DoxyParams}
+
+
+Definition at line 161 of file CPSWHMCSBillingApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arRequestData = array(
+            'invoiceId' => $iInvoiceId,
+        );
+
+        return $this->makeApiCall( self::BILLING_API, 'getinvoice', $_arRequestDa
+      ta );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classCPSWHMCSBillingApi_a0d0eecd0e180b07fc7f4d4a59ecbf45e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSBillingApi_a0cf52d9874c728d93817bb547bd7e30e}{
+\index{CPSWHMCSBillingApi@{CPSWHMCSBillingApi}!getOrders@{getOrders}}
+\index{getOrders@{getOrders}!CPSWHMCSBillingApi@{CPSWHMCSBillingApi}}
+\subsubsection[{getOrders}]{\setlength{\rightskip}{0pt plus 5cm}getOrders (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arRequestData = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSBillingApi_a0cf52d9874c728d93817bb547bd7e30e}
+Gets orders from the system
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arRequestData \end{DoxyParams}
+
+
+Definition at line 111 of file CPSWHMCSBillingApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->makeApiCall( self::BILLING_API, 'getorders', $arRequestData
+       );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classCPSWHMCSBillingApi_a0cf52d9874c728d93817bb547bd7e30e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSBillingApi_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSWHMCSBillingApi@{CPSWHMCSBillingApi}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSWHMCSBillingApi@{CPSWHMCSBillingApi}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSBillingApi_a2dc262e99b1c246b56f27626bfe699ff}
+Preinitialize the component Override to add your own functionality before \hyperlink{classCPSApiComponent_a4be4055f3361d4800e16bc2e2e38cda6}{init()} is called. 
+
+Reimplemented from \hyperlink{classCPSWHMCSApi_a2dc262e99b1c246b56f27626bfe699ff}{CPSWHMCSApi}.
+
+
+
+Definition at line 29 of file CPSWHMCSBillingApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Call daddy...
+        parent::preinit();
+
+        //  Billing API
+        $this->apiToUse = self::BILLING_API;
+
+        //  Billing::AddBillableItem
+        $this->addRequestMapping( 'clientId', 'clientid', true, null, self::BILLI
+      NG_API, 'addbillableitem' );
+        $this->addRequestMapping( 'description', 'description', true );
+        $this->addRequestMapping( 'amount', 'amount', true );
+        $this->addRequestMapping( 'recurFrequency', 'recur', true );
+        $this->addRequestMapping( 'recurCycle', 'recurcycle', true );
+        $this->addRequestMapping( 'recurCount', 'recurfor', true );
+        $this->addRequestMapping( 'invoiceAction', 'invoiceaction', true );
+        $this->addRequestMapping( 'dueDate', 'duedate', true );
+
+        //    Billing::AddOrder
+        $this->addRequestMapping( 'clientId', 'clientid', true, null, self::BILLI
+      NG_API, 'addorder' );
+        $this->addRequestMapping( 'productId', 'pid', true );
+        $this->addRequestMapping( 'domain', 'domain' );
+        $this->addRequestMapping( 'addOns', 'addons' );
+        $this->addRequestMapping( 'customFields', 'customfields' );
+        $this->addRequestMapping( 'configOptions', 'configOptions' );
+        $this->addRequestMapping( 'domainType', 'domainType' );
+        $this->addRequestMapping( 'registrationPeriod', 'regperiod' );
+        $this->addRequestMapping( 'dnsManagement', 'dnsmanagement' );
+        $this->addRequestMapping( 'emailForwarding', 'emailforwarding' );
+        $this->addRequestMapping( 'idProtection', 'idprotection' );
+        $this->addRequestMapping( 'eppCode', 'eppcode' );
+        $this->addRequestMapping( 'ns1', 'ns1' );
+        $this->addRequestMapping( 'ns2', 'ns2' );
+        $this->addRequestMapping( 'ns3', 'ns3' );
+        $this->addRequestMapping( 'ns4', 'ns4' );
+        $this->addRequestMapping( 'paymentMethod', 'paymentmethod' );
+        $this->addRequestMapping( 'promoCode', 'promocode' );
+        $this->addRequestMapping( 'noInvoice', 'noInvoice' );
+        $this->addRequestMapping( 'noEmail', 'noemail' );
+        $this->addRequestMapping( 'clientIP', 'clientip' );
+
+        //  Billing::AcceptOrder
+        $this->addRequestMapping( 'orderId', 'orderid', true, null, self::BILLING
+      _API, 'acceptorder' );
+
+        //  Billing::GetOrders
+        $this->addRequestMapping( 'limitStart', 'limitstart', true, null, self::B
+      ILLING_API, 'getorders' );
+        $this->addRequestMapping( 'limitNumber', 'limitnum' );
+
+        //  Billing::CreateInvoice
+        $this->addRequestMapping( 'clientId', 'userid', true, null, self::BILLING
+      _API, 'createinvoice' );
+        $this->addRequestMapping( 'date', 'date', true );
+        $this->addRequestMapping( 'dueDate', 'duedate' );
+        $this->addRequestMapping( 'paymentMethod', 'paymentmethod' );
+        $this->addRequestMapping( 'sendInvoice', 'sendinvoice' );
+        $this->addRequestMapping( 'itemDescription', 'itemdescription1' );
+        $this->addRequestMapping( 'itemAmount', 'itemamount1' );
+        $this->addRequestMapping( 'itemTaxed', 'itemtaxed1' );
+
+        //  Billing::GetInvoice
+        $this->addRequestMapping( 'invoiceId', 'invoiceid', true, null, self::BIL
+      LING_API, 'getinvoice' );
+
+        //  Billing::addCredit
+        $this->addRequestMapping( 'clientId', 'clientid', true, null, self::BILLI
+      NG_API, 'addcredit' );
+        $this->addRequestMapping( 'description', 'description', true );
+        $this->addRequestMapping( 'amount', 'amount', true );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=374pt]{classCPSWHMCSBillingApi_a2dc262e99b1c246b56f27626bfe699ff_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/whmcs/\hyperlink{CPSWHMCSBillingApi_8php}{CPSWHMCSBillingApi.php}\end{DoxyCompactItemize}

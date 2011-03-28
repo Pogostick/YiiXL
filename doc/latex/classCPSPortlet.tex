@@ -1,0 +1,274 @@
+\hypertarget{classCPSPortlet}{
+\section{CPSPortlet Class Reference}
+\label{classCPSPortlet}\index{CPSPortlet@{CPSPortlet}}
+}
+
+
+Inheritance diagram for CPSPortlet:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classCPSPortlet__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSPortlet:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classCPSPortlet__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSPortlet_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSPortlet_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSPortlet_afb0fafe7e02a3ae1993c01c19fad2bae}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSPortlet_acc5a32d52db57b80885add51c076ed42}{generateHtml} ()
+\item 
+\hyperlink{classCPSPortlet_a0d304720b71e3fabb0b602754043e1b6}{renderContent} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 30 of file CPSPortlet.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSPortlet_acc5a32d52db57b80885add51c076ed42}{
+\index{CPSPortlet@{CPSPortlet}!generateHtml@{generateHtml}}
+\index{generateHtml@{generateHtml}!CPSPortlet@{CPSPortlet}}
+\subsubsection[{generateHtml}]{\setlength{\rightskip}{0pt plus 5cm}generateHtml (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSPortlet_acc5a32d52db57b80885add51c076ed42}
+Generate our widget's html \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSWidget_acc5a32d52db57b80885add51c076ed42}{CPSWidget}.
+
+
+
+Definition at line 82 of file CPSPortlet.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! $this->visible )
+            return;
+
+        if ( $this->jqui ) 
+        {
+            $this->headerCssClass = trim( 'ui-widget-header ' . $this->headerCssC
+      lass );
+            $this->contentCssClass = trim( 'ui-widget-content ' . $this->contentC
+      ssClass );
+        }
+            
+        echo PS::openTag( 'div', array( 'class' => $this->cssClass ) ) . PHP_EOL;
+      
+        if ( $this->title ) echo PS::tag( 'div', array( 'class' => $this->headerC
+      ssClass ), $this->title ) . PHP_EOL;
+        echo PS::openTag( 'div', array( 'class' => $this->contentCssClass ) ) . P
+      HP_EOL;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classCPSPortlet_acc5a32d52db57b80885add51c076ed42_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSPortlet_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSPortlet@{CPSPortlet}!init@{init}}
+\index{init@{init}!CPSPortlet@{CPSPortlet}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSPortlet_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize ourself 
+
+Reimplemented from \hyperlink{classCPSWidget_a4be4055f3361d4800e16bc2e2e38cda6}{CPSWidget}.
+
+
+
+Reimplemented in \hyperlink{classCPSThemeRoller_a4be4055f3361d4800e16bc2e2e38cda6}{CPSThemeRoller}.
+
+
+
+Definition at line 51 of file CPSPortlet.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Call daddy
+        parent::init();
+        
+        //  Start it off...
+        $this->generateHtml();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classCPSPortlet_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSPortlet_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSPortlet@{CPSPortlet}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSPortlet@{CPSPortlet}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSPortlet_a2dc262e99b1c246b56f27626bfe699ff}
+Preinitialize 
+
+Reimplemented from \hyperlink{classCPSWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSWidget}.
+
+
+
+Reimplemented in \hyperlink{classCPSThemeRoller_a2dc262e99b1c246b56f27626bfe699ff}{CPSThemeRoller}.
+
+
+
+Definition at line 39 of file CPSPortlet.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Home first...
+        parent::preinit();
+        
+        //  Add our options
+        $this->addOptions( self::getBaseOptions() );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSPortlet_a0d304720b71e3fabb0b602754043e1b6}{
+\index{CPSPortlet@{CPSPortlet}!renderContent@{renderContent}}
+\index{renderContent@{renderContent}!CPSPortlet@{CPSPortlet}}
+\subsubsection[{renderContent}]{\setlength{\rightskip}{0pt plus 5cm}renderContent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSPortlet_a0d304720b71e3fabb0b602754043e1b6}
+Renders the content of this portlet. If object is set to auto-\/render, the view with the same name as this portlet will be rendered when called \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classCPSThemeRoller_a0d304720b71e3fabb0b602754043e1b6}{CPSThemeRoller}.
+
+
+
+Definition at line 103 of file CPSPortlet.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sClass = get_class( $this );
+        $_sClass[0] = strtolower( $_sClass[0] );
+        if ( $this->autoRender ) $this->render( $_sClass );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classCPSPortlet_a0d304720b71e3fabb0b602754043e1b6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSPortlet_afb0fafe7e02a3ae1993c01c19fad2bae}{
+\index{CPSPortlet@{CPSPortlet}!run@{run}}
+\index{run@{run}!CPSPortlet@{CPSPortlet}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSPortlet_afb0fafe7e02a3ae1993c01c19fad2bae}
+Run our widget 
+
+Definition at line 63 of file CPSPortlet.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! $this->visible )
+            return;
+        
+        $this->renderContent();
+        
+        echo '  </div><!-- ' . $this->contentCssClass . ' -->' . PHP_EOL;
+        echo '</div><!-- ' . $this->cssClass . ' -->';
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classCPSPortlet_afb0fafe7e02a3ae1993c01c19fad2bae_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/widgets/\hyperlink{CPSPortlet_8php}{CPSPortlet.php}\end{DoxyCompactItemize}

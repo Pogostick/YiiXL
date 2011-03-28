@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSFile.html#a168004cb787954e08154d53996c3b3a1" title="atime" alt="" coords="160,5,219,35"/>
+<area shape="rect" id="node5" href="$classCPSFile.html#abdd0b8e262c2a85a189c9bed3889ce9b" title="filegroup" alt="" coords="151,59,228,88"/>
+<area shape="rect" id="node7" href="$classCPSFile.html#a6395b5e84b44077d841d8515b8d0edb9" title="fileowner" alt="" coords="151,112,228,141"/>
+<area shape="rect" id="node9" href="$classCPSFile.html#ae58f5bfc44861200aa7b5ccb9b7a096a" title="filesize" alt="" coords="157,165,221,195"/>
+<area shape="rect" id="node11" href="$classCPSFile.html#aacd8c35344e506b2482ea295e9254efb" title="fseek" alt="" coords="161,219,217,248"/>
+<area shape="rect" id="node13" href="$classCPSFile.html#aae5813010acec168823283ed5d15d46c" title="ftell" alt="" coords="167,272,212,301"/>
+<area shape="rect" id="node17" href="$classCPSFile.html#a44a2ac59a3b91f8c18905dce700934d6" title="open" alt="" coords="163,325,216,355"/>
+<area shape="rect" id="node15" href="$classCPSFile.html#a5b19ed5f237444f20db557482cef799e" title="fgets" alt="" coords="299,272,352,301"/>
+<area shape="rect" id="node19" href="$classCPSFile.html#ad81e40515c7001c2a87387139b2a67de" title="__construct" alt="" coords="277,325,373,355"/>
+</map>

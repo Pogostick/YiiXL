@@ -1,0 +1,256 @@
+\hypertarget{classCPSActiveForm}{
+\section{CPSActiveForm Class Reference}
+\label{classCPSActiveForm}\index{CPSActiveForm@{CPSActiveForm}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSActiveForm_a150c51d4a39e86010c6dfe482ea5c36e}{getFormModel} ()
+\item 
+\hyperlink{classCPSActiveForm_a5e3cf96821d449b743d33f86129e64f3}{setFormModel} (\$value)
+\item 
+\hyperlink{classCPSActiveForm_afb0fafe7e02a3ae1993c01c19fad2bae}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSActiveForm_a42782d08bb650a69d71220e69d387d85}{\$wide} = false
+\item 
+\hyperlink{classCPSActiveForm_ab2303c817e3b402b77b7f99627b9c319}{\$fields} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSActiveForm_aa324325c3a6613c52d0cabd29720774a}{\_\-buildForm} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSActiveForm_a9fb53050fa5baafba27e9adcd107eabc}{\$\_\-rowFormat} = '\{label\}\{field\}'
+\item 
+\hyperlink{classCPSActiveForm_aeef52661fba96c8837e968d42a97f088}{\$\_\-formModel} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 23 of file CPSActiveForm.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSActiveForm_aa324325c3a6613c52d0cabd29720774a}{
+\index{CPSActiveForm@{CPSActiveForm}!\_\-buildForm@{\_\-buildForm}}
+\index{\_\-buildForm@{\_\-buildForm}!CPSActiveForm@{CPSActiveForm}}
+\subsubsection[{\_\-buildForm}]{\setlength{\rightskip}{0pt plus 5cm}\_\-buildForm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSActiveForm_aa324325c3a6613c52d0cabd29720774a}
+Creates the form elements based on the fields entry in the passed in properties 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$properties \end{DoxyParams}
+
+
+Definition at line 62 of file CPSActiveForm.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_fieldList = $this->fields;
+        $_model = $this->_formModel;
+        $_wide = $this->wide;
+
+        echo PS::openTag( 'div', array( 'class' => 'form' . ( $_wide ? ' wide' : 
+      null ) ) );
+
+        foreach ( $_fieldList as $_key => $_property )
+        {
+            //  Pull out div options and open
+            $_divOptions = PS::o( $_property, 'row', array( 'class' => 'row' ), t
+      rue );
+            echo PS::openTag( 'div', $_divOptions );
+
+            try
+            {
+                //  Pull out label and field info
+                $_label = PS::o( $_property, 'label', array(), true );
+                $_field = PS::o( $_property, 'field', $_property, true );
+                $_innerModel = PS::o( $_property, 'model', null, true );
+
+                //  Field type and options should be all that are left
+                $_fieldType = PS::o( $_field, 'type', 'textField', true );
+
+                //  For HTML elements, just echo what's left in the array
+                if ( 'html' === strtolower( $_key ) )
+                    echo PS::o( $_property, 0 );
+                else
+                {
+                    echo $this->label( $_innerModel ? $_innerModel : $_model, $_k
+      ey, $_label );
+                    array_unshift( $_field, $_model, $_key );
+                    echo call_user_func_array( array( $this, $_fieldType ), $_fie
+      ld );
+                }
+            }
+            catch ( Exception $_ex )
+            {
+                CPSLog::error( __METHOD__, 'Exception while building form: ' . $_
+      ex->getMessage() );
+            }
+
+            echo PS::closeTag( 'div' );
+        }
+
+        echo PS::closeTag( 'div' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSActiveForm_aa324325c3a6613c52d0cabd29720774a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classCPSActiveForm_aa324325c3a6613c52d0cabd29720774a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSActiveForm_a150c51d4a39e86010c6dfe482ea5c36e}{
+\index{CPSActiveForm@{CPSActiveForm}!getFormModel@{getFormModel}}
+\index{getFormModel@{getFormModel}!CPSActiveForm@{CPSActiveForm}}
+\subsubsection[{getFormModel}]{\setlength{\rightskip}{0pt plus 5cm}getFormModel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSActiveForm_a150c51d4a39e86010c6dfe482ea5c36e}
+
+
+Definition at line 38 of file CPSActiveForm.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_formModel; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSActiveForm_afb0fafe7e02a3ae1993c01c19fad2bae}{
+\index{CPSActiveForm@{CPSActiveForm}!run@{run}}
+\index{run@{run}!CPSActiveForm@{CPSActiveForm}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSActiveForm_afb0fafe7e02a3ae1993c01c19fad2bae}
+Runs the widget. 
+
+Definition at line 48 of file CPSActiveForm.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->_buildForm();
+        return parent::run();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSActiveForm_afb0fafe7e02a3ae1993c01c19fad2bae_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSActiveForm_a5e3cf96821d449b743d33f86129e64f3}{
+\index{CPSActiveForm@{CPSActiveForm}!setFormModel@{setFormModel}}
+\index{setFormModel@{setFormModel}!CPSActiveForm@{CPSActiveForm}}
+\subsubsection[{setFormModel}]{\setlength{\rightskip}{0pt plus 5cm}setFormModel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSActiveForm_a5e3cf96821d449b743d33f86129e64f3}
+
+
+Definition at line 39 of file CPSActiveForm.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_formModel = $value; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSActiveForm_aeef52661fba96c8837e968d42a97f088}{
+\index{CPSActiveForm@{CPSActiveForm}!\$\_\-formModel@{\$\_\-formModel}}
+\index{\$\_\-formModel@{\$\_\-formModel}!CPSActiveForm@{CPSActiveForm}}
+\subsubsection[{\$\_\-formModel}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-formModel = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSActiveForm_aeef52661fba96c8837e968d42a97f088}
+
+
+Definition at line 37 of file CPSActiveForm.php.
+
+\hypertarget{classCPSActiveForm_a9fb53050fa5baafba27e9adcd107eabc}{
+\index{CPSActiveForm@{CPSActiveForm}!\$\_\-rowFormat@{\$\_\-rowFormat}}
+\index{\$\_\-rowFormat@{\$\_\-rowFormat}!CPSActiveForm@{CPSActiveForm}}
+\subsubsection[{\$\_\-rowFormat}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-rowFormat = '\{label\}\{field\}'\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSActiveForm_a9fb53050fa5baafba27e9adcd107eabc}
+
+
+Definition at line 29 of file CPSActiveForm.php.
+
+\hypertarget{classCPSActiveForm_ab2303c817e3b402b77b7f99627b9c319}{
+\index{CPSActiveForm@{CPSActiveForm}!\$fields@{\$fields}}
+\index{\$fields@{\$fields}!CPSActiveForm@{CPSActiveForm}}
+\subsubsection[{\$fields}]{\setlength{\rightskip}{0pt plus 5cm}\$fields = {\bf array}()}}
+\label{classCPSActiveForm_ab2303c817e3b402b77b7f99627b9c319}
+
+
+Definition at line 32 of file CPSActiveForm.php.
+
+\hypertarget{classCPSActiveForm_a42782d08bb650a69d71220e69d387d85}{
+\index{CPSActiveForm@{CPSActiveForm}!\$wide@{\$wide}}
+\index{\$wide@{\$wide}!CPSActiveForm@{CPSActiveForm}}
+\subsubsection[{\$wide}]{\setlength{\rightskip}{0pt plus 5cm}\$wide = false}}
+\label{classCPSActiveForm_a42782d08bb650a69d71220e69d387d85}
+
+
+Definition at line 31 of file CPSActiveForm.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/widgets/\hyperlink{CPSActiveForm_8php}{CPSActiveForm.php}\end{DoxyCompactItemize}

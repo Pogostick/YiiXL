@@ -1,0 +1,27 @@
+<map id="G" name="G">
+<area shape="rect" id="node7" href="$classCPSApiWidget.html" title="CPSApiWidget" alt="" coords="449,59,559,88"/>
+<area shape="rect" id="node15" href="$classCPSjqRatingWidget.html" title="CPSjqRatingWidget" alt="" coords="433,245,575,275"/>
+<area shape="rect" id="node17" href="$classCPSjQueryWidget.html" title="CPSjQueryWidget" alt="" coords="439,299,569,328"/>
+<area shape="rect" id="node49" href="$classCPSPortlet.html" title="CPSPortlet" alt="" coords="459,432,549,461"/>
+<area shape="rect" id="node2" href="$interfaceIPSComponent.html" title="IPSComponent" alt="" coords="128,272,245,301"/>
+<area shape="rect" id="node4" href="$interfaceIPSBase.html" title="IPSBase" alt="" coords="5,272,80,301"/>
+<area shape="rect" id="node9" href="$classCPSFacebookConnect.html" title="CPSFacebookConnect" alt="" coords="640,5,800,35"/>
+<area shape="rect" id="node11" href="$classCPSgApiWidget.html" title="CPSgApiWidget" alt="" coords="661,59,779,88"/>
+<area shape="rect" id="node13" href="$classCPSgMapsWidget.html" title="CPSgMapsWidget" alt="" coords="884,59,1017,88"/>
+<area shape="rect" id="node19" href="$classCPSCKEditorWidget.html" title="CPSCKEditorWidget" alt="" coords="648,112,792,141"/>
+<area shape="rect" id="node21" href="$classCPSEnhanceJS.html" title="CPSEnhanceJS" alt="" coords="663,165,777,195"/>
+<area shape="rect" id="node25" href="$classCPSjqAchtung.html" title="CPSjqAchtung" alt="" coords="664,219,776,248"/>
+<area shape="rect" id="node27" href="$classCPSjqMaskedInputWrapper.html" title="CPSjqMaskedInputWrapper" alt="" coords="624,272,816,301"/>
+<area shape="rect" id="node29" href="$classCPSjqSelectMenu.html" title="CPSjqSelectMenu" alt="" coords="653,325,787,355"/>
+<area shape="rect" id="node31" href="$classCPSjqToolsWrapper.html" title="CPSjqToolsWrapper" alt="" coords="649,379,791,408"/>
+<area shape="rect" id="node33" href="$classCPSjqUIWrapper.html" title="CPSjqUIWrapper" alt="" coords="659,432,781,461"/>
+<area shape="rect" id="node47" href="$classCPSjqValidate.html" title="CPSjqValidate" alt="" coords="665,485,775,515"/>
+<area shape="rect" id="node23" href="$classCPSEnhanceJSTree.html" title="CPSEnhanceJSTree" alt="" coords="880,165,1021,195"/>
+<area shape="rect" id="node35" href="$classCPSfgMenu.html" title="CPSfgMenu" alt="" coords="904,299,997,328"/>
+<area shape="rect" id="node37" href="$classCPSjqGridWidget.html" title="CPSjqGridWidget" alt="" coords="887,352,1015,381"/>
+<area shape="rect" id="node39" href="$classCPSjqUIAlerts.html" title="CPSjqUIAlerts" alt="" coords="896,405,1005,435"/>
+<area shape="rect" id="node41" href="$classCPSMarkItUpWidget.html" title="CPSMarkItUpWidget" alt="" coords="877,459,1024,488"/>
+<area shape="rect" id="node43" href="$classCPSMcDropdownWidget.html" title="CPSMcDropdownWidget" alt="" coords="864,512,1037,541"/>
+<area shape="rect" id="node45" href="$classCPSWysiwygWidget.html" title="CPSWysiwygWidget" alt="" coords="880,565,1021,595"/>
+<area shape="rect" id="node51" href="$classCPSThemeRoller.html" title="CPSThemeRoller" alt="" coords="657,539,783,568"/>
+</map>

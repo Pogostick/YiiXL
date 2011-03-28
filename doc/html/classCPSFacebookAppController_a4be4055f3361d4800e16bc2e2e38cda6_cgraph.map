@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSFacebookAppController.html#aef66ca6a78a6289bce2ba881bf575b12" title="_getRssFeed" alt="" coords="159,5,260,35"/>
+<area shape="rect" id="node5" href="$classCPSFacebookAppController.html#ac7d88d5e0b0fb564c0e1ae69167e8449" title="_initializeFacebook" alt="" coords="140,59,279,88"/>
+<area shape="rect" id="node7" href="$classCPSFacebookAppController.html#a0781439fc2f14283719e441f1ca2b73e" title="actionInviteComplete" alt="" coords="131,112,288,141"/>
+<area shape="rect" id="node17" href="$classCPSController.html#aed1df55c262bb0238ae6ef0921a2552b" title="CPSController::getIsAjaxRequest" alt="" coords="96,165,323,195"/>
+<area shape="rect" id="node19" href="$classCPSController.html#adf1a35ad20e475c59cc0967d5764aa22" title="CPSController::getRequest" alt="" coords="115,219,304,248"/>
+<area shape="rect" id="node21" href="$classCPSFacebookAppController.html#a023e71297825d72b643617f9fdf25355" title="onFacebookLogin" alt="" coords="144,272,275,301"/>
+<area shape="rect" id="node9" href="$classCPSLog.html#ab8a624f93a0bfc699dd00c01af886955" title="CPSLog::trace" alt="" coords="371,112,483,141"/>
+<area shape="rect" id="node11" href="$classCPSLog.html#a4c3be4120dc6dee2c97a6dde9428ac76" title="CPSLog::log" alt="" coords="531,112,629,141"/>
+<area shape="rect" id="node13" href="$classCPSLog.html#a66291d27410fbf7ba4978f513c13e6f0" title="CPSLog::_getCallingMethod" alt="" coords="677,85,875,115"/>
+<area shape="rect" id="node15" href="$classCPSLog.html#a8471574061e9457cc6e5be7c151b9cfb" title="CPSLog::_processMessage" alt="" coords="680,139,872,168"/>
+</map>

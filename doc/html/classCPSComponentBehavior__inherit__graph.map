@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node12" href="$classCPSApiBehavior.html" title="CPSApiBehavior" alt="" coords="16,315,139,344"/>
+<area shape="rect" id="node16" href="$classCPSRestBehavior.html" title="CPSRestBehavior" alt="" coords="163,315,293,344"/>
+<area shape="rect" id="node18" href="$classCPSWidgetBehavior.html" title="CPSWidgetBehavior" alt="" coords="317,315,464,344"/>
+<area shape="rect" id="node2" href="$interfaceIPSOptionContainer.html" title="IPSOptionContainer" alt="" coords="81,160,228,189"/>
+<area shape="rect" id="node4" href="$interfaceIPSBase.html" title="IPSBase" alt="" coords="196,5,271,35"/>
+<area shape="rect" id="node8" href="$interfaceIPSComponent.html" title="IPSComponent" alt="" coords="229,83,347,112"/>
+<area shape="rect" id="node6" href="$interfaceIPSBehavior.html" title="IPSBehavior" alt="" coords="252,160,351,189"/>
+<area shape="rect" id="node14" href="$classCPSOAuthBehavior.html" title="CPSOAuthBehavior" alt="" coords="5,392,149,421"/>
+</map>

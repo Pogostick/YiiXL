@@ -1,0 +1,17 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classYiiXLBase.html#a1f5b11e66cea38099ad43bd1c41b6dc6" title="_gf" alt="" coords="116,285,156,315"/>
+<area shape="rect" id="node7" href="$classYiiXLBase.html#adeaa7024db6a25cc45abc37c388661d3" title="_gs" alt="" coords="115,99,157,128"/>
+<area shape="rect" id="node21" href="$classYiiXLBase.html#aed6576cf2c433f4b9e680837077ca24a" title="_ig" alt="" coords="116,339,156,368"/>
+<area shape="rect" id="node25" href="$classYiiXLBase.html#aa5c4459afda5a8a58c46a26aecafaf37" title="_ss" alt="" coords="115,232,157,261"/>
+<area shape="rect" id="node33" href="$classYiiXLBase.html#aeeb9b927f96ebe9c88760d70afa39abe" title="getUser" alt="" coords="100,392,172,421"/>
+<area shape="rect" id="node5" href="$classCXLController.html#ae926a613a7702bb749e974f35a462d60" title="CXLController::setStandardFormOptions" alt="" coords="221,285,499,315"/>
+<area shape="rect" id="node9" href="$classYiiXLBase.html#a23d250b00a90dbb026ebe72ce040eca4" title="_gcu" alt="" coords="335,19,385,48"/>
+<area shape="rect" id="node15" href="$classYiiXLBase.html#ac605603031e05d1ec69ce6c1bb23cf24" title="_ghs" alt="" coords="335,72,385,101"/>
+<area shape="rect" id="node17" href="$classCXLOAuthBehavior.html#a5126349c471fcaff1a74b9d117b979b1" title="CXLOAuthBehavior::loadToken" alt="" coords="253,125,467,155"/>
+<area shape="rect" id="node11" href="$classYiiXLBase.html#abe39ee9bd8c9467fd15bdd3da6528f3d" title="getCurrentUser" alt="" coords="572,59,692,88"/>
+<area shape="rect" id="node13" href="$classCXLController.html#a4be4055f3361d4800e16bc2e2e38cda6" title="CXLController::init" alt="" coords="565,5,699,35"/>
+<area shape="rect" id="node19" href="$classCXLOAuthBehavior.html#a4be4055f3361d4800e16bc2e2e38cda6" title="CXLOAuthBehavior::init" alt="" coords="548,139,716,168"/>
+<area shape="rect" id="node23" href="$classYiiXLBase.html#a3d6c9ff1005fcc403d30d5dd8ef70210" title="isGuest" alt="" coords="325,339,395,368"/>
+<area shape="rect" id="node27" href="$classYiiXLBase.html#a891a2db3b73ee6c336384be49b163932" title="_shs" alt="" coords="335,232,385,261"/>
+<area shape="rect" id="node30" href="$classCXLOAuthBehavior.html#a8027c4853ebf41108725eb798ebfcd59" title="CXLOAuthBehavior::storeToken" alt="" coords="251,179,469,208"/>
+</map>

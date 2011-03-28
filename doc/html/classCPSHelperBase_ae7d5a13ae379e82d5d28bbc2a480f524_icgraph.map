@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSHelperBase.html#a1f5b11e66cea38099ad43bd1c41b6dc6" title="_gf" alt="" coords="116,59,156,88"/>
+<area shape="rect" id="node5" href="$classCPSHelperBase.html#adeaa7024db6a25cc45abc37c388661d3" title="_gs" alt="" coords="115,112,157,141"/>
+<area shape="rect" id="node15" href="$classCPSHelperBase.html#aed6576cf2c433f4b9e680837077ca24a" title="_ig" alt="" coords="116,165,156,195"/>
+<area shape="rect" id="node19" href="$classCPSHelperBase.html#aa5c4459afda5a8a58c46a26aecafaf37" title="_ss" alt="" coords="115,219,157,248"/>
+<area shape="rect" id="node23" href="$classCPSHelperBase.html#aeeb9b927f96ebe9c88760d70afa39abe" title="getUser" alt="" coords="100,272,172,301"/>
+<area shape="rect" id="node7" href="$classCPSHelperBase.html#a23d250b00a90dbb026ebe72ce040eca4" title="_gcu" alt="" coords="279,5,329,35"/>
+<area shape="rect" id="node11" href="$classCPSHelperBase.html#ac605603031e05d1ec69ce6c1bb23cf24" title="_ghs" alt="" coords="279,59,329,88"/>
+<area shape="rect" id="node13" href="$classCPSFacebookUser.html#a4be4055f3361d4800e16bc2e2e38cda6" title="CPSFacebookUser::init" alt="" coords="221,112,387,141"/>
+<area shape="rect" id="node9" href="$classCPSHelperBase.html#abe39ee9bd8c9467fd15bdd3da6528f3d" title="getCurrentUser" alt="" coords="436,5,556,35"/>
+<area shape="rect" id="node17" href="$classCPSHelperBase.html#a3d6c9ff1005fcc403d30d5dd8ef70210" title="isGuest" alt="" coords="269,165,339,195"/>
+<area shape="rect" id="node21" href="$classCPSHelperBase.html#a891a2db3b73ee6c336384be49b163932" title="_shs" alt="" coords="279,219,329,248"/>
+</map>

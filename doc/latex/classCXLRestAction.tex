@@ -1,0 +1,94 @@
+\hypertarget{classCXLRestAction}{
+\section{CXLRestAction Class Reference}
+\label{classCXLRestAction}\index{CXLRestAction@{CXLRestAction}}
+}
+
+
+Inheritance diagram for CXLRestAction:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classCXLRestAction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLRestAction:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classCXLRestAction__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLRestAction_afb0fafe7e02a3ae1993c01c19fad2bae}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCXLRestAction_aa607ab5e557e6ebb60b85c5a20ad067f}{CLASS\_\-LOG\_\-TAG} = 'yiixl.core.components.CXLRestAction'
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCXLRestAction}{CXLRestAction} represents a REST action that is defined as a CXLRestController method. The method name is like '$<$method$>$XYZ' where $<$method$>$ is the type of HTTP request and 'XYZ' is the action name. 
+
+Definition at line 22 of file CXLRestAction.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLRestAction_afb0fafe7e02a3ae1993c01c19fad2bae}{
+\index{CXLRestAction@{CXLRestAction}!run@{run}}
+\index{run@{run}!CXLRestAction@{CXLRestAction}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLRestAction_afb0fafe7e02a3ae1993c01c19fad2bae}
+Runs the REST action. 
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CHttpException}]\end{DoxyExceptions}
+
+
+Definition at line 41 of file CXLRestAction.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_controller = $this->getController();
+    
+    if ( ! ( $_controller instanceof IXLRest ) )
+    {
+      $_controller->missingAction( $this->getId() );
+      return;
+    }
+    
+    //  Call the controllers dispatch method...
+    $_controller->dispatchRequest( $this );
+  }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLRestAction_aa607ab5e557e6ebb60b85c5a20ad067f}{
+\index{CXLRestAction@{CXLRestAction}!CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}}
+\index{CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}!CXLRestAction@{CXLRestAction}}
+\subsubsection[{CLASS\_\-LOG\_\-TAG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CLASS\_\-LOG\_\-TAG} = 'yiixl.core.components.CXLRestAction'}}
+\label{classCXLRestAction_aa607ab5e557e6ebb60b85c5a20ad067f}
+Our logging tag 
+
+Definition at line 31 of file CXLRestAction.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLRestAction_8php}{CXLRestAction.php}\end{DoxyCompactItemize}

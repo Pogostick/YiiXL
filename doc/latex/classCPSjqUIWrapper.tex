@@ -1,0 +1,723 @@
+\hypertarget{classCPSjqUIWrapper}{
+\section{CPSjqUIWrapper Class Reference}
+\label{classCPSjqUIWrapper}\index{CPSjqUIWrapper@{CPSjqUIWrapper}}
+}
+
+
+Inheritance diagram for CPSjqUIWrapper:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSjqUIWrapper__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSjqUIWrapper:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCPSjqUIWrapper__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSjqUIWrapper_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSjqUIWrapper_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSjqUIWrapper_afb0fafe7e02a3ae1993c01c19fad2bae}{run} ()
+\item 
+\hyperlink{classCPSjqUIWrapper_ac02a66bde8e72e4909137bf748edf665}{registerClientScripts} (\$bLocateScript=false)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSjqUIWrapper_aad3fae32ed41de6a64288d3c0a01b56d}{getValidThemes} ()
+\item 
+static \hyperlink{classCPSjqUIWrapper_a43924bdf5b5f04904b65e9852f4b35ed}{getStateName} ()
+\item 
+static \hyperlink{classCPSjqUIWrapper_a1fba0833b16e3ca8470ef13b70f66a40}{getCurrentTheme} ()
+\item 
+static \hyperlink{classCPSjqUIWrapper_a644a97c97c7461c0f04560a610584dbd}{setCurrentTheme} (\$widgetTheme, \$bSessionToo=true)
+\item 
+static \hyperlink{classCPSjqUIWrapper_a60cfa3447f5be59345c3b145afe7b90d}{getMultiTheme} ()
+\item 
+static \hyperlink{classCPSjqUIWrapper_a4ab913b8ede018fb56d43c228696f957}{setMultiTheme} (\$bValue)
+\item 
+static \hyperlink{classCPSjqUIWrapper_a0ffc269a208148ade57c7eb608a4562a}{create} (\$sName=null, \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array} \$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+static \hyperlink{classCPSjqUIWrapper_ac23dbff4185dd0a77d381116a054bb50}{loadScripts} (\$widget=null, \$widgetTheme=null)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSjqUIWrapper_ae357f9dc377f7de0d12010b2ced28cbc}{PS\_\-WIDGET\_\-NAME} = 'jqui'
+\item 
+const \hyperlink{classCPSjqUIWrapper_a8ccb5e1d65c091f944a6aa8c5be834ca}{PS\_\-EXTERNAL\_\-PATH} = '/jqui'
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSjqUIWrapper_a8d18b96a73f9da6408588268de922652}{\$m\_\-sCurrentTheme}
+\item 
+static \hyperlink{classCPSjqUIWrapper_a668c0f109a913217310bafc3cd2ff404}{\$\_\-multiTheme} = false
+\item 
+static \hyperlink{classCPSjqUIWrapper_aec85930491181c225f5c79d3e76213ee}{\$m\_\-arValidThemes}
+\item 
+static \hyperlink{classCPSjqUIWrapper_a1a8db3d93da0f822e3d07ce0a9fd1973}{\$m\_\-sStateName} = '\_\-ps\_\-jqui\_\-theme'
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 61 of file CPSjqUIWrapper.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSjqUIWrapper_a0ffc269a208148ade57c7eb608a4562a}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!create@{create}}
+\index{create@{create}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static create (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sName = {\ttfamily null}, }
+\item[{{\bf array} \$}]{ arOptions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSjqUIWrapper_a0ffc269a208148ade57c7eb608a4562a}
+Constructs and returns a jQuery widget
+
+The options passed in are dynamically added to the options array and will be accessible and modifiable as normal (.i.e. \$this-\/$>$theme, \$this-\/$>$baseUrl, etc.)
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sName The type of jq widget to create \item[{\em array}]\$arOptions The options for the widget \item[{\em string}]\$sClass The class of the calling object if different \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCPSjqUIWrapper}{CPSjqUIWrapper} 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSjQueryWidget_af09cbabc6ce2c1d9d9efb7ae308ea0f3}{CPSjQueryWidget}.
+
+
+
+Reimplemented in \hyperlink{classCPSMarkItUpWidget_a0ffc269a208148ade57c7eb608a4562a}{CPSMarkItUpWidget}, \hyperlink{classCPSMcDropdownWidget_a0ffc269a208148ade57c7eb608a4562a}{CPSMcDropdownWidget}, \hyperlink{classCPSWysiwygWidget_a0ffc269a208148ade57c7eb608a4562a}{CPSWysiwygWidget}, \hyperlink{classCPSfgMenu_a0ffc269a208148ade57c7eb608a4562a}{CPSfgMenu}, \hyperlink{classCPSjqGridWidget_a0ffc269a208148ade57c7eb608a4562a}{CPSjqGridWidget}, and \hyperlink{classCPSjqUIAlerts_a0ffc269a208148ade57c7eb608a4562a}{CPSjqUIAlerts}.
+
+
+
+Definition at line 259 of file CPSjqUIWrapper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $arOptions['class'] = PS::o( $arOptions, 'class', __CLASS__ );
+        if ( $sName == $arOptions['class'] ) $arOptions['naked'] = true;
+        return parent::create( $sName, $arOptions );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSjqUIWrapper_a1fba0833b16e3ca8470ef13b70f66a40}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!getCurrentTheme@{getCurrentTheme}}
+\index{getCurrentTheme@{getCurrentTheme}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{getCurrentTheme}]{\setlength{\rightskip}{0pt plus 5cm}static getCurrentTheme (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSjqUIWrapper_a1fba0833b16e3ca8470ef13b70f66a40}
+
+
+Definition at line 142 of file CPSjqUIWrapper.php.
+
+
+
+
+\begin{DoxyCode}
+{ return self::$m_sCurrentTheme ? self::$m_sCurrentTheme : self::$m_sCurrentTheme
+       = Yii::app()->user->getState( self::$m_sStateName ); }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSjqUIWrapper_a1fba0833b16e3ca8470ef13b70f66a40_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSjqUIWrapper_a60cfa3447f5be59345c3b145afe7b90d}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!getMultiTheme@{getMultiTheme}}
+\index{getMultiTheme@{getMultiTheme}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{getMultiTheme}]{\setlength{\rightskip}{0pt plus 5cm}static getMultiTheme (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSjqUIWrapper_a60cfa3447f5be59345c3b145afe7b90d}
+
+
+Definition at line 144 of file CPSjqUIWrapper.php.
+
+
+
+
+\begin{DoxyCode}
+{ return self::$_multiTheme; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSjqUIWrapper_a43924bdf5b5f04904b65e9852f4b35ed}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{getStateName}]{\setlength{\rightskip}{0pt plus 5cm}static getStateName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSjqUIWrapper_a43924bdf5b5f04904b65e9852f4b35ed}
+
+
+Definition at line 136 of file CPSjqUIWrapper.php.
+
+
+
+
+\begin{DoxyCode}
+{ return self::$m_sStateName; }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSjqUIWrapper_a43924bdf5b5f04904b65e9852f4b35ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSjqUIWrapper_aad3fae32ed41de6a64288d3c0a01b56d}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!getValidThemes@{getValidThemes}}
+\index{getValidThemes@{getValidThemes}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{getValidThemes}]{\setlength{\rightskip}{0pt plus 5cm}static getValidThemes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSjqUIWrapper_aad3fae32ed41de6a64288d3c0a01b56d}
+
+
+Definition at line 129 of file CPSjqUIWrapper.php.
+
+
+
+
+\begin{DoxyCode}
+{ return self::$m_arValidThemes; }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSjqUIWrapper_aad3fae32ed41de6a64288d3c0a01b56d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSjqUIWrapper_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!init@{init}}
+\index{init@{init}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSjqUIWrapper_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize the widget 
+
+Reimplemented from \hyperlink{classCPSjQueryWidget_a4be4055f3361d4800e16bc2e2e38cda6}{CPSjQueryWidget}.
+
+
+
+Reimplemented in \hyperlink{classCPSfgMenu_a4be4055f3361d4800e16bc2e2e38cda6}{CPSfgMenu}.
+
+
+
+Definition at line 172 of file CPSjqUIWrapper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Call daddy
+        parent::init();
+
+        //  Validate defaults...
+        $_widgetTheme = $this->theme;
+
+        if ( empty( $_widgetTheme ) ) $this->theme = ( ! empty( self::$m_sCurrent
+      Theme ) ) ? self::$m_sCurrentTheme : $_widgetTheme = PS::nvl( Yii::app()->params[
+      'theme'], 'cupertino' );
+        if ( empty( $this->baseUrl ) ) $this->baseUrl = $this->extLibUrl . self::
+      PS_EXTERNAL_PATH;
+        if ( empty( $this->imagePath ) ) $this->imagePath = "{$this->baseUrl}/css
+      /{$this->theme}/images";
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSjqUIWrapper_ac23dbff4185dd0a77d381116a054bb50}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!loadScripts@{loadScripts}}
+\index{loadScripts@{loadScripts}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{loadScripts}]{\setlength{\rightskip}{0pt plus 5cm}static loadScripts (
+\begin{DoxyParamCaption}
+\item[{\$}]{ widget = {\ttfamily null}, }
+\item[{\$}]{ widgetTheme = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSjqUIWrapper_ac23dbff4185dd0a77d381116a054bb50}
+Registers the needed CSS and JavaScript.
+
+One may use this to load the scripts necessary for styling buttons and whatnot when jqUI widgets are not in use on a page.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSjqUIWrapper}{CPSjqUIWrapper}}]\$widget The widget making this call, if any \item[{\em string}]\$widgetTheme The theme to use. If it's specified, will override theme set at the time of creation \item[{\em CClientScript}]\$oCS The clientScript object of the app \end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classCPSfgMenu_a561cda05113b81fc962133829351f41e}{CPSfgMenu}, and \hyperlink{classCPSjqUIAlerts_a561cda05113b81fc962133829351f41e}{CPSjqUIAlerts}.
+
+
+
+Definition at line 276 of file CPSjqUIWrapper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        static $_widgetLoaded = false;
+
+        if ( ! $_widgetLoaded )
+        {
+            //  Instantiate if needed...
+            $_widget = ( null === $widget ? new CPSjqUIWrapper() : $widget );
+
+            //  Save then Set baseUrl...
+            $_oldPath = $_widget->baseUrl;
+            $_widget->baseUrl = $_widget->extLibUrl . self::PS_EXTERNAL_PATH;
+
+            //  Check theme overrides...
+            if ( null !== $widgetTheme )
+                $_widgetTheme = $widgetTheme;
+            else if ( null !== $_widget->getTheme() )
+                $_widgetTheme = $_widget->getTheme();
+            else if ( null !== PS::_gp( 'theme' ) )
+                $_widgetTheme = PS::_gp( 'theme' );
+            else
+                $_widgetTheme = self::getCurrentTheme();
+
+            //  Gotta have a theme...
+            if ( null === $_widgetTheme )
+                $_widgetTheme = 'ui-lightness';
+
+            if ( ! self::$_multiTheme && ! self::getCurrentTheme() )
+                self::setCurrentTheme( $_widgetTheme );
+
+            $_widget->theme = $_widgetTheme;
+
+            //  Register css files if we have a theme...
+CPSLog::trace( __METHOD__, 'Pushed jqui-script' );
+            $_widget->pushCssFile( ( PS::o( $_SERVER, 'HTTPS' ) == 'on' ? 'https'
+       : 'http' ) . "://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/{$_widgetTheme}
+      /jquery-ui.css" );
+            $_widget->pushCssFile( PS::makePath( $_widget->baseUrl, 'css', 'ui.po
+      gostick.css' ) );
+
+            //  Register scripts necessary
+            $_widget->pushScriptFile( ( PS::o( $_SERVER, 'HTTPS' ) == 'on' ? 'htt
+      ps' : 'http' ) . "://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"
+      , CClientScript::POS_END );
+            $_widget->pushScriptFile( PS::makePath( $_widget->baseUrl, 'js', 'jqu
+      ery.pogostick.hover.js' ), CClientScript::POS_END );
+
+            //  Restore path
+            $_widget->baseUrl = $_oldPath;
+
+            //  And mark completed...
+            $_widgetLoaded = true;
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSjqUIWrapper_ac23dbff4185dd0a77d381116a054bb50_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=396pt]{classCPSjqUIWrapper_ac23dbff4185dd0a77d381116a054bb50_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSjqUIWrapper_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSjqUIWrapper_a2dc262e99b1c246b56f27626bfe699ff}
+Initialize 
+
+Reimplemented from \hyperlink{classCPSjQueryWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSjQueryWidget}.
+
+
+
+Reimplemented in \hyperlink{classCPSMarkItUpWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSMarkItUpWidget}, \hyperlink{classCPSMcDropdownWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSMcDropdownWidget}, \hyperlink{classCPSWysiwygWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSWysiwygWidget}, \hyperlink{classCPSfgMenu_a2dc262e99b1c246b56f27626bfe699ff}{CPSfgMenu}, and \hyperlink{classCPSjqUIAlerts_a2dc262e99b1c246b56f27626bfe699ff}{CPSjqUIAlerts}.
+
+
+
+Definition at line 154 of file CPSjqUIWrapper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Phone home...
+        parent::preinit();
+
+        //  Add the default options for jqUI stuff
+        $this->addOptions(
+            array(
+                'theme_' => 'string:::true:' . implode( '|', self::$m_arValidThem
+      es ),
+                'imagePath_' => 'string',
+            )
+        );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSjqUIWrapper_ac02a66bde8e72e4909137bf748edf665}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!registerClientScripts@{registerClientScripts}}
+\index{registerClientScripts@{registerClientScripts}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{registerClientScripts}]{\setlength{\rightskip}{0pt plus 5cm}registerClientScripts (
+\begin{DoxyParamCaption}
+\item[{\$}]{ bLocateScript = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSjqUIWrapper_ac02a66bde8e72e4909137bf748edf665}
+Registers the needed CSS and JavaScript. 
+\begin{DoxyParams}{Parameters}
+\item[{\em boolean}]If true, system will try to find jquery plugins based on the pattern jquery.$<$plugin-\/name\mbox{[}.min\mbox{]}.js \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+CClientScript The current app's ClientScript object 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSjQueryWidget_a79bf828ed852174a56c4db5ef918a83c}{CPSjQueryWidget}.
+
+
+
+Reimplemented in \hyperlink{classCPSMarkItUpWidget_ac02a66bde8e72e4909137bf748edf665}{CPSMarkItUpWidget}, \hyperlink{classCPSMcDropdownWidget_ac02a66bde8e72e4909137bf748edf665}{CPSMcDropdownWidget}, \hyperlink{classCPSWysiwygWidget_ac02a66bde8e72e4909137bf748edf665}{CPSWysiwygWidget}, \hyperlink{classCPSfgMenu_ac02a66bde8e72e4909137bf748edf665}{CPSfgMenu}, \hyperlink{classCPSjqGridWidget_ac02a66bde8e72e4909137bf748edf665}{CPSjqGridWidget}, and \hyperlink{classCPSjqUIAlerts_ac02a66bde8e72e4909137bf748edf665}{CPSjqUIAlerts}.
+
+
+
+Definition at line 204 of file CPSjqUIWrapper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Don't auto register
+        $_bAutoReg = $this->autoRegister;
+        $this->autoRegister = false;
+
+        //  Call dad
+        parent::registerClientScripts( $bLocateScript );
+        $this->autoRegister = $_bAutoReg;
+
+        //  Register scripts necessary
+        self::loadScripts( $this, $this->theme );
+
+        //  Fix up datepicker internationalization
+        if ( $this->widgetName == 'datepicker' )
+        {
+            //  Is there a regional attribute? Pull it out and remove...
+            $_region = ( ! empty( $this->regional ) ) ? $this->regional : '';
+            $this->unsetOption( 'regional' );
+
+            //  Not en? Let's load i18n file...
+            if ( ! empty( $_region ) )
+            {
+                $_url = ( 'on' == PS::o( $_SERVER, 'HTTPS' )  ? 'https' : 'http' 
+      ) . '://jquery-ui.googlecode.com/svn/tags/latest/ui/minified/i18n/jquery-ui-i18n.
+      min.js';
+                $this->pushScriptFile( $_url, CClientScript::POS_END );
+            }
+
+            //  Set defaults for datepicker if this is one...
+            $_region = "$.datepicker.setDefaults($.extend({showMonthAfterYear: fa
+      lse},$.datepicker.regional['{$_region}']));";
+            PS::_rs( 'ps.reset.datepicker.' . md5( self::PS_WIDGET_NAME . '.' . $
+      this->widgetName . '#' . $this->id . '#' . $this->target . '.' . time() ), $_regi
+      on );
+        }
+
+        //  Get the javascript for this widget
+        if ( $this->autoRegister )
+            $this->registerWidgetScript();
+
+        //  Don't forget subclasses
+        return PS::_cs();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSjqUIWrapper_ac02a66bde8e72e4909137bf748edf665_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSjqUIWrapper_afb0fafe7e02a3ae1993c01c19fad2bae}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!run@{run}}
+\index{run@{run}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSjqUIWrapper_afb0fafe7e02a3ae1993c01c19fad2bae}
+
+
+Reimplemented from \hyperlink{classCPSjQueryWidget_afb0fafe7e02a3ae1993c01c19fad2bae}{CPSjQueryWidget}.
+
+
+
+Definition at line 189 of file CPSjqUIWrapper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Register the scripts/css
+        $_bLocate = $this->locateScript;
+        $this->registerClientScripts( $_bLocate );
+
+        //  Generate the HTML if available
+        echo $this->generateHtml();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSjqUIWrapper_afb0fafe7e02a3ae1993c01c19fad2bae_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSjqUIWrapper_a644a97c97c7461c0f04560a610584dbd}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!setCurrentTheme@{setCurrentTheme}}
+\index{setCurrentTheme@{setCurrentTheme}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{setCurrentTheme}]{\setlength{\rightskip}{0pt plus 5cm}static setCurrentTheme (
+\begin{DoxyParamCaption}
+\item[{\$}]{ widgetTheme, }
+\item[{\$}]{ bSessionToo = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSjqUIWrapper_a644a97c97c7461c0f04560a610584dbd}
+
+
+Definition at line 143 of file CPSjqUIWrapper.php.
+
+
+
+
+\begin{DoxyCode}
+{ if ( $bSessionToo ) Yii::app()->user->setState( self::$m_sStateName, $widgetThe
+      me ); self::$m_sCurrentTheme = $widgetTheme; }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSjqUIWrapper_a644a97c97c7461c0f04560a610584dbd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSjqUIWrapper_a4ab913b8ede018fb56d43c228696f957}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!setMultiTheme@{setMultiTheme}}
+\index{setMultiTheme@{setMultiTheme}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{setMultiTheme}]{\setlength{\rightskip}{0pt plus 5cm}static setMultiTheme (
+\begin{DoxyParamCaption}
+\item[{\$}]{ bValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSjqUIWrapper_a4ab913b8ede018fb56d43c228696f957}
+
+
+Definition at line 145 of file CPSjqUIWrapper.php.
+
+
+
+
+\begin{DoxyCode}
+{ self::$_multiTheme = $bValue; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSjqUIWrapper_a668c0f109a913217310bafc3cd2ff404}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!\$\_\-multiTheme@{\$\_\-multiTheme}}
+\index{\$\_\-multiTheme@{\$\_\-multiTheme}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{\$\_\-multiTheme}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-multiTheme = false\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSjqUIWrapper_a668c0f109a913217310bafc3cd2ff404}
+If true, no theme-\/blocking will be done.
+
+boolean  protected 
+
+Definition at line 95 of file CPSjqUIWrapper.php.
+
+\hypertarget{classCPSjqUIWrapper_aec85930491181c225f5c79d3e76213ee}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!\$m\_\-arValidThemes@{\$m\_\-arValidThemes}}
+\index{\$m\_\-arValidThemes@{\$m\_\-arValidThemes}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{\$m\_\-arValidThemes}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-arValidThemes\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSjqUIWrapper_aec85930491181c225f5c79d3e76213ee}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ array(
+        'base',
+        'black-tie',
+        'blitzer',
+        'cupertino',
+        'dark-hive',
+        'dot-luv',
+        'eggplant',
+        'excite-bike',
+        'flick',
+        'hot-sneaks',
+        'humanity',
+        'le-frog',
+        'mint-choc',
+        'overcast',
+        'pepper-grinder',
+        'redmond',
+        'smoothness',
+        'south-street',
+        'start',
+        'sunny',
+        'swanky-purse',
+        'trontastic',
+        'ui-darkness',
+        'ui-lightness',
+        'vader'
+    )
+\end{DoxyCode}
+
+
+Definition at line 102 of file CPSjqUIWrapper.php.
+
+\hypertarget{classCPSjqUIWrapper_a8d18b96a73f9da6408588268de922652}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!\$m\_\-sCurrentTheme@{\$m\_\-sCurrentTheme}}
+\index{\$m\_\-sCurrentTheme@{\$m\_\-sCurrentTheme}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{\$m\_\-sCurrentTheme}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sCurrentTheme\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSjqUIWrapper_a8d18b96a73f9da6408588268de922652}
+The current theme. If set, future theme changes will be ignored
+
+string  protected 
+
+Definition at line 87 of file CPSjqUIWrapper.php.
+
+\hypertarget{classCPSjqUIWrapper_a1a8db3d93da0f822e3d07ce0a9fd1973}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!\$m\_\-sStateName@{\$m\_\-sStateName}}
+\index{\$m\_\-sStateName@{\$m\_\-sStateName}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{\$m\_\-sStateName}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sStateName = '\_\-ps\_\-jqui\_\-theme'\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSjqUIWrapper_a1a8db3d93da0f822e3d07ce0a9fd1973}
+
+
+Definition at line 135 of file CPSjqUIWrapper.php.
+
+\hypertarget{classCPSjqUIWrapper_a8ccb5e1d65c091f944a6aa8c5be834ca}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!PS\_\-EXTERNAL\_\-PATH@{PS\_\-EXTERNAL\_\-PATH}}
+\index{PS\_\-EXTERNAL\_\-PATH@{PS\_\-EXTERNAL\_\-PATH}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{PS\_\-EXTERNAL\_\-PATH}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PS\_\-EXTERNAL\_\-PATH} = '/jqui'}}
+\label{classCPSjqUIWrapper_a8ccb5e1d65c091f944a6aa8c5be834ca}
+The path where the assets for this widget are stored (underneath the psYiiExtensions/external base 
+
+Reimplemented in \hyperlink{classCPSMarkItUpWidget_a8ccb5e1d65c091f944a6aa8c5be834ca}{CPSMarkItUpWidget}, \hyperlink{classCPSMcDropdownWidget_a8ccb5e1d65c091f944a6aa8c5be834ca}{CPSMcDropdownWidget}, \hyperlink{classCPSWysiwygWidget_a8ccb5e1d65c091f944a6aa8c5be834ca}{CPSWysiwygWidget}, \hyperlink{classCPSfgMenu_a8ccb5e1d65c091f944a6aa8c5be834ca}{CPSfgMenu}, and \hyperlink{classCPSjqUIAlerts_a8ccb5e1d65c091f944a6aa8c5be834ca}{CPSjqUIAlerts}.
+
+
+
+Definition at line 75 of file CPSjqUIWrapper.php.
+
+\hypertarget{classCPSjqUIWrapper_ae357f9dc377f7de0d12010b2ced28cbc}{
+\index{CPSjqUIWrapper@{CPSjqUIWrapper}!PS\_\-WIDGET\_\-NAME@{PS\_\-WIDGET\_\-NAME}}
+\index{PS\_\-WIDGET\_\-NAME@{PS\_\-WIDGET\_\-NAME}!CPSjqUIWrapper@{CPSjqUIWrapper}}
+\subsubsection[{PS\_\-WIDGET\_\-NAME}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PS\_\-WIDGET\_\-NAME} = 'jqui'}}
+\label{classCPSjqUIWrapper_ae357f9dc377f7de0d12010b2ced28cbc}
+The path where the assets for this widget are stored (underneath the psYiiExtensions/external base 
+
+Reimplemented in \hyperlink{classCPSMarkItUpWidget_ae357f9dc377f7de0d12010b2ced28cbc}{CPSMarkItUpWidget}, \hyperlink{classCPSMcDropdownWidget_ae357f9dc377f7de0d12010b2ced28cbc}{CPSMcDropdownWidget}, \hyperlink{classCPSWysiwygWidget_ae357f9dc377f7de0d12010b2ced28cbc}{CPSWysiwygWidget}, \hyperlink{classCPSfgMenu_ae357f9dc377f7de0d12010b2ced28cbc}{CPSfgMenu}, and \hyperlink{classCPSjqUIAlerts_ae357f9dc377f7de0d12010b2ced28cbc}{CPSjqUIAlerts}.
+
+
+
+Definition at line 70 of file CPSjqUIWrapper.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/widgets/jqui/\hyperlink{CPSjqUIWrapper_8php}{CPSjqUIWrapper.php}\end{DoxyCompactItemize}

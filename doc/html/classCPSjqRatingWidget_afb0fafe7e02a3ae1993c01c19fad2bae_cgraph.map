@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSjqRatingWidget.html#a59080ee7d7949e19f5af41e26ff53806" title="registerClientScripts" alt="" coords="97,32,247,61"/>
+<area shape="rect" id="node5" href="$classCPSWidget.html#a4589f8bb22c9e9837302ea2cc7c80570" title="CPSWidget::pushScriptFile" alt="" coords="317,5,504,35"/>
+<area shape="rect" id="node7" href="$classCPSWidget.html#a196225b59cf30535180836cdac821edb" title="CPSWidget::registerWidgetScript" alt="" coords="297,59,524,88"/>
+<area shape="rect" id="node9" href="$classCPSHelperBase.html#a982d30aee3a52f73b0e935ef7c81b03b" title="CPSHelperBase::_rs" alt="" coords="608,5,757,35"/>
+<area shape="rect" id="node11" href="$classCPSWidget.html#a2a2ea08f8240ed4c24058ab80ab89703" title="CPSWidget::generateJavascript" alt="" coords="573,59,792,88"/>
+<area shape="rect" id="node13" href="$classCPSWidget.html#a54ebf4d8b63be34c7e54b579b97cc591" title="CPSWidget::getUniqueId" alt="" coords="595,112,771,141"/>
+<area shape="rect" id="node15" href="$classCPSHash.html#a0dafa79239f1d71f976fdd260bf2349f" title="CPSHash::hash" alt="" coords="855,85,975,115"/>
+<area shape="rect" id="node17" href="$classCPSHelperBase.html#a666bf0c7e9a3320e2e1ca2d9b65301e6" title="CPSHelperBase::nvl" alt="" coords="841,139,988,168"/>
+</map>

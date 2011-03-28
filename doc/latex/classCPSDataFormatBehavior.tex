@@ -1,0 +1,576 @@
+\hypertarget{classCPSDataFormatBehavior}{
+\section{CPSDataFormatBehavior Class Reference}
+\label{classCPSDataFormatBehavior}\index{CPSDataFormatBehavior@{CPSDataFormatBehavior}}
+}
+
+
+Inheritance diagram for CPSDataFormatBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classCPSDataFormatBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSDataFormatBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classCPSDataFormatBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSDataFormatBehavior_aad7e15be495655b98d24409956a439bc}{getFormat} (\$which= 'afterFind', \$type= 'date')
+\item 
+\hyperlink{classCPSDataFormatBehavior_aa062fdbc726af94e788936d25ee531e4}{setFormat} (\$which= 'afterValidate', \$type= 'date', \$sFormat= 'm/d/Y')
+\item 
+\hyperlink{classCPSDataFormatBehavior_afeb8c05903b3b31d7ec509c3e1628e52}{getDefaultSort} ()
+\item 
+\hyperlink{classCPSDataFormatBehavior_ad6a3597dea15d20d248e402b0d162490}{setDefaultSort} (\$sValue)
+\item 
+\hyperlink{classCPSDataFormatBehavior_a586e177c0e7073ec63f7ccd6546ff3fd}{beforeValidate} (\$event)
+\item 
+\hyperlink{classCPSDataFormatBehavior_a5c1ea11a48a8c9bde21ef9a7d391d396}{afterValidate} (\$event)
+\item 
+\hyperlink{classCPSDataFormatBehavior_a0d137abaa3f9f1ae67349e02c627ac26}{beforeFind} (\$event)
+\item 
+\hyperlink{classCPSDataFormatBehavior_a3b701d16073e1628451c7dc1929b66bb}{afterFind} (\$event)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSDataFormatBehavior_a826182a47d36956417205828f9df2f61}{applyFormat} (\$column, \$value, \$which= 'view')
+\item 
+\hyperlink{classCPSDataFormatBehavior_a976f0f5f7deb665d9a23c095f407ef2e}{handleEvent} (\$which, CEvent \$event)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSDataFormatBehavior_a83797c01913ca1386c15c67d871c69ef}{\$\_\-dateFormat}
+\item 
+\hyperlink{classCPSDataFormatBehavior_a295ce02e7bc05505ee0456d4292c3418}{\$\_\-defaultSort}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file CPSDataFormatBehavior.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSDataFormatBehavior_a3b701d16073e1628451c7dc1929b66bb}{
+\index{CPSDataFormatBehavior@{CPSDataFormatBehavior}!afterFind@{afterFind}}
+\index{afterFind@{afterFind}!CPSDataFormatBehavior@{CPSDataFormatBehavior}}
+\subsubsection[{afterFind}]{\setlength{\rightskip}{0pt plus 5cm}afterFind (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDataFormatBehavior_a3b701d16073e1628451c7dc1929b66bb}
+Apply any formats 
+\begin{DoxyParams}{Parameters}
+\item[{\em CEvent}]\$event \end{DoxyParams}
+
+
+Definition at line 242 of file CPSDataFormatBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->handleEvent( __FUNCTION__, $event );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSDataFormatBehavior_a3b701d16073e1628451c7dc1929b66bb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDataFormatBehavior_a5c1ea11a48a8c9bde21ef9a7d391d396}{
+\index{CPSDataFormatBehavior@{CPSDataFormatBehavior}!afterValidate@{afterValidate}}
+\index{afterValidate@{afterValidate}!CPSDataFormatBehavior@{CPSDataFormatBehavior}}
+\subsubsection[{afterValidate}]{\setlength{\rightskip}{0pt plus 5cm}afterValidate (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDataFormatBehavior_a5c1ea11a48a8c9bde21ef9a7d391d396}
+Apply any formats 
+\begin{DoxyParams}{Parameters}
+\item[{\em CEvent}]\$event \end{DoxyParams}
+
+
+Definition at line 205 of file CPSDataFormatBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->handleEvent( __FUNCTION__, $event );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSDataFormatBehavior_a5c1ea11a48a8c9bde21ef9a7d391d396_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDataFormatBehavior_a826182a47d36956417205828f9df2f61}{
+\index{CPSDataFormatBehavior@{CPSDataFormatBehavior}!applyFormat@{applyFormat}}
+\index{applyFormat@{applyFormat}!CPSDataFormatBehavior@{CPSDataFormatBehavior}}
+\subsubsection[{applyFormat}]{\setlength{\rightskip}{0pt plus 5cm}applyFormat (
+\begin{DoxyParamCaption}
+\item[{\$}]{ column, }
+\item[{\$}]{ value, }
+\item[{\$}]{ which = {\ttfamily 'view'}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSDataFormatBehavior_a826182a47d36956417205828f9df2f61}
+Applies the requested format to the value and returns it. Override this method to apply additional format types.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em CDbColumnSchema}]\$column \item[{\em mixed}]\$value \item[{\em string}]\$which \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 119 of file CPSDataFormatBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_result = null;
+
+        //  Apply formats
+        switch ( $column->dbType )
+        {
+            case 'date':
+            case 'datetime':
+            case 'timestamp':
+                //  Handle blanks
+                if ( null != $value && $value != '0000-00-00' && $value != '0000-
+      00-00 00:00:00' )
+                    $_result = date( $this->getFormat( $which, $column->dbType ),
+       strtotime( $value ) );
+                break;
+
+            default:
+                $_result = $value;
+                break;
+        }
+
+        return $_result;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSDataFormatBehavior_a826182a47d36956417205828f9df2f61_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=392pt]{classCPSDataFormatBehavior_a826182a47d36956417205828f9df2f61_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDataFormatBehavior_a0d137abaa3f9f1ae67349e02c627ac26}{
+\index{CPSDataFormatBehavior@{CPSDataFormatBehavior}!beforeFind@{beforeFind}}
+\index{beforeFind@{beforeFind}!CPSDataFormatBehavior@{CPSDataFormatBehavior}}
+\subsubsection[{beforeFind}]{\setlength{\rightskip}{0pt plus 5cm}beforeFind (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDataFormatBehavior_a0d137abaa3f9f1ae67349e02c627ac26}
+Apply any formats 
+\begin{DoxyParams}{Parameters}
+\item[{\em CEvent}]\$event \end{DoxyParams}
+
+
+Definition at line 214 of file CPSDataFormatBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Is a default sort defined?
+        if ( $this->_defaultSort )
+        {
+            //  Is a sort defined?
+            $_criteria = $event->sender->getDbCriteria();
+
+            //  No sort? Set the default
+            if ( ! $_criteria->order )
+            {
+                $event->sender->getDbCriteria()->mergeWith( 
+                    new CDbCriteria( 
+                        array( 
+                            'order' => $this->_defaultSort,
+                        )
+                    )
+                );
+            }
+        }
+
+        return $this->handleEvent( __FUNCTION__, $event );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSDataFormatBehavior_a0d137abaa3f9f1ae67349e02c627ac26_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDataFormatBehavior_a586e177c0e7073ec63f7ccd6546ff3fd}{
+\index{CPSDataFormatBehavior@{CPSDataFormatBehavior}!beforeValidate@{beforeValidate}}
+\index{beforeValidate@{beforeValidate}!CPSDataFormatBehavior@{CPSDataFormatBehavior}}
+\subsubsection[{beforeValidate}]{\setlength{\rightskip}{0pt plus 5cm}beforeValidate (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDataFormatBehavior_a586e177c0e7073ec63f7ccd6546ff3fd}
+Apply any formats 
+\begin{DoxyParams}{Parameters}
+\item[{\em CModelEvent}]event parameter \end{DoxyParams}
+
+
+Definition at line 196 of file CPSDataFormatBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->handleEvent( __FUNCTION__, $event );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSDataFormatBehavior_a586e177c0e7073ec63f7ccd6546ff3fd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDataFormatBehavior_afeb8c05903b3b31d7ec509c3e1628e52}{
+\index{CPSDataFormatBehavior@{CPSDataFormatBehavior}!getDefaultSort@{getDefaultSort}}
+\index{getDefaultSort@{getDefaultSort}!CPSDataFormatBehavior@{CPSDataFormatBehavior}}
+\subsubsection[{getDefaultSort}]{\setlength{\rightskip}{0pt plus 5cm}getDefaultSort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDataFormatBehavior_afeb8c05903b3b31d7ec509c3e1628e52}
+Returns the default sort \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSDataFormatBehavior_ad6a3597dea15d20d248e402b0d162490}{setDefaultSort} 
+\end{DoxySeeAlso}
+
+
+Definition at line 97 of file CPSDataFormatBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_defaultSort; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDataFormatBehavior_aad7e15be495655b98d24409956a439bc}{
+\index{CPSDataFormatBehavior@{CPSDataFormatBehavior}!getFormat@{getFormat}}
+\index{getFormat@{getFormat}!CPSDataFormatBehavior@{CPSDataFormatBehavior}}
+\subsubsection[{getFormat}]{\setlength{\rightskip}{0pt plus 5cm}getFormat (
+\begin{DoxyParamCaption}
+\item[{\$}]{ which = {\ttfamily 'afterFind'}, }
+\item[{\$}]{ type = {\ttfamily 'date'}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDataFormatBehavior_aad7e15be495655b98d24409956a439bc}
+Retrieves a format 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$which \item[{\em string}]\$type \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file CPSDataFormatBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return CPSHelperBase::nvl( $this->_dateFormat[ $which ][ $type ], 'm/d/Y'
+       );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classCPSDataFormatBehavior_aad7e15be495655b98d24409956a439bc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSDataFormatBehavior_aad7e15be495655b98d24409956a439bc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDataFormatBehavior_a976f0f5f7deb665d9a23c095f407ef2e}{
+\index{CPSDataFormatBehavior@{CPSDataFormatBehavior}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!CPSDataFormatBehavior@{CPSDataFormatBehavior}}
+\subsubsection[{handleEvent}]{\setlength{\rightskip}{0pt plus 5cm}handleEvent (
+\begin{DoxyParamCaption}
+\item[{\$}]{ which, }
+\item[{CEvent \$}]{ event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSDataFormatBehavior_a976f0f5f7deb665d9a23c095f407ef2e}
+Process the data and apply formats
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$which \item[{\em CEvent}]\$event \end{DoxyParams}
+
+
+Definition at line 148 of file CPSDataFormatBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        static $_schema;
+        static $_schemaFor;
+
+        $_model = $event->sender;
+
+        //  Cache for multi event speed
+        if ( $_schemaFor != get_class( $_model ) )
+        {
+            $_schema = $_model->getMetaData()->columns;
+            $_schemaFor = get_class( $_model );
+        }
+
+        //  Not for us? Pass it through...
+        if ( isset( $this->_dateFormat[ $which ] ) )
+        {
+            //  Is it safe?
+            if ( ! $_schema )
+            {
+                $_model->addError( null, 'Cannot read schema for data formatting'
+       );
+                return false;
+            }
+
+            //  Scoot through and update values...
+            foreach ( $_schema as $_name => $_column )
+            {
+                if ( ! empty( $_name ) && $_model->hasAttribute( $_name ) && isse
+      t( $_schema[ $_name ], $this->_dateFormat[ $which ][ $_column->dbType ] ) )
+                {
+                    $_value = $this->applyFormat( $_column, $_model->getAttribute
+      ( $_name ), $which );
+//                  if ( $_value ) CPSLog::trace( __METHOD__, 'Apply format to ' 
+      . $_name . ' [' . $_model->{$_name} . ' -> ' . $_value . ']' );
+                    $_model->setAttribute( $_name, $_value );
+                }
+            }
+        }
+
+        //  Papa don't preach...
+        return parent::$which( $event );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSDataFormatBehavior_a976f0f5f7deb665d9a23c095f407ef2e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classCPSDataFormatBehavior_a976f0f5f7deb665d9a23c095f407ef2e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDataFormatBehavior_ad6a3597dea15d20d248e402b0d162490}{
+\index{CPSDataFormatBehavior@{CPSDataFormatBehavior}!setDefaultSort@{setDefaultSort}}
+\index{setDefaultSort@{setDefaultSort}!CPSDataFormatBehavior@{CPSDataFormatBehavior}}
+\subsubsection[{setDefaultSort}]{\setlength{\rightskip}{0pt plus 5cm}setDefaultSort (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDataFormatBehavior_ad6a3597dea15d20d248e402b0d162490}
+Sets the default sort 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sValue \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSDataFormatBehavior_afeb8c05903b3b31d7ec509c3e1628e52}{getDefaultSort} 
+\end{DoxySeeAlso}
+
+
+Definition at line 104 of file CPSDataFormatBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_defaultSort = $sValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDataFormatBehavior_aa062fdbc726af94e788936d25ee531e4}{
+\index{CPSDataFormatBehavior@{CPSDataFormatBehavior}!setFormat@{setFormat}}
+\index{setFormat@{setFormat}!CPSDataFormatBehavior@{CPSDataFormatBehavior}}
+\subsubsection[{setFormat}]{\setlength{\rightskip}{0pt plus 5cm}setFormat (
+\begin{DoxyParamCaption}
+\item[{\$}]{ which = {\ttfamily 'afterValidate'}, }
+\item[{\$}]{ type = {\ttfamily 'date'}, }
+\item[{\$}]{ sFormat = {\ttfamily 'm/d/Y'}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDataFormatBehavior_aa062fdbc726af94e788936d25ee531e4}
+Sets a format
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$which \item[{\em string}]\$type \item[{\em string}]\$sFormat \end{DoxyParams}
+
+
+Definition at line 84 of file CPSDataFormatBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! isset( $this->_dateFormat[ $which ] ) )
+            $this->_dateFormat[ $which ] = array();
+
+        $this->_dateFormat[ $which ][ $type ] = $sFormat;
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSDataFormatBehavior_a83797c01913ca1386c15c67d871c69ef}{
+\index{CPSDataFormatBehavior@{CPSDataFormatBehavior}!\$\_\-dateFormat@{\$\_\-dateFormat}}
+\index{\$\_\-dateFormat@{\$\_\-dateFormat}!CPSDataFormatBehavior@{CPSDataFormatBehavior}}
+\subsubsection[{\$\_\-dateFormat}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-dateFormat\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSDataFormatBehavior_a83797c01913ca1386c15c67d871c69ef}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ array(
+        'afterFind' => array(
+            'date' => 'm/d/Y',
+            'datetime' => 'm/d/Y H:i:s',
+        ),
+        'afterValidate' => array(
+            'date' => 'Y-m-d',
+            'datetime' => 'Y-m-d H:i:s',
+        ),
+    )
+\end{DoxyCode}
+
+
+Definition at line 43 of file CPSDataFormatBehavior.php.
+
+\hypertarget{classCPSDataFormatBehavior_a295ce02e7bc05505ee0456d4292c3418}{
+\index{CPSDataFormatBehavior@{CPSDataFormatBehavior}!\$\_\-defaultSort@{\$\_\-defaultSort}}
+\index{\$\_\-defaultSort@{\$\_\-defaultSort}!CPSDataFormatBehavior@{CPSDataFormatBehavior}}
+\subsubsection[{\$\_\-defaultSort}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-defaultSort\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSDataFormatBehavior_a295ce02e7bc05505ee0456d4292c3418}
+
+
+Definition at line 60 of file CPSDataFormatBehavior.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/behaviors/\hyperlink{CPSDataFormatBehavior_8php}{CPSDataFormatBehavior.php}\end{DoxyCompactItemize}

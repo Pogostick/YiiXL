@@ -1,0 +1,926 @@
+\hypertarget{classCXLConfig}{
+\section{CXLConfig Class Reference}
+\label{classCXLConfig}\index{CXLConfig@{CXLConfig}}
+}
+
+
+Inheritance diagram for CXLConfig:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classCXLConfig__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLConfig:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classCXLConfig__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLConfig_a640283437f08aeb7c8bfe3cff738ec62}{\_\-\_\-construct} (array \$options, \$readOnly=true)
+\item 
+\hyperlink{classCXLConfig_aeeefab349db1835b9112b2767a0e039f}{getOption} (\$key, \$defaultValue=null)
+\item 
+\hyperlink{classCXLConfig_a658defb34762c8f40085aec87e16ba1a}{toArray} ()
+\item 
+\hyperlink{classCXLConfig_ab9e377585a59a89d463ba4b326b9feeb}{merge} (\hyperlink{classCXLConfig}{CXLConfig} \$mergeConfig)
+\item 
+\hyperlink{classCXLConfig_ae83de6b0e7c9ae14e4d50feff32965d0}{jsonEncode} (\$jsonOptions=null)
+\item 
+\hyperlink{classCXLConfig_ae3d6137f5700365c276d235463218c16}{jsonDecode} (\$json, \$assoc=null, \$depth=null)
+\item 
+\hyperlink{classCXLConfig_ac751e87b3d4c4bf2feb03bee8b092755}{count} ()
+\item 
+\hyperlink{classCXLConfig_af343507d1926e6ecf964625d41db528c}{current} ()
+\item 
+\hyperlink{classCXLConfig_a729e946b4ef600e71740113c6d4332c0}{key} ()
+\item 
+\hyperlink{classCXLConfig_acea62048bfee7b3cd80ed446c86fb78a}{next} ()
+\item 
+\hyperlink{classCXLConfig_ae619dcf2218c21549cb65d875bbc6c9c}{rewind} ()
+\item 
+\hyperlink{classCXLConfig_abb9f0d6adf1eb9b3b55712056861a247}{valid} ()
+\item 
+\hyperlink{classCXLConfig_a4537dad3b44254124991341cc91b28fb}{\_\-\_\-get} (\$key)
+\item 
+\hyperlink{classCXLConfig_a79b36d71c6f1d4f9e6c4c3e34c081456}{\_\-\_\-set} (\$key, \$value)
+\item 
+\hyperlink{classCXLConfig_ad0cb87b388bc74d63dc884accdca8713}{\_\-\_\-clone} ()
+\item 
+\hyperlink{classCXLConfig_ae858fed7cd2822fbceac154138b68baa}{\_\-\_\-isset} (\$key)
+\item 
+\hyperlink{classCXLConfig_a41af7dd29c879b4c30978876ebdf4ba7}{\_\-\_\-unset} (\$key)
+\item 
+\hyperlink{classCXLConfig_a23fafcde24c2b4b751b606686bcd50a7}{setReadOnly} (\$value=true)
+\item 
+\hyperlink{classCXLConfig_a40e73c679f1c56024ba565a5119436f7}{getReadOnly} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCXLConfig_aa607ab5e557e6ebb60b85c5a20ad067f}{CLASS\_\-LOG\_\-TAG} = 'yiixl.core.components.config.CXLConfig'
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLConfig_aa2562d06c3ceeb66f5dd4410d11739ad}{\$\_\-readOnly} = true
+\item 
+\hyperlink{classCXLConfig_abe40a042fbf2d8b1bddb7bf3cb4d9622}{\$\_\-iterationIndex} = 0
+\item 
+\hyperlink{classCXLConfig_acbd6cae35f3bb2f2daac19326e69c6f3}{\$\_\-optionCount}
+\item 
+\hyperlink{classCXLConfig_a1bebdc689c84eee59ad24c77e5531762}{\$\_\-options}
+\item 
+\hyperlink{classCXLConfig_afea2c33a564049f3607b21952dc4e6bf}{\$\_\-skipNext}
+\item 
+\hyperlink{classCXLConfig_a532318e4d8a2c9612f5abd5f6317dcfd}{\$\_\-lastError} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCXLConfig}{CXLConfig} provides a property-\/based configuration settings object. The settings are read-\/only by default. This can be overrided at construction. Also implemented are Countable and Iterator so the object can be manipulated in various ways. 
+
+Definition at line 23 of file CXLConfig.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCXLConfig_a640283437f08aeb7c8bfe3cff738ec62}{
+\index{CXLConfig@{CXLConfig}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CXLConfig@{CXLConfig}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{array \$}]{ options, }
+\item[{\$}]{ readOnly = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_a640283437f08aeb7c8bfe3cff738ec62}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$options \item[{\em boolean}]\$readOnly \end{DoxyParams}
+
+
+Definition at line 80 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_readOnly = $readOnly;
+    $this->_iterationIndex = 0;
+    $this->_options = array();
+    
+    foreach ( $options as $_key => $_value )
+    {
+      if ( is_array( $_value ) )
+        $this->_options[$_key] = new self( $_value, $readOnly );
+      else
+        $this->_options[$_key] = $_value;
+    }
+
+    $this->_optionCount = count( $this->_options );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classCXLConfig_a640283437f08aeb7c8bfe3cff738ec62_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLConfig_ad0cb87b388bc74d63dc884accdca8713}{
+\index{CXLConfig@{CXLConfig}!\_\-\_\-clone@{\_\-\_\-clone}}
+\index{\_\-\_\-clone@{\_\-\_\-clone}!CXLConfig@{CXLConfig}}
+\subsubsection[{\_\-\_\-clone}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_ad0cb87b388bc74d63dc884accdca8713}
+Deep copy of this collection. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 329 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_options = array();
+    
+    foreach ( $this->_options as $_key => $_value )
+    {
+      if ( $_value instanceof CXLConfig )
+        $_options[$_key] = clone $_value;
+      else
+        $_options[$_key] = $_value;
+    }
+
+    $this->_options = $_options;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLConfig_a4537dad3b44254124991341cc91b28fb}{
+\index{CXLConfig@{CXLConfig}!\_\-\_\-get@{\_\-\_\-get}}
+\index{\_\-\_\-get@{\_\-\_\-get}!CXLConfig@{CXLConfig}}
+\subsubsection[{\_\-\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-get (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_a4537dad3b44254124991341cc91b28fb}
+Check our options before we pass the buck 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 281 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( array_key_exists( $key, $this->_options ) )
+      return $this->getOption( $key );
+  
+    return parent::__get( $key );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classCXLConfig_a4537dad3b44254124991341cc91b28fb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLConfig_ae858fed7cd2822fbceac154138b68baa}{
+\index{CXLConfig@{CXLConfig}!\_\-\_\-isset@{\_\-\_\-isset}}
+\index{\_\-\_\-isset@{\_\-\_\-isset}!CXLConfig@{CXLConfig}}
+\subsubsection[{\_\-\_\-isset}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-isset (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_ae858fed7cd2822fbceac154138b68baa}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 348 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( ! array_key_exists( $key, $this->_options ) )
+      return parent::__isset( $key );
+    
+    return isset( $this->_options[$key] );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLConfig_a79b36d71c6f1d4f9e6c4c3e34c081456}{
+\index{CXLConfig@{CXLConfig}!\_\-\_\-set@{\_\-\_\-set}}
+\index{\_\-\_\-set@{\_\-\_\-set}!CXLConfig@{CXLConfig}}
+\subsubsection[{\_\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_a79b36d71c6f1d4f9e6c4c3e34c081456}
+Only allow setting of a property if not read-\/only. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key \item[{\em mixed}]\$value \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classCXLReadOnlyException}{CXLReadOnlyException}}]\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCXLConfig}{CXLConfig} 
+\end{DoxyReturn}
+
+
+Definition at line 296 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( ! array_key_exists( $key, $this->_options ) )
+      return parent::__set( $key, $value );
+    
+    if ( $this->_readOnly )
+    {
+      throw new CXLReadOnlyException(
+        XL::t(
+          self::CLASS_LOG_TAG,
+          'Property "{class}.{property}" is read only.',
+          array(
+            '{class}' => get_class( $this ),
+            '{property}' => $key,
+          )
+        )
+      );
+    }
+
+    if ( is_array( $value ) )
+      $this->_options[$_key] = new self( $value, $readOnly );
+    else
+      $this->_options[$_key] = $value;
+
+    $this->_optionCount = count( $this->_options );
+    
+    return $this;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classCXLConfig_a79b36d71c6f1d4f9e6c4c3e34c081456_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLConfig_a41af7dd29c879b4c30978876ebdf4ba7}{
+\index{CXLConfig@{CXLConfig}!\_\-\_\-unset@{\_\-\_\-unset}}
+\index{\_\-\_\-unset@{\_\-\_\-unset}!CXLConfig@{CXLConfig}}
+\subsubsection[{\_\-\_\-unset}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-unset (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_a41af7dd29c879b4c30978876ebdf4ba7}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classCXLReadOnlyException}{CXLReadOnlyException}}]\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCXLConfig}{CXLConfig} 
+\end{DoxyReturn}
+
+
+Definition at line 361 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( $this->_readOnly )
+    {
+      throw new CXLReadOnlyException(
+        XL::t(
+          self::CLASS_LOG_TAG,
+          'Property "{class}.{property}" is read only.',
+          array(
+            '{class}' => get_class( $this ),
+            '{property}' => $key,
+          )
+        )
+      );
+    }
+      
+    XL::uo( $this->_options, $key );
+    $this->_optionCount = count( $this->_options );
+    $this->_skipNext = true;
+    
+    //  Never break the chain
+    return $this;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=360pt]{classCXLConfig_a41af7dd29c879b4c30978876ebdf4ba7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLConfig_ac751e87b3d4c4bf2feb03bee8b092755}{
+\index{CXLConfig@{CXLConfig}!count@{count}}
+\index{count@{count}!CXLConfig@{CXLConfig}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_ac751e87b3d4c4bf2feb03bee8b092755}
+Required by Countable interface \begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 213 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_optionCount;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classCXLConfig_ac751e87b3d4c4bf2feb03bee8b092755_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLConfig_af343507d1926e6ecf964625d41db528c}{
+\index{CXLConfig@{CXLConfig}!current@{current}}
+\index{current@{current}!CXLConfig@{CXLConfig}}
+\subsubsection[{current}]{\setlength{\rightskip}{0pt plus 5cm}current (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_af343507d1926e6ecf964625d41db528c}
+Required by Iterator interface \begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 222 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_skipNext = false;
+    return current( $this->_options );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLConfig_aeeefab349db1835b9112b2767a0e039f}{
+\index{CXLConfig@{CXLConfig}!getOption@{getOption}}
+\index{getOption@{getOption}!CXLConfig@{CXLConfig}}
+\subsubsection[{getOption}]{\setlength{\rightskip}{0pt plus 5cm}getOption (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ defaultValue = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_aeeefab349db1835b9112b2767a0e039f}
+Retrieve a value from the options collection 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key \item[{\em mixed}]\$defaultValue \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 103 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return XL::o( $this->_options, $key, $defaultValue );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classCXLConfig_aeeefab349db1835b9112b2767a0e039f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classCXLConfig_aeeefab349db1835b9112b2767a0e039f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLConfig_a40e73c679f1c56024ba565a5119436f7}{
+\index{CXLConfig@{CXLConfig}!getReadOnly@{getReadOnly}}
+\index{getReadOnly@{getReadOnly}!CXLConfig@{CXLConfig}}
+\subsubsection[{getReadOnly}]{\setlength{\rightskip}{0pt plus 5cm}getReadOnly (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_a40e73c679f1c56024ba565a5119436f7}
+Gets the read-\/only flag \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 410 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_readOnly;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLConfig_ae3d6137f5700365c276d235463218c16}{
+\index{CXLConfig@{CXLConfig}!jsonDecode@{jsonDecode}}
+\index{jsonDecode@{jsonDecode}!CXLConfig@{CXLConfig}}
+\subsubsection[{jsonDecode}]{\setlength{\rightskip}{0pt plus 5cm}jsonDecode (
+\begin{DoxyParamCaption}
+\item[{\$}]{ json, }
+\item[{\$}]{ assoc = {\ttfamily null}, }
+\item[{\$}]{ depth = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_ae3d6137f5700365c276d235463218c16}
+Decodes a JSON string \hyperlink{}{string \$json } The json string being decoded.  
+\begin{DoxyParams}{Parameters}
+\item[{\em bool}]\$assoc \mbox{[}optional\mbox{]} \end{DoxyParams}
+When true, returned objects will be converted into associative arrays.  
+\begin{DoxyParams}{Parameters}
+\item[{\em int}]\$depth \mbox{[}optional\mbox{]} \end{DoxyParams}
+User specified recursion depth.  \begin{DoxyReturn}{Returns}
+mixed the value encoded in json in appropriate PHP type. Values true, false and null (case-\/insensitive) are returned as true, false and  respectively.  is returned if the json cannot be decoded or if the encoded data is deeper than the recursion limit. 
+\end{DoxyReturn}
+
+
+Definition at line 200 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return json_decode( $json, $assoc, $depth );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLConfig_ae83de6b0e7c9ae14e4d50feff32965d0}{
+\index{CXLConfig@{CXLConfig}!jsonEncode@{jsonEncode}}
+\index{jsonEncode@{jsonEncode}!CXLConfig@{CXLConfig}}
+\subsubsection[{jsonEncode}]{\setlength{\rightskip}{0pt plus 5cm}jsonEncode (
+\begin{DoxyParamCaption}
+\item[{\$}]{ jsonOptions = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_ae83de6b0e7c9ae14e4d50feff32965d0}
+Returns the JSON representation of a value \hyperlink{}{mixed \$value } The value being encoded. Can be any type except a resource.  
+
+This function only works with UTF-\/8 encoded data.  
+\begin{DoxyParams}{Parameters}
+\item[{\em int}]\$options \mbox{[}optional\mbox{]} \end{DoxyParams}
+Bitmask consisting of JSON\_\-HEX\_\-QUOT, JSON\_\-HEX\_\-TAG, JSON\_\-HEX\_\-AMP, JSON\_\-HEX\_\-APOS, JSON\_\-FORCE\_\-OBJECT.  \begin{DoxyReturn}{Returns}
+string a JSON encoded string on success. 
+\end{DoxyReturn}
+
+
+Definition at line 175 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return json_encode( $this->toArray(), $jsonOptions );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classCXLConfig_ae83de6b0e7c9ae14e4d50feff32965d0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLConfig_a729e946b4ef600e71740113c6d4332c0}{
+\index{CXLConfig@{CXLConfig}!key@{key}}
+\index{key@{key}!CXLConfig@{CXLConfig}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_a729e946b4ef600e71740113c6d4332c0}
+Required by Iterator interface \begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 232 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return key( $this->_options );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLConfig_ab9e377585a59a89d463ba4b326b9feeb}{
+\index{CXLConfig@{CXLConfig}!merge@{merge}}
+\index{merge@{merge}!CXLConfig@{CXLConfig}}
+\subsubsection[{merge}]{\setlength{\rightskip}{0pt plus 5cm}merge (
+\begin{DoxyParamCaption}
+\item[{{\bf CXLConfig} \$}]{ mergeConfig}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_ab9e377585a59a89d463ba4b326b9feeb}
+Merge another \hyperlink{classCXLConfig}{CXLConfig} with this one. The items in \$mergeOptions will override the same named items in the current collection. 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCXLConfig}{CXLConfig}}]\$mergeConfig \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCXLConfig}{CXLConfig} 
+\end{DoxyReturn}
+
+
+Definition at line 133 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    foreach ( $mergeConfig as $_key => $_option )
+    {
+      if ( array_key_exists( $_key, $this->_options ) )
+      {
+        if ( $_option instanceof CXLConfig && $this->{$_key} instanceof 
+      CXLConfig )
+          $this->{$_key} = $this->{$_key}->merge( new CXLConfig( $_option->toArra
+      y(), $this->_readOnly ) );
+        else
+          $this->{$_key} = $_option;
+      }
+      else
+      {
+        if ( $_option instanceof CXLConfig )
+          $this->$_key = new CXLConfig( $_option->toArray(), $this->_readOnly );
+        else
+          $this->$_key = $_option;
+      }
+    }
+
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLConfig_acea62048bfee7b3cd80ed446c86fb78a}{
+\index{CXLConfig@{CXLConfig}!next@{next}}
+\index{next@{next}!CXLConfig@{CXLConfig}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_acea62048bfee7b3cd80ed446c86fb78a}
+Required by Iterator interface 
+
+Definition at line 240 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( $this->_skipNext )
+    {
+      $this->_skipNext = false;
+      return;
+    }
+
+    next( $this->_options );
+    
+    $this->_iterationIndex++;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLConfig_ae619dcf2218c21549cb65d875bbc6c9c}{
+\index{CXLConfig@{CXLConfig}!rewind@{rewind}}
+\index{rewind@{rewind}!CXLConfig@{CXLConfig}}
+\subsubsection[{rewind}]{\setlength{\rightskip}{0pt plus 5cm}rewind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_ae619dcf2218c21549cb65d875bbc6c9c}
+Required by Iterator interface 
+
+Definition at line 256 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_skipNext = false;
+    reset( $this->_options );
+    $this->_iterationIndex = 0;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLConfig_a23fafcde24c2b4b751b606686bcd50a7}{
+\index{CXLConfig@{CXLConfig}!setReadOnly@{setReadOnly}}
+\index{setReadOnly@{setReadOnly}!CXLConfig@{CXLConfig}}
+\subsubsection[{setReadOnly}]{\setlength{\rightskip}{0pt plus 5cm}setReadOnly (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_a23fafcde24c2b4b751b606686bcd50a7}
+Set the read-\/only flag \begin{DoxyReturn}{Returns}
+\hyperlink{classCXLConfig}{CXLConfig} 
+\end{DoxyReturn}
+
+
+Definition at line 393 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_readOnly = $value;
+
+    foreach ( $this->_options as $_key => $_value )
+    {
+      if ( $_value instanceof CXLConfig )
+        $_value->setReadOnly( $value );
+    }
+    
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLConfig_a658defb34762c8f40085aec87e16ba1a}{
+\index{CXLConfig@{CXLConfig}!toArray@{toArray}}
+\index{toArray@{toArray}!CXLConfig@{CXLConfig}}
+\subsubsection[{toArray}]{\setlength{\rightskip}{0pt plus 5cm}toArray (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_a658defb34762c8f40085aec87e16ba1a}
+Return an associative array of all settings \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_options = array();
+    
+    foreach ( $this->_options as $_key => $_value )
+    {
+      if ( $_value instanceof CXLConfig )
+        $_options[$_key] = $_value->toArray();
+      else
+        $_options[$_key] = $_value;
+    }
+    
+    return $_options;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classCXLConfig_a658defb34762c8f40085aec87e16ba1a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLConfig_abb9f0d6adf1eb9b3b55712056861a247}{
+\index{CXLConfig@{CXLConfig}!valid@{valid}}
+\index{valid@{valid}!CXLConfig@{CXLConfig}}
+\subsubsection[{valid}]{\setlength{\rightskip}{0pt plus 5cm}valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLConfig_abb9f0d6adf1eb9b3b55712056861a247}
+Required by Iterator interface \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 267 of file CXLConfig.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return ( $this->_iterationIndex < $this->_optionCount );
+  }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLConfig_abe40a042fbf2d8b1bddb7bf3cb4d9622}{
+\index{CXLConfig@{CXLConfig}!\$\_\-iterationIndex@{\$\_\-iterationIndex}}
+\index{\$\_\-iterationIndex@{\$\_\-iterationIndex}!CXLConfig@{CXLConfig}}
+\subsubsection[{\$\_\-iterationIndex}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-iterationIndex = 0\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLConfig_abe40a042fbf2d8b1bddb7bf3cb4d9622}
+
+
+Definition at line 47 of file CXLConfig.php.
+
+\hypertarget{classCXLConfig_a532318e4d8a2c9612f5abd5f6317dcfd}{
+\index{CXLConfig@{CXLConfig}!\$\_\-lastError@{\$\_\-lastError}}
+\index{\$\_\-lastError@{\$\_\-lastError}!CXLConfig@{CXLConfig}}
+\subsubsection[{\$\_\-lastError}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-lastError = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLConfig_a532318e4d8a2c9612f5abd5f6317dcfd}
+
+
+Definition at line 69 of file CXLConfig.php.
+
+\hypertarget{classCXLConfig_acbd6cae35f3bb2f2daac19326e69c6f3}{
+\index{CXLConfig@{CXLConfig}!\$\_\-optionCount@{\$\_\-optionCount}}
+\index{\$\_\-optionCount@{\$\_\-optionCount}!CXLConfig@{CXLConfig}}
+\subsubsection[{\$\_\-optionCount}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-optionCount\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLConfig_acbd6cae35f3bb2f2daac19326e69c6f3}
+
+
+Definition at line 52 of file CXLConfig.php.
+
+\hypertarget{classCXLConfig_a1bebdc689c84eee59ad24c77e5531762}{
+\index{CXLConfig@{CXLConfig}!\$\_\-options@{\$\_\-options}}
+\index{\$\_\-options@{\$\_\-options}!CXLConfig@{CXLConfig}}
+\subsubsection[{\$\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-options\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLConfig_a1bebdc689c84eee59ad24c77e5531762}
+
+
+Reimplemented from \hyperlink{classCXLComponent_a1bebdc689c84eee59ad24c77e5531762}{CXLComponent}.
+
+
+
+Definition at line 57 of file CXLConfig.php.
+
+\hypertarget{classCXLConfig_aa2562d06c3ceeb66f5dd4410d11739ad}{
+\index{CXLConfig@{CXLConfig}!\$\_\-readOnly@{\$\_\-readOnly}}
+\index{\$\_\-readOnly@{\$\_\-readOnly}!CXLConfig@{CXLConfig}}
+\subsubsection[{\$\_\-readOnly}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-readOnly = true\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLConfig_aa2562d06c3ceeb66f5dd4410d11739ad}
+
+
+Definition at line 42 of file CXLConfig.php.
+
+\hypertarget{classCXLConfig_afea2c33a564049f3607b21952dc4e6bf}{
+\index{CXLConfig@{CXLConfig}!\$\_\-skipNext@{\$\_\-skipNext}}
+\index{\$\_\-skipNext@{\$\_\-skipNext}!CXLConfig@{CXLConfig}}
+\subsubsection[{\$\_\-skipNext}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-skipNext\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLConfig_afea2c33a564049f3607b21952dc4e6bf}
+
+
+Definition at line 64 of file CXLConfig.php.
+
+\hypertarget{classCXLConfig_aa607ab5e557e6ebb60b85c5a20ad067f}{
+\index{CXLConfig@{CXLConfig}!CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}}
+\index{CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}!CXLConfig@{CXLConfig}}
+\subsubsection[{CLASS\_\-LOG\_\-TAG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CLASS\_\-LOG\_\-TAG} = 'yiixl.core.components.config.CXLConfig'}}
+\label{classCXLConfig_aa607ab5e557e6ebb60b85c5a20ad067f}
+Our logging tag 
+
+Reimplemented from \hyperlink{classCXLComponent_aa607ab5e557e6ebb60b85c5a20ad067f}{CXLComponent}.
+
+
+
+Reimplemented in \hyperlink{classCXLConfigFile_aa607ab5e557e6ebb60b85c5a20ad067f}{CXLConfigFile}.
+
+
+
+Definition at line 32 of file CXLConfig.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLConfig_8php}{CXLConfig.php}\end{DoxyCompactItemize}

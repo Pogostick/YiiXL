@@ -1,0 +1,261 @@
+\hypertarget{classCXLActiveRecordBehavior}{
+\section{CXLActiveRecordBehavior Class Reference}
+\label{classCXLActiveRecordBehavior}\index{CXLActiveRecordBehavior@{CXLActiveRecordBehavior}}
+}
+
+
+Inheritance diagram for CXLActiveRecordBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLActiveRecordBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLActiveRecordBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classCXLActiveRecordBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLActiveRecordBehavior_a122db96cedfc221cf187ce4328f992f7}{getDebugLevel} ()
+\item 
+\hyperlink{classCXLActiveRecordBehavior_a91ba7d911e2c3852a048f4022c45ec9e}{setDebugLevel} (\$value=false)
+\item 
+\hyperlink{classCXLActiveRecordBehavior_a1a49b8dded6e91a52e2fd07195d334da}{getOptions} ()
+\item 
+\hyperlink{classCXLActiveRecordBehavior_a50138660370da467322f8f3965008b14}{getBehaviorMethods} ()
+\item 
+\hyperlink{classCXLActiveRecordBehavior_ad51d235c20d44a485f9f00f2c86a5ea9}{loadOptions} (\$options=array())
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCXLActiveRecordBehavior_aa607ab5e557e6ebb60b85c5a20ad067f}{CLASS\_\-LOG\_\-TAG} = 'yiixl.core.behaviors.CXLActiveRecordBehavior'
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLActiveRecordBehavior_aa658930951c1fb5a0640c326c54297c1}{\$\_\-debugLevel} = false
+\item 
+\hyperlink{classCXLActiveRecordBehavior_ab0cd304a53a2640dc4f15e8d6100612f}{\$\_\-options}
+\item 
+\hyperlink{classCXLActiveRecordBehavior_a7d3b71fe5a778aaf10f9d65f7717c439}{\$\_\-behaviorMethods}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCXLActiveRecordBehavior}{CXLActiveRecordBehavior} The base class for all AR behaviors in the \hyperlink{classYiiXL}{YiiXL} system 
+
+Definition at line 22 of file CXLActiveRecordBehavior.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLActiveRecordBehavior_a50138660370da467322f8f3965008b14}{
+\index{CXLActiveRecordBehavior@{CXLActiveRecordBehavior}!getBehaviorMethods@{getBehaviorMethods}}
+\index{getBehaviorMethods@{getBehaviorMethods}!CXLActiveRecordBehavior@{CXLActiveRecordBehavior}}
+\subsubsection[{getBehaviorMethods}]{\setlength{\rightskip}{0pt plus 5cm}getBehaviorMethods (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLActiveRecordBehavior_a50138660370da467322f8f3965008b14}
+Gets the list of registered behavior methods \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_a50138660370da467322f8f3965008b14}{IXLComponent}.
+
+
+
+Definition at line 92 of file CXLActiveRecordBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_behaviorMethods;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLActiveRecordBehavior_a122db96cedfc221cf187ce4328f992f7}{
+\index{CXLActiveRecordBehavior@{CXLActiveRecordBehavior}!getDebugLevel@{getDebugLevel}}
+\index{getDebugLevel@{getDebugLevel}!CXLActiveRecordBehavior@{CXLActiveRecordBehavior}}
+\subsubsection[{getDebugLevel}]{\setlength{\rightskip}{0pt plus 5cm}getDebugLevel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLActiveRecordBehavior_a122db96cedfc221cf187ce4328f992f7}
+Gets the debug level \begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_a122db96cedfc221cf187ce4328f992f7}{IXLComponent}.
+
+
+
+Definition at line 63 of file CXLActiveRecordBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_debugLevel;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLActiveRecordBehavior_a1a49b8dded6e91a52e2fd07195d334da}{
+\index{CXLActiveRecordBehavior@{CXLActiveRecordBehavior}!getOptions@{getOptions}}
+\index{getOptions@{getOptions}!CXLActiveRecordBehavior@{CXLActiveRecordBehavior}}
+\subsubsection[{getOptions}]{\setlength{\rightskip}{0pt plus 5cm}getOptions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLActiveRecordBehavior_a1a49b8dded6e91a52e2fd07195d334da}
+Gets the configuration options \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_a1a49b8dded6e91a52e2fd07195d334da}{IXLComponent}.
+
+
+
+Definition at line 83 of file CXLActiveRecordBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_options;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLActiveRecordBehavior_ad51d235c20d44a485f9f00f2c86a5ea9}{
+\index{CXLActiveRecordBehavior@{CXLActiveRecordBehavior}!loadOptions@{loadOptions}}
+\index{loadOptions@{loadOptions}!CXLActiveRecordBehavior@{CXLActiveRecordBehavior}}
+\subsubsection[{loadOptions}]{\setlength{\rightskip}{0pt plus 5cm}loadOptions (
+\begin{DoxyParamCaption}
+\item[{\$}]{ options = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLActiveRecordBehavior_ad51d235c20d44a485f9f00f2c86a5ea9}
+Loads the configuration options 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCXLComponent}{CXLComponent} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_ad51d235c20d44a485f9f00f2c86a5ea9}{IXLComponent}.
+
+
+
+Definition at line 102 of file CXLActiveRecordBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_options = $options;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLActiveRecordBehavior_a91ba7d911e2c3852a048f4022c45ec9e}{
+\index{CXLActiveRecordBehavior@{CXLActiveRecordBehavior}!setDebugLevel@{setDebugLevel}}
+\index{setDebugLevel@{setDebugLevel}!CXLActiveRecordBehavior@{CXLActiveRecordBehavior}}
+\subsubsection[{setDebugLevel}]{\setlength{\rightskip}{0pt plus 5cm}setDebugLevel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLActiveRecordBehavior_a91ba7d911e2c3852a048f4022c45ec9e}
+Sets the debug level 
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]The new debug level \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\$this 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_a91ba7d911e2c3852a048f4022c45ec9e}{IXLComponent}.
+
+
+
+Definition at line 73 of file CXLActiveRecordBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_debugLevel = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLActiveRecordBehavior_a7d3b71fe5a778aaf10f9d65f7717c439}{
+\index{CXLActiveRecordBehavior@{CXLActiveRecordBehavior}!\$\_\-behaviorMethods@{\$\_\-behaviorMethods}}
+\index{\$\_\-behaviorMethods@{\$\_\-behaviorMethods}!CXLActiveRecordBehavior@{CXLActiveRecordBehavior}}
+\subsubsection[{\$\_\-behaviorMethods}]{\setlength{\rightskip}{0pt plus 5cm}array \$\_\-behaviorMethods\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLActiveRecordBehavior_a7d3b71fe5a778aaf10f9d65f7717c439}
+Imported attached behavior methods 
+
+Definition at line 53 of file CXLActiveRecordBehavior.php.
+
+\hypertarget{classCXLActiveRecordBehavior_aa658930951c1fb5a0640c326c54297c1}{
+\index{CXLActiveRecordBehavior@{CXLActiveRecordBehavior}!\$\_\-debugLevel@{\$\_\-debugLevel}}
+\index{\$\_\-debugLevel@{\$\_\-debugLevel}!CXLActiveRecordBehavior@{CXLActiveRecordBehavior}}
+\subsubsection[{\$\_\-debugLevel}]{\setlength{\rightskip}{0pt plus 5cm}integer \$\_\-debugLevel = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLActiveRecordBehavior_aa658930951c1fb5a0640c326c54297c1}
+User-\/defined debug flag. false = OFF, anything else is up to you. 
+
+Definition at line 41 of file CXLActiveRecordBehavior.php.
+
+\hypertarget{classCXLActiveRecordBehavior_ab0cd304a53a2640dc4f15e8d6100612f}{
+\index{CXLActiveRecordBehavior@{CXLActiveRecordBehavior}!\$\_\-options@{\$\_\-options}}
+\index{\$\_\-options@{\$\_\-options}!CXLActiveRecordBehavior@{CXLActiveRecordBehavior}}
+\subsubsection[{\$\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}array \$\_\-options\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLActiveRecordBehavior_ab0cd304a53a2640dc4f15e8d6100612f}
+Our configuration options 
+
+Definition at line 47 of file CXLActiveRecordBehavior.php.
+
+\hypertarget{classCXLActiveRecordBehavior_aa607ab5e557e6ebb60b85c5a20ad067f}{
+\index{CXLActiveRecordBehavior@{CXLActiveRecordBehavior}!CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}}
+\index{CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}!CXLActiveRecordBehavior@{CXLActiveRecordBehavior}}
+\subsubsection[{CLASS\_\-LOG\_\-TAG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CLASS\_\-LOG\_\-TAG} = 'yiixl.core.behaviors.CXLActiveRecordBehavior'}}
+\label{classCXLActiveRecordBehavior_aa607ab5e557e6ebb60b85c5a20ad067f}
+Our logging tag 
+
+Definition at line 31 of file CXLActiveRecordBehavior.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLActiveRecordBehavior_8php}{CXLActiveRecordBehavior.php}\end{DoxyCompactItemize}

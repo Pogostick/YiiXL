@@ -1,0 +1,778 @@
+\hypertarget{classSF__Facebook}{
+\section{SF\_\-Facebook Class Reference}
+\label{classSF__Facebook}\index{SF\_\-Facebook@{SF\_\-Facebook}}
+}
+
+
+Inheritance diagram for SF\_\-Facebook:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classSF__Facebook__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for SF\_\-Facebook:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classSF__Facebook__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSF__Facebook_af4ffb9f9b6b1b542479f3134e6e3d918}{\_\-\_\-construct} (\$sBaseUrl, \$sAppName, \$sAppId, \$sAPIKey, \$sAPISecret)
+\item 
+\hyperlink{classSF__Facebook_aa3a5bc9c0f82eddaa51e3819c65161e6}{renderGoogleAnalytics} (\$sPage=\char`\"{}\char`\"{}, \$iTitle=0)
+\item 
+\hyperlink{classSF__Facebook_a3606743752a94277695713e909058e13}{getPFType} ()
+\item 
+\hyperlink{classSF__Facebook_ae54fd14fc0c3886a038431868ac4fbc7}{getPFName} ()
+\item 
+\hyperlink{classSF__Facebook_a2104a9897a2bd81518382cb07a0b41cf}{requireAdd} ()
+\item 
+\hyperlink{classSF__Facebook_a8279b755615299d23d0989e9330ea638}{requireLogin} ()
+\item 
+\hyperlink{classSF__Facebook_a2f3c6eb30cc80a28261ed06074224f12}{requireFrame} ()
+\item 
+\hyperlink{classSF__Facebook_a24c354534c9265c4a7cbd73c0f82ba56}{setProfileML} (\$sML, \$sPFUserId=null, \$sProfileML= '', \$sProfileActionML= '', \$sMobileProfileML= '')
+\item 
+\hyperlink{classSF__Facebook_aea9e29722f6d4ecdfab07f196e132bcb}{execPFSQL} (\$sSQL)
+\item 
+\hyperlink{classSF__Facebook_abef0629a5601043cbfa3ea8b1c5865e7}{getUserData} (\$eType)
+\item 
+\hyperlink{classSF__Facebook_a457014f98badf8555216fcfb66db27df}{setUserData} (\$eType, \$oValue)
+\item 
+\hyperlink{classSF__Facebook_aa70ade6295aedd084a68f97b27441c3b}{setRefHandle} (\$sFBML, \$sHandle=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classSF__Facebook_aad5709bf4b030e39bc8e7e2cbf4812a5}{getUserInfo} (\$sFields=\char`\"{}\char`\"{}, \$sUIDs=null)
+\item 
+\hyperlink{classSF__Facebook_a71b7a74bd23b2c2be77aad5448cda40b}{getSessionKey} ()
+\item 
+\hyperlink{classSF__Facebook_a1b675b86fea379a2fffe42a929336863}{publishUserAction} (\$title, \$body= '', \$image\_\-1=null, \$image\_\-1\_\-link=null)
+\item 
+\hyperlink{classSF__Facebook_ad78c2cabb0b38ea529ad005ad3df3797}{publishBundle} (\$template\_\-bundle\_\-id, \$template\_\-data, \$target\_\-ids='', \$body\_\-general='', \$story\_\-size=1, \$user\_\-message= '')
+\item 
+\hyperlink{classSF__Facebook_a8f43b2384c47870d550bd234d4d1c0e5}{getRegisteredBundles} ()
+\item 
+\hyperlink{classSF__Facebook_a3e8b52e5d4472ecc19b6d0948a386aa4}{registerBundle} (\$arOneLine, \$arShort=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$arFull=null, \$arLinks=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classSF__Facebook_af32bc1b99ba40c07fada3f2e78b29d8d}{deactivateBundle} (\$sBundleId)
+\item 
+\hyperlink{classSF__Facebook_a2934d82c09cab3e5d4a9a48d8c20e9e0}{publishTemplatizedAction} (\$title\_\-template, \$title\_\-data, \$body\_\-template, \$body\_\-data, \$body\_\-general, \$image\_\-1=null, \$image\_\-1\_\-link=null, \$image\_\-2=null, \$image\_\-2\_\-link=null, \$image\_\-3=null, \$image\_\-3\_\-link=null, \$image\_\-4=null, \$image\_\-4\_\-link=null, \$target\_\-ids='', \$page\_\-actor\_\-id=null)
+\item 
+\hyperlink{classSF__Facebook_a9ffd051e90f4f71d5930fe4d3123eb85}{getAddAppUrl} (\$sNextParam=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSF__Facebook_a9ea54a1f1e7a74d731fb7396369a03de}{getDashboardFBML} (\$arDashPoints)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Encapsulates the Facebook API 
+
+Definition at line 32 of file SF\_\-Facebook.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSF__Facebook_af4ffb9f9b6b1b542479f3134e6e3d918}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sBaseUrl, }
+\item[{\$}]{ sAppName, }
+\item[{\$}]{ sAppId, }
+\item[{\$}]{ sAPIKey, }
+\item[{\$}]{ sAPISecret}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_af4ffb9f9b6b1b542479f3134e6e3d918}
+Constructor 
+
+Definition at line 37 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Call the base class
+        parent::__construct( $sBaseUrl, $sAppName, $sAppId, $sAPIKey, $sAPISecret
+       );
+
+        $this->m_sNSPrefix = "fb";
+
+        $this->m_oPFAPI = new Facebook( $sAPIKey, $sAPISecret );
+        $this->m_sPFUserId = $this->m_oPFAPI->user;
+
+        //  Set id into Sonetrix
+        if ( $this->m_oSntx )
+            $this->m_oSntx->setPFUserId( $this->m_sPFUserId );
+
+        //  Instantiate FB specifics
+        $this->m_sAppPage = "http://www.facebook.com/apps/application.php?id=" . 
+      $this->AppId;
+        $this->m_sAppUrl = "http://apps.facebook.com/" . $this->AppName . "/";
+        $this->m_sAppCallbackUrl = $this->AppUrl;
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSF__Facebook_af32bc1b99ba40c07fada3f2e78b29d8d}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!deactivateBundle@{deactivateBundle}}
+\index{deactivateBundle@{deactivateBundle}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{deactivateBundle}]{\setlength{\rightskip}{0pt plus 5cm}deactivateBundle (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sBundleId}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_af32bc1b99ba40c07fada3f2e78b29d8d}
+
+
+Definition at line 240 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->m_oPFAPI->api_client->feed_deactivateTemplateBundleByID( $s
+      BundleId );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_aea9e29722f6d4ecdfab07f196e132bcb}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!execPFSQL@{execPFSQL}}
+\index{execPFSQL@{execPFSQL}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{execPFSQL}]{\setlength{\rightskip}{0pt plus 5cm}execPFSQL (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSQL}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_aea9e29722f6d4ecdfab07f196e132bcb}
+Executes an FQL query
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sFQL \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classSF__Platform_aea9e29722f6d4ecdfab07f196e132bcb}{SF\_\-Platform}.
+
+
+
+Definition at line 143 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( $this->m_oPFAPI->api_client->fql_query( $sSQL ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_a9ffd051e90f4f71d5930fe4d3123eb85}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!getAddAppUrl@{getAddAppUrl}}
+\index{getAddAppUrl@{getAddAppUrl}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{getAddAppUrl}]{\setlength{\rightskip}{0pt plus 5cm}getAddAppUrl (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sNextParam = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_a9ffd051e90f4f71d5930fe4d3123eb85}
+Get the add application url 
+
+Reimplemented from \hyperlink{classSF__Platform_a9ffd051e90f4f71d5930fe4d3123eb85}{SF\_\-Platform}.
+
+
+
+Definition at line 265 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( $this->PFAPI->get_add_url( $sNextParam ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_a9ea54a1f1e7a74d731fb7396369a03de}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!getDashboardFBML@{getDashboardFBML}}
+\index{getDashboardFBML@{getDashboardFBML}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{getDashboardFBML}]{\setlength{\rightskip}{0pt plus 5cm}getDashboardFBML (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arDashPoints}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Facebook_a9ea54a1f1e7a74d731fb7396369a03de}
+Gets generic dashboard FBML
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$arDashPoints \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 132 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( parent::getDashboardFBML( "fb", $arDashPoints ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_ae54fd14fc0c3886a038431868ac4fbc7}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!getPFName@{getPFName}}
+\index{getPFName@{getPFName}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{getPFName}]{\setlength{\rightskip}{0pt plus 5cm}getPFName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_ae54fd14fc0c3886a038431868ac4fbc7}
+Returns the platform display name 
+
+Reimplemented from \hyperlink{classSF__Platform_ae54fd14fc0c3886a038431868ac4fbc7}{SF\_\-Platform}.
+
+
+
+Definition at line 77 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( "Facebook" );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_a3606743752a94277695713e909058e13}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!getPFType@{getPFType}}
+\index{getPFType@{getPFType}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{getPFType}]{\setlength{\rightskip}{0pt plus 5cm}getPFType (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_a3606743752a94277695713e909058e13}
+Returns the platform type code 
+
+Reimplemented from \hyperlink{classSF__Platform_a3606743752a94277695713e909058e13}{SF\_\-Platform}.
+
+
+
+Definition at line 69 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( SF_PlatformTypes::Facebook );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_a8f43b2384c47870d550bd234d4d1c0e5}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!getRegisteredBundles@{getRegisteredBundles}}
+\index{getRegisteredBundles@{getRegisteredBundles}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{getRegisteredBundles}]{\setlength{\rightskip}{0pt plus 5cm}getRegisteredBundles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_a8f43b2384c47870d550bd234d4d1c0e5}
+
+
+Definition at line 217 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->m_oPFAPI->api_client->feed_getRegisteredTemplateBundles();
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_a71b7a74bd23b2c2be77aad5448cda40b}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!getSessionKey@{getSessionKey}}
+\index{getSessionKey@{getSessionKey}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{getSessionKey}]{\setlength{\rightskip}{0pt plus 5cm}getSessionKey (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_a71b7a74bd23b2c2be77aad5448cda40b}
+Get session key 
+
+Reimplemented from \hyperlink{classSF__Platform_a71b7a74bd23b2c2be77aad5448cda40b}{SF\_\-Platform}.
+
+
+
+Definition at line 196 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( $this->m_oPFAPI->fb_params['session_key'] );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_abef0629a5601043cbfa3ea8b1c5865e7}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!getUserData@{getUserData}}
+\index{getUserData@{getUserData}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{getUserData}]{\setlength{\rightskip}{0pt plus 5cm}getUserData (
+\begin{DoxyParamCaption}
+\item[{\$}]{ eType}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_abef0629a5601043cbfa3ea8b1c5865e7}
+
+
+Reimplemented from \hyperlink{classSF__Platform_af25bc3b138038094b8a0b8233adf06c7}{SF\_\-Platform}.
+
+
+
+Definition at line 151 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( null );//$this->m_oPFAPI->api_client->data_getUserPreference( $eT
+      ype ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_aad5709bf4b030e39bc8e7e2cbf4812a5}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!getUserInfo@{getUserInfo}}
+\index{getUserInfo@{getUserInfo}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{getUserInfo}]{\setlength{\rightskip}{0pt plus 5cm}getUserInfo (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sFields = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{\$}]{ sUIDs = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_aad5709bf4b030e39bc8e7e2cbf4812a5}
+Get user data from FB 
+
+Reimplemented from \hyperlink{classSF__Platform_aad5709bf4b030e39bc8e7e2cbf4812a5}{SF\_\-Platform}.
+
+
+
+Definition at line 188 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( $this->m_oPFAPI->api_client->users_getInfo( ( $sUIDs == null ? $t
+      his->m_sPFUserId : $sUIDs ), ( $sFields == "" ? "birthday,current_location,sex" :
+       $sFields ) ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_ad78c2cabb0b38ea529ad005ad3df3797}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!publishBundle@{publishBundle}}
+\index{publishBundle@{publishBundle}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{publishBundle}]{\setlength{\rightskip}{0pt plus 5cm}publishBundle (
+\begin{DoxyParamCaption}
+\item[{\$}]{ template\_\-bundle\_\-id, }
+\item[{\$}]{ template\_\-data, }
+\item[{\$}]{ target\_\-ids = {\ttfamily ''}, }
+\item[{\$}]{ body\_\-general = {\ttfamily ''}, }
+\item[{\$}]{ story\_\-size = {\ttfamily 1}, }
+\item[{\$}]{ user\_\-message = {\ttfamily ''}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_ad78c2cabb0b38ea529ad005ad3df3797}
+
+
+Definition at line 212 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->m_oPFAPI->api_client->feed_publishUserAction( $template_bun
+      dle_id, $template_data, $target_ids, $body_general, $story_size, $user_message );
+      
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_a2934d82c09cab3e5d4a9a48d8c20e9e0}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!publishTemplatizedAction@{publishTemplatizedAction}}
+\index{publishTemplatizedAction@{publishTemplatizedAction}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{publishTemplatizedAction}]{\setlength{\rightskip}{0pt plus 5cm}publishTemplatizedAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ title\_\-template, }
+\item[{\$}]{ title\_\-data, }
+\item[{\$}]{ body\_\-template, }
+\item[{\$}]{ body\_\-data, }
+\item[{\$}]{ body\_\-general, }
+\item[{\$}]{ image\_\-1 = {\ttfamily null}, }
+\item[{\$}]{ image\_\-1\_\-link = {\ttfamily null}, }
+\item[{\$}]{ image\_\-2 = {\ttfamily null}, }
+\item[{\$}]{ image\_\-2\_\-link = {\ttfamily null}, }
+\item[{\$}]{ image\_\-3 = {\ttfamily null}, }
+\item[{\$}]{ image\_\-3\_\-link = {\ttfamily null}, }
+\item[{\$}]{ image\_\-4 = {\ttfamily null}, }
+\item[{\$}]{ image\_\-4\_\-link = {\ttfamily null}, }
+\item[{\$}]{ target\_\-ids = {\ttfamily ''}, }
+\item[{\$}]{ page\_\-actor\_\-id = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_a2934d82c09cab3e5d4a9a48d8c20e9e0}
+Publish to feed (templatized) 
+
+Reimplemented from \hyperlink{classSF__Platform_a2934d82c09cab3e5d4a9a48d8c20e9e0}{SF\_\-Platform}.
+
+
+
+Definition at line 248 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( $this->m_oPFAPI->api_client->feed_publishTemplatizedAction( $titl
+      e_template, $title_data,
+            $body_template, $body_data, $body_general,
+            $image_1, $image_1_link,
+            $image_2, $image_2_link,
+            $image_3, $image_3_link,
+            $image_4, $image_4_link,
+            $target_ids, $page_actor_id ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_a1b675b86fea379a2fffe42a929336863}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!publishUserAction@{publishUserAction}}
+\index{publishUserAction@{publishUserAction}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{publishUserAction}]{\setlength{\rightskip}{0pt plus 5cm}publishUserAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ title, }
+\item[{\$}]{ body = {\ttfamily ''}, }
+\item[{\$}]{ image\_\-1 = {\ttfamily null}, }
+\item[{\$}]{ image\_\-1\_\-link = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_a1b675b86fea379a2fffe42a929336863}
+Publish to feed 
+
+Reimplemented from \hyperlink{classSF__Platform_a1b675b86fea379a2fffe42a929336863}{SF\_\-Platform}.
+
+
+
+Definition at line 204 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_oPFAPI->api_client->feed_publishActionOfUser( $title, $body, $im
+      age_1, $image_1_link );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_a3e8b52e5d4472ecc19b6d0948a386aa4}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!registerBundle@{registerBundle}}
+\index{registerBundle@{registerBundle}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{registerBundle}]{\setlength{\rightskip}{0pt plus 5cm}registerBundle (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arOneLine, }
+\item[{\$}]{ arShort = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ arFull = {\ttfamily null}, }
+\item[{\$}]{ arLinks = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_a3e8b52e5d4472ecc19b6d0948a386aa4}
+Registers a template bundle and returns its ID
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$arOneLine \item[{\em mixed}]\$arShort \item[{\em mixed}]\$arFull \item[{\em mixed}]\$arLinks \end{DoxyParams}
+
+
+Definition at line 230 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->m_oPFAPI->api_client->feed_registerTemplateBundle( 
+            $arOneLine,
+            $arShort,
+            $arFull,
+            $arLinks
+        );
+    }   
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_aa3a5bc9c0f82eddaa51e3819c65161e6}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!renderGoogleAnalytics@{renderGoogleAnalytics}}
+\index{renderGoogleAnalytics@{renderGoogleAnalytics}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{renderGoogleAnalytics}]{\setlength{\rightskip}{0pt plus 5cm}renderGoogleAnalytics (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sPage = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{\$}]{ iTitle = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_aa3a5bc9c0f82eddaa51e3819c65161e6}
+Renders google analytics for Facebook 
+
+Reimplemented from \hyperlink{classSF__Platform_ab5bf72330191aff91d12b6cee65d5e14}{SF\_\-Platform}.
+
+
+
+Definition at line 60 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( null != $this->GAKey )
+            echo "<fb:google-analytics uacct=\"{$this->GAKey}\" />";
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_a2104a9897a2bd81518382cb07a0b41cf}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!requireAdd@{requireAdd}}
+\index{requireAdd@{requireAdd}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{requireAdd}]{\setlength{\rightskip}{0pt plus 5cm}requireAdd (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_a2104a9897a2bd81518382cb07a0b41cf}
+Require add 
+
+Reimplemented from \hyperlink{classSF__Platform_a2104a9897a2bd81518382cb07a0b41cf}{SF\_\-Platform}.
+
+
+
+Definition at line 85 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_oPFAPI->require_login();
+        $this->m_sPFUserId = $this->m_oPFAPI->user;
+
+        //  Set id into Sonetrix
+        if ( $this->m_oSntx )
+            $this->m_oSntx->setPFUserId( $this->m_sPFUserId );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_a2f3c6eb30cc80a28261ed06074224f12}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!requireFrame@{requireFrame}}
+\index{requireFrame@{requireFrame}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{requireFrame}]{\setlength{\rightskip}{0pt plus 5cm}requireFrame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_a2f3c6eb30cc80a28261ed06074224f12}
+Require frame 
+
+Reimplemented from \hyperlink{classSF__Platform_a2f3c6eb30cc80a28261ed06074224f12}{SF\_\-Platform}.
+
+
+
+Definition at line 113 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_oPFAPI->require_frame();
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_a8279b755615299d23d0989e9330ea638}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!requireLogin@{requireLogin}}
+\index{requireLogin@{requireLogin}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{requireLogin}]{\setlength{\rightskip}{0pt plus 5cm}requireLogin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_a8279b755615299d23d0989e9330ea638}
+Require login 
+
+Reimplemented from \hyperlink{classSF__Platform_a8279b755615299d23d0989e9330ea638}{SF\_\-Platform}.
+
+
+
+Definition at line 99 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_sPFUserId = $this->m_oPFAPI->require_login();
+        $this->m_sPFUserId = $this->m_oPFAPI->user;
+
+        //  Set id into Sonetrix
+        if ( $this->m_oSntx )
+            $this->m_oSntx->setPFUserId( $this->m_sPFUserId );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_a24c354534c9265c4a7cbd73c0f82ba56}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!setProfileML@{setProfileML}}
+\index{setProfileML@{setProfileML}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{setProfileML}]{\setlength{\rightskip}{0pt plus 5cm}setProfileML (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sML, }
+\item[{\$}]{ sPFUserId = {\ttfamily null}, }
+\item[{\$}]{ sProfileML = {\ttfamily ''}, }
+\item[{\$}]{ sProfileActionML = {\ttfamily ''}, }
+\item[{\$}]{ sMobileProfileML = {\ttfamily ''}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_a24c354534c9265c4a7cbd73c0f82ba56}
+Sets the profile markup language 
+
+Reimplemented from \hyperlink{classSF__Platform_a24c354534c9265c4a7cbd73c0f82ba56}{SF\_\-Platform}.
+
+
+
+Definition at line 121 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( $this->m_oPFAPI->api_client->profile_setFBML( $sML, $sPFUserId, $
+      sProfileML, $sProfileActionML, $sMobileProfileML, ( $sProfileML == '' ? $sML : $s
+      ProfileML ) ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_aa70ade6295aedd084a68f97b27441c3b}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!setRefHandle@{setRefHandle}}
+\index{setRefHandle@{setRefHandle}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{setRefHandle}]{\setlength{\rightskip}{0pt plus 5cm}setRefHandle (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sFBML, }
+\item[{\$}]{ sHandle = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_aa70ade6295aedd084a68f97b27441c3b}
+Sets a refhandle... 
+
+Reimplemented from \hyperlink{classSF__Platform_aa70ade6295aedd084a68f97b27441c3b}{SF\_\-Platform}.
+
+
+
+Definition at line 174 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        try
+        {
+            $this->m_oPFAPI->api_client->fbml_setRefHandle( ( $sHandle == "" ? "g
+      bl_" . $this->m_sAppId : $sHandle ), $sFBML );
+        }
+        catch ( Exception $_ex )
+        {
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Facebook_a457014f98badf8555216fcfb66db27df}{
+\index{SF\_\-Facebook@{SF\_\-Facebook}!setUserData@{setUserData}}
+\index{setUserData@{setUserData}!SF_Facebook@{SF\_\-Facebook}}
+\subsubsection[{setUserData}]{\setlength{\rightskip}{0pt plus 5cm}setUserData (
+\begin{DoxyParamCaption}
+\item[{\$}]{ eType, }
+\item[{\$}]{ oValue}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Facebook_a457014f98badf8555216fcfb66db27df}
+
+
+Definition at line 159 of file SF\_\-Facebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        try
+        {
+            $this->m_oPFAPI->api_client->data_setUserPreference( $eType, $oValue 
+      );
+        }
+        catch ( Exception $_ex )
+        {
+            error_log( __METHOD__ . ' : ' . $_ex->getMessage(), 0 );
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/snowframe/base/\hyperlink{SF__Facebook_8php}{SF\_\-Facebook.php}\end{DoxyCompactItemize}

@@ -1,0 +1,162 @@
+\hypertarget{classCSFPlatformUser}{
+\section{CSFPlatformUser Class Reference}
+\label{classCSFPlatformUser}\index{CSFPlatformUser@{CSFPlatformUser}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSFPlatformUser_a12251d0c022e9e21c137a105ff683f13}{getId} ()
+\item 
+\hyperlink{classCSFPlatformUser_a47bea6df9017225dcfea30113f44ce6a}{validateUser} (\$oApi, \$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCSFPlatformUser_a750c93a7dfab5314f2bf662a407bc5a6}{authenticate} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSFPlatformUser_ac39d38a94cec097ce38202f42ccea188}{\$m\_\-sUserId} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file CSFPlatformUser.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSFPlatformUser_a750c93a7dfab5314f2bf662a407bc5a6}{
+\index{CSFPlatformUser@{CSFPlatformUser}!authenticate@{authenticate}}
+\index{authenticate@{authenticate}!CSFPlatformUser@{CSFPlatformUser}}
+\subsubsection[{authenticate}]{\setlength{\rightskip}{0pt plus 5cm}authenticate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCSFPlatformUser_a750c93a7dfab5314f2bf662a407bc5a6}
+Authenticates a user. \begin{DoxyReturn}{Returns}
+boolean whether authentication succeeds. 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file CSFPlatformUser.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sUserName = trim( strtolower( $this->username ) );
+
+        //  User name match?
+        $_bFound = ( null != ( $_oUser = Users::model()->find( 'username = :usern
+      ame', array( ':username' => $_sUserName ) ) ) );
+        
+        //  Nope? Try email address lookup
+        if ( ! $_bFound )
+            $_bFound = ( null != ( $_oUser = Users::model()->find( 'email = :emai
+      l', array( ':email' => $_sUserName ) ) ) );
+
+        //  Bah! 
+        if ( ! $_bFound || trim( strtolower( $this->password ) ) != trim( strtolo
+      wer( $_oUser->password ) ) )
+            $this->errorCode = self::ERROR_USERNAME_INVALID;
+        else
+        {
+            $this->m_iUserId = $_oUser->id;
+            $this->username = $_oUser->username;
+            $this->setState( 'fullName', trim( $_oUser->first_name . ' ' . $_oUse
+      r->last_name ) );
+            $this->setState( 'firstName', $_oUser->first_name );
+            $this->setState( 'lastName', $_oUser->last_name );
+            $this->setState( 'accessRole', 'player' );
+            $this->clearState( 'adminLevel' );
+            $_oUser->touch( 'last_login_date' );
+            $this->errorCode = self::ERROR_NONE;
+        }
+
+        return( !$this->errorCode );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCSFPlatformUser_a12251d0c022e9e21c137a105ff683f13}{
+\index{CSFPlatformUser@{CSFPlatformUser}!getId@{getId}}
+\index{getId@{getId}!CSFPlatformUser@{CSFPlatformUser}}
+\subsubsection[{getId}]{\setlength{\rightskip}{0pt plus 5cm}getId (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCSFPlatformUser_a12251d0c022e9e21c137a105ff683f13}
+
+
+Definition at line 30 of file CSFPlatformUser.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_iUserId; }
+\end{DoxyCode}
+
+
+\hypertarget{classCSFPlatformUser_a47bea6df9017225dcfea30113f44ce6a}{
+\index{CSFPlatformUser@{CSFPlatformUser}!validateUser@{validateUser}}
+\index{validateUser@{validateUser}!CSFPlatformUser@{CSFPlatformUser}}
+\subsubsection[{validateUser}]{\setlength{\rightskip}{0pt plus 5cm}validateUser (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oApi, }
+\item[{\$}]{ arOptions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCSFPlatformUser_a47bea6df9017225dcfea30113f44ce6a}
+Validates the user.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$bRequireFrame \item[{\em mixed}]\$bRequireAdd \item[{\em mixed}]\$bRequireLogin \item[{\em mixed}]\$bUsePrefs \item[{\em mixed}]\$bAddUser \end{DoxyParams}
+
+
+Definition at line 41 of file CSFPlatformUser.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_bRequireFrame = PS::o( $arOptions, 'requireFrame', true );
+        $_bRequireAdd = PS::o( $arOptions, 'requireAdd', true );
+        $_bRequireLogin = PS::o( $arOptions, 'requireLogin', true );
+        $_bUsePrefs = PS::o( $arOptions, 'usePrefs', true );
+        $_bAddUser = PS::o( $arOptions, 'addUser', true );
+
+        $oApi->validateUser( $_bRequireFrame, $_bRequireAdd, $_bRequireLogin, $_b
+      UsePrefs, $_bAddUser );
+
+        //  Let the user database have a look
+        if ( $this->m_oUserDB && method_exists( $this->m_oUserDB, "processQuerySt
+      ring" ) )
+            $this->m_oUserDB->processQueryString( $this->pfApi->PFUserId );
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCSFPlatformUser_ac39d38a94cec097ce38202f42ccea188}{
+\index{CSFPlatformUser@{CSFPlatformUser}!\$m\_\-sUserId@{\$m\_\-sUserId}}
+\index{\$m\_\-sUserId@{\$m\_\-sUserId}!CSFPlatformUser@{CSFPlatformUser}}
+\subsubsection[{\$m\_\-sUserId}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sUserId = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCSFPlatformUser_ac39d38a94cec097ce38202f42ccea188}
+
+
+Definition at line 29 of file CSFPlatformUser.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/snowframe/base/\hyperlink{CSFPlatformUser_8php}{CSFPlatformUser.php}\end{DoxyCompactItemize}

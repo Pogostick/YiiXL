@@ -1,0 +1,603 @@
+\hypertarget{classCXLBaseJobProcess}{
+\section{CXLBaseJobProcess Class Reference}
+\label{classCXLBaseJobProcess}\index{CXLBaseJobProcess@{CXLBaseJobProcess}}
+}
+
+
+Inheritance diagram for CXLBaseJobProcess:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classCXLBaseJobProcess__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLBaseJobProcess:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classCXLBaseJobProcess__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLBaseJobProcess_a43878aef3c85b396a28e4b8e4fce0fc2}{getResultCode} ()
+\item 
+\hyperlink{classCXLBaseJobProcess_af1f91fdb702f9b13e5869aed94fa61ae}{setResultCode} (\$iValue)
+\item 
+\hyperlink{classCXLBaseJobProcess_a9d21636071f529e2154051d3ea6e5921}{getStatus} ()
+\item 
+\hyperlink{classCXLBaseJobProcess_aa6fdfc32edc157649619c5c549f7d651}{setStatus} (\$sValue)
+\item 
+\hyperlink{classCXLBaseJobProcess_a8ec5d045b7c39a3712a14426a5fb9219}{getJobData} ()
+\item 
+\hyperlink{classCXLBaseJobProcess_abafd9c8b01d9f53afd70c9746e2d8797}{setJobData} (\$oValue)
+\item 
+\hyperlink{classCXLBaseJobProcess_ae077eb8a032a325ceb939bfabfa5f472}{getResult} ()
+\item 
+\hyperlink{classCXLBaseJobProcess_ac958924ca9aaf706efd2e636b829237d}{\_\-\_\-construct} (\$jobData=null, \$autoRun=false)
+\item 
+\hyperlink{classCXLBaseJobProcess_afb0fafe7e02a3ae1993c01c19fad2bae}{run} ()
+\item 
+\hyperlink{classCXLBaseJobProcess_ab4f56c77fcc5ccf476933c368aeae513}{getProcessingTime} (\$rawOutput=false)
+\item 
+\hyperlink{classCXLBaseJobProcess_a013c0d9ca789c13c56b13cb96d26174a}{stopTimer} ()
+\item 
+\hyperlink{classCXLBaseJobProcess_a3f20c6773be010b2744fb3451651746c}{startTimer} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCXLBaseJobProcess_aa607ab5e557e6ebb60b85c5a20ad067f}{CLASS\_\-LOG\_\-TAG} = 'yiixl.core.process.CXLBaseJobProcess'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLBaseJobProcess_a7d4ad4038b036a67eece619e6f88c89e}{process} ()
+\item 
+\hyperlink{classCXLBaseJobProcess_affa56f73ffc8554251c1cda1e6a8fbf1}{\_\-runTimedProcess} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLBaseJobProcess_ae0031ff175d62e0ad13e166945cf8701}{\$\_\-jobStartTime} = null
+\item 
+\hyperlink{classCXLBaseJobProcess_a5192e6d60c6569eb1cda1db703de424c}{\$\_\-jobEndTime} = null
+\item 
+\hyperlink{classCXLBaseJobProcess_a526a96330f81ef18dbd9910683b56834}{\$\_\-jobResultCode} = null
+\item 
+\hyperlink{classCXLBaseJobProcess_a86923e2a1f9dcf7410f4d0281dec80b8}{\$\_\-jobStatus} = null
+\item 
+\hyperlink{classCXLBaseJobProcess_ae1b0920bc764db03028e914f2be8c328}{\$\_\-jobData} = null
+\item 
+\hyperlink{classCXLBaseJobProcess_a504977cfa0547a593dc7348ee17eb649}{\$\_\-jobResult} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file CXLBaseJobProcess.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCXLBaseJobProcess_ac958924ca9aaf706efd2e636b829237d}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ jobData = {\ttfamily null}, }
+\item[{\$}]{ autoRun = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLBaseJobProcess_ac958924ca9aaf706efd2e636b829237d}
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$jobData Either a row from a job queue or data to process \item[{\em boolean}]\$autoRun If true, initializes and runs the job \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCXLBaseJobProcess}{CXLBaseJobProcess} 
+\end{DoxyReturn}
+
+
+Definition at line 107 of file CXLBaseJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  Phone home...
+    parent::__construct();
+
+    //  Store our data...
+    $this->_jobData = $jobData;
+
+    //  Run?
+    if ( $autoRun )
+    {
+      $this->init();
+      $this->run();
+    }
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLBaseJobProcess_ac958924ca9aaf706efd2e636b829237d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLBaseJobProcess_affa56f73ffc8554251c1cda1e6a8fbf1}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!\_\-runTimedProcess@{\_\-runTimedProcess}}
+\index{\_\-runTimedProcess@{\_\-runTimedProcess}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{\_\-runTimedProcess}]{\setlength{\rightskip}{0pt plus 5cm}\_\-runTimedProcess (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLBaseJobProcess_affa56f73ffc8554251c1cda1e6a8fbf1}
+Runs the process but stops the timer on the case of an exception \begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 175 of file CXLBaseJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->startTimer();
+    try
+    {
+      $_result = $this->process();
+    }
+    catch ( Exception $_ex )
+    {
+      $this->stopTimer();
+      throw $_ex;
+    }
+    
+    $this->stopTimer();
+
+    return $_result;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classCXLBaseJobProcess_affa56f73ffc8554251c1cda1e6a8fbf1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=360pt]{classCXLBaseJobProcess_affa56f73ffc8554251c1cda1e6a8fbf1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLBaseJobProcess_a8ec5d045b7c39a3712a14426a5fb9219}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!getJobData@{getJobData}}
+\index{getJobData@{getJobData}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{getJobData}]{\setlength{\rightskip}{0pt plus 5cm}getJobData (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLBaseJobProcess_a8ec5d045b7c39a3712a14426a5fb9219}
+
+
+Definition at line 86 of file CXLBaseJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_jobData; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLBaseJobProcess_ab4f56c77fcc5ccf476933c368aeae513}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!getProcessingTime@{getProcessingTime}}
+\index{getProcessingTime@{getProcessingTime}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{getProcessingTime}]{\setlength{\rightskip}{0pt plus 5cm}getProcessingTime (
+\begin{DoxyParamCaption}
+\item[{\$}]{ rawOutput = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLBaseJobProcess_ab4f56c77fcc5ccf476933c368aeae513}
+Returns the amount of time since the timer was started \begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Definition at line 136 of file CXLBaseJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_timeSpan = XL::nvl( $this->_jobEndTime, XL::currentTimeMillis() ) - $this->
+      _jobEndTime;
+    
+    return $rawOutput ? $_timeSpan : number_format( $_timeSpan, 2 ) . 's';
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classCXLBaseJobProcess_ab4f56c77fcc5ccf476933c368aeae513_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLBaseJobProcess_ae077eb8a032a325ceb939bfabfa5f472}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!getResult@{getResult}}
+\index{getResult@{getResult}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{getResult}]{\setlength{\rightskip}{0pt plus 5cm}getResult (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLBaseJobProcess_ae077eb8a032a325ceb939bfabfa5f472}
+
+
+Definition at line 94 of file CXLBaseJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_jobResult; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLBaseJobProcess_a43878aef3c85b396a28e4b8e4fce0fc2}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!getResultCode@{getResultCode}}
+\index{getResultCode@{getResultCode}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{getResultCode}]{\setlength{\rightskip}{0pt plus 5cm}getResultCode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLBaseJobProcess_a43878aef3c85b396a28e4b8e4fce0fc2}
+
+
+Definition at line 70 of file CXLBaseJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_jobResultCode; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLBaseJobProcess_a9d21636071f529e2154051d3ea6e5921}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{getStatus}]{\setlength{\rightskip}{0pt plus 5cm}getStatus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLBaseJobProcess_a9d21636071f529e2154051d3ea6e5921}
+
+
+Definition at line 78 of file CXLBaseJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_jobStatus; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLBaseJobProcess_a7d4ad4038b036a67eece619e6f88c89e}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!process@{process}}
+\index{process@{process}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract, protected\mbox{]}}}}
+\label{classCXLBaseJobProcess_a7d4ad4038b036a67eece619e6f88c89e}
+Process the job 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLBaseJobProcess_a7d4ad4038b036a67eece619e6f88c89e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLBaseJobProcess_afb0fafe7e02a3ae1993c01c19fad2bae}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!run@{run}}
+\index{run@{run}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLBaseJobProcess_afb0fafe7e02a3ae1993c01c19fad2bae}
+Runs the job process with timing \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 127 of file CXLBaseJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_runTimedProcess();
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=354pt]{classCXLBaseJobProcess_afb0fafe7e02a3ae1993c01c19fad2bae_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classCXLBaseJobProcess_afb0fafe7e02a3ae1993c01c19fad2bae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLBaseJobProcess_abafd9c8b01d9f53afd70c9746e2d8797}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!setJobData@{setJobData}}
+\index{setJobData@{setJobData}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{setJobData}]{\setlength{\rightskip}{0pt plus 5cm}setJobData (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLBaseJobProcess_abafd9c8b01d9f53afd70c9746e2d8797}
+
+
+Definition at line 87 of file CXLBaseJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_jobData = $oValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLBaseJobProcess_af1f91fdb702f9b13e5869aed94fa61ae}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!setResultCode@{setResultCode}}
+\index{setResultCode@{setResultCode}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{setResultCode}]{\setlength{\rightskip}{0pt plus 5cm}setResultCode (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLBaseJobProcess_af1f91fdb702f9b13e5869aed94fa61ae}
+
+
+Definition at line 71 of file CXLBaseJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_jobResultCode = $iValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLBaseJobProcess_aa6fdfc32edc157649619c5c549f7d651}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!setStatus@{setStatus}}
+\index{setStatus@{setStatus}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{setStatus}]{\setlength{\rightskip}{0pt plus 5cm}setStatus (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLBaseJobProcess_aa6fdfc32edc157649619c5c549f7d651}
+
+
+Definition at line 79 of file CXLBaseJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_jobStatus = $sValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLBaseJobProcess_a3f20c6773be010b2744fb3451651746c}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!startTimer@{startTimer}}
+\index{startTimer@{startTimer}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{startTimer}]{\setlength{\rightskip}{0pt plus 5cm}startTimer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLBaseJobProcess_a3f20c6773be010b2744fb3451651746c}
+Starts the internal job timer 
+
+Definition at line 156 of file CXLBaseJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_jobStartTime = XL::currentTimeMillis();
+    $this->_jobStartTime = null;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLBaseJobProcess_a3f20c6773be010b2744fb3451651746c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLBaseJobProcess_a013c0d9ca789c13c56b13cb96d26174a}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!stopTimer@{stopTimer}}
+\index{stopTimer@{stopTimer}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{stopTimer}]{\setlength{\rightskip}{0pt plus 5cm}stopTimer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLBaseJobProcess_a013c0d9ca789c13c56b13cb96d26174a}
+Stops the internal job timer 
+
+Definition at line 147 of file CXLBaseJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_jobEndTime = XL::currentTimeMillis();
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLBaseJobProcess_a013c0d9ca789c13c56b13cb96d26174a_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLBaseJobProcess_ae1b0920bc764db03028e914f2be8c328}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!\$\_\-jobData@{\$\_\-jobData}}
+\index{\$\_\-jobData@{\$\_\-jobData}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{\$\_\-jobData}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-jobData = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLBaseJobProcess_ae1b0920bc764db03028e914f2be8c328}
+
+
+Definition at line 85 of file CXLBaseJobProcess.php.
+
+\hypertarget{classCXLBaseJobProcess_a5192e6d60c6569eb1cda1db703de424c}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!\$\_\-jobEndTime@{\$\_\-jobEndTime}}
+\index{\$\_\-jobEndTime@{\$\_\-jobEndTime}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{\$\_\-jobEndTime}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-jobEndTime = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLBaseJobProcess_a5192e6d60c6569eb1cda1db703de424c}
+
+
+Definition at line 63 of file CXLBaseJobProcess.php.
+
+\hypertarget{classCXLBaseJobProcess_a504977cfa0547a593dc7348ee17eb649}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!\$\_\-jobResult@{\$\_\-jobResult}}
+\index{\$\_\-jobResult@{\$\_\-jobResult}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{\$\_\-jobResult}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-jobResult = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLBaseJobProcess_a504977cfa0547a593dc7348ee17eb649}
+
+
+Definition at line 93 of file CXLBaseJobProcess.php.
+
+\hypertarget{classCXLBaseJobProcess_a526a96330f81ef18dbd9910683b56834}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!\$\_\-jobResultCode@{\$\_\-jobResultCode}}
+\index{\$\_\-jobResultCode@{\$\_\-jobResultCode}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{\$\_\-jobResultCode}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-jobResultCode = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLBaseJobProcess_a526a96330f81ef18dbd9910683b56834}
+
+
+Definition at line 69 of file CXLBaseJobProcess.php.
+
+\hypertarget{classCXLBaseJobProcess_ae0031ff175d62e0ad13e166945cf8701}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!\$\_\-jobStartTime@{\$\_\-jobStartTime}}
+\index{\$\_\-jobStartTime@{\$\_\-jobStartTime}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{\$\_\-jobStartTime}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-jobStartTime = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLBaseJobProcess_ae0031ff175d62e0ad13e166945cf8701}
+
+
+Definition at line 57 of file CXLBaseJobProcess.php.
+
+\hypertarget{classCXLBaseJobProcess_a86923e2a1f9dcf7410f4d0281dec80b8}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!\$\_\-jobStatus@{\$\_\-jobStatus}}
+\index{\$\_\-jobStatus@{\$\_\-jobStatus}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{\$\_\-jobStatus}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-jobStatus = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLBaseJobProcess_a86923e2a1f9dcf7410f4d0281dec80b8}
+
+
+Definition at line 77 of file CXLBaseJobProcess.php.
+
+\hypertarget{classCXLBaseJobProcess_aa607ab5e557e6ebb60b85c5a20ad067f}{
+\index{CXLBaseJobProcess@{CXLBaseJobProcess}!CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}}
+\index{CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}!CXLBaseJobProcess@{CXLBaseJobProcess}}
+\subsubsection[{CLASS\_\-LOG\_\-TAG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CLASS\_\-LOG\_\-TAG} = 'yiixl.core.process.CXLBaseJobProcess'}}
+\label{classCXLBaseJobProcess_aa607ab5e557e6ebb60b85c5a20ad067f}
+Our logging tag 
+
+Reimplemented from \hyperlink{classCXLComponent_aa607ab5e557e6ebb60b85c5a20ad067f}{CXLComponent}.
+
+
+
+Definition at line 47 of file CXLBaseJobProcess.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLBaseJobProcess_8php}{CXLBaseJobProcess.php}\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSControllerCommand.html#ac91a2aca5e06e754e38f13c4ef1b52f3" title="CPSControllerCommand::generateAction" alt="" coords="151,5,433,35"/>
+<area shape="rect" id="node5" href="$classCPSCrudCommand.html#a49dc0a7897a19cca4729069259c39623" title="CPSCrudCommand::generateController" alt="" coords="156,59,428,88"/>
+<area shape="rect" id="node7" href="$classCPSControllerCommand.html#a49dc0a7897a19cca4729069259c39623" title="CPSControllerCommand::generateController" alt="" coords="140,112,444,141"/>
+<area shape="rect" id="node9" href="$classCPSConsoleCommand.html#ad45025113981b4406a4a6488b3d7e0e3" title="generateFile" alt="" coords="243,165,341,195"/>
+<area shape="rect" id="node11" href="$classCPSModelCommand.html#afae31a43a5d0c7b44333eba3cc20f70e" title="CPSModelCommand::generateModel" alt="" coords="164,219,420,248"/>
+<area shape="rect" id="node13" href="$classCPSCodeTableCommand.html#afae31a43a5d0c7b44333eba3cc20f70e" title="CPSCodeTableCommand::generateModel" alt="" coords="151,272,433,301"/>
+<area shape="rect" id="node15" href="$classCPSCrudCommand.html#a81be02780978c8c023217c75e1dd863d" title="CPSCrudCommand::generateView" alt="" coords="172,325,412,355"/>
+</map>

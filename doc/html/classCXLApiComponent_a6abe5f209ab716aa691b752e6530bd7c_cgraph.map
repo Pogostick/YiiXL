@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCXLApiComponent.html#a5553835ab2c36beb97aa324fd9dc0c8e" title="Raises the onAfterApiCall event." alt="" coords="183,5,295,35"/>
+<area shape="rect" id="node5" href="$classCXLApiComponent.html#a4093b5694f26106f79bb6f49d53056e7" title="Raises the onBeforeApiCall event." alt="" coords="177,59,300,88"/>
+<area shape="rect" id="node7" href="$classCXLApiComponent.html#a6a322883ad1cae03d8d0b1ec577b0b64" title="Raises the onRequestComplete event." alt="" coords="164,112,313,141"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classSonetrixClient.html#a2cccfe0c7f4aabf470d2d5f9f507e308" title="setDemoData" alt="" coords="171,5,283,35"/>
+<area shape="rect" id="node7" href="$classSonetrixClient.html#a937ec2e1055b8ccfae32ab80f9a4302e" title="stats_getStatsYMD" alt="" coords="155,59,299,88"/>
+<area shape="rect" id="node11" href="$classSonetrixClient.html#a780883e3c247b29d696d150b21f1da7d" title="user_getInvitees" alt="" coords="164,112,289,141"/>
+<area shape="rect" id="node13" href="$classSonetrixClient.html#acefc468f5e6a8c55dae2b78e39d8a400" title="user_install" alt="" coords="180,165,273,195"/>
+<area shape="rect" id="node15" href="$classSonetrixClient.html#a420b1ea102ea7dfe199366eea42cfc13" title="user_pageView" alt="" coords="168,219,285,248"/>
+<area shape="rect" id="node17" href="$classSonetrixClient.html#a09ca56569d3a84b88e047acf61b86b35" title="user_trackInvites" alt="" coords="161,272,292,301"/>
+<area shape="rect" id="node21" href="$classSonetrixClient.html#ad18a1632dc984669877b26ad657b3b30" title="user_trackReferral" alt="" coords="159,325,295,355"/>
+<area shape="rect" id="node23" href="$classSonetrixClient.html#a9eca8f37b3a21b8f49476dff0aac1553" title="user_uninstall" alt="" coords="172,379,281,408"/>
+<area shape="rect" id="node5" href="$classSonetrixClient.html#aa8a87ef1ba1c9f78959fcbd772429544" title="__construct" alt="" coords="373,5,469,35"/>
+<area shape="rect" id="node9" href="$classSonetrixClient.html#a1441b0c5ef54c474618356b34ca2b82e" title="stats_getStatsYM" alt="" coords="355,59,488,88"/>
+<area shape="rect" id="node19" href="$classSonetrixClient.html#abd4a996c59fa716c190a9dfff3656b4e" title="processQueryString" alt="" coords="348,272,495,301"/>
+</map>

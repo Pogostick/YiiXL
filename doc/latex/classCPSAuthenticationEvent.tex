@@ -1,0 +1,137 @@
+\hypertarget{classCPSAuthenticationEvent}{
+\section{CPSAuthenticationEvent Class Reference}
+\label{classCPSAuthenticationEvent}\index{CPSAuthenticationEvent@{CPSAuthenticationEvent}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSAuthenticationEvent_ae81b7186fb97a7c6457edcc68c9aa2ef}{getUser} ()
+\item 
+\hyperlink{classCPSAuthenticationEvent_ae45c3b200e03caf3006a19bf2191a654}{getUserIdentity} ()
+\item 
+\hyperlink{classCPSAuthenticationEvent_a72e03a1c9740e3925797cd4324d796cc}{\_\-\_\-construct} (\$sender, \$user, \$userIdentity)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSAuthenticationEvent_a5df5982b9dadc74df05081972cd67fdf}{\$\_\-user}
+\item 
+\hyperlink{classCPSAuthenticationEvent_a5f35952d5eb7619bff965559762344e3}{\$\_\-userIdentity}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file CPSAuthenticationEvent.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSAuthenticationEvent_a72e03a1c9740e3925797cd4324d796cc}{
+\index{CPSAuthenticationEvent@{CPSAuthenticationEvent}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSAuthenticationEvent@{CPSAuthenticationEvent}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sender, }
+\item[{\$}]{ user, }
+\item[{\$}]{ userIdentity}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSAuthenticationEvent_a72e03a1c9740e3925797cd4324d796cc}
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$sender \item[{\em CWebUser}]\item[{\em IUserIdentity}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCPSAuthenticationEvent}{CPSAuthenticationEvent} 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file CPSAuthenticationEvent.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::__construct( $sender );
+
+        $this->_user = $user;
+        $this->_userIdentity = $userIdentity;
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSAuthenticationEvent_ae81b7186fb97a7c6457edcc68c9aa2ef}{
+\index{CPSAuthenticationEvent@{CPSAuthenticationEvent}!getUser@{getUser}}
+\index{getUser@{getUser}!CPSAuthenticationEvent@{CPSAuthenticationEvent}}
+\subsubsection[{getUser}]{\setlength{\rightskip}{0pt plus 5cm}getUser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSAuthenticationEvent_ae81b7186fb97a7c6457edcc68c9aa2ef}
+
+
+Definition at line 52 of file CPSAuthenticationEvent.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_user; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSAuthenticationEvent_ae45c3b200e03caf3006a19bf2191a654}{
+\index{CPSAuthenticationEvent@{CPSAuthenticationEvent}!getUserIdentity@{getUserIdentity}}
+\index{getUserIdentity@{getUserIdentity}!CPSAuthenticationEvent@{CPSAuthenticationEvent}}
+\subsubsection[{getUserIdentity}]{\setlength{\rightskip}{0pt plus 5cm}getUserIdentity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSAuthenticationEvent_ae45c3b200e03caf3006a19bf2191a654}
+
+
+Definition at line 53 of file CPSAuthenticationEvent.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_userIdentity; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSAuthenticationEvent_a5df5982b9dadc74df05081972cd67fdf}{
+\index{CPSAuthenticationEvent@{CPSAuthenticationEvent}!\$\_\-user@{\$\_\-user}}
+\index{\$\_\-user@{\$\_\-user}!CPSAuthenticationEvent@{CPSAuthenticationEvent}}
+\subsubsection[{\$\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-user\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSAuthenticationEvent_a5df5982b9dadc74df05081972cd67fdf}
+
+
+Definition at line 37 of file CPSAuthenticationEvent.php.
+
+\hypertarget{classCPSAuthenticationEvent_a5f35952d5eb7619bff965559762344e3}{
+\index{CPSAuthenticationEvent@{CPSAuthenticationEvent}!\$\_\-userIdentity@{\$\_\-userIdentity}}
+\index{\$\_\-userIdentity@{\$\_\-userIdentity}!CPSAuthenticationEvent@{CPSAuthenticationEvent}}
+\subsubsection[{\$\_\-userIdentity}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-userIdentity\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSAuthenticationEvent_a5f35952d5eb7619bff965559762344e3}
+
+
+Definition at line 44 of file CPSAuthenticationEvent.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/events/\hyperlink{CPSAuthenticationEvent_8php}{CPSAuthenticationEvent.php}\end{DoxyCompactItemize}

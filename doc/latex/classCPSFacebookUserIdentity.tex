@@ -1,0 +1,1565 @@
+\hypertarget{classCPSFacebookUserIdentity}{
+\section{CPSFacebookUserIdentity Class Reference}
+\label{classCPSFacebookUserIdentity}\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a12251d0c022e9e21c137a105ff683f13}{getId} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_aa664eee45a9eb336b581131cb0ac667d}{setId} (\$value)
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a0b280ce1a525781c8943e5101471a6c0}{getUserModelClass} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_ae0af15a6b8117c8e984beae8e585fcd2}{setUserModelClass} (\$value)
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a5d251c70a3f9f9daaff7f00ec5f894c0}{getAccessToken} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a37af09a26efc969d1381851b8c379808}{getLoginUrl} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_aefa4c5bd150e2a7d525576d7959c6911}{getSession} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a0ef2f4b4ea68bcd957152a5b46a6612e}{getFBUserId} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a6bc057a9b0c03f8147a4294936b2494b}{getMe} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_ace5f32fc99c7c5989f7576755fc60972}{getFirstName} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_ae81b7186fb97a7c6457edcc68c9aa2ef}{getUser} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a2e112e7f214a9ffbc1948685a46fc1ee}{getFriendList} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_abcda3e499f474b2b46474d47161154a2}{getAppFriendList} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_ae401a06f8319a26a012457db1d3908ce}{getCacheAppFriends} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a3f665b8d4df7bb1952cb8fc3f5b75561}{setCacheAppFriends} (\$value)
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a74a2e7cb200195c32d0b9552a331445a}{getAutoLoadPictures} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_af4ec9526210829eed07fbf8bcd74f784}{setAutoLoadPictures} (\$value)
+\item 
+\hyperlink{classCPSFacebookUserIdentity_aed530f3943074ab9826563b51db5420a}{getInviteAfterInstall} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_acb332c6546b31eabe02618a7ccc2732c}{setInviteAfterInstall} (\$value)
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a966f0f14413b21e8d4e8cf5180cdf627}{getIsConnected} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a7bfb59fe7d249a66abbd2c1ea8b9b8ec}{\_\-\_\-construct} (\hyperlink{classCPSFacebook}{CPSFacebook} \$facebookApi, \$loginUrl, \$userModelClass= 'User')
+\item 
+\hyperlink{classCPSFacebookUserIdentity_aa238fcc5cb30759876aa89cd2e0711c1}{api} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a750c93a7dfab5314f2bf662a407bc5a6}{authenticate} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_aa4239198c895a9c8c1ea86753ed49095}{\_\-initialize} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a21df9dbf22cd606881c65d284208c90c}{getAlbums} (\$id=null)
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a11900d7eee85bed9fda1a24827c1c5bf}{getPhotos} (\$aid, \$id=null, \$limit=null)
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a0e6ee11d30fc9d158e8464759e64c1f8}{onLoginFailure} (\hyperlink{classCPSAuthenticationEvent}{CPSAuthenticationEvent} \$event)
+\item 
+\hyperlink{classCPSFacebookUserIdentity_acad8b3c7359a6bd26c2399d8d5819b2b}{onLoginSuccess} (\hyperlink{classCPSAuthenticationEvent}{CPSAuthenticationEvent} \$event)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a617a5b82b3ed6584e34461d71febb2cf}{\_\-loadUser} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a5a06de218ff8a267b61639c319862fa8}{\_\-getAllFriends} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_ad0e0d1a30e4654cb79ddcd1b759f956b}{\_\-getAppFriends} ()
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a8db1c87ff7cf16af4110476a303ca342}{\_\-forceLogin} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a64da16c4a1c7b2dc6784f6ef26341ed7}{\$\_\-id} = null
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a86b918c4cc90bae631b0f42b136d3a3c}{\$\_\-userModelClass} = null
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a4baf52b9d7a98e5d1354c0184a030233}{\$\_\-accessToken}
+\item 
+\hyperlink{classCPSFacebookUserIdentity_ad0039d9d92917bd2c7e46c93d8562b8b}{\$\_\-loginUrl} = ''
+\item 
+\hyperlink{classCPSFacebookUserIdentity_ad0641deaf4d314f034a134efaa6fbff0}{\$\_\-session}
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a19e04e69bd6cde6129a45de979954cfa}{\$\_\-fbUserId}
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a45e53d351918dc7cad7136ff44e1724b}{\$\_\-me}
+\item 
+\hyperlink{classCPSFacebookUserIdentity_ae47bb90ba7f0f5de161e554290d3b5b8}{\$\_\-firstName}
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a5df5982b9dadc74df05081972cd67fdf}{\$\_\-user} = null
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a93380830cda99a4927d3507251a12e32}{\$\_\-friendList} = null
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a69ad1b664bbcbc06fbaeb07133568469}{\$\_\-appFriendList} = null
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a1ef3e76667a47cb12fabf1c9c79f17ff}{\$\_\-cacheAppFriends} = false
+\item 
+\hyperlink{classCPSFacebookUserIdentity_acbda478de6e55a60d9716bd3d101e40d}{\$\_\-autoLoadPictures} = false
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a06deb2baf54257cacaf8cbc83f9bf1a1}{\$\_\-inviteAfterInstall} = true
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a3fb00b079c40b68e2ce79a0c27aad663}{\$\_\-isConnected} = false
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a2f481ea63815c4c7e8c6dad8b4d839ec}{\$\_\-facebookApi}
+\item 
+\hyperlink{classCPSFacebookUserIdentity_a425e3b02d08adda9a06498d8e0f5714c}{\$\_\-inForceLogin}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file CPSFacebookUserIdentity.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSFacebookUserIdentity_a7bfb59fe7d249a66abbd2c1ea8b9b8ec}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{{\bf CPSFacebook} \$}]{ facebookApi, }
+\item[{\$}]{ loginUrl, }
+\item[{\$}]{ userModelClass = {\ttfamily 'User'}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a7bfb59fe7d249a66abbd2c1ea8b9b8ec}
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSFacebook}{CPSFacebook}}]\item[{\em string}]password \end{DoxyParams}
+
+
+Definition at line 149 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::__construct( null, null );
+
+        $this->_facebookApi = $facebookApi;
+        $this->_loginUrl = $loginUrl;
+        $this->_userModelClass = $userModelClass;
+
+        Yii::import( 'pogostick.events.CPSAuthenticationEvent' );
+
+        $this->_initialize();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookUserIdentity_a7bfb59fe7d249a66abbd2c1ea8b9b8ec_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSFacebookUserIdentity_a8db1c87ff7cf16af4110476a303ca342}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\_\-forceLogin@{\_\-forceLogin}}
+\index{\_\-forceLogin@{\_\-forceLogin}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\_\-forceLogin}]{\setlength{\rightskip}{0pt plus 5cm}\_\-forceLogin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a8db1c87ff7cf16af4110476a303ca342}
+Forces a redirect to the Facebook login url... 
+
+Definition at line 545 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  If this is a deauth, clean up the database...
+        if ( false !== strpos( $_SERVER['REQUEST_URI'], 'app/deauthorize' ) )
+        {
+            if ( $this->_loadUser() )
+                Yii::app()->getRequest()->redirect( 'deauthorize', array( 'id' =>
+       $this->_user->id ) );
+        }
+
+        error_log( 'Force logging out user, no session found.' );
+        CPSLog::info( __METHOD__, 'Force logging out user, no session found.' );
+
+        //  Logout user...
+        PS::_gu()->logout();
+
+        CPSLog::trace( __METHOD__, 'Facebook login redirect: ' . $this->_loginUrl
+       );
+
+        echo '<script type="text/javascript">window.top.location.href = "' . $thi
+      s->_loginUrl . '";</script>';
+        flush();
+        exit;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookUserIdentity_a8db1c87ff7cf16af4110476a303ca342_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookUserIdentity_a8db1c87ff7cf16af4110476a303ca342_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a5a06de218ff8a267b61639c319862fa8}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\_\-getAllFriends@{\_\-getAllFriends}}
+\index{\_\-getAllFriends@{\_\-getAllFriends}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\_\-getAllFriends}]{\setlength{\rightskip}{0pt plus 5cm}\_\-getAllFriends (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a5a06de218ff8a267b61639c319862fa8}
+Get all friend data \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 367 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->_friendList = PS::_gs( CPSFacebookAppController::FRIEND_CACHE );
+
+        try
+        {
+            if ( empty( $this->_friendList ) )
+            {
+                $_fql = "SELECT uid, name, first_name, pic_big, pic_square FROM u
+      ser WHERE uid IN ( SELECT uid2 FROM friend where uid1 = '{$this->_fbUserId}' ) or
+      der by name";
+                $this->_friendList = $this->_facebookApi->api( array( 'method' =>
+       'fql.query', 'query' => $_fql ) );
+                PS::_ss( CPSFacebookAppController::FRIEND_CACHE, $this->_friendLi
+      st );
+            }
+        }
+        catch ( Exception $_ex )
+        {
+            CPSLog::error( __METHOD__, 'Exception: ' . $_ex->getMessage() );
+            error_log( 'Get all friends failed: ' . $_ex->getMessage() );
+            $this->_forceLogin();
+        }
+
+        return $this->_friendList;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookUserIdentity_a5a06de218ff8a267b61639c319862fa8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookUserIdentity_ad0e0d1a30e4654cb79ddcd1b759f956b}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\_\-getAppFriends@{\_\-getAppFriends}}
+\index{\_\-getAppFriends@{\_\-getAppFriends}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\_\-getAppFriends}]{\setlength{\rightskip}{0pt plus 5cm}\_\-getAppFriends (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_ad0e0d1a30e4654cb79ddcd1b759f956b}
+Get friend data who have this app \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 394 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->_appFriendList = ( $this->_cacheAppFriends ? PS::_gs( 
+      CPSFacebookAppController::APP_FRIEND_CACHE ) : null );
+
+        try
+        {
+            if ( empty( $this->_appFriendList ) )
+            {
+                $_fql = "select uid from user where is_app_user = '1' and uid in 
+      ( select uid2 from friend where uid1 = '{$this->_fbUserId}' ) order by name";
+                $_list = $this->_facebookApi->api( array( 'method' => 'fql.query'
+      , 'query' => $_fql ) );
+
+                if ( defined( 'PYE_TRACE_LEVEL' ) && PYE_TRACE_LEVEL > 3 )
+                    CPSLog::trace( __METHOD__, '  - App Friend List Retrieved: ' 
+      . print_r( $_list, true ) );
+
+                //  Make into a list of uids...
+                foreach ( $_list as $_friend )
+                {
+                    if ( ! empty( $_friend['uid'] ) )
+                        $this->_appFriendList[] = '\'' . $_friend['uid'] . '\'';
+                }
+
+                if ( $this->_cacheAppFriends )
+                    PS::_ss( CPSFacebookAppController::APP_FRIEND_CACHE, $this->_
+      appFriendList );
+            }
+        }
+        catch ( Exception $_ex )
+        {
+            error_log( 'Get APP friends failed: ' . $_ex->getMessage() );
+            CPSLog::error( __METHOD__, 'Exception: ' . $_ex->getMessage() );
+            $this->_forceLogin();
+        }
+
+        return $this->_appFriendList;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookUserIdentity_ad0e0d1a30e4654cb79ddcd1b759f956b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookUserIdentity_ad0e0d1a30e4654cb79ddcd1b759f956b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookUserIdentity_aa4239198c895a9c8c1ea86753ed49095}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\_\-initialize@{\_\-initialize}}
+\index{\_\-initialize@{\_\-initialize}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\_\-initialize}]{\setlength{\rightskip}{0pt plus 5cm}\_\-initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_aa4239198c895a9c8c1ea86753ed49095}
+Initialize the Facebook stuff \begin{Desc}
+\item[\hyperlink{todo__todo000005}{Todo}]Come up with a better property placement design \end{Desc}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 211 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Ignore second call and standalone...
+        if ( PS::_gs( 'standalone', false ) || $this->_inForceLogin )
+            return;
+
+        $this->_session = $this->_facebookApi->getSession();
+
+        if ( ! $this->_session )
+        {
+            $this->_inForceLogin = true;
+            $this->_forceLogin();
+        }
+
+        $this->_inForceLogin = false;
+
+        try
+        {
+            //  Get our info...
+            $this->_me = PS::_gs( 'currentMe' );
+
+            if ( null === $this->_me && ! ( $this->_me = $this->_facebookApi->api
+      ( '/me' ) ) )
+                throw new Exception( 'Not really logged in...' );
+
+            //  Not logged in? Authenticate!
+            if ( PS::_ig() && ! CPSFacebookUser::authenticateUser( $this->_facebo
+      okApi, $this ) )
+                throw new Exception( 'Invalid session' );
+
+            //  Log into system...
+            $this->_me = $this->_facebookApi->api( '/me' );
+            $this->_fbUserId = $this->_session['uid'];
+            $this->_accessToken = $this->_session['access_token'];
+            $this->_firstName = PS::o( $this->_me, 'first_name' );
+            $this->_loadUser();
+
+            if ( $this->_autoLoadPictures )
+            {
+                CPSFacebook::$_photoList = $this->getAlbums();
+
+                if ( empty( CPSFacebook::$_photoList ) )
+                    PS::_rs( '_psAutoLoadPictures', '$(function(){$.get("/app/pho
+      tos",function(){});});', CClientScript::POS_END );
+            }
+
+            return $this->_isConnected = true;
+        }
+        catch ( Exception $_ex )
+        {
+            CPSLog::error( __METHOD__, 'FB Exception: ' . $_ex->getMessage() );
+            error_log( 'init exception: ' . $_ex->getMessage() );
+            $this->_forceLogin();
+        }
+
+        return false;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookUserIdentity_aa4239198c895a9c8c1ea86753ed49095_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classCPSFacebookUserIdentity_aa4239198c895a9c8c1ea86753ed49095_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a617a5b82b3ed6584e34461d71febb2cf}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\_\-loadUser@{\_\-loadUser}}
+\index{\_\-loadUser@{\_\-loadUser}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\_\-loadUser}]{\setlength{\rightskip}{0pt plus 5cm}\_\-loadUser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a617a5b82b3ed6584e34461d71febb2cf}
+Loads the user from the database. If the user is not found, a new row is added. \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 270 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_user = null;
+
+        //  NO user id? Bail!
+        if ( empty( $this->_fbUserId ) )
+        {
+            CPSLog::error(__METHOD__,'FBUID EMPTY!' . $this->_fbUserId );
+            return false;
+        }
+
+        //  Is this a new app user?
+        $_model = call_user_func( array( $this->_userModelClass, 'model' ) );
+
+        $_user = $_model->find( array(
+            'condition' => 'pform_user_id_text = :pform_user_id_text and pform_ty
+      pe_code = :pform_type_code',
+            'params' => array(
+                ':pform_user_id_text' => $this->_fbUserId,
+                ':pform_type_code' => 1000,
+            )
+        ));
+
+        //  Not found, assume new...
+        if ( ! $_user )
+        {
+            //  New user...
+            $_user = get_class( $_model );
+            $_user->pform_user_id_text = $this->_fbUserId;
+            $_user->pform_type_code = 1000;
+            $_user->app_add_date = date( 'Y-m-d h:i:s' );
+            $_user->app_del_date = null;
+        }
+
+        //  Set new stuff
+        $_freshness = ( $_user->session_key_text != $this->_accessToken );
+
+        $_user->session_key_text = $this->_accessToken;
+        $_user->last_visit_date = date( 'Y-m-d h:i:s' );
+
+        //  User installed app this time?
+        if ( '1' == PS::o( $_REQUEST, 'installed' ) )
+        {
+            $_user->app_add_date = date( 'Y-m-d h:i:s' );
+            $_user->app_del_date = null;
+            $_user->app_add_count_nbr += 1;
+
+            //  Invite friends?
+            if ( $this->_inviteAfterInstall )
+            {
+                $this->redirect( 'inviteFriends', true, 301 );
+                return false;
+            }
+        }
+
+        if ( $this->_me )
+        {
+            PS::_ss( CPSFacebookAppController::ME_CACHE, $this->_me );
+            $_user->first_name_text = $this->_firstName;
+            $_user->last_name_text = PS::o( $this->_me, 'last_name' );
+            $_user->email_addr_text = PS::o( $this->_me, 'email' );
+            $_user->full_name_text = $this->_firstName . ' ' . strtoupper( substr
+      ( PS::o( $this->_me, 'last_name' ), 0, 1 ) . '.' );
+        }
+
+        //  Clear all the caches
+        if ( $_freshness )
+        {
+            PS::_ss( CPSFacebookAppController::THUMB_CACHE, null );
+            PS::_ss( CPSFacebookAppController::FRIEND_CACHE, null );
+            PS::_ss( CPSFacebookAppController::APP_FRIEND_CACHE, null );
+            PS::_ss( CPSFacebookAppController::PROFILE_CACHE, null );
+            PS::_ss( CPSFacebookAppController::FL_CACHE, null );
+        }
+
+        //  Load app friends
+        $this->_getAppFriends();
+
+        //  Save info...
+        $_user->save();
+
+        //  Stow da ting mon
+        $this->_id = $_user->id;
+
+        //  Set our current user...
+        PS::_ss( 'currentUser', $this->_user = $_user );
+        PS::_ss( 'currentIdentity', $this );
+
+        //  Raise the facebook login event in our controller
+        if ( $_freshness )
+            PS::_gc()->onFacebookLogin( new CEvent( $_user ) );
+
+        return true;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookUserIdentity_a617a5b82b3ed6584e34461d71febb2cf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookUserIdentity_a617a5b82b3ed6584e34461d71febb2cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookUserIdentity_aa238fcc5cb30759876aa89cd2e0711c1}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!api@{api}}
+\index{api@{api}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{api}]{\setlength{\rightskip}{0pt plus 5cm}api (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_aa238fcc5cb30759876aa89cd2e0711c1}
+Passthrough function to \hyperlink{classCPSFacebookUserIdentity_aa238fcc5cb30759876aa89cd2e0711c1}{api()} 
+
+Definition at line 165 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arguments = func_get_args();
+        return call_user_func_array( array( $this->_facebookApi, 'api' ), $_argum
+      ents );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a750c93a7dfab5314f2bf662a407bc5a6}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!authenticate@{authenticate}}
+\index{authenticate@{authenticate}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{authenticate}]{\setlength{\rightskip}{0pt plus 5cm}authenticate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a750c93a7dfab5314f2bf662a407bc5a6}
+Authenticates a user based on session validity from Facebook. This method is required by \hyperlink{}{IUserIdentity}. \begin{DoxyReturn}{Returns}
+boolean whether authentication succeeds. 
+\end{DoxyReturn}
+
+
+Definition at line 176 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->errorCode = self::ERROR_UNKNOWN_IDENTITY;
+
+        if ( $this->_facebookApi )
+        {
+            $this->_session = $this->_facebookApi->getSession();
+            $this->_me = $this->_facebookApi->api( '/me' );
+
+            if ( $this->_session && $this->_me )
+            {
+                $this->errorCode = self::ERROR_NONE;
+                $this->username = trim( $this->_me['name'] );
+
+                //  Raise our event
+                $this->onLoginSuccess( new CPSAuthenticationEvent( $this, $this->
+      _me, $this ) );
+
+                return true;
+            }
+        }
+
+        $this->onLoginFailure( new CPSAuthenticationEvent( $this, $this->_me, $th
+      is ) );
+
+        return false;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classCPSFacebookUserIdentity_a750c93a7dfab5314f2bf662a407bc5a6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a5d251c70a3f9f9daaff7f00ec5f894c0}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getAccessToken@{getAccessToken}}
+\index{getAccessToken@{getAccessToken}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getAccessToken}]{\setlength{\rightskip}{0pt plus 5cm}getAccessToken (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a5d251c70a3f9f9daaff7f00ec5f894c0}
+
+
+Definition at line 45 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_accessToken; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a21df9dbf22cd606881c65d284208c90c}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getAlbums@{getAlbums}}
+\index{getAlbums@{getAlbums}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getAlbums}]{\setlength{\rightskip}{0pt plus 5cm}getAlbums (
+\begin{DoxyParamCaption}
+\item[{\$}]{ id = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a21df9dbf22cd606881c65d284208c90c}
+Fills the album cache 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]The album ID to return, null for all \end{DoxyParams}
+
+
+Definition at line 433 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        static $_inProgress = false;
+
+        $_model = call_user_func( array( $this->_userModelClass, 'model' ) );
+
+        if ( null !== ( $_user = $_model->find( ':pform_user_id_text = pform_user
+      _id_text', array( ':pform_user_id_text' => $this->_fbUserId ) ) ) )
+            CPSFacebook::$_photoList = json_decode( $_user->photo_cache_text, tru
+      e );
+
+        if ( $_inProgress ) return CPSFacebook::$_photoList;
+
+        if ( empty( CPSFacebook::$_photoList ) )
+        {
+            CPSLog::trace( __METHOD__, 'Reloading photo cache...' );
+            $_inProgress = true;
+            CPSFacebook::$_photoList = array();
+
+            try
+            {
+                $_result = $this->_facebookApi->api( '/me/albums' );
+                if ( null != ( CPSFacebook::$_photoList = PS::o( $_result, 'data'
+       ) ) )
+                {
+                    $_result = array();
+
+                    foreach ( CPSFacebook::$_photoList as $_key => $_album )
+                    {
+                        CPSFacebook::$_photoList[$_key]['photos'] = $this->
+      getPhotos( $_album['id'] );
+
+                        if ( ! empty( CPSFacebook::$_photoList[$_key]['photos'] )
+       )
+                        {
+                            foreach ( CPSFacebook::$_photoList[$_key]['photos'] a
+      s $_photo )
+                            {
+                                if ( isset( $_photo['picture'] ) )
+                                {
+                                    CPSFacebook::$_photoList[$_key]['picture'] = 
+      $_photo['picture'];
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    CPSLog::trace( __METHOD__, 'Saving photos to user table cache
+      ...' );
+                    $_user->photo_cache_text = json_encode( 
+      CPSFacebook::$_photoList );
+                    $_user->update( array( 'photo_cache_text' ) );
+                }
+            }
+            catch ( Exception $_ex )
+            {
+                CPSLog::error( __METHOD__, 'Exception: ' . $_ex->getMessage() );
+            }
+        }
+
+        $_inProgress = false;
+        return CPSFacebook::$_photoList;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookUserIdentity_a21df9dbf22cd606881c65d284208c90c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=358pt]{classCPSFacebookUserIdentity_a21df9dbf22cd606881c65d284208c90c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookUserIdentity_abcda3e499f474b2b46474d47161154a2}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getAppFriendList@{getAppFriendList}}
+\index{getAppFriendList@{getAppFriendList}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getAppFriendList}]{\setlength{\rightskip}{0pt plus 5cm}getAppFriendList (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_abcda3e499f474b2b46474d47161154a2}
+
+
+Definition at line 95 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_appFriendList; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a74a2e7cb200195c32d0b9552a331445a}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getAutoLoadPictures@{getAutoLoadPictures}}
+\index{getAutoLoadPictures@{getAutoLoadPictures}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getAutoLoadPictures}]{\setlength{\rightskip}{0pt plus 5cm}getAutoLoadPictures (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a74a2e7cb200195c32d0b9552a331445a}
+
+
+Definition at line 109 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_autoLoadPictures; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_ae401a06f8319a26a012457db1d3908ce}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getCacheAppFriends@{getCacheAppFriends}}
+\index{getCacheAppFriends@{getCacheAppFriends}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getCacheAppFriends}]{\setlength{\rightskip}{0pt plus 5cm}getCacheAppFriends (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_ae401a06f8319a26a012457db1d3908ce}
+
+
+Definition at line 102 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_cacheAppFriends; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a0ef2f4b4ea68bcd957152a5b46a6612e}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getFBUserId@{getFBUserId}}
+\index{getFBUserId@{getFBUserId}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getFBUserId}]{\setlength{\rightskip}{0pt plus 5cm}getFBUserId (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a0ef2f4b4ea68bcd957152a5b46a6612e}
+
+
+Definition at line 63 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_fbUserId; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_ace5f32fc99c7c5989f7576755fc60972}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getFirstName@{getFirstName}}
+\index{getFirstName@{getFirstName}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getFirstName}]{\setlength{\rightskip}{0pt plus 5cm}getFirstName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_ace5f32fc99c7c5989f7576755fc60972}
+
+
+Definition at line 75 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_firstName; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a2e112e7f214a9ffbc1948685a46fc1ee}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getFriendList@{getFriendList}}
+\index{getFriendList@{getFriendList}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getFriendList}]{\setlength{\rightskip}{0pt plus 5cm}getFriendList (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a2e112e7f214a9ffbc1948685a46fc1ee}
+
+
+Definition at line 87 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_friendList; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a12251d0c022e9e21c137a105ff683f13}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getId@{getId}}
+\index{getId@{getId}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getId}]{\setlength{\rightskip}{0pt plus 5cm}getId (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a12251d0c022e9e21c137a105ff683f13}
+
+
+Definition at line 31 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_id; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_aed530f3943074ab9826563b51db5420a}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getInviteAfterInstall@{getInviteAfterInstall}}
+\index{getInviteAfterInstall@{getInviteAfterInstall}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getInviteAfterInstall}]{\setlength{\rightskip}{0pt plus 5cm}getInviteAfterInstall (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_aed530f3943074ab9826563b51db5420a}
+
+
+Definition at line 116 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_inviteAfterInstall; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a966f0f14413b21e8d4e8cf5180cdf627}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getIsConnected@{getIsConnected}}
+\index{getIsConnected@{getIsConnected}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getIsConnected}]{\setlength{\rightskip}{0pt plus 5cm}getIsConnected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a966f0f14413b21e8d4e8cf5180cdf627}
+
+
+Definition at line 123 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_isConnected; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a37af09a26efc969d1381851b8c379808}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getLoginUrl@{getLoginUrl}}
+\index{getLoginUrl@{getLoginUrl}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getLoginUrl}]{\setlength{\rightskip}{0pt plus 5cm}getLoginUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a37af09a26efc969d1381851b8c379808}
+
+
+Definition at line 51 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_loginUrl; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a6bc057a9b0c03f8147a4294936b2494b}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getMe@{getMe}}
+\index{getMe@{getMe}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getMe}]{\setlength{\rightskip}{0pt plus 5cm}getMe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a6bc057a9b0c03f8147a4294936b2494b}
+
+
+Definition at line 69 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_me; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a11900d7eee85bed9fda1a24827c1c5bf}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getPhotos@{getPhotos}}
+\index{getPhotos@{getPhotos}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getPhotos}]{\setlength{\rightskip}{0pt plus 5cm}getPhotos (
+\begin{DoxyParamCaption}
+\item[{\$}]{ aid, }
+\item[{\$}]{ id = {\ttfamily null}, }
+\item[{\$}]{ limit = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a11900d7eee85bed9fda1a24827c1c5bf}
+Retrieves photos or a photo 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]The album ID \item[{\em string}]The photo ID or null for all photos in the album \end{DoxyParams}
+
+
+Definition at line 494 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        static $_recursed = false;
+
+        if ( null == $aid )
+            return null;
+
+        if ( null == CPSFacebook::$_photoList )
+            $this->getAlbums();
+
+        if ( isset( CPSFacebook::$_photoList, CPSFacebook::$_photoList[$aid], 
+      CPSFacebook::$_photoList[$aid]['photos'] ) )
+        {
+            CPSFacebook::$_photoList = CPSFacebook::$_photoList[$aid]['photos'];
+            if ( ! empty( $id ) ) return PS::o( CPSFacebook::$_photoList, $id );
+        }
+
+        //  Not there, grab photos and cache...
+        $_parameterList = array();
+        if ( null != $limit ) $_parameterList['limit'] = $limit;
+
+        $_url = '/' . $aid . '/photos';
+        $_resultList = array();
+
+        while ( true )
+        {
+            try
+            {
+                $_tempList = $this->_facebookApi->api( $_url, $_parameterList );
+            }
+            catch ( Exception $_ex )
+            {
+                break;
+            }
+
+            if ( $_tempList )
+            {
+                $_resultList = array_merge( $_resultList, PS::o( $_tempList, 'dat
+      a', array() ) );
+
+                if ( null != $limit || null === ( $_url = PS::oo( $_tempList, 'pa
+      ging', 'next' ) ) )
+                    break;
+            }
+            else
+                break;
+        }
+
+        return $_resultList;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookUserIdentity_a11900d7eee85bed9fda1a24827c1c5bf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookUserIdentity_a11900d7eee85bed9fda1a24827c1c5bf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookUserIdentity_aefa4c5bd150e2a7d525576d7959c6911}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getSession@{getSession}}
+\index{getSession@{getSession}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getSession}]{\setlength{\rightskip}{0pt plus 5cm}getSession (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_aefa4c5bd150e2a7d525576d7959c6911}
+
+
+Definition at line 57 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_session; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_ae81b7186fb97a7c6457edcc68c9aa2ef}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getUser@{getUser}}
+\index{getUser@{getUser}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getUser}]{\setlength{\rightskip}{0pt plus 5cm}getUser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_ae81b7186fb97a7c6457edcc68c9aa2ef}
+
+
+Definition at line 81 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_user; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a0b280ce1a525781c8943e5101471a6c0}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!getUserModelClass@{getUserModelClass}}
+\index{getUserModelClass@{getUserModelClass}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{getUserModelClass}]{\setlength{\rightskip}{0pt plus 5cm}getUserModelClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a0b280ce1a525781c8943e5101471a6c0}
+
+
+Definition at line 38 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_userModelClass; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a0e6ee11d30fc9d158e8464759e64c1f8}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!onLoginFailure@{onLoginFailure}}
+\index{onLoginFailure@{onLoginFailure}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{onLoginFailure}]{\setlength{\rightskip}{0pt plus 5cm}onLoginFailure (
+\begin{DoxyParamCaption}
+\item[{{\bf CPSAuthenticationEvent} \$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a0e6ee11d30fc9d158e8464759e64c1f8}
+Raises the onLoginFailure event 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSAuthenticationEvent}{CPSAuthenticationEvent}}]\$event \end{DoxyParams}
+
+
+Definition at line 575 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->raiseEvent( 'onLoginFailure', $event );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{classCPSFacebookUserIdentity_a0e6ee11d30fc9d158e8464759e64c1f8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookUserIdentity_acad8b3c7359a6bd26c2399d8d5819b2b}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!onLoginSuccess@{onLoginSuccess}}
+\index{onLoginSuccess@{onLoginSuccess}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{onLoginSuccess}]{\setlength{\rightskip}{0pt plus 5cm}onLoginSuccess (
+\begin{DoxyParamCaption}
+\item[{{\bf CPSAuthenticationEvent} \$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_acad8b3c7359a6bd26c2399d8d5819b2b}
+Raises the onLoginSuccess event 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSAuthenticationEvent}{CPSAuthenticationEvent}}]\$event \end{DoxyParams}
+
+
+Definition at line 584 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->raiseEvent( 'onLoginSuccess', $event );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classCPSFacebookUserIdentity_acad8b3c7359a6bd26c2399d8d5819b2b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookUserIdentity_af4ec9526210829eed07fbf8bcd74f784}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!setAutoLoadPictures@{setAutoLoadPictures}}
+\index{setAutoLoadPictures@{setAutoLoadPictures}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{setAutoLoadPictures}]{\setlength{\rightskip}{0pt plus 5cm}setAutoLoadPictures (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_af4ec9526210829eed07fbf8bcd74f784}
+
+
+Definition at line 110 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_autoLoadPictures = $value; return $this; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_a3f665b8d4df7bb1952cb8fc3f5b75561}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!setCacheAppFriends@{setCacheAppFriends}}
+\index{setCacheAppFriends@{setCacheAppFriends}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{setCacheAppFriends}]{\setlength{\rightskip}{0pt plus 5cm}setCacheAppFriends (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_a3f665b8d4df7bb1952cb8fc3f5b75561}
+
+
+Definition at line 103 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_cacheAppFriends = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_aa664eee45a9eb336b581131cb0ac667d}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!setId@{setId}}
+\index{setId@{setId}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{setId}]{\setlength{\rightskip}{0pt plus 5cm}setId (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_aa664eee45a9eb336b581131cb0ac667d}
+
+
+Definition at line 32 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_id = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_acb332c6546b31eabe02618a7ccc2732c}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!setInviteAfterInstall@{setInviteAfterInstall}}
+\index{setInviteAfterInstall@{setInviteAfterInstall}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{setInviteAfterInstall}]{\setlength{\rightskip}{0pt plus 5cm}setInviteAfterInstall (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_acb332c6546b31eabe02618a7ccc2732c}
+
+
+Definition at line 117 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_inviteAfterInstall = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookUserIdentity_ae0af15a6b8117c8e984beae8e585fcd2}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!setUserModelClass@{setUserModelClass}}
+\index{setUserModelClass@{setUserModelClass}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{setUserModelClass}]{\setlength{\rightskip}{0pt plus 5cm}setUserModelClass (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookUserIdentity_ae0af15a6b8117c8e984beae8e585fcd2}
+
+
+Definition at line 39 of file CPSFacebookUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_userModelClass = $value; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSFacebookUserIdentity_a4baf52b9d7a98e5d1354c0184a030233}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-accessToken@{\$\_\-accessToken}}
+\index{\$\_\-accessToken@{\$\_\-accessToken}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-accessToken}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-accessToken\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a4baf52b9d7a98e5d1354c0184a030233}
+
+
+Definition at line 44 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_a69ad1b664bbcbc06fbaeb07133568469}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-appFriendList@{\$\_\-appFriendList}}
+\index{\$\_\-appFriendList@{\$\_\-appFriendList}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-appFriendList}]{\setlength{\rightskip}{0pt plus 5cm}{\bf array} \$\_\-appFriendList = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a69ad1b664bbcbc06fbaeb07133568469}
+
+
+Definition at line 94 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_acbda478de6e55a60d9716bd3d101e40d}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-autoLoadPictures@{\$\_\-autoLoadPictures}}
+\index{\$\_\-autoLoadPictures@{\$\_\-autoLoadPictures}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-autoLoadPictures}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-autoLoadPictures = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_acbda478de6e55a60d9716bd3d101e40d}
+
+
+Definition at line 108 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_a1ef3e76667a47cb12fabf1c9c79f17ff}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-cacheAppFriends@{\$\_\-cacheAppFriends}}
+\index{\$\_\-cacheAppFriends@{\$\_\-cacheAppFriends}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-cacheAppFriends}]{\setlength{\rightskip}{0pt plus 5cm}boolean \$\_\-cacheAppFriends = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a1ef3e76667a47cb12fabf1c9c79f17ff}
+
+
+Definition at line 101 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_a2f481ea63815c4c7e8c6dad8b4d839ec}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-facebookApi@{\$\_\-facebookApi}}
+\index{\$\_\-facebookApi@{\$\_\-facebookApi}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-facebookApi}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-facebookApi\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a2f481ea63815c4c7e8c6dad8b4d839ec}
+
+
+Definition at line 132 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_a19e04e69bd6cde6129a45de979954cfa}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-fbUserId@{\$\_\-fbUserId}}
+\index{\$\_\-fbUserId@{\$\_\-fbUserId}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-fbUserId}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-fbUserId\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a19e04e69bd6cde6129a45de979954cfa}
+
+
+Definition at line 62 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_ae47bb90ba7f0f5de161e554290d3b5b8}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-firstName@{\$\_\-firstName}}
+\index{\$\_\-firstName@{\$\_\-firstName}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-firstName}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-firstName\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_ae47bb90ba7f0f5de161e554290d3b5b8}
+
+
+Definition at line 74 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_a93380830cda99a4927d3507251a12e32}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-friendList@{\$\_\-friendList}}
+\index{\$\_\-friendList@{\$\_\-friendList}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-friendList}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-friendList = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a93380830cda99a4927d3507251a12e32}
+
+
+Definition at line 86 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_a64da16c4a1c7b2dc6784f6ef26341ed7}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-id@{\$\_\-id}}
+\index{\$\_\-id@{\$\_\-id}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-id = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a64da16c4a1c7b2dc6784f6ef26341ed7}
+
+
+Definition at line 30 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_a425e3b02d08adda9a06498d8e0f5714c}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-inForceLogin@{\$\_\-inForceLogin}}
+\index{\$\_\-inForceLogin@{\$\_\-inForceLogin}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-inForceLogin}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-inForceLogin\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a425e3b02d08adda9a06498d8e0f5714c}
+
+
+Definition at line 137 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_a06deb2baf54257cacaf8cbc83f9bf1a1}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-inviteAfterInstall@{\$\_\-inviteAfterInstall}}
+\index{\$\_\-inviteAfterInstall@{\$\_\-inviteAfterInstall}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-inviteAfterInstall}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-inviteAfterInstall = true\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a06deb2baf54257cacaf8cbc83f9bf1a1}
+
+
+Definition at line 115 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_a3fb00b079c40b68e2ce79a0c27aad663}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-isConnected@{\$\_\-isConnected}}
+\index{\$\_\-isConnected@{\$\_\-isConnected}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-isConnected}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-isConnected = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a3fb00b079c40b68e2ce79a0c27aad663}
+
+
+Definition at line 122 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_ad0039d9d92917bd2c7e46c93d8562b8b}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-loginUrl@{\$\_\-loginUrl}}
+\index{\$\_\-loginUrl@{\$\_\-loginUrl}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-loginUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-loginUrl = ''\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_ad0039d9d92917bd2c7e46c93d8562b8b}
+
+
+Definition at line 50 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_a45e53d351918dc7cad7136ff44e1724b}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-me@{\$\_\-me}}
+\index{\$\_\-me@{\$\_\-me}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-me}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-me\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a45e53d351918dc7cad7136ff44e1724b}
+
+
+Definition at line 68 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_ad0641deaf4d314f034a134efaa6fbff0}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-session@{\$\_\-session}}
+\index{\$\_\-session@{\$\_\-session}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-session}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-session\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_ad0641deaf4d314f034a134efaa6fbff0}
+
+
+Definition at line 56 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_a5df5982b9dadc74df05081972cd67fdf}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-user@{\$\_\-user}}
+\index{\$\_\-user@{\$\_\-user}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-user = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a5df5982b9dadc74df05081972cd67fdf}
+
+
+Definition at line 80 of file CPSFacebookUserIdentity.php.
+
+\hypertarget{classCPSFacebookUserIdentity_a86b918c4cc90bae631b0f42b136d3a3c}{
+\index{CPSFacebookUserIdentity@{CPSFacebookUserIdentity}!\$\_\-userModelClass@{\$\_\-userModelClass}}
+\index{\$\_\-userModelClass@{\$\_\-userModelClass}!CPSFacebookUserIdentity@{CPSFacebookUserIdentity}}
+\subsubsection[{\$\_\-userModelClass}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-userModelClass = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookUserIdentity_a86b918c4cc90bae631b0f42b136d3a3c}
+
+
+Definition at line 37 of file CPSFacebookUserIdentity.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/facebook/\hyperlink{CPSFacebookUserIdentity_8php}{CPSFacebookUserIdentity.php}\end{DoxyCompactItemize}

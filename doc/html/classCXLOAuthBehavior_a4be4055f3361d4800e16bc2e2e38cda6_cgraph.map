@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCXLOAuthBehavior.html#a5126349c471fcaff1a74b9d117b979b1" title="Loads a token from the user state oAuthToken." alt="" coords="123,5,208,35"/>
+<area shape="rect" id="node11" href="$classCXLOAuthBehavior.html#aeea17b8cf4b07497f4c9a4d5462c752a" title="User has been authorized event." alt="" coords="97,59,233,88"/>
+<area shape="rect" id="node13" href="$classCXLOAuthBehavior.html#a8027c4853ebf41108725eb798ebfcd59" title="Stores the current token in a member variable and in the user state oAuthToken." alt="" coords="120,112,211,141"/>
+<area shape="rect" id="node5" href="$classYiiXLBase.html#adeaa7024db6a25cc45abc37c388661d3" title="Returns the value of a variable that is stored in the user session." alt="" coords="287,5,399,35"/>
+<area shape="rect" id="node9" href="$classCXLHash.html#ace936368fcb6b1d6d533c4d19cf7e596" title="Generic hashing method." alt="" coords="284,59,401,88"/>
+<area shape="rect" id="node7" href="$classYiiXLBase.html#ae7d5a13ae379e82d5d28bbc2a480f524" title="YiiXLBase::_gu" alt="" coords="452,59,564,88"/>
+<area shape="rect" id="node15" href="$classYiiXLBase.html#aa5c4459afda5a8a58c46a26aecafaf37" title="Stores a variable from the user session." alt="" coords="288,112,397,141"/>
+</map>

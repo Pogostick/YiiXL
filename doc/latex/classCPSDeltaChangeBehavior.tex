@@ -1,0 +1,510 @@
+\hypertarget{classCPSDeltaChangeBehavior}{
+\section{CPSDeltaChangeBehavior Class Reference}
+\label{classCPSDeltaChangeBehavior}\index{CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}}
+}
+
+
+Inheritance diagram for CPSDeltaChangeBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classCPSDeltaChangeBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSDeltaChangeBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classCPSDeltaChangeBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSDeltaChangeBehavior_a8e3ecf06c1d27a09a323e06269bb63a6}{getLastAttributes} ()
+\item 
+\hyperlink{classCPSDeltaChangeBehavior_a1c2c686604b1f1efb3677252be1b8733}{getLastAttribute} (\$oWhich)
+\item 
+\hyperlink{classCPSDeltaChangeBehavior_a8a514c6bfa4a35f07eabf5d8d97a0381}{getCaseInsensitive} ()
+\item 
+\hyperlink{classCPSDeltaChangeBehavior_aae8889c137f252aaab829aeb937d5745}{setCaseInsensitive} (\$bValue)
+\item 
+\hyperlink{classCPSDeltaChangeBehavior_a22e09b2ab52592b5294616c1c6dc8f97}{afterFind} (\$oEvent)
+\item 
+\hyperlink{classCPSDeltaChangeBehavior_aef7ee24ff92508fe06889e486940f753}{afterSave} (\$oEvent)
+\item 
+\hyperlink{classCPSDeltaChangeBehavior_a07ea4bfe78bf9bfa2b9d832d5f7189ba}{revert} ()
+\item 
+\hyperlink{classCPSDeltaChangeBehavior_abfaf3d0327b6956525bb041380b0b939}{getChangedSet} (\$arAttributes=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$bReturnChanges=false)
+\item 
+\hyperlink{classCPSDeltaChangeBehavior_a9dc74e0ca5d3d8445a1e885ba84ae2fa}{didChange} (\$oAttributes)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSDeltaChangeBehavior_a8d728243619642ee44cfbc3f0e797db2}{checkAttributeChange} (\$sAttribute, \$bReturnChanges=false, \$bQuickCheck=false)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSDeltaChangeBehavior_ad842cf610c9bdd9e1ec9235f3f4ccb88}{\$m\_\-arLastAttributes} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}()
+\item 
+\hyperlink{classCPSDeltaChangeBehavior_a8aece4f3a3d397467cae1e8dc6613454}{\$m\_\-bCaseInsensitive} = true
+\item 
+\hyperlink{classCPSDeltaChangeBehavior_a9edb581e40571436a736bfdfbc9c0a75}{\$m\_\-bIsDirty} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 25 of file CPSDeltaChangeBehavior.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSDeltaChangeBehavior_a22e09b2ab52592b5294616c1c6dc8f97}{
+\index{CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}!afterFind@{afterFind}}
+\index{afterFind@{afterFind}!CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}}
+\subsubsection[{afterFind}]{\setlength{\rightskip}{0pt plus 5cm}afterFind (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oEvent}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDeltaChangeBehavior_a22e09b2ab52592b5294616c1c6dc8f97}
+After a row is pulled from the database... 
+\begin{DoxyParams}{Parameters}
+\item[{\em CEvent}]\$oEvent \end{DoxyParams}
+
+
+Definition at line 61 of file CPSDeltaChangeBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+//      CPSLog::trace( __METHOD__, 'afterFind event raised' );
+
+        //  Get fresh values
+        $this->m_arLastAttributes = $oEvent->sender->getAttributes();
+        $this->m_bIsDirty = false;
+        
+        //  Let parents have a go...
+        return parent::afterFind( $oEvent );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDeltaChangeBehavior_aef7ee24ff92508fe06889e486940f753}{
+\index{CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}!afterSave@{afterSave}}
+\index{afterSave@{afterSave}!CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}}
+\subsubsection[{afterSave}]{\setlength{\rightskip}{0pt plus 5cm}afterSave (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oEvent}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDeltaChangeBehavior_aef7ee24ff92508fe06889e486940f753}
+After a row is saved to the database... 
+\begin{DoxyParams}{Parameters}
+\item[{\em CEvent}]\$oEvent \end{DoxyParams}
+
+
+Definition at line 77 of file CPSDeltaChangeBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+//      CPSLog::trace( __METHOD__, 'afterSave event raised' );
+
+        //  Get fresh values
+        $this->m_arLastAttributes = $oEvent->sender->getAttributes();
+        $this->m_bIsDirty = false;
+
+        //  Let parents have a go...
+        return parent::afterSave( $oEvent );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDeltaChangeBehavior_a8d728243619642ee44cfbc3f0e797db2}{
+\index{CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}!checkAttributeChange@{checkAttributeChange}}
+\index{checkAttributeChange@{checkAttributeChange}!CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}}
+\subsubsection[{checkAttributeChange}]{\setlength{\rightskip}{0pt plus 5cm}checkAttributeChange (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sAttribute, }
+\item[{\$}]{ bReturnChanges = {\ttfamily false}, }
+\item[{\$}]{ bQuickCheck = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSDeltaChangeBehavior_a8d728243619642ee44cfbc3f0e797db2}
+If attribute has changed, returns array of old/new values.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sAttribute \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 166 of file CPSDeltaChangeBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arOut = array();
+        $_bChanged = false;
+        $_arSchema = ( $this->owner instanceof CPSModel ) ? $this->owner->getSche
+      ma() : $this->owner->getMetaData()->columns;
+
+        //  Get old and new values
+        $_oNewValue = CPSHelperBase::nvl( $this->owner->getAttribute( $sAttribute
+       ), 'NULL' );
+        $_oOldValue = CPSHelperBase::nvl( $this->getLastAttribute( $sAttribute ),
+       'NULL' );
+
+        //  Make dates look the same for string comparison
+        if ( isset( $_arSchema[ $sAttribute ] ) && ( $_arSchema[ $sAttribute ]->d
+      bType == 'date' || $_arSchema[ $sAttribute ]->dbType == 'datetime' ) )
+            $_bChanged = ( strtotime( $_oOldValue ) != strtotime( $_oNewValue ) )
+      ;
+        else
+            $_bChanged = ( $this->m_bCaseInsensitive ) ? ( 0 != strcasecmp( $_oOl
+      dValue, $_oNewValue ) ) : ( 0 != strcmp( $_sOldValue, $_sNewValue ) );
+
+        //  Record the change...
+        if ( $_bChanged ) 
+        {
+            //  Set our global dirty flag
+            if ( ! $this->m_bIsDirty ) $this->m_bIsDirty = true;
+            
+            //  Just wanna know?
+            if ( $bQuickCheck ) return true;
+                
+            //  Store info
+            $_arOut[ $sAttribute ] = $bReturnChanges ? array( $_oOldValue, $_oNew
+      Value ) : $_oOldValue;
+        }
+        
+        //  Return
+        return empty( $_arOut ) ? ( $bQuickCheck ? false : null ) : $_arOut;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSDeltaChangeBehavior_a8d728243619642ee44cfbc3f0e797db2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classCPSDeltaChangeBehavior_a8d728243619642ee44cfbc3f0e797db2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDeltaChangeBehavior_a9dc74e0ca5d3d8445a1e885ba84ae2fa}{
+\index{CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}!didChange@{didChange}}
+\index{didChange@{didChange}!CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}}
+\subsubsection[{didChange}]{\setlength{\rightskip}{0pt plus 5cm}didChange (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oAttributes}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDeltaChangeBehavior_a9dc74e0ca5d3d8445a1e885ba84ae2fa}
+Returns true if the attribute(s) changed since save
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string$|$array}]\$oAttributes You may pass in a single attribute or an array of attributes to check \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSDeltaChangeBehavior_abfaf3d0327b6956525bb041380b0b939}{getChangedSet} 
+\end{DoxySeeAlso}
+
+
+Definition at line 135 of file CPSDeltaChangeBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! $this->m_bIsDirty )
+        {
+            $_arCheck = $oAttributes;
+            if ( ! is_array( $_arCheck ) ) $_arCheck = array( $_arCheck );
+
+            foreach ( $_arCheck as $_sKey => $_oValue )
+            {
+                if ( $this->checkAttributeChange( $_sKey ) )
+                {
+                    $this->m_bIsDirty = true;
+                    break;
+                }
+            }
+        }
+            
+        //  Return
+        return $this->m_bIsDirty;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSDeltaChangeBehavior_a9dc74e0ca5d3d8445a1e885ba84ae2fa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDeltaChangeBehavior_a8a514c6bfa4a35f07eabf5d8d97a0381}{
+\index{CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}!getCaseInsensitive@{getCaseInsensitive}}
+\index{getCaseInsensitive@{getCaseInsensitive}!CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}}
+\subsubsection[{getCaseInsensitive}]{\setlength{\rightskip}{0pt plus 5cm}getCaseInsensitive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDeltaChangeBehavior_a8a514c6bfa4a35f07eabf5d8d97a0381}
+
+
+Definition at line 44 of file CPSDeltaChangeBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_bCaseInsensitive; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDeltaChangeBehavior_abfaf3d0327b6956525bb041380b0b939}{
+\index{CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}!getChangedSet@{getChangedSet}}
+\index{getChangedSet@{getChangedSet}!CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}}
+\subsubsection[{getChangedSet}]{\setlength{\rightskip}{0pt plus 5cm}getChangedSet (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arAttributes = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ bReturnChanges = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDeltaChangeBehavior_abfaf3d0327b6956525bb041380b0b939}
+Returns an array of changed attributes since last save. \begin{DoxyReturn}{Returns}
+array The changed set of attributes or an empty array. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSDeltaChangeBehavior_a9dc74e0ca5d3d8445a1e885ba84ae2fa}{didChange} 
+\end{DoxySeeAlso}
+
+
+Definition at line 107 of file CPSDeltaChangeBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arOut = array();
+
+        if ( $this->m_bIsDirty )
+        {       
+            foreach ( $this->m_arLastAttributes as $_sKey => $_sValue )
+            {
+                //  Only return asked for attributes
+                if ( ! empty( $arAttributes ) && ! in_array( $_sKey, $arAttribute
+      s ) )
+                    continue;
+                    
+                //  This value changed...
+                if ( $_arTemp = $this->checkAttributeChange( $_sKey, $bReturnChan
+      ges ) )
+                    $_arOut = array_merge( $_arOut, $_arTemp );
+            }
+        }
+    
+        return $_arOut;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSDeltaChangeBehavior_abfaf3d0327b6956525bb041380b0b939_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDeltaChangeBehavior_a1c2c686604b1f1efb3677252be1b8733}{
+\index{CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}!getLastAttribute@{getLastAttribute}}
+\index{getLastAttribute@{getLastAttribute}!CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}}
+\subsubsection[{getLastAttribute}]{\setlength{\rightskip}{0pt plus 5cm}getLastAttribute (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oWhich}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDeltaChangeBehavior_a1c2c686604b1f1efb3677252be1b8733}
+
+
+Definition at line 37 of file CPSDeltaChangeBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return CPSHelperBase::o( $this->m_arLastAttributes, $oWhich ); }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{classCPSDeltaChangeBehavior_a1c2c686604b1f1efb3677252be1b8733_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSDeltaChangeBehavior_a1c2c686604b1f1efb3677252be1b8733_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDeltaChangeBehavior_a8e3ecf06c1d27a09a323e06269bb63a6}{
+\index{CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}!getLastAttributes@{getLastAttributes}}
+\index{getLastAttributes@{getLastAttributes}!CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}}
+\subsubsection[{getLastAttributes}]{\setlength{\rightskip}{0pt plus 5cm}getLastAttributes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDeltaChangeBehavior_a8e3ecf06c1d27a09a323e06269bb63a6}
+
+
+Definition at line 36 of file CPSDeltaChangeBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_arLastAttributes; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDeltaChangeBehavior_a07ea4bfe78bf9bfa2b9d832d5f7189ba}{
+\index{CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}!revert@{revert}}
+\index{revert@{revert}!CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}}
+\subsubsection[{revert}]{\setlength{\rightskip}{0pt plus 5cm}revert (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDeltaChangeBehavior_a07ea4bfe78bf9bfa2b9d832d5f7189ba}
+Reverts a model back to its state before changes were made. \begin{DoxyReturn}{Returns}
+boolean True if reverted. 
+\end{DoxyReturn}
+
+
+Definition at line 97 of file CPSDeltaChangeBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->owner->setAttributes( $this->m_arLastAttributes );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDeltaChangeBehavior_aae8889c137f252aaab829aeb937d5745}{
+\index{CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}!setCaseInsensitive@{setCaseInsensitive}}
+\index{setCaseInsensitive@{setCaseInsensitive}!CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}}
+\subsubsection[{setCaseInsensitive}]{\setlength{\rightskip}{0pt plus 5cm}setCaseInsensitive (
+\begin{DoxyParamCaption}
+\item[{\$}]{ bValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDeltaChangeBehavior_aae8889c137f252aaab829aeb937d5745}
+
+
+Definition at line 45 of file CPSDeltaChangeBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_bCaseInsensitive = $bValue; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSDeltaChangeBehavior_ad842cf610c9bdd9e1ec9235f3f4ccb88}{
+\index{CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}!\$m\_\-arLastAttributes@{\$m\_\-arLastAttributes}}
+\index{\$m\_\-arLastAttributes@{\$m\_\-arLastAttributes}!CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}}
+\subsubsection[{\$m\_\-arLastAttributes}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-arLastAttributes = {\bf array}()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSDeltaChangeBehavior_ad842cf610c9bdd9e1ec9235f3f4ccb88}
+
+
+Definition at line 35 of file CPSDeltaChangeBehavior.php.
+
+\hypertarget{classCPSDeltaChangeBehavior_a8aece4f3a3d397467cae1e8dc6613454}{
+\index{CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}!\$m\_\-bCaseInsensitive@{\$m\_\-bCaseInsensitive}}
+\index{\$m\_\-bCaseInsensitive@{\$m\_\-bCaseInsensitive}!CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}}
+\subsubsection[{\$m\_\-bCaseInsensitive}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-bCaseInsensitive = true\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSDeltaChangeBehavior_a8aece4f3a3d397467cae1e8dc6613454}
+
+
+Definition at line 43 of file CPSDeltaChangeBehavior.php.
+
+\hypertarget{classCPSDeltaChangeBehavior_a9edb581e40571436a736bfdfbc9c0a75}{
+\index{CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}!\$m\_\-bIsDirty@{\$m\_\-bIsDirty}}
+\index{\$m\_\-bIsDirty@{\$m\_\-bIsDirty}!CPSDeltaChangeBehavior@{CPSDeltaChangeBehavior}}
+\subsubsection[{\$m\_\-bIsDirty}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-bIsDirty = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSDeltaChangeBehavior_a9edb581e40571436a736bfdfbc9c0a75}
+
+
+Definition at line 51 of file CPSDeltaChangeBehavior.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/behaviors/\hyperlink{CPSDeltaChangeBehavior_8php}{CPSDeltaChangeBehavior.php}\end{DoxyCompactItemize}

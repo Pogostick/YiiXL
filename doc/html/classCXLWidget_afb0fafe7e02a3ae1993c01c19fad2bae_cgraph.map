@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCXLWidget.html#a30bcc620a40b8f755dbafb28ff1c76d4" title="Renders the widget queues in the right order/sequence." alt="" coords="97,85,167,115"/>
+<area shape="rect" id="node5" href="$classCXLWidget.html#a13868aafdf32adbae02f5a6f67b09a85" title="Renders either an open or close container tag for this widget." alt="" coords="216,5,349,35"/>
+<area shape="rect" id="node11" href="$classCXLWidget.html#ab5306e10e3f9f19a140e41c511ff4418" title="Renders any CSS code for the widget." alt="" coords="236,59,329,88"/>
+<area shape="rect" id="node20" href="$classCXLWidget.html#a4aaa4a2e6a8c23d1271f20ba8825b74f" title="Renders any HTML for the widget." alt="" coords="232,112,333,141"/>
+<area shape="rect" id="node22" href="$classCXLWidget.html#a5b1cb053d8f49692a780a713a6f13f13" title="Renders any CSS code for the widget." alt="" coords="225,165,340,195"/>
+<area shape="rect" id="node7" href="$classCXLWidget.html#ad1145e067eca389073867be1a9d5d57e" title="Gets a single configuration option." alt="" coords="416,5,501,35"/>
+<area shape="rect" id="node9" href="$classYiiXLBase.html#abba281d4c1813d0fb984cbca6784930a" title="Retrieves an option from the given array." alt="" coords="617,5,716,35"/>
+<area shape="rect" id="node13" href="$classYiiXLBase.html#a7c4e9be274589248e2464de14fad190e" title="YiiXLBase::_gbu" alt="" coords="399,112,519,141"/>
+<area shape="rect" id="node15" href="$classYiiXLBase.html#a617fe0ffa46c9fc20d8c3576a2c73cf8" title="Registers a CSS file." alt="" coords="403,59,515,88"/>
+<area shape="rect" id="node17" href="$classYiiXLBase.html#af06aa8413e78124ffe297435efed445a" title="Registers a CSS file." alt="" coords="576,59,757,88"/>
+<area shape="rect" id="node25" href="$classYiiXLBase.html#ae5089c4caea1197b2462a18eda83ca8c" title="Registers a javascript file." alt="" coords="403,165,515,195"/>
+<area shape="rect" id="node27" href="$classYiiXLBase.html#a6fd77833c97fcb3d12378783f60c2942" title="Registers a javascript file." alt="" coords="569,165,764,195"/>
+</map>

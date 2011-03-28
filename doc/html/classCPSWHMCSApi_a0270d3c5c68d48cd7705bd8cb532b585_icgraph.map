@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSWHMCSBillingApi.html#a7d1087e3f457be095045451fd1ca0c36" title="CPSWHMCSBillingApi::acceptOrder" alt="" coords="177,5,420,35"/>
+<area shape="rect" id="node5" href="$classCPSWHMCSBillingApi.html#a0c6d4db07c7707482e2486b050511dc1" title="CPSWHMCSBillingApi::addBillableItem" alt="" coords="168,59,429,88"/>
+<area shape="rect" id="node7" href="$classCPSWHMCSClientApi.html#a619bc608e1605357f83107396ee75bd7" title="CPSWHMCSClientApi::addClient" alt="" coords="188,112,409,141"/>
+<area shape="rect" id="node9" href="$classCPSWHMCSBillingApi.html#a231c09b003f3e61cdcc91229fa484c26" title="CPSWHMCSBillingApi::addCredit" alt="" coords="187,165,411,195"/>
+<area shape="rect" id="node11" href="$classCPSWHMCSClientApi.html#a431fcd2819eb9ed114e8bbb473aa782b" title="CPSWHMCSClientApi::addInvoicePayment" alt="" coords="156,219,441,248"/>
+<area shape="rect" id="node13" href="$classCPSWHMCSBillingApi.html#aa4b166b036fc55289d58a6b4a7b00f09" title="CPSWHMCSBillingApi::addOrder" alt="" coords="188,272,409,301"/>
+<area shape="rect" id="node15" href="$classCPSWHMCSBillingApi.html#aa345b258ae40b84a62e09fdff860fd18" title="CPSWHMCSBillingApi::createInvoice" alt="" coords="175,325,423,355"/>
+<area shape="rect" id="node17" href="$classCPSWHMCSClientApi.html#a9b4a4c2071ec29da8b57507f824c1817" title="CPSWHMCSClientApi::deleteClient" alt="" coords="180,379,417,408"/>
+<area shape="rect" id="node19" href="$classCPSWHMCSClientApi.html#a81bbebdbfaa0d2e514b5313cacd92f72" title="CPSWHMCSClientApi::getClientsDetails" alt="" coords="164,432,433,461"/>
+<area shape="rect" id="node21" href="$classCPSWHMCSClientApi.html#a7e298e9dbfd4322701dd3b9addd1432d" title="CPSWHMCSClientApi::getClientsProducts" alt="" coords="157,485,440,515"/>
+<area shape="rect" id="node23" href="$classCPSWHMCSBillingApi.html#a0d0eecd0e180b07fc7f4d4a59ecbf45e" title="CPSWHMCSBillingApi::getInvoice" alt="" coords="185,539,412,568"/>
+<area shape="rect" id="node25" href="$classCPSWHMCSBillingApi.html#a0cf52d9874c728d93817bb547bd7e30e" title="CPSWHMCSBillingApi::getOrders" alt="" coords="185,592,412,621"/>
+<area shape="rect" id="node27" href="$classCPSWHMCSSupportApi.html#aa69607d67136ffc0cc745d2c5a3c94f3" title="CPSWHMCSSupportApi::openTicket" alt="" coords="176,645,421,675"/>
+<area shape="rect" id="node29" href="$classCPSWHMCSClientApi.html#a629cb6c4481550eb847f834e3010b78f" title="CPSWHMCSClientApi::updateClient" alt="" coords="177,699,420,728"/>
+</map>

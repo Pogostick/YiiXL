@@ -1,0 +1,668 @@
+\hypertarget{classCPSFirePHP}{
+\section{CPSFirePHP Class Reference}
+\label{classCPSFirePHP}\index{CPSFirePHP@{CPSFirePHP}}
+}
+
+
+Inheritance diagram for CPSFirePHP:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classCPSFirePHP__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSFirePHP:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classCPSFirePHP__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFirePHP_af917e8d00ffa6599a9bf4ca8c6161cb3}{enableConsole} (CView \$oView)
+\item 
+\hyperlink{classCPSFirePHP_ac65c2555c09638bb6abc022401d1e0ba}{getPhp} ()
+\item 
+\hyperlink{classCPSFirePHP_adabf9c48e2c9bf149be4738eea4d84e7}{getModules} ()
+\item 
+\hyperlink{classCPSFirePHP_a57e4cfe772218ab32bf592036147f759}{getControllers} ()
+\item 
+\hyperlink{classCPSFirePHP_a85257a6026e75945f9e50ece1077c10c}{getModels} ()
+\item 
+\hyperlink{classCPSFirePHP_a34865cf7d06a92175b0761b7701256b7}{getClassDiffValues} (\&\$arBaseVars, \&\$arClassVars)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSFirePHP_a1ae5abc3ad17654100e3ade1df460965}{JS\_\-NAME} = 'arPSFirePHP'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFirePHP_ab7d4c42aded424959efc81e998a00992}{getVars} (\$oView)
+\item 
+\hyperlink{classCPSFirePHP_a5a1b761c901432b2bfd7fc4e5e75a6bd}{getLogs} ()
+\item 
+\hyperlink{classCPSFirePHP_a37357ff7fe8d1c1ea764fa1465637543}{getConstants} ()
+\item 
+\hyperlink{classCPSFirePHP_a74b1f507d455e4500e8a96432953b59e}{getSessionData} ()
+\item 
+\hyperlink{classCPSFirePHP_a0d26c06309c3dc68c3f035e423549d8c}{getPageData} ()
+\item 
+\hyperlink{classCPSFirePHP_a4f658740c9bd4a333fa84fdc90538d97}{getViewList} (\$oCtrl)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 45 of file CPSFirePHP.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSFirePHP_af917e8d00ffa6599a9bf4ca8c6161cb3}{
+\index{CPSFirePHP@{CPSFirePHP}!enableConsole@{enableConsole}}
+\index{enableConsole@{enableConsole}!CPSFirePHP@{CPSFirePHP}}
+\subsubsection[{enableConsole}]{\setlength{\rightskip}{0pt plus 5cm}enableConsole (
+\begin{DoxyParamCaption}
+\item[{CView \$}]{ oView}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFirePHP_af917e8d00ffa6599a9bf4ca8c6161cb3}
+View FirePHP information
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em CView}]\$oView \end{DoxyParams}
+
+
+Definition at line 62 of file CPSFirePHP.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Define javascript array
+        $_sScript = "\nvar " . self::JS_NAME . " = new Array();";
+        $_sScript .= "\n" . self::JS_NAME . "[ 'Version' ] = '" . Yii::getVersion
+      () . "';";
+
+        //  Comment out the ones you don't need.
+        //  The first 4 or 5 are suggested mostly.
+        //  The others are general info that doesn't change much, but
+        //  Might be good for familarization with the way Yii works.
+
+        $_sScript .= "\n" . $this->getSessionData();
+        $_sScript .= "\n" . $this->getPageData();
+        $_sScript .= "\n" . $this->getVars( $oView );
+        $_sScript .= "\n" . $this->getLogs();
+        $_sScript .= "\n" . $this->getConstants();
+        $_sScript .= "\n" . $this->getModels();
+        $_sScript .= "\n" . $this->getControllers();
+        $_sScript .= "\n" . $this->getPhp();
+        $_sScript .= "\n" . $this->getModules();
+
+        $_sScript .= " \nconsole.dir( " . self::JS_NAME . " );\n";
+        
+        //  Now echo it out and call the Firebug console.
+        Yii::app()->getClientScript()->registerScript( self::JS_NAME, $_sScript, 
+      CClientScript::POS_READY );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFirePHP_af917e8d00ffa6599a9bf4ca8c6161cb3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFirePHP_a34865cf7d06a92175b0761b7701256b7}{
+\index{CPSFirePHP@{CPSFirePHP}!getClassDiffValues@{getClassDiffValues}}
+\index{getClassDiffValues@{getClassDiffValues}!CPSFirePHP@{CPSFirePHP}}
+\subsubsection[{getClassDiffValues}]{\setlength{\rightskip}{0pt plus 5cm}getClassDiffValues (
+\begin{DoxyParamCaption}
+\item[{\&\$}]{ arBaseVars, }
+\item[{\&\$}]{ arClassVars}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFirePHP_a34865cf7d06a92175b0761b7701256b7}
+Returns an array of variable differences between to classes
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arBaseVars \item[{\em array}]\$arClassVars \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 238 of file CPSFirePHP.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arTemp = array();
+
+        foreach ( $arClassVars as $_sName => $_oVar )
+        {
+            if ( @$arBaseVars[ $_sName ] !== $arClassVars[ $_sName ] )
+                $_arTemp[ $_sName ] = ( is_array( $_oVar ) ) ? implode( ', ', $_o
+      Var ) : $_oVar;
+        }
+
+        return $_arTemp;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFirePHP_a34865cf7d06a92175b0761b7701256b7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFirePHP_a37357ff7fe8d1c1ea764fa1465637543}{
+\index{CPSFirePHP@{CPSFirePHP}!getConstants@{getConstants}}
+\index{getConstants@{getConstants}!CPSFirePHP@{CPSFirePHP}}
+\subsubsection[{getConstants}]{\setlength{\rightskip}{0pt plus 5cm}getConstants (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFirePHP_a37357ff7fe8d1c1ea764fa1465637543}
+Dumps the defined constants 
+
+Definition at line 123 of file CPSFirePHP.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arData = get_defined_constants( true );
+        $_arData = $_arData[ 'user' ];
+        return self::JS_NAME . "[ 'Constants' ] = " . json_encode( $_arData ) . "
+      ;";
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classCPSFirePHP_a37357ff7fe8d1c1ea764fa1465637543_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFirePHP_a57e4cfe772218ab32bf592036147f759}{
+\index{CPSFirePHP@{CPSFirePHP}!getControllers@{getControllers}}
+\index{getControllers@{getControllers}!CPSFirePHP@{CPSFirePHP}}
+\subsubsection[{getControllers}]{\setlength{\rightskip}{0pt plus 5cm}getControllers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFirePHP_a57e4cfe772218ab32bf592036147f759}
+Get each controller and some info about them put into an array. 
+
+Definition at line 179 of file CPSFirePHP.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arTemp = array();
+
+        $_sCPath = Yii::app()->getControllerPath();
+        $_arPaths = scandir( $_sCPath );
+        
+        foreach ( $_arPaths as $_sPath )
+        {
+            if ( is_file( $_sCPath . DIRECTORY_SEPARATOR . $_sPath ) && preg_matc
+      h( "/^(.+)Controller\.php$/", basename( $_sPath ), $m ) )
+            {
+                $_sControllerName = str_ireplace( 'Controller.php', '', $_sPath )
+      ;
+                $_sClassName = $_sControllerName . 'Controller';
+                Yii::import( 'application.controllers.' . $_sClassName );
+                $_sControllerName{0} = strtolower( $_sControllerName{0} );
+                $_oObj = new $_sClassName( $_sControllerName );
+                $_arData = $this->getClassDiffValues( get_class_vars( 'CControlle
+      r' ), get_object_vars( $_oObj ) );
+                $_arData[ 'Defined Views' ] = $this->getViewList( $_oObj );
+
+                $_arTemp[ $_sControllerName ] = $_arData;
+            }
+        }
+
+        return self::JS_NAME . "[ 'Controllers' ] = ".CJSON::encode( $_arTemp )."
+      ;";
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classCPSFirePHP_a57e4cfe772218ab32bf592036147f759_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classCPSFirePHP_a57e4cfe772218ab32bf592036147f759_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFirePHP_a5a1b761c901432b2bfd7fc4e5e75a6bd}{
+\index{CPSFirePHP@{CPSFirePHP}!getLogs@{getLogs}}
+\index{getLogs@{getLogs}!CPSFirePHP@{CPSFirePHP}}
+\subsubsection[{getLogs}]{\setlength{\rightskip}{0pt plus 5cm}getLogs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFirePHP_a5a1b761c901432b2bfd7fc4e5e75a6bd}
+Dumps the log file to the console 
+
+Definition at line 111 of file CPSFirePHP.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Flatten log entries...
+        foreach ( Yii::getLogger()->getLogs() as $_oLog )
+            $_arLogData[] = implode( ', ', $_oLog );
+        
+        return self::JS_NAME . "[ 'Application Log' ] = " . CJSON::encode( $_arLo
+      gData ) . ";";
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classCPSFirePHP_a5a1b761c901432b2bfd7fc4e5e75a6bd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFirePHP_a85257a6026e75945f9e50ece1077c10c}{
+\index{CPSFirePHP@{CPSFirePHP}!getModels@{getModels}}
+\index{getModels@{getModels}!CPSFirePHP@{CPSFirePHP}}
+\subsubsection[{getModels}]{\setlength{\rightskip}{0pt plus 5cm}getModels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFirePHP_a85257a6026e75945f9e50ece1077c10c}
+Get each model and some info about them put into an array. 
+
+Definition at line 208 of file CPSFirePHP.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arTemp = array();
+
+        $_sCPath = Yii::getPathOfAlias( 'application.models' );
+        $_arPaths = scandir( $_sCPath );
+        
+        foreach ( $_arPaths as $_sPath )
+        {
+            if ( is_file( $_sCPath . DIRECTORY_SEPARATOR . $_sPath ) && preg_matc
+      h( "/^(.+)\.php$/", basename( $_sPath ), $m  ) )
+            {
+                $_sClassName = $_sModelName = str_ireplace( '.php', '', $_sPath )
+      ;
+                Yii::import( 'application.models.' . $_sClassName );
+                $_oObj = new $_sClassName( $_sModelName );
+                $_arData = $this->getClassDiffValues( get_class_vars( 'CModel' ),
+       get_object_vars( $_oObj ) );
+                $_arData[ 'Table Name' ] = ( method_exists( $_oObj, 'tableName' )
+       ) ? $_oObj->tableName() : $_sModelName;
+                $_arTemp[ $_sModelName ] = $_arData;
+            }
+        }
+
+        return self::JS_NAME . "[ 'Models' ] = ".CJSON::encode( $_arTemp ).";";
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classCPSFirePHP_a85257a6026e75945f9e50ece1077c10c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classCPSFirePHP_a85257a6026e75945f9e50ece1077c10c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFirePHP_adabf9c48e2c9bf149be4738eea4d84e7}{
+\index{CPSFirePHP@{CPSFirePHP}!getModules@{getModules}}
+\index{getModules@{getModules}!CPSFirePHP@{CPSFirePHP}}
+\subsubsection[{getModules}]{\setlength{\rightskip}{0pt plus 5cm}getModules (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFirePHP_adabf9c48e2c9bf149be4738eea4d84e7}
+Make sure you got mod\_\-rewrite installed and other stuff. 
+
+Definition at line 171 of file CPSFirePHP.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( function_exists( 'apache_get_modules' ) ) return self::JS_NAME . "['
+      Apache Modules'] = " . CJSON::encode( apache_get_modules() ) . ";";
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classCPSFirePHP_adabf9c48e2c9bf149be4738eea4d84e7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFirePHP_a0d26c06309c3dc68c3f035e423549d8c}{
+\index{CPSFirePHP@{CPSFirePHP}!getPageData@{getPageData}}
+\index{getPageData@{getPageData}!CPSFirePHP@{CPSFirePHP}}
+\subsubsection[{getPageData}]{\setlength{\rightskip}{0pt plus 5cm}getPageData (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFirePHP_a0d26c06309c3dc68c3f035e423549d8c}
+Get page data, generally form submissions. 
+
+Definition at line 141 of file CPSFirePHP.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arData = array();
+        
+        if ( is_array( $_REQUEST ) ) $_arData = array_merge( $_arData, $_REQUEST 
+      );
+        
+        if ( ! empty( $_arData ) ) 
+            return self::JS_NAME . "[ '\$_REQUEST Data' ] = " . CJSON::encode( $_
+      arData ) . ";";
+
+        return self::JS_NAME . "[ '$_REQUEST' ] = 'No Data Submitted';";
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{classCPSFirePHP_a0d26c06309c3dc68c3f035e423549d8c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFirePHP_ac65c2555c09638bb6abc022401d1e0ba}{
+\index{CPSFirePHP@{CPSFirePHP}!getPhp@{getPhp}}
+\index{getPhp@{getPhp}!CPSFirePHP@{CPSFirePHP}}
+\subsubsection[{getPhp}]{\setlength{\rightskip}{0pt plus 5cm}getPhp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFirePHP_ac65c2555c09638bb6abc022401d1e0ba}
+Get some info about your installation. 
+
+Definition at line 156 of file CPSFirePHP.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arTemp = array();
+        $_arTemp['VERSION'] = phpversion();
+        $_arTemp['REQUEST_URI'] = $_SERVER['REQUEST_URI'];
+        $_arTemp['SERVER_PORT'] = $_SERVER['SERVER_PORT'];
+        $_arTemp['SCRIPT_FILENAME'] = $_SERVER['SCRIPT_FILENAME'];
+        $_arTemp['DOCUMENT_ROOT'] = $_SERVER['DOCUMENT_ROOT'];
+
+        return self::JS_NAME . "['PHP Info'] = " . CJSON::encode( $_arTemp ) . ";
+      ";
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classCPSFirePHP_ac65c2555c09638bb6abc022401d1e0ba_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFirePHP_a74b1f507d455e4500e8a96432953b59e}{
+\index{CPSFirePHP@{CPSFirePHP}!getSessionData@{getSessionData}}
+\index{getSessionData@{getSessionData}!CPSFirePHP@{CPSFirePHP}}
+\subsubsection[{getSessionData}]{\setlength{\rightskip}{0pt plus 5cm}getSessionData (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFirePHP_a74b1f507d455e4500e8a96432953b59e}
+
+
+Definition at line 133 of file CPSFirePHP.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return self::JS_NAME . "[ 'Session Data' ] = " . CJSON::encode( $_SESSION
+       ) . ";";
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classCPSFirePHP_a74b1f507d455e4500e8a96432953b59e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFirePHP_ab7d4c42aded424959efc81e998a00992}{
+\index{CPSFirePHP@{CPSFirePHP}!getVars@{getVars}}
+\index{getVars@{getVars}!CPSFirePHP@{CPSFirePHP}}
+\subsubsection[{getVars}]{\setlength{\rightskip}{0pt plus 5cm}getVars (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oView}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFirePHP_ab7d4c42aded424959efc81e998a00992}
+Get variables in the view 
+
+Definition at line 96 of file CPSFirePHP.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Controller variables
+        $_arData = array( 'action' => $oView->getAction()->getId(), 'id' => $oVie
+      w->getId(), 'layout' => $oView->layout, 'uniqueId' => $oView->getUniqueId(), 'vie
+      wPath' => $oView->getViewPath(), 'pageTitle' => $oView->pageTitle ); 
+        
+        //  Parameters
+        $_arParams = Yii::app()->getParams();
+        if ( is_array( $_arParams ) ) $_arData = array_merge( $_arData, $_arParam
+      s );
+
+        return self::JS_NAME . "[ 'Variables' ] = " . CJSON::encode( $_arData ) .
+       ";";
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classCPSFirePHP_ab7d4c42aded424959efc81e998a00992_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFirePHP_a4f658740c9bd4a333fa84fdc90538d97}{
+\index{CPSFirePHP@{CPSFirePHP}!getViewList@{getViewList}}
+\index{getViewList@{getViewList}!CPSFirePHP@{CPSFirePHP}}
+\subsubsection[{getViewList}]{\setlength{\rightskip}{0pt plus 5cm}getViewList (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oCtrl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFirePHP_a4f658740c9bd4a333fa84fdc90538d97}
+Gets a list of views for a controller
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em CBaseController}]\$oCtrl \end{DoxyParams}
+
+
+Definition at line 256 of file CPSFirePHP.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arTemp = array();
+        $_sPath = $oCtrl->getViewPath();
+        
+        try
+        {
+            if ( is_dir( $_sPath ) )
+            {
+                foreach ( scandir( $_sPath ) as $_sFile )
+                {
+                    if ( is_file( $_sPath . DIRECTORY_SEPARATOR . $_sFile ) && pr
+      eg_match("/(.php|.html)$/", $_sFile ) ) 
+                        $_arTemp[] = $_sFile;
+                }
+            }
+        }
+        catch ( Exception $_ex ) {}
+        
+        return $_arTemp;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=396pt]{classCPSFirePHP_a4f658740c9bd4a333fa84fdc90538d97_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSFirePHP_a1ae5abc3ad17654100e3ade1df460965}{
+\index{CPSFirePHP@{CPSFirePHP}!JS\_\-NAME@{JS\_\-NAME}}
+\index{JS\_\-NAME@{JS\_\-NAME}!CPSFirePHP@{CPSFirePHP}}
+\subsubsection[{JS\_\-NAME}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf JS\_\-NAME} = 'arPSFirePHP'}}
+\label{classCPSFirePHP_a1ae5abc3ad17654100e3ade1df460965}
+
+
+Definition at line 51 of file CPSFirePHP.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/helpers/\hyperlink{CPSFirePHP_8php}{CPSFirePHP.php}\end{DoxyCompactItemize}

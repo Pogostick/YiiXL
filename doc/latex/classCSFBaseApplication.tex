@@ -1,0 +1,641 @@
+\hypertarget{classCSFBaseApplication}{
+\section{CSFBaseApplication Class Reference}
+\label{classCSFBaseApplication}\index{CSFBaseApplication@{CSFBaseApplication}}
+}
+
+
+Inheritance diagram for CSFBaseApplication:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classCSFBaseApplication__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CSFBaseApplication:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classCSFBaseApplication__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSFBaseApplication_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCSFBaseApplication_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCSFBaseApplication_a96b0f4bab679378904506e1a106c4e60}{initializePlatform} ()
+\item 
+\hyperlink{classCSFBaseApplication_a71fa3ba915a284747b787ab0d94869ce}{capturePageView} (\$sPage)
+\item 
+\hyperlink{classCSFBaseApplication_a6deb2041e7ee4cbb3511c0f5a7ea8a03}{inviteRedirect} ()
+\item 
+\hyperlink{classCSFBaseApplication_a83d6db3f4e5f36ddd8adad2f53133e76}{redirect} (\$sUrl)
+\item 
+\hyperlink{classCSFBaseApplication_acf7865241ab5ac45a0f04674efe51d1a}{getInviteeList} ()
+\item 
+\hyperlink{classCSFBaseApplication_af12c69561c23be5e6fc7e4e0a2808fbb}{addAdVendor} (\$iAVC, \$sIds)
+\item 
+\hyperlink{classCSFBaseApplication_a3978cc0d9152ece4cd315601a95a38bd}{setRefHandle} (\$sFBML)
+\item 
+\hyperlink{classCSFBaseApplication_a99e97980251298d31efe3451470e8df5}{getAdCode} (\$iAVC=null, \$eType=SF\_\-AdType::Banner)
+\item 
+\hyperlink{classCSFBaseApplication_ac409888924f803214fbd2df44327242b}{publishTemplate} (\$sBundleId=null, \&\$arBundleData=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$arTargetIds=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSFBaseApplication_aa40909289ffd00ccc071d938f586fc47}{processQueryString} ()
+\item 
+\hyperlink{classCSFBaseApplication_aed904ee937df5c26c42b9995d2e3a69b}{processApplicationCommand} (\$sCommand=null)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file CSFBaseApplication.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSFBaseApplication_af12c69561c23be5e6fc7e4e0a2808fbb}{
+\index{CSFBaseApplication@{CSFBaseApplication}!addAdVendor@{addAdVendor}}
+\index{addAdVendor@{addAdVendor}!CSFBaseApplication@{CSFBaseApplication}}
+\subsubsection[{addAdVendor}]{\setlength{\rightskip}{0pt plus 5cm}addAdVendor (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iAVC, }
+\item[{\$}]{ sIds}
+\end{DoxyParamCaption}
+)}}
+\label{classCSFBaseApplication_af12c69561c23be5e6fc7e4e0a2808fbb}
+
+
+Definition at line 210 of file CSFBaseApplication.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_arBanner[ $iAVC ] = new SF_BannerAd( $iAVC, explode(',',$sIds) )
+      ;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCSFBaseApplication_a71fa3ba915a284747b787ab0d94869ce}{
+\index{CSFBaseApplication@{CSFBaseApplication}!capturePageView@{capturePageView}}
+\index{capturePageView@{capturePageView}!CSFBaseApplication@{CSFBaseApplication}}
+\subsubsection[{capturePageView}]{\setlength{\rightskip}{0pt plus 5cm}capturePageView (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sPage}
+\end{DoxyParamCaption}
+)}}
+\label{classCSFBaseApplication_a71fa3ba915a284747b787ab0d94869ce}
+Tracks a page hit... 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sPage \end{DoxyParams}
+
+
+Definition at line 166 of file CSFBaseApplication.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $this->sonetrix )
+            $this->sonetrix->user_pageView( $this->PFUserId, $sPage );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCSFBaseApplication_a99e97980251298d31efe3451470e8df5}{
+\index{CSFBaseApplication@{CSFBaseApplication}!getAdCode@{getAdCode}}
+\index{getAdCode@{getAdCode}!CSFBaseApplication@{CSFBaseApplication}}
+\subsubsection[{getAdCode}]{\setlength{\rightskip}{0pt plus 5cm}getAdCode (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iAVC = {\ttfamily null}, }
+\item[{\$}]{ eType = {\ttfamily SF\_\-AdType::Banner}}
+\end{DoxyParamCaption}
+)}}
+\label{classCSFBaseApplication_a99e97980251298d31efe3451470e8df5}
+Emit banner stuff
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sKey \end{DoxyParams}
+
+
+Definition at line 228 of file CSFBaseApplication.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $sOut = "";
+
+        if ( isset( $this->m_arBanner[ $iAVC ] ) )
+            $sOut = $this->m_arBanner[ $iAVC ]->getAdCode( $this->pfApi->getPFTyp
+      e(), $eType );
+        else
+        {
+            foreach ( $this->m_arBanner as $sKey => $oValue )
+                $sOut = $oValue->getAdCode( $this->pfApi->getPFType(), $eType );
+        }
+
+        return( $sOut );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCSFBaseApplication_acf7865241ab5ac45a0f04674efe51d1a}{
+\index{CSFBaseApplication@{CSFBaseApplication}!getInviteeList@{getInviteeList}}
+\index{getInviteeList@{getInviteeList}!CSFBaseApplication@{CSFBaseApplication}}
+\subsubsection[{getInviteeList}]{\setlength{\rightskip}{0pt plus 5cm}getInviteeList (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCSFBaseApplication_acf7865241ab5ac45a0f04674efe51d1a}
+Returns a comma separated list of invited people for exclusion...
+
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 201 of file CSFBaseApplication.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $this->m_bEnableSonetrix && $this->sonetrix )
+            return( $this->sonetrix->user_getInvitees( $this->PFUserId ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCSFBaseApplication_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CSFBaseApplication@{CSFBaseApplication}!init@{init}}
+\index{init@{init}!CSFBaseApplication@{CSFBaseApplication}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCSFBaseApplication_a4be4055f3361d4800e16bc2e2e38cda6}
+Intialize 
+
+Reimplemented from \hyperlink{classCPSApiComponent_a4be4055f3361d4800e16bc2e2e38cda6}{CPSApiComponent}.
+
+
+
+Definition at line 75 of file CSFBaseApplication.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::init();
+        
+        //  Construct a platform specific object
+        $this->initializePlatform();
+
+        //  Create a new Sonetrix object...
+        if ( $this->m_bEnableSonetrix )
+        {
+            $this->sonetrix = new Sonetrix( $sAppId, $iPTC, null, null, ( $iPTC =
+      = SF::PT_FACEBOOK && $this->pfApi->PFAPI ? $this->pfApi->PFAPI : null ), $sProfil
+      eId );
+            if ( $this->sonetrix && $this->pfApi ) $this->pfApi->Sonetrix = $this
+      ->sonetrix;
+        }
+
+        //  Process the query string...
+        $this->processQueryString();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCSFBaseApplication_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCSFBaseApplication_a96b0f4bab679378904506e1a106c4e60}{
+\index{CSFBaseApplication@{CSFBaseApplication}!initializePlatform@{initializePlatform}}
+\index{initializePlatform@{initializePlatform}!CSFBaseApplication@{CSFBaseApplication}}
+\subsubsection[{initializePlatform}]{\setlength{\rightskip}{0pt plus 5cm}initializePlatform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCSFBaseApplication_a96b0f4bab679378904506e1a106c4e60}
+
+
+Definition at line 96 of file CSFBaseApplication.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        switch ( $this->pfTypeCode )
+        {
+            case SF::PT_FRIENDSTER:
+            case SF::PT_MYSPACE:
+                break;
+
+            case SF::PT_FACEBOOK:
+                $this->pfApi = new CSFFacebookPlatform( $sBaseUrl, $sAppName, $sA
+      ppId, $sAPIKey, $sAPISecret );
+                break;
+
+            case SF::PT_BEBO:
+                $this->pfApi = new CSFBeboPlatform( $sBaseUrl, $sAppName, $sAppId
+      , $sAPIKey, $sAPISecret, $sProfileId );
+                break;
+        }
+        
+        if ( ! $this->pfApi )
+            throw new CException( 'Invalid, unsupported, or no platform type sele
+      cted.' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classCSFBaseApplication_a96b0f4bab679378904506e1a106c4e60_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCSFBaseApplication_a6deb2041e7ee4cbb3511c0f5a7ea8a03}{
+\index{CSFBaseApplication@{CSFBaseApplication}!inviteRedirect@{inviteRedirect}}
+\index{inviteRedirect@{inviteRedirect}!CSFBaseApplication@{CSFBaseApplication}}
+\subsubsection[{inviteRedirect}]{\setlength{\rightskip}{0pt plus 5cm}inviteRedirect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCSFBaseApplication_a6deb2041e7ee4cbb3511c0f5a7ea8a03}
+Redirects to invite page if app was just installed... 
+
+Definition at line 176 of file CSFBaseApplication.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $this->m_eInvitePlacement == SF_InvitePlacement::AfterAdd && isset( 
+      $_REQUEST['installed'] ) && $_REQUEST['installed'] == '1' )
+        {
+            //  No user database? Ping sonetrix with addition
+            if ( ! $this->UserDB && $this->sonetrix )
+                $this->sonetrix->setHashUID( $this->sonetrix->user_install( $this
+      ->pfApi->PFUserId, $this->pfApi->getSessionKey() ) );
+
+            $this->redirect( $this->pfApi->AppUrl . "invite.php" );
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{classCSFBaseApplication_a6deb2041e7ee4cbb3511c0f5a7ea8a03_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCSFBaseApplication_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CSFBaseApplication@{CSFBaseApplication}!preinit@{preinit}}
+\index{preinit@{preinit}!CSFBaseApplication@{CSFBaseApplication}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCSFBaseApplication_a2dc262e99b1c246b56f27626bfe699ff}
+Initialize 
+
+Reimplemented from \hyperlink{classCPSComponent_a2dc262e99b1c246b56f27626bfe699ff}{CPSComponent}.
+
+
+
+Definition at line 33 of file CSFBaseApplication.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::preinit();
+        $this->addOptions( self::getBaseOptions() );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCSFBaseApplication_aed904ee937df5c26c42b9995d2e3a69b}{
+\index{CSFBaseApplication@{CSFBaseApplication}!processApplicationCommand@{processApplicationCommand}}
+\index{processApplicationCommand@{processApplicationCommand}!CSFBaseApplication@{CSFBaseApplication}}
+\subsubsection[{processApplicationCommand}]{\setlength{\rightskip}{0pt plus 5cm}processApplicationCommand (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sCommand = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCSFBaseApplication_aed904ee937df5c26c42b9995d2e3a69b}
+Process any single application commands 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sCommand \end{DoxyParams}
+
+
+Definition at line 135 of file CSFBaseApplication.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->pageCommand = trim( PS::nvl( $sCommand, $this->pageCommand ) );
+
+        //  Deal with screwy facebook bug where they don't parse url properly
+        if ( substr( $this->pageCommand, 0, 7 ) == 'addhttp' )
+        {
+            $_sUrl = substr( $this->pageCommand, 3 );
+            $this->redirect( $this->pfApi->appUrl . '?c=add&auth_token=' . $_REQU
+      EST['auth_token'] . '&installed=1&refuid=' . ( isset( $_REQUEST['refuid'] ) ? $_R
+      EQUEST['refuid'] : '' ) );
+        }
+
+        switch ( $this->pageCommand )
+        {
+            case 'ping':
+                echo 'pong';
+                break;
+                
+            case 'del':
+                if ( $this->currentUser )
+                    $this->currentUser->remove();
+                break;
+        }
+        
+        //  Stop execution here.
+        exit;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classCSFBaseApplication_aed904ee937df5c26c42b9995d2e3a69b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCSFBaseApplication_aed904ee937df5c26c42b9995d2e3a69b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCSFBaseApplication_aa40909289ffd00ccc071d938f586fc47}{
+\index{CSFBaseApplication@{CSFBaseApplication}!processQueryString@{processQueryString}}
+\index{processQueryString@{processQueryString}!CSFBaseApplication@{CSFBaseApplication}}
+\subsubsection[{processQueryString}]{\setlength{\rightskip}{0pt plus 5cm}processQueryString (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCSFBaseApplication_aa40909289ffd00ccc071d938f586fc47}
+Generic query string processing for the application. 
+
+Definition at line 120 of file CSFBaseApplication.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->httpReferrer = PS::o( $_SERVER, 'HTTP_REFERER' );
+        $this->clientIPAddress = PS::o( $_SERVER, 'REMOTE_ADDR' );
+        $this->pageAction = PS::o( $_REQUEST, 'action' );
+        $this->pageSubAction = PS::o( $_REQUEST, 'sa' );
+
+        if ( null !== ( $_sCmd = PS::o( $_REQUEST, 'c', null, true ) ) )
+            $this->processApplicationCommand( $_sCmd );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCSFBaseApplication_aa40909289ffd00ccc071d938f586fc47_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classCSFBaseApplication_aa40909289ffd00ccc071d938f586fc47_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCSFBaseApplication_ac409888924f803214fbd2df44327242b}{
+\index{CSFBaseApplication@{CSFBaseApplication}!publishTemplate@{publishTemplate}}
+\index{publishTemplate@{publishTemplate}!CSFBaseApplication@{CSFBaseApplication}}
+\subsubsection[{publishTemplate}]{\setlength{\rightskip}{0pt plus 5cm}publishTemplate (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sBundleId = {\ttfamily null}, }
+\item[{\&\$}]{ arBundleData = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ arTargetIds = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCSFBaseApplication_ac409888924f803214fbd2df44327242b}
+
+
+Definition at line 243 of file CSFBaseApplication.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sBundleId = $sBundleId;
+        $_sAppUrl = $this->PFAPI->AppUrl;
+        
+        try
+        {
+            //  See if we can get the bundle id for this app...
+            if ( $sBundleId == null )
+            {
+                if ( $arBundle = $this->PFAPI->getRegisteredBundles() )
+                {
+                    //  Get the bundle id...
+                    $_sBundleId = isset( $arBundle, $arBundle[ 0 ], $arBundle[ 0 
+      ][ 'template_bundle_id' ] ) ? $arBundle[0]['template_bundle_id'] : null;
+                    error_log( 'Found registered bundle id ' . $_sBundleId . ' fo
+      r app [' . $this->getQuizName() . ']' );
+                }
+                else
+                {
+                    //  Create a default quiz bundle...
+                    $arOneLine = $arShort = $arAction = array();
+                    $arOneLine[] = '{*actor*} just took the {*quiz_name*} quiz an
+      d the result was {*quiz_result_name*}.';
+                    
+                    $arShort[] = array( 
+                        'template_title' => '{*actor*} just took the {*quiz_name*
+      } quiz and the result was {*quiz_result_name*}.',
+                        'template_body' => '{*quiz_result_full*}',
+                    );
+            
+                    $arAction[] = array( 'text' => 'Take the quiz!', 'href' => $t
+      his->PFAPI->AppUrl );
+                    if ( $this->m_sFanPageUrl ) $arAction[] = array( 'text' => 'B
+      ecome a fan!', 'href' => $this->m_sFanPageUrl );
+                    
+                    $_sBundleId = $this->PFAPI->registerBundle( $arOneLine, $arSh
+      ort, null, $arLinks );
+                    error_log( 'Registered bundle id ' . $_sBundleId . ' for app 
+      [' . $this->getQuizName() . ']' );
+                }
+            }
+            
+            //  Do we have a bundle to publish?
+            if ( $_sBundleId )
+            {
+                //  Create array...
+                if ( ! sizeof( $arBundleData ) )
+                {
+                    $arBundleData = array(
+                        'quiz_name' => "&quot;<a href=\"{$_sAppUrl}\">{$this->m_s
+      QuizName}</a>&quot;",
+                        'quiz_result_name' => "&quot;<a href=\"{$_sAppUrl}\">{$th
+      is->m_oResult->FullName}</a>&quot;",
+                        'quiz_result_full' => $this->m_oResult->Description . "<b
+      r /><br /><a href=\"{$_sAppUrl}\">Why not take the quiz yourself?</a>",
+                        'images' => array( array( 'src' => $this->m_oResult->Imag
+      eUrl, 'href' => $_sAppUrl ) ),
+                    );
+                }
+                    
+                //  Publish action to feed...
+                $sResult = $this->PFAPI->publishBundle( $_sBundleId, $arBundleDat
+      a, $arTargetIds, null, 2 );
+            }
+        }
+        catch ( Exception $_ex )
+        {
+            error_log( 'Error publishing bundle id ' . $_sBundleId . ': ' . $_ex-
+      >getMessage() );
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCSFBaseApplication_a83d6db3f4e5f36ddd8adad2f53133e76}{
+\index{CSFBaseApplication@{CSFBaseApplication}!redirect@{redirect}}
+\index{redirect@{redirect}!CSFBaseApplication@{CSFBaseApplication}}
+\subsubsection[{redirect}]{\setlength{\rightskip}{0pt plus 5cm}redirect (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUrl}
+\end{DoxyParamCaption}
+)}}
+\label{classCSFBaseApplication_a83d6db3f4e5f36ddd8adad2f53133e76}
+
+
+Definition at line 191 of file CSFBaseApplication.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->pfApi->redirect( $sUrl );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCSFBaseApplication_a83d6db3f4e5f36ddd8adad2f53133e76_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCSFBaseApplication_a3978cc0d9152ece4cd315601a95a38bd}{
+\index{CSFBaseApplication@{CSFBaseApplication}!setRefHandle@{setRefHandle}}
+\index{setRefHandle@{setRefHandle}!CSFBaseApplication@{CSFBaseApplication}}
+\subsubsection[{setRefHandle}]{\setlength{\rightskip}{0pt plus 5cm}setRefHandle (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sFBML}
+\end{DoxyParamCaption}
+)}}
+\label{classCSFBaseApplication_a3978cc0d9152ece4cd315601a95a38bd}
+
+
+Definition at line 218 of file CSFBaseApplication.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->pfApi->setRefHandle( $sFBML );
+    }
+\end{DoxyCode}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/snowframe/base/\hyperlink{CSFBaseApplication_8php}{CSFBaseApplication.php}\end{DoxyCompactItemize}

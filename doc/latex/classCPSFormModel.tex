@@ -1,0 +1,76 @@
+\hypertarget{classCPSFormModel}{
+\section{CPSFormModel Class Reference}
+\label{classCPSFormModel}\index{CPSFormModel@{CPSFormModel}}
+}
+
+
+Inheritance diagram for CPSFormModel:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classCPSFormModel__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSFormModel:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classCPSFormModel__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFormModel_aee4a8999596f4904b694b68ef0ec1cf2}{generateAttributeLabel} (\$sName)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file CPSFormModel.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSFormModel_aee4a8999596f4904b694b68ef0ec1cf2}{
+\index{CPSFormModel@{CPSFormModel}!generateAttributeLabel@{generateAttributeLabel}}
+\index{generateAttributeLabel@{generateAttributeLabel}!CPSFormModel@{CPSFormModel}}
+\subsubsection[{generateAttributeLabel}]{\setlength{\rightskip}{0pt plus 5cm}generateAttributeLabel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sName}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFormModel_aee4a8999596f4904b694b68ef0ec1cf2}
+Fixup attribute labels for my funky naming conventions...
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sName \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file CPSFormModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( substr( $sName, 0, 2 ) == 'm_' )
+            $sName = substr( $sName, 3 );
+
+        return( parent::generateAttributeLabel( $sName ) );
+    }
+\end{DoxyCode}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/models/\hyperlink{CPSFormModel_8php}{CPSFormModel.php}\end{DoxyCompactItemize}

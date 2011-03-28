@@ -1,0 +1,31 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSTwitterApi.html#ab3f7ce72387dc03579a437edcd0b60e5" title="CPSTwitterApi::addFavorite" alt="" coords="227,5,416,35"/>
+<area shape="rect" id="node5" href="$classCPSTwitterApi.html#a0f563966086bf59e64bc0824be25e4cd" title="CPSTwitterApi::disableFollowNotifications" alt="" coords="183,59,460,88"/>
+<area shape="rect" id="node7" href="$classCPSTwitterApi.html#a6580b008521d0b34bdc75f6586d113b1" title="CPSTwitterApi::enableFollowNotifications" alt="" coords="184,112,459,141"/>
+<area shape="rect" id="node9" href="$classCPSTwitterApi.html#aa0d57631639ef65ee5030edf92e4974a" title="CPSTwitterApi::endSession" alt="" coords="227,165,416,195"/>
+<area shape="rect" id="node11" href="$classCPSTwitterApi.html#a65767389416ea450315483ef34d9c317" title="CPSTwitterApi::followUser" alt="" coords="231,219,412,248"/>
+<area shape="rect" id="node13" href="$classCPSTwitterApi.html#aecef2258ad5d95f208137cde146eeece" title="CPSTwitterApi::getExtendedUserInfo" alt="" coords="196,272,447,301"/>
+<area shape="rect" id="node15" href="$classCPSTwitterApi.html#a5d957106488cf37b832537826f5bf619" title="CPSTwitterApi::getFavorites" alt="" coords="224,325,419,355"/>
+<area shape="rect" id="node17" href="$classCPSTwitterApi.html#af2da33a5613318a02f93e2ca68722613" title="CPSTwitterApi::getFollowerList" alt="" coords="216,379,427,408"/>
+<area shape="rect" id="node19" href="$classCPSTwitterApi.html#a3a143ff80682ae9079e7ab4e8d0239ca" title="CPSTwitterApi::getFollowers" alt="" coords="224,432,419,461"/>
+<area shape="rect" id="node21" href="$classCPSTwitterApi.html#a863d94b36aec6821685a5bbe183ac055" title="CPSTwitterApi::getFollowingList" alt="" coords="213,485,429,515"/>
+<area shape="rect" id="node23" href="$classCPSTwitterApi.html#a347c20ca09a1414e7094511ff60a6572" title="CPSTwitterApi::getFriends" alt="" coords="231,539,412,568"/>
+<area shape="rect" id="node25" href="$classCPSTwitterApi.html#a1443891e087408247ab5765b137e620a" title="CPSTwitterApi::getFriendsTimeline" alt="" coords="204,592,439,621"/>
+<area shape="rect" id="node27" href="$classCPSTwitterApi.html#aa33675ca1276678f5eb1ce153ecb3fc0" title="CPSTwitterApi::getMentions" alt="" coords="224,645,419,675"/>
+<area shape="rect" id="node29" href="$classCPSTwitterApi.html#ab648e79d4c7934898e0bd99f42c18739" title="CPSTwitterApi::getPublicTimeline" alt="" coords="208,699,435,728"/>
+<area shape="rect" id="node31" href="$classCPSTwitterApi.html#affa61fcd5f7596b323d31ba8edef8a3b" title="CPSTwitterApi::getRateLimitStatus" alt="" coords="203,752,440,781"/>
+<area shape="rect" id="node33" href="$classCPSTwitterApi.html#a45f7d4e1a2489c032892a17b5dbb63c6" title="CPSTwitterApi::getStatus" alt="" coords="232,805,411,835"/>
+<area shape="rect" id="node35" href="$classCPSTwitterApi.html#a4103b1ac27bbc0f3db1ab71b88f93f19" title="CPSTwitterApi::getUserTimeline" alt="" coords="212,859,431,888"/>
+<area shape="rect" id="node37" href="$classCPSTwitterApi.html#a7aaa4c2b663fbebca67ae7b162ad364f" title="CPSTwitterApi::isFollowing" alt="" coords="231,912,412,941"/>
+<area shape="rect" id="node39" href="$classCPSTwitterApi.html#a0d98584e01bc95f8b8f8a51ff7b1b5e8" title="CPSTwitterApi::removeFavorite" alt="" coords="215,965,428,995"/>
+<area shape="rect" id="node41" href="$classCPSTwitterApi.html#a287662639ab89a546820fb50aee09b6d" title="CPSTwitterApi::removeStatus" alt="" coords="219,1019,424,1048"/>
+<area shape="rect" id="node43" href="$classCPSTwitterApi.html#a1936ab230b38949e6498cff4aebbfd10" title="CPSTwitterApi::search" alt="" coords="243,1072,400,1101"/>
+<area shape="rect" id="node45" href="$classCPSTwitterApi.html#a22c4db8ed439d600b3df10a35e04cb4b" title="CPSTwitterApi::unfollowUser" alt="" coords="223,1125,420,1155"/>
+<area shape="rect" id="node47" href="$classCPSTwitterApi.html#aa07192673507be5e4bc9a5d342bd03b7" title="CPSTwitterApi::updateDeliveryDevice" alt="" coords="195,1179,448,1208"/>
+<area shape="rect" id="node49" href="$classCPSTwitterApi.html#a12a317aebc0d3877dc8b9222fbdae586" title="CPSTwitterApi::updateProfile" alt="" coords="221,1232,421,1261"/>
+<area shape="rect" id="node51" href="$classCPSTwitterApi.html#a9022fbca84af34fe395b05e59b3c4612" title="CPSTwitterApi::updateProfileBackgroundImage" alt="" coords="164,1285,479,1315"/>
+<area shape="rect" id="node53" href="$classCPSTwitterApi.html#a05cd15bda52603c2ca5beb3b7acb0b9d" title="CPSTwitterApi::updateProfileColors" alt="" coords="201,1339,441,1368"/>
+<area shape="rect" id="node55" href="$classCPSTwitterApi.html#a0a53559d0a53da91dd0af834b2a2379f" title="CPSTwitterApi::updateProfileImage" alt="" coords="201,1392,441,1421"/>
+<area shape="rect" id="node57" href="$classCPSTwitterApi.html#a437a821105446fde9bbcb7ebef307f5f" title="CPSTwitterApi::updateStatus" alt="" coords="220,1445,423,1475"/>
+<area shape="rect" id="node59" href="$classCPSTwitterApi.html#aa706fde11e1968f76a5ed19056944fdc" title="CPSTwitterApi::verifyCredentials" alt="" coords="211,1499,432,1528"/>
+</map>

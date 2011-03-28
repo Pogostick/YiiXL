@@ -1,0 +1,884 @@
+\hypertarget{classCPSCRUDController}{
+\section{CPSCRUDController Class Reference}
+\label{classCPSCRUDController}\index{CPSCRUDController@{CPSCRUDController}}
+}
+
+
+Inheritance diagram for CPSCRUDController:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classCPSCRUDController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSCRUDController:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classCPSCRUDController__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSCRUDController_a130f7636679c0fba3538a8f6acc2cf38}{getLoginFormClass} ()
+\item 
+\hyperlink{classCPSCRUDController_a71264b6959d744603416ee56660990be}{setLoginFormClass} (\$value)
+\item 
+\hyperlink{classCPSCRUDController_ab53bf1b4b27392839a16ecf3ad62e88b}{getBreadcrumbs} ()
+\item 
+\hyperlink{classCPSCRUDController_a9f9822dfb5d491a6e0b9c836d6ce4e3f}{setBreadcrumbs} (\$value)
+\item 
+\hyperlink{classCPSCRUDController_a637e84e2e9e99a87ea9b5f1771551af4}{getMenu} ()
+\item 
+\hyperlink{classCPSCRUDController_a5cf6c2464263681fdc1186bb94ee9ad8}{setMenu} (\$value)
+\item 
+\hyperlink{classCPSCRUDController_ab04eb4ea0ed0b3efbadf0d150f5d5092}{getSingleViewMode} ()
+\item 
+\hyperlink{classCPSCRUDController_a72843b131466384083f7434cf7623eeb}{setSingleViewMode} (\$value)
+\item 
+\hyperlink{classCPSCRUDController_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSCRUDController_afe5dbb3e026bc3bfdecbd539025c7f93}{filters} ()
+\item 
+\hyperlink{classCPSCRUDController_a06b9943f26298eca9387c6099343b938}{accessRules} ()
+\item 
+\hyperlink{classCPSCRUDController_a30a72f87d5741ff2204f385920514239}{actionLogin} ()
+\item 
+\hyperlink{classCPSCRUDController_ad0002e8029508409bfbbf0cf7d9b3172}{actionLogout} ()
+\item 
+\hyperlink{classCPSCRUDController_a0e897ab49575e5cf90669511a707e530}{actionCreate} (\$options=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSCRUDController_af0a5fa203c2223483f8a9fbca5f25f9b}{actionUpdate} (\$options=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$fromCreate=false)
+\item 
+\hyperlink{classCPSCRUDController_a4719f8c8bc82f251a57b2c96066df9cf}{actionView} (\$options=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSCRUDController_a1c7da1e1bd646d3dcb9077f2390daba7}{actionDelete} (\$sRedirectAction= 'admin')
+\item 
+\hyperlink{classCPSCRUDController_a742f460213a7175d366eb851efc50ea3}{actionAdmin} (\$options=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$oCriteria=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSCRUDController_a3ebb55fc0dbd9ce833626b342eaf5a11}{commandDelete} ()
+\item 
+\hyperlink{classCPSCRUDController_a1cab0ecf37574f60029f78b6f94852ba}{commandUndelete} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSCRUDController_afb72a0dce14ac980b4e9d91e24e292e8}{\$\_\-loginFormClass} = null
+\item 
+\hyperlink{classCPSCRUDController_aa29f8061f06b0d1991b405eb2b5817fd}{\$\_\-breadcrumbs} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}()
+\item 
+\hyperlink{classCPSCRUDController_a4192f529627c76fa7a70ae23b9582516}{\$\_\-menu} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}()
+\item 
+\hyperlink{classCPSCRUDController_ab22a7f54c4b3430e4c56597bcc1eaa1d}{\$\_\-singleViewMode} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSCRUDController.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSCRUDController_a06b9943f26298eca9387c6099343b938}{
+\index{CPSCRUDController@{CPSCRUDController}!accessRules@{accessRules}}
+\index{accessRules@{accessRules}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{accessRules}]{\setlength{\rightskip}{0pt plus 5cm}accessRules (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_a06b9943f26298eca9387c6099343b938}
+The base access rules for our CRUD controller
+
+\begin{DoxyReturn}{Returns}
+array Access control rules 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        static $_ruleList;
+        static $_isInitialized;
+
+        //  Console apps can bypass this...
+        if ( PS::_a() instanceof CConsoleApplication ) return array();
+
+        //  Build access rule array...
+        if ( ! isset( $_isInitialized ) )
+        {
+            $_ruleList = array();
+
+            for ( $_i = 0; $_i <= self::ACCESS_TO_NONE; $_i++ )
+            {
+                $_theVerb = $_validMatch = null;
+
+                //  Get the user type
+                switch ( $_i )
+                {
+                    case self::ACCESS_TO_ALL:
+                    case self::ACCESS_TO_ANY:
+                    case self::ACCESS_TO_ANON:
+                        $_theVerb = 'allow';
+                        $_validMatch = '*';
+                        break;
+
+                    case self::ACCESS_TO_GUEST:
+                        $_theVerb = 'allow';
+                        $_validMatch = '?';
+                        break;
+
+                    case self::ACCESS_TO_AUTH:
+                        $_theVerb = 'allow';
+                        $_validMatch = '@';
+                        break;
+
+                    case self::ACCESS_TO_ADMIN:
+                        $_theVerb = 'allow';
+                        $_validMatch = 'admin';
+                        break;
+
+                    case self::ACCESS_TO_NONE:
+                        $_theVerb = 'deny';
+                        $_validMatch = '*';
+                        break;
+                }
+
+                //  Add to rules array
+                if ( $_theVerb && $_validMatch )
+                {
+                    $_tempList = array(
+                        $_theVerb,
+                        'actions' => PS::o( $this->m_arUserActionList, $_i ),
+                        'users' => array( $_validMatch )
+                    );
+
+                    if ( $_tempList['actions'] == null ) unset( $_tempList['actio
+      ns'] );
+
+                    $_ruleList[] = $_tempList;
+                }
+            }
+
+            $_isInitialized = true;
+        }
+
+        //  Return the rules...
+        return $_ruleList;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCRUDController_a742f460213a7175d366eb851efc50ea3}{
+\index{CPSCRUDController@{CPSCRUDController}!actionAdmin@{actionAdmin}}
+\index{actionAdmin@{actionAdmin}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{actionAdmin}]{\setlength{\rightskip}{0pt plus 5cm}actionAdmin (
+\begin{DoxyParamCaption}
+\item[{\$}]{ options = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ oCriteria = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_a742f460213a7175d366eb851efc50ea3}
+Manages all models. 
+
+Definition at line 286 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $this->m_sModelName ) @list( $_arModels, $_oCrit, $_oPage, $_oSort )
+       = $this->loadPaged( true, $oCriteria );
+        $this->render( 'admin', array_merge( $options, array( 'models' => $_arMod
+      els, 'pages' => $_oPage, 'sort' => $_oSort ) ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCRUDController_a742f460213a7175d366eb851efc50ea3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCRUDController_a0e897ab49575e5cf90669511a707e530}{
+\index{CPSCRUDController@{CPSCRUDController}!actionCreate@{actionCreate}}
+\index{actionCreate@{actionCreate}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{actionCreate}]{\setlength{\rightskip}{0pt plus 5cm}actionCreate (
+\begin{DoxyParamCaption}
+\item[{\$}]{ options = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_a0e897ab49575e5cf90669511a707e530}
+Creates a new model. If creation is successful, the browser will be redirected to the 'show' page.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]If specified, also passed to the view. \end{DoxyParams}
+
+
+Definition at line 224 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->actionUpdate( $options, true );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCRUDController_a0e897ab49575e5cf90669511a707e530_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCRUDController_a1c7da1e1bd646d3dcb9077f2390daba7}{
+\index{CPSCRUDController@{CPSCRUDController}!actionDelete@{actionDelete}}
+\index{actionDelete@{actionDelete}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{actionDelete}]{\setlength{\rightskip}{0pt plus 5cm}actionDelete (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sRedirectAction = {\ttfamily 'admin'}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_a1c7da1e1bd646d3dcb9077f2390daba7}
+Deletes a particular model. Only allowed via POST
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CHttpException}]\end{DoxyExceptions}
+
+
+Definition at line 261 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( Yii::app()->request->isPostRequest )
+        {
+            if ( $this->loadModel() )
+            {
+                $this->loadModel()->delete();
+                $this->redirect( array( $sRedirectAction ) );
+            }
+        }
+        else
+        {
+            if ( isset( $_GET['id'] ) )
+            {
+                $this->loadModel( $_GET['id'] )->delete();
+                $this->redirect( array( $sRedirectAction ) );
+            }
+        }
+
+        throw new CHttpException( 404, 'Invalid request. Please do not repeat thi
+      s request again.' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCRUDController_a1c7da1e1bd646d3dcb9077f2390daba7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCRUDController_a30a72f87d5741ff2204f385920514239}{
+\index{CPSCRUDController@{CPSCRUDController}!actionLogin@{actionLogin}}
+\index{actionLogin@{actionLogin}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{actionLogin}]{\setlength{\rightskip}{0pt plus 5cm}actionLogin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_a30a72f87d5741ff2204f385920514239}
+Default login 
+
+Definition at line 187 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! Yii::app()->user->isGuest )
+            return $this->redirect( Yii::app()->user->returnUrl );
+
+        $_sClass = $this->getLoginFormClass();
+        $_oLogin = new $_sClass();
+
+        if ( isset( $_POST[ $_sClass ] ) )
+        {
+            $_oLogin->attributes = $_POST[ $_sClass ];
+
+            //  Validate user input and redirect to previous page if valid
+            if ( $_oLogin->validate() )
+                return $this->redirect( Yii::app()->user->returnUrl );
+        }
+
+        //  Display the login form
+        $this->render( 'login', array( 'form' => $_oLogin ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classCPSCRUDController_a30a72f87d5741ff2204f385920514239_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCRUDController_ad0002e8029508409bfbbf0cf7d9b3172}{
+\index{CPSCRUDController@{CPSCRUDController}!actionLogout@{actionLogout}}
+\index{actionLogout@{actionLogout}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{actionLogout}]{\setlength{\rightskip}{0pt plus 5cm}actionLogout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_ad0002e8029508409bfbbf0cf7d9b3172}
+Logout the user 
+
+Definition at line 212 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        Yii::app()->user->logout();
+        $this->redirect( Yii::app()->user->loginUrl );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCRUDController_af0a5fa203c2223483f8a9fbca5f25f9b}{
+\index{CPSCRUDController@{CPSCRUDController}!actionUpdate@{actionUpdate}}
+\index{actionUpdate@{actionUpdate}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{actionUpdate}]{\setlength{\rightskip}{0pt plus 5cm}actionUpdate (
+\begin{DoxyParamCaption}
+\item[{\$}]{ options = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ fromCreate = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_af0a5fa203c2223483f8a9fbca5f25f9b}
+Update the model 
+
+Definition at line 233 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Handle singleViewMode...
+        $_model = ( $fromCreate ? new $this->m_sModelName : $this->loadModel()  )
+      ;
+        $_viewName = ( $fromCreate ? ( $this->_singleViewMode ? 'update' : 'creat
+      e' ) : 'update' );
+        
+        if ( $this->isPostRequest ) $this->saveModel( $_model, $_POST, 'update' )
+      ;
+        
+        $options['update'] = ( ! $fromCreate );
+        $this->genericAction( $_viewName, $_model, $options );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCRUDController_af0a5fa203c2223483f8a9fbca5f25f9b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classCPSCRUDController_af0a5fa203c2223483f8a9fbca5f25f9b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCRUDController_a4719f8c8bc82f251a57b2c96066df9cf}{
+\index{CPSCRUDController@{CPSCRUDController}!actionView@{actionView}}
+\index{actionView@{actionView}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{actionView}]{\setlength{\rightskip}{0pt plus 5cm}actionView (
+\begin{DoxyParamCaption}
+\item[{\$}]{ options = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_a4719f8c8bc82f251a57b2c96066df9cf}
+View the model 
+
+Definition at line 249 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_model = $this->loadModel();
+        $this->genericAction( 'view', $_model, $options );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCRUDController_a4719f8c8bc82f251a57b2c96066df9cf_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCRUDController_a3ebb55fc0dbd9ce833626b342eaf5a11}{
+\index{CPSCRUDController@{CPSCRUDController}!commandDelete@{commandDelete}}
+\index{commandDelete@{commandDelete}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{commandDelete}]{\setlength{\rightskip}{0pt plus 5cm}commandDelete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSCRUDController_a3ebb55fc0dbd9ce833626b342eaf5a11}
+Delete a model 
+
+Definition at line 300 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->loadModel( $_POST[ 'id' ] )->delete();
+        $this->refresh();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCRUDController_a3ebb55fc0dbd9ce833626b342eaf5a11_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCRUDController_a1cab0ecf37574f60029f78b6f94852ba}{
+\index{CPSCRUDController@{CPSCRUDController}!commandUndelete@{commandUndelete}}
+\index{commandUndelete@{commandUndelete}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{commandUndelete}]{\setlength{\rightskip}{0pt plus 5cm}commandUndelete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSCRUDController_a1cab0ecf37574f60029f78b6f94852ba}
+Undelete a model 
+
+Definition at line 310 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->loadModel( $_POST[ 'id' ] )->delete( true );
+        $this->refresh();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCRUDController_a1cab0ecf37574f60029f78b6f94852ba_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCRUDController_afe5dbb3e026bc3bfdecbd539025c7f93}{
+\index{CPSCRUDController@{CPSCRUDController}!filters@{filters}}
+\index{filters@{filters}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{filters}]{\setlength{\rightskip}{0pt plus 5cm}filters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_afe5dbb3e026bc3bfdecbd539025c7f93}
+The filters for this controller
+
+\begin{DoxyReturn}{Returns}
+array Action filters 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $_SERVER['HTTP_HOST'] == 'localhost' ) return array();
+
+        //  Perform access control for CRUD operations
+        return array(
+            'accessControl',
+        );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCRUDController_ab53bf1b4b27392839a16ecf3ad62e88b}{
+\index{CPSCRUDController@{CPSCRUDController}!getBreadcrumbs@{getBreadcrumbs}}
+\index{getBreadcrumbs@{getBreadcrumbs}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{getBreadcrumbs}]{\setlength{\rightskip}{0pt plus 5cm}getBreadcrumbs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_ab53bf1b4b27392839a16ecf3ad62e88b}
+
+
+Reimplemented from \hyperlink{classCPSController_ab53bf1b4b27392839a16ecf3ad62e88b}{CPSController}.
+
+
+
+Definition at line 42 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_breadcrumbs; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCRUDController_a130f7636679c0fba3538a8f6acc2cf38}{
+\index{CPSCRUDController@{CPSCRUDController}!getLoginFormClass@{getLoginFormClass}}
+\index{getLoginFormClass@{getLoginFormClass}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{getLoginFormClass}]{\setlength{\rightskip}{0pt plus 5cm}getLoginFormClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_a130f7636679c0fba3538a8f6acc2cf38}
+
+
+Definition at line 34 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+{ return PS::nvl( $this->_loginFormClass, 'LoginForm' ); }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classCPSCRUDController_a130f7636679c0fba3538a8f6acc2cf38_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCRUDController_a637e84e2e9e99a87ea9b5f1771551af4}{
+\index{CPSCRUDController@{CPSCRUDController}!getMenu@{getMenu}}
+\index{getMenu@{getMenu}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{getMenu}]{\setlength{\rightskip}{0pt plus 5cm}getMenu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_a637e84e2e9e99a87ea9b5f1771551af4}
+
+
+Reimplemented from \hyperlink{classCPSController_a637e84e2e9e99a87ea9b5f1771551af4}{CPSController}.
+
+
+
+Definition at line 50 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_menu; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCRUDController_ab04eb4ea0ed0b3efbadf0d150f5d5092}{
+\index{CPSCRUDController@{CPSCRUDController}!getSingleViewMode@{getSingleViewMode}}
+\index{getSingleViewMode@{getSingleViewMode}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{getSingleViewMode}]{\setlength{\rightskip}{0pt plus 5cm}getSingleViewMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_ab04eb4ea0ed0b3efbadf0d150f5d5092}
+
+
+Definition at line 61 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_singleViewMode; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCRUDController_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSCRUDController@{CPSCRUDController}!init@{init}}
+\index{init@{init}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize the controller 
+
+Reimplemented from \hyperlink{classCPSController_a4be4055f3361d4800e16bc2e2e38cda6}{CPSController}.
+
+
+
+Definition at line 72 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Phone home...
+        parent::init();
+
+        $this->defaultAction = 'admin';
+
+        //  Add command mappings...
+        $this->addCommandToMap( 'delete', array( $this, 'commandDelete' ) );
+        $this->addCommandToMap( 'undelete', array( $this, 'commandUndelete' ) );
+
+        //  Set our access rules..
+        $this->addUserAction( self::ACCESS_TO_ALL, 'error' );
+        $this->addUserActions( self::ACCESS_TO_GUEST, array( 'login', 'show', 'li
+      st', 'contact' ) );
+        $this->addUserActions( self::ACCESS_TO_AUTH, array( 'login', 'logout', 'a
+      dmin', 'create', 'delete', 'update', 'index', 'view' ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCRUDController_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCRUDController_a9f9822dfb5d491a6e0b9c836d6ce4e3f}{
+\index{CPSCRUDController@{CPSCRUDController}!setBreadcrumbs@{setBreadcrumbs}}
+\index{setBreadcrumbs@{setBreadcrumbs}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{setBreadcrumbs}]{\setlength{\rightskip}{0pt plus 5cm}setBreadcrumbs (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_a9f9822dfb5d491a6e0b9c836d6ce4e3f}
+
+
+Reimplemented from \hyperlink{classCPSController_a9f9822dfb5d491a6e0b9c836d6ce4e3f}{CPSController}.
+
+
+
+Definition at line 43 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_breadcrumbs = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCRUDController_a71264b6959d744603416ee56660990be}{
+\index{CPSCRUDController@{CPSCRUDController}!setLoginFormClass@{setLoginFormClass}}
+\index{setLoginFormClass@{setLoginFormClass}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{setLoginFormClass}]{\setlength{\rightskip}{0pt plus 5cm}setLoginFormClass (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_a71264b6959d744603416ee56660990be}
+
+
+Definition at line 35 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_loginFormClass = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCRUDController_a5cf6c2464263681fdc1186bb94ee9ad8}{
+\index{CPSCRUDController@{CPSCRUDController}!setMenu@{setMenu}}
+\index{setMenu@{setMenu}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{setMenu}]{\setlength{\rightskip}{0pt plus 5cm}setMenu (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_a5cf6c2464263681fdc1186bb94ee9ad8}
+
+
+Reimplemented from \hyperlink{classCPSController_a5cf6c2464263681fdc1186bb94ee9ad8}{CPSController}.
+
+
+
+Definition at line 51 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_menu = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCRUDController_a72843b131466384083f7434cf7623eeb}{
+\index{CPSCRUDController@{CPSCRUDController}!setSingleViewMode@{setSingleViewMode}}
+\index{setSingleViewMode@{setSingleViewMode}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{setSingleViewMode}]{\setlength{\rightskip}{0pt plus 5cm}setSingleViewMode (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCRUDController_a72843b131466384083f7434cf7623eeb}
+
+
+Definition at line 62 of file CPSCRUDController.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_singleViewMode = $value; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSCRUDController_aa29f8061f06b0d1991b405eb2b5817fd}{
+\index{CPSCRUDController@{CPSCRUDController}!\$\_\-breadcrumbs@{\$\_\-breadcrumbs}}
+\index{\$\_\-breadcrumbs@{\$\_\-breadcrumbs}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{\$\_\-breadcrumbs}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-breadcrumbs = {\bf array}()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSCRUDController_aa29f8061f06b0d1991b405eb2b5817fd}
+
+
+Reimplemented from \hyperlink{classCPSController_aa29f8061f06b0d1991b405eb2b5817fd}{CPSController}.
+
+
+
+Definition at line 41 of file CPSCRUDController.php.
+
+\hypertarget{classCPSCRUDController_afb72a0dce14ac980b4e9d91e24e292e8}{
+\index{CPSCRUDController@{CPSCRUDController}!\$\_\-loginFormClass@{\$\_\-loginFormClass}}
+\index{\$\_\-loginFormClass@{\$\_\-loginFormClass}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{\$\_\-loginFormClass}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-loginFormClass = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSCRUDController_afb72a0dce14ac980b4e9d91e24e292e8}
+
+
+Definition at line 33 of file CPSCRUDController.php.
+
+\hypertarget{classCPSCRUDController_a4192f529627c76fa7a70ae23b9582516}{
+\index{CPSCRUDController@{CPSCRUDController}!\$\_\-menu@{\$\_\-menu}}
+\index{\$\_\-menu@{\$\_\-menu}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{\$\_\-menu}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-menu = {\bf array}()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSCRUDController_a4192f529627c76fa7a70ae23b9582516}
+
+
+Reimplemented from \hyperlink{classCPSController_a4192f529627c76fa7a70ae23b9582516}{CPSController}.
+
+
+
+Definition at line 49 of file CPSCRUDController.php.
+
+\hypertarget{classCPSCRUDController_ab22a7f54c4b3430e4c56597bcc1eaa1d}{
+\index{CPSCRUDController@{CPSCRUDController}!\$\_\-singleViewMode@{\$\_\-singleViewMode}}
+\index{\$\_\-singleViewMode@{\$\_\-singleViewMode}!CPSCRUDController@{CPSCRUDController}}
+\subsubsection[{\$\_\-singleViewMode}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-singleViewMode = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSCRUDController_ab22a7f54c4b3430e4c56597bcc1eaa1d}
+
+
+Definition at line 60 of file CPSCRUDController.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/controllers/\hyperlink{CPSCRUDController_8php}{CPSCRUDController.php}\end{DoxyCompactItemize}

@@ -1,0 +1,264 @@
+\hypertarget{classCPSModuleCommand}{
+\section{CPSModuleCommand Class Reference}
+\label{classCPSModuleCommand}\index{CPSModuleCommand@{CPSModuleCommand}}
+}
+
+
+Inheritance diagram for CPSModuleCommand:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classCPSModuleCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSModuleCommand:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classCPSModuleCommand__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSModuleCommand_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSModuleCommand_a4cc928ef4def3a84c181608d31bf7608}{getHelp} ()
+\item 
+\hyperlink{classCPSModuleCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{run} (\$arArgs)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSModuleCommand_af71005841ce53adac00581ab0ba24c1f}{VERSION} = '1.0.6'
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Command that generates a Pogostick Yii Module 
+
+Definition at line 23 of file CPSModuleCommand.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSModuleCommand_a4cc928ef4def3a84c181608d31bf7608}{
+\index{CPSModuleCommand@{CPSModuleCommand}!getHelp@{getHelp}}
+\index{getHelp@{getHelp}!CPSModuleCommand@{CPSModuleCommand}}
+\subsubsection[{getHelp}]{\setlength{\rightskip}{0pt plus 5cm}getHelp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModuleCommand_a4cc928ef4def3a84c181608d31bf7608}
+Display help 
+
+Reimplemented from \hyperlink{classCPSConsoleCommand_a4cc928ef4def3a84c181608d31bf7608}{CPSConsoleCommand}.
+
+
+
+Definition at line 60 of file CPSModuleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sName = $this->bold( $this->name );
+        
+        $_sOptions = $this->getDisplayOptions();
+        
+        return <<<EOD
+USAGE
+  \033[1m{$_sName}\033[0m <\033[1mmodule-ID\033[0m> [options]
+
+DESCRIPTION
+  This command generates an application module.
+
+PARAMETERS
+  * module-ID: required, module ID. It is case-sensitive.
+
+OPTIONS
+
+  -f, --force                  if the files exists, you will be able to 
+                                   optionally overwrite them.
+                                   
+  -b, --base-class             The base class to use for generated controllers. 
+                                   Defaults to 'CPSWebModule'
+                                   
+  -t, --template-path          The template path to use.
+  
+  -n, --template-name          The name of the template to use. 
+                                   Defaults to 'module.php'
+
+{$_sOptions}
+
+EOD;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=388pt]{classCPSModuleCommand_a4cc928ef4def3a84c181608d31bf7608_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classCPSModuleCommand_a4cc928ef4def3a84c181608d31bf7608_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSModuleCommand_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSModuleCommand@{CPSModuleCommand}!init@{init}}
+\index{init@{init}!CPSModuleCommand@{CPSModuleCommand}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModuleCommand_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize the command 
+
+Reimplemented from \hyperlink{classCPSConsoleCommand_a4be4055f3361d4800e16bc2e2e38cda6}{CPSConsoleCommand}.
+
+
+
+Definition at line 42 of file CPSModuleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::init();
+        
+        //  Set base values
+        $this->templatePath = Yii::getPathOfAlias( 'pogostick.templates.module' )
+      ;
+        
+        $this->basePath = Yii::app()->getModulePath();
+        $this->baseClass = 'CPSWebModule';
+        $this->templateName = 'module.php';
+
+        $this->name = 'psmodule';
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModuleCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{
+\index{CPSModuleCommand@{CPSModuleCommand}!run@{run}}
+\index{run@{run}!CPSModuleCommand@{CPSModuleCommand}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arArgs}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModuleCommand_a330e31e8c3572ce01a4e1c8485c6aedd}
+Runs the command
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arArgs Command line parameters specific for this command \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classCPSConsoleCommand_acd971ca71798c549bd4f74ed4ee6729e}{CPSConsoleCommand}.
+
+
+
+Definition at line 99 of file CPSModuleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Process arguments...
+        $arArgs = $this->processArguments( $arArgs );
+        
+        //  Check args...
+        if ( ! ( $_sModuleId = array_shift( $arArgs ) ) )
+        {
+            echo "\033[1mError\033[0m: model ID is required.\n";
+            echo $this->getHelp();
+            return;
+        }
+        
+        $_sModuleClass = ucfirst( $_sModuleId ) . 'Module';
+        $_sModulePath = Yii::app()->getModulePath() . DIRECTORY_SEPARATOR . $_sMo
+      duleId;
+        $_sSourceDir = PS::nvl( $this->templatePath, YII_PATH . '/cli/views/shell
+      /module' );
+
+        $_arList = $this->buildFileList( $_sSourceDir, $_sModulePath );
+
+        $_arList[ $this->templateName ][ 'target' ] = $_sModulePath . DIRECTORY_S
+      EPARATOR . $_sModuleClass . '.php';
+        $_arList[ $this->templateName ][ 'callback' ] = array( $this, 'generateFi
+      le' );
+        $_arList[ $this->templateName ][ 'params' ] = array(
+            'moduleClass' => $_sModuleClass,
+            'moduleID' => $_sModuleId,
+        );
+
+        $_arList[ $_sModuleClass . '.php' ] = $_arList[ $this->templateName ];
+        unset( $_arList[ $this->templateName ] );
+
+        //  Show params
+        $this->displayParameters( 'Module Generator', array( 'Output Path' => $_s
+      ModulePath ) );
+            
+        //  Generate
+        $_arList = $this->copyFiles( $_arList );
+        
+        //  Display results...
+        echo $this->getResultDisplay( $_arList );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSModuleCommand_a330e31e8c3572ce01a4e1c8485c6aedd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSModuleCommand_af71005841ce53adac00581ab0ba24c1f}{
+\index{CPSModuleCommand@{CPSModuleCommand}!VERSION@{VERSION}}
+\index{VERSION@{VERSION}!CPSModuleCommand@{CPSModuleCommand}}
+\subsubsection[{VERSION}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf VERSION} = '1.0.6'}}
+\label{classCPSModuleCommand_af71005841ce53adac00581ab0ba24c1f}
+Our version 
+
+Reimplemented from \hyperlink{classCPSConsoleCommand_af71005841ce53adac00581ab0ba24c1f}{CPSConsoleCommand}.
+
+
+
+Definition at line 32 of file CPSModuleCommand.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/commands/\hyperlink{CPSModuleCommand_8php}{CPSModuleCommand.php}\end{DoxyCompactItemize}

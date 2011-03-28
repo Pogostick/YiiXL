@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCXLBaseHelper.html" title="The mother of all helper classes." alt="" coords="76,83,196,112"/>
+<area shape="rect" id="node11" href="$interfaceIXLShifter.html" title="IXLShifter" alt="" coords="220,83,303,112"/>
+<area shape="rect" id="node14" href="$interfaceIXLUIHelper.html" title="This interface defines a static UI helper class that can be mixed into the main YiiXL system..." alt="" coords="327,83,420,112"/>
+<area shape="rect" id="node5" href="$classCXLHash.html" title="Hash code/password helpers." alt="" coords="5,160,83,189"/>
+<area shape="rect" id="node7" href="$classCXLLog.html" title="A logging helper Utilizes the PHP syslog predefined logging constants." alt="" coords="107,160,176,189"/>
+<area shape="rect" id="node9" href="$classCXLOptions.html" title="Provides abstracted options setting functionality." alt="" coords="209,160,303,189"/>
+<area shape="rect" id="node16" href="$classYiiXLBase.html" title="YiiXLBase." alt="" coords="332,160,415,189"/>
+<area shape="rect" id="node18" href="$classYiiXL.html" title="Main YiiXL entry point." alt="" coords="348,237,399,267"/>
+<area shape="rect" id="node20" href="$classXL.html" title="Alias for YiiXL (three characters less typing FTW!)." alt="" coords="355,315,392,344"/>
+</map>

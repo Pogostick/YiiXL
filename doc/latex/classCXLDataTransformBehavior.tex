@@ -1,0 +1,424 @@
+\hypertarget{classCXLDataTransformBehavior}{
+\section{CXLDataTransformBehavior Class Reference}
+\label{classCXLDataTransformBehavior}\index{CXLDataTransformBehavior@{CXLDataTransformBehavior}}
+}
+
+
+Inheritance diagram for CXLDataTransformBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classCXLDataTransformBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLDataTransformBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classCXLDataTransformBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLDataTransformBehavior_a5f5baa468a67090cc67aa9503fdbc6bb}{getFormat} (\$eventName= 'afterFind', \$formatType= 'date')
+\item 
+\hyperlink{classCXLDataTransformBehavior_a4e91cf22ca23baba52773633bc87b862}{setFormat} (\$eventName= 'afterValidate', \$formatType= 'date', \$format= 'm/d/Y')
+\item 
+\hyperlink{classCXLDataTransformBehavior_afeb8c05903b3b31d7ec509c3e1628e52}{getDefaultSort} ()
+\item 
+\hyperlink{classCXLDataTransformBehavior_ad6a3597dea15d20d248e402b0d162490}{setDefaultSort} (\$sValue)
+\item 
+\hyperlink{group__core__behavior__events_ga586e177c0e7073ec63f7ccd6546ff3fd}{beforeValidate} (\$event)
+\item 
+\hyperlink{group__core__behavior__events_ga5c1ea11a48a8c9bde21ef9a7d391d396}{afterValidate} (\$event)
+\item 
+\hyperlink{group__core__behavior__events_ga3b701d16073e1628451c7dc1929b66bb}{afterFind} (\$event)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLDataTransformBehavior_a2d3ccb7aedca82d5a4ee684f85ae5f0d}{\_\-applyFormat} (\$column, \$value, \$eventName= 'view')
+\item 
+\hyperlink{classCXLDataTransformBehavior_abc970681d914624e7c53ce91ee36c9da}{handleEvent} (\$eventName, CEvent \$event)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLDataTransformBehavior_ab9c3692fec45d84a91a926fdd974fe14}{\$\_\-dateFormat}
+\item 
+\hyperlink{classCXLDataTransformBehavior_ae5efd596975c96b8330c6b70cd116a79}{\$\_\-defaultSort}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCXLDataTransformBehavior}{CXLDataTransformBehavior}
+
+If attached to a model, fields are transformed per your configuration. Also provides a default sort for a model 
+
+Definition at line 23 of file CXLDataTransformBehavior.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLDataTransformBehavior_a2d3ccb7aedca82d5a4ee684f85ae5f0d}{
+\index{CXLDataTransformBehavior@{CXLDataTransformBehavior}!\_\-applyFormat@{\_\-applyFormat}}
+\index{\_\-applyFormat@{\_\-applyFormat}!CXLDataTransformBehavior@{CXLDataTransformBehavior}}
+\subsubsection[{\_\-applyFormat}]{\setlength{\rightskip}{0pt plus 5cm}\_\-applyFormat (
+\begin{DoxyParamCaption}
+\item[{\$}]{ column, }
+\item[{\$}]{ value, }
+\item[{\$}]{ eventName = {\ttfamily 'view'}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLDataTransformBehavior_a2d3ccb7aedca82d5a4ee684f85ae5f0d}
+Applies the requested format to the value and returns it. Override this method to apply additional format types.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em CDbColumnSchema}]\$column \item[{\em mixed}]\$value \item[{\em string}]\$eventName \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 134 of file CXLDataTransformBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_result = $value;
+
+    //  Apply formats
+    switch ( $column->dbType )
+    {
+      case 'date':
+      case 'datetime':
+      case 'timestamp':
+        //  Handle blanks
+        if ( null != $value && $value != '0000-00-00' && $value != '0000-00-00 00
+      :00:00' && false !== strtotime( $value ) )
+          $_result = date( $this->getFormat( $eventName, $column->dbType ), strto
+      time( $value ) );
+        break;
+    }
+
+    return $_result;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=384pt]{classCXLDataTransformBehavior_a2d3ccb7aedca82d5a4ee684f85ae5f0d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=396pt]{classCXLDataTransformBehavior_a2d3ccb7aedca82d5a4ee684f85ae5f0d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLDataTransformBehavior_afeb8c05903b3b31d7ec509c3e1628e52}{
+\index{CXLDataTransformBehavior@{CXLDataTransformBehavior}!getDefaultSort@{getDefaultSort}}
+\index{getDefaultSort@{getDefaultSort}!CXLDataTransformBehavior@{CXLDataTransformBehavior}}
+\subsubsection[{getDefaultSort}]{\setlength{\rightskip}{0pt plus 5cm}getDefaultSort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLDataTransformBehavior_afeb8c05903b3b31d7ec509c3e1628e52}
+Returns the default sort \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCXLDataTransformBehavior_ad6a3597dea15d20d248e402b0d162490}{setDefaultSort} 
+\end{DoxySeeAlso}
+
+
+Definition at line 104 of file CXLDataTransformBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_defaultSort;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLDataTransformBehavior_a5f5baa468a67090cc67aa9503fdbc6bb}{
+\index{CXLDataTransformBehavior@{CXLDataTransformBehavior}!getFormat@{getFormat}}
+\index{getFormat@{getFormat}!CXLDataTransformBehavior@{CXLDataTransformBehavior}}
+\subsubsection[{getFormat}]{\setlength{\rightskip}{0pt plus 5cm}getFormat (
+\begin{DoxyParamCaption}
+\item[{\$}]{ eventName = {\ttfamily 'afterFind'}, }
+\item[{\$}]{ formatType = {\ttfamily 'date'}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLDataTransformBehavior_a5f5baa468a67090cc67aa9503fdbc6bb}
+Retrieves a format 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$eventName \item[{\em string}]\$formatType \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file CXLDataTransformBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return XL::nvl( $this->_dateFormat[$eventName][$formatType], 'm/d/Y' );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classCXLDataTransformBehavior_a5f5baa468a67090cc67aa9503fdbc6bb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLDataTransformBehavior_a5f5baa468a67090cc67aa9503fdbc6bb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLDataTransformBehavior_abc970681d914624e7c53ce91ee36c9da}{
+\index{CXLDataTransformBehavior@{CXLDataTransformBehavior}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!CXLDataTransformBehavior@{CXLDataTransformBehavior}}
+\subsubsection[{handleEvent}]{\setlength{\rightskip}{0pt plus 5cm}handleEvent (
+\begin{DoxyParamCaption}
+\item[{\$}]{ eventName, }
+\item[{CEvent \$}]{ event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLDataTransformBehavior_abc970681d914624e7c53ce91ee36c9da}
+Process the data and apply formats 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$eventName \item[{\em CEvent}]\$event \end{DoxyParams}
+
+
+Definition at line 158 of file CXLDataTransformBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    static $_schema;
+    static $_schemaFor;
+
+    $_model = $event->sender;
+
+    //  Cache for multi event speed
+    if ( $_schemaFor != get_class( $_model ) )
+    {
+      $_schema = $_model->getMetaData()->columns;
+      $_schemaFor = get_class( $_model );
+    }
+
+    //  Not for us? Pass it through...
+    if ( isset( $this->_dateFormat[$eventName] ) )
+    {
+      //  Is it safe?
+      if ( !$_schema )
+      {
+        $_model->addError( __CLASS__, 'Cannot read schema for data formatting' );
+      
+        return false;
+      }
+
+      //  Scoot through and update values...
+      foreach ( $_schema as $_name => $_column )
+      {
+        if ( !empty( $_name ) && $_model->hasAttribute( $_name ) && isset( $_sche
+      ma[$_name], $this->_dateFormat[$eventName][$_column->dbType] ) )
+        {
+          $_value = $this->_applyFormat( $_column, $_model->getAttribute( $_name 
+      ), $eventName );
+          $_model->setAttribute( $_name, $_value );
+        }
+      }
+    }
+
+    //  Papa don't preach...
+    return parent::$eventName( $event );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLDataTransformBehavior_abc970681d914624e7c53ce91ee36c9da_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classCXLDataTransformBehavior_abc970681d914624e7c53ce91ee36c9da_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLDataTransformBehavior_ad6a3597dea15d20d248e402b0d162490}{
+\index{CXLDataTransformBehavior@{CXLDataTransformBehavior}!setDefaultSort@{setDefaultSort}}
+\index{setDefaultSort@{setDefaultSort}!CXLDataTransformBehavior@{CXLDataTransformBehavior}}
+\subsubsection[{setDefaultSort}]{\setlength{\rightskip}{0pt plus 5cm}setDefaultSort (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLDataTransformBehavior_ad6a3597dea15d20d248e402b0d162490}
+Sets the default sort 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sValue \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\$this 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCXLDataTransformBehavior_afeb8c05903b3b31d7ec509c3e1628e52}{getDefaultSort} 
+\end{DoxySeeAlso}
+
+
+Definition at line 115 of file CXLDataTransformBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_defaultSort = $sValue;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLDataTransformBehavior_a4e91cf22ca23baba52773633bc87b862}{
+\index{CXLDataTransformBehavior@{CXLDataTransformBehavior}!setFormat@{setFormat}}
+\index{setFormat@{setFormat}!CXLDataTransformBehavior@{CXLDataTransformBehavior}}
+\subsubsection[{setFormat}]{\setlength{\rightskip}{0pt plus 5cm}setFormat (
+\begin{DoxyParamCaption}
+\item[{\$}]{ eventName = {\ttfamily 'afterValidate'}, }
+\item[{\$}]{ formatType = {\ttfamily 'date'}, }
+\item[{\$}]{ format = {\ttfamily 'm/d/Y'}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLDataTransformBehavior_a4e91cf22ca23baba52773633bc87b862}
+Sets a format
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$eventName \item[{\em string}]\$formatType \item[{\em string}]\$format \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\$this 
+\end{DoxyReturn}
+
+
+Definition at line 89 of file CXLDataTransformBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( !isset( $this->_dateFormat[$eventName] ) )
+      $this->_dateFormat[$eventName] = array( );
+
+    $this->_dateFormat[$eventName][$formatType] = $format;
+
+    return $this;
+  }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLDataTransformBehavior_ab9c3692fec45d84a91a926fdd974fe14}{
+\index{CXLDataTransformBehavior@{CXLDataTransformBehavior}!\$\_\-dateFormat@{\$\_\-dateFormat}}
+\index{\$\_\-dateFormat@{\$\_\-dateFormat}!CXLDataTransformBehavior@{CXLDataTransformBehavior}}
+\subsubsection[{\$\_\-dateFormat}]{\setlength{\rightskip}{0pt plus 5cm}array \$\_\-dateFormat\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLDataTransformBehavior_ab9c3692fec45d84a91a926fdd974fe14}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ array(
+    
+    'afterFind' => array(
+      'date' => 'm/d/Y',
+      'datetime' => 'm/d/Y H:i:s',
+    ),
+    
+    'afterValidate' => array(
+      'date' => 'Y-m-d',
+      'datetime' => 'Y-m-d H:i:s',
+    ),
+  )
+\end{DoxyCode}
+Holds the default/configured formats for use when populating fields
+
+array( 'eventName' =$>$ array( // The event to apply format in 'dataType' =$>$ $<$format$>$ // The format for the display 'method' =$>$ $<$function$>$ // The function to call for formatting ), // Send array(object,method) for class methods 'eventName' =$>$ array( // The event to apply format in 'dataType' =$>$ $<$format$>$ // The format for the display 'method' =$>$ $<$function$>$ // The function to call for formatting ), // Send array(object,method) for class methods ... 
+
+Definition at line 45 of file CXLDataTransformBehavior.php.
+
+\hypertarget{classCXLDataTransformBehavior_ae5efd596975c96b8330c6b70cd116a79}{
+\index{CXLDataTransformBehavior@{CXLDataTransformBehavior}!\$\_\-defaultSort@{\$\_\-defaultSort}}
+\index{\$\_\-defaultSort@{\$\_\-defaultSort}!CXLDataTransformBehavior@{CXLDataTransformBehavior}}
+\subsubsection[{\$\_\-defaultSort}]{\setlength{\rightskip}{0pt plus 5cm}string \$\_\-defaultSort\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLDataTransformBehavior_ae5efd596975c96b8330c6b70cd116a79}
+Default sort
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCXLDataTransformBehavior_afeb8c05903b3b31d7ec509c3e1628e52}{getDefaultSort} 
+
+\hyperlink{classCXLDataTransformBehavior_ad6a3597dea15d20d248e402b0d162490}{setDefaultSort} 
+\end{DoxySeeAlso}
+
+
+Definition at line 64 of file CXLDataTransformBehavior.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLDataTransformBehavior_8php}{CXLDataTransformBehavior.php}\end{DoxyCompactItemize}

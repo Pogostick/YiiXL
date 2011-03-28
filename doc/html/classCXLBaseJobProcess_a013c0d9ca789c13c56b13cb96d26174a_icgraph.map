@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCXLBaseJobProcess.html#affa56f73ffc8554251c1cda1e6a8fbf1" title="Runs the process but stops the timer on the case of an exception." alt="" coords="141,5,280,35"/>
+<area shape="rect" id="node5" href="$classCXLBaseJobProcess.html#afb0fafe7e02a3ae1993c01c19fad2bae" title="Runs the job process with timing." alt="" coords="328,5,371,35"/>
+<area shape="rect" id="node7" href="$classCXLBaseJobProcess.html#ac958924ca9aaf706efd2e636b829237d" title="Constructor." alt="" coords="419,5,515,35"/>
+</map>

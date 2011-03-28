@@ -1,0 +1,173 @@
+\hypertarget{classCPSjqAchtung}{
+\section{CPSjqAchtung Class Reference}
+\label{classCPSjqAchtung}\index{CPSjqAchtung@{CPSjqAchtung}}
+}
+
+
+Inheritance diagram for CPSjqAchtung:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCPSjqAchtung__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSjqAchtung:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCPSjqAchtung__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSjqAchtung_ac02a66bde8e72e4909137bf748edf665}{registerClientScripts} (\$bLocateScript=false)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSjqAchtung_a0ffc269a208148ade57c7eb608a4562a}{create} (\$sName=null, \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array} \$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSjqAchtung_ae357f9dc377f7de0d12010b2ced28cbc}{PS\_\-WIDGET\_\-NAME} = 'achtung'
+\item 
+const \hyperlink{classCPSjqAchtung_a8ccb5e1d65c091f944a6aa8c5be834ca}{PS\_\-EXTERNAL\_\-PATH} = '/jquery-\/plugins/achtung'
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSjqAchtung.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSjqAchtung_a0ffc269a208148ade57c7eb608a4562a}{
+\index{CPSjqAchtung@{CPSjqAchtung}!create@{create}}
+\index{create@{create}!CPSjqAchtung@{CPSjqAchtung}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static create (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sName = {\ttfamily null}, }
+\item[{{\bf array} \$}]{ arOptions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSjqAchtung_a0ffc269a208148ade57c7eb608a4562a}
+Constructs and returns a jQuery Tools widget
+
+The options passed in are dynamically added to the options array and will be accessible and modifiable as normal (.i.e. \$this-\/$>$theme, \$this-\/$>$baseUrl, etc.)
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arOptions The options for the widget \item[{\em string}]\$sClass The class of the calling object if different \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCPSjqMaskedInputWrapper}{CPSjqMaskedInputWrapper} 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSjQueryWidget_af09cbabc6ce2c1d9d9efb7ae308ea0f3}{CPSjQueryWidget}.
+
+
+
+Definition at line 76 of file CPSjqAchtung.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return parent::create( PS::nvl( $sName, self::PS_WIDGET_NAME ), array_mer
+      ge( $arOptions, array( 'class' => __CLASS__ ) ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSjqAchtung_ac02a66bde8e72e4909137bf748edf665}{
+\index{CPSjqAchtung@{CPSjqAchtung}!registerClientScripts@{registerClientScripts}}
+\index{registerClientScripts@{registerClientScripts}!CPSjqAchtung@{CPSjqAchtung}}
+\subsubsection[{registerClientScripts}]{\setlength{\rightskip}{0pt plus 5cm}registerClientScripts (
+\begin{DoxyParamCaption}
+\item[{\$}]{ bLocateScript = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSjqAchtung_ac02a66bde8e72e4909137bf748edf665}
+Registers the needed CSS and JavaScript. 
+\begin{DoxyParams}{Parameters}
+\item[{\em boolean}]If true, system will try to find jquery plugins based on the pattern jquery.$<$plugin-\/name\mbox{[}.min\mbox{]}.js \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+CClientScript The current app's ClientScript object 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSjQueryWidget_a79bf828ed852174a56c4db5ef918a83c}{CPSjQueryWidget}.
+
+
+
+Definition at line 48 of file CPSjqAchtung.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Daddy...
+        parent::registerClientScripts( $bLocateScript );
+        
+        //  Reset the baseUrl for our own scripts
+        $this->baseUrl = $this->extLibUrl . self::PS_EXTERNAL_PATH;
+        
+        //  Register css
+        PS::_rcf( $this->baseUrl . DIRECTORY_SEPARATOR . "ui.achtung-min.css", CC
+      lientScript::POS_HEAD );
+        
+        //  Register scripts necessary
+        $this->pushScriptFile( $this->baseUrl . DIRECTORY_SEPARATOR . "ui.achtung
+      -min.js", CClientScript::POS_HEAD );
+
+        //  Don't forget subclasses
+        return PS::_cs();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSjqAchtung_ac02a66bde8e72e4909137bf748edf665_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSjqAchtung_a8ccb5e1d65c091f944a6aa8c5be834ca}{
+\index{CPSjqAchtung@{CPSjqAchtung}!PS\_\-EXTERNAL\_\-PATH@{PS\_\-EXTERNAL\_\-PATH}}
+\index{PS\_\-EXTERNAL\_\-PATH@{PS\_\-EXTERNAL\_\-PATH}!CPSjqAchtung@{CPSjqAchtung}}
+\subsubsection[{PS\_\-EXTERNAL\_\-PATH}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PS\_\-EXTERNAL\_\-PATH} = '/jquery-\/plugins/achtung'}}
+\label{classCPSjqAchtung_a8ccb5e1d65c091f944a6aa8c5be834ca}
+The path where the assets for this widget are stored (underneath the psYiiExtensions/external base Currently, a CDN is in use and no local files are required... 
+
+Definition at line 37 of file CPSjqAchtung.php.
+
+\hypertarget{classCPSjqAchtung_ae357f9dc377f7de0d12010b2ced28cbc}{
+\index{CPSjqAchtung@{CPSjqAchtung}!PS\_\-WIDGET\_\-NAME@{PS\_\-WIDGET\_\-NAME}}
+\index{PS\_\-WIDGET\_\-NAME@{PS\_\-WIDGET\_\-NAME}!CPSjqAchtung@{CPSjqAchtung}}
+\subsubsection[{PS\_\-WIDGET\_\-NAME}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PS\_\-WIDGET\_\-NAME} = 'achtung'}}
+\label{classCPSjqAchtung_ae357f9dc377f7de0d12010b2ced28cbc}
+The name of this widget 
+
+Definition at line 31 of file CPSjqAchtung.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/widgets/\hyperlink{CPSjqAchtung_8php}{CPSjqAchtung.php}\end{DoxyCompactItemize}

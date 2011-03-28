@@ -1,0 +1,347 @@
+\hypertarget{classCXLHash}{
+\section{CXLHash Class Reference}
+\label{classCXLHash}\index{CXLHash@{CXLHash}}
+}
+
+
+Inheritance diagram for CXLHash:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=370pt]{classCXLHash__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLHash:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=370pt]{classCXLHash__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCXLHash_a861d68beb0e1d6e79ff85d68212863dd}{generate} (\$hashLength=20, \$hashType=self::ALL)
+\item 
+static \hyperlink{classCXLHash_ace936368fcb6b1d6d533c4d19cf7e596}{hash} (\$hashTarget=null, \$hashType=self::SHA1, \$hashLength=32, \$rawOutput=false)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCXLHash_aa607ab5e557e6ebb60b85c5a20ad067f}{CLASS\_\-LOG\_\-TAG} = 'yiixl.core.components.CXLHash'
+\item 
+const \hyperlink{classCXLHash_ab56e734000051e5c12c8c5cf6d8d160d}{ALL} = 0
+\item 
+const \hyperlink{classCXLHash_a33fc57236d932860ab0ad8e8268e0c99}{ALPHA\_\-LOWER} = 1
+\item 
+const \hyperlink{classCXLHash_a13afa6f8ce77da9bd4a5af5d473d0d8b}{ALPHA\_\-UPPER} = 2
+\item 
+const \hyperlink{classCXLHash_a6bb7987358cd3de8e7c775094597e631}{ALPHA} = 3
+\item 
+const \hyperlink{classCXLHash_a1acce0cfa5c3723599af4c7e325b4312}{ALPHA\_\-NUMERIC} = 4
+\item 
+const \hyperlink{classCXLHash_a371814049e51cde466af6295bdfed4e3}{ALPHA\_\-LOWER\_\-NUMERIC} = 5
+\item 
+const \hyperlink{classCXLHash_a19cabff2391d99103d1bf11b0ed2972e}{NUMERIC} = 6
+\item 
+const \hyperlink{classCXLHash_aa15c0932a4cd96ab710478faace6ccb9}{ALPHA\_\-LOWER\_\-NUMERIC\_\-IDIOTPROOF} = 7
+\item 
+const \hyperlink{classCXLHash_a66be2064e952a39f04c0a54d83d1c779}{MD5} = 1
+\item 
+const \hyperlink{classCXLHash_a1ca7a04dcc397e382e3a4ee5e0e1b9a1}{SHA1} = 2
+\item 
+const \hyperlink{classCXLHash_aeeccfbe476a8ab58ea0c3382287ff0e9}{CRC32} = 18
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCXLHash_a4ccb145eb796f708b107b1ed4069bd0f}{\$\_\-hashSeeds}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Hash code/password helpers 
+
+Definition at line 20 of file CXLHash.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLHash_a861d68beb0e1d6e79ff85d68212863dd}{
+\index{CXLHash@{CXLHash}!generate@{generate}}
+\index{generate@{generate}!CXLHash@{CXLHash}}
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}static generate (
+\begin{DoxyParamCaption}
+\item[{\$}]{ hashLength = {\ttfamily 20}, }
+\item[{\$}]{ hashType = {\ttfamily self::ALL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCXLHash_a861d68beb0e1d6e79ff85d68212863dd}
+Generates a unique hash code
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em int}]\$hashLength \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file CXLHash.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  If we ain't got what you're looking for, return simple md5 hash...
+    if ( ! isset( self::$_hashSeeds, self::$_hashSeeds[$hashType] ) || ! is_array
+      ( self::$_hashSeeds[$hashType] ) )
+      return md5( time() . time() );
+
+    //  Randomly pick elements from the array of seeds
+    for ( $_i = 0, $_hash = null, $_size = count( self::$_hashSeeds[$hashType] ) 
+      - 1; $_i < $hashLength; $_i++ )
+      $_hash .= self::$_hashSeeds[$hashType][mt_rand( 0, $_size )];
+
+    return $_hash;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLHash_ace936368fcb6b1d6d533c4d19cf7e596}{
+\index{CXLHash@{CXLHash}!hash@{hash}}
+\index{hash@{hash}!CXLHash@{CXLHash}}
+\subsubsection[{hash}]{\setlength{\rightskip}{0pt plus 5cm}static hash (
+\begin{DoxyParamCaption}
+\item[{\$}]{ hashTarget = {\ttfamily null}, }
+\item[{\$}]{ hashType = {\ttfamily self::SHA1}, }
+\item[{\$}]{ hashLength = {\ttfamily 32}, }
+\item[{\$}]{ rawOutput = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCXLHash_ace936368fcb6b1d6d533c4d19cf7e596}
+Generic hashing method. Will hash any string or generate a random hash and hash that!
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$hashTarget The value to hash.. \item[{\em integer}]\$hashType \mbox{[}optional\mbox{]} The type of hash to create. Can be \{\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCXLHash_a66be2064e952a39f04c0a54d83d1c779}{CXLHash::MD5}\}, \{
+
+\hyperlink{classCXLHash_a1ca7a04dcc397e382e3a4ee5e0e1b9a1}{CXLHash::SHA1}\}, or \hyperlink{classCXLHash_aeeccfbe476a8ab58ea0c3382287ff0e9}{CXLHash\#CRC32}. Defaults to \{
+
+\hyperlink{classCXLHash_a1ca7a04dcc397e382e3a4ee5e0e1b9a1}{CXLHash::SHA1}\}. 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]\$hashLength \mbox{[}optional\mbox{]} The length of the hash to return. Only applies if {\bfseries \$hashType} is not MD5, SH1, or CRC32. . Defaults to 32. \item[{\em boolean}]\$rawOutput \mbox{[}optional\mbox{]} If {\bfseries \$rawOutput} is true, then the hash digest is returned in raw binary format instead of ASCII. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file CXLHash.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_value = ( null === $hashTarget ) ? self::generate( $hashLength ) : $hashTar
+      get;
+
+    switch ( $hashType )
+    {
+      case self::MD5:
+        $_hash = md5( $_value, $rawOutput );
+        break;
+
+      case self::SHA1:
+        $_hash = sha1( $_value, $rawOutput );
+        break;
+
+      case self::CRC32:
+        $_hash = crc32( $_value );
+        break;
+
+      default:
+        $_hash = hash( $hashType, $_value, $rawOutput );
+        break;
+    }
+
+    return $_hash;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLHash_ace936368fcb6b1d6d533c4d19cf7e596_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLHash_a4ccb145eb796f708b107b1ed4069bd0f}{
+\index{CXLHash@{CXLHash}!\$\_\-hashSeeds@{\$\_\-hashSeeds}}
+\index{\$\_\-hashSeeds@{\$\_\-hashSeeds}!CXLHash@{CXLHash}}
+\subsubsection[{\$\_\-hashSeeds}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-hashSeeds\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCXLHash_a4ccb145eb796f708b107b1ed4069bd0f}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ array(
+    self::ALL => array( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l
+      ', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B'
+      , 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+       'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', 
+      '8', '9' ),
+    self::ALPHA_LOWER => array( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+       'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' )
+      ,
+    self::ALPHA_UPPER => array( 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+       'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' )
+      ,
+    self::ALPHA => array( 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 
+      'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', '
+      b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r
+      ', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ),
+    self::ALPHA_NUMERIC => array( 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J
+      ', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+      , 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+       'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', 
+      '6', '7', '8', '9' ),
+    self::ALPHA_LOWER_NUMERIC => array( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', '
+      i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y
+      ', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' ),
+    self::NUMERIC => array( '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' ),
+    self::ALPHA_LOWER_NUMERIC_IDIOTPROOF => array( 'a', 'b', 'c', 'd', 'e', 'f', 
+      'g', 'h', 'j', 'k', 'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', '
+      z', '2', '3', '4', '5', '6', '7', '8', '9' ),
+  )
+\end{DoxyCode}
+
+
+Definition at line 66 of file CXLHash.php.
+
+\hypertarget{classCXLHash_ab56e734000051e5c12c8c5cf6d8d160d}{
+\index{CXLHash@{CXLHash}!ALL@{ALL}}
+\index{ALL@{ALL}!CXLHash@{CXLHash}}
+\subsubsection[{ALL}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ALL} = 0}}
+\label{classCXLHash_ab56e734000051e5c12c8c5cf6d8d160d}
+Our hash types 
+
+Definition at line 39 of file CXLHash.php.
+
+\hypertarget{classCXLHash_a6bb7987358cd3de8e7c775094597e631}{
+\index{CXLHash@{CXLHash}!ALPHA@{ALPHA}}
+\index{ALPHA@{ALPHA}!CXLHash@{CXLHash}}
+\subsubsection[{ALPHA}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ALPHA} = 3}}
+\label{classCXLHash_a6bb7987358cd3de8e7c775094597e631}
+
+
+Definition at line 42 of file CXLHash.php.
+
+\hypertarget{classCXLHash_a33fc57236d932860ab0ad8e8268e0c99}{
+\index{CXLHash@{CXLHash}!ALPHA\_\-LOWER@{ALPHA\_\-LOWER}}
+\index{ALPHA\_\-LOWER@{ALPHA\_\-LOWER}!CXLHash@{CXLHash}}
+\subsubsection[{ALPHA\_\-LOWER}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ALPHA\_\-LOWER} = 1}}
+\label{classCXLHash_a33fc57236d932860ab0ad8e8268e0c99}
+
+
+Definition at line 40 of file CXLHash.php.
+
+\hypertarget{classCXLHash_a371814049e51cde466af6295bdfed4e3}{
+\index{CXLHash@{CXLHash}!ALPHA\_\-LOWER\_\-NUMERIC@{ALPHA\_\-LOWER\_\-NUMERIC}}
+\index{ALPHA\_\-LOWER\_\-NUMERIC@{ALPHA\_\-LOWER\_\-NUMERIC}!CXLHash@{CXLHash}}
+\subsubsection[{ALPHA\_\-LOWER\_\-NUMERIC}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ALPHA\_\-LOWER\_\-NUMERIC} = 5}}
+\label{classCXLHash_a371814049e51cde466af6295bdfed4e3}
+
+
+Definition at line 44 of file CXLHash.php.
+
+\hypertarget{classCXLHash_aa15c0932a4cd96ab710478faace6ccb9}{
+\index{CXLHash@{CXLHash}!ALPHA\_\-LOWER\_\-NUMERIC\_\-IDIOTPROOF@{ALPHA\_\-LOWER\_\-NUMERIC\_\-IDIOTPROOF}}
+\index{ALPHA\_\-LOWER\_\-NUMERIC\_\-IDIOTPROOF@{ALPHA\_\-LOWER\_\-NUMERIC\_\-IDIOTPROOF}!CXLHash@{CXLHash}}
+\subsubsection[{ALPHA\_\-LOWER\_\-NUMERIC\_\-IDIOTPROOF}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ALPHA\_\-LOWER\_\-NUMERIC\_\-IDIOTPROOF} = 7}}
+\label{classCXLHash_aa15c0932a4cd96ab710478faace6ccb9}
+
+
+Definition at line 46 of file CXLHash.php.
+
+\hypertarget{classCXLHash_a1acce0cfa5c3723599af4c7e325b4312}{
+\index{CXLHash@{CXLHash}!ALPHA\_\-NUMERIC@{ALPHA\_\-NUMERIC}}
+\index{ALPHA\_\-NUMERIC@{ALPHA\_\-NUMERIC}!CXLHash@{CXLHash}}
+\subsubsection[{ALPHA\_\-NUMERIC}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ALPHA\_\-NUMERIC} = 4}}
+\label{classCXLHash_a1acce0cfa5c3723599af4c7e325b4312}
+
+
+Definition at line 43 of file CXLHash.php.
+
+\hypertarget{classCXLHash_a13afa6f8ce77da9bd4a5af5d473d0d8b}{
+\index{CXLHash@{CXLHash}!ALPHA\_\-UPPER@{ALPHA\_\-UPPER}}
+\index{ALPHA\_\-UPPER@{ALPHA\_\-UPPER}!CXLHash@{CXLHash}}
+\subsubsection[{ALPHA\_\-UPPER}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ALPHA\_\-UPPER} = 2}}
+\label{classCXLHash_a13afa6f8ce77da9bd4a5af5d473d0d8b}
+
+
+Definition at line 41 of file CXLHash.php.
+
+\hypertarget{classCXLHash_aa607ab5e557e6ebb60b85c5a20ad067f}{
+\index{CXLHash@{CXLHash}!CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}}
+\index{CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}!CXLHash@{CXLHash}}
+\subsubsection[{CLASS\_\-LOG\_\-TAG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CLASS\_\-LOG\_\-TAG} = 'yiixl.core.components.CXLHash'}}
+\label{classCXLHash_aa607ab5e557e6ebb60b85c5a20ad067f}
+Our logging tag 
+
+Definition at line 29 of file CXLHash.php.
+
+\hypertarget{classCXLHash_aeeccfbe476a8ab58ea0c3382287ff0e9}{
+\index{CXLHash@{CXLHash}!CRC32@{CRC32}}
+\index{CRC32@{CRC32}!CXLHash@{CXLHash}}
+\subsubsection[{CRC32}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CRC32} = 18}}
+\label{classCXLHash_aeeccfbe476a8ab58ea0c3382287ff0e9}
+
+
+Definition at line 55 of file CXLHash.php.
+
+\hypertarget{classCXLHash_a66be2064e952a39f04c0a54d83d1c779}{
+\index{CXLHash@{CXLHash}!MD5@{MD5}}
+\index{MD5@{MD5}!CXLHash@{CXLHash}}
+\subsubsection[{MD5}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MD5} = 1}}
+\label{classCXLHash_a66be2064e952a39f04c0a54d83d1c779}
+Hashing methods 
+
+Definition at line 53 of file CXLHash.php.
+
+\hypertarget{classCXLHash_a19cabff2391d99103d1bf11b0ed2972e}{
+\index{CXLHash@{CXLHash}!NUMERIC@{NUMERIC}}
+\index{NUMERIC@{NUMERIC}!CXLHash@{CXLHash}}
+\subsubsection[{NUMERIC}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NUMERIC} = 6}}
+\label{classCXLHash_a19cabff2391d99103d1bf11b0ed2972e}
+
+
+Definition at line 45 of file CXLHash.php.
+
+\hypertarget{classCXLHash_a1ca7a04dcc397e382e3a4ee5e0e1b9a1}{
+\index{CXLHash@{CXLHash}!SHA1@{SHA1}}
+\index{SHA1@{SHA1}!CXLHash@{CXLHash}}
+\subsubsection[{SHA1}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf SHA1} = 2}}
+\label{classCXLHash_a1ca7a04dcc397e382e3a4ee5e0e1b9a1}
+
+
+Definition at line 54 of file CXLHash.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLHash_8php}{CXLHash.php}\end{DoxyCompactItemize}

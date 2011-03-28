@@ -1,0 +1,1130 @@
+\hypertarget{classCPSModel}{
+\section{CPSModel Class Reference}
+\label{classCPSModel}\index{CPSModel@{CPSModel}}
+}
+
+
+Inheritance diagram for CPSModel:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classCPSModel__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSModel:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{classCPSModel__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSModel_a7cd2e13f50fbc61e846e5980f02371f8}{getModelName} ()
+\item 
+\hyperlink{classCPSModel_aef6109e8c58719533639e6526717fb1b}{getModelClass} ()
+\item 
+\hyperlink{classCPSModel_a6950c2a0061d704770d6df19daa75606}{setModelName} (\$sValue)
+\item 
+\hyperlink{classCPSModel_a710a72fc863debf3031e4d423ef9d405}{setModelClass} (\$modelClass)
+\item 
+\hyperlink{classCPSModel_a41b42bcfd0572f6481a2a323d73c9977}{getSchema} ()
+\item 
+\hyperlink{classCPSModel_a21e18eb7091f0ae3098c37a4c68fd5dc}{getTablePrefix} ()
+\item 
+\hyperlink{classCPSModel_a3c04fa5f6105af41bb2f6d1c5b925576}{setTablePrefix} (\$prefix, \$thisTableOnly=false)
+\item 
+\hyperlink{classCPSModel_a9958a23e416f0e0fd7cc5f3e80532335}{getAttributeLabels} ()
+\item 
+\hyperlink{classCPSModel_acb1238cae89dbe15864bc28fbfb069a2}{getAttributeLabel} (\$attribute)
+\item 
+\hyperlink{classCPSModel_a84c15d8a583f4f7f88f683a6db1a567b}{setAttributes} (\$attributes, \$safeOnly=true)
+\item 
+\hyperlink{classCPSModel_a6e708ea9d538b48ecccffd79e17fb8aa}{\_\-\_\-construct} (\$\_\-scenario= 'insert')
+\item 
+\hyperlink{classCPSModel_aa5cc1f736392d6a9c6b07db4f06d9f17}{hasBehavior} (\$className)
+\item 
+\hyperlink{classCPSModel_a211e6bc9ddb71d8c3cdb61d7f92a8331}{behaviors} ()
+\item 
+\hyperlink{classCPSModel_a4660591fdf032d22bbba3911e2bc5f09}{getErrorsForLogging} (\$attribute=null)
+\item 
+\hyperlink{classCPSModel_aaf11785905da71774e052912d784e3b4}{\_\-\_\-sleep} ()
+\item 
+\hyperlink{classCPSModel_a796bf438724e047aeef18579732a3780}{search} ()
+\item 
+\hyperlink{classCPSModel_abd594bc52ba432da2f83f3e977f4a361}{hasTransaction} ()
+\item 
+\hyperlink{classCPSModel_a165becb0c2d75653ebcd3064f35addc0}{getRestAttributes} ()
+\item 
+\hyperlink{classCPSModel_a2c43b5a257f271c45b33f7696ab2baf1}{setRestAttributes} (\$attributeList)
+\item 
+\hyperlink{classCPSModel_a5c5ebc48ca4a267c9ef1e0e9b4324289}{afterConstruct} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSModel_a804031428d96cfe7a18b1a343272f5a7}{queryAll} (\$criteria, \$fetchAssociative=true, \$parameters=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+static \hyperlink{classCPSModel_adeb67d458cbd5d7845bd2b47bc5e2905}{execute} (\$sql, \$parameters=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+static \hyperlink{classCPSModel_a994ac6292d92ce6c172ee2f655b91ae4}{getDb} ()
+\item 
+static \hyperlink{classCPSModel_a146675932a41d9bcf4194237aa1d68db}{createCommand} (\$sql)
+\item 
+static \hyperlink{classCPSModel_acede846ed83753b53f6b99ad1c4df87c}{beginTransaction} ()
+\item 
+static \hyperlink{classCPSModel_a46020c73ffd9df1dab08fcfc7a26d530}{commitTransaction} ()
+\item 
+static \hyperlink{classCPSModel_a06996eae1b742263c0a4b83da0f9f922}{rollbackTransaction} (Exception \$exception=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSModel_ad86f0aac1c5254c623bf3a6683ed56e8}{\$\_\-schema}
+\item 
+\hyperlink{classCPSModel_a58d5dd151fa6e7f7841d9d85a6a6c273}{\$\_\-tablePrefix} = null
+\item 
+\hyperlink{classCPSModel_a255288ecbb9d5f910b8d9a7c04a34a9b}{\$\_\-attributeLabels} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}( )
+\item 
+\hyperlink{classCPSModel_a90080dcb26627bf719d96ab99e51f958}{\$\_\-modelClass} = null
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSModel_a3cff4c1c690782176edb1e27b4d602a1}{\$\_\-transactionStack} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}( )
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file CPSModel.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSModel_a6e708ea9d538b48ecccffd79e17fb8aa}{
+\index{CPSModel@{CPSModel}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSModel@{CPSModel}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ \_\-scenario = {\ttfamily 'insert'}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a6e708ea9d538b48ecccffd79e17fb8aa}
+Builds a \hyperlink{classCPSModel}{CPSModel} and sets the model name
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$\_\-scenario \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCPSModel}{CPSModel} 
+\end{DoxyReturn}
+
+
+Definition at line 211 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::__construct( $_scenario );
+        $this->_modelClass = ( version_compare( PHP_VERSION, '5.3.0' ) > 0 ) ? ge
+      t_called_class() : get_class( $this );
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSModel_aaf11785905da71774e052912d784e3b4}{
+\index{CPSModel@{CPSModel}!\_\-\_\-sleep@{\_\-\_\-sleep}}
+\index{\_\-\_\-sleep@{\_\-\_\-sleep}!CPSModel@{CPSModel}}
+\subsubsection[{\_\-\_\-sleep}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-sleep (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_aaf11785905da71774e052912d784e3b4}
+PHP sleep magic method. Take opportunity to flush schema cache... \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 284 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Clean up and phone home...
+        $this->_schema = null;
+        return parent::__sleep();
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a5c5ebc48ca4a267c9ef1e0e9b4324289}{
+\index{CPSModel@{CPSModel}!afterConstruct@{afterConstruct}}
+\index{afterConstruct@{afterConstruct}!CPSModel@{CPSModel}}
+\subsubsection[{afterConstruct}]{\setlength{\rightskip}{0pt plus 5cm}afterConstruct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a5c5ebc48ca4a267c9ef1e0e9b4324289}
+Grab our name 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$classNameName \end{DoxyParams}
+
+
+Definition at line 479 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->_modelClass = get_class( $this );
+        parent::afterConstruct();
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_acede846ed83753b53f6b99ad1c4df87c}{
+\index{CPSModel@{CPSModel}!beginTransaction@{beginTransaction}}
+\index{beginTransaction@{beginTransaction}!CPSModel@{CPSModel}}
+\subsubsection[{beginTransaction}]{\setlength{\rightskip}{0pt plus 5cm}static beginTransaction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSModel_acede846ed83753b53f6b99ad1c4df87c}
+Begins a database transaction (PHP 5.3+ only) 
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CDbException}]\end{DoxyExceptions}
+
+
+Definition at line 375 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( version_compare( PHP_VERSION, '5.3.0' ) > 0 )
+        {
+            $_modelClass = get_called_class();
+            $_model = new $_modelClass;
+            $_transaction = $_model->getDbConnection()->beginTransaction();
+            array_push( self::$_transactionStack, $_transaction );
+        }
+
+        return $_transaction;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a211e6bc9ddb71d8c3cdb61d7f92a8331}{
+\index{CPSModel@{CPSModel}!behaviors@{behaviors}}
+\index{behaviors@{behaviors}!CPSModel@{CPSModel}}
+\subsubsection[{behaviors}]{\setlength{\rightskip}{0pt plus 5cm}behaviors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a211e6bc9ddb71d8c3cdb61d7f92a8331}
+Sets our default behaviors. All CPSModel's have the DataFormat and Utility behaviors added by default. \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+CModel::behaviors 
+\end{DoxySeeAlso}
+
+
+Definition at line 245 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return array_merge(
+            parent::behaviors(),
+            array(
+                //  Date/time formatter
+                'psDataFormat' => array(
+                    'class' => 'pogostick.behaviors.CPSDataFormatBehavior',
+                ),
+            )
+        );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classCPSModel_a211e6bc9ddb71d8c3cdb61d7f92a8331_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSModel_a46020c73ffd9df1dab08fcfc7a26d530}{
+\index{CPSModel@{CPSModel}!commitTransaction@{commitTransaction}}
+\index{commitTransaction@{commitTransaction}!CPSModel@{CPSModel}}
+\subsubsection[{commitTransaction}]{\setlength{\rightskip}{0pt plus 5cm}static commitTransaction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSModel_a46020c73ffd9df1dab08fcfc7a26d530}
+Commits the transaction at the top of the stack, if any. 
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CDbException}]\end{DoxyExceptions}
+
+
+Definition at line 393 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( null !== ( $_transaction = array_pop( self::$_transactionStack ) ) )
+       $_transaction->commit();
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a146675932a41d9bcf4194237aa1d68db}{
+\index{CPSModel@{CPSModel}!createCommand@{createCommand}}
+\index{createCommand@{createCommand}!CPSModel@{CPSModel}}
+\subsubsection[{createCommand}]{\setlength{\rightskip}{0pt plus 5cm}static createCommand (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sql}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSModel_a146675932a41d9bcf4194237aa1d68db}
+Convenience method to get a database command model's database \begin{DoxyReturn}{Returns}
+CDbCommand 
+\end{DoxyReturn}
+
+
+Definition at line 352 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return self::getDb()->createCommand( $sql );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_adeb67d458cbd5d7845bd2b47bc5e2905}{
+\index{CPSModel@{CPSModel}!execute@{execute}}
+\index{execute@{execute}!CPSModel@{CPSModel}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}static execute (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sql, }
+\item[{\$}]{ parameters = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSModel_adeb67d458cbd5d7845bd2b47bc5e2905}
+Convenience method to execute a query (static version) \begin{DoxyReturn}{Returns}
+integer The number of rows affected by the operation 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CException}]Execution failed \end{DoxyExceptions}
+
+
+Definition at line 334 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return self::createCommand( $sql )->execute( $parameters );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_acb1238cae89dbe15864bc28fbfb069a2}{
+\index{CPSModel@{CPSModel}!getAttributeLabel@{getAttributeLabel}}
+\index{getAttributeLabel@{getAttributeLabel}!CPSModel@{CPSModel}}
+\subsubsection[{getAttributeLabel}]{\setlength{\rightskip}{0pt plus 5cm}getAttributeLabel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ attribute}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_acb1238cae89dbe15864bc28fbfb069a2}
+Returns the text label for the specified attribute. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$attribute The attribute name \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string the attribute label 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+generateAttributeLabel 
+
+\hyperlink{classCPSModel_a9958a23e416f0e0fd7cc5f3e80532335}{getAttributeLabels} 
+\end{DoxySeeAlso}
+
+
+Definition at line 153 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return PS::o( $this->getAttributeLabels(), $attribute, $this->generateAtt
+      ributeLabel( $attribute ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classCPSModel_acb1238cae89dbe15864bc28fbfb069a2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSModel_a9958a23e416f0e0fd7cc5f3e80532335}{
+\index{CPSModel@{CPSModel}!getAttributeLabels@{getAttributeLabels}}
+\index{getAttributeLabels@{getAttributeLabels}!CPSModel@{CPSModel}}
+\subsubsection[{getAttributeLabels}]{\setlength{\rightskip}{0pt plus 5cm}getAttributeLabels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a9958a23e416f0e0fd7cc5f3e80532335}
+Returns all attribute latbels and populates cache \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+CPSModel::attributeLabels 
+\end{DoxySeeAlso}
+
+
+Definition at line 141 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->_attributeLabels ? $this->_attributeLabels : $this->_attrib
+      uteLabels = $this->attributeLabels();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classCPSModel_a9958a23e416f0e0fd7cc5f3e80532335_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSModel_a994ac6292d92ce6c172ee2f655b91ae4}{
+\index{CPSModel@{CPSModel}!getDb@{getDb}}
+\index{getDb@{getDb}!CPSModel@{CPSModel}}
+\subsubsection[{getDb}]{\setlength{\rightskip}{0pt plus 5cm}static getDb (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSModel_a994ac6292d92ce6c172ee2f655b91ae4}
+Convenience method to get a database connection to a model's database \begin{DoxyReturn}{Returns}
+CDbConnection 
+\end{DoxyReturn}
+
+
+Definition at line 343 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return self::model()->getDbConnection();
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a4660591fdf032d22bbba3911e2bc5f09}{
+\index{CPSModel@{CPSModel}!getErrorsForLogging@{getErrorsForLogging}}
+\index{getErrorsForLogging@{getErrorsForLogging}!CPSModel@{CPSModel}}
+\subsubsection[{getErrorsForLogging}]{\setlength{\rightskip}{0pt plus 5cm}getErrorsForLogging (
+\begin{DoxyParamCaption}
+\item[{\$}]{ attribute = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a4660591fdf032d22bbba3911e2bc5f09}
+Returns the errors on this model in a single string suitable for logging. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$attribute Attribute name. Use null to retrieve errors for all attributes. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 263 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_result = null;
+        $_i = 1;
+
+        $_errors = $this->getErrors( $attribute );
+
+        if ( ! empty( $_errors ) )
+        {
+            foreach ( $_errors as $_attribute => $_error )
+                $_result .= $_i++ . '. [' . $_attribute . '] : ' . implode( '|', 
+      $_error );
+        }
+
+        return $_result;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_aef6109e8c58719533639e6526717fb1b}{
+\index{CPSModel@{CPSModel}!getModelClass@{getModelClass}}
+\index{getModelClass@{getModelClass}!CPSModel@{CPSModel}}
+\subsubsection[{getModelClass}]{\setlength{\rightskip}{0pt plus 5cm}getModelClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_aef6109e8c58719533639e6526717fb1b}
+Get this model's class name. \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->_modelClass;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a7cd2e13f50fbc61e846e5980f02371f8}{
+\index{CPSModel@{CPSModel}!getModelName@{getModelName}}
+\index{getModelName@{getModelName}!CPSModel@{CPSModel}}
+\subsubsection[{getModelName}]{\setlength{\rightskip}{0pt plus 5cm}getModelName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a7cd2e13f50fbc61e846e5980f02371f8}
+Get this model's name. \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->_modelClass;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a165becb0c2d75653ebcd3064f35addc0}{
+\index{CPSModel@{CPSModel}!getRestAttributes@{getRestAttributes}}
+\index{getRestAttributes@{getRestAttributes}!CPSModel@{CPSModel}}
+\subsubsection[{getRestAttributes}]{\setlength{\rightskip}{0pt plus 5cm}getRestAttributes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a165becb0c2d75653ebcd3064f35addc0}
+If a model has a REST mapping, attributes are mapped an returned in an array. \begin{DoxyReturn}{Returns}
+array$|$null The resulting view 
+\end{DoxyReturn}
+
+
+Definition at line 419 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( method_exists( $this, 'attributeRestMap' ) )
+        {
+            $_resultList = array( );
+            $_columnList = $this->getSchema();
+
+            foreach ( $this->attributeRestMap() as $_key => $_value )
+            {
+                $_attributeValue = $this->getAttribute( $_key );
+
+                //  Apply formats
+                switch ( $_columnList[$_key]->dbType )
+                {
+                    case 'date':
+                    case 'datetime':
+                    case 'timestamp':
+                        //  Handle blanks
+                        if ( null !== $_attributeValue && $_attributeValue != '00
+      00-00-00' && $_attributeValue != '0000-00-00 00:00:00' ) $_attributeValue = date(
+       'c', strtotime( $_attributeValue ) );
+                        break;
+                }
+
+                $_resultList[$_value] = $_attributeValue;
+            }
+
+            return $_resultList;
+        }
+
+        return null;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a41b42bcfd0572f6481a2a323d73c9977}{
+\index{CPSModel@{CPSModel}!getSchema@{getSchema}}
+\index{getSchema@{getSchema}!CPSModel@{CPSModel}}
+\subsubsection[{getSchema}]{\setlength{\rightskip}{0pt plus 5cm}getSchema (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a41b42bcfd0572f6481a2a323d73c9977}
+Returns this model's schema \begin{DoxyReturn}{Returns}
+\hyperlink{admin_8php_a2394bd91cde70158acb50a4a7f860ab5}{array()} 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->_schema ? $this->_schema : $this->_schema = $this->getMetaD
+      ata()->columns;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a21e18eb7091f0ae3098c37a4c68fd5dc}{
+\index{CPSModel@{CPSModel}!getTablePrefix@{getTablePrefix}}
+\index{getTablePrefix@{getTablePrefix}!CPSModel@{CPSModel}}
+\subsubsection[{getTablePrefix}]{\setlength{\rightskip}{0pt plus 5cm}getTablePrefix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a21e18eb7091f0ae3098c37a4c68fd5dc}
+\begin{DoxyReturn}{Returns}
+string \$tablePrefix The prefix for the table 
+\end{DoxyReturn}
+
+
+Definition at line 108 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Does db have one?
+        if ( version_compare( YiiBase::getVersion(), '1.1.0' ) > 0 )
+        {
+            if ( null !== ( $_db = $this->getDbConnection() ) ) return $_db->tabl
+      ePrefix;
+
+            return null;
+        }
+
+        //  Return ours...
+        return $this->_tablePrefix;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_aa5cc1f736392d6a9c6b07db4f06d9f17}{
+\index{CPSModel@{CPSModel}!hasBehavior@{hasBehavior}}
+\index{hasBehavior@{hasBehavior}!CPSModel@{CPSModel}}
+\subsubsection[{hasBehavior}]{\setlength{\rightskip}{0pt plus 5cm}hasBehavior (
+\begin{DoxyParamCaption}
+\item[{\$}]{ className}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_aa5cc1f736392d6a9c6b07db4f06d9f17}
+Checks if a component has an attached behavior 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$className \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 222 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Look for behaviors
+        foreach ( $this->behaviors() as $_column => $_behaviors )
+        {
+            if ( null !== ( $_class = PS::o( $_behaviors, 'class' ) ) )
+                $_class = Yii::import( $_class );
+
+            //  Check...
+            if ( $className == $_column || $className == $_class )
+                return true;
+        }
+
+        //  Nope!
+        return false;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classCPSModel_aa5cc1f736392d6a9c6b07db4f06d9f17_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSModel_abd594bc52ba432da2f83f3e977f4a361}{
+\index{CPSModel@{CPSModel}!hasTransaction@{hasTransaction}}
+\index{hasTransaction@{hasTransaction}!CPSModel@{CPSModel}}
+\subsubsection[{hasTransaction}]{\setlength{\rightskip}{0pt plus 5cm}hasTransaction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_abd594bc52ba432da2f83f3e977f4a361}
+Checks to see if there are any transactions going... \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 365 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return ( 0 != count( self::$_transactionStack ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a804031428d96cfe7a18b1a343272f5a7}{
+\index{CPSModel@{CPSModel}!queryAll@{queryAll}}
+\index{queryAll@{queryAll}!CPSModel@{CPSModel}}
+\subsubsection[{queryAll}]{\setlength{\rightskip}{0pt plus 5cm}static queryAll (
+\begin{DoxyParamCaption}
+\item[{\$}]{ criteria, }
+\item[{\$}]{ fetchAssociative = {\ttfamily true}, }
+\item[{\$}]{ parameters = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSModel_a804031428d96cfe7a18b1a343272f5a7}
+Executes the SQL statement and returns all rows. (static version) 
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$criteria The criteria for the query \item[{\em boolean}]\$fetchAssociative Whether each row should be returned as an associated array with column names as the keys or the array keys are column indexes (0-\/based). \item[{\em array}]\$parameters input parameters (name=$>$value) for the SQL execution. This is an alternative to \hyperlink{}{bindParam} and \hyperlink{}{bindValue}. If you have multiple input parameters, passing them in this way can improve the performance. Note that you pass parameters in this way, you cannot bind parameters or values using \hyperlink{}{bindParam} or \hyperlink{}{bindValue}, and vice versa. binding methods and the input parameters this way can improve the performance. This parameter has been available since version 1.0.10. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array All rows of the query result. Each array element is an array representing a row. An empty array is returned if the query results in nothing. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CException}]execution failed \end{DoxyExceptions}
+
+
+Definition at line 317 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( null !== ( $_builder = self::getDb()->getCommandBuilder() ) )
+        {
+            if ( null !== ( $_command = $_builder->createFindCommand( $this->getT
+      ableSchema(), $criteria ) ) )
+                return $_command->queryAll( $fetchAssociative, $parameters );
+        }
+
+        return null;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a06996eae1b742263c0a4b83da0f9f922}{
+\index{CPSModel@{CPSModel}!rollbackTransaction@{rollbackTransaction}}
+\index{rollbackTransaction@{rollbackTransaction}!CPSModel@{CPSModel}}
+\subsubsection[{rollbackTransaction}]{\setlength{\rightskip}{0pt plus 5cm}static rollbackTransaction (
+\begin{DoxyParamCaption}
+\item[{Exception \$}]{ exception = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSModel_a06996eae1b742263c0a4b83da0f9f922}
+Rolls back the current transaction, if any... 
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CDbException}]\end{DoxyExceptions}
+
+
+Definition at line 403 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( null !== ( $_transaction = array_pop( self::$_transactionStack ) ) )
+       $_transaction->rollback();
+
+        //  Throw it if given
+        if ( null !== $exception ) throw $exception;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a796bf438724e047aeef18579732a3780}{
+\index{CPSModel@{CPSModel}!search@{search}}
+\index{search@{search}!CPSModel@{CPSModel}}
+\subsubsection[{search}]{\setlength{\rightskip}{0pt plus 5cm}search (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a796bf438724e047aeef18579732a3780}
+Retrieves a list of models based on the current search/filter conditions. Override for more specific search criteria. \begin{DoxyReturn}{Returns}
+CActiveDataProvider the data provider that can return the models based on the search/filter conditions. 
+\end{DoxyReturn}
+
+
+Definition at line 295 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_criteria = new CDbCriteria();
+
+        foreach ( $this->getTableSchema()->columns as $_column )
+        {
+            if ( 'string' == $_column->type )
+                $_criteria->compare( $_column->name, $this->{$_column->name}, tru
+      e );
+        }
+
+        return new CActiveDataProvider( $this->_modelClass, array( 'criteria' => 
+      $_criteria ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a84c15d8a583f4f7f88f683a6db1a567b}{
+\index{CPSModel@{CPSModel}!setAttributes@{setAttributes}}
+\index{setAttributes@{setAttributes}!CPSModel@{CPSModel}}
+\subsubsection[{setAttributes}]{\setlength{\rightskip}{0pt plus 5cm}setAttributes (
+\begin{DoxyParamCaption}
+\item[{\$}]{ attributes, }
+\item[{\$}]{ safeOnly = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a84c15d8a583f4f7f88f683a6db1a567b}
+Override of CModel::setAttributes Populates member variables as well. Aware of Yii 1.1.0+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$attributes \end{DoxyParams}
+
+
+Definition at line 165 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( version_compare( Yii::getVersion(), '1.1.0', '>=' ) )
+        {
+            if ( ! is_array( $attributes ) )
+                return;
+
+            $_attributes = array_flip( $safeOnly ? $this->getSafeAttributeNames()
+       : $this->attributeNames()  );
+
+            foreach ( $attributes as $_column => $_value )
+            {
+                if ( isset( $_attributes[$_column] ) )
+                    $this->setAttribute( $_column, $_value );
+                else
+                {
+                    if ( $this->hasProperty( $_column ) && $this->canSetProperty(
+       $_column ) )
+                        $this->{$_column} = $_value;
+                }
+            }
+        }
+        else
+        {
+            $_scenario = ( $safeOnly ? $this->getScenario() : $safeOnly );
+
+            if ( is_array( $attributes ) )
+            {
+                $_attributes = array_flip( $this->getSafeAttributeNames( $_scenar
+      io ) );
+
+                foreach ( $attributes as $_column => $_value )
+                {
+                    if ( isset( $_attributes[$_column] ) || ( $this->hasProperty(
+       $_column ) && $this->canSetProperty( $_column ) ) ) $this->setAttribute( $_colum
+      n, $_value );
+                }
+            }
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a710a72fc863debf3031e4d423ef9d405}{
+\index{CPSModel@{CPSModel}!setModelClass@{setModelClass}}
+\index{setModelClass@{setModelClass}!CPSModel@{CPSModel}}
+\subsubsection[{setModelClass}]{\setlength{\rightskip}{0pt plus 5cm}setModelClass (
+\begin{DoxyParamCaption}
+\item[{\$}]{ modelClass}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a710a72fc863debf3031e4d423ef9d405}
+Sets this model's name. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$modelClass \end{DoxyParams}
+
+
+Definition at line 91 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->_modelClass = $modelClass;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a6950c2a0061d704770d6df19daa75606}{
+\index{CPSModel@{CPSModel}!setModelName@{setModelName}}
+\index{setModelName@{setModelName}!CPSModel@{CPSModel}}
+\subsubsection[{setModelName}]{\setlength{\rightskip}{0pt plus 5cm}setModelName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a6950c2a0061d704770d6df19daa75606}
+Set this model's name 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sValue \end{DoxyParams}
+
+
+Definition at line 82 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->_modelClass = $sValue;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModel_a2c43b5a257f271c45b33f7696ab2baf1}{
+\index{CPSModel@{CPSModel}!setRestAttributes@{setRestAttributes}}
+\index{setRestAttributes@{setRestAttributes}!CPSModel@{CPSModel}}
+\subsubsection[{setRestAttributes}]{\setlength{\rightskip}{0pt plus 5cm}setRestAttributes (
+\begin{DoxyParamCaption}
+\item[{\$}]{ attributeList}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a2c43b5a257f271c45b33f7696ab2baf1}
+Sets the values in the model based on REST attribute names 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$attributeList \end{DoxyParams}
+
+
+Definition at line 454 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( method_exists( $this, 'attributeRestMap' ) )
+        {
+            CPSLog::trace( __METHOD__, '  - Setting REST attributes' );
+
+            $_map = $this->attributeRestMap();
+
+            foreach ( $attributeList as $_key => $_value )
+            {
+                if ( false !== ( $_mapKey = array_search( $_key, $_map ) ) ) $thi
+      s->setAttribute( $_mapKey, $_value );
+            }
+
+            CPSLog::trace( __METHOD__, '  - REST attributes set' );
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSModel_a2c43b5a257f271c45b33f7696ab2baf1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSModel_a3c04fa5f6105af41bb2f6d1c5b925576}{
+\index{CPSModel@{CPSModel}!setTablePrefix@{setTablePrefix}}
+\index{setTablePrefix@{setTablePrefix}!CPSModel@{CPSModel}}
+\subsubsection[{setTablePrefix}]{\setlength{\rightskip}{0pt plus 5cm}setTablePrefix (
+\begin{DoxyParamCaption}
+\item[{\$}]{ prefix, }
+\item[{\$}]{ thisTableOnly = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModel_a3c04fa5f6105af41bb2f6d1c5b925576}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$prefix The prefix for the table \item[{\em boolean}]\$thisTableOnly If true, the prefix will be set for this table, not all tables \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The new prefix 
+\end{DoxyReturn}
+
+
+Definition at line 128 of file CPSModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! $thisTableOnly && version_compare( YiiBase::getVersion(), '1.1.0' 
+      ) > 0 && null !== ( $_db = $this->getDbConnection() ) )
+            return $_db->tablePrefix = $prefix;
+
+        return $this->_tablePrefix = $prefix;
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSModel_a255288ecbb9d5f910b8d9a7c04a34a9b}{
+\index{CPSModel@{CPSModel}!\$\_\-attributeLabels@{\$\_\-attributeLabels}}
+\index{\$\_\-attributeLabels@{\$\_\-attributeLabels}!CPSModel@{CPSModel}}
+\subsubsection[{\$\_\-attributeLabels}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-attributeLabels = {\bf array}( )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSModel_a255288ecbb9d5f910b8d9a7c04a34a9b}
+
+
+Definition at line 45 of file CPSModel.php.
+
+\hypertarget{classCPSModel_a90080dcb26627bf719d96ab99e51f958}{
+\index{CPSModel@{CPSModel}!\$\_\-modelClass@{\$\_\-modelClass}}
+\index{\$\_\-modelClass@{\$\_\-modelClass}!CPSModel@{CPSModel}}
+\subsubsection[{\$\_\-modelClass}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-modelClass = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSModel_a90080dcb26627bf719d96ab99e51f958}
+
+
+Reimplemented in \hyperlink{classCPSCodeTableModel_a90080dcb26627bf719d96ab99e51f958}{CPSCodeTableModel}.
+
+
+
+Definition at line 50 of file CPSModel.php.
+
+\hypertarget{classCPSModel_ad86f0aac1c5254c623bf3a6683ed56e8}{
+\index{CPSModel@{CPSModel}!\$\_\-schema@{\$\_\-schema}}
+\index{\$\_\-schema@{\$\_\-schema}!CPSModel@{CPSModel}}
+\subsubsection[{\$\_\-schema}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-schema\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSModel_ad86f0aac1c5254c623bf3a6683ed56e8}
+
+
+Definition at line 34 of file CPSModel.php.
+
+\hypertarget{classCPSModel_a58d5dd151fa6e7f7841d9d85a6a6c273}{
+\index{CPSModel@{CPSModel}!\$\_\-tablePrefix@{\$\_\-tablePrefix}}
+\index{\$\_\-tablePrefix@{\$\_\-tablePrefix}!CPSModel@{CPSModel}}
+\subsubsection[{\$\_\-tablePrefix}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-tablePrefix = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSModel_a58d5dd151fa6e7f7841d9d85a6a6c273}
+
+
+Definition at line 40 of file CPSModel.php.
+
+\hypertarget{classCPSModel_a3cff4c1c690782176edb1e27b4d602a1}{
+\index{CPSModel@{CPSModel}!\$\_\-transactionStack@{\$\_\-transactionStack}}
+\index{\$\_\-transactionStack@{\$\_\-transactionStack}!CPSModel@{CPSModel}}
+\subsubsection[{\$\_\-transactionStack}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-transactionStack = {\bf array}( )\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSModel_a3cff4c1c690782176edb1e27b4d602a1}
+
+
+Definition at line 54 of file CPSModel.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/models/\hyperlink{CPSModel_8php}{CPSModel.php}\end{DoxyCompactItemize}

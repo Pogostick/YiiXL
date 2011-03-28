@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSWidget.html#a2dc262e99b1c246b56f27626bfe699ff" title="preinit" alt="" coords="151,32,212,61"/>
+<area shape="rect" id="node5" href="$classCPSWidget.html#ad93e793964a65dfac40131c7cf7fe901" title="attachBehavior" alt="" coords="332,5,449,35"/>
+<area shape="rect" id="node7" href="$classCPSHelperBase.html#a5199d81ae6877c4a94b92bbbc9899254" title="CPSHelperBase::createInternalName" alt="" coords="261,59,520,88"/>
+<area shape="rect" id="node9" href="$interfaceIPSComponent.html#a08e716b913e06fdbb77e84f81c0a3a35" title="IPSComponent::setInternalName" alt="" coords="568,59,800,88"/>
+</map>

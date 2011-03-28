@@ -1,0 +1,146 @@
+\hypertarget{interfaceIXLComponent}{
+\section{IXLComponent Interface Reference}
+\label{interfaceIXLComponent}\index{IXLComponent@{IXLComponent}}
+}
+
+
+Inheritance diagram for IXLComponent:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{interfaceIXLComponent__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaceIXLComponent_a122db96cedfc221cf187ce4328f992f7}{getDebugLevel} ()
+\item 
+\hyperlink{interfaceIXLComponent_a91ba7d911e2c3852a048f4022c45ec9e}{setDebugLevel} (\$value=false)
+\item 
+\hyperlink{interfaceIXLComponent_a1a49b8dded6e91a52e2fd07195d334da}{getOptions} ()
+\item 
+\hyperlink{interfaceIXLComponent_ad51d235c20d44a485f9f00f2c86a5ea9}{loadOptions} (\$options=array())
+\item 
+\hyperlink{interfaceIXLComponent_a50138660370da467322f8f3965008b14}{getBehaviorMethods} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 44 of file interfaces.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interfaceIXLComponent_a50138660370da467322f8f3965008b14}{
+\index{IXLComponent@{IXLComponent}!getBehaviorMethods@{getBehaviorMethods}}
+\index{getBehaviorMethods@{getBehaviorMethods}!IXLComponent@{IXLComponent}}
+\subsubsection[{getBehaviorMethods}]{\setlength{\rightskip}{0pt plus 5cm}getBehaviorMethods (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceIXLComponent_a50138660370da467322f8f3965008b14}
+Gets behavior methods. Needed to implement lightweight helper classes \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classCXLActiveRecordBehavior_a50138660370da467322f8f3965008b14}{CXLActiveRecordBehavior}, \hyperlink{classCXLBehavior_a50138660370da467322f8f3965008b14}{CXLBehavior}, \hyperlink{classCXLComponent_a50138660370da467322f8f3965008b14}{CXLComponent}, and \hyperlink{classCXLWidget_a50138660370da467322f8f3965008b14}{CXLWidget}.
+
+\hypertarget{interfaceIXLComponent_a122db96cedfc221cf187ce4328f992f7}{
+\index{IXLComponent@{IXLComponent}!getDebugLevel@{getDebugLevel}}
+\index{getDebugLevel@{getDebugLevel}!IXLComponent@{IXLComponent}}
+\subsubsection[{getDebugLevel}]{\setlength{\rightskip}{0pt plus 5cm}getDebugLevel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceIXLComponent_a122db96cedfc221cf187ce4328f992f7}
+Gets the debug level \begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classCXLActiveRecordBehavior_a122db96cedfc221cf187ce4328f992f7}{CXLActiveRecordBehavior}, \hyperlink{classCXLBehavior_a122db96cedfc221cf187ce4328f992f7}{CXLBehavior}, \hyperlink{classCXLComponent_a122db96cedfc221cf187ce4328f992f7}{CXLComponent}, \hyperlink{classCXLLiveLogRoute_a122db96cedfc221cf187ce4328f992f7}{CXLLiveLogRoute}, and \hyperlink{classCXLWidget_a122db96cedfc221cf187ce4328f992f7}{CXLWidget}.
+
+\hypertarget{interfaceIXLComponent_a1a49b8dded6e91a52e2fd07195d334da}{
+\index{IXLComponent@{IXLComponent}!getOptions@{getOptions}}
+\index{getOptions@{getOptions}!IXLComponent@{IXLComponent}}
+\subsubsection[{getOptions}]{\setlength{\rightskip}{0pt plus 5cm}getOptions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceIXLComponent_a1a49b8dded6e91a52e2fd07195d334da}
+Gets the configuration options \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classCXLActiveRecordBehavior_a1a49b8dded6e91a52e2fd07195d334da}{CXLActiveRecordBehavior}, \hyperlink{classCXLBehavior_a1a49b8dded6e91a52e2fd07195d334da}{CXLBehavior}, \hyperlink{classCXLComponent_a1a49b8dded6e91a52e2fd07195d334da}{CXLComponent}, \hyperlink{classCXLLiveLogRoute_a1a49b8dded6e91a52e2fd07195d334da}{CXLLiveLogRoute}, and \hyperlink{classCXLWidget_a1a49b8dded6e91a52e2fd07195d334da}{CXLWidget}.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{interfaceIXLComponent_a1a49b8dded6e91a52e2fd07195d334da_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{interfaceIXLComponent_ad51d235c20d44a485f9f00f2c86a5ea9}{
+\index{IXLComponent@{IXLComponent}!loadOptions@{loadOptions}}
+\index{loadOptions@{loadOptions}!IXLComponent@{IXLComponent}}
+\subsubsection[{loadOptions}]{\setlength{\rightskip}{0pt plus 5cm}loadOptions (
+\begin{DoxyParamCaption}
+\item[{\$}]{ options = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceIXLComponent_ad51d235c20d44a485f9f00f2c86a5ea9}
+Loads the configuration options 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$options \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCXLComponent}{CXLComponent} 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classCXLActiveRecordBehavior_ad51d235c20d44a485f9f00f2c86a5ea9}{CXLActiveRecordBehavior}, \hyperlink{classCXLBehavior_ad51d235c20d44a485f9f00f2c86a5ea9}{CXLBehavior}, \hyperlink{classCXLComponent_ad51d235c20d44a485f9f00f2c86a5ea9}{CXLComponent}, and \hyperlink{classCXLWidget_ad51d235c20d44a485f9f00f2c86a5ea9}{CXLWidget}.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{interfaceIXLComponent_ad51d235c20d44a485f9f00f2c86a5ea9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{interfaceIXLComponent_a91ba7d911e2c3852a048f4022c45ec9e}{
+\index{IXLComponent@{IXLComponent}!setDebugLevel@{setDebugLevel}}
+\index{setDebugLevel@{setDebugLevel}!IXLComponent@{IXLComponent}}
+\subsubsection[{setDebugLevel}]{\setlength{\rightskip}{0pt plus 5cm}setDebugLevel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{interfaceIXLComponent_a91ba7d911e2c3852a048f4022c45ec9e}
+Sets the debug level 
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]The new debug level \end{DoxyParams}
+
+
+Implemented in \hyperlink{classCXLActiveRecordBehavior_a91ba7d911e2c3852a048f4022c45ec9e}{CXLActiveRecordBehavior}, \hyperlink{classCXLBehavior_a91ba7d911e2c3852a048f4022c45ec9e}{CXLBehavior}, \hyperlink{classCXLComponent_a91ba7d911e2c3852a048f4022c45ec9e}{CXLComponent}, \hyperlink{classCXLLiveLogRoute_a91ba7d911e2c3852a048f4022c45ec9e}{CXLLiveLogRoute}, and \hyperlink{classCXLWidget_a91ba7d911e2c3852a048f4022c45ec9e}{CXLWidget}.
+
+
+
+The documentation for this interface was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interfaces_8php}{interfaces.php}\end{DoxyCompactItemize}

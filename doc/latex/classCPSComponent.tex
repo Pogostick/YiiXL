@@ -1,0 +1,578 @@
+\hypertarget{classCPSComponent}{
+\section{CPSComponent Class Reference}
+\label{classCPSComponent}\index{CPSComponent@{CPSComponent}}
+}
+
+
+Inheritance diagram for CPSComponent:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSComponent:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classCPSComponent__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSComponent_aa18c8754403c04289ac8fbfc467df4ac}{getInternalName} ()
+\item 
+\hyperlink{classCPSComponent_a08e716b913e06fdbb77e84f81c0a3a35}{setInternalName} (\$value)
+\item 
+\hyperlink{classCPSComponent_a52c35bbfee5c247f621ad18691e23fdd}{getOptionList} ()
+\item 
+\hyperlink{classCPSComponent_a5526644e47e7f421422034ff564cce96}{setOptionList} (\$value=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSComponent_aef403af504f818f9acbff3caaa01cf69}{getDebugMode} ()
+\item 
+\hyperlink{classCPSComponent_ab98ee38db0a04475ae5d4e30d43c1651}{setDebugMode} (\$value=true)
+\item 
+\hyperlink{classCPSComponent_a122db96cedfc221cf187ce4328f992f7}{getDebugLevel} ()
+\item 
+\hyperlink{classCPSComponent_a8b687cb3cf73b9230fc575c9f3f23608}{setDebugLevel} (\$value=0)
+\item 
+\hyperlink{classCPSComponent_af7f9493844d2d66e924e3c1df51ce616}{\_\-\_\-construct} (\$\hyperlink{events_8php_a3f176ffce3afa63656bfc989470e3e24}{config}=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSComponent_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSComponent_abcd7278d34d95ce22a22fef8bcfc3887}{configure} (\$optionList=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSComponent_ac244c2556c9cf97650dffcaa0a3ec806}{debug} (\$message, \$category=null, \$route=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSComponent_a6c061b5cf8d8bf0eebacbeb33c06b4cf}{\_\-loadConfiguration} (\$optionList=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$overwriteExisting=true)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSComponent_a0a975e9ff0c33b78b80a00bf6f3429c3}{\$\_\-internalName}
+\item 
+\hyperlink{classCPSComponent_ac61132f2a103a25486245470090b0046}{\$\_\-optionList}
+\item 
+\hyperlink{classCPSComponent_a1768a9df40beec6e4b8c6d853396bb81}{\$\_\-debugMode} = false
+\item 
+\hyperlink{classCPSComponent_a6c76d7fa9253beae006eaaf4e3038ce9}{\$\_\-debugLevel} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file CPSComponent.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSComponent_af7f9493844d2d66e924e3c1df51ce616}{
+\index{CPSComponent@{CPSComponent}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSComponent@{CPSComponent}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ config = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSComponent_af7f9493844d2d66e924e3c1df51ce616}
+Constructs a component. 
+
+Reimplemented in \hyperlink{classCPSFile_ad81e40515c7001c2a87387139b2a67de}{CPSFile}, \hyperlink{classCPSStateManager_a1ff82bdcd6747129d97e12934db2def8}{CPSStateManager}, and \hyperlink{classCPSFacebook_af7f9493844d2d66e924e3c1df51ce616}{CPSFacebook}.
+
+
+
+Definition at line 100 of file CPSComponent.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Set any properties via standard config array
+        if ( is_array( $config ) && ! empty( $config ) )
+            $this->_loadConfiguration( $config );
+
+        //  Preinitialize, called before afterConstruct
+        $this->preinit();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSComponent_af7f9493844d2d66e924e3c1df51ce616_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSComponent_a6c061b5cf8d8bf0eebacbeb33c06b4cf}{
+\index{CPSComponent@{CPSComponent}!\_\-loadConfiguration@{\_\-loadConfiguration}}
+\index{\_\-loadConfiguration@{\_\-loadConfiguration}!CPSComponent@{CPSComponent}}
+\subsubsection[{\_\-loadConfiguration}]{\setlength{\rightskip}{0pt plus 5cm}\_\-loadConfiguration (
+\begin{DoxyParamCaption}
+\item[{\$}]{ optionList = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ overwriteExisting = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSComponent_a6c061b5cf8d8bf0eebacbeb33c06b4cf}
+Loads an array into properties if they exist. 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$optionList \end{DoxyParams}
+
+
+Definition at line 153 of file CPSComponent.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Make a copy for posterity
+        if ( property_exists( $this, '_optionList' ) )
+        {
+            if ( $overwriteExisting || empty( $this->_optionList ) )
+                $this->_optionList = $optionList;
+            else
+                $this->_optionList = array_merge( $this->_optionList, $optionList
+       );
+        }
+
+        try
+        {
+            foreach ( $optionList as $_option => $_value )
+            {
+                try
+                {
+                    //  See if __set has a better time with this...
+                    $this->{$_option} = $_value;
+                }
+                catch ( Exception $_ex )
+                {
+                    //  Completely ignore errors...
+                }
+            }
+        }
+        catch ( Exception $_ex )
+        {
+            CPSLog::error( __METHOD__, 'Error while loading configuration options
+      : ' . $_ex->getMessage() );
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSComponent_a6c061b5cf8d8bf0eebacbeb33c06b4cf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classCPSComponent_a6c061b5cf8d8bf0eebacbeb33c06b4cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSComponent_abcd7278d34d95ce22a22fef8bcfc3887}{
+\index{CPSComponent@{CPSComponent}!configure@{configure}}
+\index{configure@{configure}!CPSComponent@{CPSComponent}}
+\subsubsection[{configure}]{\setlength{\rightskip}{0pt plus 5cm}configure (
+\begin{DoxyParamCaption}
+\item[{\$}]{ optionList = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSComponent_abcd7278d34d95ce22a22fef8bcfc3887}
+Alias for setOptions 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$optionList \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+setOptions 
+\end{DoxySeeAlso}
+
+
+Definition at line 128 of file CPSComponent.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->setOptions( $optionList );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSComponent_ac244c2556c9cf97650dffcaa0a3ec806}{
+\index{CPSComponent@{CPSComponent}!debug@{debug}}
+\index{debug@{debug}!CPSComponent@{CPSComponent}}
+\subsubsection[{debug}]{\setlength{\rightskip}{0pt plus 5cm}debug (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ category = {\ttfamily null}, }
+\item[{\$}]{ route = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSComponent_ac244c2556c9cf97650dffcaa0a3ec806}
+Outputs a debug string if in debug mode. 
+\begin{DoxyParams}{Parameters}
+\item[{\em $<$type$>$}]\$message The message \item[{\em $<$type$>$}]\$category The category/method of the output \item[{\em $<$type$>$}]\$route The destination of output. Can be 'echo', 'trace$|$info$|$error$|$debug$|$etc...', 'http', 'firephp' \end{DoxyParams}
+
+
+Definition at line 139 of file CPSComponent.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $this->_debugMode )
+            echo $message . '<BR />';
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSComponent_a122db96cedfc221cf187ce4328f992f7}{
+\index{CPSComponent@{CPSComponent}!getDebugLevel@{getDebugLevel}}
+\index{getDebugLevel@{getDebugLevel}!CPSComponent@{CPSComponent}}
+\subsubsection[{getDebugLevel}]{\setlength{\rightskip}{0pt plus 5cm}getDebugLevel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSComponent_a122db96cedfc221cf187ce4328f992f7}
+Gets the debug level \begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file CPSComponent.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_debugLevel; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSComponent_aef403af504f818f9acbff3caaa01cf69}{
+\index{CPSComponent@{CPSComponent}!getDebugMode@{getDebugMode}}
+\index{getDebugMode@{getDebugMode}!CPSComponent@{CPSComponent}}
+\subsubsection[{getDebugMode}]{\setlength{\rightskip}{0pt plus 5cm}getDebugMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSComponent_aef403af504f818f9acbff3caaa01cf69}
+Gets the debug mode \begin{DoxyReturn}{Returns}
+boolean The current debug mode 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file CPSComponent.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_debugMode; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSComponent_aa18c8754403c04289ac8fbfc467df4ac}{
+\index{CPSComponent@{CPSComponent}!getInternalName@{getInternalName}}
+\index{getInternalName@{getInternalName}!CPSComponent@{CPSComponent}}
+\subsubsection[{getInternalName}]{\setlength{\rightskip}{0pt plus 5cm}getInternalName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSComponent_aa18c8754403c04289ac8fbfc467df4ac}
+\begin{DoxyReturn}{Returns}
+string Returns the internal name 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIPSComponent_aa18c8754403c04289ac8fbfc467df4ac}{IPSComponent}.
+
+
+
+Definition at line 41 of file CPSComponent.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_internalName; }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{classCPSComponent_aa18c8754403c04289ac8fbfc467df4ac_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSComponent_a52c35bbfee5c247f621ad18691e23fdd}{
+\index{CPSComponent@{CPSComponent}!getOptionList@{getOptionList}}
+\index{getOptionList@{getOptionList}!CPSComponent@{CPSComponent}}
+\subsubsection[{getOptionList}]{\setlength{\rightskip}{0pt plus 5cm}getOptionList (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSComponent_a52c35bbfee5c247f621ad18691e23fdd}
+Gets configuration options \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classCPSConsoleCommand_a52c35bbfee5c247f621ad18691e23fdd}{CPSConsoleCommand}.
+
+
+
+Definition at line 56 of file CPSComponent.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_optionList; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSComponent_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSComponent@{CPSComponent}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSComponent@{CPSComponent}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSComponent_a2dc262e99b1c246b56f27626bfe699ff}
+Preinitialize the component Override to add your own functionality before init() is called. 
+
+Implements \hyperlink{interfaceIPSComponent_a2dc262e99b1c246b56f27626bfe699ff}{IPSComponent}.
+
+
+
+Reimplemented in \hyperlink{classCPSOAuthComponent_a2dc262e99b1c246b56f27626bfe699ff}{CPSOAuthComponent}, \hyperlink{classCSFBaseApplication_a2dc262e99b1c246b56f27626bfe699ff}{CSFBaseApplication}, \hyperlink{classCPSTwitterApi_a2dc262e99b1c246b56f27626bfe699ff}{CPSTwitterApi}, \hyperlink{classCPSWHMCSApi_a2dc262e99b1c246b56f27626bfe699ff}{CPSWHMCSApi}, \hyperlink{classCPSWHMCSBillingApi_a2dc262e99b1c246b56f27626bfe699ff}{CPSWHMCSBillingApi}, and \hyperlink{classCPSWHMCSSupportApi_a2dc262e99b1c246b56f27626bfe699ff}{CPSWHMCSSupportApi}.
+
+
+
+Definition at line 114 of file CPSComponent.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Create our internal name
+        CPSHelperBase::createInternalName( $this );
+
+        //  Attach our default Behavior
+        $this->attachBehavior( 'psComponent', 'pogostick.behaviors.CPSComponentBe
+      havior' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSComponent_a2dc262e99b1c246b56f27626bfe699ff_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classCPSComponent_a2dc262e99b1c246b56f27626bfe699ff_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSComponent_a8b687cb3cf73b9230fc575c9f3f23608}{
+\index{CPSComponent@{CPSComponent}!setDebugLevel@{setDebugLevel}}
+\index{setDebugLevel@{setDebugLevel}!CPSComponent@{CPSComponent}}
+\subsubsection[{setDebugLevel}]{\setlength{\rightskip}{0pt plus 5cm}setDebugLevel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSComponent_a8b687cb3cf73b9230fc575c9f3f23608}
+Sets the debug level 
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]The new debug level \end{DoxyParams}
+
+
+Definition at line 91 of file CPSComponent.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_debugLevel = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSComponent_ab98ee38db0a04475ae5d4e30d43c1651}{
+\index{CPSComponent@{CPSComponent}!setDebugMode@{setDebugMode}}
+\index{setDebugMode@{setDebugMode}!CPSComponent@{CPSComponent}}
+\subsubsection[{setDebugMode}]{\setlength{\rightskip}{0pt plus 5cm}setDebugMode (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSComponent_ab98ee38db0a04475ae5d4e30d43c1651}
+Sets the debug mode 
+\begin{DoxyParams}{Parameters}
+\item[{\em boolean}]The new debug mode \end{DoxyParams}
+
+
+Definition at line 76 of file CPSComponent.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_debugMode = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSComponent_a08e716b913e06fdbb77e84f81c0a3a35}{
+\index{CPSComponent@{CPSComponent}!setInternalName@{setInternalName}}
+\index{setInternalName@{setInternalName}!CPSComponent@{CPSComponent}}
+\subsubsection[{setInternalName}]{\setlength{\rightskip}{0pt plus 5cm}setInternalName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSComponent_a08e716b913e06fdbb77e84f81c0a3a35}
+Sets the internal name 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$value The internal name \end{DoxyParams}
+
+
+Implements \hyperlink{interfaceIPSComponent_a08e716b913e06fdbb77e84f81c0a3a35}{IPSComponent}.
+
+
+
+Definition at line 46 of file CPSComponent.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_internalName = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSComponent_a5526644e47e7f421422034ff564cce96}{
+\index{CPSComponent@{CPSComponent}!setOptionList@{setOptionList}}
+\index{setOptionList@{setOptionList}!CPSComponent@{CPSComponent}}
+\subsubsection[{setOptionList}]{\setlength{\rightskip}{0pt plus 5cm}setOptionList (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSComponent_a5526644e47e7f421422034ff564cce96}
+Sets configuration options \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file CPSComponent.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_optionList = $value; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSComponent_a6c76d7fa9253beae006eaaf4e3038ce9}{
+\index{CPSComponent@{CPSComponent}!\$\_\-debugLevel@{\$\_\-debugLevel}}
+\index{\$\_\-debugLevel@{\$\_\-debugLevel}!CPSComponent@{CPSComponent}}
+\subsubsection[{\$\_\-debugLevel}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-debugLevel = 0\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSComponent_a6c76d7fa9253beae006eaaf4e3038ce9}
+
+
+Definition at line 81 of file CPSComponent.php.
+
+\hypertarget{classCPSComponent_a1768a9df40beec6e4b8c6d853396bb81}{
+\index{CPSComponent@{CPSComponent}!\$\_\-debugMode@{\$\_\-debugMode}}
+\index{\$\_\-debugMode@{\$\_\-debugMode}!CPSComponent@{CPSComponent}}
+\subsubsection[{\$\_\-debugMode}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-debugMode = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSComponent_a1768a9df40beec6e4b8c6d853396bb81}
+
+
+Definition at line 66 of file CPSComponent.php.
+
+\hypertarget{classCPSComponent_a0a975e9ff0c33b78b80a00bf6f3429c3}{
+\index{CPSComponent@{CPSComponent}!\$\_\-internalName@{\$\_\-internalName}}
+\index{\$\_\-internalName@{\$\_\-internalName}!CPSComponent@{CPSComponent}}
+\subsubsection[{\$\_\-internalName}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-internalName\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSComponent_a0a975e9ff0c33b78b80a00bf6f3429c3}
+
+
+Definition at line 37 of file CPSComponent.php.
+
+\hypertarget{classCPSComponent_ac61132f2a103a25486245470090b0046}{
+\index{CPSComponent@{CPSComponent}!\$\_\-optionList@{\$\_\-optionList}}
+\index{\$\_\-optionList@{\$\_\-optionList}!CPSComponent@{CPSComponent}}
+\subsubsection[{\$\_\-optionList}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-optionList\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSComponent_ac61132f2a103a25486245470090b0046}
+
+
+Reimplemented in \hyperlink{classCPSConsoleCommand_ac61132f2a103a25486245470090b0046}{CPSConsoleCommand}.
+
+
+
+Definition at line 51 of file CPSComponent.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/base/\hyperlink{CPSComponent_8php}{CPSComponent.php}\end{DoxyCompactItemize}

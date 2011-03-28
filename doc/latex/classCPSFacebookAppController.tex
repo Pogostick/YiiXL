@@ -1,0 +1,1050 @@
+\hypertarget{classCPSFacebookAppController}{
+\section{CPSFacebookAppController Class Reference}
+\label{classCPSFacebookAppController}\index{CPSFacebookAppController@{CPSFacebookAppController}}
+}
+
+
+Inheritance diagram for CPSFacebookAppController:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classCPSFacebookAppController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSFacebookAppController:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classCPSFacebookAppController__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFacebookAppController_a0b280ce1a525781c8943e5101471a6c0}{getUserModelClass} ()
+\item 
+\hyperlink{classCPSFacebookAppController_ae0af15a6b8117c8e984beae8e585fcd2}{setUserModelClass} (\$value)
+\item 
+\hyperlink{classCPSFacebookAppController_a0588504e111b21b1e1380b70ebe30b2f}{getFacebookApi} ()
+\item 
+\hyperlink{classCPSFacebookAppController_a8d0c4e1299abe333956fca30fdc44143}{getIdentity} ()
+\item 
+\hyperlink{classCPSFacebookAppController_a5d251c70a3f9f9daaff7f00ec5f894c0}{getAccessToken} ()
+\item 
+\hyperlink{classCPSFacebookAppController_a4455e1688e73f1dba89f3f74d1334937}{getLogoutUrl} ()
+\item 
+\hyperlink{classCPSFacebookAppController_a37af09a26efc969d1381851b8c379808}{getLoginUrl} ()
+\item 
+\hyperlink{classCPSFacebookAppController_aefa4c5bd150e2a7d525576d7959c6911}{getSession} ()
+\item 
+\hyperlink{classCPSFacebookAppController_aab9fd8efbb71dfc96d46f37bf13f95dc}{getIsDeauthRequest} ()
+\item 
+\hyperlink{classCPSFacebookAppController_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSFacebookAppController_afe5dbb3e026bc3bfdecbd539025c7f93}{filters} ()
+\item 
+\hyperlink{classCPSFacebookAppController_a06b9943f26298eca9387c6099343b938}{accessRules} ()
+\item 
+\hyperlink{classCPSFacebookAppController_ae955b1cdd5f2adcae90f9e744d8cc7a6}{actionIndex} ()
+\item 
+\hyperlink{classCPSFacebookAppController_a251c5654a2fa56e2db1fed76f1213e18}{actionAdmin} ()
+\item 
+\hyperlink{classCPSFacebookAppController_a0781439fc2f14283719e441f1ca2b73e}{actionInviteComplete} (\$queryParam= 'ids')
+\item 
+\hyperlink{classCPSFacebookAppController_ae81ecfd4dd63d17b0e8eec3c2179bf0f}{actionDeauthorize} ()
+\item 
+\hyperlink{classCPSFacebookAppController_ab2ff8b9313c96e3605f730f21f29b384}{actionInviteFriends} ()
+\item 
+\hyperlink{classCPSFacebookAppController_a8471fa2c95307d608c34f15dae47d254}{actionError} ()
+\item 
+\hyperlink{classCPSFacebookAppController_a023e71297825d72b643617f9fdf25355}{onFacebookLogin} (CEvent \$event)
+\item 
+\hyperlink{classCPSFacebookAppController_ab64866966afd63a8e70d4d3693dd728b}{facebookLogin} (CEvent \$event)
+\item 
+\hyperlink{classCPSFacebookAppController_a790701ff73be7c0b993611e88baed25d}{getFbUserName} (\$fbUserId)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSFacebookAppController_a92f90cffdcf9bdc7042c27210d7bf711}{MAX\_\-FRIENDS\_\-TO\_\-SHOW} = 7
+\item 
+const \hyperlink{classCPSFacebookAppController_a758c150b67e476ecf77478f16b387c61}{DEBUG} = false
+\item 
+const \hyperlink{classCPSFacebookAppController_aa59dac68626789b109ad0c18e6fbb96e}{USE\_\-CACHE} = false
+\item 
+const \hyperlink{classCPSFacebookAppController_a70840ece73140159e9b08da06002ae3a}{IS\_\-CANVAS} = true
+\item 
+const \hyperlink{classCPSFacebookAppController_ac3a66a3e0e2e675b4aa12dec472b8dd0}{IS\_\-CONNECT} = false
+\item 
+const \hyperlink{classCPSFacebookAppController_a68a34ece4de56a54f4f82c474c0204d7}{THUMB\_\-CACHE} = 'thumb\_\-cache'
+\item 
+const \hyperlink{classCPSFacebookAppController_a33ac1db1c172ba0f5722c97f00af34d6}{FRIEND\_\-CACHE} = 'friend\_\-cache'
+\item 
+const \hyperlink{classCPSFacebookAppController_a1893848deeea686e915dd2151301e807}{APP\_\-FRIEND\_\-CACHE} = 'app\_\-friend\_\-cache'
+\item 
+const \hyperlink{classCPSFacebookAppController_a566d4822d1e8b1e6a916007a2be84878}{PROFILE\_\-CACHE} = 'profile\_\-cache'
+\item 
+const \hyperlink{classCPSFacebookAppController_a3fefc47757aedf92a1e71a894503a9e0}{ME\_\-CACHE} = 'me\_\-cache'
+\item 
+const \hyperlink{classCPSFacebookAppController_a52c5815c1a32c4d4e554abd7c6071f56}{FL\_\-CACHE} = 'fl\_\-cache'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFacebookAppController_ac7d88d5e0b0fb564c0e1ae69167e8449}{\_\-initializeFacebook} ()
+\item 
+\hyperlink{classCPSFacebookAppController_aef66ca6a78a6289bce2ba881bf575b12}{\_\-getRssFeed} (\$items=5)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFacebookAppController_a86b918c4cc90bae631b0f42b136d3a3c}{\$\_\-userModelClass} = 'User'
+\item 
+\hyperlink{classCPSFacebookAppController_a2f481ea63815c4c7e8c6dad8b4d839ec}{\$\_\-facebookApi}
+\item 
+\hyperlink{classCPSFacebookAppController_a5584acee1fc0d8fbc8970705ce8795cf}{\$\_\-identity} = null
+\item 
+\hyperlink{classCPSFacebookAppController_a4baf52b9d7a98e5d1354c0184a030233}{\$\_\-accessToken}
+\item 
+\hyperlink{classCPSFacebookAppController_a51fb44c62c03238ce850844bb9835e9a}{\$\_\-logoutUrl} = ''
+\item 
+\hyperlink{classCPSFacebookAppController_ad0039d9d92917bd2c7e46c93d8562b8b}{\$\_\-loginUrl} = ''
+\item 
+\hyperlink{classCPSFacebookAppController_ad0641deaf4d314f034a134efaa6fbff0}{\$\_\-session}
+\item 
+\hyperlink{classCPSFacebookAppController_a0363ec28009b511c07f346dd1b889afb}{\$\_\-isDeauthRequest} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 43 of file CPSFacebookAppController.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSFacebookAppController_aef66ca6a78a6289bce2ba881bf575b12}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!\_\-getRssFeed@{\_\-getRssFeed}}
+\index{\_\-getRssFeed@{\_\-getRssFeed}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{\_\-getRssFeed}]{\setlength{\rightskip}{0pt plus 5cm}\_\-getRssFeed (
+\begin{DoxyParamCaption}
+\item[{\$}]{ items = {\ttfamily 5}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookAppController_aef66ca6a78a6289bce2ba881bf575b12}
+Returns an RSS feed 
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]items to return \end{DoxyParams}
+
+
+Definition at line 361 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classCPSFacebookAppController_aef66ca6a78a6289bce2ba881bf575b12_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookAppController_ac7d88d5e0b0fb564c0e1ae69167e8449}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!\_\-initializeFacebook@{\_\-initializeFacebook}}
+\index{\_\-initializeFacebook@{\_\-initializeFacebook}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{\_\-initializeFacebook}]{\setlength{\rightskip}{0pt plus 5cm}\_\-initializeFacebook (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookAppController_ac7d88d5e0b0fb564c0e1ae69167e8449}
+Initialize the Facebook stuff \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 333 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Create the api object
+        $this->_facebookApi = PS::_gco( 'facebook' );
+
+        //  Get the login url
+        $this->_loginUrl = $this->_facebookApi->getLoginUrl(
+            array(
+                'canvas' => self::IS_CANVAS,
+                'fbconnect' => self::IS_CONNECT,
+                'req_perms' => $this->_facebookApi->getAppPermissions(),
+            )
+        );
+
+        PS::_ss(
+            '_currentIdentity',
+            $this->_identity = new CPSFacebookUserIdentity(
+                $this->_facebookApi,
+                $this->_loginUrl,
+                $this->_userModelClass
+            )
+        );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classCPSFacebookAppController_ac7d88d5e0b0fb564c0e1ae69167e8449_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookAppController_a06b9943f26298eca9387c6099343b938}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!accessRules@{accessRules}}
+\index{accessRules@{accessRules}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{accessRules}]{\setlength{\rightskip}{0pt plus 5cm}accessRules (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_a06b9943f26298eca9387c6099343b938}
+The base access rules for our CRUD controller
+
+\begin{DoxyReturn}{Returns}
+array Access control rules 
+\end{DoxyReturn}
+
+
+Definition at line 184 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  The base rules allow only authorized users
+        return array(
+            array( 'allow',
+                'actions' => array( '*' ),
+                'users' => array( '@' ),
+            ),
+        );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_a251c5654a2fa56e2db1fed76f1213e18}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!actionAdmin@{actionAdmin}}
+\index{actionAdmin@{actionAdmin}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{actionAdmin}]{\setlength{\rightskip}{0pt plus 5cm}actionAdmin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_a251c5654a2fa56e2db1fed76f1213e18}
+Admin page 
+
+Definition at line 210 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->layout = 'admin';
+        if ( null !== ( $_user = PS::_gs( 'currentUser' ) ) )
+            $this->render( ( $_user && $_user->admin_level_nbr != 0 ) ? 'admin' :
+       'index' );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_ae81ecfd4dd63d17b0e8eec3c2179bf0f}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!actionDeauthorize@{actionDeauthorize}}
+\index{actionDeauthorize@{actionDeauthorize}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{actionDeauthorize}]{\setlength{\rightskip}{0pt plus 5cm}actionDeauthorize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_ae81ecfd4dd63d17b0e8eec3c2179bf0f}
+Called when user removes app and/or permissions \begin{Desc}
+\item[\hyperlink{todo__todo000009}{Todo}]when Facebook fixes their shit and actually send a user id along with this, it will be useful. \end{Desc}
+
+
+Definition at line 239 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( defined( 'PYE_TRACE_LEVEL' ) && PYE_TRACE_LEVEL > 3 )
+            CPSLog::trace( __METHOD__, 'Deauth request: ' . print_r( $_REQUEST, t
+      rue ) );
+
+        $this->layout = false;
+
+        //  Reset!
+        if ( null !== ( $_user = PS::_gs( 'currentUser' ) ) )
+        {
+            $_user->app_del_date = date( 'Y-m-d H:i:s' );
+            $_user->app_del_count_nbr += 1;
+            $_user->access_token_text = null;
+            $_user->session_key_text = null;
+            $_user->update( array( 'app_del_date', 'app_del_count_nbr', 'access_t
+      oken_text', 'session_key_text' ) );
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookAppController_ae81ecfd4dd63d17b0e8eec3c2179bf0f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookAppController_a8471fa2c95307d608c34f15dae47d254}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!actionError@{actionError}}
+\index{actionError@{actionError}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{actionError}]{\setlength{\rightskip}{0pt plus 5cm}actionError (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_a8471fa2c95307d608c34f15dae47d254}
+This is the action to handle external exceptions. 
+
+Reimplemented from \hyperlink{classCPSController_a8471fa2c95307d608c34f15dae47d254}{CPSController}.
+
+
+
+Definition at line 268 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $error = Yii::app()->errorHandler->error )
+        {
+            if ( Yii::app()->request->isAjaxRequest )
+            {
+                $this->layout = false;
+                echo $error['message'];
+                return;
+            }
+
+            $this->render( 'error', $error );
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_ae955b1cdd5f2adcae90f9e744d8cc7a6}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!actionIndex@{actionIndex}}
+\index{actionIndex@{actionIndex}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{actionIndex}]{\setlength{\rightskip}{0pt plus 5cm}actionIndex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_ae955b1cdd5f2adcae90f9e744d8cc7a6}
+Home page 
+
+Definition at line 202 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->render( 'index' );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_a0781439fc2f14283719e441f1ca2b73e}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!actionInviteComplete@{actionInviteComplete}}
+\index{actionInviteComplete@{actionInviteComplete}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{actionInviteComplete}]{\setlength{\rightskip}{0pt plus 5cm}actionInviteComplete (
+\begin{DoxyParamCaption}
+\item[{\$}]{ queryParam = {\ttfamily 'ids'}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_a0781439fc2f14283719e441f1ca2b73e}
+Called after invitations have been sent. 
+
+Definition at line 220 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( defined( 'PYE_TRACE_LEVEL' ) && PYE_TRACE_LEVEL > 3 )
+            CPSLog::trace( __METHOD__, 'Invite complete: ' . print_r( $_REQUEST, 
+      true ) );
+
+        //  $_POST['ids'] is an array of invited friends...
+        if ( null !== ( $_user = PS::_gs( 'currentUser' ) ) )
+        {
+            $_user->invite_count_nbr += count( PS::o( $_REQUEST, $queryParam, 
+      array() ) );
+            $_user->update( array( 'invite_count_nbr' ) );
+        }
+
+        $this->redirect( PS::_gp( 'appUrl' ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookAppController_a0781439fc2f14283719e441f1ca2b73e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classCPSFacebookAppController_a0781439fc2f14283719e441f1ca2b73e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookAppController_ab2ff8b9313c96e3605f730f21f29b384}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!actionInviteFriends@{actionInviteFriends}}
+\index{actionInviteFriends@{actionInviteFriends}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{actionInviteFriends}]{\setlength{\rightskip}{0pt plus 5cm}actionInviteFriends (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_ab2ff8b9313c96e3605f730f21f29b384}
+Invite page 
+
+Definition at line 260 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->render( 'index' );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_ab64866966afd63a8e70d4d3693dd728b}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!facebookLogin@{facebookLogin}}
+\index{facebookLogin@{facebookLogin}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{facebookLogin}]{\setlength{\rightskip}{0pt plus 5cm}facebookLogin (
+\begin{DoxyParamCaption}
+\item[{CEvent \$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_ab64866966afd63a8e70d4d3693dd728b}
+facebookLogin event handler stub 
+\begin{DoxyParams}{Parameters}
+\item[{\em CEvent}]\$event \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 301 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return true;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_afe5dbb3e026bc3bfdecbd539025c7f93}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!filters@{filters}}
+\index{filters@{filters}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{filters}]{\setlength{\rightskip}{0pt plus 5cm}filters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_afe5dbb3e026bc3bfdecbd539025c7f93}
+The filters for this controller
+
+\begin{DoxyReturn}{Returns}
+array Action filters 
+\end{DoxyReturn}
+
+
+Definition at line 169 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( PS::isCLI() ) return array();
+
+        //  Perform access control for CRUD operations
+        return array(
+            'accessControl',
+        );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_a5d251c70a3f9f9daaff7f00ec5f894c0}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!getAccessToken@{getAccessToken}}
+\index{getAccessToken@{getAccessToken}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{getAccessToken}]{\setlength{\rightskip}{0pt plus 5cm}getAccessToken (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_a5d251c70a3f9f9daaff7f00ec5f894c0}
+
+
+Definition at line 92 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_accessToken; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_a0588504e111b21b1e1380b70ebe30b2f}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!getFacebookApi@{getFacebookApi}}
+\index{getFacebookApi@{getFacebookApi}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{getFacebookApi}]{\setlength{\rightskip}{0pt plus 5cm}getFacebookApi (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_a0588504e111b21b1e1380b70ebe30b2f}
+
+
+Definition at line 80 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_facebookApi; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_a790701ff73be7c0b993611e88baed25d}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!getFbUserName@{getFbUserName}}
+\index{getFbUserName@{getFbUserName}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{getFbUserName}]{\setlength{\rightskip}{0pt plus 5cm}getFbUserName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ fbUserId}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_a790701ff73be7c0b993611e88baed25d}
+
+
+Definition at line 306 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        try
+        {
+            if ( $this->_identity && $this->_identity->getFBUserId() == $fbUserId
+       )
+                return 'You';
+
+            $_user = json_decode( file_get_contents( 'https://graph.facebook.com/
+      ' . $fbUserId ) );
+
+            if ( $_user )
+                return trim( $_user->first_name . ' ' . $_user->last_name );
+        }
+        catch ( Exception $_ex )
+        {
+        }
+
+        return 'Facebook User';
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_a8d0c4e1299abe333956fca30fdc44143}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!getIdentity@{getIdentity}}
+\index{getIdentity@{getIdentity}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{getIdentity}]{\setlength{\rightskip}{0pt plus 5cm}getIdentity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_a8d0c4e1299abe333956fca30fdc44143}
+
+
+Definition at line 86 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_identity; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_aab9fd8efbb71dfc96d46f37bf13f95dc}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!getIsDeauthRequest@{getIsDeauthRequest}}
+\index{getIsDeauthRequest@{getIsDeauthRequest}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{getIsDeauthRequest}]{\setlength{\rightskip}{0pt plus 5cm}getIsDeauthRequest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_aab9fd8efbb71dfc96d46f37bf13f95dc}
+
+
+Definition at line 116 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_isDeauthRequest; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_a37af09a26efc969d1381851b8c379808}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!getLoginUrl@{getLoginUrl}}
+\index{getLoginUrl@{getLoginUrl}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{getLoginUrl}]{\setlength{\rightskip}{0pt plus 5cm}getLoginUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_a37af09a26efc969d1381851b8c379808}
+
+
+Definition at line 104 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_loginUrl; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_a4455e1688e73f1dba89f3f74d1334937}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!getLogoutUrl@{getLogoutUrl}}
+\index{getLogoutUrl@{getLogoutUrl}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{getLogoutUrl}]{\setlength{\rightskip}{0pt plus 5cm}getLogoutUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_a4455e1688e73f1dba89f3f74d1334937}
+
+
+Definition at line 98 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_logoutUrl; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_aefa4c5bd150e2a7d525576d7959c6911}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!getSession@{getSession}}
+\index{getSession@{getSession}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{getSession}]{\setlength{\rightskip}{0pt plus 5cm}getSession (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_aefa4c5bd150e2a7d525576d7959c6911}
+
+
+Definition at line 110 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_session; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_a0b280ce1a525781c8943e5101471a6c0}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!getUserModelClass@{getUserModelClass}}
+\index{getUserModelClass@{getUserModelClass}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{getUserModelClass}]{\setlength{\rightskip}{0pt plus 5cm}getUserModelClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_a0b280ce1a525781c8943e5101471a6c0}
+
+
+Definition at line 72 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_userModelClass; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookAppController_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!init@{init}}
+\index{init@{init}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize 
+
+Reimplemented from \hyperlink{classCPSController_a4be4055f3361d4800e16bc2e2e38cda6}{CPSController}.
+
+
+
+Definition at line 125 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  See if this is a deauth...
+        $this->_isDeauthRequest = ( false !== strpos( $_SERVER['REQUEST_URI'], 'a
+      pp/deauthorize' ) );
+
+        if ( isset( $_REQUEST['request_ids'] ) )
+        {
+            $this->actionInviteComplete( 'request_ids' );
+            $this->redirect( '/' );
+        }
+
+        parent::init();
+
+        //  Get our identity
+        $this->_identity = PS::_gs( 'currentIdentity' );
+
+        //  Handle an rss feed
+        if ( isset( $_REQUEST[ 'rss' ] ) )
+        {
+            header( "Content-Type: application/xml; charset=ISO-8859-1" );
+            echo $this->_getRssFeed();
+            die();
+        }
+
+        //  No facebook?
+        if ( PS::_gs( 'standalone' ) || PS::o( $_REQUEST, 'standalone' ) )
+            PS::_ss( 'standalone', true );
+
+        //  Set up events...
+        $this->onFacebookLogin = array( $this, 'facebookLogin' );
+
+        //  Ignore ajax requests...
+        if ( ! Yii::app()->getRequest()->getIsAjaxRequest() )
+        {
+            //  Set up the Facebook API
+            $this->_initializeFacebook();
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookAppController_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookAppController_a023e71297825d72b643617f9fdf25355}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!onFacebookLogin@{onFacebookLogin}}
+\index{onFacebookLogin@{onFacebookLogin}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{onFacebookLogin}]{\setlength{\rightskip}{0pt plus 5cm}onFacebookLogin (
+\begin{DoxyParamCaption}
+\item[{CEvent \$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_a023e71297825d72b643617f9fdf25355}
+Event: facebookLogin 
+\begin{DoxyParams}{Parameters}
+\item[{\em CEvent}]\$event \end{DoxyParams}
+
+
+Definition at line 291 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->raiseEvent( 'onFacebookLogin', $event );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classCPSFacebookAppController_a023e71297825d72b643617f9fdf25355_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookAppController_ae0af15a6b8117c8e984beae8e585fcd2}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!setUserModelClass@{setUserModelClass}}
+\index{setUserModelClass@{setUserModelClass}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{setUserModelClass}]{\setlength{\rightskip}{0pt plus 5cm}setUserModelClass (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookAppController_ae0af15a6b8117c8e984beae8e585fcd2}
+
+
+Definition at line 73 of file CPSFacebookAppController.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_userModelClass = $value; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSFacebookAppController_a4baf52b9d7a98e5d1354c0184a030233}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!\$\_\-accessToken@{\$\_\-accessToken}}
+\index{\$\_\-accessToken@{\$\_\-accessToken}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{\$\_\-accessToken}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-accessToken\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookAppController_a4baf52b9d7a98e5d1354c0184a030233}
+
+
+Definition at line 91 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_a2f481ea63815c4c7e8c6dad8b4d839ec}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!\$\_\-facebookApi@{\$\_\-facebookApi}}
+\index{\$\_\-facebookApi@{\$\_\-facebookApi}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{\$\_\-facebookApi}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-facebookApi\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookAppController_a2f481ea63815c4c7e8c6dad8b4d839ec}
+
+
+Definition at line 79 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_a5584acee1fc0d8fbc8970705ce8795cf}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!\$\_\-identity@{\$\_\-identity}}
+\index{\$\_\-identity@{\$\_\-identity}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{\$\_\-identity}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-identity = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookAppController_a5584acee1fc0d8fbc8970705ce8795cf}
+
+
+Definition at line 85 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_a0363ec28009b511c07f346dd1b889afb}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!\$\_\-isDeauthRequest@{\$\_\-isDeauthRequest}}
+\index{\$\_\-isDeauthRequest@{\$\_\-isDeauthRequest}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{\$\_\-isDeauthRequest}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-isDeauthRequest = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookAppController_a0363ec28009b511c07f346dd1b889afb}
+
+
+Definition at line 115 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_ad0039d9d92917bd2c7e46c93d8562b8b}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!\$\_\-loginUrl@{\$\_\-loginUrl}}
+\index{\$\_\-loginUrl@{\$\_\-loginUrl}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{\$\_\-loginUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-loginUrl = ''\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookAppController_ad0039d9d92917bd2c7e46c93d8562b8b}
+
+
+Definition at line 103 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_a51fb44c62c03238ce850844bb9835e9a}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!\$\_\-logoutUrl@{\$\_\-logoutUrl}}
+\index{\$\_\-logoutUrl@{\$\_\-logoutUrl}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{\$\_\-logoutUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-logoutUrl = ''\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookAppController_a51fb44c62c03238ce850844bb9835e9a}
+
+
+Definition at line 97 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_ad0641deaf4d314f034a134efaa6fbff0}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!\$\_\-session@{\$\_\-session}}
+\index{\$\_\-session@{\$\_\-session}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{\$\_\-session}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-session\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookAppController_ad0641deaf4d314f034a134efaa6fbff0}
+
+
+Definition at line 109 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_a86b918c4cc90bae631b0f42b136d3a3c}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!\$\_\-userModelClass@{\$\_\-userModelClass}}
+\index{\$\_\-userModelClass@{\$\_\-userModelClass}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{\$\_\-userModelClass}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-userModelClass = 'User'\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookAppController_a86b918c4cc90bae631b0f42b136d3a3c}
+
+
+Definition at line 71 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_a1893848deeea686e915dd2151301e807}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!APP\_\-FRIEND\_\-CACHE@{APP\_\-FRIEND\_\-CACHE}}
+\index{APP\_\-FRIEND\_\-CACHE@{APP\_\-FRIEND\_\-CACHE}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{APP\_\-FRIEND\_\-CACHE}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf APP\_\-FRIEND\_\-CACHE} = 'app\_\-friend\_\-cache'}}
+\label{classCPSFacebookAppController_a1893848deeea686e915dd2151301e807}
+
+
+Definition at line 59 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_a758c150b67e476ecf77478f16b387c61}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!DEBUG@{DEBUG}}
+\index{DEBUG@{DEBUG}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{DEBUG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf DEBUG} = false}}
+\label{classCPSFacebookAppController_a758c150b67e476ecf77478f16b387c61}
+
+
+Definition at line 53 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_a52c5815c1a32c4d4e554abd7c6071f56}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!FL\_\-CACHE@{FL\_\-CACHE}}
+\index{FL\_\-CACHE@{FL\_\-CACHE}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{FL\_\-CACHE}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf FL\_\-CACHE} = 'fl\_\-cache'}}
+\label{classCPSFacebookAppController_a52c5815c1a32c4d4e554abd7c6071f56}
+
+
+Definition at line 62 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_a33ac1db1c172ba0f5722c97f00af34d6}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!FRIEND\_\-CACHE@{FRIEND\_\-CACHE}}
+\index{FRIEND\_\-CACHE@{FRIEND\_\-CACHE}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{FRIEND\_\-CACHE}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf FRIEND\_\-CACHE} = 'friend\_\-cache'}}
+\label{classCPSFacebookAppController_a33ac1db1c172ba0f5722c97f00af34d6}
+
+
+Definition at line 58 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_a70840ece73140159e9b08da06002ae3a}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!IS\_\-CANVAS@{IS\_\-CANVAS}}
+\index{IS\_\-CANVAS@{IS\_\-CANVAS}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{IS\_\-CANVAS}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf IS\_\-CANVAS} = true}}
+\label{classCPSFacebookAppController_a70840ece73140159e9b08da06002ae3a}
+
+
+Definition at line 55 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_ac3a66a3e0e2e675b4aa12dec472b8dd0}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!IS\_\-CONNECT@{IS\_\-CONNECT}}
+\index{IS\_\-CONNECT@{IS\_\-CONNECT}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{IS\_\-CONNECT}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf IS\_\-CONNECT} = false}}
+\label{classCPSFacebookAppController_ac3a66a3e0e2e675b4aa12dec472b8dd0}
+
+
+Definition at line 56 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_a92f90cffdcf9bdc7042c27210d7bf711}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!MAX\_\-FRIENDS\_\-TO\_\-SHOW@{MAX\_\-FRIENDS\_\-TO\_\-SHOW}}
+\index{MAX\_\-FRIENDS\_\-TO\_\-SHOW@{MAX\_\-FRIENDS\_\-TO\_\-SHOW}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{MAX\_\-FRIENDS\_\-TO\_\-SHOW}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MAX\_\-FRIENDS\_\-TO\_\-SHOW} = 7}}
+\label{classCPSFacebookAppController_a92f90cffdcf9bdc7042c27210d7bf711}
+Maximum number of photos to show 
+
+Definition at line 52 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_a3fefc47757aedf92a1e71a894503a9e0}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!ME\_\-CACHE@{ME\_\-CACHE}}
+\index{ME\_\-CACHE@{ME\_\-CACHE}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{ME\_\-CACHE}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ME\_\-CACHE} = 'me\_\-cache'}}
+\label{classCPSFacebookAppController_a3fefc47757aedf92a1e71a894503a9e0}
+
+
+Definition at line 61 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_a566d4822d1e8b1e6a916007a2be84878}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!PROFILE\_\-CACHE@{PROFILE\_\-CACHE}}
+\index{PROFILE\_\-CACHE@{PROFILE\_\-CACHE}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{PROFILE\_\-CACHE}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PROFILE\_\-CACHE} = 'profile\_\-cache'}}
+\label{classCPSFacebookAppController_a566d4822d1e8b1e6a916007a2be84878}
+
+
+Definition at line 60 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_a68a34ece4de56a54f4f82c474c0204d7}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!THUMB\_\-CACHE@{THUMB\_\-CACHE}}
+\index{THUMB\_\-CACHE@{THUMB\_\-CACHE}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{THUMB\_\-CACHE}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf THUMB\_\-CACHE} = 'thumb\_\-cache'}}
+\label{classCPSFacebookAppController_a68a34ece4de56a54f4f82c474c0204d7}
+
+
+Definition at line 57 of file CPSFacebookAppController.php.
+
+\hypertarget{classCPSFacebookAppController_aa59dac68626789b109ad0c18e6fbb96e}{
+\index{CPSFacebookAppController@{CPSFacebookAppController}!USE\_\-CACHE@{USE\_\-CACHE}}
+\index{USE\_\-CACHE@{USE\_\-CACHE}!CPSFacebookAppController@{CPSFacebookAppController}}
+\subsubsection[{USE\_\-CACHE}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf USE\_\-CACHE} = false}}
+\label{classCPSFacebookAppController_aa59dac68626789b109ad0c18e6fbb96e}
+
+
+Definition at line 54 of file CPSFacebookAppController.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/controllers/\hyperlink{CPSFacebookAppController_8php}{CPSFacebookAppController.php}\end{DoxyCompactItemize}

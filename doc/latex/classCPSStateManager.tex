@@ -1,0 +1,1065 @@
+\hypertarget{classCPSStateManager}{
+\section{CPSStateManager Class Reference}
+\label{classCPSStateManager}\index{CPSStateManager@{CPSStateManager}}
+}
+
+
+Inheritance diagram for CPSStateManager:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classCPSStateManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSStateManager:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classCPSStateManager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSStateManager_a41d02f19b7f23efd1078c524f342b6e2}{getHashKeys} ()
+\item 
+\hyperlink{classCPSStateManager_ae2837e14e8cd5051d921990b28d2691e}{setHashKeys} (\$value)
+\item 
+\hyperlink{classCPSStateManager_a98212fc10654d0cfdd546c3dd5d35176}{getSerializeData} ()
+\item 
+\hyperlink{classCPSStateManager_a7ea25cbbe7a4cab51edcbbf5841ca3bf}{setSerializeData} (\$value)
+\item 
+\hyperlink{classCPSStateManager_aabba0be5715e54fad7739b40a7be2dfd}{getStateKeyPrefix} ()
+\item 
+\hyperlink{classCPSStateManager_aef8c74f8d1d94b8c5c046027ba3ad424}{setStateKeyPrefix} (\$value)
+\item 
+\hyperlink{classCPSStateManager_a1ff82bdcd6747129d97e12934db2def8}{\_\-\_\-construct} (\$keyPrefix=null)
+\item 
+\hyperlink{classCPSStateManager_a8bf40ae0d2528f36e3df46e28f56e1c8}{getState} (\$key, \$defaultValue=null, \$isFlash=false)
+\item 
+\hyperlink{classCPSStateManager_ad877e4dd3c0592fdaf903133255b2e56}{getRawState} (\$key, \$defaultValue=null)
+\item 
+\hyperlink{classCPSStateManager_aafc00fb76764975385c8a3fa54cfece3}{setState} (\$key, \$value, \$defaultValue=null, \$isFlash=false)
+\item 
+\hyperlink{classCPSStateManager_a4cac4fe30e263f66499d37a90a4bc389}{setRawState} (\$key, \$value, \$defaultValue=null)
+\item 
+\hyperlink{classCPSStateManager_ab04376998e1a1094f4c415a79018ca96}{hasState} (\$key)
+\item 
+\hyperlink{classCPSStateManager_a5623d45a4dfcce122b732b0377364d66}{clearStates} ()
+\item 
+\hyperlink{classCPSStateManager_ae29eea2995e7e3e2789181f632ae95a5}{getFlashes} (\$delete=true)
+\item 
+\hyperlink{classCPSStateManager_a3ac1554d96ad28d5ab40d8ea5b6a11fe}{getFlash} (\$key, \$defaultValue=null, \$delete=true)
+\item 
+\hyperlink{classCPSStateManager_a7ae4f6603338ff51e36d4da8219b3a64}{setFlash} (\$key, \$value, \$defaultValue=null)
+\item 
+\hyperlink{classCPSStateManager_a0ac89d09ac48bba800f8dd87a0e790fc}{hasFlash} (\$key)
+\item 
+\hyperlink{classCPSStateManager_aff7069e450d5b0ae178f05baeb48fa20}{getInternalKey} (\$key=null, \$isFlashKey=false)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSStateManager_a0ab4998637c35aaf21bf01bb642b6e41}{BASE\_\-KEY\_\-PREFIX} = 'stateManager'
+\item 
+const \hyperlink{classCPSStateManager_a4f2dfe143b9da4d0998257b61eecc8be}{BASE\_\-FLASH\_\-KEY\_\-PREFIX} = 'flashMessage'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSStateManager_aef8105c18b26b9694968813aef02bfff}{\_\-serialize} (\$value)
+\item 
+\hyperlink{classCPSStateManager_a24cf27ade8d80afda9be4de310351aad}{\_\-unserialize} (\$value)
+\item 
+\hyperlink{classCPSStateManager_a7a8991bc35b616d7efbfbf6f23ff83c9}{\_\-isSerialized} (\$value)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSStateManager_ad57dba8c7d1cafb4ca1798f7c981cda8}{\$\_\-hashKeys} = true
+\item 
+\hyperlink{classCPSStateManager_a4ab3ef1abf22d7966e653c2f981eccbc}{\$\_\-serializeData} = true
+\item 
+\hyperlink{classCPSStateManager_a1f1b11d239bcb8bdfe83626a972050a6}{\$\_\-keyPrefix} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSStateManager.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSStateManager_a1ff82bdcd6747129d97e12934db2def8}{
+\index{CPSStateManager@{CPSStateManager}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ keyPrefix = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_a1ff82bdcd6747129d97e12934db2def8}
+Constructor with optional state key prefix override 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$keyPrefix \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classCPSComponent_af7f9493844d2d66e924e3c1df51ce616}{CPSComponent}.
+
+
+
+Definition at line 70 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Call pop
+        parent::__construct();
+
+        //  Initialize the state key prefix
+        $this->_keyPrefix = ( null === $keyPrefix ? md5( self::BASE_KEY_PREFIX ) 
+      : $keyPrefix );
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSStateManager_a7a8991bc35b616d7efbfbf6f23ff83c9}{
+\index{CPSStateManager@{CPSStateManager}!\_\-isSerialized@{\_\-isSerialized}}
+\index{\_\-isSerialized@{\_\-isSerialized}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{\_\-isSerialized}]{\setlength{\rightskip}{0pt plus 5cm}\_\-isSerialized (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSStateManager_a7a8991bc35b616d7efbfbf6f23ff83c9}
+Tests if a value needs unserialization 
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$value \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 321 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_result = @unserialize( $value );
+        return !( false === $_result && $value != serialize( false ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_a7a8991bc35b616d7efbfbf6f23ff83c9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSStateManager_aef8105c18b26b9694968813aef02bfff}{
+\index{CPSStateManager@{CPSStateManager}!\_\-serialize@{\_\-serialize}}
+\index{\_\-serialize@{\_\-serialize}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{\_\-serialize}]{\setlength{\rightskip}{0pt plus 5cm}\_\-serialize (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSStateManager_aef8105c18b26b9694968813aef02bfff}
+Smarter serializer that can handle SimpleXmlElement objects 
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$value \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 272 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $this->_serializeData )
+        {
+            try
+            {
+                if ( $value instanceof SimpleXMLElement || $value instanceof Util
+      _SpXmlElement )
+                    return $value->asXML();
+
+                if ( is_object( $value ) )
+                    return serialize( $value );
+            }
+            catch ( Exception $_ex )
+            {
+            }
+        }
+
+        return $value;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_aef8105c18b26b9694968813aef02bfff_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSStateManager_a24cf27ade8d80afda9be4de310351aad}{
+\index{CPSStateManager@{CPSStateManager}!\_\-unserialize@{\_\-unserialize}}
+\index{\_\-unserialize@{\_\-unserialize}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{\_\-unserialize}]{\setlength{\rightskip}{0pt plus 5cm}\_\-unserialize (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSStateManager_a24cf27ade8d80afda9be4de310351aad}
+Unserializer that can handle SimpleXmlElement objects 
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$value \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 297 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        try
+        {
+            if ( $this->_isSerialized( $value ) )
+            {
+                if ( $value instanceof SimpleXMLElement || $value instanceof Util
+      _SpXmlElement )
+                    return simplexml_load_string( $value );
+
+                return unserialize( $value );
+            }
+        }
+        catch ( Exception $_ex )
+        {
+        }
+
+        return $value;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classCPSStateManager_a24cf27ade8d80afda9be4de310351aad_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_a24cf27ade8d80afda9be4de310351aad_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSStateManager_a5623d45a4dfcce122b732b0377364d66}{
+\index{CPSStateManager@{CPSStateManager}!clearStates@{clearStates}}
+\index{clearStates@{clearStates}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{clearStates}]{\setlength{\rightskip}{0pt plus 5cm}clearStates (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_a5623d45a4dfcce122b732b0377364d66}
+Clears all user identity information from persistent storage. This will remove the data stored via \hyperlink{}{setState}. 
+
+Definition at line 161 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_baseKey = $this->getInternalKey();
+        $_length = strlen( $_baseKey );
+
+        foreach ( array_keys( $_SESSION ) as $_key )
+        {
+            if ( ! strncmp( $_key, $_baseKey, $_length ) )
+                unset( $_SESSION[$_key] );
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_a5623d45a4dfcce122b732b0377364d66_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSStateManager_a3ac1554d96ad28d5ab40d8ea5b6a11fe}{
+\index{CPSStateManager@{CPSStateManager}!getFlash@{getFlash}}
+\index{getFlash@{getFlash}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{getFlash}]{\setlength{\rightskip}{0pt plus 5cm}getFlash (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ defaultValue = {\ttfamily null}, }
+\item[{\$}]{ delete = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_a3ac1554d96ad28d5ab40d8ea5b6a11fe}
+Returns a flash message. A flash message is available only in the current and the next requests. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key key identifying the flash message \item[{\em mixed}]\$defaultValue value to be returned if the flash message is not available. \item[{\em boolean}]\$delete whether to delete this flash message after accessing it. Defaults to true. This parameter has been available since version 1.0.2. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed the message message 
+\end{DoxyReturn}
+
+
+Definition at line 211 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_value = $this->getState( $key, $defaultValue, true );
+        if ( $delete ) $this->setFlash( $key, null );
+        return $_value;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_a3ac1554d96ad28d5ab40d8ea5b6a11fe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classCPSStateManager_a3ac1554d96ad28d5ab40d8ea5b6a11fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSStateManager_ae29eea2995e7e3e2789181f632ae95a5}{
+\index{CPSStateManager@{CPSStateManager}!getFlashes@{getFlashes}}
+\index{getFlashes@{getFlashes}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{getFlashes}]{\setlength{\rightskip}{0pt plus 5cm}getFlashes (
+\begin{DoxyParamCaption}
+\item[{\$}]{ delete = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_ae29eea2995e7e3e2789181f632ae95a5}
+Returns all flash messages. This method is similar to \hyperlink{}{getFlash} except that it returns all currently available flash messages. 
+\begin{DoxyParams}{Parameters}
+\item[{\em boolean}]\$delete whether to delete the flash messages after calling this method. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array flash messages (key =$>$ message). 
+\end{DoxyReturn}
+
+
+Definition at line 180 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_flashList = array();
+        $_baseKey = $this->getInternalKey( null, true );
+        $_length = strlen( $_baseKey );
+
+        $_keyList = array_keys( $_SESSION );
+
+        foreach ( $_keyList as $_key )
+        {
+            if ( ! strncmp( $_key, $_baseKey, $_length ) )
+            {
+                $_flashList[substr( $_key, $_length )] = $_SESSION[$_key];
+                if ( $delete ) unset( $_SESSION[$_key] );
+            }
+        }
+
+        if ( $delete ) $this->setRawState( $this->getInternalKey( self::BASE_FLAS
+      H_KEY_PREFIX . '.counters', true ), array() );
+
+        return $_flashList;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_ae29eea2995e7e3e2789181f632ae95a5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSStateManager_a41d02f19b7f23efd1078c524f342b6e2}{
+\index{CPSStateManager@{CPSStateManager}!getHashKeys@{getHashKeys}}
+\index{getHashKeys@{getHashKeys}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{getHashKeys}]{\setlength{\rightskip}{0pt plus 5cm}getHashKeys (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_a41d02f19b7f23efd1078c524f342b6e2}
+
+
+Definition at line 45 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_hashKeys; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSStateManager_aff7069e450d5b0ae178f05baeb48fa20}{
+\index{CPSStateManager@{CPSStateManager}!getInternalKey@{getInternalKey}}
+\index{getInternalKey@{getInternalKey}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{getInternalKey}]{\setlength{\rightskip}{0pt plus 5cm}getInternalKey (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key = {\ttfamily null}, }
+\item[{\$}]{ isFlashKey = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_aff7069e450d5b0ae178f05baeb48fa20}
+Constructs an \char`\"{}internal\char`\"{} key built from the key you're looking for and the key prefix. Optionally hashes the key. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key If null, the hashed prefix is returned \item[{\em boolean}]\$isFlashKey If true, the base flash key prefix is appeneded to the key before hashing. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 254 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Construct the key
+        $_key = session_id() . '.' . $this->_keyPrefix . ( $isFlashKey ? '.' . se
+      lf::BASE_FLASH_KEY_PREFIX : null );
+        if ( ! empty( $key ) ) $_key .= '.' . ( $this->_hashKeys ? md5( $key ) : 
+      $key );
+        if ( $this->_debugMode ) CPSLog::trace( __METHOD__, 'Internalize Key:[' .
+       $key . '] => [' . $_key . ']' );
+        return $_key;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_aff7069e450d5b0ae178f05baeb48fa20_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_aff7069e450d5b0ae178f05baeb48fa20_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSStateManager_ad877e4dd3c0592fdaf903133255b2e56}{
+\index{CPSStateManager@{CPSStateManager}!getRawState@{getRawState}}
+\index{getRawState@{getRawState}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{getRawState}]{\setlength{\rightskip}{0pt plus 5cm}getRawState (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ defaultValue = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_ad877e4dd3c0592fdaf903133255b2e56}
+Retrieves the raw state 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key \item[{\em mixed}]\$defaultValue \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 103 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_result = ( isset( $_SESSION[$key] ) ? $this->_unserialize( $_SESSION[$k
+      ey] ) : $_SESSION[$key] = $defaultValue );
+        if ( $this->_debugMode ) CPSLog::trace( __METHOD__, 'Raw GET:[' . $key . 
+      '] = [' . $_result . ']' );
+        return $_result;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_ad877e4dd3c0592fdaf903133255b2e56_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_ad877e4dd3c0592fdaf903133255b2e56_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSStateManager_a98212fc10654d0cfdd546c3dd5d35176}{
+\index{CPSStateManager@{CPSStateManager}!getSerializeData@{getSerializeData}}
+\index{getSerializeData@{getSerializeData}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{getSerializeData}]{\setlength{\rightskip}{0pt plus 5cm}getSerializeData (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_a98212fc10654d0cfdd546c3dd5d35176}
+
+
+Definition at line 52 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_serializeData; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSStateManager_a8bf40ae0d2528f36e3df46e28f56e1c8}{
+\index{CPSStateManager@{CPSStateManager}!getState@{getState}}
+\index{getState@{getState}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{getState}]{\setlength{\rightskip}{0pt plus 5cm}getState (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ defaultValue = {\ttfamily null}, }
+\item[{\$}]{ isFlash = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_a8bf40ae0d2528f36e3df46e28f56e1c8}
+Returns the value of a variable that is stored in user session.
+
+This function is designed to be used by CWebUser descendant classes who want to store additional user information in user session. A variable, if stored in user session using \hyperlink{}{setState} can be retrieved back using this function.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key variable name \item[{\em mixed}]\$defaultValue default value \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed the value of the variable. If it doesn't exist in the session, the provided default value will be returned 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSStateManager_aafc00fb76764975385c8a3fa54cfece3}{setState} 
+\end{DoxySeeAlso}
+
+
+Definition at line 92 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->getRawState( $this->getInternalKey( $key, $isFlash ), $defa
+      ultValue );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_a8bf40ae0d2528f36e3df46e28f56e1c8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_a8bf40ae0d2528f36e3df46e28f56e1c8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSStateManager_aabba0be5715e54fad7739b40a7be2dfd}{
+\index{CPSStateManager@{CPSStateManager}!getStateKeyPrefix@{getStateKeyPrefix}}
+\index{getStateKeyPrefix@{getStateKeyPrefix}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{getStateKeyPrefix}]{\setlength{\rightskip}{0pt plus 5cm}getStateKeyPrefix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_aabba0be5715e54fad7739b40a7be2dfd}
+
+
+Definition at line 59 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_keyPrefix; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSStateManager_a0ac89d09ac48bba800f8dd87a0e790fc}{
+\index{CPSStateManager@{CPSStateManager}!hasFlash@{hasFlash}}
+\index{hasFlash@{hasFlash}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{hasFlash}]{\setlength{\rightskip}{0pt plus 5cm}hasFlash (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_a0ac89d09ac48bba800f8dd87a0e790fc}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key key identifying the flash message \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean whether the specified flash message exists 
+\end{DoxyReturn}
+
+
+Definition at line 243 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return ( null !== $this->getFlash( $key, null, false ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_a0ac89d09ac48bba800f8dd87a0e790fc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSStateManager_ab04376998e1a1094f4c415a79018ca96}{
+\index{CPSStateManager@{CPSStateManager}!hasState@{hasState}}
+\index{hasState@{hasState}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{hasState}]{\setlength{\rightskip}{0pt plus 5cm}hasState (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_ab04376998e1a1094f4c415a79018ca96}
+Returns a value indicating whether there is a state of the specified name. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key state name \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean whether there is a state of the specified name. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.0.3 
+\end{DoxySince}
+
+
+Definition at line 151 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_key = $this->getInternalKey( $key );
+        return isset( $_SESSION[$_key] );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_ab04376998e1a1094f4c415a79018ca96_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSStateManager_a7ae4f6603338ff51e36d4da8219b3a64}{
+\index{CPSStateManager@{CPSStateManager}!setFlash@{setFlash}}
+\index{setFlash@{setFlash}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{setFlash}]{\setlength{\rightskip}{0pt plus 5cm}setFlash (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ value, }
+\item[{\$}]{ defaultValue = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_a7ae4f6603338ff51e36d4da8219b3a64}
+Stores a flash message. A flash message is available only in the current and the next requests. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key key identifying the flash message \item[{\em mixed}]\$value flash message \item[{\em mixed}]\$defaultValue if this value is the same as the flash message, the flash message will be removed. (Therefore, you can use setFlash('key',null) to remove a flash message.) \end{DoxyParams}
+
+
+Definition at line 226 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->setState( $key, $value, $defaultValue, true );
+        $_counterList = $this->getState( self::BASE_FLASH_KEY_PREFIX . '.counters
+      ', array() );
+
+        if ( $value === $defaultValue )
+            unset( $_counterList[$key] );
+        else
+            $_counterList[$key] = 0;
+
+        $this->setState( self::BASE_FLASH_KEY_PREFIX . '.counters', $_counterList
+      , array() );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_a7ae4f6603338ff51e36d4da8219b3a64_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classCPSStateManager_a7ae4f6603338ff51e36d4da8219b3a64_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSStateManager_ae2837e14e8cd5051d921990b28d2691e}{
+\index{CPSStateManager@{CPSStateManager}!setHashKeys@{setHashKeys}}
+\index{setHashKeys@{setHashKeys}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{setHashKeys}]{\setlength{\rightskip}{0pt plus 5cm}setHashKeys (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_ae2837e14e8cd5051d921990b28d2691e}
+
+
+Definition at line 46 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_hashKeys = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSStateManager_a4cac4fe30e263f66499d37a90a4bc389}{
+\index{CPSStateManager@{CPSStateManager}!setRawState@{setRawState}}
+\index{setRawState@{setRawState}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{setRawState}]{\setlength{\rightskip}{0pt plus 5cm}setRawState (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ value, }
+\item[{\$}]{ defaultValue = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_a4cac4fe30e263f66499d37a90a4bc389}
+Sets a session state 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key \item[{\em mixed}]\$value \item[{\em mixed}]\$defaultValue \end{DoxyParams}
+
+
+Definition at line 135 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $this->_debugMode ) CPSLog::trace( __METHOD__, 'Raw Set:[' . $key . 
+      '] = [' . $value . ']' );
+
+        if ( $value === $defaultValue )
+            unset( $_SESSION[$key] );
+        else
+            $_SESSION[$key] = $this->_serialize( $value );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_a4cac4fe30e263f66499d37a90a4bc389_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_a4cac4fe30e263f66499d37a90a4bc389_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSStateManager_a7ea25cbbe7a4cab51edcbbf5841ca3bf}{
+\index{CPSStateManager@{CPSStateManager}!setSerializeData@{setSerializeData}}
+\index{setSerializeData@{setSerializeData}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{setSerializeData}]{\setlength{\rightskip}{0pt plus 5cm}setSerializeData (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_a7ea25cbbe7a4cab51edcbbf5841ca3bf}
+
+
+Definition at line 53 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_serializeData = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSStateManager_aafc00fb76764975385c8a3fa54cfece3}{
+\index{CPSStateManager@{CPSStateManager}!setState@{setState}}
+\index{setState@{setState}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{setState}]{\setlength{\rightskip}{0pt plus 5cm}setState (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ value, }
+\item[{\$}]{ defaultValue = {\ttfamily null}, }
+\item[{\$}]{ isFlash = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_aafc00fb76764975385c8a3fa54cfece3}
+Stores a variable in user session.
+
+This function is designed to be used by CWebUser descendant classes who want to store additional user information in user session. By storing a variable using this function, the variable may be retrieved back later using \hyperlink{}{getState}. The variable will be persistent across page requests during a user session.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key variable name \item[{\em mixed}]\$value variable value \item[{\em mixed}]\$defaultValue default value. If \$value===\$defaultValue, the variable will be removed from the session \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSStateManager_a8bf40ae0d2528f36e3df46e28f56e1c8}{getState} 
+\end{DoxySeeAlso}
+
+
+Definition at line 124 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->setRawState( $this->getInternalKey( $key, $isFlash ), $value, $def
+      aultValue );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_aafc00fb76764975385c8a3fa54cfece3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSStateManager_aafc00fb76764975385c8a3fa54cfece3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSStateManager_aef8c74f8d1d94b8c5c046027ba3ad424}{
+\index{CPSStateManager@{CPSStateManager}!setStateKeyPrefix@{setStateKeyPrefix}}
+\index{setStateKeyPrefix@{setStateKeyPrefix}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{setStateKeyPrefix}]{\setlength{\rightskip}{0pt plus 5cm}setStateKeyPrefix (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSStateManager_aef8c74f8d1d94b8c5c046027ba3ad424}
+
+
+Definition at line 60 of file CPSStateManager.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_keyPrefix = $value; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSStateManager_ad57dba8c7d1cafb4ca1798f7c981cda8}{
+\index{CPSStateManager@{CPSStateManager}!\$\_\-hashKeys@{\$\_\-hashKeys}}
+\index{\$\_\-hashKeys@{\$\_\-hashKeys}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{\$\_\-hashKeys}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-hashKeys = true\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSStateManager_ad57dba8c7d1cafb4ca1798f7c981cda8}
+
+
+Definition at line 44 of file CPSStateManager.php.
+
+\hypertarget{classCPSStateManager_a1f1b11d239bcb8bdfe83626a972050a6}{
+\index{CPSStateManager@{CPSStateManager}!\$\_\-keyPrefix@{\$\_\-keyPrefix}}
+\index{\$\_\-keyPrefix@{\$\_\-keyPrefix}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{\$\_\-keyPrefix}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-keyPrefix = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSStateManager_a1f1b11d239bcb8bdfe83626a972050a6}
+
+
+Definition at line 58 of file CPSStateManager.php.
+
+\hypertarget{classCPSStateManager_a4ab3ef1abf22d7966e653c2f981eccbc}{
+\index{CPSStateManager@{CPSStateManager}!\$\_\-serializeData@{\$\_\-serializeData}}
+\index{\$\_\-serializeData@{\$\_\-serializeData}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{\$\_\-serializeData}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-serializeData = true\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSStateManager_a4ab3ef1abf22d7966e653c2f981eccbc}
+
+
+Definition at line 51 of file CPSStateManager.php.
+
+\hypertarget{classCPSStateManager_a4f2dfe143b9da4d0998257b61eecc8be}{
+\index{CPSStateManager@{CPSStateManager}!BASE\_\-FLASH\_\-KEY\_\-PREFIX@{BASE\_\-FLASH\_\-KEY\_\-PREFIX}}
+\index{BASE\_\-FLASH\_\-KEY\_\-PREFIX@{BASE\_\-FLASH\_\-KEY\_\-PREFIX}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{BASE\_\-FLASH\_\-KEY\_\-PREFIX}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf BASE\_\-FLASH\_\-KEY\_\-PREFIX} = 'flashMessage'}}
+\label{classCPSStateManager_a4f2dfe143b9da4d0998257b61eecc8be}
+The base prefix for all flash keys 
+
+Definition at line 35 of file CPSStateManager.php.
+
+\hypertarget{classCPSStateManager_a0ab4998637c35aaf21bf01bb642b6e41}{
+\index{CPSStateManager@{CPSStateManager}!BASE\_\-KEY\_\-PREFIX@{BASE\_\-KEY\_\-PREFIX}}
+\index{BASE\_\-KEY\_\-PREFIX@{BASE\_\-KEY\_\-PREFIX}!CPSStateManager@{CPSStateManager}}
+\subsubsection[{BASE\_\-KEY\_\-PREFIX}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf BASE\_\-KEY\_\-PREFIX} = 'stateManager'}}
+\label{classCPSStateManager_a0ab4998637c35aaf21bf01bb642b6e41}
+The base prefix for all state keys 
+
+Definition at line 31 of file CPSStateManager.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/\hyperlink{CPSStateManager_8php}{CPSStateManager.php}\end{DoxyCompactItemize}

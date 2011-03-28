@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classSF__Platform.html#aea9e29722f6d4ecdfab07f196e132bcb" title="execPFSQL" alt="" coords="168,5,261,35"/>
+<area shape="rect" id="node5" href="$classSF__Platform.html#a71b7a74bd23b2c2be77aad5448cda40b" title="getSessionKey" alt="" coords="157,59,272,88"/>
+<area shape="rect" id="node7" href="$classSF__Platform.html#af25bc3b138038094b8a0b8233adf06c7" title="getUserData" alt="" coords="163,112,267,141"/>
+<area shape="rect" id="node9" href="$classSF__Platform.html#aad5709bf4b030e39bc8e7e2cbf4812a5" title="getUserInfo" alt="" coords="167,165,263,195"/>
+<area shape="rect" id="node11" href="$classSF__Platform.html#a2104a9897a2bd81518382cb07a0b41cf" title="requireAdd" alt="" coords="169,219,260,248"/>
+<area shape="rect" id="node13" href="$classSF__Platform.html#a2f3c6eb30cc80a28261ed06074224f12" title="requireFrame" alt="" coords="161,272,268,301"/>
+<area shape="rect" id="node15" href="$classSF__Platform.html#a8279b755615299d23d0989e9330ea638" title="requireLogin" alt="" coords="164,325,265,355"/>
+</map>

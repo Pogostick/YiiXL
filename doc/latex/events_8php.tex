@@ -1,0 +1,164 @@
+\hypertarget{events_8php}{
+\section{/usr/local/yiixl/lib/original/external/ckeditor/\_\-samples/php/events.php File Reference}
+\label{events_8php}\index{/usr/local/yiixl/lib/original/external/ckeditor/\_\-samples/php/events.php@{/usr/local/yiixl/lib/original/external/ckeditor/\_\-samples/php/events.php}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{events_8php_a4cb5ca547edc62e0519cd90e52ff511b}{CKEditorHideLinkTargetTab} (\&\$\hyperlink{classCKEditor}{CKEditor})
+\item 
+\hyperlink{events_8php_a0ea717e95cf4a42dfbe26d75142862ac}{CKEditorNotifyAboutOpenedDialog} (\&\$\hyperlink{classCKEditor}{CKEditor})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{events_8php_aec6d261a24c9dcb30ee1cfa7762a4a44}{\$CKEditor} = new \hyperlink{classCKEditor}{CKEditor}()
+\item 
+\$\hyperlink{classCKEditor}{CKEditor} \hyperlink{events_8php_a3f176ffce3afa63656bfc989470e3e24}{config} \mbox{[}'width'\mbox{]} = 750
+\item 
+\$\hyperlink{classCKEditor}{CKEditor} \hyperlink{events_8php_a94a267f018012b013582daafb6a89618}{basePath} = '../../'
+\item 
+\hyperlink{events_8php_ab352e6e5b00f0a2533b1b64b8306e95f}{\$initialValue} = '$<$p$>$This is some $<$strong$>$sample text$<$/strong$>$. You are using $<$a href=\char`\"{}http://ckeditor.com/\char`\"{}$>$CKEditor$<$/a$>$.$<$/p$>$'
+\item 
+\hyperlink{events_8php_a408217578a0d3d323ea2981957783cb8}{\$config} \mbox{[}'width'\mbox{]} = '600'
+\item 
+\hyperlink{events_8php_aea8fdfb38b8f02d1fc431d35e6dfc892}{\$config} \mbox{[}'toolbar'\mbox{]} = 'Basic'
+\item 
+\hyperlink{events_8php_a39ea8a713233b952d0bc0e6b1679fd46}{\$events} \mbox{[}'instanceReady'\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{events_8php_a4cb5ca547edc62e0519cd90e52ff511b}{
+\index{events.php@{events.php}!CKEditorHideLinkTargetTab@{CKEditorHideLinkTargetTab}}
+\index{CKEditorHideLinkTargetTab@{CKEditorHideLinkTargetTab}!events.php@{events.php}}
+\subsubsection[{CKEditorHideLinkTargetTab}]{\setlength{\rightskip}{0pt plus 5cm}CKEditorHideLinkTargetTab (
+\begin{DoxyParamCaption}
+\item[{\&\$}]{ CKEditor}
+\end{DoxyParamCaption}
+)}}
+\label{events_8php_a4cb5ca547edc62e0519cd90e52ff511b}
+Adds global event, will hide \char`\"{}Target\char`\"{} tab in Link dialog in all instances. 
+
+Definition at line 38 of file events.php.
+
+
+
+
+\begin{DoxyCode}
+                                               {
+
+    $function = 'function (ev) {
+        // Take the dialog name and its definition from the event data
+        var dialogName = ev.data.name;
+        var dialogDefinition = ev.data.definition;
+
+        // Check if the definition is from the Link dialog.
+        if ( dialogName == "link" )
+            dialogDefinition.removeContents("target")
+    }';
+
+    $CKEditor->addGlobalEventHandler('dialogDefinition', $function);
+}
+\end{DoxyCode}
+
+
+\hypertarget{events_8php_a0ea717e95cf4a42dfbe26d75142862ac}{
+\index{events.php@{events.php}!CKEditorNotifyAboutOpenedDialog@{CKEditorNotifyAboutOpenedDialog}}
+\index{CKEditorNotifyAboutOpenedDialog@{CKEditorNotifyAboutOpenedDialog}!events.php@{events.php}}
+\subsubsection[{CKEditorNotifyAboutOpenedDialog}]{\setlength{\rightskip}{0pt plus 5cm}CKEditorNotifyAboutOpenedDialog (
+\begin{DoxyParamCaption}
+\item[{\&\$}]{ CKEditor}
+\end{DoxyParamCaption}
+)}}
+\label{events_8php_a0ea717e95cf4a42dfbe26d75142862ac}
+Adds global event, will notify about opened dialog. 
+
+Definition at line 56 of file events.php.
+
+
+
+
+\begin{DoxyCode}
+                                                     {
+    $function = 'function (evt) {
+        alert("Loading dialog: " + evt.data.name);
+    }';
+
+    $CKEditor->addGlobalEventHandler('dialogDefinition', $function);
+}
+\end{DoxyCode}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{events_8php_aec6d261a24c9dcb30ee1cfa7762a4a44}{
+\index{events.php@{events.php}!\$CKEditor@{\$CKEditor}}
+\index{\$CKEditor@{\$CKEditor}!events.php@{events.php}}
+\subsubsection[{\$CKEditor}]{\setlength{\rightskip}{0pt plus 5cm}\${\bf CKEditor} = new {\bf CKEditor}()}}
+\label{events_8php_aec6d261a24c9dcb30ee1cfa7762a4a44}
+
+
+Definition at line 68 of file events.php.
+
+\hypertarget{events_8php_a408217578a0d3d323ea2981957783cb8}{
+\index{events.php@{events.php}!\$config@{\$config}}
+\index{\$config@{\$config}!events.php@{events.php}}
+\subsubsection[{\$config}]{\setlength{\rightskip}{0pt plus 5cm}\${\bf config}\mbox{[}'width'\mbox{]} = '600'}}
+\label{events_8php_a408217578a0d3d323ea2981957783cb8}
+
+
+Definition at line 98 of file events.php.
+
+\hypertarget{events_8php_aea8fdfb38b8f02d1fc431d35e6dfc892}{
+\index{events.php@{events.php}!\$config@{\$config}}
+\index{\$config@{\$config}!events.php@{events.php}}
+\subsubsection[{\$config}]{\setlength{\rightskip}{0pt plus 5cm}\${\bf config}\mbox{[}'toolbar'\mbox{]} = 'Basic'}}
+\label{events_8php_aea8fdfb38b8f02d1fc431d35e6dfc892}
+
+
+Definition at line 99 of file events.php.
+
+\hypertarget{events_8php_a39ea8a713233b952d0bc0e6b1679fd46}{
+\index{events.php@{events.php}!\$events@{\$events}}
+\index{\$events@{\$events}!events.php@{events.php}}
+\subsubsection[{\$events}]{\setlength{\rightskip}{0pt plus 5cm}\$events\mbox{[}'instanceReady'\mbox{]}}}
+\label{events_8php_a39ea8a713233b952d0bc0e6b1679fd46}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ 'function (evt) {
+    alert("Loaded second editor: " + evt.editor.name);
+}'
+\end{DoxyCode}
+
+
+Definition at line 107 of file events.php.
+
+\hypertarget{events_8php_ab352e6e5b00f0a2533b1b64b8306e95f}{
+\index{events.php@{events.php}!\$initialValue@{\$initialValue}}
+\index{\$initialValue@{\$initialValue}!events.php@{events.php}}
+\subsubsection[{\$initialValue}]{\setlength{\rightskip}{0pt plus 5cm}\$initialValue = '$<$p$>$This is some $<$strong$>$sample text$<$/strong$>$. You are using $<$a href=\char`\"{}http://ckeditor.com/\char`\"{}$>$CKEditor$<$/a$>$.$<$/p$>$'}}
+\label{events_8php_ab352e6e5b00f0a2533b1b64b8306e95f}
+
+
+Definition at line 79 of file events.php.
+
+\hypertarget{events_8php_a94a267f018012b013582daafb6a89618}{
+\index{events.php@{events.php}!basePath@{basePath}}
+\index{basePath@{basePath}!events.php@{events.php}}
+\subsubsection[{basePath}]{\setlength{\rightskip}{0pt plus 5cm}\${\bf CKEditor} {\bf basePath} = '../../'}}
+\label{events_8php_a94a267f018012b013582daafb6a89618}
+
+
+Definition at line 76 of file events.php.
+
+\hypertarget{events_8php_a3f176ffce3afa63656bfc989470e3e24}{
+\index{events.php@{events.php}!config@{config}}
+\index{config@{config}!events.php@{events.php}}
+\subsubsection[{config}]{\setlength{\rightskip}{0pt plus 5cm}\${\bf CKEditor} {\bf config}\mbox{[}'width'\mbox{]} = 750}}
+\label{events_8php_a3f176ffce3afa63656bfc989470e3e24}
+
+
+Definition at line 71 of file events.php.
+

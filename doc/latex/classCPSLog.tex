@@ -1,0 +1,725 @@
+\hypertarget{classCPSLog}{
+\section{CPSLog Class Reference}
+\label{classCPSLog}\index{CPSLog@{CPSLog}}
+}
+
+
+Inheritance diagram for CPSLog:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classCPSLog__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSLog:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classCPSLog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSLog_a4c3be4120dc6dee2c97a6dde9428ac76}{log} (\$category, \$message, \$level= 'info', \$options=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$source=null, \$language=null)
+\item 
+static \hyperlink{classCPSLog_a377d71c5d7e04b1098ec85533d165ec4}{info} (\$category, \$message, \$options=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$source=null, \$language=null)
+\item 
+static \hyperlink{classCPSLog_a99034739d5e469b037364bf2f5694e11}{error} (\$category, \$message, \$options=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$source=null, \$language=null)
+\item 
+static \hyperlink{classCPSLog_a53acb6b7750f2124585e95066e3c0682}{warning} (\$category, \$message, \$options=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$source=null, \$language=null)
+\item 
+static \hyperlink{classCPSLog_ab8a624f93a0bfc699dd00c01af886955}{trace} (\$category, \$message, \$options=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$source=null, \$language=null)
+\item 
+static \hyperlink{classCPSLog_acf48a217b13a2f1e5b5431b6113ae38b}{api} (\$apiCall, \$response)
+\item 
+static \hyperlink{classCPSLog_af84e351764728a15fc9c0d87e99deb5d}{debug} (\$category, \$message)
+\item 
+static \hyperlink{classCPSLog_a01cfe9b1c44f0c7a14c0f4ff7460e666}{write} (\$message, \$level, \$category=null)
+\item 
+static \hyperlink{classCPSLog_a155b35eda603d263e56ba06d3c3042f5}{decrementIndent} (\$howMuch=1)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSLog_aba01bbea42407ae9944e5b1247efeab2}{\$echoData} = false
+\item 
+static \hyperlink{classCPSLog_a09e8cf95b9d29955a0bfabca9b420edc}{\$prefix} = null
+\item 
+static \hyperlink{classCPSLog_a0e25dd3694766f9fb978bfc87d179189}{\$baseLevel} = 2
+\item 
+static \hyperlink{classCPSLog_ac08dfa5d5e776a071386c5aab064d0b2}{\$currentIndent} = 0
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSLog_a66291d27410fbf7ba4978f513c13e6f0}{\_\-getCallingMethod} (\$level=null)
+\item 
+static \hyperlink{classCPSLog_a8471574061e9457cc6e5be7c151b9cfb}{\_\-processMessage} (\&\$message)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSLog_ab5b4a8d574b06602e254fdbaafc83abf}{\$\_\-defaultLevelIndicator} = '.'
+\item 
+static \hyperlink{classCPSLog_aa2c4cac0489591ad601a302dcc6c57fb}{\$\_\-levelIndicators}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSLog.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSLog_a66291d27410fbf7ba4978f513c13e6f0}{
+\index{CPSLog@{CPSLog}!\_\-getCallingMethod@{\_\-getCallingMethod}}
+\index{\_\-getCallingMethod@{\_\-getCallingMethod}!CPSLog@{CPSLog}}
+\subsubsection[{\_\-getCallingMethod}]{\setlength{\rightskip}{0pt plus 5cm}static \_\-getCallingMethod (
+\begin{DoxyParamCaption}
+\item[{\$}]{ level = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSLog_a66291d27410fbf7ba4978f513c13e6f0}
+Returns the name of the method that made the call 
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]\$level The level of the call \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 201 of file CPSLog.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_className = get_class();
+        $level = ( null === $level ? self::$baseLevel : $level );
+
+        try
+        {
+            $_trace = debug_backtrace();
+            $_count = count( $_trace );
+
+            while ( $level >= 0 && isset( $_trace[$level] ) )
+            {
+                if ( null === ( $_caller = PS::o( $_trace, $level ) ) )
+                    break;
+
+                if ( null !== ( $_class = PS::o( $_caller, 'class' ) ) )
+                {
+                    //  If we see ourself, then we must go again
+                    if ( $_class == $_className )
+                    {
+                        //  One louder
+                        $level++;
+                        continue;
+                    }
+
+                    return $_class . '::' . PS::o( $_caller, 'function' );
+                }
+
+                //  If we see ourself, then we must go again
+                if ( $_className == basename( PS::o( $_caller, 'file' ) ) )
+                {
+                    //  One louder
+                    $level++;
+                    continue;
+                }
+
+                return basename( PS::o( $_caller, 'file' ) ) . '::' . PS::o( $_ca
+      ller, 'function' ) . ' (Line ' . PS::o( $_caller, 'line' ) . ')';
+
+                $level--;
+            }
+        }
+        catch ( Exception $_ex )
+        {
+            //  Error logging shouldn't create more errors...
+        }
+
+        return null;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSLog_a66291d27410fbf7ba4978f513c13e6f0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSLog_a8471574061e9457cc6e5be7c151b9cfb}{
+\index{CPSLog@{CPSLog}!\_\-processMessage@{\_\-processMessage}}
+\index{\_\-processMessage@{\_\-processMessage}!CPSLog@{CPSLog}}
+\subsubsection[{\_\-processMessage}]{\setlength{\rightskip}{0pt plus 5cm}static \_\-processMessage (
+\begin{DoxyParamCaption}
+\item[{\&\$}]{ message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSLog_a8471574061e9457cc6e5be7c151b9cfb}
+Processes the indent level for the messages 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer The indent difference AFTER this message 
+\end{DoxyReturn}
+
+
+Definition at line 266 of file CPSLog.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_newIndent = 0;
+
+        switch ( substr( $message, 0, 2 ) )
+        {
+            case '>>':
+                $_newIndent = 1;
+                $message = trim( substr( $message, 2 ) );
+                break;
+
+            case '<<':
+                $_newIndent = -1;
+                $message = trim( substr( $message, 2 ) );
+                break;
+        }
+
+        return $_newIndent;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSLog_a8471574061e9457cc6e5be7c151b9cfb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSLog_acf48a217b13a2f1e5b5431b6113ae38b}{
+\index{CPSLog@{CPSLog}!api@{api}}
+\index{api@{api}!CPSLog@{CPSLog}}
+\subsubsection[{api}]{\setlength{\rightskip}{0pt plus 5cm}static api (
+\begin{DoxyParamCaption}
+\item[{\$}]{ apiCall, }
+\item[{\$}]{ response}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSLog_acf48a217b13a2f1e5b5431b6113ae38b}
+Creates an 'api' log entry 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$apiCall The API call made \item[{\em mixed}]\$response The API response to log \end{DoxyParams}
+
+
+Definition at line 170 of file CPSLog.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        self::log( $apiCall, PHP_EOL . print_r( $response, true ) . PHP_EOL, 'api
+      ' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classCPSLog_acf48a217b13a2f1e5b5431b6113ae38b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSLog_af84e351764728a15fc9c0d87e99deb5d}{
+\index{CPSLog@{CPSLog}!debug@{debug}}
+\index{debug@{debug}!CPSLog@{CPSLog}}
+\subsubsection[{debug}]{\setlength{\rightskip}{0pt plus 5cm}static debug (
+\begin{DoxyParamCaption}
+\item[{\$}]{ category, }
+\item[{\$}]{ message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSLog_af84e351764728a15fc9c0d87e99deb5d}
+Creates a 'debug' log entry 
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$category The message category. Please use only word letters. Note, category 'yii' is reserved for Yii framework core code use. See \hyperlink{}{CPhpMessageSource} for more interpretation about message category. \item[{\em mixed}]\$message The message to log \end{DoxyParams}
+
+
+Definition at line 180 of file CPSLog.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        self::log( $category, $message, 'debug' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{classCPSLog_af84e351764728a15fc9c0d87e99deb5d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSLog_a155b35eda603d263e56ba06d3c3042f5}{
+\index{CPSLog@{CPSLog}!decrementIndent@{decrementIndent}}
+\index{decrementIndent@{decrementIndent}!CPSLog@{CPSLog}}
+\subsubsection[{decrementIndent}]{\setlength{\rightskip}{0pt plus 5cm}static decrementIndent (
+\begin{DoxyParamCaption}
+\item[{\$}]{ howMuch = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSLog_a155b35eda603d263e56ba06d3c3042f5}
+Safely decrements the current indent level 
+
+Definition at line 253 of file CPSLog.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        self::$currentIndent -= $howMuch;
+
+        if ( self::$currentIndent < 0 )
+            self::$currentIndent = 0;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSLog_a99034739d5e469b037364bf2f5694e11}{
+\index{CPSLog@{CPSLog}!error@{error}}
+\index{error@{error}!CPSLog@{CPSLog}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}static error (
+\begin{DoxyParamCaption}
+\item[{\$}]{ category, }
+\item[{\$}]{ message, }
+\item[{\$}]{ options = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ source = {\ttfamily null}, }
+\item[{\$}]{ language = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSLog_a99034739d5e469b037364bf2f5694e11}
+Creates an 'error' log entry 
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$category The message category. Please use only word letters. Note, category 'yii' is reserved for Yii framework core code use. See \hyperlink{}{CPhpMessageSource} for more interpretation about message category. \item[{\em mixed}]\$message The message to log \item[{\em mixed}]\$options Parameters to be applied to the message using {\ttfamily strtr}. \item[{\em mixed}]\$source Which message source application component to use. \item[{\em mixed}]\$language The target language. If null (default), the \hyperlink{}{application language} will be used. \end{DoxyParams}
+
+
+Definition at line 131 of file CPSLog.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        self::log( $category, $message, 'error', $options, $source, $language );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classCPSLog_a99034739d5e469b037364bf2f5694e11_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSLog_a99034739d5e469b037364bf2f5694e11_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSLog_a377d71c5d7e04b1098ec85533d165ec4}{
+\index{CPSLog@{CPSLog}!info@{info}}
+\index{info@{info}!CPSLog@{CPSLog}}
+\subsubsection[{info}]{\setlength{\rightskip}{0pt plus 5cm}static info (
+\begin{DoxyParamCaption}
+\item[{\$}]{ category, }
+\item[{\$}]{ message, }
+\item[{\$}]{ options = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ source = {\ttfamily null}, }
+\item[{\$}]{ language = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSLog_a377d71c5d7e04b1098ec85533d165ec4}
+Creates an 'info' log entry 
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$category The message category. Please use only word letters. Note, category 'yii' is reserved for Yii framework core code use. See \hyperlink{}{CPhpMessageSource} for more interpretation about message category. \item[{\em mixed}]\$message The message to log \item[{\em mixed}]\$options Parameters to be applied to the message using {\ttfamily strtr}. \item[{\em mixed}]\$source Which message source application component to use. \item[{\em mixed}]\$language The target language. If null (default), the \hyperlink{}{application language} will be used. \end{DoxyParams}
+
+
+Definition at line 118 of file CPSLog.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        self::log( $category, $message, 'info', $options, $source, $language );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classCPSLog_a377d71c5d7e04b1098ec85533d165ec4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSLog_a377d71c5d7e04b1098ec85533d165ec4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSLog_a4c3be4120dc6dee2c97a6dde9428ac76}{
+\index{CPSLog@{CPSLog}!log@{log}}
+\index{log@{log}!CPSLog@{CPSLog}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}static log (
+\begin{DoxyParamCaption}
+\item[{\$}]{ category, }
+\item[{\$}]{ message, }
+\item[{\$}]{ level = {\ttfamily 'info'}, }
+\item[{\$}]{ options = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ source = {\ttfamily null}, }
+\item[{\$}]{ language = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSLog_a4c3be4120dc6dee2c97a6dde9428ac76}
+Creates an 'info' log entry 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$category The message category. Please use only word letters. Note, category 'yii' is reserved for Yii framework core code use. See \hyperlink{}{CPhpMessageSource} for more interpretation about message category. \item[{\em string}]\$message The message to log \item[{\em string}]\$level The message level \item[{\em array}]\$options Parameters to be applied to the message using {\ttfamily strtr}. \item[{\em string}]\$source Which message source application component to use. \item[{\em string}]\$language The target language. If null (default), the \hyperlink{}{application language} will be used. \end{DoxyParams}
+
+
+Definition at line 70 of file CPSLog.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( null === $category )
+            $category = self::_getCallingMethod();
+
+        //  Get the indent, if any
+        $_unindent = ( 0 > ( $_newIndent = self::_processMessage( $message ) ) );
+      
+
+        $_levelList = explode( '|', $level );
+
+        //  Handle writing to multiple levels at once.
+        foreach ( $_levelList as $_level )
+        {
+            $_indicator = PS::o( self::$_levelIndicators, $_level, self::$_defaul
+      tLevelIndicator );
+            $_logEntry = self::$prefix . Yii::t( $category, $message, $options, $
+      source, $language );
+
+            if ( self::$echoData )
+            {
+                echo date( 'Y.m.d h.i.s' ) . '[' . strtoupper( $_level[0] ) . '] 
+      ' . '[' . sprintf( '%-40s', $category ) . '] ' . $_logEntry . '<br />';
+                flush();
+            }
+
+            //  Indent...
+            $_tempIndent = self::$currentIndent;
+
+            if ( $_unindent )
+                $_tempIndent--;
+
+            if ( $_tempIndent < 0 )
+                $_tempIndent = 0;
+
+            $_logEntry = str_repeat( '  ', $_tempIndent ) . $_indicator . ' ' . $
+      message;
+
+            Yii::log( $_logEntry, $_level, $category );
+        }
+
+        //  Set indent level...
+        self::$currentIndent += $_newIndent;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classCPSLog_a4c3be4120dc6dee2c97a6dde9428ac76_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSLog_a4c3be4120dc6dee2c97a6dde9428ac76_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSLog_ab8a624f93a0bfc699dd00c01af886955}{
+\index{CPSLog@{CPSLog}!trace@{trace}}
+\index{trace@{trace}!CPSLog@{CPSLog}}
+\subsubsection[{trace}]{\setlength{\rightskip}{0pt plus 5cm}static trace (
+\begin{DoxyParamCaption}
+\item[{\$}]{ category, }
+\item[{\$}]{ message, }
+\item[{\$}]{ options = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ source = {\ttfamily null}, }
+\item[{\$}]{ language = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSLog_ab8a624f93a0bfc699dd00c01af886955}
+Creates an 'trace' log entry 
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$category The message category. Please use only word letters. Note, category 'yii' is reserved for Yii framework core code use. See \hyperlink{}{CPhpMessageSource} for more interpretation about message category. \item[{\em mixed}]\$message The message to log \item[{\em mixed}]\$options Parameters to be applied to the message using {\ttfamily strtr}. \item[{\em mixed}]\$source Which message source application component to use. \item[{\em mixed}]\$language The target language. If null (default), the \hyperlink{}{application language} will be used. \end{DoxyParams}
+
+
+Definition at line 157 of file CPSLog.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( defined( 'PYE_TRACE_LEVEL' ) && 0 == PYE_TRACE_LEVEL )
+            return;
+
+        self::log( $category, $message, 'trace', $options, $source, $language );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classCPSLog_ab8a624f93a0bfc699dd00c01af886955_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSLog_ab8a624f93a0bfc699dd00c01af886955_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSLog_a53acb6b7750f2124585e95066e3c0682}{
+\index{CPSLog@{CPSLog}!warning@{warning}}
+\index{warning@{warning}!CPSLog@{CPSLog}}
+\subsubsection[{warning}]{\setlength{\rightskip}{0pt plus 5cm}static warning (
+\begin{DoxyParamCaption}
+\item[{\$}]{ category, }
+\item[{\$}]{ message, }
+\item[{\$}]{ options = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ source = {\ttfamily null}, }
+\item[{\$}]{ language = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSLog_a53acb6b7750f2124585e95066e3c0682}
+Creates an 'warning' log entry 
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$category The message category. Please use only word letters. Note, category 'yii' is reserved for Yii framework core code use. See \hyperlink{}{CPhpMessageSource} for more interpretation about message category. \item[{\em mixed}]\$message The message to log \item[{\em mixed}]\$options Parameters to be applied to the message using {\ttfamily strtr}. \item[{\em mixed}]\$source Which message source application component to use. \item[{\em mixed}]\$language The target language. If null (default), the \hyperlink{}{application language} will be used. \end{DoxyParams}
+
+
+Definition at line 144 of file CPSLog.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        self::log( $category, $message, 'warning', $options, $source, $language )
+      ;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{classCPSLog_a53acb6b7750f2124585e95066e3c0682_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSLog_a01cfe9b1c44f0c7a14c0f4ff7460e666}{
+\index{CPSLog@{CPSLog}!write@{write}}
+\index{write@{write}!CPSLog@{CPSLog}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}static write (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ level, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSLog_a01cfe9b1c44f0c7a14c0f4ff7460e666}
+Creates an user-\/defined log entry 
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$message The message \item[{\em string}]\$level The message level \item[{\em mixed}]\$category The message category. Please use only word letters. Note, category 'yii' is reserved for Yii framework core code use. See \hyperlink{}{CPhpMessageSource} for more interpretation about message category. \end{DoxyParams}
+
+
+Definition at line 191 of file CPSLog.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        self::log( $category, $message, $level );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classCPSLog_a01cfe9b1c44f0c7a14c0f4ff7460e666_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSLog_ab5b4a8d574b06602e254fdbaafc83abf}{
+\index{CPSLog@{CPSLog}!\$\_\-defaultLevelIndicator@{\$\_\-defaultLevelIndicator}}
+\index{\$\_\-defaultLevelIndicator@{\$\_\-defaultLevelIndicator}!CPSLog@{CPSLog}}
+\subsubsection[{\$\_\-defaultLevelIndicator}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-defaultLevelIndicator = '.'\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSLog_ab5b4a8d574b06602e254fdbaafc83abf}
+
+
+Definition at line 48 of file CPSLog.php.
+
+\hypertarget{classCPSLog_aa2c4cac0489591ad601a302dcc6c57fb}{
+\index{CPSLog@{CPSLog}!\$\_\-levelIndicators@{\$\_\-levelIndicators}}
+\index{\$\_\-levelIndicators@{\$\_\-levelIndicators}!CPSLog@{CPSLog}}
+\subsubsection[{\$\_\-levelIndicators}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-levelIndicators\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSLog_aa2c4cac0489591ad601a302dcc6c57fb}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ array(
+        'info' => '*',
+        'notice' => '?',
+        'warning' => '-',
+        'error' => '!',
+    )
+\end{DoxyCode}
+
+
+Definition at line 50 of file CPSLog.php.
+
+\hypertarget{classCPSLog_a0e25dd3694766f9fb978bfc87d179189}{
+\index{CPSLog@{CPSLog}!\$baseLevel@{\$baseLevel}}
+\index{\$baseLevel@{\$baseLevel}!CPSLog@{CPSLog}}
+\subsubsection[{\$baseLevel}]{\setlength{\rightskip}{0pt plus 5cm}\$baseLevel = 2\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSLog_a0e25dd3694766f9fb978bfc87d179189}
+integer The base level for getting source of log entry 
+
+Definition at line 41 of file CPSLog.php.
+
+\hypertarget{classCPSLog_ac08dfa5d5e776a071386c5aab064d0b2}{
+\index{CPSLog@{CPSLog}!\$currentIndent@{\$currentIndent}}
+\index{\$currentIndent@{\$currentIndent}!CPSLog@{CPSLog}}
+\subsubsection[{\$currentIndent}]{\setlength{\rightskip}{0pt plus 5cm}\$currentIndent = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSLog_ac08dfa5d5e776a071386c5aab064d0b2}
+integer The current indent level 
+
+Definition at line 46 of file CPSLog.php.
+
+\hypertarget{classCPSLog_aba01bbea42407ae9944e5b1247efeab2}{
+\index{CPSLog@{CPSLog}!\$echoData@{\$echoData}}
+\index{\$echoData@{\$echoData}!CPSLog@{CPSLog}}
+\subsubsection[{\$echoData}]{\setlength{\rightskip}{0pt plus 5cm}\$echoData = false\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSLog_aba01bbea42407ae9944e5b1247efeab2}
+boolean If true, all applicable log entries will be echoed to the screen 
+
+Definition at line 31 of file CPSLog.php.
+
+\hypertarget{classCPSLog_a09e8cf95b9d29955a0bfabca9b420edc}{
+\index{CPSLog@{CPSLog}!\$prefix@{\$prefix}}
+\index{\$prefix@{\$prefix}!CPSLog@{CPSLog}}
+\subsubsection[{\$prefix}]{\setlength{\rightskip}{0pt plus 5cm}\$prefix = null\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSLog_a09e8cf95b9d29955a0bfabca9b420edc}
+string Prepended to each log entry before writing. 
+
+Definition at line 36 of file CPSLog.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/helpers/\hyperlink{CPSLog_8php}{CPSLog.php}\end{DoxyCompactItemize}

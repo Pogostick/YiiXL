@@ -1,0 +1,1557 @@
+\hypertarget{classCPSConsoleCommand}{
+\section{CPSConsoleCommand Class Reference}
+\label{classCPSConsoleCommand}\index{CPSConsoleCommand@{CPSConsoleCommand}}
+}
+
+
+Inheritance diagram for CPSConsoleCommand:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSConsoleCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSConsoleCommand:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classCPSConsoleCommand__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSConsoleCommand_a3d0963e68bb313b163a73f2803c64600}{getName} ()
+\item 
+\hyperlink{classCPSConsoleCommand_a0e71a85d12a79d46586c3104df659371}{getCommandRunner} ()
+\item 
+\hyperlink{classCPSConsoleCommand_a0ac27faf20ba937fb6788069c30f133a}{getDefaultAction} ()
+\item 
+\hyperlink{classCPSConsoleCommand_a745456ed2b7cb074ae0db12c6217dfca}{setDefaultAction} (\$value)
+\item 
+\hyperlink{classCPSConsoleCommand_a52c35bbfee5c247f621ad18691e23fdd}{getOptionList} ()
+\item 
+\hyperlink{classCPSConsoleCommand_acd971ca71798c549bd4f74ed4ee6729e}{run} (\$argumentList=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSConsoleCommand_ab09e5845106f7cca57145104f6fbca21}{\_\-\_\-construct} (\$commandName, \$commandRunner, \$optionList=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSConsoleCommand_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSConsoleCommand_a4cc928ef4def3a84c181608d31bf7608}{getHelp} ()
+\item 
+\hyperlink{classCPSConsoleCommand_a1ede9bfd28a933f66275ac67aedbc661}{usageError} (\$sMessage)
+\item 
+\hyperlink{classCPSConsoleCommand_af999d4abb0f04b22df2e4c8b6084d942}{copyFiles} (\$arFileList=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSConsoleCommand_a58127876ddedbfbce1ae272364764aac}{pluralize} (\$sString)
+\item 
+\hyperlink{classCPSConsoleCommand_a25062bb675081228b1e9c0a5c11f9d7d}{buildFileList} (\$sSourceDir, \$sTargetDir, \$sBaseDir= '')
+\item 
+\hyperlink{classCPSConsoleCommand_abb9234be873ca733205fa23f41ce37b5}{ensureDirectory} (\$sTarget)
+\item 
+\hyperlink{classCPSConsoleCommand_ad45025113981b4406a4a6488b3d7e0e3}{generateFile} (\$sSource, \$arParams)
+\item 
+\hyperlink{classCPSConsoleCommand_af9088b5fcf43bd1aafd2f2bccd952dbf}{renderFile} (\$sViewFile, \$oData=null, \$bReturn=false)
+\item 
+\hyperlink{classCPSConsoleCommand_ada6d688818556d18ca730d6db08126d0}{echoString} (\$sStr, \$sLabel=null, \$bReturnValue=false, \$sSuffix= ': ', \$bNewLine=true, \$iExtraSpace=0, \$bBold=false)
+\item 
+\hyperlink{classCPSConsoleCommand_a6a11a38d5810015be61ef7984ab418eb}{boldEchoString} (\$sStr, \$sLabel=null, \$bReturnValue=false, \$sSuffix= ': ', \$bNewLine=true, \$iExtraSpace=0)
+\item 
+\hyperlink{classCPSConsoleCommand_aaa50ba36c35f01c685fd00371b247b35}{bold} (\$sStr)
+\item 
+\hyperlink{classCPSConsoleCommand_a303f9f376ed603c5bd40deea781171ed}{getopts} (\$arArgs=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSConsoleCommand_a1cad0fdd11c50e747a10b8b23556e596}{getDbConnection} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSConsoleCommand_a1004fff603687ed8b5826de7588fa252}{MIN\_\-COL\_\-WIDTH} = 20
+\item 
+const \hyperlink{classCPSConsoleCommand_a4b90a6cacaef1bfd7e10e14ea54905aa}{COL\_\-PADDING} = 2
+\item 
+const \hyperlink{classCPSConsoleCommand_af71005841ce53adac00581ab0ba24c1f}{VERSION} = '1.1.0'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSConsoleCommand_a60623f320f2f14f828a4b24dc331f4f6}{loadModule} (\$sClassName)
+\item 
+\hyperlink{classCPSConsoleCommand_a886e39444aaa31abaf173a819b4be205}{processArguments} (\$arArgs)
+\item 
+\hyperlink{classCPSConsoleCommand_abf0b96b21351ca3f777c8d6c78535ffe}{getDisplayOptions} ()
+\item 
+\hyperlink{classCPSConsoleCommand_a330ea7ca53549b94a76544ae38e7e538}{getResultDisplay} (\$arFileList=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$bInclude=false, \&\$iNew=0)
+\item 
+\hyperlink{classCPSConsoleCommand_a243b35d1b1d2d43971e40d1382536c31}{displayParameters} (\$commandName, \$arExtra=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSConsoleCommand_a1c89defaf5aa7ac8e526065e8572f580}{\$\_\-name}
+\item 
+\hyperlink{classCPSConsoleCommand_a9f9b9b9a9de86d19ece7175e6bc8c0d6}{\$\_\-commandRunner}
+\item 
+\hyperlink{classCPSConsoleCommand_a8e238d8b9c8fcc408b7e4c8d9af1a1c1}{\$\_\-defaultAction} = 'index'
+\item 
+\hyperlink{classCPSConsoleCommand_ac61132f2a103a25486245470090b0046}{\$\_\-optionList} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file CPSConsoleCommand.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSConsoleCommand_ab09e5845106f7cca57145104f6fbca21}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ commandName, }
+\item[{\$}]{ commandRunner, }
+\item[{\$}]{ optionList = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_ab09e5845106f7cca57145104f6fbca21}
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$commandName name of the command \item[{\em CConsoleCommandRunner}]\$commandRunner the command runner \item[{\em array}]\$optionList The options for this command \end{DoxyParams}
+
+
+Definition at line 85 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Phone home
+        parent::__construct( $optionList );
+        
+        //  Note settings
+        $this->_name = $commandName;
+        $this->_commandRunner = $commandRunner;
+        $this->_defaultAction = 'index';
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSConsoleCommand_aaa50ba36c35f01c685fd00371b247b35}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!bold@{bold}}
+\index{bold@{bold}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{bold}]{\setlength{\rightskip}{0pt plus 5cm}bold (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sStr}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_aaa50ba36c35f01c685fd00371b247b35}
+Wraps a string bold codes for console display
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sStr \end{DoxyParams}
+
+
+Definition at line 416 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return "\033[1m{$sStr}\033[0m";
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSConsoleCommand_aaa50ba36c35f01c685fd00371b247b35_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_a6a11a38d5810015be61ef7984ab418eb}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!boldEchoString@{boldEchoString}}
+\index{boldEchoString@{boldEchoString}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{boldEchoString}]{\setlength{\rightskip}{0pt plus 5cm}boldEchoString (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sStr, }
+\item[{\$}]{ sLabel = {\ttfamily null}, }
+\item[{\$}]{ bReturnValue = {\ttfamily false}, }
+\item[{\$}]{ sSuffix = {\ttfamily '~:~'}, }
+\item[{\$}]{ bNewLine = {\ttfamily true}, }
+\item[{\$}]{ iExtraSpace = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_a6a11a38d5810015be61ef7984ab418eb}
+Writes neat output to console, applying bold codes to label if provided
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$sStr \item[{\em mixed}]\$sLabel \item[{\em mixed}]\$bReturnValue \item[{\em mixed}]\$sSuffix \item[{\em mixed}]\$bNewLine \item[{\em mixed}]\$iExtraSpace \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 406 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+                                                                                 
+                    : ', $bNewLine = true, $iExtraSpace = 0 )
+    {
+        return $this->echoString( $sStr, $sLabel, $bReturnValue, $sSuffix, $bNewL
+      ine, $iExtraSpace, true );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classCPSConsoleCommand_a6a11a38d5810015be61ef7984ab418eb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSConsoleCommand_a6a11a38d5810015be61ef7984ab418eb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_a25062bb675081228b1e9c0a5c11f9d7d}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!buildFileList@{buildFileList}}
+\index{buildFileList@{buildFileList}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{buildFileList}]{\setlength{\rightskip}{0pt plus 5cm}buildFileList (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSourceDir, }
+\item[{\$}]{ sTargetDir, }
+\item[{\$}]{ sBaseDir = {\ttfamily ''}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_a25062bb675081228b1e9c0a5c11f9d7d}
+Builds the file list of a directory.
+
+This method traverses through the specified directory and builds a list of files and subdirectories that the directory contains. The result of this function can be passed to \hyperlink{}{copyFiles}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]the source directory \item[{\em string}]the target directory \item[{\em string}]base directory \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array the file list (see \hyperlink{}{copyFiles}) 
+\end{DoxyReturn}
+
+
+Definition at line 268 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arList = array();
+        $_iDir = opendir( $sSourceDir );
+
+        while ( $_sFile = readdir( $_iDir ) )
+        {
+            //  Ignore parents and svn...
+            if ( $_sFile === '.' || $_sFile === '..' || $_sFile === '.svn' )
+                continue;
+
+            $_sSourcePath = $sSourceDir . DIRECTORY_SEPARATOR . $_sFile;
+            $_sTargetPath = $sTargetDir . DIRECTORY_SEPARATOR . $_sFile;
+            $_name = $sBaseDir === '' ? $_sFile : $sBaseDir . DIRECTORY_SEPARATOR
+       . $_sFile;
+
+            if ( is_dir( $_sSourcePath ) ) 
+                $_arList = array_merge( $_arList, $this->buildFileList( $_sSource
+      Path, $_sTargetPath, $_name ) );
+            else                                      
+            {
+                $_arList[ $_name ] = array(
+                    'source' => $_sSourcePath,
+                    'target' => $_sTargetPath,
+                    'callback' => array( $this, 'generateFile' ),
+                    'params' => array(),
+                );
+            }
+        }
+        
+        closedir( $_iDir );
+
+        return $_arList;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classCPSConsoleCommand_a25062bb675081228b1e9c0a5c11f9d7d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_af999d4abb0f04b22df2e4c8b6084d942}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!copyFiles@{copyFiles}}
+\index{copyFiles@{copyFiles}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{copyFiles}]{\setlength{\rightskip}{0pt plus 5cm}copyFiles (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arFileList = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_af999d4abb0f04b22df2e4c8b6084d942}
+Copies a list of files from one place to another.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]the list of files to be copied (name=$>$spec). The array keys are names displayed during the copy process, and array values are specifications for files to be copied. Each array value must be an array of the following structure: 
+\begin{DoxyItemize}
+\item source: required, the full path of the file/directory to be copied from 
+\item target: required, the full path of the file/directory to be copied to 
+\item callback: optional, the callback to be invoked when copying a file. The callback function should be declared as follows: 
+\begin{DoxyPre}
+   function foo($\_sSource,$\_arParams)
+   \end{DoxyPre}
+ where \$\_\-sSource parameter is the source file path, and the content returned by the function will be saved into the target file. 
+\item params: optional, the parameters to be passed to the callback 
+\end{DoxyItemize}\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSConsoleCommand_a25062bb675081228b1e9c0a5c11f9d7d}{buildFileList} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 154 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_bOverwriteAll = false;
+
+        echo "Results" . PHP_EOL;
+        echo "============================================================" . PHP
+      _EOL;
+        
+        foreach ( $arFileList as $_name => $_arFile )
+        {
+            $_sSource = strtr( $_arFile['source'], '/\\', DIRECTORY_SEPARATOR );
+            $_sTarget = strtr( $_arFile['target'], '/\\', DIRECTORY_SEPARATOR );
+            $_oCallback = $_arFile['callback'];
+            $_arParams = $_arFile['params'];
+            $_sContent = null;
+
+            $this->ensureDirectory( $_sTarget );
+
+            //  Get the content...
+            if ( $_oCallback && is_array( $_oCallback ) )
+                $_sContent = call_user_func( $_oCallback, $_sSource, $_arParams )
+      ;
+            else
+                $_sContent = file_get_contents( $_sSource );
+
+            ob_flush();
+
+            if ( is_file( $_sTarget ) )
+            {
+                if ( ! $this->force && $_sContent === file_get_contents( $_sTarge
+      t ) )
+                {
+                    $arFileList[ $_name ][ '_status' ] = 0;
+                    $this->boldEchoString( $_name, 'Unchanged' );
+                    continue;
+                }
+                
+                if ( $this->force || $_bOverwriteAll )
+                {
+                    $arFileList[ $_name ][ '_status' ] = 1;
+                    $this->boldEchoString( $_name, ( $this->force ? 'Force ' : ''
+       ) . 'Overwrite' );
+                }
+                else
+                {
+                    $this->boldEchoString( $_name, 'Existing' );
+                    $this->echoString( "[\033[1my\033[0mes|\033[1mn\033[0mo|\033[
+      1ma\033[0mll|\033[1mq\033[0muit] ", '--> Overwrite? ', false, ' ', false, 8 );
+                    
+                    switch ( substr( strtolower( trim( fgets( STDIN ) ) ), 0, 1 )
+       )
+                    {
+                        case 'q':
+                            return;
+                            
+                        case 'a':
+                            $_bOverwriteAll = true;
+
+                        case 'y':
+                            $arFileList[ $_name ][ '_status' ] = 1;
+                            $this->boldEchoString( $_name, 'Overwriting' );
+                            break;
+                        
+                        case 'n':
+                            $arFileList[ $_name ][ '_status' ] = 0;
+                            $this->boldEchoString( $_name, 'Skipping' );
+                            break;
+                    }
+                }
+            }
+            else
+            {
+                $arFileList[ $_name ][ '_status' ] = 1;
+                $this->ensureDirectory( dirname( $_sTarget ) );
+                $this->boldEchoString( $_name, 'Generating' );
+            }
+            
+            @file_put_contents( $_sTarget, $_sContent );
+        }
+        
+        //  Return array with statuses
+        return $arFileList;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSConsoleCommand_af999d4abb0f04b22df2e4c8b6084d942_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classCPSConsoleCommand_af999d4abb0f04b22df2e4c8b6084d942_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_a243b35d1b1d2d43971e40d1382536c31}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!displayParameters@{displayParameters}}
+\index{displayParameters@{displayParameters}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{displayParameters}]{\setlength{\rightskip}{0pt plus 5cm}displayParameters (
+\begin{DoxyParamCaption}
+\item[{\$}]{ commandName, }
+\item[{\$}]{ arExtra = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSConsoleCommand_a243b35d1b1d2d43971e40d1382536c31}
+Display command header and parameters
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$commandName \item[{\em array}]\$arExtra \end{DoxyParams}
+
+
+Definition at line 635 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arOptions = array_merge( $arExtra, $this->makeOptions( true, PS::OF_ASS
+      OC_ARRAY, true ) );
+        $_iColWidth = $this->colWidth;
+        
+        //  Update column width based on option keys...
+        foreach ( $_arOptions as $_sKey => $_sVal ) 
+            $_iColWidth = max( $_iColWidth, strlen( $_sKey ) + self::COL_PADDING 
+      );
+        
+        $this->colWidth = $_iColWidth;
+
+        echo PHP_EOL;
+        echo $this->bold( "Pogostick Yii Extensions {$commandName} v" . self::VER
+      SION ) . PHP_EOL;
+        echo PHP_EOL;
+
+        echo "Working Parameters" . PHP_EOL;
+        echo "============================================================" . PHP
+      _EOL . PHP_EOL;
+
+        foreach ( $_arOptions as $_sKey => $_sValue )
+        {
+            if ( ! is_array( $_sValue ) )
+                echo $this->boldEchoString( $_sValue, $_sKey, true );
+            else
+            {
+                if ( count( $_sValue ) && is_array( current( $_sValue ) ) )
+                {
+                    $_arOut = array();
+                    
+                    foreach ( $_sValue as $_sSubKey => $_sSubValue )
+                        $_arOut[] = $_sSubKey;
+
+                    $_sValue = $_arOut;
+                }
+                
+                echo $this->boldEchoString( implode( ', ', $_sValue ), $_sKey, tr
+      ue );               
+            }
+        }
+                              
+        echo PHP_EOL;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=380pt]{classCPSConsoleCommand_a243b35d1b1d2d43971e40d1382536c31_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_ada6d688818556d18ca730d6db08126d0}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!echoString@{echoString}}
+\index{echoString@{echoString}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{echoString}]{\setlength{\rightskip}{0pt plus 5cm}echoString (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sStr, }
+\item[{\$}]{ sLabel = {\ttfamily null}, }
+\item[{\$}]{ bReturnValue = {\ttfamily false}, }
+\item[{\$}]{ sSuffix = {\ttfamily '~:~'}, }
+\item[{\$}]{ bNewLine = {\ttfamily true}, }
+\item[{\$}]{ iExtraSpace = {\ttfamily 0}, }
+\item[{\$}]{ bBold = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_ada6d688818556d18ca730d6db08126d0}
+Writes a neat string to the console
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sStr \item[{\em mixed}]\$sLabel \item[{\em mixed}]\$bReturnValue \item[{\em mixed}]\$sSuffix \item[{\em mixed}]\$bNewLine \item[{\em mixed}]\$iExtraSpace \end{DoxyParams}
+
+
+Definition at line 370 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+                                                                                 
+                : ', $bNewLine = true, $iExtraSpace = 0, $bBold = false )
+    {
+        $_sVal = null;
+        
+        if ( $sLabel == ' ' )
+            $sSuffix = null;
+        else
+            $sLabel = trim( $sLabel );
+
+        if ( null !== $sLabel ) 
+        {
+            if ( strlen( $sLabel ) > $this->colWidth ) $this->colWidth = strlen( 
+      $sLabel );
+            $_sVal = str_pad( $sLabel . $sSuffix, $this->colWidth + self::COL_PAD
+      DING + $iExtraSpace, ' ', STR_PAD_LEFT );
+        }
+
+        $_sVal .= ( is_object( $sStr ) ? get_class( $sStr ) : $sStr ) . ( $bNewLi
+      ne ?  PHP_EOL : '' );
+        
+        if ( $bBold ) $_sVal = str_replace( $sLabel, $this->bold( $sLabel ), $_sV
+      al );
+
+        if ( $bReturnValue ) return $_sVal;
+        
+        //  Otherwise echo!
+        echo $_sVal;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classCPSConsoleCommand_ada6d688818556d18ca730d6db08126d0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSConsoleCommand_ada6d688818556d18ca730d6db08126d0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_abb9234be873ca733205fa23f41ce37b5}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!ensureDirectory@{ensureDirectory}}
+\index{ensureDirectory@{ensureDirectory}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{ensureDirectory}]{\setlength{\rightskip}{0pt plus 5cm}ensureDirectory (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sTarget}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_abb9234be873ca733205fa23f41ce37b5}
+Creates all parent directories if they do not exist.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]the directory to be checked \item[{\em integer}]The directory mode \end{DoxyParams}
+
+
+Definition at line 307 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_bResult = true;
+        $_arInfo = pathinfo( $sTarget );
+        
+        if ( ! is_dir( $_arInfo['dirname'] ) )
+        {
+            $this->boldEchoString( strtr( $_arInfo['dirname'], '\\', '/' ), 'Crea
+      ted Directory' );
+            $_bResult = @mkdir( $_arInfo['dirname'] );
+        }
+        
+        return $_bResult;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSConsoleCommand_abb9234be873ca733205fa23f41ce37b5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSConsoleCommand_abb9234be873ca733205fa23f41ce37b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_ad45025113981b4406a4a6488b3d7e0e3}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!generateFile@{generateFile}}
+\index{generateFile@{generateFile}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{generateFile}]{\setlength{\rightskip}{0pt plus 5cm}generateFile (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSource, }
+\item[{\$}]{ arParams}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_ad45025113981b4406a4a6488b3d7e0e3}
+Generates the file
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sSource \item[{\em array}]\$arParams \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 328 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->renderFile( $sSource, $arParams, true );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classCPSConsoleCommand_ad45025113981b4406a4a6488b3d7e0e3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_a0e71a85d12a79d46586c3104df659371}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!getCommandRunner@{getCommandRunner}}
+\index{getCommandRunner@{getCommandRunner}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{getCommandRunner}]{\setlength{\rightskip}{0pt plus 5cm}getCommandRunner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_a0e71a85d12a79d46586c3104df659371}
+
+
+Definition at line 51 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_commandRunner; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSConsoleCommand_a1cad0fdd11c50e747a10b8b23556e596}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!getDbConnection@{getDbConnection}}
+\index{getDbConnection@{getDbConnection}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{getDbConnection}]{\setlength{\rightskip}{0pt plus 5cm}getDbConnection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_a1cad0fdd11c50e747a10b8b23556e596}
+Ensures the db connection is valid 
+
+Definition at line 462 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_oDB = ( $this->databaseName != 'db' ) ? Yii::app()->{$this->databaseNam
+      e} : Yii::app()->getDb();
+
+        if ( $_oDB === null )
+        {
+            echo "\033[1mError\033[0m: an active '{$this->databaseName}' connecti
+      on is required." . PHP_EOL;
+            echo "If you already added '{$this->databaseName}' component in appli
+      cation configuration," . PHP_EOL;
+            echo "please quit and re-run your command." . PHP_EOL;
+            return false;
+        }
+
+        $_oDB->active = true;
+        $this->schema = $_oDB->schema;
+        
+        return true;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=374pt]{classCPSConsoleCommand_a1cad0fdd11c50e747a10b8b23556e596_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_a0ac27faf20ba937fb6788069c30f133a}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!getDefaultAction@{getDefaultAction}}
+\index{getDefaultAction@{getDefaultAction}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{getDefaultAction}]{\setlength{\rightskip}{0pt plus 5cm}getDefaultAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_a0ac27faf20ba937fb6788069c30f133a}
+
+
+Definition at line 56 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_defaultAction; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSConsoleCommand_abf0b96b21351ca3f777c8d6c78535ffe}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!getDisplayOptions@{getDisplayOptions}}
+\index{getDisplayOptions@{getDisplayOptions}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{getDisplayOptions}]{\setlength{\rightskip}{0pt plus 5cm}getDisplayOptions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSConsoleCommand_abf0b96b21351ca3f777c8d6c78535ffe}
+Get options to display \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 576 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sOptions = null;
+        
+        //  Look through options..
+        foreach ( $this->makeOptions( true, PS::OF_ASSOC_ARRAY ) as $_sOptKey => 
+      $_sOptValue )
+        {
+            $_sOptions .= str_pad( $this->bold( '  --' . $_sOptKey ), 39, ' ', ST
+      R_PAD_RIGHT );
+            if ( $_sOptValue ) $_sOptions .= 'Default value is "' . ( is_array( $
+      _sOptValue ) ? implode( ', ', $_sOptValue ) : $_sOptValue ) . '"';
+            $_sOptions .= PHP_EOL;
+        }
+        
+        if ( $_sOptions ) $_sOptions = "MORE OPTIONS" . PHP_EOL . "$_sOptions" ;    
+        
+        return $_sOptions;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSConsoleCommand_abf0b96b21351ca3f777c8d6c78535ffe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_a4cc928ef4def3a84c181608d31bf7608}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!getHelp@{getHelp}}
+\index{getHelp@{getHelp}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{getHelp}]{\setlength{\rightskip}{0pt plus 5cm}getHelp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_a4cc928ef4def3a84c181608d31bf7608}
+Provides the command description.
+
+This method may be overridden to return the actual command description.
+
+\begin{DoxyReturn}{Returns}
+string the command description. Defaults to 'Usage: php entry-\/script.php command-\/name'. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_a4cc928ef4def3a84c181608d31bf7608}{CPSCodeTableCommand}, \hyperlink{classCPSControllerCommand_a4cc928ef4def3a84c181608d31bf7608}{CPSControllerCommand}, \hyperlink{classCPSCrudCommand_a4cc928ef4def3a84c181608d31bf7608}{CPSCrudCommand}, \hyperlink{classCPSModelCommand_a4cc928ef4def3a84c181608d31bf7608}{CPSModelCommand}, and \hyperlink{classCPSModuleCommand_a4cc928ef4def3a84c181608d31bf7608}{CPSModuleCommand}.
+
+
+
+Definition at line 116 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return 'Usage: ' . $this->_commandRunner->getScriptName() . ' ' . $this->
+      _name;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classCPSConsoleCommand_a4cc928ef4def3a84c181608d31bf7608_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_a3d0963e68bb313b163a73f2803c64600}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!getName@{getName}}
+\index{getName@{getName}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}getName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_a3d0963e68bb313b163a73f2803c64600}
+
+
+Definition at line 46 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_name; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSConsoleCommand_a52c35bbfee5c247f621ad18691e23fdd}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!getOptionList@{getOptionList}}
+\index{getOptionList@{getOptionList}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{getOptionList}]{\setlength{\rightskip}{0pt plus 5cm}getOptionList (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_a52c35bbfee5c247f621ad18691e23fdd}
+Gets configuration options \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSComponent_a52c35bbfee5c247f621ad18691e23fdd}{CPSComponent}.
+
+
+
+Definition at line 62 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_optionList; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSConsoleCommand_a303f9f376ed603c5bd40deea781171ed}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!getopts@{getopts}}
+\index{getopts@{getopts}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{getopts}]{\setlength{\rightskip}{0pt plus 5cm}getopts (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arArgs = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_a303f9f376ed603c5bd40deea781171ed}
+Processes the command line arguments
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arArgs \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 427 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arResults = array(
+            'original' => $arArgs,
+            'rebuilt' => array(),
+            'options' => array(),
+        );
+        
+        //  Our return options array...
+        $_arOptions = array();
+        
+        //  Rebuild args...
+        for ( $_i = 0, $_iCount = count( $arArgs ); $_i < $_iCount; $_i++ )
+        {
+            $_sArg = $arArgs[ $_i ];
+            $_sOpt = trim( substr( $_sArg, 0, strpos( $_sArg, '=' ) ) );
+
+            if ( $_sOpt && $_sOpt[0] == '-' && $_sOpt[1] == '-' )
+                $_arOptions[ substr( $_sOpt, 2 ) ] = str_replace( $_sOpt . '=', '
+      ', $_sArg );
+            elseif ( $_sOpt && $_sOpt[0] == '-' )
+                $_arOptions[ substr( $_sOpt, 1 ) ] = str_replace( $_sOpt . '=', '
+      ', $_sArg );
+            else
+                $_arResults['rebuilt'][] = $arArgs[ $_i ];
+        }
+        
+        $_arResults['options'] = $_arOptions;
+        
+        //  Return the processed results...
+        return $_arResults;     
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSConsoleCommand_a330ea7ca53549b94a76544ae38e7e538}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!getResultDisplay@{getResultDisplay}}
+\index{getResultDisplay@{getResultDisplay}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{getResultDisplay}]{\setlength{\rightskip}{0pt plus 5cm}getResultDisplay (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arFileList = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ bInclude = {\ttfamily false}, }
+\item[{\&\$}]{ iNew = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSConsoleCommand_a330ea7ca53549b94a76544ae38e7e538}
+Returns a pretty list of generated files
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arFileList \item[{\em boolean}]\$bInclude \item[{\em integer}]\$iNew Returns the number of new files created \end{DoxyParams}
+
+
+Definition at line 600 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_iGen = 0;
+        $_sMsg = PHP_EOL . "No files were created or destroyed." . PHP_EOL;
+        
+        foreach ( $arFileList as $_sFile => $_arParams )
+        {
+            if ( PS::o( $_arParams, '_status', 0 ) )
+            {
+                $_sClasses .= $this->boldEchoString( '(' . $_arParams[ 'target' ]
+       . ')', $_sFile, true );
+                $_iGen++;
+            }
+                
+            if ( $bInclude ) @include_once( $_arParams[ 'target' ] );
+        }
+        
+        if ( $_iGen ) 
+        {
+            $_sMsg = PHP_EOL . 'The following file' . ( $_iGen > 1 ? 's were gene
+      rated:' : ' was generated:' ) . PHP_EOL . PHP_EOL .
+                $this->echoString( '(File Name)', 'Class Name', true ) .
+                "============================================================" . 
+      PHP_EOL .
+                $_sClasses;
+        }
+        
+        $iNew = $_iGen;
+
+        return $_sMsg;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=370pt]{classCPSConsoleCommand_a330ea7ca53549b94a76544ae38e7e538_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!init@{init}}
+\index{init@{init}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_a4be4055f3361d4800e16bc2e2e38cda6}
+
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_a4be4055f3361d4800e16bc2e2e38cda6}{CPSCodeTableCommand}, \hyperlink{classCPSControllerCommand_a4be4055f3361d4800e16bc2e2e38cda6}{CPSControllerCommand}, \hyperlink{classCPSCrudCommand_a4be4055f3361d4800e16bc2e2e38cda6}{CPSCrudCommand}, \hyperlink{classCPSModelCommand_a4be4055f3361d4800e16bc2e2e38cda6}{CPSModelCommand}, and \hyperlink{classCPSModuleCommand_a4be4055f3361d4800e16bc2e2e38cda6}{CPSModuleCommand}.
+
+
+
+Definition at line 100 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Phone home
+        parent::init();
+        
+        //  Add our options
+        $this->addOptions( self::getBaseOptions() );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSConsoleCommand_a60623f320f2f14f828a4b24dc331f4f6}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!loadModule@{loadModule}}
+\index{loadModule@{loadModule}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{loadModule}]{\setlength{\rightskip}{0pt plus 5cm}loadModule (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sClassName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSConsoleCommand_a60623f320f2f14f828a4b24dc331f4f6}
+Based on a class name, the module is selected
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sClassName \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+CModule 
+\end{DoxyReturn}
+
+
+Definition at line 490 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_oModule = Yii::app();
+        $_sModelClass = $sClassName;
+        
+        if ( false === ( $_iPos = strpos( $_sModelClass, '.' ) ) )
+            $_sModelClass = 'application.models.' . $_sModelClass;
+        else
+        {
+            $_sId = substr( $_sModelClass, 0, $_iPos );
+            
+            if ( null !== ( $_oNewModule = Yii::app()->getModule( $_sId ) ) )
+                $_oModule = $_oNewModule;
+        }
+        
+        //  Return module
+        return $_oModule;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classCPSConsoleCommand_a60623f320f2f14f828a4b24dc331f4f6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_a58127876ddedbfbce1ae272364764aac}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!pluralize@{pluralize}}
+\index{pluralize@{pluralize}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{pluralize}]{\setlength{\rightskip}{0pt plus 5cm}pluralize (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sString}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_a58127876ddedbfbce1ae272364764aac}
+Converts a word to its plural form.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]the word to be pluralized \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string the pluralized word 
+\end{DoxyReturn}
+
+
+Definition at line 238 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arRules = array(
+            '/(x|ch|ss|sh|us|as|is|os)$/i' => '\1es',
+            '/(?:([^f])fe|([lr])f)$/i' => '\1\2ves',
+            '/(m)an$/i' => '\1en',
+            '/(child)$/i' => '\1ren',
+            '/(r|t|b|d)y$/i' => '\1ies',
+            '/s$/' => 's',
+        );
+        
+        //  Check our pattern list
+        foreach ( $_arRules as $_sRule => $_sReplace )
+            if ( preg_match( $_sRule, $sString ) ) return preg_replace( $_sRule, 
+      $_sReplace, $sString );
+        
+        return $sString . 's';
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSConsoleCommand_a886e39444aaa31abaf173a819b4be205}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!processArguments@{processArguments}}
+\index{processArguments@{processArguments}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{processArguments}]{\setlength{\rightskip}{0pt plus 5cm}processArguments (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arArgs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSConsoleCommand_a886e39444aaa31abaf173a819b4be205}
+Process arguments passed in
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arArgs \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 515 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Set some defaults...
+        $this->templatePath = PS::nvl( $this->templatePath, YII_PATH . '/cli/view
+      s/shell/model' );
+
+        //  Process command line arguments
+        $_sClassName = array_shift( $arArgs );
+        $_arOptions = $this->getopts( $arArgs );
+        $arArgs = array_merge( array( $_sClassName ), $_arOptions['rebuilt'] );
+
+        //  Set our values based on options...
+        foreach ( $_arOptions['options'] as $_sKey => $_sValue )
+        {
+            switch ( strtolower( $_sKey ) )
+            {
+                case 'n':
+                case 'template-name':
+                    $this->templateName = $_sValue;
+                    break;
+                    
+                case 'force':
+                case 'f':
+                    $this->force = true;
+                    break;
+                    
+                case 'd':
+                case 'database':
+                    $this->databaseName = $_sValue;
+                    break;
+                    
+                case 'b':
+                case 'base-class':
+                    $this->baseClass = $_sValue;
+                    break;
+                    
+                case 't':
+                case 'template-path':
+                    $this->templatePath = $_sValue;
+                    break;
+                    
+                default:
+                    //  Look through options..
+                    foreach ( $this->makeOptions( true, PS::OF_ASSOC_ARRAY, true 
+      ) as $_sOptKey => $_sOptValue )
+                    {
+                        if ( $_sKey == $_sOptKey || $_sKey == 
+      CPSTransform::underscorize( $_sOptKey, '-' ) )
+                        {
+                            $this->{$_sOptKey} = $_sValue;
+                            break;
+                        }
+                    }
+                    break;
+            }
+        }
+        
+        return $arArgs;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=376pt]{classCPSConsoleCommand_a886e39444aaa31abaf173a819b4be205_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=382pt]{classCPSConsoleCommand_a886e39444aaa31abaf173a819b4be205_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_af9088b5fcf43bd1aafd2f2bccd952dbf}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!renderFile@{renderFile}}
+\index{renderFile@{renderFile}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{renderFile}]{\setlength{\rightskip}{0pt plus 5cm}renderFile (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sViewFile, }
+\item[{\$}]{ oData = {\ttfamily null}, }
+\item[{\$}]{ bReturn = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_af9088b5fcf43bd1aafd2f2bccd952dbf}
+Renders a view file.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]view file path \item[{\em array}]optional data to be extracted as local view variables \item[{\em boolean}]whether to return the rendering result instead of displaying it\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed the rendering result if required. Null otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 342 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( is_array( $oData ) ) 
+            extract( $oData, EXTR_PREFIX_SAME, 'data' );
+        else
+            $data = $oData;
+            
+        if ( $bReturn )
+        {
+            ob_start();
+            ob_implicit_flush( false );
+            require( $sViewFile );
+            return ob_get_clean();
+        }
+
+        require( $sViewFile );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSConsoleCommand_af9088b5fcf43bd1aafd2f2bccd952dbf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSConsoleCommand_acd971ca71798c549bd4f74ed4ee6729e}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!run@{run}}
+\index{run@{run}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+\item[{\$}]{ argumentList = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract\mbox{]}}}}
+\label{classCPSConsoleCommand_acd971ca71798c549bd4f74ed4ee6729e}
+Executes the command. 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]command line parameters for this command. \end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{CPSCodeTableCommand}, \hyperlink{classCPSControllerCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{CPSControllerCommand}, \hyperlink{classCPSCrudCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{CPSCrudCommand}, \hyperlink{classCPSModelCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{CPSModelCommand}, and \hyperlink{classCPSModuleCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{CPSModuleCommand}.
+
+\hypertarget{classCPSConsoleCommand_a745456ed2b7cb074ae0db12c6217dfca}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!setDefaultAction@{setDefaultAction}}
+\index{setDefaultAction@{setDefaultAction}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{setDefaultAction}]{\setlength{\rightskip}{0pt plus 5cm}setDefaultAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_a745456ed2b7cb074ae0db12c6217dfca}
+
+
+Definition at line 57 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_defaultAction = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSConsoleCommand_a1ede9bfd28a933f66275ac67aedbc661}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!usageError@{usageError}}
+\index{usageError@{usageError}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{usageError}]{\setlength{\rightskip}{0pt plus 5cm}usageError (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sMessage}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSConsoleCommand_a1ede9bfd28a933f66275ac67aedbc661}
+Displays a usage error.
+
+This method will then terminate the execution of the current application.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]the error message \end{DoxyParams}
+
+
+Definition at line 128 of file CPSConsoleCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        die( "Error: $sMessage" . PHP_EOL . PHP_EOL . $this->getHelp() . PHP_EOL 
+      );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classCPSConsoleCommand_a1ede9bfd28a933f66275ac67aedbc661_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSConsoleCommand_a9f9b9b9a9de86d19ece7175e6bc8c0d6}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!\$\_\-commandRunner@{\$\_\-commandRunner}}
+\index{\$\_\-commandRunner@{\$\_\-commandRunner}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{\$\_\-commandRunner}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-commandRunner\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSConsoleCommand_a9f9b9b9a9de86d19ece7175e6bc8c0d6}
+
+
+Definition at line 50 of file CPSConsoleCommand.php.
+
+\hypertarget{classCPSConsoleCommand_a8e238d8b9c8fcc408b7e4c8d9af1a1c1}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!\$\_\-defaultAction@{\$\_\-defaultAction}}
+\index{\$\_\-defaultAction@{\$\_\-defaultAction}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{\$\_\-defaultAction}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-defaultAction = 'index'\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSConsoleCommand_a8e238d8b9c8fcc408b7e4c8d9af1a1c1}
+
+
+Definition at line 55 of file CPSConsoleCommand.php.
+
+\hypertarget{classCPSConsoleCommand_a1c89defaf5aa7ac8e526065e8572f580}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!\$\_\-name@{\$\_\-name}}
+\index{\$\_\-name@{\$\_\-name}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{\$\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-name\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSConsoleCommand_a1c89defaf5aa7ac8e526065e8572f580}
+
+
+Definition at line 45 of file CPSConsoleCommand.php.
+
+\hypertarget{classCPSConsoleCommand_ac61132f2a103a25486245470090b0046}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!\$\_\-optionList@{\$\_\-optionList}}
+\index{\$\_\-optionList@{\$\_\-optionList}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{\$\_\-optionList}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-optionList = {\bf array}()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSConsoleCommand_ac61132f2a103a25486245470090b0046}
+
+
+Reimplemented from \hyperlink{classCPSComponent_ac61132f2a103a25486245470090b0046}{CPSComponent}.
+
+
+
+Definition at line 61 of file CPSConsoleCommand.php.
+
+\hypertarget{classCPSConsoleCommand_a4b90a6cacaef1bfd7e10e14ea54905aa}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!COL\_\-PADDING@{COL\_\-PADDING}}
+\index{COL\_\-PADDING@{COL\_\-PADDING}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{COL\_\-PADDING}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf COL\_\-PADDING} = 2}}
+\label{classCPSConsoleCommand_a4b90a6cacaef1bfd7e10e14ea54905aa}
+How much space to leave before the text of the labels 
+
+Definition at line 32 of file CPSConsoleCommand.php.
+
+\hypertarget{classCPSConsoleCommand_a1004fff603687ed8b5826de7588fa252}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!MIN\_\-COL\_\-WIDTH@{MIN\_\-COL\_\-WIDTH}}
+\index{MIN\_\-COL\_\-WIDTH@{MIN\_\-COL\_\-WIDTH}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{MIN\_\-COL\_\-WIDTH}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MIN\_\-COL\_\-WIDTH} = 20}}
+\label{classCPSConsoleCommand_a1004fff603687ed8b5826de7588fa252}
+Minimum column width for display 
+
+Definition at line 28 of file CPSConsoleCommand.php.
+
+\hypertarget{classCPSConsoleCommand_af71005841ce53adac00581ab0ba24c1f}{
+\index{CPSConsoleCommand@{CPSConsoleCommand}!VERSION@{VERSION}}
+\index{VERSION@{VERSION}!CPSConsoleCommand@{CPSConsoleCommand}}
+\subsubsection[{VERSION}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf VERSION} = '1.1.0'}}
+\label{classCPSConsoleCommand_af71005841ce53adac00581ab0ba24c1f}
+Our version 
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_af71005841ce53adac00581ab0ba24c1f}{CPSCodeTableCommand}, \hyperlink{classCPSControllerCommand_af71005841ce53adac00581ab0ba24c1f}{CPSControllerCommand}, \hyperlink{classCPSCrudCommand_af71005841ce53adac00581ab0ba24c1f}{CPSCrudCommand}, \hyperlink{classCPSModelCommand_af71005841ce53adac00581ab0ba24c1f}{CPSModelCommand}, and \hyperlink{classCPSModuleCommand_af71005841ce53adac00581ab0ba24c1f}{CPSModuleCommand}.
+
+
+
+Definition at line 36 of file CPSConsoleCommand.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/commands/\hyperlink{CPSConsoleCommand_8php}{CPSConsoleCommand.php}\end{DoxyCompactItemize}

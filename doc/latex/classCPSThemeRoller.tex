@@ -1,0 +1,209 @@
+\hypertarget{classCPSThemeRoller}{
+\section{CPSThemeRoller Class Reference}
+\label{classCPSThemeRoller}\index{CPSThemeRoller@{CPSThemeRoller}}
+}
+
+
+Inheritance diagram for CPSThemeRoller:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classCPSThemeRoller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSThemeRoller:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classCPSThemeRoller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSThemeRoller_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSThemeRoller_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSThemeRoller_a8dd93852f34e240c009290a87425ebcb}{handleThemeChangeRequest} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSThemeRoller_a46bd60d1fdb8d8e8dd828db69155d04b}{POST\_\-ACTION} = '\_\-\_\-themeChangeRequest'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSThemeRoller_a0d304720b71e3fabb0b602754043e1b6}{renderContent} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSThemeRoller.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSThemeRoller_a8dd93852f34e240c009290a87425ebcb}{
+\index{CPSThemeRoller@{CPSThemeRoller}!handleThemeChangeRequest@{handleThemeChangeRequest}}
+\index{handleThemeChangeRequest@{handleThemeChangeRequest}!CPSThemeRoller@{CPSThemeRoller}}
+\subsubsection[{handleThemeChangeRequest}]{\setlength{\rightskip}{0pt plus 5cm}handleThemeChangeRequest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSThemeRoller_a8dd93852f34e240c009290a87425ebcb}
+User has requested a new theme \begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file CPSThemeRoller.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sTheme = PS::o( $_REQUEST, '__theme' );
+        $_sUri = PS::o( $_REQUEST, '__uri' );
+        
+        $_arThemes = CPSjqUIWrapper::getValidThemes();
+        $_sTheme = PS::o( $_arThemes, $_sTheme, CPSjqUIWrapper::getCurrentTheme()
+       );
+        
+        if ( $_sTheme && $_sUri && in_array( $_sTheme, $_arThemes ) )
+        {
+            Yii::app()->user->setState( CPSjqUIWrapper::getStateName(), $_sTheme 
+      );
+            $this->redirect( $_sUri );
+        }
+
+        return true;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSThemeRoller_a8dd93852f34e240c009290a87425ebcb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSThemeRoller_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSThemeRoller@{CPSThemeRoller}!init@{init}}
+\index{init@{init}!CPSThemeRoller@{CPSThemeRoller}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSThemeRoller_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize and register with our controller... 
+
+Reimplemented from \hyperlink{classCPSPortlet_a4be4055f3361d4800e16bc2e2e38cda6}{CPSPortlet}.
+
+
+
+Definition at line 50 of file CPSThemeRoller.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::init();
+        
+        if ( ( $_oController = Yii::app()->getController() ) instanceof 
+      CPSController )
+            $_oController->addCommandToMap( str_replace( 'CPS', 'ps', get_class( 
+      $this ) ), array( $this, 'handleThemeChangeRequest' ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSThemeRoller_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSThemeRoller@{CPSThemeRoller}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSThemeRoller@{CPSThemeRoller}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSThemeRoller_a2dc262e99b1c246b56f27626bfe699ff}
+Initialize 
+
+Reimplemented from \hyperlink{classCPSPortlet_a2dc262e99b1c246b56f27626bfe699ff}{CPSPortlet}.
+
+
+
+Definition at line 41 of file CPSThemeRoller.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::preinit();
+        $this->title = 'Choose Your Theme';
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSThemeRoller_a0d304720b71e3fabb0b602754043e1b6}{
+\index{CPSThemeRoller@{CPSThemeRoller}!renderContent@{renderContent}}
+\index{renderContent@{renderContent}!CPSThemeRoller@{CPSThemeRoller}}
+\subsubsection[{renderContent}]{\setlength{\rightskip}{0pt plus 5cm}renderContent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSThemeRoller_a0d304720b71e3fabb0b602754043e1b6}
+Renders the content of this portlet. If object is set to auto-\/render, the view with the same name as this portlet will be rendered when called \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSPortlet_a0d304720b71e3fabb0b602754043e1b6}{CPSPortlet}.
+
+
+
+Definition at line 63 of file CPSThemeRoller.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $this->autoRender ) $this->render( 'themeRoller' );
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSThemeRoller_a46bd60d1fdb8d8e8dd828db69155d04b}{
+\index{CPSThemeRoller@{CPSThemeRoller}!POST\_\-ACTION@{POST\_\-ACTION}}
+\index{POST\_\-ACTION@{POST\_\-ACTION}!CPSThemeRoller@{CPSThemeRoller}}
+\subsubsection[{POST\_\-ACTION}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf POST\_\-ACTION} = '\_\-\_\-themeChangeRequest'}}
+\label{classCPSThemeRoller_a46bd60d1fdb8d8e8dd828db69155d04b}
+The action to which to post... 
+
+Definition at line 31 of file CPSThemeRoller.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/widgets/\hyperlink{CPSThemeRoller_8php}{CPSThemeRoller.php}\end{DoxyCompactItemize}

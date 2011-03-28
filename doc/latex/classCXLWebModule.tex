@@ -1,0 +1,341 @@
+\hypertarget{classCXLWebModule}{
+\section{CXLWebModule Class Reference}
+\label{classCXLWebModule}\index{CXLWebModule@{CXLWebModule}}
+}
+
+
+Inheritance diagram for CXLWebModule:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classCXLWebModule__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLWebModule:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classCXLWebModule__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLWebModule_ae21d2d711f414697477df2a4726e8daf}{getConfigPath} ()
+\item 
+\hyperlink{classCXLWebModule_a8115b613ae055d17768f138534ac45f3}{setConfigPath} (\$sValue)
+\item 
+\hyperlink{classCXLWebModule_a5b344fe2f40c0f235b4ede8e1c1ea4a3}{getAssetPath} ()
+\item 
+\hyperlink{classCXLWebModule_af9acd3d053a814ffec785ab8d9c24d82}{setAssetPath} (\$sValue)
+\item 
+\hyperlink{classCXLWebModule_a7d8986335d8119f7e20f5b9a4c1f15f7}{getAssetUrl} ()
+\item 
+\hyperlink{classCXLWebModule_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCXLWebModule_aa607ab5e557e6ebb60b85c5a20ad067f}{CLASS\_\-LOG\_\-TAG} = 'yiixl.core.components.CXLWebModule'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLWebModule_aa7790060a53895524f446d7e4ef8131e}{setAssetUrl} (\$sUrl)
+\item 
+\hyperlink{classCXLWebModule_a233a839508289d6db0e8ae92c65bb7d6}{\_\-setAssetPaths} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLWebModule_a05a571c47e275207658ec3ff2a228291}{\$\_\-configPath} = null
+\item 
+\hyperlink{classCXLWebModule_a4bce993140269e2ecd8ab4243735e621}{\$\_\-assetPath} = null
+\item 
+\hyperlink{classCXLWebModule_a181134a3a040d43e6913ad39fa94ee66}{\$\_\-assetUrl} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCXLWebModule}{CXLWebModule} provides extra functionality to the base module functionality of Yii 
+
+Definition at line 20 of file CXLWebModule.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLWebModule_a233a839508289d6db0e8ae92c65bb7d6}{
+\index{CXLWebModule@{CXLWebModule}!\_\-setAssetPaths@{\_\-setAssetPaths}}
+\index{\_\-setAssetPaths@{\_\-setAssetPaths}!CXLWebModule@{CXLWebModule}}
+\subsubsection[{\_\-setAssetPaths}]{\setlength{\rightskip}{0pt plus 5cm}\_\-setAssetPaths (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWebModule_a233a839508289d6db0e8ae92c65bb7d6}
+Initializes the asset manager for this module 
+
+Definition at line 82 of file CXLWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_assetManager = XL::_a()->getAssetManager();
+    if ( ! $this->_assetPath ) 
+      $this->_assetPath = $_assetManager->getBasePath() . DIRECTORY_SEPARATOR . $
+      this->getId();
+    
+    if ( ! is_dir( $this->_assetPath ) ) 
+      @mkdir( $this->_assetPath );
+    
+    $this->_assetUrl = $_assetManager->publish( $this->_assetPath, true, -1 );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classCXLWebModule_a233a839508289d6db0e8ae92c65bb7d6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classCXLWebModule_a233a839508289d6db0e8ae92c65bb7d6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLWebModule_a5b344fe2f40c0f235b4ede8e1c1ea4a3}{
+\index{CXLWebModule@{CXLWebModule}!getAssetPath@{getAssetPath}}
+\index{getAssetPath@{getAssetPath}!CXLWebModule@{CXLWebModule}}
+\subsubsection[{getAssetPath}]{\setlength{\rightskip}{0pt plus 5cm}getAssetPath (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWebModule_a5b344fe2f40c0f235b4ede8e1c1ea4a3}
+
+
+Definition at line 40 of file CXLWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_assetPath; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLWebModule_a7d8986335d8119f7e20f5b9a4c1f15f7}{
+\index{CXLWebModule@{CXLWebModule}!getAssetUrl@{getAssetUrl}}
+\index{getAssetUrl@{getAssetUrl}!CXLWebModule@{CXLWebModule}}
+\subsubsection[{getAssetUrl}]{\setlength{\rightskip}{0pt plus 5cm}getAssetUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWebModule_a7d8986335d8119f7e20f5b9a4c1f15f7}
+
+
+Definition at line 44 of file CXLWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_assetUrl; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLWebModule_ae21d2d711f414697477df2a4726e8daf}{
+\index{CXLWebModule@{CXLWebModule}!getConfigPath@{getConfigPath}}
+\index{getConfigPath@{getConfigPath}!CXLWebModule@{CXLWebModule}}
+\subsubsection[{getConfigPath}]{\setlength{\rightskip}{0pt plus 5cm}getConfigPath (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWebModule_ae21d2d711f414697477df2a4726e8daf}
+
+
+Definition at line 36 of file CXLWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_configPath; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLWebModule_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CXLWebModule@{CXLWebModule}!init@{init}}
+\index{init@{init}!CXLWebModule@{CXLWebModule}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWebModule_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize 
+
+Definition at line 55 of file CXLWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  Phone home...
+    parent::init();
+    
+    //  import the module-level models and components
+    $this->setImport(
+      array(
+        $this->id . '.models.*',
+        $this->id . '.components.*',
+      )
+    );
+
+    //  Read private configuration...
+    if ( ! empty( $this->_configPath ) ) $this->configure( require( $this->basePa
+      th . $this->_configPath ) );
+    
+    //  Get our asset manager going...
+    $this->_setAssetPaths();
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=354pt]{classCXLWebModule_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLWebModule_af9acd3d053a814ffec785ab8d9c24d82}{
+\index{CXLWebModule@{CXLWebModule}!setAssetPath@{setAssetPath}}
+\index{setAssetPath@{setAssetPath}!CXLWebModule@{CXLWebModule}}
+\subsubsection[{setAssetPath}]{\setlength{\rightskip}{0pt plus 5cm}setAssetPath (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWebModule_af9acd3d053a814ffec785ab8d9c24d82}
+
+
+Definition at line 41 of file CXLWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_assetPath = $sValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLWebModule_aa7790060a53895524f446d7e4ef8131e}{
+\index{CXLWebModule@{CXLWebModule}!setAssetUrl@{setAssetUrl}}
+\index{setAssetUrl@{setAssetUrl}!CXLWebModule@{CXLWebModule}}
+\subsubsection[{setAssetUrl}]{\setlength{\rightskip}{0pt plus 5cm}setAssetUrl (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUrl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWebModule_aa7790060a53895524f446d7e4ef8131e}
+
+
+Definition at line 45 of file CXLWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_assetUrl = $sUrl; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLWebModule_a8115b613ae055d17768f138534ac45f3}{
+\index{CXLWebModule@{CXLWebModule}!setConfigPath@{setConfigPath}}
+\index{setConfigPath@{setConfigPath}!CXLWebModule@{CXLWebModule}}
+\subsubsection[{setConfigPath}]{\setlength{\rightskip}{0pt plus 5cm}setConfigPath (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWebModule_a8115b613ae055d17768f138534ac45f3}
+
+
+Definition at line 37 of file CXLWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_configPath = $sValue; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLWebModule_a4bce993140269e2ecd8ab4243735e621}{
+\index{CXLWebModule@{CXLWebModule}!\$\_\-assetPath@{\$\_\-assetPath}}
+\index{\$\_\-assetPath@{\$\_\-assetPath}!CXLWebModule@{CXLWebModule}}
+\subsubsection[{\$\_\-assetPath}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-assetPath = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWebModule_a4bce993140269e2ecd8ab4243735e621}
+
+
+Definition at line 39 of file CXLWebModule.php.
+
+\hypertarget{classCXLWebModule_a181134a3a040d43e6913ad39fa94ee66}{
+\index{CXLWebModule@{CXLWebModule}!\$\_\-assetUrl@{\$\_\-assetUrl}}
+\index{\$\_\-assetUrl@{\$\_\-assetUrl}!CXLWebModule@{CXLWebModule}}
+\subsubsection[{\$\_\-assetUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-assetUrl = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWebModule_a181134a3a040d43e6913ad39fa94ee66}
+
+
+Definition at line 43 of file CXLWebModule.php.
+
+\hypertarget{classCXLWebModule_a05a571c47e275207658ec3ff2a228291}{
+\index{CXLWebModule@{CXLWebModule}!\$\_\-configPath@{\$\_\-configPath}}
+\index{\$\_\-configPath@{\$\_\-configPath}!CXLWebModule@{CXLWebModule}}
+\subsubsection[{\$\_\-configPath}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-configPath = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWebModule_a05a571c47e275207658ec3ff2a228291}
+
+
+Definition at line 35 of file CXLWebModule.php.
+
+\hypertarget{classCXLWebModule_aa607ab5e557e6ebb60b85c5a20ad067f}{
+\index{CXLWebModule@{CXLWebModule}!CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}}
+\index{CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}!CXLWebModule@{CXLWebModule}}
+\subsubsection[{CLASS\_\-LOG\_\-TAG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CLASS\_\-LOG\_\-TAG} = 'yiixl.core.components.CXLWebModule'}}
+\label{classCXLWebModule_aa607ab5e557e6ebb60b85c5a20ad067f}
+Our logging tag 
+
+Definition at line 29 of file CXLWebModule.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLWebModule_8php}{CXLWebModule.php}\end{DoxyCompactItemize}

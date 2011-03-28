@@ -1,0 +1,564 @@
+\hypertarget{classCXLComponent}{
+\section{CXLComponent Class Reference}
+\label{classCXLComponent}\index{CXLComponent@{CXLComponent}}
+}
+
+
+Inheritance diagram for CXLComponent:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLComponent:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classCXLComponent__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLComponent_a122db96cedfc221cf187ce4328f992f7}{getDebugLevel} ()
+\item 
+\hyperlink{classCXLComponent_a91ba7d911e2c3852a048f4022c45ec9e}{setDebugLevel} (\$value=false)
+\item 
+\hyperlink{classCXLComponent_a1a49b8dded6e91a52e2fd07195d334da}{getOptions} ()
+\item 
+\hyperlink{classCXLComponent_a50138660370da467322f8f3965008b14}{getBehaviorMethods} ()
+\item 
+\hyperlink{classCXLComponent_ad51d235c20d44a485f9f00f2c86a5ea9}{loadOptions} (\$options=array())
+\item 
+\hyperlink{classCXLComponent_aa7f5a18682ecb8e0dc450e26cebfaa37}{\_\-\_\-construct} (\$options=array())
+\item 
+\hyperlink{classCXLComponent_ad1145e067eca389073867be1a9d5d57e}{getOption} (\$key, \$defaultValue=null, \$unsetAfter=false)
+\item 
+\hyperlink{classCXLComponent_ad93e793964a65dfac40131c7cf7fe901}{attachBehavior} (\$name, \$behavior)
+\item 
+\hyperlink{classCXLComponent_a568bb8ef71e4cc61fd38a4c6140cb8e6}{detachBehavior} (\$name)
+\item 
+\hyperlink{classCXLComponent_ae3c1612573015dbb405087f657944fe6}{\_\-\_\-call} (\$name, \$parameters)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCXLComponent_aa607ab5e557e6ebb60b85c5a20ad067f}{CLASS\_\-LOG\_\-TAG} = 'yiixl.core.components.CXLComponent'
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCXLComponent_a18dc38882c1e91ddb65892e4fad6d68f}{\_\-getCallerObject} (\$instanceFilter=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLComponent_a6c76d7fa9253beae006eaaf4e3038ce9}{\$\_\-debugLevel} = false
+\item 
+\hyperlink{classCXLComponent_a1bebdc689c84eee59ad24c77e5531762}{\$\_\-options}
+\item 
+\hyperlink{classCXLComponent_ac1d32c0491955b7c0648ab9a304c45c0}{\$\_\-behaviorMethods}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file CXLComponent.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCXLComponent_aa7f5a18682ecb8e0dc450e26cebfaa37}{
+\index{CXLComponent@{CXLComponent}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CXLComponent@{CXLComponent}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ options = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLComponent_aa7f5a18682ecb8e0dc450e26cebfaa37}
+Constructs a component. All components accept an array of configuration options. These options are placed into accessible members (via \char`\"{}setter\char`\"{}). The entire array is stored in the member \{\begin{DoxySeeAlso}{See also}
+IXLComponent::options\}. 
+\end{DoxySeeAlso}
+
+
+Definition at line 119 of file CXLComponent.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  Initialize...
+    $this->_options = $this->_behaviorMethods = array();
+
+    //  Set any properties via standard config array
+    CXLOptions::loadConfiguration( $this, $options );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLComponent_aa7f5a18682ecb8e0dc450e26cebfaa37_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLComponent_ae3c1612573015dbb405087f657944fe6}{
+\index{CXLComponent@{CXLComponent}!\_\-\_\-call@{\_\-\_\-call}}
+\index{\_\-\_\-call@{\_\-\_\-call}!CXLComponent@{CXLComponent}}
+\subsubsection[{\_\-\_\-call}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-call (
+\begin{DoxyParamCaption}
+\item[{\$}]{ name, }
+\item[{\$}]{ parameters}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLComponent_ae3c1612573015dbb405087f657944fe6}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$name \item[{\em array}]\$parameters \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 190 of file CXLComponent.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    try
+    {
+      XL::smartCall( $this, $name, $parameters );
+    }
+    catch ( CXLMethodNotFoundException $_ex )
+    {
+      //  Kick it back up the chain in this case
+      return parent::__call( $name, $parameters );
+    }
+
+    //  Any other exceptions bubble up
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLComponent_ae3c1612573015dbb405087f657944fe6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLComponent_a18dc38882c1e91ddb65892e4fad6d68f}{
+\index{CXLComponent@{CXLComponent}!\_\-getCallerObject@{\_\-getCallerObject}}
+\index{\_\-getCallerObject@{\_\-getCallerObject}!CXLComponent@{CXLComponent}}
+\subsubsection[{\_\-getCallerObject}]{\setlength{\rightskip}{0pt plus 5cm}static \_\-getCallerObject (
+\begin{DoxyParamCaption}
+\item[{\$}]{ instanceFilter = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCXLComponent_a18dc38882c1e91ddb65892e4fad6d68f}
+Walks the backtrace to find the calling object 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$instanceFilter Only return objects of this instance \end{DoxyParams}
+
+
+Definition at line 213 of file CXLComponent.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_stack = debug_backtrace( true );
+
+    for ( $_i = 0, $_count = count( $_stack ); $_i < $_count; $_i++ )
+    {
+      if ( null !== ( $_caller = XL::o( $_stack[$_i], 'object' ) ) )
+      {
+        if ( null !== $instanceFilter )
+        {
+          if ( $_caller instanceof $instanceFilter )
+            return $_caller;
+
+          continue;
+        }
+
+        return $_caller;
+      }
+    }
+
+    return null;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classCXLComponent_a18dc38882c1e91ddb65892e4fad6d68f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLComponent_ad93e793964a65dfac40131c7cf7fe901}{
+\index{CXLComponent@{CXLComponent}!attachBehavior@{attachBehavior}}
+\index{attachBehavior@{attachBehavior}!CXLComponent@{CXLComponent}}
+\subsubsection[{attachBehavior}]{\setlength{\rightskip}{0pt plus 5cm}attachBehavior (
+\begin{DoxyParamCaption}
+\item[{\$}]{ name, }
+\item[{\$}]{ behavior}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLComponent_ad93e793964a65dfac40131c7cf7fe901}
+Attaches a behavior to this component. Calls the Yii implementation of this method, then injects the behaviors methods into our class. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$name The behavior's name. It should uniquely identify this behavior. \item[{\em mixed}]\$behavior the behavior configuration. This is passed as the first parameter to \hyperlink{}{YiiBase::createComponent} to create the behavior object. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBehavior the behavior object 
+\end{DoxyReturn}
+
+
+Definition at line 147 of file CXLComponent.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( null !== ( $_behavior = parent::attachBehavior( $name, $behavior ) ) )
+    {
+      //  Import the behavior methods
+      $_class = get_class( $_behavior );
+      $_methods = get_class_methods( $_behavior );
+
+      array_push(
+        $this->_behaviors,
+        array(
+          $_class,
+          $_behavior
+        )
+      );
+
+      foreach ( $_methods as $_method )
+        $this->_behaviorMethods[ $_method] = &$_behavior;
+    }
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLComponent_a568bb8ef71e4cc61fd38a4c6140cb8e6}{
+\index{CXLComponent@{CXLComponent}!detachBehavior@{detachBehavior}}
+\index{detachBehavior@{detachBehavior}!CXLComponent@{CXLComponent}}
+\subsubsection[{detachBehavior}]{\setlength{\rightskip}{0pt plus 5cm}detachBehavior (
+\begin{DoxyParamCaption}
+\item[{\$}]{ name}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLComponent_a568bb8ef71e4cc61fd38a4c6140cb8e6}
+Detaches a behavior from the component. The behavior's \hyperlink{}{IBehavior::detach} method will be invoked. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$name the behavior's name. It uniquely identifies the behavior. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IBehavior the detached behavior. Null if the behavior does not exist. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.0.2 
+\end{DoxySince}
+\begin{Desc}
+\item[\hyperlink{todo__todo000001}{Todo}]Implement un-\/importing methods \end{Desc}
+
+
+Definition at line 176 of file CXLComponent.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( null !== ( $_behavior = parent::detachBehavior( $name ) ) )
+    {
+      //  Unimport...
+    }
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLComponent_a50138660370da467322f8f3965008b14}{
+\index{CXLComponent@{CXLComponent}!getBehaviorMethods@{getBehaviorMethods}}
+\index{getBehaviorMethods@{getBehaviorMethods}!CXLComponent@{CXLComponent}}
+\subsubsection[{getBehaviorMethods}]{\setlength{\rightskip}{0pt plus 5cm}getBehaviorMethods (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLComponent_a50138660370da467322f8f3965008b14}
+Gets the list of registered behavior methods \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_a50138660370da467322f8f3965008b14}{IXLComponent}.
+
+
+
+Definition at line 94 of file CXLComponent.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_behaviorMethods;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLComponent_a50138660370da467322f8f3965008b14_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLComponent_a122db96cedfc221cf187ce4328f992f7}{
+\index{CXLComponent@{CXLComponent}!getDebugLevel@{getDebugLevel}}
+\index{getDebugLevel@{getDebugLevel}!CXLComponent@{CXLComponent}}
+\subsubsection[{getDebugLevel}]{\setlength{\rightskip}{0pt plus 5cm}getDebugLevel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLComponent_a122db96cedfc221cf187ce4328f992f7}
+Gets the debug level \begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_a122db96cedfc221cf187ce4328f992f7}{IXLComponent}.
+
+
+
+Definition at line 67 of file CXLComponent.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_debugLevel;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLComponent_ad1145e067eca389073867be1a9d5d57e}{
+\index{CXLComponent@{CXLComponent}!getOption@{getOption}}
+\index{getOption@{getOption}!CXLComponent@{CXLComponent}}
+\subsubsection[{getOption}]{\setlength{\rightskip}{0pt plus 5cm}getOption (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ defaultValue = {\ttfamily null}, }
+\item[{\$}]{ unsetAfter = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLComponent_ad1145e067eca389073867be1a9d5d57e}
+Gets a single configuration option \begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 132 of file CXLComponent.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_value = XL::o( $this->_options, $key, $defaultValue, $unsetAfter );
+    return $_value;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classCXLComponent_ad1145e067eca389073867be1a9d5d57e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLComponent_a1a49b8dded6e91a52e2fd07195d334da}{
+\index{CXLComponent@{CXLComponent}!getOptions@{getOptions}}
+\index{getOptions@{getOptions}!CXLComponent@{CXLComponent}}
+\subsubsection[{getOptions}]{\setlength{\rightskip}{0pt plus 5cm}getOptions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLComponent_a1a49b8dded6e91a52e2fd07195d334da}
+Gets the configuration options \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_a1a49b8dded6e91a52e2fd07195d334da}{IXLComponent}.
+
+
+
+Definition at line 85 of file CXLComponent.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_options;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLComponent_ad51d235c20d44a485f9f00f2c86a5ea9}{
+\index{CXLComponent@{CXLComponent}!loadOptions@{loadOptions}}
+\index{loadOptions@{loadOptions}!CXLComponent@{CXLComponent}}
+\subsubsection[{loadOptions}]{\setlength{\rightskip}{0pt plus 5cm}loadOptions (
+\begin{DoxyParamCaption}
+\item[{\$}]{ options = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLComponent_ad51d235c20d44a485f9f00f2c86a5ea9}
+Loads the configuration options 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCXLComponent}{CXLComponent} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_ad51d235c20d44a485f9f00f2c86a5ea9}{IXLComponent}.
+
+
+
+Definition at line 104 of file CXLComponent.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_options = $options;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLComponent_a91ba7d911e2c3852a048f4022c45ec9e}{
+\index{CXLComponent@{CXLComponent}!setDebugLevel@{setDebugLevel}}
+\index{setDebugLevel@{setDebugLevel}!CXLComponent@{CXLComponent}}
+\subsubsection[{setDebugLevel}]{\setlength{\rightskip}{0pt plus 5cm}setDebugLevel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLComponent_a91ba7d911e2c3852a048f4022c45ec9e}
+Sets the debug level 
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]The new debug level \end{DoxyParams}
+
+
+Implements \hyperlink{interfaceIXLComponent_a91ba7d911e2c3852a048f4022c45ec9e}{IXLComponent}.
+
+
+
+Definition at line 76 of file CXLComponent.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_debugLevel = $value;
+  }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLComponent_ac1d32c0491955b7c0648ab9a304c45c0}{
+\index{CXLComponent@{CXLComponent}!\$\_\-behaviorMethods@{\$\_\-behaviorMethods}}
+\index{\$\_\-behaviorMethods@{\$\_\-behaviorMethods}!CXLComponent@{CXLComponent}}
+\subsubsection[{\$\_\-behaviorMethods}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-behaviorMethods\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLComponent_ac1d32c0491955b7c0648ab9a304c45c0}
+
+
+Definition at line 57 of file CXLComponent.php.
+
+\hypertarget{classCXLComponent_a6c76d7fa9253beae006eaaf4e3038ce9}{
+\index{CXLComponent@{CXLComponent}!\$\_\-debugLevel@{\$\_\-debugLevel}}
+\index{\$\_\-debugLevel@{\$\_\-debugLevel}!CXLComponent@{CXLComponent}}
+\subsubsection[{\$\_\-debugLevel}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-debugLevel = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLComponent_a6c76d7fa9253beae006eaaf4e3038ce9}
+
+
+Definition at line 47 of file CXLComponent.php.
+
+\hypertarget{classCXLComponent_a1bebdc689c84eee59ad24c77e5531762}{
+\index{CXLComponent@{CXLComponent}!\$\_\-options@{\$\_\-options}}
+\index{\$\_\-options@{\$\_\-options}!CXLComponent@{CXLComponent}}
+\subsubsection[{\$\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-options\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLComponent_a1bebdc689c84eee59ad24c77e5531762}
+
+
+Reimplemented in \hyperlink{classCXLConfig_a1bebdc689c84eee59ad24c77e5531762}{CXLConfig}.
+
+
+
+Definition at line 52 of file CXLComponent.php.
+
+\hypertarget{classCXLComponent_aa607ab5e557e6ebb60b85c5a20ad067f}{
+\index{CXLComponent@{CXLComponent}!CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}}
+\index{CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}!CXLComponent@{CXLComponent}}
+\subsubsection[{CLASS\_\-LOG\_\-TAG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CLASS\_\-LOG\_\-TAG} = 'yiixl.core.components.CXLComponent'}}
+\label{classCXLComponent_aa607ab5e557e6ebb60b85c5a20ad067f}
+Our logging tag 
+
+Reimplemented in \hyperlink{classCXLConfig_aa607ab5e557e6ebb60b85c5a20ad067f}{CXLConfig}, \hyperlink{classCXLConfigFile_aa607ab5e557e6ebb60b85c5a20ad067f}{CXLConfigFile}, \hyperlink{classCXLApiComponent_aa607ab5e557e6ebb60b85c5a20ad067f}{CXLApiComponent}, \hyperlink{classCXLRestConsumerComponent_aa607ab5e557e6ebb60b85c5a20ad067f}{CXLRestConsumerComponent}, and \hyperlink{classCXLBaseJobProcess_aa607ab5e557e6ebb60b85c5a20ad067f}{CXLBaseJobProcess}.
+
+
+
+Definition at line 38 of file CXLComponent.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLComponent_8php}{CXLComponent.php}\end{DoxyCompactItemize}

@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSFacebookUserIdentity.html#ad0e0d1a30e4654cb79ddcd1b759f956b" title="_getAppFriends" alt="" coords="141,59,261,88"/>
+<area shape="rect" id="node19" href="$classCPSLog.html#a99034739d5e469b037364bf2f5694e11" title="CPSLog::error" alt="" coords="311,111,420,140"/>
+<area shape="rect" id="node5" href="$classCPSFacebookUserIdentity.html#a8db1c87ff7cf16af4110476a303ca342" title="_forceLogin" alt="" coords="319,7,412,36"/>
+<area shape="rect" id="node16" href="$classCPSLog.html#ab8a624f93a0bfc699dd00c01af886955" title="CPSLog::trace" alt="" coords="469,59,581,88"/>
+<area shape="rect" id="node8" href="$classCPSLog.html#a377d71c5d7e04b1098ec85533d165ec4" title="CPSLog::info" alt="" coords="475,5,576,35"/>
+<area shape="rect" id="node10" href="$classCPSLog.html#a4c3be4120dc6dee2c97a6dde9428ac76" title="CPSLog::log" alt="" coords="629,59,728,88"/>
+<area shape="rect" id="node12" href="$classCPSLog.html#a66291d27410fbf7ba4978f513c13e6f0" title="CPSLog::_getCallingMethod" alt="" coords="776,32,973,61"/>
+<area shape="rect" id="node14" href="$classCPSLog.html#a8471574061e9457cc6e5be7c151b9cfb" title="CPSLog::_processMessage" alt="" coords="779,85,971,115"/>
+</map>

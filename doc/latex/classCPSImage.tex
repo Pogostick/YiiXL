@@ -1,0 +1,370 @@
+\hypertarget{classCPSImage}{
+\section{CPSImage Class Reference}
+\label{classCPSImage}\index{CPSImage@{CPSImage}}
+}
+
+
+Inheritance diagram for CPSImage:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{classCPSImage__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSImage:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{classCPSImage__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSImage_ac7862e00efddf9b8ac715d0f41eeee3b}{getThumbnailTemplate} ()
+\item 
+static \hyperlink{classCPSImage_a565140bdb6d832a04c40f350b15bb5ec}{setThumbnailTemplate} (\$sValue)
+\item 
+static \hyperlink{classCPSImage_abf99af71ba8472720b08aff7c2d76906}{getThumbnailWidth} ()
+\item 
+static \hyperlink{classCPSImage_a4de06d501714d80cd5c3f4f7c56133df}{setThumbnailWidth} (\$iValue)
+\item 
+static \hyperlink{classCPSImage_afd146566ba0b7fbb287ff4bfe23758bb}{getThumbnailHeight} ()
+\item 
+static \hyperlink{classCPSImage_a9ef58f1f510c322962b29e5b94ddab4f}{setThumbnailHeight} (\$iValue)
+\item 
+static \hyperlink{classCPSImage_a8a9c3ed39d449a2c9954a74d91fb7477}{createThumbnail} (\$sFileName, \$sThumbName=null, \$iThumbWidth=null, \$iThumbHeight=null)
+\item 
+static \hyperlink{classCPSImage_ab131d595423651025d820f83ba1f056c}{getThumbnailFilename} (\$sBaseName)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSImage_a28221a0c54da49994a1f96ec06ef4280}{\$m\_\-sThumbnailTempate} = 't.\{fileName\}'
+\item 
+static \hyperlink{classCPSImage_a2f67e1aa9031010559601184c28397e0}{\$m\_\-iThumbnailWidth} = 75
+\item 
+static \hyperlink{classCPSImage_a31914fa7bb06596b268b9dbf4aabe9b1}{\$m\_\-iThumbnailHeight} = 75
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file CPSImage.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSImage_a8a9c3ed39d449a2c9954a74d91fb7477}{
+\index{CPSImage@{CPSImage}!createThumbnail@{createThumbnail}}
+\index{createThumbnail@{createThumbnail}!CPSImage@{CPSImage}}
+\subsubsection[{createThumbnail}]{\setlength{\rightskip}{0pt plus 5cm}static createThumbnail (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sFileName, }
+\item[{\$}]{ sThumbName = {\ttfamily null}, }
+\item[{\$}]{ iThumbWidth = {\ttfamily null}, }
+\item[{\$}]{ iThumbHeight = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSImage_a8a9c3ed39d449a2c9954a74d91fb7477}
+Creates a thumbnail for an image. Requires GD to be installed.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sFileName Absolute path to file \item[{\em string}]\$sThumbName \item[{\em int}]\$iThumbWidth \item[{\em int}]\$iThumbHeight \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file CPSImage.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_iType = null;
+        $_bResult = false;
+        
+        $iThumbWidth = PS::nvl( $iThumbWidth, self::$m_iThumbnailWidth );
+        $iThumbHeight = PS::nvl( $iThumbHeight, self::$m_iThumbnailHeight );
+        $sThumbName = PS::nvl( $sThumbName, self::getThumbnailFilename( $sFileNam
+      e ) );
+        
+        //  Get some info on the file...
+        if ( $_arSize = getimagesize( $sFileName ) )
+        {
+            switch ( $_arSize[ 2 ] )
+            {
+                case IMAGETYPE_GIF:
+                    $_sSourceImage = imagecreatefromgif( $sFileName );
+                    break;
+                    
+                case IMAGETYPE_PNG:
+                    $_sSourceImage = imagecreatefrompng( $sFileName );
+                    break;
+                    
+                case IMAGETYPE_JPEG:
+                    $_sSourceImage = imagecreatefromjpeg( $sFileName );
+                    break;
+            }
+        
+            if ( $_sSourceImage )
+            {
+                $_iSourceWidth = imageSX( $_sSourceImage );
+                $_iSourceHeight = imageSY( $_sSourceImage );
+                
+                //  Calculate correct size keeping aspect ratio...
+                if ( $_iSourceWidth > $_iSourceHeight )
+                {
+                    $_iDestWidth = $iThumbWidth;
+                    $_iDestHeight = $_iSourceHeight * ( $iThumbHeight / $_iSource
+      Width );
+                }
+                else if ( $_iSourceWidth < $_iSourceHeight )
+                {
+                    $_iDestWidth = $_iSourceWidth * ( $iThumbWidth / $_iSourceHei
+      ght );
+                    $_iDestHeight = $iThumbHeight;
+                }
+                else
+                {
+                    $_iDestWidth = $iThumbWidth;
+                    $_iDestHeight = $iThumbHeight;
+                }
+                
+                //  Makethe new image
+                if ( $_sDestImage = imagecreatetruecolor( $_iDestWidth, $_iDestHe
+      ight ) )
+                {
+                    imagecopyresampled( $_sDestImage, $_sSourceImage, 0, 0, 0, 0,
+       $_iDestWidth, $_iDestHeight, $_iSourceWidth, $_iSourceHeight );
+
+                    switch ( $_arSize[ 2 ] )
+                    {
+                        case IMAGETYPE_GIF:
+                            imagegif( $_sDestImage, $sThumbName );
+                            break;
+                            
+                        case IMAGETYPE_PNG:
+                            imagepng( $_sDestImage, $sThumbName );
+                            break;
+                            
+                        case IMAGETYPE_JPEG:
+                            imagejpeg( $_sDestImage, $sThumbName );
+                            break;
+                    }
+
+                    imagedestroy( $_sDestImage ); 
+                    $_bResult = true;
+                }
+
+                imagedestroy( $_sSourceImage ); 
+            }
+        }
+        
+        //  Did it work?
+        return $_bResult;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSImage_ab131d595423651025d820f83ba1f056c}{
+\index{CPSImage@{CPSImage}!getThumbnailFilename@{getThumbnailFilename}}
+\index{getThumbnailFilename@{getThumbnailFilename}!CPSImage@{CPSImage}}
+\subsubsection[{getThumbnailFilename}]{\setlength{\rightskip}{0pt plus 5cm}static getThumbnailFilename (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sBaseName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSImage_ab131d595423651025d820f83ba1f056c}
+
+
+Definition at line 164 of file CPSImage.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Strip off the path...
+        $_arFileInfo = pathinfo( $sBaseName );
+        $_sThumbName = str_ireplace( '{filename}', $_arFileInfo['basename'], self
+      ::$m_sThumbnailTempate );
+        return ( $_arFileInfo['dirname'] != '.' ? $_arFileInfo['dirname'] . DIREC
+      TORY_SEPARATOR : '' ) . $_sThumbName;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSImage_afd146566ba0b7fbb287ff4bfe23758bb}{
+\index{CPSImage@{CPSImage}!getThumbnailHeight@{getThumbnailHeight}}
+\index{getThumbnailHeight@{getThumbnailHeight}!CPSImage@{CPSImage}}
+\subsubsection[{getThumbnailHeight}]{\setlength{\rightskip}{0pt plus 5cm}static getThumbnailHeight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSImage_afd146566ba0b7fbb287ff4bfe23758bb}
+
+
+Definition at line 59 of file CPSImage.php.
+
+
+
+
+\begin{DoxyCode}
+{ return self::$m_iThumbnailHeight; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSImage_ac7862e00efddf9b8ac715d0f41eeee3b}{
+\index{CPSImage@{CPSImage}!getThumbnailTemplate@{getThumbnailTemplate}}
+\index{getThumbnailTemplate@{getThumbnailTemplate}!CPSImage@{CPSImage}}
+\subsubsection[{getThumbnailTemplate}]{\setlength{\rightskip}{0pt plus 5cm}static getThumbnailTemplate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSImage_ac7862e00efddf9b8ac715d0f41eeee3b}
+
+
+Definition at line 39 of file CPSImage.php.
+
+
+
+
+\begin{DoxyCode}
+{ return self::$m_sThumbnailTemplate; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSImage_abf99af71ba8472720b08aff7c2d76906}{
+\index{CPSImage@{CPSImage}!getThumbnailWidth@{getThumbnailWidth}}
+\index{getThumbnailWidth@{getThumbnailWidth}!CPSImage@{CPSImage}}
+\subsubsection[{getThumbnailWidth}]{\setlength{\rightskip}{0pt plus 5cm}static getThumbnailWidth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSImage_abf99af71ba8472720b08aff7c2d76906}
+
+
+Definition at line 49 of file CPSImage.php.
+
+
+
+
+\begin{DoxyCode}
+{ return self::$m_iThumbnailWidth; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSImage_a9ef58f1f510c322962b29e5b94ddab4f}{
+\index{CPSImage@{CPSImage}!setThumbnailHeight@{setThumbnailHeight}}
+\index{setThumbnailHeight@{setThumbnailHeight}!CPSImage@{CPSImage}}
+\subsubsection[{setThumbnailHeight}]{\setlength{\rightskip}{0pt plus 5cm}static setThumbnailHeight (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSImage_a9ef58f1f510c322962b29e5b94ddab4f}
+
+
+Definition at line 60 of file CPSImage.php.
+
+
+
+
+\begin{DoxyCode}
+{ self::$m_iThumbnailHeight = $iValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSImage_a565140bdb6d832a04c40f350b15bb5ec}{
+\index{CPSImage@{CPSImage}!setThumbnailTemplate@{setThumbnailTemplate}}
+\index{setThumbnailTemplate@{setThumbnailTemplate}!CPSImage@{CPSImage}}
+\subsubsection[{setThumbnailTemplate}]{\setlength{\rightskip}{0pt plus 5cm}static setThumbnailTemplate (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSImage_a565140bdb6d832a04c40f350b15bb5ec}
+
+
+Definition at line 40 of file CPSImage.php.
+
+
+
+
+\begin{DoxyCode}
+{ self::$m_sThumbnailTemplate = $sValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSImage_a4de06d501714d80cd5c3f4f7c56133df}{
+\index{CPSImage@{CPSImage}!setThumbnailWidth@{setThumbnailWidth}}
+\index{setThumbnailWidth@{setThumbnailWidth}!CPSImage@{CPSImage}}
+\subsubsection[{setThumbnailWidth}]{\setlength{\rightskip}{0pt plus 5cm}static setThumbnailWidth (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSImage_a4de06d501714d80cd5c3f4f7c56133df}
+
+
+Definition at line 50 of file CPSImage.php.
+
+
+
+
+\begin{DoxyCode}
+{ self::$m_iThumbnailWidth = $iValue; } 
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSImage_a31914fa7bb06596b268b9dbf4aabe9b1}{
+\index{CPSImage@{CPSImage}!\$m\_\-iThumbnailHeight@{\$m\_\-iThumbnailHeight}}
+\index{\$m\_\-iThumbnailHeight@{\$m\_\-iThumbnailHeight}!CPSImage@{CPSImage}}
+\subsubsection[{\$m\_\-iThumbnailHeight}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-iThumbnailHeight = 75\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSImage_a31914fa7bb06596b268b9dbf4aabe9b1}
+The height of generated thumbnails
+
+int  protected 
+
+Definition at line 58 of file CPSImage.php.
+
+\hypertarget{classCPSImage_a2f67e1aa9031010559601184c28397e0}{
+\index{CPSImage@{CPSImage}!\$m\_\-iThumbnailWidth@{\$m\_\-iThumbnailWidth}}
+\index{\$m\_\-iThumbnailWidth@{\$m\_\-iThumbnailWidth}!CPSImage@{CPSImage}}
+\subsubsection[{\$m\_\-iThumbnailWidth}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-iThumbnailWidth = 75\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSImage_a2f67e1aa9031010559601184c28397e0}
+The width of generated thumbnails
+
+int  protected 
+
+Definition at line 48 of file CPSImage.php.
+
+\hypertarget{classCPSImage_a28221a0c54da49994a1f96ec06ef4280}{
+\index{CPSImage@{CPSImage}!\$m\_\-sThumbnailTempate@{\$m\_\-sThumbnailTempate}}
+\index{\$m\_\-sThumbnailTempate@{\$m\_\-sThumbnailTempate}!CPSImage@{CPSImage}}
+\subsubsection[{\$m\_\-sThumbnailTempate}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sThumbnailTempate = 't.\{fileName\}'\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSImage_a28221a0c54da49994a1f96ec06ef4280}
+The template for thumbnail images
+
+string  protected 
+
+Definition at line 38 of file CPSImage.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/helpers/\hyperlink{CPSImage_8php}{CPSImage.php}\end{DoxyCompactItemize}

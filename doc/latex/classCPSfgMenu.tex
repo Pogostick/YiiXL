@@ -1,0 +1,438 @@
+\hypertarget{classCPSfgMenu}{
+\section{CPSfgMenu Class Reference}
+\label{classCPSfgMenu}\index{CPSfgMenu@{CPSfgMenu}}
+}
+
+
+Inheritance diagram for CPSfgMenu:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCPSfgMenu__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSfgMenu:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCPSfgMenu__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSfgMenu_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSfgMenu_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSfgMenu_ac02a66bde8e72e4909137bf748edf665}{registerClientScripts} (\$bLocateScript=false)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSfgMenu_a0ffc269a208148ade57c7eb608a4562a}{create} (\$sName=null, \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array} \$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+static \hyperlink{classCPSfgMenu_a561cda05113b81fc962133829351f41e}{loadScripts} (\$oWidget=null, \$sTheme=null)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSfgMenu_ae357f9dc377f7de0d12010b2ced28cbc}{PS\_\-WIDGET\_\-NAME} = 'fg-\/menu'
+\item 
+const \hyperlink{classCPSfgMenu_a8ccb5e1d65c091f944a6aa8c5be834ca}{PS\_\-EXTERNAL\_\-PATH} = '/jquery-\/plugins/fg-\/menu'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSfgMenu_acc5a32d52db57b80885add51c076ed42}{generateHtml} ()
+\item 
+\hyperlink{classCPSfgMenu_a273c0dc58b59db25cfd5a37561bccec5}{generateJavascript} (\$sTargetSelector=null, \$arOptions=null, \$sInsertBeforeOptions=null)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file CPSfgMenu.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSfgMenu_a0ffc269a208148ade57c7eb608a4562a}{
+\index{CPSfgMenu@{CPSfgMenu}!create@{create}}
+\index{create@{create}!CPSfgMenu@{CPSfgMenu}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static create (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sName = {\ttfamily null}, }
+\item[{{\bf array} \$}]{ arOptions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSfgMenu_a0ffc269a208148ade57c7eb608a4562a}
+Constructs and returns a jQuery widget
+
+The options passed in are dynamically added to the options array and will be accessible and modifiable as normal (.i.e. \$this-\/$>$theme, \$this-\/$>$baseUrl, etc.)
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arOptions The options for the widget \item[{\em string}]\$sClass The class of the calling object if different \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCPSjqGridWidget}{CPSjqGridWidget} 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSjqUIWrapper_a0ffc269a208148ade57c7eb608a4562a}{CPSjqUIWrapper}.
+
+
+
+Definition at line 173 of file CPSfgMenu.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return parent::create( PS::nvl( $sName, self::PS_WIDGET_NAME ), array_mer
+      ge( $arOptions, array( 'class' => __CLASS__ ) ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSfgMenu_acc5a32d52db57b80885add51c076ed42}{
+\index{CPSfgMenu@{CPSfgMenu}!generateHtml@{generateHtml}}
+\index{generateHtml@{generateHtml}!CPSfgMenu@{CPSfgMenu}}
+\subsubsection[{generateHtml}]{\setlength{\rightskip}{0pt plus 5cm}generateHtml (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSfgMenu_acc5a32d52db57b80885add51c076ed42}
+Generate the necessary HTML \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSWidget_acc5a32d52db57b80885add51c076ed42}{CPSWidget}.
+
+
+
+Definition at line 105 of file CPSfgMenu.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sHtml = parent::generateHtml();
+        
+        //  Get our options...
+        $this->target = $_sId = $this->getId();
+        $_sAnchorId = $this->getValue( 'anchorId' );
+        
+        $_sHtml .= PS::hiddenField( $_sId . '_value', $this->getValue( 'value' ) 
+      );
+        $_sHtml .= '<a tabindex="0" href="#' . $_sAnchorId . '" class="ps-button 
+      ps-button-icon-right ps-button-no-float ui-widget ui-state-default ui-corner-all"
+       id="' . $_sId . '"><span class="ui-icon ui-icon-triangle-1-s"></span>' . $this->
+      prompt . '</a>';
+        $_sHtml .= '<div id="' . $_sAnchorId . '" class="hidden">';
+        $_sHtml .= CPSTransform::asUnorderedList( $this->getValue( 'data', array(
+      ) ), $this->makeOptions( true, PS::OF_ASSOC_ARRAY, true ) );
+        $_sHtml .= '</div>';
+        
+        //  Remove the id...
+        $this->target = $this->getTargetSelector( $_sAnchorId );
+        
+        $this->unsetOption('valueColumn');
+        
+        return $_sHtml;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=390pt]{classCPSfgMenu_acc5a32d52db57b80885add51c076ed42_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSfgMenu_a273c0dc58b59db25cfd5a37561bccec5}{
+\index{CPSfgMenu@{CPSfgMenu}!generateJavascript@{generateJavascript}}
+\index{generateJavascript@{generateJavascript}!CPSfgMenu@{CPSfgMenu}}
+\subsubsection[{generateJavascript}]{\setlength{\rightskip}{0pt plus 5cm}generateJavascript (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sTargetSelector = {\ttfamily null}, }
+\item[{\$}]{ arOptions = {\ttfamily null}, }
+\item[{\$}]{ sInsertBeforeOptions = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSfgMenu_a273c0dc58b59db25cfd5a37561bccec5}
+Generate the necessary JS for this widget
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sTargetSelector \item[{\em array}]\$arOptions \item[{\em string}]\$sInsertBeforeOptions \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSjQueryWidget_ad50ca154583f36f93de20c14bc472209}{CPSjQueryWidget}.
+
+
+
+Definition at line 135 of file CPSfgMenu.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Get the options...
+        if ( $arOptions ) $this->mergeOptions( $arOptions );
+        $_sId = $this->getId();
+        
+        //  Make options
+        $_oData = $this->getOption( 'data', array(), true );
+        $this->unsetOption('name');
+        $this->unsetOption('id');
+        $_sOptions = $this->makeOptions();
+
+        $this->setOption( 'data', $_oData->getValue() );
+
+        //  Jam something in front of options?
+        if ( null != $sInsertBeforeOptions ) $_sOptions = $sInsertBeforeOptions .
+       ( ! empty( $_sOptions ) ? ', ' . $_sOptions : '' );
+
+        $this->script =<<<CODE
+jQuery('#{$_sId}').menu({updateValueId:'#{$_sId}_value',backLink:false,content:jQ
+      uery("#{$_sId}").next().html()});
+CODE;
+
+        return $this->script;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSfgMenu_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSfgMenu@{CPSfgMenu}!init@{init}}
+\index{init@{init}!CPSfgMenu@{CPSfgMenu}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSfgMenu_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize 
+
+Reimplemented from \hyperlink{classCPSjqUIWrapper_a4be4055f3361d4800e16bc2e2e38cda6}{CPSjqUIWrapper}.
+
+
+
+Definition at line 68 of file CPSfgMenu.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::init();
+    
+        //  Set my name...  
+        $this->widgetName = self::PS_WIDGET_NAME;
+        
+        //  Create an anchor id
+        $this->setOption( 'anchorId', $this->getUniqueId( $this->getValue( 'ancho
+      rId', 'fg.menu.a.id' ) ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSfgMenu_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSfgMenu_a561cda05113b81fc962133829351f41e}{
+\index{CPSfgMenu@{CPSfgMenu}!loadScripts@{loadScripts}}
+\index{loadScripts@{loadScripts}!CPSfgMenu@{CPSfgMenu}}
+\subsubsection[{loadScripts}]{\setlength{\rightskip}{0pt plus 5cm}static loadScripts (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oWidget = {\ttfamily null}, }
+\item[{\$}]{ sTheme = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSfgMenu_a561cda05113b81fc962133829351f41e}
+Registers the needed CSS and JavaScript.
+
+One may use this to load the scripts necessary for styling buttons and whatnot when jqUI widgets are not in use on a page.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSjqUIWrapper}{CPSjqUIWrapper}}]\$oWidget The widget making this call, if any \item[{\em string}]\$sTheme The theme to use. If it's specified, will override theme set at the time of creation \item[{\em CClientScript}]\$oCS The clientScript object of the app \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classCPSjqUIWrapper_ac23dbff4185dd0a77d381116a054bb50}{CPSjqUIWrapper}.
+
+
+
+Definition at line 188 of file CPSfgMenu.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Daddy...
+        parent::loadScripts( $oWidget, $sTheme );
+        
+        //  Instantiate if needed...
+        $_oWidget = ( null == $oWidget ) ? new CPSfgMenu() : $oWidget;
+
+        //  Register scripts necessary
+        return $_oWidget->registerClientScripts();
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSfgMenu_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSfgMenu@{CPSfgMenu}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSfgMenu@{CPSfgMenu}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSfgMenu_a2dc262e99b1c246b56f27626bfe699ff}
+Initialize 
+
+Reimplemented from \hyperlink{classCPSjqUIWrapper_a2dc262e99b1c246b56f27626bfe699ff}{CPSjqUIWrapper}.
+
+
+
+Definition at line 47 of file CPSfgMenu.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Phone home...
+        parent::preinit();
+        
+        //  Add the default options for jqUI stuff
+        $this->addOptions( 
+            array(
+                'prompt_' => 'string:Select One...::true',
+                'valueColumn' => 'string',
+                'imagePath_' => 'string',
+                'anchorId_' => 'string',
+                'data_' => 'array:array()',
+            )
+        );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSfgMenu_ac02a66bde8e72e4909137bf748edf665}{
+\index{CPSfgMenu@{CPSfgMenu}!registerClientScripts@{registerClientScripts}}
+\index{registerClientScripts@{registerClientScripts}!CPSfgMenu@{CPSfgMenu}}
+\subsubsection[{registerClientScripts}]{\setlength{\rightskip}{0pt plus 5cm}registerClientScripts (
+\begin{DoxyParamCaption}
+\item[{\$}]{ bLocateScript = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSfgMenu_ac02a66bde8e72e4909137bf748edf665}
+Registers the needed CSS and JavaScript. 
+\begin{DoxyParams}{Parameters}
+\item[{\em boolean}]If true, system will try to find jquery plugins based on the pattern jquery.$<$plugin-\/name\mbox{[}.min\mbox{]}.js \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+CClientScript The current app's ClientScript object 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSjqUIWrapper_ac02a66bde8e72e4909137bf748edf665}{CPSjqUIWrapper}.
+
+
+
+Definition at line 84 of file CPSfgMenu.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Daddy...
+        parent::registerClientScripts( $bLocateScript );
+        
+        //  Reset the baseUrl for our own scripts
+        $this->baseUrl = $this->extLibUrl . self::PS_EXTERNAL_PATH;
+
+        //  Register scripts necessary
+        $this->pushScriptFile( "{$this->baseUrl}/fg.menu.js" );
+
+        //  Register css files...
+        PS::_rcf( "{$this->baseUrl}/fg.menu.css" );
+        
+        return PS::_cs();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSfgMenu_ac02a66bde8e72e4909137bf748edf665_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSfgMenu_a8ccb5e1d65c091f944a6aa8c5be834ca}{
+\index{CPSfgMenu@{CPSfgMenu}!PS\_\-EXTERNAL\_\-PATH@{PS\_\-EXTERNAL\_\-PATH}}
+\index{PS\_\-EXTERNAL\_\-PATH@{PS\_\-EXTERNAL\_\-PATH}!CPSfgMenu@{CPSfgMenu}}
+\subsubsection[{PS\_\-EXTERNAL\_\-PATH}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PS\_\-EXTERNAL\_\-PATH} = '/jquery-\/plugins/fg-\/menu'}}
+\label{classCPSfgMenu_a8ccb5e1d65c091f944a6aa8c5be834ca}
+The path where the assets for this widget are stored (underneath the psYiiExtensions/external base 
+
+Reimplemented from \hyperlink{classCPSjqUIWrapper_a8ccb5e1d65c091f944a6aa8c5be834ca}{CPSjqUIWrapper}.
+
+
+
+Definition at line 38 of file CPSfgMenu.php.
+
+\hypertarget{classCPSfgMenu_ae357f9dc377f7de0d12010b2ced28cbc}{
+\index{CPSfgMenu@{CPSfgMenu}!PS\_\-WIDGET\_\-NAME@{PS\_\-WIDGET\_\-NAME}}
+\index{PS\_\-WIDGET\_\-NAME@{PS\_\-WIDGET\_\-NAME}!CPSfgMenu@{CPSfgMenu}}
+\subsubsection[{PS\_\-WIDGET\_\-NAME}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PS\_\-WIDGET\_\-NAME} = 'fg-\/menu'}}
+\label{classCPSfgMenu_ae357f9dc377f7de0d12010b2ced28cbc}
+The name of this widget 
+
+Reimplemented from \hyperlink{classCPSjqUIWrapper_ae357f9dc377f7de0d12010b2ced28cbc}{CPSjqUIWrapper}.
+
+
+
+Definition at line 33 of file CPSfgMenu.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/widgets/jqui/\hyperlink{CPSfgMenu_8php}{CPSfgMenu.php}\end{DoxyCompactItemize}

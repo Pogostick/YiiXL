@@ -1,0 +1,383 @@
+\hypertarget{classCPSjqGridWidget}{
+\section{CPSjqGridWidget Class Reference}
+\label{classCPSjqGridWidget}\index{CPSjqGridWidget@{CPSjqGridWidget}}
+}
+
+
+Inheritance diagram for CPSjqGridWidget:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCPSjqGridWidget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSjqGridWidget:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCPSjqGridWidget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSjqGridWidget_ac02a66bde8e72e4909137bf748edf665}{registerClientScripts} (\$bLocateScript=false)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSjqGridWidget_a0ffc269a208148ade57c7eb608a4562a}{create} (\$sName=null, \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array} \$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+static \hyperlink{classCPSjqGridWidget_a583388ee2bd227a35a8e7bd7d95badb2}{asXml} (\$oModel, \$oCriteria=null, \$arQSElems=null, \$bReturnString=false)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSjqGridWidget_acc5a32d52db57b80885add51c076ed42}{generateHtml} ()
+\item 
+\hyperlink{classCPSjqGridWidget_a2a2ea08f8240ed4c24058ab80ab89703}{generateJavascript} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file CPSjqGridWidget.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSjqGridWidget_a583388ee2bd227a35a8e7bd7d95badb2}{
+\index{CPSjqGridWidget@{CPSjqGridWidget}!asXml@{asXml}}
+\index{asXml@{asXml}!CPSjqGridWidget@{CPSjqGridWidget}}
+\subsubsection[{asXml}]{\setlength{\rightskip}{0pt plus 5cm}static asXml (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oModel, }
+\item[{\$}]{ oCriteria = {\ttfamily null}, }
+\item[{\$}]{ arQSElems = {\ttfamily null}, }
+\item[{\$}]{ bReturnString = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSjqGridWidget_a583388ee2bd227a35a8e7bd7d95badb2}
+Handles and formats the query and Xml output for a jqGrid
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em CModel}]\$oModel The model to use for the query \item[{\em CDbCriteria$|$string}]\$oCriteria Can be a full CDbCriteria object or a comma separated list of columns to \char`\"{}SELECT\char`\"{} \item[{\em array}]\$arQSElems The query string elements in array format. Must be in PAGE, ROWS, SORTCOLUMN, SORTORDER. Defaults to 'page', 'rows', 'sidx', 'sord' \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The Xml data for the grid 
+\end{DoxyReturn}
+
+
+Definition at line 122 of file CPSjqGridWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Defaults...
+        $_iPage = PS::o( $_REQUEST, 0, 1 );
+        $_iLimit = PS::o( $_REQUEST, 1, 25 );
+        $_iSortCol = PS::o( $_REQUEST, 2, 1 );
+        $_sSortOrder = PS::o( $_REQUEST, 3, 'asc' );
+        $_sSearchField = PS::o( $_REQUEST, 4 );
+        $_sSearchValue = PS::o( $_REQUEST, 5 );
+        $_sSearchOperator = PS::o( $_REQUEST, 6 );
+        $_arArgs = array( 'page', 'rows', 'sidx', 'sord', 'searchField', 'searchS
+      tring', 'searchOper' );
+
+        //  Use user argument naames?
+        if ( $arQSElems )
+        {
+            unset( $_arArgs );
+            $_arArgs = $arQSElems;
+        }
+
+        //  Get a count of rows for this result set
+        $_iRowCount = $oModel->count( $oCriteria );
+
+        //  Calculate paging info
+        $_iTotalPages = ( $_iRowCount > 0 ) ? ceil( $_iRowCount / $_iLimit ) : 0;
+      
+
+        //  Sanity checks
+        if ( $_iPage > $_iTotalPages ) $_iPage = $_iTotalPages;
+        if ( $_iPage < 1 ) $_iPage = 1;
+
+        //  Calculate starting offset
+        $_iStart = $_iLimit * $_iPage - $_iLimit;
+
+        //  Sanity check
+        if ( $_iStart < 0 ) $_iStart = 0;
+
+        //  Adjust the criteria for the actual query...
+        $_dbc = new CDbCriteria();
+
+        if ( $oCriteria instanceof CDbCriteria )
+            $_dbc->mergeWith( $oCriteria );
+        else if ( gettype( $oCriteria ) == 'string' )
+            $_dbc->select = $oCriteria;
+        
+        //  Handle search requests...
+        if ( $_sSearchField && $_sSearchValue && $_sSearchOperator )
+        {
+            $_sOrigSearchValue = $_sSearchValue;
+            
+            $_sCon = $_dbc->condition;
+            $_sCon .= ' and ' . $_sSearchField;
+            
+            if ( ! is_numeric( $_sSearchField ) )
+                $_sSearchValue = "'" . addslashes( $_sSearchValue ) . "'";
+
+            switch ( $_sSearchOperator )
+            {
+                case 'eq': $_sCon .= ' = '; break;
+                case 'ne': $_sCon .= ' <> '; break;
+                case 'lt': $_sCon .= ' < '; break;
+                case 'le': $_sCon .= ' <= '; break;
+                case 'gt': $_sCon .= ' > '; break;
+                case 'ge': $_sCon .= ' => '; break;
+                case 'bw': $_sCon .= ' LIKE '; $_sSearchValue = "'%" . addslashes
+      ( $_sOrigSearchValue ) . "'"; break;
+                case 'ew': $_sCon .= ' LIKE '; $_sSearchValue = "'" . addslashes(
+       $_sOrigSearchValue ) . "%'"; break;
+                case 'cn': $_sCon .= ' LIKE '; $_sSearchValue = "'%" . addslashes
+      ( $_sOrigSearchValue ) . "%'"; break;
+            }
+            
+            $_dbc->condition = $_sCon . $_sSearchValue;
+        }
+
+        $_dbc->order = "{$_iSortCol} {$_sSortOrder}";
+        $_dbc->limit = $_iLimit;
+        $_dbc->offset = $_iStart;
+        $_oRows = $oModel->findAll( $_dbc );
+
+        //  Set appropriate content type
+        if ( ! headers_sent() )
+        {
+            if ( stristr( $_SERVER[ 'HTTP_ACCEPT' ], "application/xhtml+xml" ) )
+                header( "Content-type: application/xhtml+xml;charset=utf-8" );
+            else
+                header( "Content-type: text/xml;charset=utf-8" );
+        }
+
+        //  Now create the Xml...
+        $_sOut = CPSTransform::asXml(
+            $_oRows,
+            array(
+                'jqGrid' => true,
+                'innerElements' => array(
+                    array( 'name' => 'page', 'type' => 'integer', 'value' => $_iP
+      age ),
+                    array( 'name' => 'total', 'type' => 'integer', 'value' => $_i
+      TotalPages ),
+                    array( 'name' => 'records', 'type' => 'integer', 'value' => $
+      _iRowCount ),
+                ),
+            )
+        );
+
+        //  Spit it out...
+        if ( ! $bReturnString )
+            echo "<?xml version='1.0' encoding='utf-8'?>" . $_sOut;
+        else
+            return( "<?xml version='1.0' encoding='utf-8'?>" . $_sOut );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSjqGridWidget_a0ffc269a208148ade57c7eb608a4562a}{
+\index{CPSjqGridWidget@{CPSjqGridWidget}!create@{create}}
+\index{create@{create}!CPSjqGridWidget@{CPSjqGridWidget}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static create (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sName = {\ttfamily null}, }
+\item[{{\bf array} \$}]{ arOptions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSjqGridWidget_a0ffc269a208148ade57c7eb608a4562a}
+Constructs and returns a jQuery widget
+
+The options passed in are dynamically added to the options array and will be accessible and modifiable as normal (.i.e. \$this-\/$>$theme, \$this-\/$>$baseUrl, etc.)
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arOptions The options for the widget \item[{\em string}]\$sClass The class of the calling object if different \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCPSjqGridWidget}{CPSjqGridWidget} 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSjqUIWrapper_a0ffc269a208148ade57c7eb608a4562a}{CPSjqUIWrapper}.
+
+
+
+Definition at line 109 of file CPSjqGridWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return parent::create( PS::nvl( $sName, self::PS_WIDGET_NAME ), array_mer
+      ge( $arOptions, array( 'class' => __CLASS__ ) ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSjqGridWidget_acc5a32d52db57b80885add51c076ed42}{
+\index{CPSjqGridWidget@{CPSjqGridWidget}!generateHtml@{generateHtml}}
+\index{generateHtml@{generateHtml}!CPSjqGridWidget@{CPSjqGridWidget}}
+\subsubsection[{generateHtml}]{\setlength{\rightskip}{0pt plus 5cm}generateHtml (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSjqGridWidget_acc5a32d52db57b80885add51c076ed42}
+Generates the javascript code for the widget
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSWidget_acc5a32d52db57b80885add51c076ed42}{CPSWidget}.
+
+
+
+Definition at line 59 of file CPSjqGridWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sHtml =<<<CODE
+<table id="{$this->id}"></table>
+CODE;
+
+        if ( $_sPager = trim( $this->pager, '.#' ) )
+            $_sHtml .= '<div id="' . $_sPager . '"></div>';
+
+        return( $_sHtml );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSjqGridWidget_a2a2ea08f8240ed4c24058ab80ab89703}{
+\index{CPSjqGridWidget@{CPSjqGridWidget}!generateJavascript@{generateJavascript}}
+\index{generateJavascript@{generateJavascript}!CPSjqGridWidget@{CPSjqGridWidget}}
+\subsubsection[{generateJavascript}]{\setlength{\rightskip}{0pt plus 5cm}generateJavascript (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSjqGridWidget_a2a2ea08f8240ed4c24058ab80ab89703}
+Generates the javascript code for the widget
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSWidget_a2a2ea08f8240ed4c24058ab80ab89703}{CPSWidget}.
+
+
+
+Definition at line 76 of file CPSjqGridWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_id = $this->getId();
+
+        $_apiOptions = $this->getOption( 'apiOptions', array(), true );
+        $_arOptions = $this->makeOptions();
+
+        $this->script =<<<CODE
+jQuery('#{$_id}').jqGrid({$_arOptions});
+
+CODE;
+
+        if ( $_options = $_apiOptions->getValue() )
+        {
+            foreach ( $_options as $_key => $_option )
+                $this->script .= 'jQuery(\'#' . $_id . '\').jqGrid(\'' . $_key . 
+      '\',\'' . $this->pager . '\',' . json_encode( $_option ) . ');' . PHP_EOL;
+        }
+        else
+            $this->script .= 'jQuery(\'#' . $_id . '\').jqGrid(\'navGrid\',\'' . 
+      $this->pager . '\',{edit:false,add:false,del:false,search:true});' . PHP_EOL;
+
+        return $this->script;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSjqGridWidget_ac02a66bde8e72e4909137bf748edf665}{
+\index{CPSjqGridWidget@{CPSjqGridWidget}!registerClientScripts@{registerClientScripts}}
+\index{registerClientScripts@{registerClientScripts}!CPSjqGridWidget@{CPSjqGridWidget}}
+\subsubsection[{registerClientScripts}]{\setlength{\rightskip}{0pt plus 5cm}registerClientScripts (
+\begin{DoxyParamCaption}
+\item[{\$}]{ bLocateScript = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSjqGridWidget_ac02a66bde8e72e4909137bf748edf665}
+Registers the needed CSS and JavaScript. 
+\begin{DoxyParams}{Parameters}
+\item[{\em boolean}]If true, system will try to find jquery plugins based on the pattern jquery.$<$plugin-\/name\mbox{[}.min\mbox{]}.js \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+CClientScript The current app's ClientScript object 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSjqUIWrapper_ac02a66bde8e72e4909137bf748edf665}{CPSjqUIWrapper}.
+
+
+
+Definition at line 35 of file CPSjqGridWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Daddy...
+        parent::registerClientScripts( $bLocateScript );
+        
+        //  Register scripts necessary
+        $this->pushScriptFile( "{$this->extLibUrl}/jqGrid/js/i18n/grid.locale-en.
+      js" );
+        $this->pushScriptFile( "{$this->extLibUrl}/jqGrid/js/jquery.jqGrid.min.js
+      " );
+
+        //  Register css files...
+        PS::_rcf( "{$this->extLibUrl}/jqGrid/css/ui.jqgrid.css", 'screen' );
+        
+        return PS::_cs();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSjqGridWidget_ac02a66bde8e72e4909137bf748edf665_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/widgets/jqui/\hyperlink{CPSjqGridWidget_8php}{CPSjqGridWidget.php}\end{DoxyCompactItemize}

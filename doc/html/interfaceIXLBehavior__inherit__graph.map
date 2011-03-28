@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$classCXLActiveRecordBehavior.html" title="CXLActiveRecordBehavior The base class for all AR behaviors in the YiiXL system." alt="" coords="312,85,496,115"/>
+<area shape="rect" id="node13" href="$classCXLBehavior.html" title="CXLBehavior The base class for all non&#45;AR behaviors in the YiiXL system." alt="" coords="353,165,455,195"/>
+<area shape="rect" id="node2" href="$interfaceIXLComponent.html" title="IXLComponent" alt="" coords="5,139,120,168"/>
+<area shape="rect" id="node7" href="$classCXLDataTransformBehavior.html" title="CXLDataTransformBehavior." alt="" coords="545,5,740,35"/>
+<area shape="rect" id="node9" href="$classCXLSoftDeleteBehavior.html" title="CXLSoftDeleteBehavior" alt="" coords="557,59,728,88"/>
+<area shape="rect" id="node11" href="$classCXLTimeStampBehavior.html" title="CXLTimeStampBehavior" alt="" coords="556,112,729,141"/>
+<area shape="rect" id="node15" href="$classCXLActionControlBehavior.html" title="CXLActionControlBehavior Provides an alternative interface to configuring access to your actions..." alt="" coords="549,165,736,195"/>
+<area shape="rect" id="node17" href="$classCXLOAuthBehavior.html" title="CXLOAuthBehavior" alt="" coords="572,219,713,248"/>
+</map>

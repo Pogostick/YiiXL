@@ -1,0 +1,478 @@
+\hypertarget{classCXLLiveLogRoute}{
+\section{CXLLiveLogRoute Class Reference}
+\label{classCXLLiveLogRoute}\index{CXLLiveLogRoute@{CXLLiveLogRoute}}
+}
+
+
+Inheritance diagram for CXLLiveLogRoute:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCXLLiveLogRoute__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLLiveLogRoute:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCXLLiveLogRoute__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLLiveLogRoute_a122db96cedfc221cf187ce4328f992f7}{getDebugLevel} ()
+\item 
+\hyperlink{classCXLLiveLogRoute_a91ba7d911e2c3852a048f4022c45ec9e}{setDebugLevel} (\$value=false)
+\item 
+\hyperlink{classCXLLiveLogRoute_a1a49b8dded6e91a52e2fd07195d334da}{getOptions} ()
+\item 
+\hyperlink{classCXLLiveLogRoute_acc9683d3eaa74394ee82159398196ab8}{getExcludeCategories} ()
+\item 
+\hyperlink{classCXLLiveLogRoute_ad1fe56b8c471fa8818f46c39318f6373}{setExcludeCategories} (\$value)
+\item 
+\hyperlink{classCXLLiveLogRoute_af3edf920c9186a7479f274daaefb580b}{getCategoryWidth} ()
+\item 
+\hyperlink{classCXLLiveLogRoute_aca83de68fd6f754d3b9dcf265ff0be56}{setCategoryWidth} (\$value)
+\item 
+\hyperlink{classCXLLiveLogRoute_a6228d7e188b6c803663f67d4ea30aeda}{collectLogs} (\$logger, \$processLogs=false)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCXLLiveLogRoute_aa607ab5e557e6ebb60b85c5a20ad067f}{CLASS\_\-LOG\_\-TAG} = 'yiixl.core.components.logging.CXLLiveLogRoute'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLLiveLogRoute_a4ac809157dfd774390d8ea4b81223872}{processLogs} (\$logs=array())
+\item 
+\hyperlink{classCXLLiveLogRoute_ac9dde335d8302c5533f76115925722f9}{formatLogMessage} (\$message, \$level= 'I', \$category=null, \$time=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLLiveLogRoute_a6c76d7fa9253beae006eaaf4e3038ce9}{\$\_\-debugLevel} = false
+\item 
+\hyperlink{classCXLLiveLogRoute_a1bebdc689c84eee59ad24c77e5531762}{\$\_\-options}
+\item 
+\hyperlink{classCXLLiveLogRoute_a9c4b2e98f2d0c9401bc839d5104985ce}{\$\_\-excludeCategories} = array( )
+\item 
+\hyperlink{classCXLLiveLogRoute_a25c9edaf8b1a5b6a83f88f220356ad62}{\$\_\-categoryWidth} = 40
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCXLLiveLogRoute}{CXLLiveLogRoute} 
+
+Definition at line 20 of file CXLLiveLogRoute.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLLiveLogRoute_a6228d7e188b6c803663f67d4ea30aeda}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!collectLogs@{collectLogs}}
+\index{collectLogs@{collectLogs}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{collectLogs}]{\setlength{\rightskip}{0pt plus 5cm}collectLogs (
+\begin{DoxyParamCaption}
+\item[{\$}]{ logger, }
+\item[{\$}]{ processLogs = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLiveLogRoute_a6228d7e188b6c803663f67d4ea30aeda}
+Retrieves filtered log messages from logger for further processing. 
+\begin{DoxyParams}{Parameters}
+\item[{\em CLogger}]\$logger logger instance \item[{\em boolean}]\$processLogs whether to process the logs after they are collected from the logger. ALWAYS TRUE NOW! \end{DoxyParams}
+
+
+Definition at line 122 of file CXLLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    parent::collectLogs( $logger, true );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLLiveLogRoute_ac9dde335d8302c5533f76115925722f9}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!formatLogMessage@{formatLogMessage}}
+\index{formatLogMessage@{formatLogMessage}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{formatLogMessage}]{\setlength{\rightskip}{0pt plus 5cm}formatLogMessage (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ level = {\ttfamily 'I'}, }
+\item[{\$}]{ category = {\ttfamily null}, }
+\item[{\$}]{ time = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLLiveLogRoute_ac9dde335d8302c5533f76115925722f9}
+Formats a log message given different fields. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message message content \item[{\em integer}]\$level message level \item[{\em string}]\$category message category \item[{\em integer}]\$time timestamp \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string formatted message 
+\end{DoxyReturn}
+
+
+Definition at line 192 of file CXLLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( null === $time ) $time = time();
+
+    $level = strtoupper( $level[0] );
+
+    return @date( 'M d H:i:s', $time ) . ' [' . sprintf( '%-' . $this->_categoryW
+      idth . 's', $category ) . '] ' . ': <' . $level . '> ' . $message . PHP_EOL;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{classCXLLiveLogRoute_ac9dde335d8302c5533f76115925722f9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLiveLogRoute_af3edf920c9186a7479f274daaefb580b}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!getCategoryWidth@{getCategoryWidth}}
+\index{getCategoryWidth@{getCategoryWidth}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{getCategoryWidth}]{\setlength{\rightskip}{0pt plus 5cm}getCategoryWidth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLiveLogRoute_af3edf920c9186a7479f274daaefb580b}
+Get the minimum width of the category column in the log output \begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+
+
+Definition at line 99 of file CXLLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_categoryWidth;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLLiveLogRoute_a122db96cedfc221cf187ce4328f992f7}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!getDebugLevel@{getDebugLevel}}
+\index{getDebugLevel@{getDebugLevel}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{getDebugLevel}]{\setlength{\rightskip}{0pt plus 5cm}getDebugLevel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLiveLogRoute_a122db96cedfc221cf187ce4328f992f7}
+Gets the debug level \begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_a122db96cedfc221cf187ce4328f992f7}{IXLComponent}.
+
+
+
+Definition at line 62 of file CXLLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_debugLevel;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLLiveLogRoute_acc9683d3eaa74394ee82159398196ab8}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!getExcludeCategories@{getExcludeCategories}}
+\index{getExcludeCategories@{getExcludeCategories}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{getExcludeCategories}]{\setlength{\rightskip}{0pt plus 5cm}getExcludeCategories (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLiveLogRoute_acc9683d3eaa74394ee82159398196ab8}
+
+
+Definition at line 85 of file CXLLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_excludeCategories;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLLiveLogRoute_a1a49b8dded6e91a52e2fd07195d334da}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!getOptions@{getOptions}}
+\index{getOptions@{getOptions}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{getOptions}]{\setlength{\rightskip}{0pt plus 5cm}getOptions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLiveLogRoute_a1a49b8dded6e91a52e2fd07195d334da}
+Gets configuration options \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_a1a49b8dded6e91a52e2fd07195d334da}{IXLComponent}.
+
+
+
+Definition at line 80 of file CXLLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_options;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLLiveLogRoute_a4ac809157dfd774390d8ea4b81223872}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!processLogs@{processLogs}}
+\index{processLogs@{processLogs}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{processLogs}]{\setlength{\rightskip}{0pt plus 5cm}processLogs (
+\begin{DoxyParamCaption}
+\item[{\$}]{ logs = {\ttfamily array(~)}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLLiveLogRoute_a4ac809157dfd774390d8ea4b81223872}
+Writes log messages in files. 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$logs list of log messages \end{DoxyParams}
+
+
+Use \hyperlink{}{error\_\-log} facility to write out log entry
+
+
+
+Definition at line 135 of file CXLLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    try
+    {
+      $_logFile = $this->getLogPath() . DIRECTORY_SEPARATOR . $this->getLogFile()
+      ;
+
+      if ( @filesize( $_logFile ) > $this->getMaxFileSize() * 1024 ) $this->rotat
+      eFiles();
+
+      //  Write out the log entries
+      foreach ( $logs as $_log )
+      {
+        $_exclude = false;
+
+        //  Check out the exclusions
+        if ( !empty( $this->_excludeCategories ) )
+        {
+          foreach ( $this->_excludeCategories as $_category )
+          {
+            //  If found, we skip
+            if ( trim( strtolower( $_category ) ) == trim( strtolower( $_log[2] )
+       ) )
+            {
+              $_exclude = true;
+              break;
+            }
+
+            //  Check for regex
+            if ( '/' == $_category[0] && 0 != @preg_match( $_category, $_log[2] )
+       )
+            {
+              $_exclude = true;
+              break;
+            }
+          }
+        }
+
+        if ( !$_exclude ) error_log( $this->formatLogMessage( $_log[0], $_log[1],
+       $_log[2], $_log[3] ), 3, $_logFile );
+      }
+
+      //  Processed, clear!
+      $this->logs = null;
+    }
+    catch ( Exception $_ex )
+    {
+      error_log( __METHOD__ . ': Exception processing application logs: ' . $_ex-
+      >getMessage() );
+    }
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{classCXLLiveLogRoute_a4ac809157dfd774390d8ea4b81223872_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLiveLogRoute_aca83de68fd6f754d3b9dcf265ff0be56}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!setCategoryWidth@{setCategoryWidth}}
+\index{setCategoryWidth@{setCategoryWidth}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{setCategoryWidth}]{\setlength{\rightskip}{0pt plus 5cm}setCategoryWidth (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLiveLogRoute_aca83de68fd6f754d3b9dcf265ff0be56}
+Set the minimum width of the category column in the log output \begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+
+
+Definition at line 108 of file CXLLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_categoryWidth = $value;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLLiveLogRoute_a91ba7d911e2c3852a048f4022c45ec9e}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!setDebugLevel@{setDebugLevel}}
+\index{setDebugLevel@{setDebugLevel}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{setDebugLevel}]{\setlength{\rightskip}{0pt plus 5cm}setDebugLevel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLiveLogRoute_a91ba7d911e2c3852a048f4022c45ec9e}
+Sets the debug level 
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]The new debug level \end{DoxyParams}
+
+
+Implements \hyperlink{interfaceIXLComponent_a91ba7d911e2c3852a048f4022c45ec9e}{IXLComponent}.
+
+
+
+Definition at line 71 of file CXLLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_debugLevel = $value;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLLiveLogRoute_ad1fe56b8c471fa8818f46c39318f6373}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!setExcludeCategories@{setExcludeCategories}}
+\index{setExcludeCategories@{setExcludeCategories}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{setExcludeCategories}]{\setlength{\rightskip}{0pt plus 5cm}setExcludeCategories (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLiveLogRoute_ad1fe56b8c471fa8818f46c39318f6373}
+
+
+Definition at line 90 of file CXLLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_excludeCategories = $value;
+  }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLLiveLogRoute_a25c9edaf8b1a5b6a83f88f220356ad62}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!\$\_\-categoryWidth@{\$\_\-categoryWidth}}
+\index{\$\_\-categoryWidth@{\$\_\-categoryWidth}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{\$\_\-categoryWidth}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-categoryWidth = 40\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLLiveLogRoute_a25c9edaf8b1a5b6a83f88f220356ad62}
+
+
+Definition at line 52 of file CXLLiveLogRoute.php.
+
+\hypertarget{classCXLLiveLogRoute_a6c76d7fa9253beae006eaaf4e3038ce9}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!\$\_\-debugLevel@{\$\_\-debugLevel}}
+\index{\$\_\-debugLevel@{\$\_\-debugLevel}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{\$\_\-debugLevel}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-debugLevel = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLLiveLogRoute_a6c76d7fa9253beae006eaaf4e3038ce9}
+
+
+Definition at line 38 of file CXLLiveLogRoute.php.
+
+\hypertarget{classCXLLiveLogRoute_a9c4b2e98f2d0c9401bc839d5104985ce}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!\$\_\-excludeCategories@{\$\_\-excludeCategories}}
+\index{\$\_\-excludeCategories@{\$\_\-excludeCategories}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{\$\_\-excludeCategories}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-excludeCategories = array( )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLLiveLogRoute_a9c4b2e98f2d0c9401bc839d5104985ce}
+
+
+Definition at line 47 of file CXLLiveLogRoute.php.
+
+\hypertarget{classCXLLiveLogRoute_a1bebdc689c84eee59ad24c77e5531762}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!\$\_\-options@{\$\_\-options}}
+\index{\$\_\-options@{\$\_\-options}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{\$\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-options\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLLiveLogRoute_a1bebdc689c84eee59ad24c77e5531762}
+
+
+Definition at line 42 of file CXLLiveLogRoute.php.
+
+\hypertarget{classCXLLiveLogRoute_aa607ab5e557e6ebb60b85c5a20ad067f}{
+\index{CXLLiveLogRoute@{CXLLiveLogRoute}!CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}}
+\index{CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}!CXLLiveLogRoute@{CXLLiveLogRoute}}
+\subsubsection[{CLASS\_\-LOG\_\-TAG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CLASS\_\-LOG\_\-TAG} = 'yiixl.core.components.logging.CXLLiveLogRoute'}}
+\label{classCXLLiveLogRoute_aa607ab5e557e6ebb60b85c5a20ad067f}
+Our logging tag 
+
+Definition at line 29 of file CXLLiveLogRoute.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLLiveLogRoute_8php}{CXLLiveLogRoute.php}\end{DoxyCompactItemize}

@@ -1,0 +1,33 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSMenuHelper.html#a1423d1c85867a2f1f6dbf77a0c051b41" title="CPSMenuHelper::buildMenuBlock" alt="" coords="493,126,725,155"/>
+<area shape="rect" id="node5" href="$classCPSMenuHelper.html#a5c720cd125d4437d4ed589278a75046c" title="CPSMenuHelper::buildMenuFromArray" alt="" coords="843,100,1107,130"/>
+<area shape="rect" id="node8" href="$classCPSWidget.html#af09cbabc6ce2c1d9d9efb7ae308ea0f3" title="CPSWidget::create" alt="" coords="173,230,312,259"/>
+<area shape="rect" id="node10" href="$classCPSWidgetFactory.html#a9ccf7fcc2084becc6d283fbd6ff5a86c" title="CPSWidgetFactory::createWidget" alt="" coords="129,283,356,312"/>
+<area shape="rect" id="node12" href="$classCPSDeltaChangeBehavior.html#a1c2c686604b1f1efb3677252be1b8733" title="CPSDeltaChangeBehavior::getLastAttribute" alt="" coords="93,336,392,366"/>
+<area shape="rect" id="node20" href="$classCPSMenuHelper.html#a93c7eb2cf15e5371d6671031a60629e8" title="CPSMenuHelper::getMenuLink" alt="" coords="136,126,349,155"/>
+<area shape="rect" id="node23" href="$classCPSHelperBase.html#a53defc41ed9a31f73c09a9f18eb17ffc" title="getOption" alt="" coords="200,390,285,419"/>
+<area shape="rect" id="node25" href="$classCPSOption.html#a8803b9be3676330a9791b823d0d3f5f6" title="CPSOption::getRule" alt="" coords="171,443,315,472"/>
+<area shape="rect" id="node57" href="$classCPSRestBehavior.html#ad63fb44302b80922988514238a32e6fa" title="CPSRestBehavior::hasAction" alt="" coords="141,550,344,579"/>
+<area shape="rect" id="node59" href="$classCPSWebModule.html#a4be4055f3361d4800e16bc2e2e38cda6" title="CPSWebModule::init" alt="" coords="169,603,316,632"/>
+<area shape="rect" id="node61" href="$classCPSHelperBase.html#a70efdcf232533bf1c9203417a0a489c7" title="oo" alt="" coords="224,656,261,686"/>
+<area shape="rect" id="node63" href="$classCPSOptionHelper.html#af245193a05c6d9de1d9fec6239b9b14b" title="CPSOptionHelper::parseRulePattern" alt="" coords="119,496,367,526"/>
+<area shape="rect" id="node68" href="$classCPSHelperBase.html#ae33c0f1f71a849e8a3df5d8d698ffb21" title="uo" alt="" coords="224,710,261,739"/>
+<area shape="rect" id="node14" href="$classCPSDeltaChangeBehavior.html#a8d728243619642ee44cfbc3f0e797db2" title="CPSDeltaChangeBehavior::checkAttributeChange" alt="" coords="441,234,777,263"/>
+<area shape="rect" id="node16" href="$classCPSDeltaChangeBehavior.html#a9dc74e0ca5d3d8445a1e885ba84ae2fa" title="CPSDeltaChangeBehavior::didChange" alt="" coords="844,259,1105,288"/>
+<area shape="rect" id="node18" href="$classCPSDeltaChangeBehavior.html#abfaf3d0327b6956525bb041380b0b939" title="CPSDeltaChangeBehavior::getChangedSet" alt="" coords="828,206,1121,235"/>
+<area shape="rect" id="node27" href="$classCPSOption.html#adf60de89939a47330ff3273b62a7d60c" title="CPSOption::getAllowed" alt="" coords="892,563,1057,592"/>
+<area shape="rect" id="node31" href="$classCPSOption.html#af9b9401c63918169457fe8516324950f" title="CPSOption::getDefaultValue" alt="" coords="509,495,709,524"/>
+<area shape="rect" id="node44" href="$classCPSOption.html#a3028a37affd62d3f7fe0052a2df42c28" title="CPSOption::getExternalName" alt="" coords="504,548,715,578"/>
+<area shape="rect" id="node46" href="$classCPSOption.html#abfb7b68551a4c558d2fb5b25f1e5f7c5" title="CPSOption::getIsPrivate" alt="" coords="523,287,696,316"/>
+<area shape="rect" id="node48" href="$classCPSOption.html#ad21b6f2377a3af9fcacb3bd31451db2d" title="CPSOption::getIsRequired" alt="" coords="883,443,1067,472"/>
+<area shape="rect" id="node51" href="$classCPSOption.html#a2f1e46cc33a0f8eb5075dd312c3a189b" title="CPSOption::getOptionType" alt="" coords="880,339,1069,368"/>
+<area shape="rect" id="node54" href="$classCPSOption.html#af95d42816651ce87c91ac3df15b2cc63" title="CPSOption::isValidType" alt="" coords="527,391,692,420"/>
+<area shape="rect" id="node29" href="$classCPSOptionHelper.html#aea8660a7b4f4ad32037ce9660855bfec" title="CPSOptionHelper::checkOption" alt="" coords="1177,512,1396,542"/>
+<area shape="rect" id="node33" href="$classCPSOption.html#acadb0b05b1c434157e21e0551c2ca725" title="CPSOption::__construct" alt="" coords="889,640,1060,670"/>
+<area shape="rect" id="node35" href="$classCPSOption.html#aabb9562c82b18321ed0510932298be7c" title="CPSOption::getValue" alt="" coords="897,496,1052,526"/>
+<area shape="rect" id="node38" href="$classCPSOptionHelper.html#af1ecea04b9292bde2418a4608ed30197" title="CPSOptionHelper::validateOption" alt="" coords="1171,418,1403,447"/>
+<area shape="rect" id="node40" href="$classCPSOptionHelper.html#a1196dfb53b5a9c5b1865efd2678c0bb5" title="CPSOptionHelper::validateOptions" alt="" coords="1452,418,1689,447"/>
+<area shape="rect" id="node42" href="$classCPSOptionHelper.html#a40877d061316ed1f0bca467b4e86a1b5" title="CPSOptionHelper::makeOptions" alt="" coords="1740,418,1964,447"/>
+<area shape="rect" id="node65" href="$classCPSOption.html#af26f441186ec53723e892616baec1c73" title="CPSOption::setRules" alt="" coords="535,652,684,682"/>
+<area shape="rect" id="node70" href="$classCPSHelperBase.html#ac92539436befc39865effc42a120759f" title="unsetOption" alt="" coords="560,710,659,739"/>
+</map>

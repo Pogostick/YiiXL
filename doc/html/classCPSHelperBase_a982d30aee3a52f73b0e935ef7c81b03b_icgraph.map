@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSHelperBase.html#a9fcce4225d8f12cbd7edcf81b27b8f42" title="registerScript" alt="" coords="157,59,264,88"/>
+<area shape="rect" id="node5" href="$classCPSWidget.html#a196225b59cf30535180836cdac821edb" title="CPSWidget::registerWidgetScript" alt="" coords="97,112,324,141"/>
+<area shape="rect" id="node7" href="$classCPSjqUIWrapper.html#ac02a66bde8e72e4909137bf748edf665" title="CPSjqUIWrapper::registerClientScripts" alt="" coords="399,5,660,35"/>
+<area shape="rect" id="node9" href="$classCPSjqRatingWidget.html#a59080ee7d7949e19f5af41e26ff53806" title="CPSjqRatingWidget::registerClientScripts" alt="" coords="391,59,668,88"/>
+<area shape="rect" id="node13" href="$classCPSMcDropdownWidget.html#ac02a66bde8e72e4909137bf748edf665" title="CPSMcDropdownWidget::registerClientScripts" alt="" coords="375,112,684,141"/>
+<area shape="rect" id="node15" href="$classCPSMarkItUpWidget.html#ac02a66bde8e72e4909137bf748edf665" title="CPSMarkItUpWidget::registerClientScripts" alt="" coords="387,165,672,195"/>
+<area shape="rect" id="node17" href="$classCPSjQueryWidget.html#a79bf828ed852174a56c4db5ef918a83c" title="CPSjQueryWidget::registerClientScripts" alt="" coords="395,219,664,248"/>
+<area shape="rect" id="node11" href="$classCPSjqRatingWidget.html#afb0fafe7e02a3ae1993c01c19fad2bae" title="CPSjqRatingWidget::run" alt="" coords="733,59,904,88"/>
+</map>

@@ -1,0 +1,21 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSjqUIWrapper.html#ac02a66bde8e72e4909137bf748edf665" title="CPSjqUIWrapper::registerClientScripts" alt="" coords="200,5,461,35"/>
+<area shape="rect" id="node5" href="$classCPSjqGridWidget.html#ac02a66bde8e72e4909137bf748edf665" title="CPSjqGridWidget::registerClientScripts" alt="" coords="199,59,463,88"/>
+<area shape="rect" id="node7" href="$classCPSfgMenu.html#ac02a66bde8e72e4909137bf748edf665" title="CPSfgMenu::registerClientScripts" alt="" coords="215,112,447,141"/>
+<area shape="rect" id="node9" href="$classCPSjqRatingWidget.html#a59080ee7d7949e19f5af41e26ff53806" title="CPSjqRatingWidget::registerClientScripts" alt="" coords="192,165,469,195"/>
+<area shape="rect" id="node13" href="$classCPSgApiWidget.html#a59080ee7d7949e19f5af41e26ff53806" title="CPSgApiWidget::registerClientScripts" alt="" coords="203,219,459,248"/>
+<area shape="rect" id="node17" href="$classCPSWysiwygWidget.html#ac02a66bde8e72e4909137bf748edf665" title="CPSWysiwygWidget::registerClientScripts" alt="" coords="191,272,471,301"/>
+<area shape="rect" id="node19" href="$classCPSMcDropdownWidget.html#ac02a66bde8e72e4909137bf748edf665" title="CPSMcDropdownWidget::registerClientScripts" alt="" coords="176,325,485,355"/>
+<area shape="rect" id="node21" href="$classCPSMarkItUpWidget.html#ac02a66bde8e72e4909137bf748edf665" title="CPSMarkItUpWidget::registerClientScripts" alt="" coords="188,379,473,408"/>
+<area shape="rect" id="node23" href="$classCPSjqValidate.html#ac02a66bde8e72e4909137bf748edf665" title="CPSjqValidate::registerClientScripts" alt="" coords="208,432,453,461"/>
+<area shape="rect" id="node25" href="$classCPSjQueryWidget.html#a79bf828ed852174a56c4db5ef918a83c" title="CPSjQueryWidget::registerClientScripts" alt="" coords="196,485,465,515"/>
+<area shape="rect" id="node27" href="$classCPSjqToolsWrapper.html#ac02a66bde8e72e4909137bf748edf665" title="CPSjqToolsWrapper::registerClientScripts" alt="" coords="192,539,469,568"/>
+<area shape="rect" id="node29" href="$classCPSjqSelectMenu.html#ac02a66bde8e72e4909137bf748edf665" title="CPSjqSelectMenu::registerClientScripts" alt="" coords="196,592,465,621"/>
+<area shape="rect" id="node31" href="$classCPSjqMaskedInputWrapper.html#ac02a66bde8e72e4909137bf748edf665" title="CPSjqMaskedInputWrapper::registerClientScripts" alt="" coords="167,645,495,675"/>
+<area shape="rect" id="node33" href="$classCPSjqAchtung.html#ac02a66bde8e72e4909137bf748edf665" title="CPSjqAchtung::registerClientScripts" alt="" coords="207,699,455,728"/>
+<area shape="rect" id="node35" href="$classCPSCKEditorWidget.html#ac02a66bde8e72e4909137bf748edf665" title="CPSCKEditorWidget::registerClientScripts" alt="" coords="189,752,472,781"/>
+<area shape="rect" id="node37" href="$classCPSFacebookConnect.html#a59080ee7d7949e19f5af41e26ff53806" title="CPSFacebookConnect::registerClientScripts" alt="" coords="181,805,480,835"/>
+<area shape="rect" id="node11" href="$classCPSjqRatingWidget.html#afb0fafe7e02a3ae1993c01c19fad2bae" title="CPSjqRatingWidget::run" alt="" coords="555,165,725,195"/>
+<area shape="rect" id="node15" href="$classCPSgApiWidget.html#afb0fafe7e02a3ae1993c01c19fad2bae" title="CPSgApiWidget::run" alt="" coords="567,219,713,248"/>
+<area shape="rect" id="node39" href="$classCPSFacebookConnect.html#afb0fafe7e02a3ae1993c01c19fad2bae" title="CPSFacebookConnect::run" alt="" coords="545,805,735,835"/>
+</map>

@@ -1,0 +1,208 @@
+\hypertarget{classCPSWysiwygWidget}{
+\section{CPSWysiwygWidget Class Reference}
+\label{classCPSWysiwygWidget}\index{CPSWysiwygWidget@{CPSWysiwygWidget}}
+}
+
+
+Inheritance diagram for CPSWysiwygWidget:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classCPSWysiwygWidget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSWysiwygWidget:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classCPSWysiwygWidget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSWysiwygWidget_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSWysiwygWidget_ac02a66bde8e72e4909137bf748edf665}{registerClientScripts} (\$bLocateScript=false)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSWysiwygWidget_a0ffc269a208148ade57c7eb608a4562a}{create} (\$sName=null, \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array} \$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSWysiwygWidget_ae357f9dc377f7de0d12010b2ced28cbc}{PS\_\-WIDGET\_\-NAME} = 'wysiwyg'
+\item 
+const \hyperlink{classCPSWysiwygWidget_a8ccb5e1d65c091f944a6aa8c5be834ca}{PS\_\-EXTERNAL\_\-PATH} = '/jquery-\/plugins/wysiwyg'
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSWysiwygWidget.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSWysiwygWidget_a0ffc269a208148ade57c7eb608a4562a}{
+\index{CPSWysiwygWidget@{CPSWysiwygWidget}!create@{create}}
+\index{create@{create}!CPSWysiwygWidget@{CPSWysiwygWidget}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static create (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sName = {\ttfamily null}, }
+\item[{{\bf array} \$}]{ arOptions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSWysiwygWidget_a0ffc269a208148ade57c7eb608a4562a}
+Constructs and returns a jQuery widget
+
+The options passed in are dynamically added to the options array and will be accessible and modifiable as normal (.i.e. \$this-\/$>$theme, \$this-\/$>$baseUrl, etc.)
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arOptions The options for the widget \item[{\em string}]\$sClass The class of the calling object if different \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCPSjqGridWidget}{CPSjqGridWidget} 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSjqUIWrapper_a0ffc269a208148ade57c7eb608a4562a}{CPSjqUIWrapper}.
+
+
+
+Definition at line 84 of file CPSWysiwygWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return parent::create( PS::nvl( $sName, self::PS_WIDGET_NAME ), array_mer
+      ge( $arOptions, array( 'class' => __CLASS__ ) ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWysiwygWidget_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSWysiwygWidget@{CPSWysiwygWidget}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSWysiwygWidget@{CPSWysiwygWidget}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWysiwygWidget_a2dc262e99b1c246b56f27626bfe699ff}
+Initialize 
+
+Reimplemented from \hyperlink{classCPSjqUIWrapper_a2dc262e99b1c246b56f27626bfe699ff}{CPSjqUIWrapper}.
+
+
+
+Definition at line 46 of file CPSWysiwygWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Call daddy
+        parent::preinit();
+        
+        //  Set the default widgetName
+        $this->widgetName = self::PS_WIDGET_NAME;
+    }       
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWysiwygWidget_ac02a66bde8e72e4909137bf748edf665}{
+\index{CPSWysiwygWidget@{CPSWysiwygWidget}!registerClientScripts@{registerClientScripts}}
+\index{registerClientScripts@{registerClientScripts}!CPSWysiwygWidget@{CPSWysiwygWidget}}
+\subsubsection[{registerClientScripts}]{\setlength{\rightskip}{0pt plus 5cm}registerClientScripts (
+\begin{DoxyParamCaption}
+\item[{\$}]{ bLocateScript = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWysiwygWidget_ac02a66bde8e72e4909137bf748edf665}
+Registers the needed CSS and JavaScript. 
+\begin{DoxyParams}{Parameters}
+\item[{\em boolean}]If true, system will try to find jquery plugins based on the pattern jquery.$<$plugin-\/name\mbox{[}.min\mbox{]}.js \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+CClientScript The current app's ClientScript object 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSjqUIWrapper_ac02a66bde8e72e4909137bf748edf665}{CPSjqUIWrapper}.
+
+
+
+Definition at line 60 of file CPSWysiwygWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Daddy...
+        parent::registerClientScripts( $bLocateScript );
+        
+        //  Reset the baseUrl for our own scripts
+        $this->baseUrl = $this->extLibUrl . self::PS_EXTERNAL_PATH;
+    
+        $this->pushScriptFile( "{$this->baseUrl}/jquery.wysiwyg.js" );
+        PS::_rcf( "{$this->baseUrl}/jquery.wysiwyg.css" );
+        
+        return PS::_cs();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWysiwygWidget_ac02a66bde8e72e4909137bf748edf665_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSWysiwygWidget_a8ccb5e1d65c091f944a6aa8c5be834ca}{
+\index{CPSWysiwygWidget@{CPSWysiwygWidget}!PS\_\-EXTERNAL\_\-PATH@{PS\_\-EXTERNAL\_\-PATH}}
+\index{PS\_\-EXTERNAL\_\-PATH@{PS\_\-EXTERNAL\_\-PATH}!CPSWysiwygWidget@{CPSWysiwygWidget}}
+\subsubsection[{PS\_\-EXTERNAL\_\-PATH}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PS\_\-EXTERNAL\_\-PATH} = '/jquery-\/plugins/wysiwyg'}}
+\label{classCPSWysiwygWidget_a8ccb5e1d65c091f944a6aa8c5be834ca}
+The path where the assets for this widget are stored (underneath the psYiiExtensions/external base 
+
+Reimplemented from \hyperlink{classCPSjqUIWrapper_a8ccb5e1d65c091f944a6aa8c5be834ca}{CPSjqUIWrapper}.
+
+
+
+Definition at line 36 of file CPSWysiwygWidget.php.
+
+\hypertarget{classCPSWysiwygWidget_ae357f9dc377f7de0d12010b2ced28cbc}{
+\index{CPSWysiwygWidget@{CPSWysiwygWidget}!PS\_\-WIDGET\_\-NAME@{PS\_\-WIDGET\_\-NAME}}
+\index{PS\_\-WIDGET\_\-NAME@{PS\_\-WIDGET\_\-NAME}!CPSWysiwygWidget@{CPSWysiwygWidget}}
+\subsubsection[{PS\_\-WIDGET\_\-NAME}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PS\_\-WIDGET\_\-NAME} = 'wysiwyg'}}
+\label{classCPSWysiwygWidget_ae357f9dc377f7de0d12010b2ced28cbc}
+The name of this widget 
+
+Reimplemented from \hyperlink{classCPSjqUIWrapper_ae357f9dc377f7de0d12010b2ced28cbc}{CPSjqUIWrapper}.
+
+
+
+Definition at line 31 of file CPSWysiwygWidget.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/widgets/\hyperlink{CPSWysiwygWidget_8php}{CPSWysiwygWidget.php}\end{DoxyCompactItemize}

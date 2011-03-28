@@ -1,0 +1,221 @@
+\hypertarget{classCPSDataList}{
+\section{CPSDataList Class Reference}
+\label{classCPSDataList}\index{CPSDataList@{CPSDataList}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSDataList_af8ad9ff1a49c4c522a8c7823d03e0785}{create} (\$sDataName, \$oModel, \$arColumns=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$arActions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+static \hyperlink{classCPSDataList_a22bdd6eac785a6ad5ce1231f56955c7a}{getDataListRows} (\$oModel, \$arColumns=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSDataList_ae36b6e416bd99d1b240570c2e51624f2}{linkTransform} (\$oModel, \$sColumn)
+\item 
+static \hyperlink{classCPSDataList_a7868e4696a97c2cb65781218abbb4a9f}{boolTransform} (\$oModel, \$sColumn)
+\item 
+static \hyperlink{classCPSDataList_a25508a36959b2176c90f297814aba604}{timeTransform} (\$oModel, \$sColumn)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSDataList_a02daa717c378ec40ccd5c56792be79b6}{\$m\_\-arTransform}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSDataList.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSDataList_a7868e4696a97c2cb65781218abbb4a9f}{
+\index{CPSDataList@{CPSDataList}!boolTransform@{boolTransform}}
+\index{boolTransform@{boolTransform}!CPSDataList@{CPSDataList}}
+\subsubsection[{boolTransform}]{\setlength{\rightskip}{0pt plus 5cm}static boolTransform (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oModel, }
+\item[{\$}]{ sColumn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSDataList_a7868e4696a97c2cb65781218abbb4a9f}
+
+
+Definition at line 97 of file CPSDataList.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sColumn = substr( $sColumn, 1 );
+        $_oValue = $oModel->{$_sColumn};
+        $_oValue = ( ! $_oValue || $_oValue = 'N' || $_oValue = 'n' || $_oValue =
+      = 0 ) ? 'No' : 'Yes';
+        return array( $_sColumn, $_oValue, false );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDataList_af8ad9ff1a49c4c522a8c7823d03e0785}{
+\index{CPSDataList@{CPSDataList}!create@{create}}
+\index{create@{create}!CPSDataList@{CPSDataList}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static create (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sDataName, }
+\item[{\$}]{ oModel, }
+\item[{\$}]{ arColumns = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ arActions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSDataList_af8ad9ff1a49c4c522a8c7823d03e0785}
+
+
+Definition at line 43 of file CPSDataList.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return CHtml::tag( 'table', array( 'class' => 'dataGrid' ), self::getData
+      ListRows( $oModel, $arColumns ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDataList_a22bdd6eac785a6ad5ce1231f56955c7a}{
+\index{CPSDataList@{CPSDataList}!getDataListRows@{getDataListRows}}
+\index{getDataListRows@{getDataListRows}!CPSDataList@{CPSDataList}}
+\subsubsection[{getDataListRows}]{\setlength{\rightskip}{0pt plus 5cm}static getDataListRows (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oModel, }
+\item[{\$}]{ arColumns = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSDataList_a22bdd6eac785a6ad5ce1231f56955c7a}
+
+
+Definition at line 58 of file CPSDataList.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sActions = $_bValue = $_sTD = $_sOut = null;
+        $_sPK = $oModel->getTableSchema()->primaryKey;
+            
+        //  Build columns
+        foreach ( $arColumns as $_sColumn )
+        {
+            $_bLink = false;
+            $_oValue = null;
+
+            foreach ( self::$m_arTransform as $_sChar => $_sMethod )
+            {
+                if ( $_sColumn{0} == $_sChar )
+                {
+                    list( $_sColumn, $_oValue, $_bLink ) = self::$_sMethod( $oMod
+      el, $_sColumn );
+                    break;
+                }
+            }
+
+            if ( ! $_oValue ) $_oValue = $oModel->{$_sColumn};
+                
+            $_oValue = ( $_bLink || $_sPK == $_sColumn ) ?
+                CHtml::link( $_oValue, array( 'update', $_sPK => $oModel->{$_sPK}
+       ) ) 
+                :
+                CHtml::encode( $_oValue );
+
+            $_sOut .= '<tr><th class="label">' . CHtml::encode( $oModel->getAttri
+      buteLabel( $_sColumn ) ) . '</th><td>' . $_oValue . '</td></tr>';
+        }
+            
+        return $_sOut;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDataList_ae36b6e416bd99d1b240570c2e51624f2}{
+\index{CPSDataList@{CPSDataList}!linkTransform@{linkTransform}}
+\index{linkTransform@{linkTransform}!CPSDataList@{CPSDataList}}
+\subsubsection[{linkTransform}]{\setlength{\rightskip}{0pt plus 5cm}static linkTransform (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oModel, }
+\item[{\$}]{ sColumn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSDataList_ae36b6e416bd99d1b240570c2e51624f2}
+
+
+Definition at line 91 of file CPSDataList.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sColumn = substr( $sColumn, 1 );
+        return array( $_sColumn, null, true );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDataList_a25508a36959b2176c90f297814aba604}{
+\index{CPSDataList@{CPSDataList}!timeTransform@{timeTransform}}
+\index{timeTransform@{timeTransform}!CPSDataList@{CPSDataList}}
+\subsubsection[{timeTransform}]{\setlength{\rightskip}{0pt plus 5cm}static timeTransform (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oModel, }
+\item[{\$}]{ sColumn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSDataList_a25508a36959b2176c90f297814aba604}
+
+
+Definition at line 105 of file CPSDataList.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sColumn = substr( $sColumn, 1 );
+        $_oValue = date( "F d, Y", $oModel->{$_sColumn} );
+        return array( $_sColumn, $_oValue, false );
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSDataList_a02daa717c378ec40ccd5c56792be79b6}{
+\index{CPSDataList@{CPSDataList}!\$m\_\-arTransform@{\$m\_\-arTransform}}
+\index{\$m\_\-arTransform@{\$m\_\-arTransform}!CPSDataList@{CPSDataList}}
+\subsubsection[{\$m\_\-arTransform}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-arTransform\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSDataList_a02daa717c378ec40ccd5c56792be79b6}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ array(
+        '@' => 'linkTransform',
+        '?' => 'boolTransform',
+        '#' => 'timeTransform',
+    )
+\end{DoxyCode}
+
+
+Definition at line 33 of file CPSDataList.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/widgets/\hyperlink{CPSDataList_8php}{CPSDataList.php}\end{DoxyCompactItemize}

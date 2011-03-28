@@ -1,0 +1,77 @@
+\hypertarget{classCPSRESTAction}{
+\section{CPSRESTAction Class Reference}
+\label{classCPSRESTAction}\index{CPSRESTAction@{CPSRESTAction}}
+}
+
+
+Inheritance diagram for CPSRESTAction:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classCPSRESTAction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSRESTAction:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classCPSRESTAction__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSRESTAction_afb0fafe7e02a3ae1993c01c19fad2bae}{run} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 23 of file CPSRESTAction.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSRESTAction_afb0fafe7e02a3ae1993c01c19fad2bae}{
+\index{CPSRESTAction@{CPSRESTAction}!run@{run}}
+\index{run@{run}!CPSRESTAction@{CPSRESTAction}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSRESTAction_afb0fafe7e02a3ae1993c01c19fad2bae}
+Runs the REST action. 
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CHttpException}]\end{DoxyExceptions}
+
+
+Definition at line 33 of file CPSRESTAction.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_oController = $this->getController();
+        
+        if ( ! ( $_oController instanceof IPSRest ) )
+        {
+            $_oController->missingAction( $this->getId() );
+            return;
+        }
+        
+        //  Call the controllers dispatch method...
+        $_oController->dispatchRequest( $this );
+    }
+\end{DoxyCode}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/base/\hyperlink{CPSRESTAction_8php}{CPSRESTAction.php}\end{DoxyCompactItemize}

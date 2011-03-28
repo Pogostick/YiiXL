@@ -1,0 +1,317 @@
+\hypertarget{classCPSjqValidate}{
+\section{CPSjqValidate Class Reference}
+\label{classCPSjqValidate}\index{CPSjqValidate@{CPSjqValidate}}
+}
+
+
+Inheritance diagram for CPSjqValidate:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCPSjqValidate__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSjqValidate:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCPSjqValidate__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSjqValidate_ac02a66bde8e72e4909137bf748edf665}{registerClientScripts} (\$bLocateScript=false)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSjqValidate_a0ffc269a208148ade57c7eb608a4562a}{create} (\$sName=null, \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array} \$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSjqValidate_ae357f9dc377f7de0d12010b2ced28cbc}{PS\_\-WIDGET\_\-NAME} = 'validate'
+\item 
+const \hyperlink{classCPSjqValidate_a8ccb5e1d65c091f944a6aa8c5be834ca}{PS\_\-EXTERNAL\_\-PATH} = '/jquery-\/plugins/validate'
+\item 
+const \hyperlink{classCPSjqValidate_a2f10f690c9bdb966a20b0c1fedd4e9d7}{CDN\_\-ROOT} = 'http://ajax.microsoft.com/ajax/jquery.validate/1.7'
+\item 
+const \hyperlink{classCPSjqValidate_a66a542d2b3dc21378203a6c741b80b28}{CDN\_\-SSL\_\-ROOT} = 'https://ajax.microsoft.com/ajax/jquery.validate/1.7'
+\item 
+const \hyperlink{classCPSjqValidate_a25f81b1e2d2ce6f2521bc8c4c4877382}{CDN\_\-PATH} = 'http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js'
+\item 
+const \hyperlink{classCPSjqValidate_ae2b9c6713d89ec8f2d3d7ab20e74c9c5}{CDN\_\-SSL\_\-PATH} = 'https://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSjqValidate_a273c0dc58b59db25cfd5a37561bccec5}{generateJavascript} (\$sTargetSelector=null, \$arOptions=null, \$sInsertBeforeOptions=null)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSjqValidate.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSjqValidate_a0ffc269a208148ade57c7eb608a4562a}{
+\index{CPSjqValidate@{CPSjqValidate}!create@{create}}
+\index{create@{create}!CPSjqValidate@{CPSjqValidate}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static create (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sName = {\ttfamily null}, }
+\item[{{\bf array} \$}]{ arOptions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSjqValidate_a0ffc269a208148ade57c7eb608a4562a}
+Constructs and returns a jQuery Tools widget
+
+The options passed in are dynamically added to the options array and will be accessible and modifiable as normal (.i.e. \$this-\/$>$theme, \$this-\/$>$baseUrl, etc.)
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sName The widget name \item[{\em array}]\$arOptions The options for the widget \item[{\em string}]\$sClass The class of the calling object if different \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCPSjqMaskedInputWrapper}{CPSjqMaskedInputWrapper} 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSjQueryWidget_af09cbabc6ce2c1d9d9efb7ae308ea0f3}{CPSjQueryWidget}.
+
+
+
+Definition at line 85 of file CPSjqValidate.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return parent::create( PS::nvl( $sName, self::PS_WIDGET_NAME ), array_mer
+      ge( $arOptions, array( 'class' => __CLASS__ ) ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSjqValidate_a273c0dc58b59db25cfd5a37561bccec5}{
+\index{CPSjqValidate@{CPSjqValidate}!generateJavascript@{generateJavascript}}
+\index{generateJavascript@{generateJavascript}!CPSjqValidate@{CPSjqValidate}}
+\subsubsection[{generateJavascript}]{\setlength{\rightskip}{0pt plus 5cm}generateJavascript (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sTargetSelector = {\ttfamily null}, }
+\item[{\$}]{ arOptions = {\ttfamily null}, }
+\item[{\$}]{ sInsertBeforeOptions = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSjqValidate_a273c0dc58b59db25cfd5a37561bccec5}
+Generates the javascript code for the widget
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSjQueryWidget_ad50ca154583f36f93de20c14bc472209}{CPSjQueryWidget}.
+
+
+
+Definition at line 99 of file CPSjqValidate.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Don't screw with div formatting...
+        if ( ! empty( $arOptions ) && ! in_array( 'errorPlacement', $arOptions ) 
+      )
+            $arOptions['errorPlacement'] = 'function(error,element){error.appendT
+      o(element.parent("div"));}';
+        else
+        {
+            if ( empty( $this->errorPlacement ) || ! $this->hasOption( 'errorPlac
+      ement' ) )
+                $this->addOption( 'errorPlacement', 'function(error,element){erro
+      r.appendTo(element.parent("div"));}' );
+        }
+
+        //  Get the options...
+        $_arOptions = ( null != $arOptions ) ? $arOptions : $this->makeOptions();
+      
+        $_sId = $this->getTargetSelector( $sTargetSelector );
+        
+        //  Jam something in front of options?
+        if ( null != $sInsertBeforeOptions )
+        {
+            $_sOptions = $sInsertBeforeOptions;
+            if ( ! empty( $_arOptions ) ) $_sOptions .= ", {$_arOptions}";
+            $_arOptions = $_sOptions;
+        }
+
+        $_sValidate = '$.validator.addMethod( "phoneUS", function(phone_number, e
+      lement) { phone_number = phone_number.replace(/\s+/g, ""); return this.optional(e
+      lement) || phone_number.length > 9 && phone_number.match(/^(1[\s\.-]?)?(\([2-9]\d
+      {2}\)|[2-9]\d{2})[\s\.-]?[2-9]\d{2}[\s\.-]?\d{4}$/);}, "Please specify a valid ph
+      one number");';
+        $_sValidate .= '$.validator.addMethod( "postalcode", function(postalcode,
+       element) { return this.optional(element) || postalcode.match(/(^\d{5}(-\d{4})?$)
+      |(^[ABCEGHJKLMNPRSTVXYabceghjklmnpstvxy]{1}\d{1}[A-Za-z]{1} ?\d{1}[A-Za-z]{1}\d{1
+      })$/);}, "Please specify a valid postal/zip code");';
+        
+        //  Put these via registerScript as not to double them up.
+        PS::_rs( '#psValidate.validator.addMethod#', $_sValidate );
+        
+        $this->script =<<<CODE
+var _psValidator = $('{$_sId}').validate({$_arOptions});
+CODE;
+
+        return $this->script;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSjqValidate_a273c0dc58b59db25cfd5a37561bccec5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSjqValidate_ac02a66bde8e72e4909137bf748edf665}{
+\index{CPSjqValidate@{CPSjqValidate}!registerClientScripts@{registerClientScripts}}
+\index{registerClientScripts@{registerClientScripts}!CPSjqValidate@{CPSjqValidate}}
+\subsubsection[{registerClientScripts}]{\setlength{\rightskip}{0pt plus 5cm}registerClientScripts (
+\begin{DoxyParamCaption}
+\item[{\$}]{ bLocateScript = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSjqValidate_ac02a66bde8e72e4909137bf748edf665}
+Registers the needed CSS and JavaScript. 
+\begin{DoxyParams}{Parameters}
+\item[{\em boolean}]If true, system will try to find jquery plugins based on the pattern jquery.$<$plugin-\/name\mbox{[}.min\mbox{]}.js \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+CClientScript The current app's ClientScript object 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSjQueryWidget_a79bf828ed852174a56c4db5ef918a83c}{CPSjQueryWidget}.
+
+
+
+Definition at line 52 of file CPSjqValidate.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Daddy...
+        parent::registerClientScripts( $bLocateScript );
+        
+        //  Reset the baseUrl for our own scripts
+        $this->baseUrl = $this->extLibUrl . self::PS_EXTERNAL_PATH;
+        
+        //  Meta data for goodness...
+        $this->pushScriptFile( $this->extLibUrl . '/jquery-plugins/jquery.metadat
+      a.js', CClientScript::POS_HEAD );
+        
+        //  Register scripts necessary
+        $this->pushScriptFile( ( $_SERVER['HTTPS'] == 'on' ? self::CDN_SSL_ROOT :
+       self::CDN_ROOT ) . '/jquery.validate.min.js', CClientScript::POS_HEAD );
+//      $this->pushScriptFile( $this->baseUrl . '/jquery.validate.min.js', CClien
+      tScript::POS_HEAD );
+            
+        $this->pushScriptFile( ( $_SERVER['HTTPS'] == 'on' ? self::CDN_SSL_ROOT :
+       self::CDN_ROOT ) . '/additional-methods.js', CClientScript::POS_HEAD );
+//      $this->pushScriptFile( $this->baseUrl . '/additional-methods.js', CClient
+      Script::POS_HEAD );
+
+        //  Don't forget subclasses
+        return PS::_cs();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSjqValidate_ac02a66bde8e72e4909137bf748edf665_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSjqValidate_a25f81b1e2d2ce6f2521bc8c4c4877382}{
+\index{CPSjqValidate@{CPSjqValidate}!CDN\_\-PATH@{CDN\_\-PATH}}
+\index{CDN\_\-PATH@{CDN\_\-PATH}!CPSjqValidate@{CPSjqValidate}}
+\subsubsection[{CDN\_\-PATH}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CDN\_\-PATH} = 'http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js'}}
+\label{classCPSjqValidate_a25f81b1e2d2ce6f2521bc8c4c4877382}
+
+
+Definition at line 40 of file CPSjqValidate.php.
+
+\hypertarget{classCPSjqValidate_a2f10f690c9bdb966a20b0c1fedd4e9d7}{
+\index{CPSjqValidate@{CPSjqValidate}!CDN\_\-ROOT@{CDN\_\-ROOT}}
+\index{CDN\_\-ROOT@{CDN\_\-ROOT}!CPSjqValidate@{CPSjqValidate}}
+\subsubsection[{CDN\_\-ROOT}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CDN\_\-ROOT} = 'http://ajax.microsoft.com/ajax/jquery.validate/1.7'}}
+\label{classCPSjqValidate_a2f10f690c9bdb966a20b0c1fedd4e9d7}
+
+
+Definition at line 38 of file CPSjqValidate.php.
+
+\hypertarget{classCPSjqValidate_ae2b9c6713d89ec8f2d3d7ab20e74c9c5}{
+\index{CPSjqValidate@{CPSjqValidate}!CDN\_\-SSL\_\-PATH@{CDN\_\-SSL\_\-PATH}}
+\index{CDN\_\-SSL\_\-PATH@{CDN\_\-SSL\_\-PATH}!CPSjqValidate@{CPSjqValidate}}
+\subsubsection[{CDN\_\-SSL\_\-PATH}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CDN\_\-SSL\_\-PATH} = 'https://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.min.js'}}
+\label{classCPSjqValidate_ae2b9c6713d89ec8f2d3d7ab20e74c9c5}
+
+
+Definition at line 41 of file CPSjqValidate.php.
+
+\hypertarget{classCPSjqValidate_a66a542d2b3dc21378203a6c741b80b28}{
+\index{CPSjqValidate@{CPSjqValidate}!CDN\_\-SSL\_\-ROOT@{CDN\_\-SSL\_\-ROOT}}
+\index{CDN\_\-SSL\_\-ROOT@{CDN\_\-SSL\_\-ROOT}!CPSjqValidate@{CPSjqValidate}}
+\subsubsection[{CDN\_\-SSL\_\-ROOT}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CDN\_\-SSL\_\-ROOT} = 'https://ajax.microsoft.com/ajax/jquery.validate/1.7'}}
+\label{classCPSjqValidate_a66a542d2b3dc21378203a6c741b80b28}
+
+
+Definition at line 39 of file CPSjqValidate.php.
+
+\hypertarget{classCPSjqValidate_a8ccb5e1d65c091f944a6aa8c5be834ca}{
+\index{CPSjqValidate@{CPSjqValidate}!PS\_\-EXTERNAL\_\-PATH@{PS\_\-EXTERNAL\_\-PATH}}
+\index{PS\_\-EXTERNAL\_\-PATH@{PS\_\-EXTERNAL\_\-PATH}!CPSjqValidate@{CPSjqValidate}}
+\subsubsection[{PS\_\-EXTERNAL\_\-PATH}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PS\_\-EXTERNAL\_\-PATH} = '/jquery-\/plugins/validate'}}
+\label{classCPSjqValidate_a8ccb5e1d65c091f944a6aa8c5be834ca}
+The path where the assets for this widget are stored (underneath the psYiiExtensions/external base Currently, a CDN is in use and no local files are required... 
+
+Definition at line 37 of file CPSjqValidate.php.
+
+\hypertarget{classCPSjqValidate_ae357f9dc377f7de0d12010b2ced28cbc}{
+\index{CPSjqValidate@{CPSjqValidate}!PS\_\-WIDGET\_\-NAME@{PS\_\-WIDGET\_\-NAME}}
+\index{PS\_\-WIDGET\_\-NAME@{PS\_\-WIDGET\_\-NAME}!CPSjqValidate@{CPSjqValidate}}
+\subsubsection[{PS\_\-WIDGET\_\-NAME}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PS\_\-WIDGET\_\-NAME} = 'validate'}}
+\label{classCPSjqValidate_ae357f9dc377f7de0d12010b2ced28cbc}
+The name of this widget 
+
+Definition at line 31 of file CPSjqValidate.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/widgets/\hyperlink{CPSjqValidate_8php}{CPSjqValidate.php}\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSFacebook.html#a0e0a4234900c6b099259f0fc0ab65a67" title="_getApiUrl" alt="" coords="148,5,236,35"/>
+<area shape="rect" id="node9" href="$classCPSFacebook.html#a3fc1ae91766eca08b5a6fc48a6c6ebe2" title="_graph" alt="" coords="159,59,225,88"/>
+<area shape="rect" id="node11" href="$classCPSFacebook.html#ac6277cff127391498ddceffc115a6f94" title="getLoginStatusUrl" alt="" coords="124,112,260,141"/>
+<area shape="rect" id="node13" href="$classCPSFacebook.html#a3fc2a3b447d666e9f8607da999a1ea2d" title="getLoginUrl" alt="" coords="145,165,239,195"/>
+<area shape="rect" id="node15" href="$classCPSFacebook.html#ade0c69c82aebca82fd8bd98ad74439f2" title="getLogoutUrl" alt="" coords="140,219,244,248"/>
+<area shape="rect" id="node5" href="$classCPSFacebook.html#a896336f5000bed98a0e59b3b38b8b8e1" title="_restserver" alt="" coords="311,5,404,35"/>
+<area shape="rect" id="node7" href="$classCPSFacebook.html#aa238fcc5cb30759876aa89cd2e0711c1" title="api" alt="" coords="455,5,495,35"/>
+</map>

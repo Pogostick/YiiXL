@@ -1,0 +1,330 @@
+\hypertarget{classCPSLiveLogRoute}{
+\section{CPSLiveLogRoute Class Reference}
+\label{classCPSLiveLogRoute}\index{CPSLiveLogRoute@{CPSLiveLogRoute}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSLiveLogRoute_acc9683d3eaa74394ee82159398196ab8}{getExcludeCategories} ()
+\item 
+\hyperlink{classCPSLiveLogRoute_ad1fe56b8c471fa8818f46c39318f6373}{setExcludeCategories} (\$value)
+\item 
+\hyperlink{classCPSLiveLogRoute_af3edf920c9186a7479f274daaefb580b}{getCategoryWidth} ()
+\item 
+\hyperlink{classCPSLiveLogRoute_aca83de68fd6f754d3b9dcf265ff0be56}{setCategoryWidth} (\$value)
+\item 
+\hyperlink{classCPSLiveLogRoute_a6228d7e188b6c803663f67d4ea30aeda}{collectLogs} (\$logger, \$processLogs=false)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSLiveLogRoute_a4ac809157dfd774390d8ea4b81223872}{processLogs} (\$logs=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSLiveLogRoute_ac9dde335d8302c5533f76115925722f9}{formatLogMessage} (\$message, \$level= 'I', \$category=null, \$time=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSLiveLogRoute_a9c4b2e98f2d0c9401bc839d5104985ce}{\$\_\-excludeCategories} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}()
+\item 
+\hyperlink{classCPSLiveLogRoute_a25c9edaf8b1a5b6a83f88f220356ad62}{\$\_\-categoryWidth} = 40
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCPSLiveLogRoute}{CPSLiveLogRoute} utilizes PHP's \hyperlink{}{error\_\-log} function to write logs in real time
+
+\begin{DoxyAuthor}{Author}
+Jerry Ablan $<$\href{mailto:jablan@pogostick.com}{\tt jablan@pogostick.com}$>$ 
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+v1.1.0 
+\end{DoxySince}
+
+
+Definition at line 20 of file CPSLiveLogRoute.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSLiveLogRoute_a6228d7e188b6c803663f67d4ea30aeda}{
+\index{CPSLiveLogRoute@{CPSLiveLogRoute}!collectLogs@{collectLogs}}
+\index{collectLogs@{collectLogs}!CPSLiveLogRoute@{CPSLiveLogRoute}}
+\subsubsection[{collectLogs}]{\setlength{\rightskip}{0pt plus 5cm}collectLogs (
+\begin{DoxyParamCaption}
+\item[{\$}]{ logger, }
+\item[{\$}]{ processLogs = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSLiveLogRoute_a6228d7e188b6c803663f67d4ea30aeda}
+Retrieves filtered log messages from logger for further processing. 
+\begin{DoxyParams}{Parameters}
+\item[{\em CLogger}]\$logger logger instance \item[{\em boolean}]\$processLogs whether to process the logs after they are collected from the logger. ALWAYS TRUE NOW! \end{DoxyParams}
+
+
+Definition at line 57 of file CPSLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::collectLogs( $logger, true );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSLiveLogRoute_ac9dde335d8302c5533f76115925722f9}{
+\index{CPSLiveLogRoute@{CPSLiveLogRoute}!formatLogMessage@{formatLogMessage}}
+\index{formatLogMessage@{formatLogMessage}!CPSLiveLogRoute@{CPSLiveLogRoute}}
+\subsubsection[{formatLogMessage}]{\setlength{\rightskip}{0pt plus 5cm}formatLogMessage (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ level = {\ttfamily 'I'}, }
+\item[{\$}]{ category = {\ttfamily null}, }
+\item[{\$}]{ time = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSLiveLogRoute_ac9dde335d8302c5533f76115925722f9}
+Formats a log message given different fields. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message message content \item[{\em integer}]\$level message level \item[{\em string}]\$category message category \item[{\em integer}]\$time timestamp \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string formatted message 
+\end{DoxyReturn}
+
+
+Definition at line 129 of file CPSLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( null === $time )
+            $time = time();
+
+        $level = strtoupper( $level[0] );
+
+        return @date( 'M d H:i:s', $time ) . ' [' . sprintf( '%-' . $this->_categ
+      oryWidth . 's', $category ) . '] ' . ': <' . $level . '> ' . $message . PHP_EOL;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{classCPSLiveLogRoute_ac9dde335d8302c5533f76115925722f9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSLiveLogRoute_af3edf920c9186a7479f274daaefb580b}{
+\index{CPSLiveLogRoute@{CPSLiveLogRoute}!getCategoryWidth@{getCategoryWidth}}
+\index{getCategoryWidth@{getCategoryWidth}!CPSLiveLogRoute@{CPSLiveLogRoute}}
+\subsubsection[{getCategoryWidth}]{\setlength{\rightskip}{0pt plus 5cm}getCategoryWidth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSLiveLogRoute_af3edf920c9186a7479f274daaefb580b}
+Get the minimum width of the category column in the log output \begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file CPSLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_categoryWidth; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSLiveLogRoute_acc9683d3eaa74394ee82159398196ab8}{
+\index{CPSLiveLogRoute@{CPSLiveLogRoute}!getExcludeCategories@{getExcludeCategories}}
+\index{getExcludeCategories@{getExcludeCategories}!CPSLiveLogRoute@{CPSLiveLogRoute}}
+\subsubsection[{getExcludeCategories}]{\setlength{\rightskip}{0pt plus 5cm}getExcludeCategories (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSLiveLogRoute_acc9683d3eaa74394ee82159398196ab8}
+
+
+Definition at line 30 of file CPSLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_excludeCategories; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSLiveLogRoute_a4ac809157dfd774390d8ea4b81223872}{
+\index{CPSLiveLogRoute@{CPSLiveLogRoute}!processLogs@{processLogs}}
+\index{processLogs@{processLogs}!CPSLiveLogRoute@{CPSLiveLogRoute}}
+\subsubsection[{processLogs}]{\setlength{\rightskip}{0pt plus 5cm}processLogs (
+\begin{DoxyParamCaption}
+\item[{\$}]{ logs = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSLiveLogRoute_a4ac809157dfd774390d8ea4b81223872}
+Writes log messages in files. 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$logs list of log messages \end{DoxyParams}
+
+
+Use \hyperlink{}{error\_\-log} facility to write out log entry
+
+
+
+Definition at line 70 of file CPSLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        try
+        {
+            $_logFile = $this->getLogPath() . DIRECTORY_SEPARATOR . $this->getLog
+      File();
+
+            if ( @filesize( $_logFile ) > $this->getMaxFileSize() * 1024 )
+                $this->rotateFiles();
+
+            //  Write out the log entries
+            foreach ( $logs as $_log )
+            {
+                $_exclude = false;
+
+                //  Check out the exclusions
+                if ( ! empty( $this->_excludeCategories ) )
+                {
+                    foreach ( $this->_excludeCategories as $_category )
+                    {
+                        //  If found, we skip
+                        if ( trim( strtolower( $_category ) ) == trim( strtolower
+      ( $_log[2] ) ) )
+                        {
+                            $_exclude = true;
+                            break;
+                        }
+
+                        //  Check for regex
+                        if ( '/' == $_category[0] && 0 != @preg_match( $_category
+      , $_log[2] ) )
+                        {
+                            $_exclude = true;
+                            break;
+                        }
+                    }
+                }
+
+                if ( ! $_exclude )
+                    error_log( $this->formatLogMessage( $_log[0], $_log[1], $_log
+      [2], $_log[3] ), 3, $_logFile );
+            }
+
+            //  Processed, clear!
+            $this->logs = null;
+        }
+        catch ( Exception $_ex )
+        {
+            error_log( __METHOD__ . ': Exception processing application logs: ' .
+       $_ex->getMessage() );
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{classCPSLiveLogRoute_a4ac809157dfd774390d8ea4b81223872_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSLiveLogRoute_aca83de68fd6f754d3b9dcf265ff0be56}{
+\index{CPSLiveLogRoute@{CPSLiveLogRoute}!setCategoryWidth@{setCategoryWidth}}
+\index{setCategoryWidth@{setCategoryWidth}!CPSLiveLogRoute@{CPSLiveLogRoute}}
+\subsubsection[{setCategoryWidth}]{\setlength{\rightskip}{0pt plus 5cm}setCategoryWidth (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSLiveLogRoute_aca83de68fd6f754d3b9dcf265ff0be56}
+Set the minimum width of the category column in the log output \begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file CPSLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_categoryWidth = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSLiveLogRoute_ad1fe56b8c471fa8818f46c39318f6373}{
+\index{CPSLiveLogRoute@{CPSLiveLogRoute}!setExcludeCategories@{setExcludeCategories}}
+\index{setExcludeCategories@{setExcludeCategories}!CPSLiveLogRoute@{CPSLiveLogRoute}}
+\subsubsection[{setExcludeCategories}]{\setlength{\rightskip}{0pt plus 5cm}setExcludeCategories (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSLiveLogRoute_ad1fe56b8c471fa8818f46c39318f6373}
+
+
+Definition at line 31 of file CPSLiveLogRoute.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_excludeCategories = $value; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSLiveLogRoute_a25c9edaf8b1a5b6a83f88f220356ad62}{
+\index{CPSLiveLogRoute@{CPSLiveLogRoute}!\$\_\-categoryWidth@{\$\_\-categoryWidth}}
+\index{\$\_\-categoryWidth@{\$\_\-categoryWidth}!CPSLiveLogRoute@{CPSLiveLogRoute}}
+\subsubsection[{\$\_\-categoryWidth}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-categoryWidth = 40\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSLiveLogRoute_a25c9edaf8b1a5b6a83f88f220356ad62}
+
+
+Definition at line 36 of file CPSLiveLogRoute.php.
+
+\hypertarget{classCPSLiveLogRoute_a9c4b2e98f2d0c9401bc839d5104985ce}{
+\index{CPSLiveLogRoute@{CPSLiveLogRoute}!\$\_\-excludeCategories@{\$\_\-excludeCategories}}
+\index{\$\_\-excludeCategories@{\$\_\-excludeCategories}!CPSLiveLogRoute@{CPSLiveLogRoute}}
+\subsubsection[{\$\_\-excludeCategories}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-excludeCategories = {\bf array}()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSLiveLogRoute_a9c4b2e98f2d0c9401bc839d5104985ce}
+
+
+Definition at line 29 of file CPSLiveLogRoute.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/logging/\hyperlink{CPSLiveLogRoute_8php}{CPSLiveLogRoute.php}\end{DoxyCompactItemize}

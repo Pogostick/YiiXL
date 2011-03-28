@@ -1,0 +1,736 @@
+\hypertarget{classCXLOAuthBehavior}{
+\section{CXLOAuthBehavior Class Reference}
+\label{classCXLOAuthBehavior}\index{CXLOAuthBehavior@{CXLOAuthBehavior}}
+}
+
+
+Inheritance diagram for CXLOAuthBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classCXLOAuthBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLOAuthBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classCXLOAuthBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLOAuthBehavior_ab427c5f1592fd568bb84a7fef22bf980}{getOAuthToken} ()
+\item 
+\hyperlink{classCXLOAuthBehavior_a13fb41e10ef1a77aacb14d33ac1ce1be}{getOAuthObject} ()
+\item 
+\hyperlink{classCXLOAuthBehavior_a10b40817a4c75a202a41511d31629e6c}{getCallbackUrl} ()
+\item 
+\hyperlink{classCXLOAuthBehavior_a3a3fa8cd95b6783dcde3d34a7237022e}{setCallbackUrl} (\$callbackUrl)
+\item 
+\hyperlink{classCXLOAuthBehavior_a9b29f2f3559502dcbd1c3c202eb5230e}{getIsAuthorized} ()
+\item 
+\hyperlink{classCXLOAuthBehavior_af7249190812071dfa47a42f5901382f0}{setIsAuthorized} (\$isAuthorized)
+\item 
+\hyperlink{classCXLOAuthBehavior_a65444343b71d28e0f96b3e4c60b8a393}{getAccessTokenUrl} ()
+\item 
+\hyperlink{classCXLOAuthBehavior_ae25193177398cc0288403065233889a1}{setAccessTokenUrl} (\$accessTokenUrl)
+\item 
+\hyperlink{classCXLOAuthBehavior_a94d630cf8cc55a8a7929862d81e3a6ab}{getAuthorizeUrl} ()
+\item 
+\hyperlink{classCXLOAuthBehavior_a3ba92cd03bf24fc76d4a65fe8078f2c1}{setAuthorizeUrl} (\$authorizeUrl)
+\item 
+\hyperlink{classCXLOAuthBehavior_a414cc1ac9b3577270afe51ca2405d6f2}{getRequestTokenUrl} ()
+\item 
+\hyperlink{classCXLOAuthBehavior_a192e5b1f622540ab290191f33fa52d49}{setRequestTokenUrl} (\$requestTokenUrl)
+\item 
+\hyperlink{classCXLOAuthBehavior_a095c5d389db211932136b53f25f39685}{\_\-\_\-construct} ()
+\item 
+\hyperlink{classCXLOAuthBehavior_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCXLOAuthBehavior_a8027c4853ebf41108725eb798ebfcd59}{storeToken} (\$token=array())
+\item 
+\hyperlink{classCXLOAuthBehavior_a5126349c471fcaff1a74b9d117b979b1}{loadToken} ()
+\item 
+\hyperlink{classCXLOAuthBehavior_aeea17b8cf4b07497f4c9a4d5462c752a}{onUserAuthorized} (\$event)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCXLOAuthBehavior_aa607ab5e557e6ebb60b85c5a20ad067f}{CLASS\_\-LOG\_\-TAG} = 'yxl.core.behaviors.CXLOAuthBehavior'
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLOAuthBehavior_aea10c78c73d6333bc3bbc369b78da62e}{\$\_\-oauthToken} = null
+\item 
+\hyperlink{classCXLOAuthBehavior_a3059e962acd36df1674d78ce69d3a733}{\$\_\-oauthObject} = null
+\item 
+\hyperlink{classCXLOAuthBehavior_ade40e32a04ba6dd22db9f6204218b60b}{\$\_\-callbackUrl}
+\item 
+\hyperlink{classCXLOAuthBehavior_a1065be3580f4c6c6ecaeb45613525347}{\$\_\-isAuthorized}
+\item 
+\hyperlink{classCXLOAuthBehavior_a9c9a16979cab986d2ebc611c942046bb}{\$\_\-accessTokenUrl}
+\item 
+\hyperlink{classCXLOAuthBehavior_a394ba62f76b701f6ba696df4d7e025b1}{\$\_\-authorizeUrl}
+\item 
+\hyperlink{classCXLOAuthBehavior_a78f914fceb757ea6ceeefd223aa94245}{\$\_\-requestTokenUrl}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file CXLOAuthBehavior.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCXLOAuthBehavior_a095c5d389db211932136b53f25f39685}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_a095c5d389db211932136b53f25f39685}
+Constructor 
+
+Definition at line 168 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  No oauth? No run...
+    if ( ! extension_loaded( 'oauth' ) )
+    {
+      throw new CXLException(
+        Yii::t(
+          self::CLASS_LOG_TAG, 
+          'The "oauth" extension is not loaded. Please install and/or load the oa
+      th extension (PECL).'
+        )
+      );
+    }
+
+    //  Call daddy...
+    parent::__construct();
+  }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLOAuthBehavior_a65444343b71d28e0f96b3e4c60b8a393}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!getAccessTokenUrl@{getAccessTokenUrl}}
+\index{getAccessTokenUrl@{getAccessTokenUrl}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{getAccessTokenUrl}]{\setlength{\rightskip}{0pt plus 5cm}getAccessTokenUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_a65444343b71d28e0f96b3e4c60b8a393}
+
+
+Definition at line 123 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_accessTokenUrl;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLOAuthBehavior_a94d630cf8cc55a8a7929862d81e3a6ab}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!getAuthorizeUrl@{getAuthorizeUrl}}
+\index{getAuthorizeUrl@{getAuthorizeUrl}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{getAuthorizeUrl}]{\setlength{\rightskip}{0pt plus 5cm}getAuthorizeUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_a94d630cf8cc55a8a7929862d81e3a6ab}
+I Appends the current token to the authorizeUrl option \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 138 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_token = $this->_oauthObject->getRequestToken( $this->_apiBaseUrl . $this->_
+      requestTokenUrl, $this->_callbackUrl );
+    return $this->_apiBaseUrl . $this->_authorizeUrl . '?oauth_token=' . $_token[
+      'oauth_token'];
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLOAuthBehavior_a10b40817a4c75a202a41511d31629e6c}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!getCallbackUrl@{getCallbackUrl}}
+\index{getCallbackUrl@{getCallbackUrl}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{getCallbackUrl}]{\setlength{\rightskip}{0pt plus 5cm}getCallbackUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_a10b40817a4c75a202a41511d31629e6c}
+
+
+Definition at line 101 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_callbackUrl;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLOAuthBehavior_a9b29f2f3559502dcbd1c3c202eb5230e}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!getIsAuthorized@{getIsAuthorized}}
+\index{getIsAuthorized@{getIsAuthorized}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{getIsAuthorized}]{\setlength{\rightskip}{0pt plus 5cm}getIsAuthorized (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_a9b29f2f3559502dcbd1c3c202eb5230e}
+
+
+Definition at line 112 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_isAuthorized;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLOAuthBehavior_a13fb41e10ef1a77aacb14d33ac1ce1be}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!getOAuthObject@{getOAuthObject}}
+\index{getOAuthObject@{getOAuthObject}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{getOAuthObject}]{\setlength{\rightskip}{0pt plus 5cm}getOAuthObject (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_a13fb41e10ef1a77aacb14d33ac1ce1be}
+Retrieves the OAuth object \begin{DoxyReturn}{Returns}
+OAuth 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_oauthObject;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLOAuthBehavior_ab427c5f1592fd568bb84a7fef22bf980}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!getOAuthToken@{getOAuthToken}}
+\index{getOAuthToken@{getOAuthToken}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{getOAuthToken}]{\setlength{\rightskip}{0pt plus 5cm}getOAuthToken (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_ab427c5f1592fd568bb84a7fef22bf980}
+Retrieves the current OAuth token \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_oauthToken;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLOAuthBehavior_a414cc1ac9b3577270afe51ca2405d6f2}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!getRequestTokenUrl@{getRequestTokenUrl}}
+\index{getRequestTokenUrl@{getRequestTokenUrl}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{getRequestTokenUrl}]{\setlength{\rightskip}{0pt plus 5cm}getRequestTokenUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_a414cc1ac9b3577270afe51ca2405d6f2}
+
+
+Definition at line 150 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_requestTokenUrl;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLOAuthBehavior_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!init@{init}}
+\index{init@{init}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize this behavior 
+
+Definition at line 192 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  Events...
+    $this->attachEventHandler( 'onUserAuthorized', array( $this, 'userAuthorized'
+       ) );
+
+    //  Create our object...
+    $this->_oauthObject = new OAuth( $this->apiKey, $this->apiSecretKey, OAUTH_SI
+      G_METHOD_HMACSHA1, OAUTH_AUTH_TYPE_URI );
+
+    //  Load any tokens we have...
+    $this->loadToken();
+
+    //  Have we been authenticated?
+    if ( !$this->isAuthorized )
+    {
+      if ( isset( $_REQUEST['oauth_token'] ) )
+      {
+        if ( $this->_oauthObject->setToken( $_REQUEST['oauth_token'], $_REQUEST['
+      oauth_verifier'] ) )
+        {
+          $_token = $this->_oauthObject->getAccessToken( 
+            $this->_apiBaseUrl . $this->_accessTokenUrl,
+            null, 
+            $_REQUEST['oauth_verifier']
+          );
+
+          $this->storeToken( $_token );
+          $this->_isAuthorized = true;
+        }
+
+        //  Raise our event
+        if ( $this->_isAuthorized ) 
+          $this->onUserAuthorized( new CPSOAuthEvent( $this->_oauthToken ) );
+      }
+    }
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLOAuthBehavior_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLOAuthBehavior_a5126349c471fcaff1a74b9d117b979b1}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!loadToken@{loadToken}}
+\index{loadToken@{loadToken}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{loadToken}]{\setlength{\rightskip}{0pt plus 5cm}loadToken (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_a5126349c471fcaff1a74b9d117b979b1}
+Loads a token from the user state oAuthToken 
+
+Definition at line 260 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_token = array();
+    
+    if ( null != ( $_token = XL::_gs( CXLHash::hash( 'OAuthToken' . $this->_apiBa
+      seUrl ) ) ) )
+    {
+      $this->_oauthToken = $_token;
+      $this->_isAuthorized = ( true === XL::_gs( CXLHash::hash( 'OAuthorized' . $
+      this->_apiBaseUrl ) ) );
+    }
+    
+    return $_token;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=392pt]{classCXLOAuthBehavior_a5126349c471fcaff1a74b9d117b979b1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classCXLOAuthBehavior_a5126349c471fcaff1a74b9d117b979b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLOAuthBehavior_aeea17b8cf4b07497f4c9a4d5462c752a}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!onUserAuthorized@{onUserAuthorized}}
+\index{onUserAuthorized@{onUserAuthorized}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{onUserAuthorized}]{\setlength{\rightskip}{0pt plus 5cm}onUserAuthorized (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_aeea17b8cf4b07497f4c9a4d5462c752a}
+User has been authorized event 
+\begin{DoxyParams}{Parameters}
+\item[{\em CXLOAuthEvent}]\$event \end{DoxyParams}
+
+
+Definition at line 281 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->raiseEvent( 'onUserAuthorized', $event );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classCXLOAuthBehavior_aeea17b8cf4b07497f4c9a4d5462c752a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLOAuthBehavior_ae25193177398cc0288403065233889a1}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!setAccessTokenUrl@{setAccessTokenUrl}}
+\index{setAccessTokenUrl@{setAccessTokenUrl}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{setAccessTokenUrl}]{\setlength{\rightskip}{0pt plus 5cm}setAccessTokenUrl (
+\begin{DoxyParamCaption}
+\item[{\$}]{ accessTokenUrl}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_ae25193177398cc0288403065233889a1}
+
+
+Definition at line 128 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_accessTokenUrl = $accessTokenUrl;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLOAuthBehavior_a3ba92cd03bf24fc76d4a65fe8078f2c1}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!setAuthorizeUrl@{setAuthorizeUrl}}
+\index{setAuthorizeUrl@{setAuthorizeUrl}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{setAuthorizeUrl}]{\setlength{\rightskip}{0pt plus 5cm}setAuthorizeUrl (
+\begin{DoxyParamCaption}
+\item[{\$}]{ authorizeUrl}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_a3ba92cd03bf24fc76d4a65fe8078f2c1}
+
+
+Definition at line 144 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_authorizeUrl = $authorizeUrl;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLOAuthBehavior_a3a3fa8cd95b6783dcde3d34a7237022e}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!setCallbackUrl@{setCallbackUrl}}
+\index{setCallbackUrl@{setCallbackUrl}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{setCallbackUrl}]{\setlength{\rightskip}{0pt plus 5cm}setCallbackUrl (
+\begin{DoxyParamCaption}
+\item[{\$}]{ callbackUrl}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_a3a3fa8cd95b6783dcde3d34a7237022e}
+
+
+Definition at line 106 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_callbackUrl = $callbackUrl;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLOAuthBehavior_af7249190812071dfa47a42f5901382f0}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!setIsAuthorized@{setIsAuthorized}}
+\index{setIsAuthorized@{setIsAuthorized}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{setIsAuthorized}]{\setlength{\rightskip}{0pt plus 5cm}setIsAuthorized (
+\begin{DoxyParamCaption}
+\item[{\$}]{ isAuthorized}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_af7249190812071dfa47a42f5901382f0}
+
+
+Definition at line 117 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_isAuthorized = $isAuthorized;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLOAuthBehavior_a192e5b1f622540ab290191f33fa52d49}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!setRequestTokenUrl@{setRequestTokenUrl}}
+\index{setRequestTokenUrl@{setRequestTokenUrl}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{setRequestTokenUrl}]{\setlength{\rightskip}{0pt plus 5cm}setRequestTokenUrl (
+\begin{DoxyParamCaption}
+\item[{\$}]{ requestTokenUrl}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_a192e5b1f622540ab290191f33fa52d49}
+
+
+Definition at line 155 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_requestTokenUrl = $requestTokenUrl;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLOAuthBehavior_a8027c4853ebf41108725eb798ebfcd59}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!storeToken@{storeToken}}
+\index{storeToken@{storeToken}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{storeToken}]{\setlength{\rightskip}{0pt plus 5cm}storeToken (
+\begin{DoxyParamCaption}
+\item[{\$}]{ token = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLOAuthBehavior_a8027c4853ebf41108725eb798ebfcd59}
+Stores the current token in a member variable and in the user state oAuthToken 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$token \end{DoxyParams}
+
+
+Definition at line 231 of file CXLOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    try
+    {
+      XL::_ss( CXLHash::hash( 'OAuthToken' . $this->_apiBaseUrl ), $token );
+      XL::_ss( CXLHash::hash( 'OAuthorized' . $this->_apiBaseUrl ), (boolean)$thi
+      s->_isAuthorized );
+
+      $this->_oauthToken = $token;
+    }
+    catch ( Exception $_ex )
+    {
+      XL::logError(
+        self::CLASS_LOG_TAG,
+        Yii::t( 
+          self::CLASS_LOG_TAG, 
+          'Error storing OAuth token "{a}/{b}" : {c}', 
+          array( 
+            "{a}" => $token['oauth_token'], 
+            "{b}" => $token['oauth_token_secret'], 
+            "{c}" => $_ex->getMessage() 
+          ) 
+        ) 
+      );
+    }
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=396pt]{classCXLOAuthBehavior_a8027c4853ebf41108725eb798ebfcd59_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classCXLOAuthBehavior_a8027c4853ebf41108725eb798ebfcd59_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLOAuthBehavior_a9c9a16979cab986d2ebc611c942046bb}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!\$\_\-accessTokenUrl@{\$\_\-accessTokenUrl}}
+\index{\$\_\-accessTokenUrl@{\$\_\-accessTokenUrl}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{\$\_\-accessTokenUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-accessTokenUrl\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLOAuthBehavior_a9c9a16979cab986d2ebc611c942046bb}
+
+
+Definition at line 67 of file CXLOAuthBehavior.php.
+
+\hypertarget{classCXLOAuthBehavior_a394ba62f76b701f6ba696df4d7e025b1}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!\$\_\-authorizeUrl@{\$\_\-authorizeUrl}}
+\index{\$\_\-authorizeUrl@{\$\_\-authorizeUrl}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{\$\_\-authorizeUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-authorizeUrl\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLOAuthBehavior_a394ba62f76b701f6ba696df4d7e025b1}
+
+
+Definition at line 72 of file CXLOAuthBehavior.php.
+
+\hypertarget{classCXLOAuthBehavior_ade40e32a04ba6dd22db9f6204218b60b}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!\$\_\-callbackUrl@{\$\_\-callbackUrl}}
+\index{\$\_\-callbackUrl@{\$\_\-callbackUrl}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{\$\_\-callbackUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-callbackUrl\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLOAuthBehavior_ade40e32a04ba6dd22db9f6204218b60b}
+
+
+Definition at line 57 of file CXLOAuthBehavior.php.
+
+\hypertarget{classCXLOAuthBehavior_a1065be3580f4c6c6ecaeb45613525347}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!\$\_\-isAuthorized@{\$\_\-isAuthorized}}
+\index{\$\_\-isAuthorized@{\$\_\-isAuthorized}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{\$\_\-isAuthorized}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-isAuthorized\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLOAuthBehavior_a1065be3580f4c6c6ecaeb45613525347}
+
+
+Definition at line 62 of file CXLOAuthBehavior.php.
+
+\hypertarget{classCXLOAuthBehavior_a3059e962acd36df1674d78ce69d3a733}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!\$\_\-oauthObject@{\$\_\-oauthObject}}
+\index{\$\_\-oauthObject@{\$\_\-oauthObject}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{\$\_\-oauthObject}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-oauthObject = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLOAuthBehavior_a3059e962acd36df1674d78ce69d3a733}
+
+
+Definition at line 51 of file CXLOAuthBehavior.php.
+
+\hypertarget{classCXLOAuthBehavior_aea10c78c73d6333bc3bbc369b78da62e}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!\$\_\-oauthToken@{\$\_\-oauthToken}}
+\index{\$\_\-oauthToken@{\$\_\-oauthToken}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{\$\_\-oauthToken}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-oauthToken = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLOAuthBehavior_aea10c78c73d6333bc3bbc369b78da62e}
+
+
+Definition at line 45 of file CXLOAuthBehavior.php.
+
+\hypertarget{classCXLOAuthBehavior_a78f914fceb757ea6ceeefd223aa94245}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!\$\_\-requestTokenUrl@{\$\_\-requestTokenUrl}}
+\index{\$\_\-requestTokenUrl@{\$\_\-requestTokenUrl}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{\$\_\-requestTokenUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-requestTokenUrl\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLOAuthBehavior_a78f914fceb757ea6ceeefd223aa94245}
+
+
+Definition at line 77 of file CXLOAuthBehavior.php.
+
+\hypertarget{classCXLOAuthBehavior_aa607ab5e557e6ebb60b85c5a20ad067f}{
+\index{CXLOAuthBehavior@{CXLOAuthBehavior}!CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}}
+\index{CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}!CXLOAuthBehavior@{CXLOAuthBehavior}}
+\subsubsection[{CLASS\_\-LOG\_\-TAG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CLASS\_\-LOG\_\-TAG} = 'yxl.core.behaviors.CXLOAuthBehavior'}}
+\label{classCXLOAuthBehavior_aa607ab5e557e6ebb60b85c5a20ad067f}
+Our logging tag 
+
+Reimplemented from \hyperlink{classCXLBehavior_aa607ab5e557e6ebb60b85c5a20ad067f}{CXLBehavior}.
+
+
+
+Definition at line 35 of file CXLOAuthBehavior.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLOAuthBehavior_8php}{CXLOAuthBehavior.php}\end{DoxyCompactItemize}

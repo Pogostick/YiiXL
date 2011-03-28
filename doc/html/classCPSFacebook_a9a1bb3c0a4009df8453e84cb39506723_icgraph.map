@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSFacebook.html#ad095f729036d48a23d321839f3ea7853" title="_createSessionFromSignedRequest" alt="" coords="423,45,668,75"/>
+<area shape="rect" id="node22" href="$classCPSFacebook.html#a7dd3fb0ddff204e195f91b8719104a61" title="_validateSessionObject" alt="" coords="203,97,373,127"/>
+<area shape="rect" id="node5" href="$classCPSFacebook.html#aefa4c5bd150e2a7d525576d7959c6911" title="getSession" alt="" coords="717,84,811,113"/>
+<area shape="rect" id="node7" href="$classCPSFacebook.html#a5d251c70a3f9f9daaff7f00ec5f894c0" title="getAccessToken" alt="" coords="860,5,983,35"/>
+<area shape="rect" id="node17" href="$classCPSFacebook.html#ade0c69c82aebca82fd8bd98ad74439f2" title="getLogoutUrl" alt="" coords="1039,59,1143,88"/>
+<area shape="rect" id="node20" href="$classCPSFacebook.html#ae81b7186fb97a7c6457edcc68c9aa2ef" title="getUser" alt="" coords="885,109,957,139"/>
+<area shape="rect" id="node9" href="$classCPSFacebook.html#a0519e81c281afecdca2d58dd75d164f0" title="_oauthRequest" alt="" coords="1032,5,1149,35"/>
+<area shape="rect" id="node11" href="$classCPSFacebook.html#a3fc1ae91766eca08b5a6fc48a6c6ebe2" title="_graph" alt="" coords="1212,109,1279,139"/>
+<area shape="rect" id="node13" href="$classCPSFacebook.html#a896336f5000bed98a0e59b3b38b8b8e1" title="_restserver" alt="" coords="1199,5,1292,35"/>
+<area shape="rect" id="node15" href="$classCPSFacebook.html#aa238fcc5cb30759876aa89cd2e0711c1" title="api" alt="" coords="1343,5,1383,35"/>
+<area shape="rect" id="node25" href="$classCPSFacebook.html#a83fd4ea8255385abd72c27a762691e2d" title="setSession" alt="" coords="500,149,591,179"/>
+</map>

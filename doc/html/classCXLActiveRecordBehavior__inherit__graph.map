@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node7" href="$classCXLDataTransformBehavior.html" title="CXLDataTransformBehavior." alt="" coords="5,237,200,267"/>
+<area shape="rect" id="node9" href="$classCXLSoftDeleteBehavior.html" title="CXLSoftDeleteBehavior" alt="" coords="224,237,395,267"/>
+<area shape="rect" id="node11" href="$classCXLTimeStampBehavior.html" title="CXLTimeStampBehavior" alt="" coords="419,237,592,267"/>
+<area shape="rect" id="node2" href="$interfaceIXLBehavior.html" title="This interface indicates that a class is a behavior in YiiXL." alt="" coords="261,83,357,112"/>
+<area shape="rect" id="node4" href="$interfaceIXLComponent.html" title="IXLComponent" alt="" coords="252,5,367,35"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSFacebook.html#a818b7c88630a9f0a6318aecb55160c38" title="_setCookieFromSession" alt="" coords="148,59,321,88"/>
+<area shape="rect" id="node17" href="$classCPSFacebook.html#a7dd3fb0ddff204e195f91b8719104a61" title="_validateSessionObject" alt="" coords="149,112,320,141"/>
+<area shape="rect" id="node5" href="$classCPSFacebook.html#a69c13b5e61215433a48b9a6742f16660" title="_getSessionCookieName" alt="" coords="372,5,553,35"/>
+<area shape="rect" id="node7" href="$classCPSLog.html#a99034739d5e469b037364bf2f5694e11" title="CPSLog::error" alt="" coords="408,112,517,141"/>
+<area shape="rect" id="node15" href="$classCPSFacebook.html#ab0b9668fe081b3b7eb36307bcb7688e8" title="getBaseDomain" alt="" coords="400,59,525,88"/>
+<area shape="rect" id="node9" href="$classCPSLog.html#a4c3be4120dc6dee2c97a6dde9428ac76" title="CPSLog::log" alt="" coords="603,112,701,141"/>
+<area shape="rect" id="node11" href="$classCPSLog.html#a66291d27410fbf7ba4978f513c13e6f0" title="CPSLog::_getCallingMethod" alt="" coords="749,85,947,115"/>
+<area shape="rect" id="node13" href="$classCPSLog.html#a8471574061e9457cc6e5be7c151b9cfb" title="CPSLog::_processMessage" alt="" coords="752,139,944,168"/>
+<area shape="rect" id="node19" href="$classCPSFacebook.html#a9a1bb3c0a4009df8453e84cb39506723" title="_generateSignature" alt="" coords="388,165,537,195"/>
+</map>

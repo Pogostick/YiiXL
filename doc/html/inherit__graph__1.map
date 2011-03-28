@@ -1,0 +1,36 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$interfaceIXLAccessControl.html" title="This interface defines an object as an access control object." alt="" coords="168,432,299,461"/>
+<area shape="rect" id="node3" href="$classCXLActionControlBehavior.html" title="CXLActionControlBehavior Provides an alternative interface to configuring access to your actions..." alt="" coords="616,537,803,567"/>
+<area shape="rect" id="node5" href="$classCXLController.html" title="CXLController Provides filtered access to resources." alt="" coords="401,432,508,461"/>
+<area shape="rect" id="node7" href="$interfaceIXLUtilityHelper.html" title="IXLUtilityHelper" alt="" coords="396,485,513,515"/>
+<area shape="rect" id="node9" href="$classCXLHash.html" title="Hash code/password helpers." alt="" coords="671,457,748,487"/>
+<area shape="rect" id="node11" href="$classCXLOptions.html" title="Provides abstracted options setting functionality." alt="" coords="663,379,756,408"/>
+<area shape="rect" id="node12" href="$interfaceIXLComponent.html" title="IXLComponent" alt="" coords="5,379,120,408"/>
+<area shape="rect" id="node14" href="$classCXLComponent.html" title="CXLComponent" alt="" coords="173,165,293,195"/>
+<area shape="rect" id="node32" href="$classCXLLiveLogRoute.html" title="CXLLiveLogRoute." alt="" coords="168,112,299,141"/>
+<area shape="rect" id="node34" href="$classCXLRestAction.html" title="CXLRestAction represents a REST action that is defined as a CXLRestController method." alt="" coords="177,272,289,301"/>
+<area shape="rect" id="node36" href="$classCXLWebModule.html" title="CXLWebModule provides extra functionality to the base module functionality of Yii." alt="" coords="175,485,292,515"/>
+<area shape="rect" id="node38" href="$classCXLWidget.html" title="CXLWidget Pretty much identical to CXLComponent but offers a little bit of extra functionality." alt="" coords="189,539,277,568"/>
+<area shape="rect" id="node40" href="$interfaceIXLBehavior.html" title="This interface indicates that a class is a behavior in YiiXL." alt="" coords="185,592,281,621"/>
+<area shape="rect" id="node16" href="$classCXLApiComponent.html" title="CXLApiComponent provides a convenient base class for API access." alt="" coords="384,112,525,141"/>
+<area shape="rect" id="node18" href="$classCXLBaseHelper.html" title="The mother of all helper classes." alt="" coords="395,325,515,355"/>
+<area shape="rect" id="node24" href="$classCXLBaseJobProcess.html" title="CXLBaseJobProcess" alt="" coords="381,165,528,195"/>
+<area shape="rect" id="node26" href="$classCXLConfig.html" title="CXLConfig provides a property&#45;based configuration settings object." alt="" coords="412,5,497,35"/>
+<area shape="rect" id="node30" href="$classCXLRestConsumerComponent.html" title="CXLRestConsumerComponent." alt="" coords="348,59,561,88"/>
+<area shape="rect" id="node21" href="$classCXLLog.html" title="A logging helper Utilizes the PHP syslog predefined logging constants." alt="" coords="675,312,744,341"/>
+<area shape="rect" id="node28" href="$classCXLConfigFile.html" title="CXLConfigFile implements the CXLConfig class that stored in a file." alt="" coords="656,5,763,35"/>
+<area shape="rect" id="node42" href="$classCXLActiveRecordBehavior.html" title="CXLActiveRecordBehavior The base class for all AR behaviors in the YiiXL system." alt="" coords="363,671,547,700"/>
+<area shape="rect" id="node50" href="$classCXLBehavior.html" title="CXLBehavior The base class for all non&#45;AR behaviors in the YiiXL system." alt="" coords="404,591,505,620"/>
+<area shape="rect" id="node44" href="$classCXLDataTransformBehavior.html" title="CXLDataTransformBehavior." alt="" coords="612,751,807,780"/>
+<area shape="rect" id="node46" href="$classCXLSoftDeleteBehavior.html" title="CXLSoftDeleteBehavior" alt="" coords="624,644,795,673"/>
+<area shape="rect" id="node48" href="$classCXLTimeStampBehavior.html" title="CXLTimeStampBehavior" alt="" coords="623,697,796,727"/>
+<area shape="rect" id="node53" href="$classCXLOAuthBehavior.html" title="CXLOAuthBehavior" alt="" coords="639,591,780,620"/>
+<area shape="rect" id="node54" href="$interfaceIXLController.html" title="An interface for all YiiXL controllers." alt="" coords="183,379,284,408"/>
+<area shape="rect" id="node56" href="$interfaceIXLHelper.html" title="This interface defines a static helper class that can be mixed into the main YiiXL system..." alt="" coords="192,325,275,355"/>
+<area shape="rect" id="node59" href="$interfaceIXLShifter.html" title="IXLShifter" alt="" coords="413,379,496,408"/>
+<area shape="rect" id="node62" href="$interfaceIXLUIHelper.html" title="This interface defines a static UI helper class that can be mixed into the main YiiXL system..." alt="" coords="408,219,501,248"/>
+<area shape="rect" id="node64" href="$classYiiXLBase.html" title="YiiXLBase." alt="" coords="668,245,751,275"/>
+<area shape="rect" id="node66" href="$classYiiXL.html" title="Main YiiXL entry point." alt="" coords="856,245,907,275"/>
+<area shape="rect" id="node68" href="$classXL.html" title="Alias for YiiXL (three characters less typing FTW!)." alt="" coords="956,245,993,275"/>
+<area shape="rect" id="node69" href="$interfaceIXLLogger.html" title="This interface defines a logger." alt="" coords="413,272,496,301"/>
+</map>

@@ -1,0 +1,94 @@
+\hypertarget{classCPSWidgetFactory}{
+\section{CPSWidgetFactory Class Reference}
+\label{classCPSWidgetFactory}\index{CPSWidgetFactory@{CPSWidgetFactory}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSWidgetFactory_a9ccf7fcc2084becc6d283fbd6ff5a86c}{createWidget} (\$owner, \$className, \$properties=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 36 of file CPSWidgetFactory.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSWidgetFactory_a9ccf7fcc2084becc6d283fbd6ff5a86c}{
+\index{CPSWidgetFactory@{CPSWidgetFactory}!createWidget@{createWidget}}
+\index{createWidget@{createWidget}!CPSWidgetFactory@{CPSWidgetFactory}}
+\subsubsection[{createWidget}]{\setlength{\rightskip}{0pt plus 5cm}createWidget (
+\begin{DoxyParamCaption}
+\item[{\$}]{ owner, }
+\item[{\$}]{ className, }
+\item[{\$}]{ properties = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidgetFactory_a9ccf7fcc2084becc6d283fbd6ff5a86c}
+Creates a new widget based on the given class name and initial properties. 
+\begin{DoxyParams}{Parameters}
+\item[{\em CBaseController}]\$owner the owner of the new widget \item[{\em string}]\$className the class name of the widget. This can also be a path alias (e.g. system.web.widgets.COutputCache) \item[{\em array}]\$properties the initial property values (name=$>$value) of the widget. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+CWidget the newly created widget whose properties have been initialized with the given values. 
+\end{DoxyReturn}
+
+
+Definition at line 49 of file CPSWidgetFactory.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $className = Yii::import( $className, true );
+
+        if ( isset( $this->widgets[$className] ) )
+            $properties = ( array() === $properties ? $this->widgets[$className] 
+      : CMap::mergeArray( $this->widgets[$className], $properties ) );
+
+        if ( $this->enableSkin )
+        {
+            if ( null === $this->skinnableWidgets || in_array( $className, $this-
+      >skinnableWidgets ) )
+            {
+                $_skinName = CPSHelperBase::o( $properties, 'skin', 'default' );
+
+                if ( false !== $_skinName && array() !== ( $_skin = $this->getSki
+      n( $className, $_skinName ) ) )
+                    $properties = ( array() === $properties ? $_skin : CMap::merg
+      eArray( $_skin, $properties ) );
+            }
+        }
+
+        //  Create our widget, pass in properties as well
+        $_widget = new $className( $owner, $properties );
+
+        //  Configure
+        foreach ( $properties as $_key => $_value )
+            $_widget->{$_key} = $_value;
+
+        //  Return!
+        return $_widget;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classCPSWidgetFactory_a9ccf7fcc2084becc6d283fbd6ff5a86c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/helpers/\hyperlink{CPSWidgetFactory_8php}{CPSWidgetFactory.php}\end{DoxyCompactItemize}

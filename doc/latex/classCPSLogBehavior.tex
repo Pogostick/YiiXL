@@ -1,0 +1,217 @@
+\hypertarget{classCPSLogBehavior}{
+\section{CPSLogBehavior Class Reference}
+\label{classCPSLogBehavior}\index{CPSLogBehavior@{CPSLogBehavior}}
+}
+
+
+Inheritance diagram for CPSLogBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classCPSLogBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSLogBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classCPSLogBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSLogBehavior_a095c5d389db211932136b53f25f39685}{\_\-\_\-construct} ()
+\item 
+\hyperlink{classCPSLogBehavior_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSLogBehavior_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSLogBehavior_aa18c8754403c04289ac8fbfc467df4ac}{getInternalName} ()
+\item 
+\hyperlink{classCPSLogBehavior_a0c8c21c19fd1818f2f472ae1d81f086d}{setInternalName} (\$sValue)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 20 of file CPSLogBehavior.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSLogBehavior_a095c5d389db211932136b53f25f39685}{
+\index{CPSLogBehavior@{CPSLogBehavior}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSLogBehavior@{CPSLogBehavior}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSLogBehavior_a095c5d389db211932136b53f25f39685}
+Constructor 
+
+Definition at line 29 of file CPSLogBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::_construct( $options );
+
+        //  Preinitialize
+        $this->preinit();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSLogBehavior_a095c5d389db211932136b53f25f39685_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSLogBehavior_aa18c8754403c04289ac8fbfc467df4ac}{
+\index{CPSLogBehavior@{CPSLogBehavior}!getInternalName@{getInternalName}}
+\index{getInternalName@{getInternalName}!CPSLogBehavior@{CPSLogBehavior}}
+\subsubsection[{getInternalName}]{\setlength{\rightskip}{0pt plus 5cm}getInternalName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSLogBehavior_aa18c8754403c04289ac8fbfc467df4ac}
+Get the internal name of our component \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIPSComponent_aa18c8754403c04289ac8fbfc467df4ac}{IPSComponent}.
+
+
+
+Definition at line 60 of file CPSLogBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_internalName; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSLogBehavior_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSLogBehavior@{CPSLogBehavior}!init@{init}}
+\index{init@{init}!CPSLogBehavior@{CPSLogBehavior}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSLogBehavior_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize 
+
+Definition at line 52 of file CPSLogBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSLogBehavior_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSLogBehavior@{CPSLogBehavior}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSLogBehavior@{CPSLogBehavior}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSLogBehavior_a2dc262e99b1c246b56f27626bfe699ff}
+Preinitialize the object 
+
+Implements \hyperlink{interfaceIPSComponent_a2dc262e99b1c246b56f27626bfe699ff}{IPSComponent}.
+
+
+
+Definition at line 44 of file CPSLogBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        CPSHelperBase::createInternalName( $this );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSLogBehavior_a2dc262e99b1c246b56f27626bfe699ff_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classCPSLogBehavior_a2dc262e99b1c246b56f27626bfe699ff_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSLogBehavior_a0c8c21c19fd1818f2f472ae1d81f086d}{
+\index{CPSLogBehavior@{CPSLogBehavior}!setInternalName@{setInternalName}}
+\index{setInternalName@{setInternalName}!CPSLogBehavior@{CPSLogBehavior}}
+\subsubsection[{setInternalName}]{\setlength{\rightskip}{0pt plus 5cm}setInternalName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSLogBehavior_a0c8c21c19fd1818f2f472ae1d81f086d}
+Set the internal name of this component 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\end{DoxyParams}
+
+
+Implements \hyperlink{interfaceIPSComponent_a08e716b913e06fdbb77e84f81c0a3a35}{IPSComponent}.
+
+
+
+Definition at line 66 of file CPSLogBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_internalName = $sValue; }
+\end{DoxyCode}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/behaviors/\hyperlink{CPSLogBehavior_8php}{CPSLogBehavior.php}\end{DoxyCompactItemize}

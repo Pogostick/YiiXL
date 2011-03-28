@@ -1,0 +1,1427 @@
+\hypertarget{classSF__Platform}{
+\section{SF\_\-Platform Class Reference}
+\label{classSF__Platform}\index{SF\_\-Platform@{SF\_\-Platform}}
+}
+
+
+Inheritance diagram for SF\_\-Platform:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classSF__Platform__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSF__Platform_a910390410dc3e516f9323bebf27d57a8}{\_\-\_\-construct} (\$sBaseUrl, \$sAppName, \$sAppId, \$sAPIKey, \$sAPISecret=\char`\"{}\char`\"{}, \$sProfileId=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classSF__Platform_a9ad3d2905b2a50dfbee6d5f473e758a9}{\_\-\_\-set} (\$sProp, \$oValue)
+\item 
+\hyperlink{classSF__Platform_a9519b5bba407a1a89f324fcc7f26c0e2}{\_\-\_\-get} (\$sProp)
+\item 
+\hyperlink{classSF__Platform_aa40909289ffd00ccc071d938f586fc47}{processQueryString} ()
+\item 
+\hyperlink{classSF__Platform_a672e5a73f1b59609d6530926f0c90568}{redirect} (\$sUrl=null)
+\item 
+\hyperlink{classSF__Platform_ae081ea719cf453b879942b2167d22457}{setGoogleAnalyticsId} (\$sId)
+\item 
+\hyperlink{classSF__Platform_ac3b978d82ece5ad68f6a1eacef1fb04c}{render} (\$sPage=\char`\"{}\char`\"{}, \$iTitle=1)
+\item 
+\hyperlink{classSF__Platform_a10b40817a4c75a202a41511d31629e6c}{getCallbackUrl} ()
+\item 
+\hyperlink{classSF__Platform_aec474172017ccece67a1c46e1a5a3460}{getAppUrl} ()
+\item 
+\hyperlink{classSF__Platform_a2104a9897a2bd81518382cb07a0b41cf}{requireAdd} ()
+\item 
+\hyperlink{classSF__Platform_a8279b755615299d23d0989e9330ea638}{requireLogin} ()
+\item 
+\hyperlink{classSF__Platform_a2f3c6eb30cc80a28261ed06074224f12}{requireFrame} ()
+\item 
+\hyperlink{classSF__Platform_a18a992b92ee5ff3ad60ec30d8e0cba60}{validateUser} (\$bRequireFrame=true, \$bRequireAdd=true, \$bRequireLogin=false, \$bUsePrefs=true, \$bAddUser=true)
+\item 
+\hyperlink{classSF__Platform_ab5bf72330191aff91d12b6cee65d5e14}{renderGoogleAnalytics} (\$sPage=\char`\"{}\char`\"{}, \$iTitle=1)
+\item 
+\hyperlink{classSF__Platform_a3606743752a94277695713e909058e13}{getPFType} ()
+\item 
+\hyperlink{classSF__Platform_ae54fd14fc0c3886a038431868ac4fbc7}{getPFName} ()
+\item 
+\hyperlink{classSF__Platform_a24c354534c9265c4a7cbd73c0f82ba56}{setProfileML} (\$sML, \$sPFUserId=null, \$sProfileML= '', \$sProfileActionML= '', \$sMobileProfileML= '')
+\item 
+\hyperlink{classSF__Platform_aea9e29722f6d4ecdfab07f196e132bcb}{execPFSQL} (\$sSQL)
+\item 
+\hyperlink{classSF__Platform_af25bc3b138038094b8a0b8233adf06c7}{getUserData} (\$ePref)
+\item 
+\hyperlink{classSF__Platform_aa70ade6295aedd084a68f97b27441c3b}{setRefHandle} (\$sFBML, \$sHandle=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classSF__Platform_aad5709bf4b030e39bc8e7e2cbf4812a5}{getUserInfo} (\$sFields=\char`\"{}\char`\"{}, \$sUIDs=null)
+\item 
+\hyperlink{classSF__Platform_a71b7a74bd23b2c2be77aad5448cda40b}{getSessionKey} ()
+\item 
+\hyperlink{classSF__Platform_a1b675b86fea379a2fffe42a929336863}{publishUserAction} (\$title, \$body= '', \$image\_\-1=null, \$image\_\-1\_\-link=null)
+\item 
+\hyperlink{classSF__Platform_a2934d82c09cab3e5d4a9a48d8c20e9e0}{publishTemplatizedAction} (\$title\_\-template, \$title\_\-data, \$body\_\-template, \$body\_\-data, \$body\_\-general, \$image\_\-1=null, \$image\_\-1\_\-link=null, \$image\_\-2=null, \$image\_\-2\_\-link=null, \$image\_\-3=null, \$image\_\-3\_\-link=null, \$image\_\-4=null, \$image\_\-4\_\-link=null, \$target\_\-ids='', \$page\_\-actor\_\-id=null)
+\item 
+\hyperlink{classSF__Platform_a9ffd051e90f4f71d5930fe4d3123eb85}{getAddAppUrl} (\$sNextParam=null)
+\item 
+\hyperlink{classSF__Platform_abeaeaede3b8397506c43ad11e30a9ad2}{getErrorMessage} (\$sMessage)
+\item 
+\hyperlink{classSF__Platform_a4b06a12e4e229a553f98c93c2dad9c9e}{loadInvitePage} (\$sInviteText, \$sInviteLabel, \&\$sInviteFBML, \&\$arFriends, \$sExtraParms=null)
+\item 
+\hyperlink{classSF__Platform_ae9be876b94d769590d9a4c90d330ad55}{getInviteContent} (\$sInviteText, \$sInviteLabel, \$sAddAppUrl)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classSF__Platform_a62453ddee0ad73bf75416e79302d41fd}{getMLEditorSelect} (\$sLabel, \$sName, \$oRS, \$iDefault, \$sNSPrefix=\char`\"{}fb\char`\"{})
+\item 
+static \hyperlink{classSF__Platform_a288c92b5b26beeb718572201a65288d9}{getCodeSelectList} (\$oDB, \$sLabel, \$sName, \$sCodeType, \$iDefault, \$sNSPrefix=\char`\"{}fb\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSF__Platform_a77e104305f68123aaf2000ff886331d8}{getDashboardFBML} (\$sPrefix, \$arDashPoints)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSF__Platform_a12f1f6a87e26bffa94c2b7e5ea3885c9}{\$m\_\-sBaseUrl} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{classSF__Platform_ae9ca918bbe92c641557f1ee16a082100}{\$m\_\-sAppPage} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{classSF__Platform_ab35950231d123d9279d8b0b3b0878609}{\$m\_\-sAppUrl} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{classSF__Platform_a5c010b1e93c651cf5024339d568fb0d1}{\$m\_\-sCallbackUrl} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{classSF__Platform_a349b224844e6202ccda4da1605f5156b}{\$m\_\-sAppName} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{classSF__Platform_acd79de47be3cc9eb08fa4190b5d8a8bb}{\$m\_\-sAppId} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{classSF__Platform_a47530e961351765a665c4ba63e72ff3d}{\$m\_\-sAPIKey} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{classSF__Platform_ad25b743c1731f4d58b617a193538c2b0}{\$m\_\-sAPISecret} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{classSF__Platform_a23d5b5190ee32c4eb8fff028844b1fa6}{\$m\_\-oPFAPI} = null
+\item 
+\hyperlink{classSF__Platform_aca2665de105ba9e1a89b58722bd21f16}{\$m\_\-sPFUserId} = null
+\item 
+\hyperlink{classSF__Platform_ae91a01f7cb3d6446617f9e6cae69533c}{\$m\_\-sRefPFUserId} = null
+\item 
+\hyperlink{classSF__Platform_a935f137fe74f4707be2d81593c3a624d}{\$m\_\-sProfileId} = null
+\item 
+\hyperlink{classSF__Platform_a450e8067b60f9369bc4370c74ea0f862}{\$m\_\-sGAKey} = null
+\item 
+\hyperlink{classSF__Platform_af011645fea7e741d5cffcbe968799d90}{\$m\_\-sServerUrl} = null
+\item 
+\hyperlink{classSF__Platform_a480a834e33015cc9a001d1d84972bb12}{\$m\_\-oUserDB} = null
+\item 
+\hyperlink{classSF__Platform_a22d1091f94c58e3533304abe3eb9e9fe}{\$m\_\-oSntx} = null
+\item 
+\hyperlink{classSF__Platform_afe554572420154a2cf6d9ab5049abe55}{\$m\_\-sNSPrefix} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base of all platform APIs 
+
+Definition at line 28 of file SF\_\-Platform.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSF__Platform_a910390410dc3e516f9323bebf27d57a8}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sBaseUrl, }
+\item[{\$}]{ sAppName, }
+\item[{\$}]{ sAppId, }
+\item[{\$}]{ sAPIKey, }
+\item[{\$}]{ sAPISecret = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{\$}]{ sProfileId = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_a910390410dc3e516f9323bebf27d57a8}
+Constructor 
+
+Definition at line 51 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_sBaseUrl = $sBaseUrl;
+        $this->m_sAppName = $sAppName;
+        $this->m_sAppId = $sAppId;
+        $this->m_sAPIKey = $sAPIKey;
+        $this->m_sAPISecret = $sAPISecret;
+        $this->m_sProfileId = $sProfileId;
+        $this->m_sServerUrl = $sBaseUrl . $sAppName . "/";
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSF__Platform_a9519b5bba407a1a89f324fcc7f26c0e2}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\_\-\_\-get@{\_\-\_\-get}}
+\index{\_\-\_\-get@{\_\-\_\-get}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\_\-\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-get (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sProp}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_a9519b5bba407a1a89f324fcc7f26c0e2}
+Getting properties
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sProp \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object value 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        switch ( $sProp )
+        {
+            case "RefPFUserId":
+                return( $this->m_sRefPFUserId );
+
+            case "UserDB":
+                return( $this->m_oUserDB );
+
+            case "BaseUrl":
+                return( $this->m_sBaseUrl );
+
+            case "AppName":
+                return( $this->m_sAppName );
+
+            case "AppId":
+                return( $this->m_sAppId );
+
+            case "APIKey":
+                return( $this->m_sAPIKey );
+
+            case "APISecretKey":
+                return( $this->m_sAPISecret );
+
+            case "CallbackUrl":
+                return( $this->m_sCallbackUrl );
+
+            case "AppPage":
+                return( $this->m_sAppPage );
+
+            case "AppUrl":
+                return( $this->m_sAppUrl );
+
+            case "PFAPI":
+                return( $this->m_oPFAPI );
+
+            case "PFUserId":
+                return( $this->m_sPFUserId );
+
+            case "ProfileId":
+                return( $this->m_sProfileId );
+
+            case "ServerUrl":
+                return( $this->m_sServerUrl );
+
+            case "GAKey":
+                return( $this->m_sGAKey );
+
+            case "Sonetrix":
+                return( $this->m_oSntx );
+
+            case "NSPrefix":
+                return( $this->m_sNSPrefix );
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Platform_a9ad3d2905b2a50dfbee6d5f473e758a9}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\_\-\_\-set@{\_\-\_\-set}}
+\index{\_\-\_\-set@{\_\-\_\-set}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\_\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sProp, }
+\item[{\$}]{ oValue}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_a9ad3d2905b2a50dfbee6d5f473e758a9}
+Setting properties
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sProp \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object value 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        switch ( $sProp )
+        {
+            case "RefPFUserId":
+                $this->m_sRefPFUserId = $oValue;
+                break;
+
+            case "UserDB":
+                $this->m_oUserDB = $oValue;
+                break;
+
+            case "GAKey":
+                $this->m_sGAKey = $oValue;
+                break;
+
+            case "Sonetrix":
+                $this->m_oSntx = $oValue;
+                break;
+
+            case "NSPrefix":
+                $this->m_sNSPrefix = $oValue;
+                break;
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Platform_aea9e29722f6d4ecdfab07f196e132bcb}{
+\index{SF\_\-Platform@{SF\_\-Platform}!execPFSQL@{execPFSQL}}
+\index{execPFSQL@{execPFSQL}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{execPFSQL}]{\setlength{\rightskip}{0pt plus 5cm}execPFSQL (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSQL}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract\mbox{]}}}}
+\label{classSF__Platform_aea9e29722f6d4ecdfab07f196e132bcb}
+
+
+Reimplemented in \hyperlink{classSF__Facebook_aea9e29722f6d4ecdfab07f196e132bcb}{SF\_\-Facebook}.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classSF__Platform_aea9e29722f6d4ecdfab07f196e132bcb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Platform_a9ffd051e90f4f71d5930fe4d3123eb85}{
+\index{SF\_\-Platform@{SF\_\-Platform}!getAddAppUrl@{getAddAppUrl}}
+\index{getAddAppUrl@{getAddAppUrl}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{getAddAppUrl}]{\setlength{\rightskip}{0pt plus 5cm}getAddAppUrl (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sNextParam = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract\mbox{]}}}}
+\label{classSF__Platform_a9ffd051e90f4f71d5930fe4d3123eb85}
+Get the add application url 
+
+Reimplemented in \hyperlink{classSF__Facebook_a9ffd051e90f4f71d5930fe4d3123eb85}{SF\_\-Facebook}.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classSF__Platform_a9ffd051e90f4f71d5930fe4d3123eb85_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Platform_aec474172017ccece67a1c46e1a5a3460}{
+\index{SF\_\-Platform@{SF\_\-Platform}!getAppUrl@{getAppUrl}}
+\index{getAppUrl@{getAppUrl}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{getAppUrl}]{\setlength{\rightskip}{0pt plus 5cm}getAppUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_aec474172017ccece67a1c46e1a5a3460}
+Gets the application url
+
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 235 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( $this->m_sAppUrl );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Platform_a10b40817a4c75a202a41511d31629e6c}{
+\index{SF\_\-Platform@{SF\_\-Platform}!getCallbackUrl@{getCallbackUrl}}
+\index{getCallbackUrl@{getCallbackUrl}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{getCallbackUrl}]{\setlength{\rightskip}{0pt plus 5cm}getCallbackUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_a10b40817a4c75a202a41511d31629e6c}
+Returns the callback url of the app
+
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 225 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( $this->m_sServerUrl );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Platform_a288c92b5b26beeb718572201a65288d9}{
+\index{SF\_\-Platform@{SF\_\-Platform}!getCodeSelectList@{getCodeSelectList}}
+\index{getCodeSelectList@{getCodeSelectList}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{getCodeSelectList}]{\setlength{\rightskip}{0pt plus 5cm}static getCodeSelectList (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oDB, }
+\item[{\$}]{ sLabel, }
+\item[{\$}]{ sName, }
+\item[{\$}]{ sCodeType, }
+\item[{\$}]{ iDefault, }
+\item[{\$}]{ sNSPrefix = {\ttfamily \char`\"{}fb\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classSF__Platform_a288c92b5b26beeb718572201a65288d9}
+
+
+Definition at line 532 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $rs = $oDB->getRecordset( "select code_uid, code_desc_text from pspan_cod
+      e_t where code_type_text = '" . strtoupper( $sCodeType ) . "' order by 2", false 
+      );
+        return( SF_Platform::getMLEditorSelect( $sLabel, $sName, $rs, $iDefault, 
+      $sNSPrefix ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classSF__Platform_a288c92b5b26beeb718572201a65288d9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Platform_a77e104305f68123aaf2000ff886331d8}{
+\index{SF\_\-Platform@{SF\_\-Platform}!getDashboardFBML@{getDashboardFBML}}
+\index{getDashboardFBML@{getDashboardFBML}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{getDashboardFBML}]{\setlength{\rightskip}{0pt plus 5cm}getDashboardFBML (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sPrefix, }
+\item[{\$}]{ arDashPoints}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_a77e104305f68123aaf2000ff886331d8}
+Gets generic dashboard FBML
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$arDashPoints \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 190 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $sOut = "<$sPrefix:dashboard>";
+
+        foreach ( $arDashPoints as $oPName => $oPoint )
+        {
+            $sOut .= "<$sPrefix:" . $oPoint[ 'type' ] . " href=\"" . $oPoint[ 'ur
+      l' ] . "\">" . $oPoint[ 'name' ] . "</$sPrefix:" . $oPoint[ 'type' ] . ">";
+        }
+
+        $sOut .= "</$sPrefix:dashboard>";
+
+        return( $sOut );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Platform_abeaeaede3b8397506c43ad11e30a9ad2}{
+\index{SF\_\-Platform@{SF\_\-Platform}!getErrorMessage@{getErrorMessage}}
+\index{getErrorMessage@{getErrorMessage}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{getErrorMessage}]{\setlength{\rightskip}{0pt plus 5cm}getErrorMessage (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sMessage}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_abeaeaede3b8397506c43ad11e30a9ad2}
+
+
+Definition at line 443 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( "<{$this->m_sNSPrefix}:error message=\"$sMessage\" />" );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Platform_ae9be876b94d769590d9a4c90d330ad55}{
+\index{SF\_\-Platform@{SF\_\-Platform}!getInviteContent@{getInviteContent}}
+\index{getInviteContent@{getInviteContent}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{getInviteContent}]{\setlength{\rightskip}{0pt plus 5cm}getInviteContent (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sInviteText, }
+\item[{\$}]{ sInviteLabel, }
+\item[{\$}]{ sAddAppUrl}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_ae9be876b94d769590d9a4c90d330ad55}
+
+
+Definition at line 495 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $sInviteFBML = <<<FBML
+<{$this->m_sNSPrefix}:name uid="{$this->PFUserId}" firstnameonly="true" shownetwo
+      rk="false"/>$sInviteText
+<{$this->m_sNSPrefix}:req-choice url="{$sAddAppUrl}" label="$sInviteLabel" />
+FBML;
+
+        return( $sInviteFBML );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classSF__Platform_ae9be876b94d769590d9a4c90d330ad55_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Platform_a62453ddee0ad73bf75416e79302d41fd}{
+\index{SF\_\-Platform@{SF\_\-Platform}!getMLEditorSelect@{getMLEditorSelect}}
+\index{getMLEditorSelect@{getMLEditorSelect}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{getMLEditorSelect}]{\setlength{\rightskip}{0pt plus 5cm}static getMLEditorSelect (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sLabel, }
+\item[{\$}]{ sName, }
+\item[{\$}]{ oRS, }
+\item[{\$}]{ iDefault, }
+\item[{\$}]{ sNSPrefix = {\ttfamily \char`\"{}fb\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classSF__Platform_a62453ddee0ad73bf75416e79302d41fd}
+
+
+Definition at line 508 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $sOut = "";
+
+        $sOut .= "<{$sNSPrefix}:editor-custom label=\"{$sLabel}\">";
+        $sOut .= "<select name=\"{$sName}\">";
+
+        while ( $row = mysql_fetch_array( $oRS ) )
+        {
+            $sOut .= "<option value=\"{$row[0]}\"";
+            if ( $row[ 0 ] == $iDefault )
+                $sOut .= " selected ";
+            $sOut .= ">" . $row[1] . "</option>";
+        }
+
+        $sOut .= "</select>";
+        $sOut .= "</{$sNSPrefix}:editor-custom>";
+
+        return( $sOut );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classSF__Platform_a62453ddee0ad73bf75416e79302d41fd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Platform_ae54fd14fc0c3886a038431868ac4fbc7}{
+\index{SF\_\-Platform@{SF\_\-Platform}!getPFName@{getPFName}}
+\index{getPFName@{getPFName}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{getPFName}]{\setlength{\rightskip}{0pt plus 5cm}getPFName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract\mbox{]}}}}
+\label{classSF__Platform_ae54fd14fc0c3886a038431868ac4fbc7}
+Returns the platform display name 
+
+Reimplemented in \hyperlink{classSF__Facebook_ae54fd14fc0c3886a038431868ac4fbc7}{SF\_\-Facebook}.
+
+\hypertarget{classSF__Platform_a3606743752a94277695713e909058e13}{
+\index{SF\_\-Platform@{SF\_\-Platform}!getPFType@{getPFType}}
+\index{getPFType@{getPFType}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{getPFType}]{\setlength{\rightskip}{0pt plus 5cm}getPFType (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract\mbox{]}}}}
+\label{classSF__Platform_a3606743752a94277695713e909058e13}
+Returns the platform type code 
+
+Reimplemented in \hyperlink{classSF__Facebook_a3606743752a94277695713e909058e13}{SF\_\-Facebook}.
+
+\hypertarget{classSF__Platform_a71b7a74bd23b2c2be77aad5448cda40b}{
+\index{SF\_\-Platform@{SF\_\-Platform}!getSessionKey@{getSessionKey}}
+\index{getSessionKey@{getSessionKey}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{getSessionKey}]{\setlength{\rightskip}{0pt plus 5cm}getSessionKey (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract\mbox{]}}}}
+\label{classSF__Platform_a71b7a74bd23b2c2be77aad5448cda40b}
+Gets current session key 
+
+Reimplemented in \hyperlink{classSF__Facebook_a71b7a74bd23b2c2be77aad5448cda40b}{SF\_\-Facebook}.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{classSF__Platform_a71b7a74bd23b2c2be77aad5448cda40b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Platform_af25bc3b138038094b8a0b8233adf06c7}{
+\index{SF\_\-Platform@{SF\_\-Platform}!getUserData@{getUserData}}
+\index{getUserData@{getUserData}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{getUserData}]{\setlength{\rightskip}{0pt plus 5cm}getUserData (
+\begin{DoxyParamCaption}
+\item[{\$}]{ ePref}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract\mbox{]}}}}
+\label{classSF__Platform_af25bc3b138038094b8a0b8233adf06c7}
+
+
+Reimplemented in \hyperlink{classSF__Facebook_abef0629a5601043cbfa3ea8b1c5865e7}{SF\_\-Facebook}.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classSF__Platform_af25bc3b138038094b8a0b8233adf06c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Platform_aad5709bf4b030e39bc8e7e2cbf4812a5}{
+\index{SF\_\-Platform@{SF\_\-Platform}!getUserInfo@{getUserInfo}}
+\index{getUserInfo@{getUserInfo}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{getUserInfo}]{\setlength{\rightskip}{0pt plus 5cm}getUserInfo (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sFields = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{\$}]{ sUIDs = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract\mbox{]}}}}
+\label{classSF__Platform_aad5709bf4b030e39bc8e7e2cbf4812a5}
+Retrieve data from server about current user... 
+
+Reimplemented in \hyperlink{classSF__Facebook_aad5709bf4b030e39bc8e7e2cbf4812a5}{SF\_\-Facebook}.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classSF__Platform_aad5709bf4b030e39bc8e7e2cbf4812a5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Platform_a4b06a12e4e229a553f98c93c2dad9c9e}{
+\index{SF\_\-Platform@{SF\_\-Platform}!loadInvitePage@{loadInvitePage}}
+\index{loadInvitePage@{loadInvitePage}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{loadInvitePage}]{\setlength{\rightskip}{0pt plus 5cm}loadInvitePage (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sInviteText, }
+\item[{\$}]{ sInviteLabel, }
+\item[{\&\$}]{ sInviteFBML, }
+\item[{\&\$}]{ arFriends, }
+\item[{\$}]{ sExtraParms = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_a4b06a12e4e229a553f98c93c2dad9c9e}
+Renders a standard invite page...
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sInviteText \item[{\em unknown\_\-type}]\$sInviteLabel \item[{\em unknown\_\-type}]\$sActionType \item[{\em unknown\_\-type}]\$sActionText \end{DoxyParams}
+
+
+Definition at line 456 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $iCount = 0;
+
+        $sIDList = $this->m_oSntx->user_getInvitees();
+        $sAction = "";
+
+        $rs = $this->execPFSQL( "SELECT uid FROM user WHERE has_added_app = 1 and
+       uid IN (SELECT uid2 FROM friend WHERE uid1 = " . $this->PFUserId . " )" );
+
+        $arFriends = "";
+
+        if ( $rs && is_array( $rs ) )
+        {
+            for ( $i = 0; $i < count($rs); $i++ )
+            {
+                if ( $arFriends != "" )
+                    $arFriends .= ",";
+
+                $arFriends .= $rs[ $i ]['uid'];
+
+                $iCount++;
+            }
+        }
+
+        //  Append already invited folks...
+        if ( $sIDList != "" )
+            $arFriends .= "," . trim($sIDList);
+
+        $sNextUrl = "&refuid=" . $this->PFUserId;
+        if ( $sExtraParms != null )
+            $sNextUrl .= $sExtraParms;
+
+        $sAddAppUrl = $this->getAddAppUrl( $sNextUrl );
+
+        $sInviteFBML = $this->getInviteContent( $sInviteText, $sInviteLabel, $sAd
+      dAppUrl );
+
+        return( $sNextUrl );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classSF__Platform_a4b06a12e4e229a553f98c93c2dad9c9e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Platform_aa40909289ffd00ccc071d938f586fc47}{
+\index{SF\_\-Platform@{SF\_\-Platform}!processQueryString@{processQueryString}}
+\index{processQueryString@{processQueryString}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{processQueryString}]{\setlength{\rightskip}{0pt plus 5cm}processQueryString (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_aa40909289ffd00ccc071d938f586fc47}
+
+
+Definition at line 160 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_sRefPFUserId = null;
+
+        if ( isset( $_REQUEST['refuid'] ) )
+            $this->m_sRefPFUserId = $_REQUEST[ 'refuid' ];
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Platform_a2934d82c09cab3e5d4a9a48d8c20e9e0}{
+\index{SF\_\-Platform@{SF\_\-Platform}!publishTemplatizedAction@{publishTemplatizedAction}}
+\index{publishTemplatizedAction@{publishTemplatizedAction}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{publishTemplatizedAction}]{\setlength{\rightskip}{0pt plus 5cm}publishTemplatizedAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ title\_\-template, }
+\item[{\$}]{ title\_\-data, }
+\item[{\$}]{ body\_\-template, }
+\item[{\$}]{ body\_\-data, }
+\item[{\$}]{ body\_\-general, }
+\item[{\$}]{ image\_\-1 = {\ttfamily null}, }
+\item[{\$}]{ image\_\-1\_\-link = {\ttfamily null}, }
+\item[{\$}]{ image\_\-2 = {\ttfamily null}, }
+\item[{\$}]{ image\_\-2\_\-link = {\ttfamily null}, }
+\item[{\$}]{ image\_\-3 = {\ttfamily null}, }
+\item[{\$}]{ image\_\-3\_\-link = {\ttfamily null}, }
+\item[{\$}]{ image\_\-4 = {\ttfamily null}, }
+\item[{\$}]{ image\_\-4\_\-link = {\ttfamily null}, }
+\item[{\$}]{ target\_\-ids = {\ttfamily ''}, }
+\item[{\$}]{ page\_\-actor\_\-id = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract\mbox{]}}}}
+\label{classSF__Platform_a2934d82c09cab3e5d4a9a48d8c20e9e0}
+Publish to feed (templatized) 
+
+Reimplemented in \hyperlink{classSF__Facebook_a2934d82c09cab3e5d4a9a48d8c20e9e0}{SF\_\-Facebook}.
+
+\hypertarget{classSF__Platform_a1b675b86fea379a2fffe42a929336863}{
+\index{SF\_\-Platform@{SF\_\-Platform}!publishUserAction@{publishUserAction}}
+\index{publishUserAction@{publishUserAction}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{publishUserAction}]{\setlength{\rightskip}{0pt plus 5cm}publishUserAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ title, }
+\item[{\$}]{ body = {\ttfamily ''}, }
+\item[{\$}]{ image\_\-1 = {\ttfamily null}, }
+\item[{\$}]{ image\_\-1\_\-link = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract\mbox{]}}}}
+\label{classSF__Platform_a1b675b86fea379a2fffe42a929336863}
+Publish to feed 
+
+Reimplemented in \hyperlink{classSF__Facebook_a1b675b86fea379a2fffe42a929336863}{SF\_\-Facebook}.
+
+\hypertarget{classSF__Platform_a672e5a73f1b59609d6530926f0c90568}{
+\index{SF\_\-Platform@{SF\_\-Platform}!redirect@{redirect}}
+\index{redirect@{redirect}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{redirect}]{\setlength{\rightskip}{0pt plus 5cm}redirect (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUrl = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_a672e5a73f1b59609d6530926f0c90568}
+
+
+Definition at line 171 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        try
+        {
+            if ( null != $this->m_oPFAPI && null != $sUrl )
+                $this->m_oPFAPI->redirect( $sUrl );
+        }
+        catch ( Exception $_ex )
+        {
+            //  Totally ignore error if not supported...
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Platform_ac3b978d82ece5ad68f6a1eacef1fb04c}{
+\index{SF\_\-Platform@{SF\_\-Platform}!render@{render}}
+\index{render@{render}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}render (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sPage = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{\$}]{ iTitle = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_ac3b978d82ece5ad68f6a1eacef1fb04c}
+
+
+Definition at line 215 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->renderGoogleAnalytics( $sPage, $iTitle );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{classSF__Platform_ac3b978d82ece5ad68f6a1eacef1fb04c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Platform_ab5bf72330191aff91d12b6cee65d5e14}{
+\index{SF\_\-Platform@{SF\_\-Platform}!renderGoogleAnalytics@{renderGoogleAnalytics}}
+\index{renderGoogleAnalytics@{renderGoogleAnalytics}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{renderGoogleAnalytics}]{\setlength{\rightskip}{0pt plus 5cm}renderGoogleAnalytics (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sPage = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{\$}]{ iTitle = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract\mbox{]}}}}
+\label{classSF__Platform_ab5bf72330191aff91d12b6cee65d5e14}
+Renders google analytics code... 
+
+Reimplemented in \hyperlink{classSF__Facebook_aa3a5bc9c0f82eddaa51e3819c65161e6}{SF\_\-Facebook}.
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{classSF__Platform_ab5bf72330191aff91d12b6cee65d5e14_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Platform_a2104a9897a2bd81518382cb07a0b41cf}{
+\index{SF\_\-Platform@{SF\_\-Platform}!requireAdd@{requireAdd}}
+\index{requireAdd@{requireAdd}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{requireAdd}]{\setlength{\rightskip}{0pt plus 5cm}requireAdd (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_a2104a9897a2bd81518382cb07a0b41cf}
+Require add 
+
+Reimplemented in \hyperlink{classSF__Facebook_a2104a9897a2bd81518382cb07a0b41cf}{SF\_\-Facebook}.
+
+
+
+Definition at line 244 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( null != $this->m_oPFAPI )
+            $this->requireAdd();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classSF__Platform_a2104a9897a2bd81518382cb07a0b41cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Platform_a2f3c6eb30cc80a28261ed06074224f12}{
+\index{SF\_\-Platform@{SF\_\-Platform}!requireFrame@{requireFrame}}
+\index{requireFrame@{requireFrame}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{requireFrame}]{\setlength{\rightskip}{0pt plus 5cm}requireFrame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_a2f3c6eb30cc80a28261ed06074224f12}
+Require frame 
+
+Reimplemented in \hyperlink{classSF__Facebook_a2f3c6eb30cc80a28261ed06074224f12}{SF\_\-Facebook}.
+
+
+
+Definition at line 264 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( null != $this->m_oPFAPI )
+            $this->m_oPFAPI->requireFrame();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classSF__Platform_a2f3c6eb30cc80a28261ed06074224f12_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Platform_a8279b755615299d23d0989e9330ea638}{
+\index{SF\_\-Platform@{SF\_\-Platform}!requireLogin@{requireLogin}}
+\index{requireLogin@{requireLogin}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{requireLogin}]{\setlength{\rightskip}{0pt plus 5cm}requireLogin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_a8279b755615299d23d0989e9330ea638}
+Require login 
+
+Reimplemented in \hyperlink{classSF__Facebook_a8279b755615299d23d0989e9330ea638}{SF\_\-Facebook}.
+
+
+
+Definition at line 254 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( null != $this->m_oPFAPI )
+            $this->requireLogin();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classSF__Platform_a8279b755615299d23d0989e9330ea638_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Platform_ae081ea719cf453b879942b2167d22457}{
+\index{SF\_\-Platform@{SF\_\-Platform}!setGoogleAnalyticsId@{setGoogleAnalyticsId}}
+\index{setGoogleAnalyticsId@{setGoogleAnalyticsId}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{setGoogleAnalyticsId}]{\setlength{\rightskip}{0pt plus 5cm}setGoogleAnalyticsId (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sId}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_ae081ea719cf453b879942b2167d22457}
+Sets the google analytics key if one... 
+
+Definition at line 207 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_sGAKey = $sId;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Platform_a24c354534c9265c4a7cbd73c0f82ba56}{
+\index{SF\_\-Platform@{SF\_\-Platform}!setProfileML@{setProfileML}}
+\index{setProfileML@{setProfileML}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{setProfileML}]{\setlength{\rightskip}{0pt plus 5cm}setProfileML (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sML, }
+\item[{\$}]{ sPFUserId = {\ttfamily null}, }
+\item[{\$}]{ sProfileML = {\ttfamily ''}, }
+\item[{\$}]{ sProfileActionML = {\ttfamily ''}, }
+\item[{\$}]{ sMobileProfileML = {\ttfamily ''}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract\mbox{]}}}}
+\label{classSF__Platform_a24c354534c9265c4a7cbd73c0f82ba56}
+
+
+Reimplemented in \hyperlink{classSF__Facebook_a24c354534c9265c4a7cbd73c0f82ba56}{SF\_\-Facebook}.
+
+\hypertarget{classSF__Platform_aa70ade6295aedd084a68f97b27441c3b}{
+\index{SF\_\-Platform@{SF\_\-Platform}!setRefHandle@{setRefHandle}}
+\index{setRefHandle@{setRefHandle}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{setRefHandle}]{\setlength{\rightskip}{0pt plus 5cm}setRefHandle (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sFBML, }
+\item[{\$}]{ sHandle = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract\mbox{]}}}}
+\label{classSF__Platform_aa70ade6295aedd084a68f97b27441c3b}
+
+
+Reimplemented in \hyperlink{classSF__Facebook_aa70ade6295aedd084a68f97b27441c3b}{SF\_\-Facebook}.
+
+\hypertarget{classSF__Platform_a18a992b92ee5ff3ad60ec30d8e0cba60}{
+\index{SF\_\-Platform@{SF\_\-Platform}!validateUser@{validateUser}}
+\index{validateUser@{validateUser}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{validateUser}]{\setlength{\rightskip}{0pt plus 5cm}validateUser (
+\begin{DoxyParamCaption}
+\item[{\$}]{ bRequireFrame = {\ttfamily true}, }
+\item[{\$}]{ bRequireAdd = {\ttfamily true}, }
+\item[{\$}]{ bRequireLogin = {\ttfamily false}, }
+\item[{\$}]{ bUsePrefs = {\ttfamily true}, }
+\item[{\$}]{ bAddUser = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Platform_a18a992b92ee5ff3ad60ec30d8e0cba60}
+Validate user 
+
+Definition at line 274 of file SF\_\-Platform.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $sPref = null;
+
+        if ( $bRequireFrame )
+            $this->requireFrame();
+
+        if ( $bRequireAdd )
+            $this->requireAdd();
+
+        if ( $bRequireLogin )
+            $this->requireLogin();
+
+        if ( $bUsePrefs )
+        {
+            //  Try and get prior hash uid...
+            $sPref = $this->getUserData( SF_Preferences::HashUID );
+
+            //  Doesn't exist?
+            if ( $sPref == null || $sPref == "" )
+            {
+                try
+                {
+                    //  Get data from server...
+                    $arDemoData = $this->getUserInfo();
+
+                    //  Set the demo data...
+                    $this->m_oSntx->setDemoData( SF_Helpers::array_to_string( $ar
+      DemoData ) );
+
+                    //  Store with client
+                    $this->setUserData( SF_Preferences::HashUID, $this->m_oSntx->
+      getHashUID() );
+                }
+                catch ( Exception $_ex )
+                {
+                    //  Unknown
+                    $this->m_oSntx->setHashUID( 0 );
+                }
+            }
+            else
+                $this->m_oSntx->setHashUID( intval($sPref) );
+
+            $this->setUserData( SF_Preferences::HashUID, $this->m_oSntx->getHashU
+      ID() );
+        }
+
+        //  Save session key...
+        $sPFSessionKey = $this->getSessionKey();
+
+        //  Add the user...
+        if ( $this->m_oUserDB )
+        {
+            if ( $bAddUser || ( isset( $_REQUEST['installed'] ) && $_REQUEST['ins
+      talled'] == '1' ) )
+            {
+                $_sFirst = '';
+                $_sLast = '';
+
+                try
+                {
+                    $_rs = $this->execPFSQL( "select first_name, last_name from u
+      ser where uid = " . $this->m_sPFUserId );
+                    if ( $_rs )
+                    {
+                        $_sFirst = $_rs[ 0 ][ 'first_name' ];
+                        $_sLast = $_rs[ 0 ][ 'last_name' ];
+                    }
+                }
+                catch ( Exception $_ex )
+                {
+                }
+
+                //  Is user in not the database? Add him...
+                if ( ! $this->m_oUserDB->userIsInDB( $this->m_sPFUserId ) )
+                    $this->m_oUserDB->addNewUser( $this->m_sPFUserId, $sPFSession
+      Key, $this->m_sRefPFUserId, true, $_sFirst, $_sLast );
+                elseif ( isset( $_REQUEST['installed'] ) && $_REQUEST['installed'
+      ] == '1' )
+                    $this->m_oUserDB->addOldUser( $this->m_sPFUserId, $sPFSession
+      Key, $_sFirst, $_sLast );
+                else
+                {
+                    if ( method_exists( $this->m_oUserDB, "touchUser" ) )
+                        $this->m_oUserDB->touchUser( $this->m_sPFUserId, $sPFSess
+      ionKey, $_sFirst, $_sLast );
+                }
+            }
+            else
+            {
+                try
+                {
+                    if ( method_exists( $this->m_oUserDB, "touchUser" ) )
+                    {
+                        $this->m_oUserDB->touchUser( $this->m_sPFUserId, $sPFSess
+      ionKey );
+                    }
+                }
+                catch ( Exception $_ex )
+                {
+                    error_log( "Error touching user: " . $_ex->getMessage(), 0 );
+      
+                }
+            }
+
+            //  Store the referrer...
+            if ( $this->m_sRefPFUserId != null )
+                $this->UserDB->storeReferrer( $this->m_sPFUserId, $this->m_sRefPF
+      UserId );
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{classSF__Platform_a18a992b92ee5ff3ad60ec30d8e0cba60_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classSF__Platform_a23d5b5190ee32c4eb8fff028844b1fa6}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-oPFAPI@{\$m\_\-oPFAPI}}
+\index{\$m\_\-oPFAPI@{\$m\_\-oPFAPI}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-oPFAPI}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-oPFAPI = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_a23d5b5190ee32c4eb8fff028844b1fa6}
+
+
+Definition at line 38 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_a22d1091f94c58e3533304abe3eb9e9fe}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-oSntx@{\$m\_\-oSntx}}
+\index{\$m\_\-oSntx@{\$m\_\-oSntx}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-oSntx}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-oSntx = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_a22d1091f94c58e3533304abe3eb9e9fe}
+
+
+Definition at line 45 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_a480a834e33015cc9a001d1d84972bb12}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-oUserDB@{\$m\_\-oUserDB}}
+\index{\$m\_\-oUserDB@{\$m\_\-oUserDB}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-oUserDB}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-oUserDB = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_a480a834e33015cc9a001d1d84972bb12}
+
+
+Definition at line 44 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_a47530e961351765a665c4ba63e72ff3d}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-sAPIKey@{\$m\_\-sAPIKey}}
+\index{\$m\_\-sAPIKey@{\$m\_\-sAPIKey}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-sAPIKey}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sAPIKey = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_a47530e961351765a665c4ba63e72ff3d}
+
+
+Definition at line 36 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_ad25b743c1731f4d58b617a193538c2b0}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-sAPISecret@{\$m\_\-sAPISecret}}
+\index{\$m\_\-sAPISecret@{\$m\_\-sAPISecret}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-sAPISecret}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sAPISecret = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_ad25b743c1731f4d58b617a193538c2b0}
+
+
+Definition at line 37 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_acd79de47be3cc9eb08fa4190b5d8a8bb}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-sAppId@{\$m\_\-sAppId}}
+\index{\$m\_\-sAppId@{\$m\_\-sAppId}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-sAppId}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sAppId = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_acd79de47be3cc9eb08fa4190b5d8a8bb}
+
+
+Definition at line 35 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_a349b224844e6202ccda4da1605f5156b}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-sAppName@{\$m\_\-sAppName}}
+\index{\$m\_\-sAppName@{\$m\_\-sAppName}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-sAppName}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sAppName = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_a349b224844e6202ccda4da1605f5156b}
+
+
+Definition at line 34 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_ae9ca918bbe92c641557f1ee16a082100}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-sAppPage@{\$m\_\-sAppPage}}
+\index{\$m\_\-sAppPage@{\$m\_\-sAppPage}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-sAppPage}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sAppPage = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_ae9ca918bbe92c641557f1ee16a082100}
+
+
+Definition at line 31 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_ab35950231d123d9279d8b0b3b0878609}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-sAppUrl@{\$m\_\-sAppUrl}}
+\index{\$m\_\-sAppUrl@{\$m\_\-sAppUrl}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-sAppUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sAppUrl = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_ab35950231d123d9279d8b0b3b0878609}
+
+
+Definition at line 32 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_a12f1f6a87e26bffa94c2b7e5ea3885c9}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-sBaseUrl@{\$m\_\-sBaseUrl}}
+\index{\$m\_\-sBaseUrl@{\$m\_\-sBaseUrl}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-sBaseUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sBaseUrl = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_a12f1f6a87e26bffa94c2b7e5ea3885c9}
+
+
+Definition at line 30 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_a5c010b1e93c651cf5024339d568fb0d1}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-sCallbackUrl@{\$m\_\-sCallbackUrl}}
+\index{\$m\_\-sCallbackUrl@{\$m\_\-sCallbackUrl}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-sCallbackUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sCallbackUrl = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_a5c010b1e93c651cf5024339d568fb0d1}
+
+
+Definition at line 33 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_a450e8067b60f9369bc4370c74ea0f862}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-sGAKey@{\$m\_\-sGAKey}}
+\index{\$m\_\-sGAKey@{\$m\_\-sGAKey}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-sGAKey}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sGAKey = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_a450e8067b60f9369bc4370c74ea0f862}
+
+
+Definition at line 42 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_afe554572420154a2cf6d9ab5049abe55}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-sNSPrefix@{\$m\_\-sNSPrefix}}
+\index{\$m\_\-sNSPrefix@{\$m\_\-sNSPrefix}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-sNSPrefix}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sNSPrefix = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_afe554572420154a2cf6d9ab5049abe55}
+
+
+Definition at line 46 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_aca2665de105ba9e1a89b58722bd21f16}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-sPFUserId@{\$m\_\-sPFUserId}}
+\index{\$m\_\-sPFUserId@{\$m\_\-sPFUserId}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-sPFUserId}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sPFUserId = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_aca2665de105ba9e1a89b58722bd21f16}
+
+
+Definition at line 39 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_a935f137fe74f4707be2d81593c3a624d}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-sProfileId@{\$m\_\-sProfileId}}
+\index{\$m\_\-sProfileId@{\$m\_\-sProfileId}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-sProfileId}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sProfileId = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_a935f137fe74f4707be2d81593c3a624d}
+
+
+Definition at line 41 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_ae91a01f7cb3d6446617f9e6cae69533c}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-sRefPFUserId@{\$m\_\-sRefPFUserId}}
+\index{\$m\_\-sRefPFUserId@{\$m\_\-sRefPFUserId}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-sRefPFUserId}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sRefPFUserId = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_ae91a01f7cb3d6446617f9e6cae69533c}
+
+
+Definition at line 40 of file SF\_\-Platform.php.
+
+\hypertarget{classSF__Platform_af011645fea7e741d5cffcbe968799d90}{
+\index{SF\_\-Platform@{SF\_\-Platform}!\$m\_\-sServerUrl@{\$m\_\-sServerUrl}}
+\index{\$m\_\-sServerUrl@{\$m\_\-sServerUrl}!SF_Platform@{SF\_\-Platform}}
+\subsubsection[{\$m\_\-sServerUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sServerUrl = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Platform_af011645fea7e741d5cffcbe968799d90}
+
+
+Definition at line 43 of file SF\_\-Platform.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/snowframe/base/\hyperlink{SF__Platform_8php}{SF\_\-Platform.php}\end{DoxyCompactItemize}

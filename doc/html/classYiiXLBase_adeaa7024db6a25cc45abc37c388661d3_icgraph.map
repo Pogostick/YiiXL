@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classYiiXLBase.html#a23d250b00a90dbb026ebe72ce040eca4" title="_gcu" alt="" coords="180,32,231,61"/>
+<area shape="rect" id="node9" href="$classYiiXLBase.html#ac605603031e05d1ec69ce6c1bb23cf24" title="_ghs" alt="" coords="180,85,231,115"/>
+<area shape="rect" id="node11" href="$classCXLOAuthBehavior.html#a5126349c471fcaff1a74b9d117b979b1" title="CXLOAuthBehavior::loadToken" alt="" coords="99,139,312,168"/>
+<area shape="rect" id="node5" href="$classYiiXLBase.html#abe39ee9bd8c9467fd15bdd3da6528f3d" title="getCurrentUser" alt="" coords="385,5,505,35"/>
+<area shape="rect" id="node7" href="$classCXLController.html#a4be4055f3361d4800e16bc2e2e38cda6" title="CXLController::init" alt="" coords="379,59,512,88"/>
+<area shape="rect" id="node13" href="$classCXLOAuthBehavior.html#a4be4055f3361d4800e16bc2e2e38cda6" title="CXLOAuthBehavior::init" alt="" coords="361,139,529,168"/>
+</map>

@@ -1,0 +1,400 @@
+\hypertarget{classCPSApiWidget}{
+\section{CPSApiWidget Class Reference}
+\label{classCPSApiWidget}\index{CPSApiWidget@{CPSApiWidget}}
+}
+
+
+Inheritance diagram for CPSApiWidget:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classCPSApiWidget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSApiWidget:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classCPSApiWidget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSApiWidget_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSApiWidget_a6366c3940c120c34aa6cf7f4cc4df2c8}{onBeforeApiCall} (\$event)
+\item 
+\hyperlink{classCPSApiWidget_a8d1ffc45e66988165bc31c6135830fd3}{beforeApiCall} (\$event)
+\item 
+\hyperlink{classCPSApiWidget_aababdbe8ed9e71593b4619ca5e7b57f3}{onAfterApiCall} (\$event)
+\item 
+\hyperlink{classCPSApiWidget_a5a5d728f3727da5e41589b0e72b0bd33}{afterApiCall} (\$event)
+\item 
+\hyperlink{classCPSApiWidget_aa82445f7b6bd99b5b837b1ee92b3d3bf}{onRequestComplete} (\$event)
+\item 
+\hyperlink{classCPSApiWidget_abcd54b473a65fd055b561cecc39d7737}{requestComplete} (\$event)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSApiWidget_a144fe38756c5927205e8c750f8da768e}{makeMapArray} (\$apiName, \$subApiName=null, \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array} \$apiMap, \$setRequestMap=true)
+\item 
+\hyperlink{classCPSApiWidget_a994fbc009e9ddb1dee7f559c53a12e7d}{makeMapItem} (\$itemLabel, \$parameterName=null, \$required=false, \$options=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array} \&\$target=null)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSApiWidget.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSApiWidget_a5a5d728f3727da5e41589b0e72b0bd33}{
+\index{CPSApiWidget@{CPSApiWidget}!afterApiCall@{afterApiCall}}
+\index{afterApiCall@{afterApiCall}!CPSApiWidget@{CPSApiWidget}}
+\subsubsection[{afterApiCall}]{\setlength{\rightskip}{0pt plus 5cm}afterApiCall (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSApiWidget_a5a5d728f3727da5e41589b0e72b0bd33}
+Base event handler 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSApiEvent}{CPSApiEvent}}]\$event \end{DoxyParams}
+
+
+Definition at line 145 of file CPSApiWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSApiWidget_a8d1ffc45e66988165bc31c6135830fd3}{
+\index{CPSApiWidget@{CPSApiWidget}!beforeApiCall@{beforeApiCall}}
+\index{beforeApiCall@{beforeApiCall}!CPSApiWidget@{CPSApiWidget}}
+\subsubsection[{beforeApiCall}]{\setlength{\rightskip}{0pt plus 5cm}beforeApiCall (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSApiWidget_a8d1ffc45e66988165bc31c6135830fd3}
+Base event handler 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSApiEvent}{CPSApiEvent}}]\$event \end{DoxyParams}
+
+
+Definition at line 128 of file CPSApiWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSApiWidget_a144fe38756c5927205e8c750f8da768e}{
+\index{CPSApiWidget@{CPSApiWidget}!makeMapArray@{makeMapArray}}
+\index{makeMapArray@{makeMapArray}!CPSApiWidget@{CPSApiWidget}}
+\subsubsection[{makeMapArray}]{\setlength{\rightskip}{0pt plus 5cm}makeMapArray (
+\begin{DoxyParamCaption}
+\item[{\$}]{ apiName, }
+\item[{\$}]{ subApiName = {\ttfamily null}, }
+\item[{{\bf array} \$}]{ apiMap, }
+\item[{\$}]{ setRequestMap = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSApiWidget_a144fe38756c5927205e8c750f8da768e}
+Creates an array for requestMap
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$apiMap The map of items to insert into the array. Format is the same as \hyperlink{}{makeMapItem} \item[{\em bool}]\$setRequestMap If false, will NOT insert constructed array into \hyperlink{}{requestMap} \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Returns the constructed array item ready to insert into your requestMap 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSApiWidget_a994fbc009e9ddb1dee7f559c53a12e7d}{makeMapItem} 
+\end{DoxySeeAlso}
+
+
+Definition at line 57 of file CPSApiWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_parameters = array();
+
+        foreach ( $apiMap as $_key => $_value )
+        {
+            $_mapItem = $this->makeMapItem(
+                ( in_array( 'label', $_value ) ) ? $_value[ 'name' ] : $_value[ '
+      label' ],
+                $_value[ 'name' ],
+                ( in_array( 'required', $_value ) ) ? $_value[ 'required' ] : fal
+      se,
+                ( in_array( 'options', $_value ) ) ? $_value[ 'options' ] : null
+            );
+
+            $_mapItem = ( $subApiName != null ) ? array( $subApiName => $_mapItem
+       ) : array( $_key, $_mapItem );
+
+            if ( $setRequestMap )
+                $this->requestMap[ $apiName ] = $_mapItem;
+
+            array_merge( $_parameters[ $apiName ], $_mapItem );
+        }
+
+        return( $_parameters );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classCPSApiWidget_a144fe38756c5927205e8c750f8da768e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSApiWidget_a994fbc009e9ddb1dee7f559c53a12e7d}{
+\index{CPSApiWidget@{CPSApiWidget}!makeMapItem@{makeMapItem}}
+\index{makeMapItem@{makeMapItem}!CPSApiWidget@{CPSApiWidget}}
+\subsubsection[{makeMapItem}]{\setlength{\rightskip}{0pt plus 5cm}makeMapItem (
+\begin{DoxyParamCaption}
+\item[{\$}]{ itemLabel, }
+\item[{\$}]{ parameterName = {\ttfamily null}, }
+\item[{\$}]{ required = {\ttfamily false}, }
+\item[{\$}]{ options = {\ttfamily {\bf array}()}, }
+\item[{{\bf array} \&\$}]{ target = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSApiWidget_a994fbc009e9ddb1dee7f559c53a12e7d}
+S Creates an entry for requestMap and inserts it into the array.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$itemLabel The label or friendly name of this map item \item[{\em string}]\$parameterName The actual parameter name to send to API. If not specified, will default to \$itemLabel \item[{\em bool}]\$required Set to true if the parameter is required \item[{\em array}]\$options If supplied, will merge with generated options \item[{\em array}]\$target If supplied, will insert into array \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Returns the constructed array item ready to insert into your requestMap 
+\end{DoxyReturn}
+
+
+Definition at line 91 of file CPSApiWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Build default settings
+        $_mappingOptions = array(
+            'name' => ( null != $parameterName ) ? $parameterName : $itemLabel,
+            'required' => $required
+        );
+
+        //  Add on supplied options
+        if ( ! empty( $options ) )
+            $_mappingOptions = array_merge( $_mappingOptions, $options );
+
+        //  Insert for caller if requested
+        if ( null != $target )
+            $target[ $itemLabel ] = $_mappingOptions;
+
+        //  Return our array
+        return( $_mappingOptions );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classCPSApiWidget_a994fbc009e9ddb1dee7f559c53a12e7d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSApiWidget_aababdbe8ed9e71593b4619ca5e7b57f3}{
+\index{CPSApiWidget@{CPSApiWidget}!onAfterApiCall@{onAfterApiCall}}
+\index{onAfterApiCall@{onAfterApiCall}!CPSApiWidget@{CPSApiWidget}}
+\subsubsection[{onAfterApiCall}]{\setlength{\rightskip}{0pt plus 5cm}onAfterApiCall (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSApiWidget_aababdbe8ed9e71593b4619ca5e7b57f3}
+Raises the onAfterApiCall event. \$event contains \char`\"{}raw\char`\"{} return data 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSApiEvent}{CPSApiEvent}}]\$event \end{DoxyParams}
+
+
+Definition at line 136 of file CPSApiWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->raiseEvent( 'onAfterApiCall', $event );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSApiWidget_a6366c3940c120c34aa6cf7f4cc4df2c8}{
+\index{CPSApiWidget@{CPSApiWidget}!onBeforeApiCall@{onBeforeApiCall}}
+\index{onBeforeApiCall@{onBeforeApiCall}!CPSApiWidget@{CPSApiWidget}}
+\subsubsection[{onBeforeApiCall}]{\setlength{\rightskip}{0pt plus 5cm}onBeforeApiCall (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSApiWidget_a6366c3940c120c34aa6cf7f4cc4df2c8}
+Raises the onBeforeApiCall event 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSApiEvent}{CPSApiEvent}}]\$event \end{DoxyParams}
+
+
+Definition at line 119 of file CPSApiWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->raiseEvent( 'onBeforeApiCall', $event );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSApiWidget_aa82445f7b6bd99b5b837b1ee92b3d3bf}{
+\index{CPSApiWidget@{CPSApiWidget}!onRequestComplete@{onRequestComplete}}
+\index{onRequestComplete@{onRequestComplete}!CPSApiWidget@{CPSApiWidget}}
+\subsubsection[{onRequestComplete}]{\setlength{\rightskip}{0pt plus 5cm}onRequestComplete (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSApiWidget_aa82445f7b6bd99b5b837b1ee92b3d3bf}
+Raises the onRequestComplete event. \$event contains \char`\"{}processed\char`\"{} return data (if applicable) 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSApiEvent}{CPSApiEvent}}]\$event \end{DoxyParams}
+
+
+Definition at line 153 of file CPSApiWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->raiseEvent( 'onRequestComplete', $event );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSApiWidget_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSApiWidget@{CPSApiWidget}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSApiWidget@{CPSApiWidget}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSApiWidget_a2dc262e99b1c246b56f27626bfe699ff}
+Preinitialize 
+
+Reimplemented from \hyperlink{classCPSWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSWidget}.
+
+
+
+Reimplemented in \hyperlink{classCPSgApiWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSgApiWidget}, and \hyperlink{classCPSgMapsWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSgMapsWidget}.
+
+
+
+Definition at line 31 of file CPSApiWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Call daddy
+        parent::preinit();
+
+        //  Attach our api behavior
+        $this->attachBehavior( 'pye-api', 'pogostick.behaviors.CPSApiBehavior' );
+      
+
+        //  Attach our events
+        $this->attachEventHandler( 'onBeforeApiCall', array( $this, 'beforeApiCal
+      l' ) );
+        $this->attachEventHandler( 'onAfterApiCall', array( $this, 'afterApiCall'
+       ) );
+        $this->attachEventHandler( 'onRequestComplete', array( $this, 'requestCom
+      plete' ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classCPSApiWidget_a2dc262e99b1c246b56f27626bfe699ff_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSApiWidget_abcd54b473a65fd055b561cecc39d7737}{
+\index{CPSApiWidget@{CPSApiWidget}!requestComplete@{requestComplete}}
+\index{requestComplete@{requestComplete}!CPSApiWidget@{CPSApiWidget}}
+\subsubsection[{requestComplete}]{\setlength{\rightskip}{0pt plus 5cm}requestComplete (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSApiWidget_abcd54b473a65fd055b561cecc39d7737}
+Base event handler 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSApiEvent}{CPSApiEvent}}]\$event \end{DoxyParams}
+
+
+Definition at line 162 of file CPSApiWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+    }
+\end{DoxyCode}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/base/\hyperlink{CPSApiWidget_8php}{CPSApiWidget.php}\end{DoxyCompactItemize}

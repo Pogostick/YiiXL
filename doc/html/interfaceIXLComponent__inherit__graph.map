@@ -1,0 +1,24 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCXLComponent.html" title="CXLComponent" alt="" coords="173,112,293,141"/>
+<area shape="rect" id="node23" href="$classCXLLiveLogRoute.html" title="CXLLiveLogRoute." alt="" coords="168,165,299,195"/>
+<area shape="rect" id="node25" href="$classCXLRestAction.html" title="CXLRestAction represents a REST action that is defined as a CXLRestController method." alt="" coords="177,219,289,248"/>
+<area shape="rect" id="node27" href="$classCXLWebModule.html" title="CXLWebModule provides extra functionality to the base module functionality of Yii." alt="" coords="175,272,292,301"/>
+<area shape="rect" id="node29" href="$classCXLWidget.html" title="CXLWidget Pretty much identical to CXLComponent but offers a little bit of extra functionality." alt="" coords="189,325,277,355"/>
+<area shape="rect" id="node31" href="$interfaceIXLBehavior.html" title="This interface indicates that a class is a behavior in YiiXL." alt="" coords="185,379,281,408"/>
+<area shape="rect" id="node5" href="$classCXLApiComponent.html" title="CXLApiComponent provides a convenient base class for API access." alt="" coords="384,5,525,35"/>
+<area shape="rect" id="node7" href="$classCXLBaseHelper.html" title="The mother of all helper classes." alt="" coords="395,59,515,88"/>
+<area shape="rect" id="node15" href="$classCXLBaseJobProcess.html" title="CXLBaseJobProcess" alt="" coords="381,112,528,141"/>
+<area shape="rect" id="node17" href="$classCXLConfig.html" title="CXLConfig provides a property&#45;based configuration settings object." alt="" coords="412,165,497,195"/>
+<area shape="rect" id="node21" href="$classCXLRestConsumerComponent.html" title="CXLRestConsumerComponent." alt="" coords="348,219,561,248"/>
+<area shape="rect" id="node9" href="$classCXLHash.html" title="Hash code/password helpers." alt="" coords="671,5,748,35"/>
+<area shape="rect" id="node11" href="$classCXLLog.html" title="A logging helper Utilizes the PHP syslog predefined logging constants." alt="" coords="675,59,744,88"/>
+<area shape="rect" id="node13" href="$classCXLOptions.html" title="Provides abstracted options setting functionality." alt="" coords="663,112,756,141"/>
+<area shape="rect" id="node19" href="$classCXLConfigFile.html" title="CXLConfigFile implements the CXLConfig class that stored in a file." alt="" coords="656,165,763,195"/>
+<area shape="rect" id="node33" href="$classCXLActiveRecordBehavior.html" title="CXLActiveRecordBehavior The base class for all AR behaviors in the YiiXL system." alt="" coords="363,325,547,355"/>
+<area shape="rect" id="node41" href="$classCXLBehavior.html" title="CXLBehavior The base class for all non&#45;AR behaviors in the YiiXL system." alt="" coords="404,405,505,435"/>
+<area shape="rect" id="node35" href="$classCXLDataTransformBehavior.html" title="CXLDataTransformBehavior." alt="" coords="612,245,807,275"/>
+<area shape="rect" id="node37" href="$classCXLSoftDeleteBehavior.html" title="CXLSoftDeleteBehavior" alt="" coords="624,299,795,328"/>
+<area shape="rect" id="node39" href="$classCXLTimeStampBehavior.html" title="CXLTimeStampBehavior" alt="" coords="623,352,796,381"/>
+<area shape="rect" id="node43" href="$classCXLActionControlBehavior.html" title="CXLActionControlBehavior Provides an alternative interface to configuring access to your actions..." alt="" coords="616,405,803,435"/>
+<area shape="rect" id="node45" href="$classCXLOAuthBehavior.html" title="CXLOAuthBehavior" alt="" coords="639,459,780,488"/>
+</map>

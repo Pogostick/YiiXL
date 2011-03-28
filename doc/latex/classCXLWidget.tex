@@ -1,0 +1,1019 @@
+\hypertarget{classCXLWidget}{
+\section{CXLWidget Class Reference}
+\label{classCXLWidget}\index{CXLWidget@{CXLWidget}}
+}
+
+
+Inheritance diagram for CXLWidget:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classCXLWidget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLWidget:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classCXLWidget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLWidget_a122db96cedfc221cf187ce4328f992f7}{getDebugLevel} ()
+\item 
+\hyperlink{classCXLWidget_a91ba7d911e2c3852a048f4022c45ec9e}{setDebugLevel} (\$value=false)
+\item 
+\hyperlink{classCXLWidget_a1a49b8dded6e91a52e2fd07195d334da}{getOptions} ()
+\item 
+\hyperlink{classCXLWidget_a50138660370da467322f8f3965008b14}{getBehaviorMethods} ()
+\item 
+\hyperlink{classCXLWidget_ad51d235c20d44a485f9f00f2c86a5ea9}{loadOptions} (\$options=array())
+\item 
+\hyperlink{classCXLWidget_a6bcc7276fdf47bc15f4eb9d97edb362b}{getCssQueue} ()
+\item 
+\hyperlink{classCXLWidget_a7ad34c754d0c507d838fab157bc04407}{setCssQueue} (\$value)
+\item 
+\hyperlink{classCXLWidget_ad1145e067eca389073867be1a9d5d57e}{getOption} (\$key, \$defaultValue=null, \$unsetAfter=false)
+\item 
+\hyperlink{classCXLWidget_af60059523d063ad74a670eec2a1caa36}{\_\-\_\-construct} (\$owner=null, \$options=array())
+\item 
+\hyperlink{classCXLWidget_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCXLWidget_afb0fafe7e02a3ae1993c01c19fad2bae}{run} ()
+\item 
+\hyperlink{classCXLWidget_a563c3cfa2400bfb9cdb5af4777251d47}{pushCssFile} (\$path, \$media= 'screen')
+\item 
+\hyperlink{classCXLWidget_a836a112a31fa378be05d375ddf67a0c6}{popCssFile} ()
+\item 
+\hyperlink{classCXLWidget_a4589f8bb22c9e9837302ea2cc7c80570}{pushScriptFile} (\$path, \$position=CClientScript::POS\_\-HEAD)
+\item 
+\hyperlink{classCXLWidget_ab4b1e02bb3e8bab82c822ff04c43d12e}{popScriptFile} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCXLWidget_aa607ab5e557e6ebb60b85c5a20ad067f}{CLASS\_\-LOG\_\-TAG} = 'yiixl.core.ui.CXLWidget'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLWidget_a30bcc620a40b8f755dbafb28ff1c76d4}{\_\-render} ()
+\item 
+\hyperlink{classCXLWidget_a13868aafdf32adbae02f5a6f67b09a85}{\_\-renderContainer} (\$endTag=null)
+\item 
+\hyperlink{classCXLWidget_ab5306e10e3f9f19a140e41c511ff4418}{\_\-renderCss} ()
+\item 
+\hyperlink{classCXLWidget_a4aaa4a2e6a8c23d1271f20ba8825b74f}{\_\-renderHtml} ()
+\item 
+\hyperlink{classCXLWidget_a5b1cb053d8f49692a780a713a6f13f13}{\_\-renderScripts} ()
+\item 
+\hyperlink{classCXLWidget_a8a846a2258df8a7ec499ede2d3fe518b}{\_\-loadConfiguration} (\$options=array(), \$overwriteExisting=true)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLWidget_a6c76d7fa9253beae006eaaf4e3038ce9}{\$\_\-debugLevel} = false
+\item 
+\hyperlink{classCXLWidget_a1bebdc689c84eee59ad24c77e5531762}{\$\_\-options}
+\item 
+\hyperlink{classCXLWidget_ac1d32c0491955b7c0648ab9a304c45c0}{\$\_\-behaviorMethods}
+\item 
+\hyperlink{classCXLWidget_a5766011bef2f45b3f312fd6cc1525bf7}{\$\_\-cssQueue} = array( )
+\item 
+\hyperlink{classCXLWidget_a91cbf6ff0a073181fb836b51b0b781ac}{\$\_\-scriptQueue} = array( )
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCXLWidget}{CXLWidget} Pretty much identical to \hyperlink{classCXLComponent}{CXLComponent} but offers a little bit of extra functionality. Forced to not be a descendent of \{\begin{DoxySeeAlso}{See also}
+CIXComponent\} because of the depth of the \{
+
+CInputWidget\} heirarchy. Thus this object duplicates \{
+
+\hyperlink{classCXLComponent}{CXLComponent}\}. 
+\end{DoxySeeAlso}
+
+
+Definition at line 23 of file CXLWidget.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCXLWidget_af60059523d063ad74a670eec2a1caa36}{
+\index{CXLWidget@{CXLWidget}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CXLWidget@{CXLWidget}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ owner = {\ttfamily null}, }
+\item[{\$}]{ options = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_af60059523d063ad74a670eec2a1caa36}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em CBaseController}]\$owner The owner/creator of this widget. Either a widget or a controller. \item[{\em array}]\$options Additional options to pass on to the widget \end{DoxyParams}
+
+
+Definition at line 149 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    parent::__construct( $owner );
+
+    //  Load our configuration
+    $this->_loadConfiguration( $options );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classCXLWidget_af60059523d063ad74a670eec2a1caa36_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLWidget_a8a846a2258df8a7ec499ede2d3fe518b}{
+\index{CXLWidget@{CXLWidget}!\_\-loadConfiguration@{\_\-loadConfiguration}}
+\index{\_\-loadConfiguration@{\_\-loadConfiguration}!CXLWidget@{CXLWidget}}
+\subsubsection[{\_\-loadConfiguration}]{\setlength{\rightskip}{0pt plus 5cm}\_\-loadConfiguration (
+\begin{DoxyParamCaption}
+\item[{\$}]{ options = {\ttfamily array(~)}, }
+\item[{\$}]{ overwriteExisting = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWidget_a8a846a2258df8a7ec499ede2d3fe518b}
+Loads an array into properties if they exist. 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$options \end{DoxyParams}
+
+
+Definition at line 331 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  Make a copy for posterity
+    if ( $overwriteExisting || empty( $this->_options ) ) $this->_options = $opti
+      ons;
+    else $this->_options = array_merge( $this->_options, $options );
+
+    //  Try to set each one
+    try
+    {
+      foreach ( $options as $_key => $_value )
+      {
+        try
+        {
+          //  See if __set has a better time with this...
+          if ( method_exists( $this, 'set' . $_key ) ) $this->{'set' . $_key}( $_
+      value );
+          else if ( property_exists( $this, $_key ) ) $this->{$_key} = $_key;
+        }
+        catch ( Exception $_ex )
+        {
+          //  Completely ignore errors...
+        }
+      }
+    }
+    catch ( Exception $_ex )
+    {
+      Yii::log( 'Error while loading configuration options: ' . $_ex->getMessage(
+      ), 'error', 'yiixl.base' );
+    }
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classCXLWidget_a8a846a2258df8a7ec499ede2d3fe518b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLWidget_a30bcc620a40b8f755dbafb28ff1c76d4}{
+\index{CXLWidget@{CXLWidget}!\_\-render@{\_\-render}}
+\index{\_\-render@{\_\-render}!CXLWidget@{CXLWidget}}
+\subsubsection[{\_\-render}]{\setlength{\rightskip}{0pt plus 5cm}\_\-render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWidget_a30bcc620a40b8f755dbafb28ff1c76d4}
+Renders the widget queues in the right order/sequence 
+
+Definition at line 249 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_endTag = $this->_renderContainer();
+
+    $this->_renderCss();
+    $this->_renderHtml();
+    $this->_renderScripts();
+
+    $this->_renderContainer( $_endTag );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLWidget_a30bcc620a40b8f755dbafb28ff1c76d4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classCXLWidget_a30bcc620a40b8f755dbafb28ff1c76d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLWidget_a13868aafdf32adbae02f5a6f67b09a85}{
+\index{CXLWidget@{CXLWidget}!\_\-renderContainer@{\_\-renderContainer}}
+\index{\_\-renderContainer@{\_\-renderContainer}!CXLWidget@{CXLWidget}}
+\subsubsection[{\_\-renderContainer}]{\setlength{\rightskip}{0pt plus 5cm}\_\-renderContainer (
+\begin{DoxyParamCaption}
+\item[{\$}]{ endTag = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWidget_a13868aafdf32adbae02f5a6f67b09a85}
+Renders either an open or close container tag for this widget 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$endTag \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The name of the tag used to open the container 
+\end{DoxyReturn}
+
+
+Definition at line 265 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( null === $endTag )
+    {
+      echo YiiXL::closeTag( $endTag );
+      return false;
+    }
+
+    //  Get our tag name and make it so...
+    echo YiiXL::tag(
+      $_tag = $this->getOption( 'tagName', 'div' ),
+      $this->getOption( 'containerOptions', array() ),
+      null,
+      false
+    );
+
+    //  Return tag so we can close it...
+    return $_tag;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=390pt]{classCXLWidget_a13868aafdf32adbae02f5a6f67b09a85_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{classCXLWidget_a13868aafdf32adbae02f5a6f67b09a85_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLWidget_ab5306e10e3f9f19a140e41c511ff4418}{
+\index{CXLWidget@{CXLWidget}!\_\-renderCss@{\_\-renderCss}}
+\index{\_\-renderCss@{\_\-renderCss}!CXLWidget@{CXLWidget}}
+\subsubsection[{\_\-renderCss}]{\setlength{\rightskip}{0pt plus 5cm}\_\-renderCss (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWidget_ab5306e10e3f9f19a140e41c511ff4418}
+Renders any CSS code for the widget. We don't technically render here we merely post up to the master Yii arbitrator \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 290 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_baseUrl = YiiXL::_gbu();
+
+    //  Load css files and unset from array...
+    while ( null !== ( $_file = array_shift( $this->_scriptQueue ) ) )
+      YiiXL::_rcf( $_baseUrl . $_file['path'] , $_file['media'] );
+
+    return true;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLWidget_ab5306e10e3f9f19a140e41c511ff4418_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classCXLWidget_ab5306e10e3f9f19a140e41c511ff4418_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLWidget_a4aaa4a2e6a8c23d1271f20ba8825b74f}{
+\index{CXLWidget@{CXLWidget}!\_\-renderHtml@{\_\-renderHtml}}
+\index{\_\-renderHtml@{\_\-renderHtml}!CXLWidget@{CXLWidget}}
+\subsubsection[{\_\-renderHtml}]{\setlength{\rightskip}{0pt plus 5cm}\_\-renderHtml (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWidget_a4aaa4a2e6a8c23d1271f20ba8825b74f}
+Renders any HTML for the widget \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 305 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  nada
+    return true;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{classCXLWidget_a4aaa4a2e6a8c23d1271f20ba8825b74f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLWidget_a5b1cb053d8f49692a780a713a6f13f13}{
+\index{CXLWidget@{CXLWidget}!\_\-renderScripts@{\_\-renderScripts}}
+\index{\_\-renderScripts@{\_\-renderScripts}!CXLWidget@{CXLWidget}}
+\subsubsection[{\_\-renderScripts}]{\setlength{\rightskip}{0pt plus 5cm}\_\-renderScripts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWidget_a5b1cb053d8f49692a780a713a6f13f13}
+Renders any CSS code for the widget. We don't technically render here we merely post up to the master Yii arbitrator \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 316 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_baseUrl = YiiXL::_gbu();
+
+    //  Load css files and unset from array...
+    while ( null !== ( $_file = array_shift( $this->_scriptQueue ) ) )
+      YiiXL::_rsf( $_baseUrl . $_file['path'] , $_file['position'] );
+
+    return true;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLWidget_a5b1cb053d8f49692a780a713a6f13f13_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classCXLWidget_a5b1cb053d8f49692a780a713a6f13f13_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLWidget_a50138660370da467322f8f3965008b14}{
+\index{CXLWidget@{CXLWidget}!getBehaviorMethods@{getBehaviorMethods}}
+\index{getBehaviorMethods@{getBehaviorMethods}!CXLWidget@{CXLWidget}}
+\subsubsection[{getBehaviorMethods}]{\setlength{\rightskip}{0pt plus 5cm}getBehaviorMethods (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_a50138660370da467322f8f3965008b14}
+Gets the list of registered behavior methods \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_a50138660370da467322f8f3965008b14}{IXLComponent}.
+
+
+
+Definition at line 96 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_behaviorMethods;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLWidget_a6bcc7276fdf47bc15f4eb9d97edb362b}{
+\index{CXLWidget@{CXLWidget}!getCssQueue@{getCssQueue}}
+\index{getCssQueue@{getCssQueue}!CXLWidget@{CXLWidget}}
+\subsubsection[{getCssQueue}]{\setlength{\rightskip}{0pt plus 5cm}getCssQueue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_a6bcc7276fdf47bc15f4eb9d97edb362b}
+Returns the css file queue \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_cssQueue;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLWidget_a122db96cedfc221cf187ce4328f992f7}{
+\index{CXLWidget@{CXLWidget}!getDebugLevel@{getDebugLevel}}
+\index{getDebugLevel@{getDebugLevel}!CXLWidget@{CXLWidget}}
+\subsubsection[{getDebugLevel}]{\setlength{\rightskip}{0pt plus 5cm}getDebugLevel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_a122db96cedfc221cf187ce4328f992f7}
+Gets the debug level \begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_a122db96cedfc221cf187ce4328f992f7}{IXLComponent}.
+
+
+
+Definition at line 68 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_debugLevel;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLWidget_ad1145e067eca389073867be1a9d5d57e}{
+\index{CXLWidget@{CXLWidget}!getOption@{getOption}}
+\index{getOption@{getOption}!CXLWidget@{CXLWidget}}
+\subsubsection[{getOption}]{\setlength{\rightskip}{0pt plus 5cm}getOption (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ defaultValue = {\ttfamily null}, }
+\item[{\$}]{ unsetAfter = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_ad1145e067eca389073867be1a9d5d57e}
+Gets a single configuration option \begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 135 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return YiiXL::o( $this->_options, $key, $defaultValue, $unsetAfter );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classCXLWidget_ad1145e067eca389073867be1a9d5d57e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLWidget_ad1145e067eca389073867be1a9d5d57e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLWidget_a1a49b8dded6e91a52e2fd07195d334da}{
+\index{CXLWidget@{CXLWidget}!getOptions@{getOptions}}
+\index{getOptions@{getOptions}!CXLWidget@{CXLWidget}}
+\subsubsection[{getOptions}]{\setlength{\rightskip}{0pt plus 5cm}getOptions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_a1a49b8dded6e91a52e2fd07195d334da}
+Gets configuration options \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_a1a49b8dded6e91a52e2fd07195d334da}{IXLComponent}.
+
+
+
+Definition at line 87 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_options;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLWidget_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CXLWidget@{CXLWidget}!init@{init}}
+\index{init@{init}!CXLWidget@{CXLWidget}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize this widget 
+
+Definition at line 160 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    parent::init();
+
+    //  Push any optional script files
+    foreach ( YiiXL::o( $options, '_scriptFiles', array( ), true ) as $_script )
+      $this->pushScriptFile( $_script );
+
+    //  And CSS
+    foreach ( YiiXL::o( $options, '_cssFiles', array( ), true ) as $_css )
+      $this->pushCssFile( $_css );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classCXLWidget_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLWidget_ad51d235c20d44a485f9f00f2c86a5ea9}{
+\index{CXLWidget@{CXLWidget}!loadOptions@{loadOptions}}
+\index{loadOptions@{loadOptions}!CXLWidget@{CXLWidget}}
+\subsubsection[{loadOptions}]{\setlength{\rightskip}{0pt plus 5cm}loadOptions (
+\begin{DoxyParamCaption}
+\item[{\$}]{ options = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_ad51d235c20d44a485f9f00f2c86a5ea9}
+Loads the configuration options 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCXLComponent}{CXLComponent} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIXLComponent_ad51d235c20d44a485f9f00f2c86a5ea9}{IXLComponent}.
+
+
+
+Definition at line 106 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_options = $options;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLWidget_a836a112a31fa378be05d375ddf67a0c6}{
+\index{CXLWidget@{CXLWidget}!popCssFile@{popCssFile}}
+\index{popCssFile@{popCssFile}!CXLWidget@{CXLWidget}}
+\subsubsection[{popCssFile}]{\setlength{\rightskip}{0pt plus 5cm}popCssFile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_a836a112a31fa378be05d375ddf67a0c6}
+Pops a css file off the top of the page load stack. \begin{DoxyReturn}{Returns}
+string$|$null 
+\end{DoxyReturn}
+
+
+Definition at line 209 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return array_shift( $this->_cssQueue );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLWidget_ab4b1e02bb3e8bab82c822ff04c43d12e}{
+\index{CXLWidget@{CXLWidget}!popScriptFile@{popScriptFile}}
+\index{popScriptFile@{popScriptFile}!CXLWidget@{CXLWidget}}
+\subsubsection[{popScriptFile}]{\setlength{\rightskip}{0pt plus 5cm}popScriptFile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_ab4b1e02bb3e8bab82c822ff04c43d12e}
+Pops a script file off the top of the page load stack. \begin{DoxyReturn}{Returns}
+string$|$null 
+\end{DoxyReturn}
+
+
+Definition at line 237 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return array_shift( $this->_scriptQueue );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLWidget_a563c3cfa2400bfb9cdb5af4777251d47}{
+\index{CXLWidget@{CXLWidget}!pushCssFile@{pushCssFile}}
+\index{pushCssFile@{pushCssFile}!CXLWidget@{CXLWidget}}
+\subsubsection[{pushCssFile}]{\setlength{\rightskip}{0pt plus 5cm}pushCssFile (
+\begin{DoxyParamCaption}
+\item[{\$}]{ path, }
+\item[{\$}]{ media = {\ttfamily 'screen'}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_a563c3cfa2400bfb9cdb5af4777251d47}
+Pushes a css file onto the page load stack. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$path Path of css relative to doc\_\-root \item[{\em string}]\$id \end{DoxyParams}
+
+
+Definition at line 195 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    array_push(
+      $this->_cssQueue, array(
+      'path' => $path,
+      'media' => $media,
+      )
+    );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classCXLWidget_a563c3cfa2400bfb9cdb5af4777251d47_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLWidget_a4589f8bb22c9e9837302ea2cc7c80570}{
+\index{CXLWidget@{CXLWidget}!pushScriptFile@{pushScriptFile}}
+\index{pushScriptFile@{pushScriptFile}!CXLWidget@{CXLWidget}}
+\subsubsection[{pushScriptFile}]{\setlength{\rightskip}{0pt plus 5cm}pushScriptFile (
+\begin{DoxyParamCaption}
+\item[{\$}]{ path, }
+\item[{\$}]{ position = {\ttfamily CClientScript::POS\_\-HEAD}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_a4589f8bb22c9e9837302ea2cc7c80570}
+Pushes a script onto the page load stack.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$path Path of script relative to doc\_\-root \item[{\em integer}]\$position \item[{\em string}]\$id \end{DoxyParams}
+
+
+Definition at line 221 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    array_push(
+      $this->_scriptQueue, array(
+      'path' => $path,
+      'position' => $position,
+      )
+    );
+
+    $this->_scriptQueue[] = array( $path, $position );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classCXLWidget_a4589f8bb22c9e9837302ea2cc7c80570_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLWidget_afb0fafe7e02a3ae1993c01c19fad2bae}{
+\index{CXLWidget@{CXLWidget}!run@{run}}
+\index{run@{run}!CXLWidget@{CXLWidget}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_afb0fafe7e02a3ae1993c01c19fad2bae}
+Executes the widget. This method is called by \hyperlink{}{CBaseController::endWidget}. 
+
+Definition at line 177 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  Phone home
+    parent::run();
+
+    //  Render!
+    $this->_render();
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLWidget_afb0fafe7e02a3ae1993c01c19fad2bae_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLWidget_a7ad34c754d0c507d838fab157bc04407}{
+\index{CXLWidget@{CXLWidget}!setCssQueue@{setCssQueue}}
+\index{setCssQueue@{setCssQueue}!CXLWidget@{CXLWidget}}
+\subsubsection[{setCssQueue}]{\setlength{\rightskip}{0pt plus 5cm}setCssQueue (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_a7ad34c754d0c507d838fab157bc04407}
+Sets the css file queue \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 125 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_cssQueue = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLWidget_a91ba7d911e2c3852a048f4022c45ec9e}{
+\index{CXLWidget@{CXLWidget}!setDebugLevel@{setDebugLevel}}
+\index{setDebugLevel@{setDebugLevel}!CXLWidget@{CXLWidget}}
+\subsubsection[{setDebugLevel}]{\setlength{\rightskip}{0pt plus 5cm}setDebugLevel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLWidget_a91ba7d911e2c3852a048f4022c45ec9e}
+Sets the debug level 
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]The new debug level \end{DoxyParams}
+
+
+Implements \hyperlink{interfaceIXLComponent_a91ba7d911e2c3852a048f4022c45ec9e}{IXLComponent}.
+
+
+
+Definition at line 77 of file CXLWidget.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_debugLevel = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLWidget_ac1d32c0491955b7c0648ab9a304c45c0}{
+\index{CXLWidget@{CXLWidget}!\$\_\-behaviorMethods@{\$\_\-behaviorMethods}}
+\index{\$\_\-behaviorMethods@{\$\_\-behaviorMethods}!CXLWidget@{CXLWidget}}
+\subsubsection[{\$\_\-behaviorMethods}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-behaviorMethods\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWidget_ac1d32c0491955b7c0648ab9a304c45c0}
+
+
+Definition at line 50 of file CXLWidget.php.
+
+\hypertarget{classCXLWidget_a5766011bef2f45b3f312fd6cc1525bf7}{
+\index{CXLWidget@{CXLWidget}!\$\_\-cssQueue@{\$\_\-cssQueue}}
+\index{\$\_\-cssQueue@{\$\_\-cssQueue}!CXLWidget@{CXLWidget}}
+\subsubsection[{\$\_\-cssQueue}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-cssQueue = array( )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWidget_a5766011bef2f45b3f312fd6cc1525bf7}
+
+
+Definition at line 54 of file CXLWidget.php.
+
+\hypertarget{classCXLWidget_a6c76d7fa9253beae006eaaf4e3038ce9}{
+\index{CXLWidget@{CXLWidget}!\$\_\-debugLevel@{\$\_\-debugLevel}}
+\index{\$\_\-debugLevel@{\$\_\-debugLevel}!CXLWidget@{CXLWidget}}
+\subsubsection[{\$\_\-debugLevel}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-debugLevel = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWidget_a6c76d7fa9253beae006eaaf4e3038ce9}
+
+
+Definition at line 42 of file CXLWidget.php.
+
+\hypertarget{classCXLWidget_a1bebdc689c84eee59ad24c77e5531762}{
+\index{CXLWidget@{CXLWidget}!\$\_\-options@{\$\_\-options}}
+\index{\$\_\-options@{\$\_\-options}!CXLWidget@{CXLWidget}}
+\subsubsection[{\$\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-options\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWidget_a1bebdc689c84eee59ad24c77e5531762}
+
+
+Definition at line 46 of file CXLWidget.php.
+
+\hypertarget{classCXLWidget_a91cbf6ff0a073181fb836b51b0b781ac}{
+\index{CXLWidget@{CXLWidget}!\$\_\-scriptQueue@{\$\_\-scriptQueue}}
+\index{\$\_\-scriptQueue@{\$\_\-scriptQueue}!CXLWidget@{CXLWidget}}
+\subsubsection[{\$\_\-scriptQueue}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-scriptQueue = array( )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLWidget_a91cbf6ff0a073181fb836b51b0b781ac}
+
+
+Definition at line 58 of file CXLWidget.php.
+
+\hypertarget{classCXLWidget_aa607ab5e557e6ebb60b85c5a20ad067f}{
+\index{CXLWidget@{CXLWidget}!CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}}
+\index{CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}!CXLWidget@{CXLWidget}}
+\subsubsection[{CLASS\_\-LOG\_\-TAG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CLASS\_\-LOG\_\-TAG} = 'yiixl.core.ui.CXLWidget'}}
+\label{classCXLWidget_aa607ab5e557e6ebb60b85c5a20ad067f}
+Our logging tag 
+
+Definition at line 33 of file CXLWidget.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLWidget_8php}{CXLWidget.php}\end{DoxyCompactItemize}

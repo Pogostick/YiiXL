@@ -1,0 +1,1016 @@
+\hypertarget{classCPSCodeTableModel}{
+\section{CPSCodeTableModel Class Reference}
+\label{classCPSCodeTableModel}\index{CPSCodeTableModel@{CPSCodeTableModel}}
+}
+
+
+Inheritance diagram for CPSCodeTableModel:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classCPSCodeTableModel__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSCodeTableModel:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classCPSCodeTableModel__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSCodeTableModel_ac14f301a6e13de3cf9bf32919ba44278}{getValueFilter} ()
+\item 
+\hyperlink{classCPSCodeTableModel_a5e3b07abe66ebd7c4d3f8c7188f7f8ae}{setValueFilter} (\$value)
+\item 
+\hyperlink{classCPSCodeTableModel_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSCodeTableModel_a17dba92d96b9dd48c62f3ede3eef94d4}{rules} ()
+\item 
+\hyperlink{classCPSCodeTableModel_aae54d2938df6eac42a9a9020a64ae31b}{attributeLabels} ()
+\item 
+\hyperlink{classCPSCodeTableModel_aaf9f826b33b46930ea53b641e13825c0}{valueFilter} (\$value=null)
+\item 
+\hyperlink{classCPSCodeTableModel_ad430bec277cab9f4c60f3a6ea402adbc}{active} (\$activeOnly=true)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSCodeTableModel_af1c9c9ff2590a2edc41d26604e237680}{install} (\$dbConnection=null, \$name=self::DDL\_\-TABLE\_\-NAME)
+\item 
+static \hyperlink{classCPSCodeTableModel_a269003f491b7968d7c98ae85b999448a}{model} (\$sClassName=\_\-\_\-CLASS\_\-\_\-)
+\item 
+static \hyperlink{classCPSCodeTableModel_a9d84f87e3545a3d7da9e454951b3601b}{findAllByType} (\$codeType, \$sortOrder= 'code\_\-desc\_\-text', \$valueFilter=null)
+\item 
+static \hyperlink{classCPSCodeTableModel_a74503bd0be373dc9c3beef90fe78a1f4}{findAllByAbbreviation} (\$codeAbbreviation, \$codeType=null, \$sortOrder= 'code\_\-desc\_\-text')
+\item 
+static \hyperlink{classCPSCodeTableModel_affb61394c9b5fb6ac5184bdcb23d0d9b}{findById} (\$iCodeId)
+\item 
+static \hyperlink{classCPSCodeTableModel_a2d5a3d3806d245e742305d39e19a22af}{getCodeDescription} (\$codeId)
+\item 
+static \hyperlink{classCPSCodeTableModel_a618b3618b665b179b0f3a5e476af2c75}{getCodeAbbreviation} (\$codeId)
+\item 
+static \hyperlink{classCPSCodeTableModel_a60bd91ff7b6cde62d53273e52b47ba8f}{getCodeFromAbbreviation} (\$codeType, \$codeAbbreviation)
+\item 
+static \hyperlink{classCPSCodeTableModel_a8e8062072f86108f6e5d902d2ce4ecee}{getAssociatedText} (\$codeId)
+\item 
+static \hyperlink{classCPSCodeTableModel_a66881464cd47441e18d9094bdd89949b}{getAssociatedValue} (\$codeId)
+\item 
+static \hyperlink{classCPSCodeTableModel_aedc330327136575b840059f1c930a153}{lookup} (\$codeType, \$codeAbbreviation=null, \$returnIdOnly=true)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSCodeTableModel_a1e548fb71c67f7f778a311f3019b9ff3}{DDL\_\-NAME} = 'code\_\-t.sql'
+\item 
+const \hyperlink{classCPSCodeTableModel_aab7e20a5077f2a3b17ab9ae1ca8bd744}{DDL\_\-TABLE\_\-NAME} = 'code\_\-t'
+\item 
+const \hyperlink{classCPSCodeTableModel_ac4ef63ea01237fca6e5977e7cf0ad6fa}{DDL\_\-DATA\_\-NAME} = 'code\_\-install\_\-data.sql'
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSCodeTableModel_a5e78b1afc1ba9ecb942625c5c13a3c5d}{getCodes} (\$codeId=null, \$codeType=null, \$codeAbbreviation=null, \$sortOrder=null, \$activeCodesOnly=true, \$valueFilter=null)
+\item 
+static \hyperlink{classCPSCodeTableModel_a5f727a74cfab0f3c1a818055f2738779}{\_\-findModelClass} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSCodeTableModel_a3591a2fc703faa60237846a98b10a8cf}{\$\_\-valueFilter} = null
+\item 
+\hyperlink{classCPSCodeTableModel_a58d9f8801e4c40d867f28343ff13551e}{\$\_\-activeAttributeName} = 'active\_\-ind'
+\item 
+\hyperlink{classCPSCodeTableModel_a90080dcb26627bf719d96ab99e51f958}{\$\_\-modelClass} = 'Codes'
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSCodeTableModel.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSCodeTableModel_a5f727a74cfab0f3c1a818055f2738779}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!\_\-findModelClass@{\_\-findModelClass}}
+\index{\_\-findModelClass@{\_\-findModelClass}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{\_\-findModelClass}]{\setlength{\rightskip}{0pt plus 5cm}static \_\-findModelClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSCodeTableModel_a5f727a74cfab0f3c1a818055f2738779}
+Finds and sets the model class for this object. If your model class is not \char`\"{}Codes\char`\"{} and you're not running PHP 5.3.x+, override this method to provide your own model name.
+
+\begin{DoxyReturn}{Returns}
+string The name of the model class 
+\end{DoxyReturn}
+
+
+Definition at line 363 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_modelClass = 'Codes';
+
+        //  Can't really use get_called_class with 5.2...
+        if ( version_compare( PHP_VERSION, '5.3.0' ) >= 0 )
+            $_modelClass = get_called_class();
+
+        return $_modelClass;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCodeTableModel_a5f727a74cfab0f3c1a818055f2738779_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCodeTableModel_ad430bec277cab9f4c60f3a6ea402adbc}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!active@{active}}
+\index{active@{active}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{active}]{\setlength{\rightskip}{0pt plus 5cm}active (
+\begin{DoxyParamCaption}
+\item[{\$}]{ activeOnly = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCodeTableModel_ad430bec277cab9f4c60f3a6ea402adbc}
+Only return active code records as designated by the active\_\-ind \begin{DoxyReturn}{Returns}
+\hyperlink{classCPSCodeTableModel}{CPSCodeTableModel} 
+\end{DoxyReturn}
+
+
+Definition at line 350 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $activeOnly && $this->hasAttribute( $this->_activeAttributeName ) ) 
+      $this->getDbCriteria()->mergeWith( array( 'condition' => 'active_ind = :active_in
+      d', 'params' => array( ':active_ind' => 1 ) ) );
+        return $this;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCodeTableModel_aae54d2938df6eac42a9a9020a64ae31b}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!attributeLabels@{attributeLabels}}
+\index{attributeLabels@{attributeLabels}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{attributeLabels}]{\setlength{\rightskip}{0pt plus 5cm}attributeLabels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCodeTableModel_aae54d2938df6eac42a9a9020a64ae31b}
+\begin{DoxyReturn}{Returns}
+array customized attribute labels (name=$>$label) 
+\end{DoxyReturn}
+
+
+Definition at line 175 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return array(
+            'id' => 'Id',
+            'code_type_text' => 'Type',
+            'code_abbr_text' => 'Abbreviation',
+            'code_desc_text' => 'Description',
+            'parnt_code_id' => 'Parent Code Id',
+            'assoc_value_nbr' => 'Associated Number',
+            'assoc_text' => 'Associated Text',
+            'active_ind' => 'Active',
+            'create_date' => 'Created On',
+            'lmod_date' => 'Modified On',
+        );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCodeTableModel_a74503bd0be373dc9c3beef90fe78a1f4}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!findAllByAbbreviation@{findAllByAbbreviation}}
+\index{findAllByAbbreviation@{findAllByAbbreviation}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{findAllByAbbreviation}]{\setlength{\rightskip}{0pt plus 5cm}static findAllByAbbreviation (
+\begin{DoxyParamCaption}
+\item[{\$}]{ codeAbbreviation, }
+\item[{\$}]{ codeType = {\ttfamily null}, }
+\item[{\$}]{ sortOrder = {\ttfamily 'code\_\-desc\_\-text'}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSCodeTableModel_a74503bd0be373dc9c3beef90fe78a1f4}
+Find a code by type
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$codeType \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 223 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return self::getCodes( null, $codeType, $codeAbbreviation, $sortOrder );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCodeTableModel_a74503bd0be373dc9c3beef90fe78a1f4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCodeTableModel_a9d84f87e3545a3d7da9e454951b3601b}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!findAllByType@{findAllByType}}
+\index{findAllByType@{findAllByType}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{findAllByType}]{\setlength{\rightskip}{0pt plus 5cm}static findAllByType (
+\begin{DoxyParamCaption}
+\item[{\$}]{ codeType, }
+\item[{\$}]{ sortOrder = {\ttfamily 'code\_\-desc\_\-text'}, }
+\item[{\$}]{ valueFilter = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSCodeTableModel_a9d84f87e3545a3d7da9e454951b3601b}
+Find a code by type
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$codeType \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 211 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return self::getCodes( null, $codeType, null, $sortOrder, true, $valueFil
+      ter );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=386pt]{classCPSCodeTableModel_a9d84f87e3545a3d7da9e454951b3601b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCodeTableModel_affb61394c9b5fb6ac5184bdcb23d0d9b}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!findById@{findById}}
+\index{findById@{findById}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{findById}]{\setlength{\rightskip}{0pt plus 5cm}static findById (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iCodeId}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSCodeTableModel_affb61394c9b5fb6ac5184bdcb23d0d9b}
+Finds a single code by code\_\-id
+
+Duplicates findByPk, but wanted to be consistent.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]\$iCodeId \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+CActiveRecord 
+\end{DoxyReturn}
+
+
+Definition at line 237 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return self::getCodes( $iCodeId );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=362pt]{classCPSCodeTableModel_affb61394c9b5fb6ac5184bdcb23d0d9b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCodeTableModel_a8e8062072f86108f6e5d902d2ce4ecee}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!getAssociatedText@{getAssociatedText}}
+\index{getAssociatedText@{getAssociatedText}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{getAssociatedText}]{\setlength{\rightskip}{0pt plus 5cm}static getAssociatedText (
+\begin{DoxyParamCaption}
+\item[{\$}]{ codeId}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSCodeTableModel_a8e8062072f86108f6e5d902d2ce4ecee}
+Retrieves the associated text for a code
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em int}]\$codeId \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 314 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_code = self::getCodes( $codeId );
+        return $_code ? $_code->assoc_text : null;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCodeTableModel_a8e8062072f86108f6e5d902d2ce4ecee_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCodeTableModel_a66881464cd47441e18d9094bdd89949b}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!getAssociatedValue@{getAssociatedValue}}
+\index{getAssociatedValue@{getAssociatedValue}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{getAssociatedValue}]{\setlength{\rightskip}{0pt plus 5cm}static getAssociatedValue (
+\begin{DoxyParamCaption}
+\item[{\$}]{ codeId}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSCodeTableModel_a66881464cd47441e18d9094bdd89949b}
+Retrieves the associated value for a code
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em int}]\$codeId \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+Definition at line 326 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_code = self::getCodes( $codeId );
+        return $_code ? $_code->assoc_value_nbr : null;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCodeTableModel_a66881464cd47441e18d9094bdd89949b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCodeTableModel_a618b3618b665b179b0f3a5e476af2c75}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!getCodeAbbreviation@{getCodeAbbreviation}}
+\index{getCodeAbbreviation@{getCodeAbbreviation}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{getCodeAbbreviation}]{\setlength{\rightskip}{0pt plus 5cm}static getCodeAbbreviation (
+\begin{DoxyParamCaption}
+\item[{\$}]{ codeId}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSCodeTableModel_a618b3618b665b179b0f3a5e476af2c75}
+Returns a code's abbreviation
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em int}]\$codeId \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 289 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_code = self::getCodes( $codeId );
+        return $_code ? $_code->code_abbr_text : null;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCodeTableModel_a618b3618b665b179b0f3a5e476af2c75_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCodeTableModel_a2d5a3d3806d245e742305d39e19a22af}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!getCodeDescription@{getCodeDescription}}
+\index{getCodeDescription@{getCodeDescription}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{getCodeDescription}]{\setlength{\rightskip}{0pt plus 5cm}static getCodeDescription (
+\begin{DoxyParamCaption}
+\item[{\$}]{ codeId}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSCodeTableModel_a2d5a3d3806d245e742305d39e19a22af}
+Returns a code's description
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em int}]\$codeId \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 277 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_code = self::getCodes( $codeId );
+        return $_code ? $_code->code_desc_text : null;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCodeTableModel_a2d5a3d3806d245e742305d39e19a22af_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCodeTableModel_a60bd91ff7b6cde62d53273e52b47ba8f}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!getCodeFromAbbreviation@{getCodeFromAbbreviation}}
+\index{getCodeFromAbbreviation@{getCodeFromAbbreviation}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{getCodeFromAbbreviation}]{\setlength{\rightskip}{0pt plus 5cm}static getCodeFromAbbreviation (
+\begin{DoxyParamCaption}
+\item[{\$}]{ codeType, }
+\item[{\$}]{ codeAbbreviation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSCodeTableModel_a60bd91ff7b6cde62d53273e52b47ba8f}
+Returns a code's id given a type and abbreviation
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$codeType \item[{\em string}]\$codeAbbreviation \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+
+
+Definition at line 302 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_codeList = self::getCodes( null, $codeType, $codeAbbreviation );
+        return ! empty( $_codeList )  ? $_codeList[0]->id : null;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCodeTableModel_a60bd91ff7b6cde62d53273e52b47ba8f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCodeTableModel_a5e78b1afc1ba9ecb942625c5c13a3c5d}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!getCodes@{getCodes}}
+\index{getCodes@{getCodes}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{getCodes}]{\setlength{\rightskip}{0pt plus 5cm}static getCodes (
+\begin{DoxyParamCaption}
+\item[{\$}]{ codeId = {\ttfamily null}, }
+\item[{\$}]{ codeType = {\ttfamily null}, }
+\item[{\$}]{ codeAbbreviation = {\ttfamily null}, }
+\item[{\$}]{ sortOrder = {\ttfamily null}, }
+\item[{\$}]{ activeCodesOnly = {\ttfamily true}, }
+\item[{\$}]{ valueFilter = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSCodeTableModel_a5e78b1afc1ba9ecb942625c5c13a3c5d}
+Get code rows 
+\begin{DoxyParams}{Parameters}
+\item[{\em int}]\$codeId Specific code ID to retrieve \item[{\em string}]\$codeType Retrieves all codes that are of this type \item[{\em string}]\$codeAbbreviation Retrieves all codes that are of this abbreviation. If type specicifed, further filters return set \item[{\em string}]\$sortOrder Optional sort order of result set. Defaults to PK (i.e. id) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array$|$string Depending on the parameters supplied, either returns a code row, an array of code rows, or a string. 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_criteria = null;
+        $_modelClass = self::_findModelClass();
+        $_model = call_user_func( array( $_modelClass, 'model' ) );
+
+        if ( null === $sortOrder ) $sortOrder = $_model->primaryKey;
+
+        //  Get a single code...
+        if ( null !== $codeId ) return $_model->valueFilter( $valueFilter )->acti
+      ve( $activeCodesOnly )->findByPk( $codeId );
+
+        $_condition = array();
+        $_params = array();
+
+        //  Get a specific code by type/abbr
+        if ( null !== $codeType )
+        {
+            $_condition[] = 'code_type_text = :code_type_text';
+            $_params[':code_type_text'] = $codeType;
+        }
+
+        if ( null !== $codeAbbreviation )
+        {
+            $_condition[] = 'code_abbr_text = :code_abbr_text';
+            $_params[':code_abbr_text'] = $codeAbbreviation;
+        }
+
+        //  No conditions? Bail...
+        if ( empty( $_condition ) )
+            return null;
+        
+        $_criteria = array(
+            'condition' => implode( ' AND ', $_condition ),
+            'params' => $_params,
+            'order' => PS::nvl( $sortOrder ),
+        );
+
+        return $_model->valueFilter( $valueFilter )->active( $activeCodesOnly )->
+      findAll( $_criteria );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classCPSCodeTableModel_a5e78b1afc1ba9ecb942625c5c13a3c5d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classCPSCodeTableModel_a5e78b1afc1ba9ecb942625c5c13a3c5d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCodeTableModel_ac14f301a6e13de3cf9bf32919ba44278}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!getValueFilter@{getValueFilter}}
+\index{getValueFilter@{getValueFilter}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{getValueFilter}]{\setlength{\rightskip}{0pt plus 5cm}getValueFilter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCodeTableModel_ac14f301a6e13de3cf9bf32919ba44278}
+
+
+Definition at line 43 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_valueFilter; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCodeTableModel_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!init@{init}}
+\index{init@{init}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCodeTableModel_a4be4055f3361d4800e16bc2e2e38cda6}
+
+
+Definition at line 60 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::init();
+
+        //  Get our model class
+        $this->_modelClass = self::_findModelClass();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classCPSCodeTableModel_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCodeTableModel_af1c9c9ff2590a2edc41d26604e237680}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!install@{install}}
+\index{install@{install}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{install}]{\setlength{\rightskip}{0pt plus 5cm}static install (
+\begin{DoxyParamCaption}
+\item[{\$}]{ dbConnection = {\ttfamily null}, }
+\item[{\$}]{ name = {\ttfamily self::DDL\_\-TABLE\_\-NAME}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSCodeTableModel_af1c9c9ff2590a2edc41d26604e237680}
+Installs a standard code table into the database.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em CDbConnection}]\$dbConnection Defaults to PS::\_\-a()-\/$>$db \item[{\em string}]\$name The code table name. Defaults to 'code\_\-t' \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 75 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_db = PS::nvl( $dbConnection, PS::_db() );
+
+        if ( $name && $_db )
+        {
+            $_path = Yii::getPathOfAlias( 'pogostick.templates.ddl' );
+
+            $_sql = file_get_contents( $_path . self::DDL_NAME );
+            if ( strlen( $_sql ) )
+            {
+                $_sql = str_ireplace( '%%TABLE_NAME', $name, $_sql );
+                $_command = $_db->createCommand( $_sql );
+                if ( $_command->execute() )
+                {
+                    $_sql = file_get_contents( $_path . self::DDL_DATA_NAME );
+
+                    //  Load some codes...
+                    if ( strlen( $_sql ) )
+                    {
+                        $_sql = str_ireplace( '%%TABLE_NAME', $name, $_sql );
+                        $_command = $_db->createCommand( $_sql );
+                        $_command->execute();
+                    }
+                }
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCodeTableModel_aedc330327136575b840059f1c930a153}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!lookup@{lookup}}
+\index{lookup@{lookup}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{lookup}]{\setlength{\rightskip}{0pt plus 5cm}static lookup (
+\begin{DoxyParamCaption}
+\item[{\$}]{ codeType, }
+\item[{\$}]{ codeAbbreviation = {\ttfamily null}, }
+\item[{\$}]{ returnIdOnly = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSCodeTableModel_aedc330327136575b840059f1c930a153}
+Returns all rows based on type/abbr given If it's a specific request, (i.e. type \& abbr given) a single row is returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$codeType \item[{\em string}]\$codeAbbreviation \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int$|$CPSCodeTableModel$|$array 
+\end{DoxyReturn}
+
+
+Definition at line 340 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_code = self::getCodes( null, $codeType, $codeAbbreviation );
+        return $_code ? ( $returnIdOnly ? $_code->id : $_code ) : null;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=356pt]{classCPSCodeTableModel_aedc330327136575b840059f1c930a153_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCodeTableModel_a269003f491b7968d7c98ae85b999448a}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!model@{model}}
+\index{model@{model}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{model}]{\setlength{\rightskip}{0pt plus 5cm}static model (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sClassName = {\ttfamily \_\-\_\-CLASS\_\-\_\-}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSCodeTableModel_a269003f491b7968d7c98ae85b999448a}
+Returns the static model of the specified AR class. \begin{DoxyReturn}{Returns}
+CActiveRecord the static model class 
+\end{DoxyReturn}
+
+
+Definition at line 199 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return parent::model( $sClassName );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCodeTableModel_a17dba92d96b9dd48c62f3ede3eef94d4}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!rules@{rules}}
+\index{rules@{rules}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{rules}]{\setlength{\rightskip}{0pt plus 5cm}rules (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCodeTableModel_a17dba92d96b9dd48c62f3ede3eef94d4}
+\begin{DoxyReturn}{Returns}
+array validation rules for model attributes. 
+\end{DoxyReturn}
+
+
+Definition at line 159 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return array(
+            array( 'code_type_text', 'length', 'max' => 60 ),
+            array( 'code_abbr_text', 'length', 'max' => 60 ),
+            array( 'code_desc_text', 'length', 'max' => 255 ),
+            array( 'assoc_text', 'length', 'max' => 255 ),
+            array( 'id, active_ind, code_type_text, code_abbr_text, code_desc_tex
+      t, create_date, lmod_date', 'required' ),
+            array( 'id, active_ind, parnt_code_id', 'numerical', 'integerOnly' =>
+       true ),
+            array( 'assoc_value_nbr', 'numerical' ),
+        );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCodeTableModel_a5e3b07abe66ebd7c4d3f8c7188f7f8ae}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!setValueFilter@{setValueFilter}}
+\index{setValueFilter@{setValueFilter}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{setValueFilter}]{\setlength{\rightskip}{0pt plus 5cm}setValueFilter (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCodeTableModel_a5e3b07abe66ebd7c4d3f8c7188f7f8ae}
+
+
+Definition at line 44 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_valueFilter = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCodeTableModel_aaf9f826b33b46930ea53b641e13825c0}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!valueFilter@{valueFilter}}
+\index{valueFilter@{valueFilter}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{valueFilter}]{\setlength{\rightskip}{0pt plus 5cm}valueFilter (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCodeTableModel_aaf9f826b33b46930ea53b641e13825c0}
+Retrieves the associated value for a code
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em int}]\$codeId \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+Definition at line 248 of file CPSCodeTableModel.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Nothing? Move along...
+        if ( null === $value )
+            return $this;
+        
+        //  Not an array? Make one...
+        if ( ! is_array( $value ) ) $value = array( $value );
+
+        //  No items?
+        if ( empty( $value ) )
+            return $this;
+        
+        //  Make string...
+        if ( count( $value ) == 1 )
+            $_condition = '( assoc_value_nbr is null or assoc_value_nbr = ' . $va
+      lue[0] . ')';
+        else
+            $_condition = '( assoc_value_nbr is null or assoc_value_nbr in (' . i
+      mplode( ',', $value ) . '))';
+
+        $this->getDbCriteria()->mergeWith( array( 'condition' => $_condition ) );
+      
+        return $this;
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSCodeTableModel_a58d9f8801e4c40d867f28343ff13551e}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!\$\_\-activeAttributeName@{\$\_\-activeAttributeName}}
+\index{\$\_\-activeAttributeName@{\$\_\-activeAttributeName}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{\$\_\-activeAttributeName}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-activeAttributeName = 'active\_\-ind'\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSCodeTableModel_a58d9f8801e4c40d867f28343ff13551e}
+
+
+Definition at line 49 of file CPSCodeTableModel.php.
+
+\hypertarget{classCPSCodeTableModel_a90080dcb26627bf719d96ab99e51f958}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!\$\_\-modelClass@{\$\_\-modelClass}}
+\index{\$\_\-modelClass@{\$\_\-modelClass}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{\$\_\-modelClass}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-modelClass = 'Codes'\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSCodeTableModel_a90080dcb26627bf719d96ab99e51f958}
+
+
+Reimplemented from \hyperlink{classCPSModel_a90080dcb26627bf719d96ab99e51f958}{CPSModel}.
+
+
+
+Definition at line 54 of file CPSCodeTableModel.php.
+
+\hypertarget{classCPSCodeTableModel_a3591a2fc703faa60237846a98b10a8cf}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!\$\_\-valueFilter@{\$\_\-valueFilter}}
+\index{\$\_\-valueFilter@{\$\_\-valueFilter}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{\$\_\-valueFilter}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-valueFilter = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSCodeTableModel_a3591a2fc703faa60237846a98b10a8cf}
+
+
+Definition at line 42 of file CPSCodeTableModel.php.
+
+\hypertarget{classCPSCodeTableModel_ac4ef63ea01237fca6e5977e7cf0ad6fa}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!DDL\_\-DATA\_\-NAME@{DDL\_\-DATA\_\-NAME}}
+\index{DDL\_\-DATA\_\-NAME@{DDL\_\-DATA\_\-NAME}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{DDL\_\-DATA\_\-NAME}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf DDL\_\-DATA\_\-NAME} = 'code\_\-install\_\-data.sql'}}
+\label{classCPSCodeTableModel_ac4ef63ea01237fca6e5977e7cf0ad6fa}
+
+
+Definition at line 33 of file CPSCodeTableModel.php.
+
+\hypertarget{classCPSCodeTableModel_a1e548fb71c67f7f778a311f3019b9ff3}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!DDL\_\-NAME@{DDL\_\-NAME}}
+\index{DDL\_\-NAME@{DDL\_\-NAME}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{DDL\_\-NAME}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf DDL\_\-NAME} = 'code\_\-t.sql'}}
+\label{classCPSCodeTableModel_a1e548fb71c67f7f778a311f3019b9ff3}
+
+
+Definition at line 31 of file CPSCodeTableModel.php.
+
+\hypertarget{classCPSCodeTableModel_aab7e20a5077f2a3b17ab9ae1ca8bd744}{
+\index{CPSCodeTableModel@{CPSCodeTableModel}!DDL\_\-TABLE\_\-NAME@{DDL\_\-TABLE\_\-NAME}}
+\index{DDL\_\-TABLE\_\-NAME@{DDL\_\-TABLE\_\-NAME}!CPSCodeTableModel@{CPSCodeTableModel}}
+\subsubsection[{DDL\_\-TABLE\_\-NAME}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf DDL\_\-TABLE\_\-NAME} = 'code\_\-t'}}
+\label{classCPSCodeTableModel_aab7e20a5077f2a3b17ab9ae1ca8bd744}
+
+
+Definition at line 32 of file CPSCodeTableModel.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/models/\hyperlink{CPSCodeTableModel_8php}{CPSCodeTableModel.php}\end{DoxyCompactItemize}

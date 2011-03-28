@@ -1,0 +1,2075 @@
+\hypertarget{classCPSTwitterApi}{
+\section{CPSTwitterApi Class Reference}
+\label{classCPSTwitterApi}\index{CPSTwitterApi@{CPSTwitterApi}}
+}
+
+
+Inheritance diagram for CPSTwitterApi:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classCPSTwitterApi__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSTwitterApi:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classCPSTwitterApi__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSTwitterApi_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSTwitterApi_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSTwitterApi_a68d63ce777ce2fa96d0d9d1111f1dcf3}{loadData} (\$sUserId=null, \$sScreenName=null, \$bAuthorized=false, \$arToken=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSTwitterApi_ab648e79d4c7934898e0bd99f42c18739}{getPublicTimeline} ()
+\item 
+\hyperlink{classCPSTwitterApi_a1443891e087408247ab5765b137e620a}{getFriendsTimeline} (\$sSinceId=null, \$sMaxId=null, \$iCount=null, \$iPage=null)
+\item 
+\hyperlink{classCPSTwitterApi_a4103b1ac27bbc0f3db1ab71b88f93f19}{getUserTimeline} (\$sId=null, \$sUserId=null, \$sScreenName=null, \$sSinceId=null, \$sMaxId=null, \$iCount=null, \$iPage=null)
+\item 
+\hyperlink{classCPSTwitterApi_aa33675ca1276678f5eb1ce153ecb3fc0}{getMentions} (\$sSinceId=null, \$sMaxId=null, \$iCount=null, \$iPage=null)
+\item 
+\hyperlink{classCPSTwitterApi_aecef2258ad5d95f208137cde146eeece}{getExtendedUserInfo} (\$sId=null, \$sUserId=null, \$sScreenName=null)
+\item 
+\hyperlink{classCPSTwitterApi_a45f7d4e1a2489c032892a17b5dbb63c6}{getStatus} (\$sId)
+\item 
+\hyperlink{classCPSTwitterApi_a437a821105446fde9bbcb7ebef307f5f}{updateStatus} (\$sStatus, \$sReplyId=null)
+\item 
+\hyperlink{classCPSTwitterApi_a287662639ab89a546820fb50aee09b6d}{removeStatus} (\$sUpdateId)
+\item 
+\hyperlink{classCPSTwitterApi_a347c20ca09a1414e7094511ff60a6572}{getFriends} (\$sId=null, \$sUserId=null, \$sScreenName=null, \$iPage=null)
+\item 
+\hyperlink{classCPSTwitterApi_a3a143ff80682ae9079e7ab4e8d0239ca}{getFollowers} (\$sId=null, \$sUserId=null, \$sScreenName=null, \$iPage=null)
+\item 
+\hyperlink{classCPSTwitterApi_a65767389416ea450315483ef34d9c317}{followUser} (\$sId=null, \$sUserId=null, \$sScreenName=null, \$bEnableNotifications=false)
+\item 
+\hyperlink{classCPSTwitterApi_a22c4db8ed439d600b3df10a35e04cb4b}{unfollowUser} (\$sId=null, \$sUserId=null, \$sScreenName=null)
+\item 
+\hyperlink{classCPSTwitterApi_a7aaa4c2b663fbebca67ae7b162ad364f}{isFollowing} (\$sFolloweeId, \$sFollowerId=null)
+\item 
+\hyperlink{classCPSTwitterApi_a863d94b36aec6821685a5bbe183ac055}{getFollowingList} (\$sId=null, \$sUserId=null, \$sScreenName=null, \$iPage=null)
+\item 
+\hyperlink{classCPSTwitterApi_af2da33a5613318a02f93e2ca68722613}{getFollowerList} (\$sId=null, \$sUserId=null, \$sScreenName=null, \$iPage=null)
+\item 
+\hyperlink{classCPSTwitterApi_aa706fde11e1968f76a5ed19056944fdc}{verifyCredentials} ()
+\item 
+\hyperlink{classCPSTwitterApi_affa61fcd5f7596b323d31ba8edef8a3b}{getRateLimitStatus} ()
+\item 
+\hyperlink{classCPSTwitterApi_aa0d57631639ef65ee5030edf92e4974a}{endSession} ()
+\item 
+\hyperlink{classCPSTwitterApi_aa07192673507be5e4bc9a5d342bd03b7}{updateDeliveryDevice} (\$sDevice)
+\item 
+\hyperlink{classCPSTwitterApi_a05cd15bda52603c2ca5beb3b7acb0b9d}{updateProfileColors} (\$sBG=null, \$sText=null, \$sLink=null, \$sSBFill=null, \$sSBBorder=null)
+\item 
+\hyperlink{classCPSTwitterApi_a0a53559d0a53da91dd0af834b2a2379f}{updateProfileImage} (\$sImageData)
+\item 
+\hyperlink{classCPSTwitterApi_a9022fbca84af34fe395b05e59b3c4612}{updateProfileBackgroundImage} (\$sImageData, \$bTiled=false)
+\item 
+\hyperlink{classCPSTwitterApi_a12a317aebc0d3877dc8b9222fbdae586}{updateProfile} (\$sName=null, \$sEmail=null, \$sUrl=null, \$sLocation=null, \$sDescription=null)
+\item 
+\hyperlink{classCPSTwitterApi_a5d957106488cf37b832537826f5bf619}{getFavorites} (\$sId=null, \$iPage=null)
+\item 
+\hyperlink{classCPSTwitterApi_ab3f7ce72387dc03579a437edcd0b60e5}{addFavorite} (\$sStatusId)
+\item 
+\hyperlink{classCPSTwitterApi_a0d98584e01bc95f8b8f8a51ff7b1b5e8}{removeFavorite} (\$sStatusId)
+\item 
+\hyperlink{classCPSTwitterApi_a6580b008521d0b34bdc75f6586d113b1}{enableFollowNotifications} (\$sId=null, \$sUserId=null, \$sScreenName=null)
+\item 
+\hyperlink{classCPSTwitterApi_a0f563966086bf59e64bc0824be25e4cd}{disableFollowNotifications} (\$sId=null, \$sUserId=null, \$sScreenName=null)
+\item 
+\hyperlink{classCPSTwitterApi_a1936ab230b38949e6498cff4aebbfd10}{search} (\$sTerm, \$sCallback=null, \$sLang=null, \$iRPP=null, \$iPage=null, \$sSinceId=null, \$sGeocode=null, \$bShowUser=false)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSTwitterApi_a19f41a351a36bfa05c541b86e9f84a46}{STATUS\_\-API} = 'statuses'
+\item 
+const \hyperlink{classCPSTwitterApi_a7186266c619bf7c259df620a27a6be61}{USER\_\-API} = 'users'
+\item 
+const \hyperlink{classCPSTwitterApi_a7f6433ea3fadbcaed427de7f30fa5aa7}{DIRECTMESSAGE\_\-API} = 'direct\_\-message'
+\item 
+const \hyperlink{classCPSTwitterApi_a8179b4b95b3d7982e1cf6d713f119651}{FRIENDSHIP\_\-API} = 'friendships'
+\item 
+const \hyperlink{classCPSTwitterApi_a3fc010ed21ff41fb78f8b0bb606faddb}{FRIEND\_\-API} = 'friends'
+\item 
+const \hyperlink{classCPSTwitterApi_a4183cb69bce31e4741021ea7a3e9c326}{FOLLOWER\_\-API} = 'followers'
+\item 
+const \hyperlink{classCPSTwitterApi_a57a7ce6c04940622a290e914976de849}{ACCOUNT\_\-API} = 'account'
+\item 
+const \hyperlink{classCPSTwitterApi_abcf060692f260345e886ed3d78fe56df}{FAVORITE\_\-API} = 'favorites'
+\item 
+const \hyperlink{classCPSTwitterApi_a22f1a8ed1263d6338c4e3a310e4f41d2}{NOTIFICATION\_\-API} = 'notifications'
+\item 
+const \hyperlink{classCPSTwitterApi_ab4c32fba74b8441eb0d1497398718f80}{BLOCK\_\-API} = 'blocks'
+\item 
+const \hyperlink{classCPSTwitterApi_ad257a5f5d08047d89a236c8cbec1a449}{TRENDS\_\-API} = 'trends'
+\item 
+const \hyperlink{classCPSTwitterApi_a9e8d909f187a5d06bebda16dd0dc3dea}{SEARCH\_\-API} = 'search'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSTwitterApi_a5caa7d4946f952e213985b0dbe8e9639}{addTwitterRequestMapping} (\$sAction, \$arParams=null, \$arOptions=null, \$sController=null)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 27 of file CPSTwitterApi.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSTwitterApi_ab3f7ce72387dc03579a437edcd0b60e5}{
+\index{CPSTwitterApi@{CPSTwitterApi}!addFavorite@{addFavorite}}
+\index{addFavorite@{addFavorite}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{addFavorite}]{\setlength{\rightskip}{0pt plus 5cm}addFavorite (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sStatusId}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_ab3f7ce72387dc03579a437edcd0b60e5}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sStatusId \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 822 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::FAVORITE_API;
+        return $this->makeRequest( 'create', array( 'id' => $sStatusId ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_ab3f7ce72387dc03579a437edcd0b60e5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a5caa7d4946f952e213985b0dbe8e9639}{
+\index{CPSTwitterApi@{CPSTwitterApi}!addTwitterRequestMapping@{addTwitterRequestMapping}}
+\index{addTwitterRequestMapping@{addTwitterRequestMapping}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{addTwitterRequestMapping}]{\setlength{\rightskip}{0pt plus 5cm}addTwitterRequestMapping (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sAction, }
+\item[{\$}]{ arParams = {\ttfamily null}, }
+\item[{\$}]{ arOptions = {\ttfamily null}, }
+\item[{\$}]{ sController = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSTwitterApi_a5caa7d4946f952e213985b0dbe8e9639}
+Adds a request to the requestMap array
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sAction The action to call \item[{\em array}]\$arParams The parameters for this request \item[{\em array}]\$arOptions The options for this request \item[{\em string}]\$sController The API to call \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if operation succeeded 
+\end{DoxyReturn}
+
+
+Definition at line 899 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Save for next call
+        static $_sLastController;
+
+        //  Set up statics so next call can omit those parameters.
+        if ( null != $sController && $sController != $_sLastController )
+            $_sLastController = $sController;
+
+        //  Add the mapping...
+        if ( null == $_sLastController )
+            return false;
+
+        //  Add mapping...
+        $_arOptions =& $this->getOptions();
+        $_arOptions[ 'requestMap' ][ $_sLastController ][ $sAction ] = array( 'pa
+      rams' => $arParams, 'options' => $arOptions, 'controller' => $_sLastController );
+      
+
+        return true;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classCPSTwitterApi_a5caa7d4946f952e213985b0dbe8e9639_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a0f563966086bf59e64bc0824be25e4cd}{
+\index{CPSTwitterApi@{CPSTwitterApi}!disableFollowNotifications@{disableFollowNotifications}}
+\index{disableFollowNotifications@{disableFollowNotifications}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{disableFollowNotifications}]{\setlength{\rightskip}{0pt plus 5cm}disableFollowNotifications (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sId = {\ttfamily null}, }
+\item[{\$}]{ sUserId = {\ttfamily null}, }
+\item[{\$}]{ sScreenName = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a0f563966086bf59e64bc0824be25e4cd}
+Disables notifications for updates from the specified user to the authenticating user
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sId \item[{\em string}]\$sUserId \item[{\em string}]\$sScreenName \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed Returns the specified user when successful 
+\end{DoxyReturn}
+
+
+Definition at line 861 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::NOTIFICATION_API;
+        return $this->makeRequest( 'leave', array( 'id' => $sId, 'user_id' => $sU
+      serId, 'screen_name' => $sScreenName ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a0f563966086bf59e64bc0824be25e4cd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a6580b008521d0b34bdc75f6586d113b1}{
+\index{CPSTwitterApi@{CPSTwitterApi}!enableFollowNotifications@{enableFollowNotifications}}
+\index{enableFollowNotifications@{enableFollowNotifications}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{enableFollowNotifications}]{\setlength{\rightskip}{0pt plus 5cm}enableFollowNotifications (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sId = {\ttfamily null}, }
+\item[{\$}]{ sUserId = {\ttfamily null}, }
+\item[{\$}]{ sScreenName = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a6580b008521d0b34bdc75f6586d113b1}
+Enables device notifications for updates from the specified user
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sId \item[{\em string}]\$sUserId \item[{\em string}]\$sScreenName \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed Returns the specified user when successful 
+\end{DoxyReturn}
+
+
+Definition at line 847 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::NOTIFICATION_API;
+        return $this->makeRequest( 'follow', array( 'id' => $sId, 'user_id' => $s
+      UserId, 'screen_name' => $sScreenName ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a6580b008521d0b34bdc75f6586d113b1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_aa0d57631639ef65ee5030edf92e4974a}{
+\index{CPSTwitterApi@{CPSTwitterApi}!endSession@{endSession}}
+\index{endSession@{endSession}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{endSession}]{\setlength{\rightskip}{0pt plus 5cm}endSession (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_aa0d57631639ef65ee5030edf92e4974a}
+Ends the session of the authenticating user, returning a null cookie. Use this method to sign users out of client-\/facing applications like widgets 
+
+Definition at line 735 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::ACCOUNT_API;
+        return $this->makeRequest( 'end_session' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_aa0d57631639ef65ee5030edf92e4974a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a65767389416ea450315483ef34d9c317}{
+\index{CPSTwitterApi@{CPSTwitterApi}!followUser@{followUser}}
+\index{followUser@{followUser}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{followUser}]{\setlength{\rightskip}{0pt plus 5cm}followUser (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sId = {\ttfamily null}, }
+\item[{\$}]{ sUserId = {\ttfamily null}, }
+\item[{\$}]{ sScreenName = {\ttfamily null}, }
+\item[{\$}]{ bEnableNotifications = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a65767389416ea450315483ef34d9c317}
+Allows the authenticating users to follow the user specified in the \$sId parameter. Returns the befriended user in the requested format when successful. Returns a string describing the failure condition when unsuccessful.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sId \item[{\em string}]\$sUserId \item[{\em string}]\$sScreenName \item[{\em boolean}]\$bEnableNotifications \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 640 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::FRIENDSHIP_API;
+        return $this->makeRequest( 'create', array( 'id' => $sId, 'user_id' => $s
+      UserId, 'screen_name' => $sScreenName, 'follow' => $bEnableNotifications ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a65767389416ea450315483ef34d9c317_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_aecef2258ad5d95f208137cde146eeece}{
+\index{CPSTwitterApi@{CPSTwitterApi}!getExtendedUserInfo@{getExtendedUserInfo}}
+\index{getExtendedUserInfo@{getExtendedUserInfo}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{getExtendedUserInfo}]{\setlength{\rightskip}{0pt plus 5cm}getExtendedUserInfo (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sId = {\ttfamily null}, }
+\item[{\$}]{ sUserId = {\ttfamily null}, }
+\item[{\$}]{ sScreenName = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_aecef2258ad5d95f208137cde146eeece}
+Returns extended information of a given user, specified by ID or screen name as per the required id parameter. The author's most recent status will be returned inline.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sId \item[{\em string}]\$sUserId \item[{\em string}]\$sScreenName \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 547 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::USER_API;
+        return $this->makeRequest( 'show', array( 'id' => $sId, 'user_id' => $sUs
+      erId, 'screen_name' => $sScreenName ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_aecef2258ad5d95f208137cde146eeece_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a5d957106488cf37b832537826f5bf619}{
+\index{CPSTwitterApi@{CPSTwitterApi}!getFavorites@{getFavorites}}
+\index{getFavorites@{getFavorites}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{getFavorites}]{\setlength{\rightskip}{0pt plus 5cm}getFavorites (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sId = {\ttfamily null}, }
+\item[{\$}]{ iPage = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a5d957106488cf37b832537826f5bf619}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sId \item[{\em integer}]\$iPage \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 811 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::FAVORITE_API;
+        return $this->makeRequest( '/', array( 'id' => $sId, 'page' => $iPage ) )
+      ;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a5d957106488cf37b832537826f5bf619_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_af2da33a5613318a02f93e2ca68722613}{
+\index{CPSTwitterApi@{CPSTwitterApi}!getFollowerList@{getFollowerList}}
+\index{getFollowerList@{getFollowerList}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{getFollowerList}]{\setlength{\rightskip}{0pt plus 5cm}getFollowerList (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sId = {\ttfamily null}, }
+\item[{\$}]{ sUserId = {\ttfamily null}, }
+\item[{\$}]{ sScreenName = {\ttfamily null}, }
+\item[{\$}]{ iPage = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_af2da33a5613318a02f93e2ca68722613}
+Returns an array of users whom are following the authenticated user
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sId \item[{\em string}]\$sUserId \item[{\em string}]\$sScreenName \item[{\em integer}]\$iPage \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 700 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::FOLLOWER_API;
+        return $this->makeRequest( 'ids', array( 'id' => $sId, 'user_id' => $sUse
+      rId, 'screen_name' => $sScreenName, 'page' => $iPage ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_af2da33a5613318a02f93e2ca68722613_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a3a143ff80682ae9079e7ab4e8d0239ca}{
+\index{CPSTwitterApi@{CPSTwitterApi}!getFollowers@{getFollowers}}
+\index{getFollowers@{getFollowers}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{getFollowers}]{\setlength{\rightskip}{0pt plus 5cm}getFollowers (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sId = {\ttfamily null}, }
+\item[{\$}]{ sUserId = {\ttfamily null}, }
+\item[{\$}]{ sScreenName = {\ttfamily null}, }
+\item[{\$}]{ iPage = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a3a143ff80682ae9079e7ab4e8d0239ca}
+Returns the authenticating user's followers, each with current status inline. They are ordered by the order in which they joined Twitter
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sId \item[{\em string}]\$sUserId \item[{\em string}]\$sScreenName \item[{\em integer}]\$iPage \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 623 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::STATUS_API;
+        return $this->makeRequest( 'followers', array( 'id' => $sId, 'user_id' =>
+       $sUserId, 'screen_name' => $sScreenName, 'page' => $iPage ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a3a143ff80682ae9079e7ab4e8d0239ca_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a863d94b36aec6821685a5bbe183ac055}{
+\index{CPSTwitterApi@{CPSTwitterApi}!getFollowingList@{getFollowingList}}
+\index{getFollowingList@{getFollowingList}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{getFollowingList}]{\setlength{\rightskip}{0pt plus 5cm}getFollowingList (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sId = {\ttfamily null}, }
+\item[{\$}]{ sUserId = {\ttfamily null}, }
+\item[{\$}]{ sScreenName = {\ttfamily null}, }
+\item[{\$}]{ iPage = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a863d94b36aec6821685a5bbe183ac055}
+
+
+Definition at line 685 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::FRIEND_API;
+        return $this->makeRequest( 'ids', array( 'id' => $sId, 'user_id' => $sUse
+      rId, 'screen_name' => $sScreenName, 'page' => $iPage ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a863d94b36aec6821685a5bbe183ac055_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a347c20ca09a1414e7094511ff60a6572}{
+\index{CPSTwitterApi@{CPSTwitterApi}!getFriends@{getFriends}}
+\index{getFriends@{getFriends}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{getFriends}]{\setlength{\rightskip}{0pt plus 5cm}getFriends (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sId = {\ttfamily null}, }
+\item[{\$}]{ sUserId = {\ttfamily null}, }
+\item[{\$}]{ sScreenName = {\ttfamily null}, }
+\item[{\$}]{ iPage = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a347c20ca09a1414e7094511ff60a6572}
+Returns a user's friends, each with current status inline. They are ordered by the order in which they were added as friends. Defaults to the authenticated user's friends. It's also possible to request another user's friends list via the \$sId parameter.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sId \item[{\em string}]\$sUserId \item[{\em string}]\$sScreenName \item[{\em integer}]\$iPage \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 607 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::STATUS_API;
+        return $this->makeRequest( 'friends', array( 'id' => $sId, 'user_id' => $
+      sUserId, 'screen_name' => $sScreenName, 'page' => $iPage ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a347c20ca09a1414e7094511ff60a6572_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a1443891e087408247ab5765b137e620a}{
+\index{CPSTwitterApi@{CPSTwitterApi}!getFriendsTimeline@{getFriendsTimeline}}
+\index{getFriendsTimeline@{getFriendsTimeline}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{getFriendsTimeline}]{\setlength{\rightskip}{0pt plus 5cm}getFriendsTimeline (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSinceId = {\ttfamily null}, }
+\item[{\$}]{ sMaxId = {\ttfamily null}, }
+\item[{\$}]{ iCount = {\ttfamily null}, }
+\item[{\$}]{ iPage = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a1443891e087408247ab5765b137e620a}
+Returns the 20 most recent statuses posted by the authenticating user and that user's friends. This is the equivalent of /timeline/home on the Web.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sSinceId \item[{\em string}]\$sMaxId \item[{\em integer}]\$iCount \item[{\em integer}]\$iPage \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 496 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::STATUS_API;
+        return $this->makeRequest( 'friends_timeline', array( 'since_id' => $sSin
+      ceId, 'max_id' => $sMaxId, 'count' => $iCount, 'page' => $iPage ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a1443891e087408247ab5765b137e620a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_aa33675ca1276678f5eb1ce153ecb3fc0}{
+\index{CPSTwitterApi@{CPSTwitterApi}!getMentions@{getMentions}}
+\index{getMentions@{getMentions}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{getMentions}]{\setlength{\rightskip}{0pt plus 5cm}getMentions (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSinceId = {\ttfamily null}, }
+\item[{\$}]{ sMaxId = {\ttfamily null}, }
+\item[{\$}]{ iCount = {\ttfamily null}, }
+\item[{\$}]{ iPage = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_aa33675ca1276678f5eb1ce153ecb3fc0}
+Returns the 20 most recent mentions (status containing ) for the authenticating user.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sSinceId \item[{\em string}]\$sMaxId \item[{\em integer}]\$iCount \item[{\em integer}]\$iPage \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 532 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::STATUS_API;
+        return $this->makeRequest( 'mentions', array( 'since_id' => $sSinceId, 'm
+      ax_id' => $sMaxId, 'count' => $iCount, 'page' => $iPage ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_aa33675ca1276678f5eb1ce153ecb3fc0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_ab648e79d4c7934898e0bd99f42c18739}{
+\index{CPSTwitterApi@{CPSTwitterApi}!getPublicTimeline@{getPublicTimeline}}
+\index{getPublicTimeline@{getPublicTimeline}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{getPublicTimeline}]{\setlength{\rightskip}{0pt plus 5cm}getPublicTimeline (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_ab648e79d4c7934898e0bd99f42c18739}
+Returns the 20 most recent statuses from non-\/protected users who have set a custom user icon. The public timeline is cached for 60 seconds so requesting it more often than that is a waste of resources.
+
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 480 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::STATUS_API;
+        return $this->makeRequest( 'public_timeline' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_ab648e79d4c7934898e0bd99f42c18739_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_affa61fcd5f7596b323d31ba8edef8a3b}{
+\index{CPSTwitterApi@{CPSTwitterApi}!getRateLimitStatus@{getRateLimitStatus}}
+\index{getRateLimitStatus@{getRateLimitStatus}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{getRateLimitStatus}]{\setlength{\rightskip}{0pt plus 5cm}getRateLimitStatus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_affa61fcd5f7596b323d31ba8edef8a3b}
+Returns the remaining number of API requests available to the requesting user before the API limit is reached for the current hour. Calls to this do not count against the rate limit. If authentication credentials are provided, the rate limit status for the authenticating user is returned. Otherwise, the rate limit status for the requester's IP address is returned. Learn more about the \hyperlink{}{REST API rate limiting}. 
+
+Definition at line 725 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::ACCOUNT_API;
+        return $this->makeRequest( 'rate_limit_status' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_affa61fcd5f7596b323d31ba8edef8a3b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a45f7d4e1a2489c032892a17b5dbb63c6}{
+\index{CPSTwitterApi@{CPSTwitterApi}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{getStatus}]{\setlength{\rightskip}{0pt plus 5cm}getStatus (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sId}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a45f7d4e1a2489c032892a17b5dbb63c6}
+Returns a single status, specified by the id parameter below. The status's author will be returned inline.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sId \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 560 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::STATUS_API;
+        return $this->makeRequest( 'show', array( 'id' => $sId ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a45f7d4e1a2489c032892a17b5dbb63c6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a4103b1ac27bbc0f3db1ab71b88f93f19}{
+\index{CPSTwitterApi@{CPSTwitterApi}!getUserTimeline@{getUserTimeline}}
+\index{getUserTimeline@{getUserTimeline}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{getUserTimeline}]{\setlength{\rightskip}{0pt plus 5cm}getUserTimeline (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sId = {\ttfamily null}, }
+\item[{\$}]{ sUserId = {\ttfamily null}, }
+\item[{\$}]{ sScreenName = {\ttfamily null}, }
+\item[{\$}]{ sSinceId = {\ttfamily null}, }
+\item[{\$}]{ sMaxId = {\ttfamily null}, }
+\item[{\$}]{ iCount = {\ttfamily null}, }
+\item[{\$}]{ iPage = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a4103b1ac27bbc0f3db1ab71b88f93f19}
+Returns the 20 most recent statuses posted from the authenticating user. It's also possible to request another user's timeline via the id parameter. This is the equivalent of the Web /$<$user$>$ page for your own user, or the profile page for a third party
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sId \item[{\em string}]\$sUserId \item[{\em string}]\$sScreenName \item[{\em string}]\$sSinceId \item[{\em string}]\$sMaxId \item[{\em integer}]\$iCount \item[{\em integer}]\$iPage \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 517 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::STATUS_API;
+        return $this->makeRequest( 'user_timeline', array( 'id' => $sId, 'user_id
+      ' => $sUserId, 'screen_name' => $sScreenName, 'since_id' => $sSinceId, 'max_id' =
+      > $sMaxId, 'count' => $iCount, 'page' => $iPage ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a4103b1ac27bbc0f3db1ab71b88f93f19_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSTwitterApi@{CPSTwitterApi}!init@{init}}
+\index{init@{init}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize 
+
+Reimplemented from \hyperlink{classCPSApiComponent_a4be4055f3361d4800e16bc2e2e38cda6}{CPSApiComponent}.
+
+
+
+Definition at line 80 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Call daddy
+        parent::init();
+
+        //  Set current twitter api url
+        if ( ! $this->apiBaseUrl )
+            $this->apiBaseUrl = 'http://twitter.com';
+        
+        //  Create the base array
+        $this->requestMap = array();
+
+        //***********************************************************************
+      *********
+        //* Statuses API
+        //***********************************************************************
+      *********
+        
+        $this->addTwitterRequestMapping( 'public_timeline',                      
+                                      
+            null,
+            null,
+            self::STATUS_API
+        );
+
+        $this->addTwitterRequestMapping( 'friends_timeline',
+            array(
+                'since_id' => false,
+                'max_id' => false,
+                'count' => false,
+                'page' => false,
+            ),
+            array( '_requireAuth' => true )
+        );
+
+        $this->addTwitterRequestMapping( 'user_timeline',
+            array(
+                'id' => false,
+                'user_id' => false,
+                'screen_name' => false,
+                'since_id' => false,
+                'max_id' => false,
+                'count' => false,
+                'page' => false,
+            ),
+            array( 
+                '_requireAuth' => true,
+                '_requireOneOf' => array( 'id', 'user_id', 'screen_name' ),
+            )
+        );
+
+        $this->addTwitterRequestMapping( 'mentions',
+            array(
+                'since_id' => false,
+                'max_id' => false,
+                'count' => false,
+                'page' => false,
+            ),
+            array( '_requireAuth' => true )
+        );
+
+        $this->addTwitterRequestMapping( 'show',
+            array(
+                'id' => false,
+                'user_id' => false,
+                'screen_name' => false,
+            ),
+            array( 
+                '_requireOneOf' => array( 'id', 'user_id', 'screen_name' ),
+            )
+        );
+
+        $this->addTwitterRequestMapping( 'update',
+            array(
+                'status' => true,
+                'in_reply_to_status_id' => false
+            ),
+            array(
+                '_method' => CPSApiBehavior::HTTP_POST,
+            )
+        );
+
+        $this->addTwitterRequestMapping( 'destroy',
+            array(
+                'id' => true
+            ),
+            array(
+                '_method' => CPSApiBehavior::HTTP_POST,
+            )
+        );
+
+        $this->addTwitterRequestMapping( 'friends',
+            array(
+                'id' => false,
+                'user_id' => false,
+                'screen_name' => false,
+                'page' => false,
+            )
+        );
+
+        $this->addTwitterRequestMapping( 'followers',
+            array(
+                'id' => false,
+                'user_id' => false,
+                'screen_name' => false,
+                'page' => false,
+            ),
+            array( '_requireAuth' => true )
+        );
+
+        //***********************************************************************
+      *********
+        //* Users API
+        //***********************************************************************
+      *********
+
+        $this->addTwitterRequestMapping( 'show',
+            array(
+                'id' => false,
+                'user_id' => false,
+                'screen_name' => false,
+            ),
+            array(
+                '_requireOneOf' => array( 'id', 'user_id', 'screen_name' ),
+            ),
+            self::USER_API
+        );
+
+        //***********************************************************************
+      *********
+        //* Friendship API
+        //***********************************************************************
+      *********
+
+        $this->addTwitterRequestMapping( 'create',
+            array(
+                'id' => false,
+                'user_id' => false,
+                'screen_name' => false,
+                'follow' => false,
+            ),
+            array(
+                '_method' => CPSApiBehavior::HTTP_POST,
+                '_requireOneOf' => array( 'id', 'user_id', 'screen_name' ),
+                '_requireAuth' => true,
+            ),
+            self::FRIENDSHIP_API
+        );
+
+        $this->addTwitterRequestMapping( 'destroy',
+            array(
+                'id' => false,
+                'user_id' => false,
+                'screen_name' => false,
+            ),
+            array(
+                '_method' => CPSApiBehavior::HTTP_POST,
+                '_requireOneOf' => array( 'id', 'user_id', 'screen_name' ),
+                '_requireAuth' => true,
+            ),
+            self::FRIENDSHIP_API
+        );
+
+        $this->addTwitterRequestMapping( 'exists',
+            array(
+                'user_a' => true,
+                'user_b' => true,
+            ),
+            array( '_requireAuth' => true ),
+            self::FRIENDSHIP_API
+        );
+
+        //***********************************************************************
+      *********
+        //* Friend API
+        //***********************************************************************
+      *********
+
+        $this->addTwitterRequestMapping( 'ids',
+            array(
+                'id' => false,
+                'user_id' => false,
+                'screen_name' => false,
+                'page' => false,
+            ),
+            array(
+                '_requireOneOf' => array( 'id', 'user_id', 'screen_name' ),
+            ),
+            self::FRIEND_API
+        );
+
+        //***********************************************************************
+      *********
+        //* Follower API
+        //***********************************************************************
+      *********
+
+        $this->addTwitterRequestMapping( 'ids',
+            array(
+                'id' => false,
+                'user_id' => false,
+                'screen_name' => false,
+                'page' => false,
+            ),
+            array(
+                '_requireOneOf' => array( 'id', 'user_id', 'screen_name' ),
+            ),
+            self::FOLLOWER_API
+        );
+
+        //***********************************************************************
+      *********
+        //* Account API
+        //***********************************************************************
+      *********
+
+        $this->addTwitterRequestMapping( 'verify_credentials',
+            null,
+            array( '_requireAuth' => true ),
+            self::ACCOUNT_API
+        );
+
+        $this->addTwitterRequestMapping( 'rate_limit_status',
+            null,
+            array( '_requireAuth' => true )
+         );
+
+        $this->addTwitterRequestMapping( 'end_session',
+            null,
+            array(
+                '_method' => CPSApiBehavior::HTTP_POST,
+                '_requireAuth' => true
+            )
+         );
+
+        $this->addTwitterRequestMapping( 'update_delivery_device',
+            array(
+                'device' => true,
+            ),
+            array(
+                '_method' => CPSApiBehavior::HTTP_POST,
+                '_requireAuth' => true
+            )
+        );
+
+        $this->addTwitterRequestMapping( 'update_profile_colors',
+            array(
+                'profile_background_color' => false,
+                'profile_text_color' => false,
+                'profile_link_color' => false,
+                'profile_sidebar_fill_color' => false,
+                'profile_sidebar_border_color' => false,
+            ),
+            array(
+                '_method' => CPSApiBehavior::HTTP_POST,
+                '_requireOneOf' => array( 'profile_background_color', 'profile_te
+      xt_color', 'profile_link_color', 'profile_sidebar_fill_color', 'profile_sidebar_b
+      order_color' ),
+                '_requireAuth' => true,
+            )
+        );
+
+        $this->addTwitterRequestMapping( 'update_profile_image',
+            array(
+                'image' => true,
+            ),
+            array(
+                '_method' => CPSApiBehavior::HTTP_POST,
+                '_requireAuth' => true,
+            )
+        );
+
+        $this->addTwitterRequestMapping( 'update_profile_background_image',
+            array(
+                'image' => true,
+                'tile' => false,
+            ),
+            array(
+                '_method' => CPSApiBehavior::HTTP_POST,
+                '_requireAuth' => true,
+            )
+        );
+
+        $this->addTwitterRequestMapping( 'update_profile',
+            array(
+                'name' => false,
+                'email' => false,
+                'url' => false,
+                'location' => false,
+                'description' => false,
+            ),
+            array(
+                '_method' => CPSApiBehavior::HTTP_POST,
+                '_requireOneOf' => array( 'name', 'email', 'url', 'location', 'de
+      scription' ),
+                '_requireAuth' => true,
+            )
+        );
+
+        //***********************************************************************
+      *********
+        //* Favorite API
+        //***********************************************************************
+      *********
+
+        $this->addTwitterRequestMapping( '/',
+            array(
+                'id' => false,
+                'page' => false,
+            ),
+            array(
+                '_requireAuth' => true,
+            ),
+            self::FAVORITE_API
+        );
+
+        $this->addTwitterRequestMapping( 'create',
+            array(
+                'id' => true,
+            ),
+            array(
+                '_method' => CPSApiBehavior::HTTP_POST,
+                '_requireAuth' => true,
+            )
+        );
+
+        $this->addTwitterRequestMapping( 'destroy',
+            array(
+                'id' => true,
+            ),
+            array(
+                '_method' => CPSApiBehavior::HTTP_POST,
+                '_requireAuth' => true,
+            )
+        );
+
+        //***********************************************************************
+      *********
+        //* Notification API
+        //***********************************************************************
+      *********
+
+        $this->addTwitterRequestMapping( 'follow',
+            array(
+                'id' => false,
+                'user_id' => false,
+                'screen_name' => false,
+            ),
+            array(
+                '_method' => CPSApiBehavior::HTTP_POST,
+                '_requireOneOf' => array( 'id', 'user_id', 'screen_name' ),
+                '_requireAuth' => true,
+            ),
+            self::NOTIFICATION_API
+        );
+
+        $this->addTwitterRequestMapping( 'leave',
+            array(
+                'id' => false,
+                'user_id' => false,
+                'screen_name' => false,
+            ),
+            array(
+                '_method' => CPSApiBehavior::HTTP_POST,
+                '_requireOneOf' => array( 'id', 'user_id', 'screen_name' ),
+                '_requireAuth' => true,
+            )
+        );
+        
+        //***********************************************************************
+      *********
+        //* Search API
+        //***********************************************************************
+      *********
+
+        $this->addTwitterRequestMapping( '/',
+            array(
+                'callback' => false,
+                'lang' => false,
+                'rpp' => false,
+                'page' => false,
+                'since_id' => false,
+                'geocode' => false,
+                'show_user' => false,
+                'q' => true,
+            ),
+            null,
+            self::SEARCH_API
+        );
+        
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classCPSTwitterApi_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a7aaa4c2b663fbebca67ae7b162ad364f}{
+\index{CPSTwitterApi@{CPSTwitterApi}!isFollowing@{isFollowing}}
+\index{isFollowing@{isFollowing}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{isFollowing}]{\setlength{\rightskip}{0pt plus 5cm}isFollowing (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sFolloweeId, }
+\item[{\$}]{ sFollowerId = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a7aaa4c2b663fbebca67ae7b162ad364f}
+Tests for the existence of friendship between two users. Will return true if \$sFollowerId follows \$sFolloweeId, otherwise will return false.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sFolloweeId The user to test \item[{\em string}]\$sFollowerId The other user to test. If null, authenticated user id is used \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 670 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::FRIENDSHIP_API;
+        return $this->makeRequest( 'exists', array( 'user_a' => ( null == $sFollo
+      werId ) ? $this->userId : $sFollowerId, 'user_b' => $sFolloweeId ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a7aaa4c2b663fbebca67ae7b162ad364f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a68d63ce777ce2fa96d0d9d1111f1dcf3}{
+\index{CPSTwitterApi@{CPSTwitterApi}!loadData@{loadData}}
+\index{loadData@{loadData}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{loadData}]{\setlength{\rightskip}{0pt plus 5cm}loadData (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUserId = {\ttfamily null}, }
+\item[{\$}]{ sScreenName = {\ttfamily null}, }
+\item[{\$}]{ bAuthorized = {\ttfamily false}, }
+\item[{\$}]{ arToken = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a68d63ce777ce2fa96d0d9d1111f1dcf3}
+Loads data into the component from an alternate source (i.e. database, cookie, etc.)
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sUserId The Twitter user\_\-id \item[{\em string}]\$sScreenName The Twitter screen\_\-name \item[{\em boolean}]\$bAuthorized Is user authorized? \item[{\em array}]\$arToken The access token \end{DoxyParams}
+
+
+Definition at line 462 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->userId = $sUserId;
+        $this->screenName = $sScreenName;
+        $this->isAuthorized = $bAuthorized;
+        $this->storeToken( $arToken );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSTwitterApi_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSTwitterApi@{CPSTwitterApi}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a2dc262e99b1c246b56f27626bfe699ff}
+Preinitialize 
+
+Reimplemented from \hyperlink{classCPSOAuthComponent_a2dc262e99b1c246b56f27626bfe699ff}{CPSOAuthComponent}.
+
+
+
+Definition at line 53 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Phone home...
+        parent::preinit();
+
+        //  Add ours...
+        $this->addOptions( self::getBaseOptions() );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSTwitterApi_a0d98584e01bc95f8b8f8a51ff7b1b5e8}{
+\index{CPSTwitterApi@{CPSTwitterApi}!removeFavorite@{removeFavorite}}
+\index{removeFavorite@{removeFavorite}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{removeFavorite}]{\setlength{\rightskip}{0pt plus 5cm}removeFavorite (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sStatusId}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a0d98584e01bc95f8b8f8a51ff7b1b5e8}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sStatusId \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 833 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::FAVORITE_API;
+        return $this->makeRequest( 'destroy', array( 'id' => $sStatusId ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a0d98584e01bc95f8b8f8a51ff7b1b5e8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a287662639ab89a546820fb50aee09b6d}{
+\index{CPSTwitterApi@{CPSTwitterApi}!removeStatus@{removeStatus}}
+\index{removeStatus@{removeStatus}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{removeStatus}]{\setlength{\rightskip}{0pt plus 5cm}removeStatus (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUpdateId}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a287662639ab89a546820fb50aee09b6d}
+Destroys the status specified by the required ID parameter. The authenticating user must be the author of the specified status
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sUpdateId \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 589 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::STATUS_API;
+        return $this->makeRequest( 'destroy', array( 'id' => $sUpdateId ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a287662639ab89a546820fb50aee09b6d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a1936ab230b38949e6498cff4aebbfd10}{
+\index{CPSTwitterApi@{CPSTwitterApi}!search@{search}}
+\index{search@{search}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{search}]{\setlength{\rightskip}{0pt plus 5cm}search (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sTerm, }
+\item[{\$}]{ sCallback = {\ttfamily null}, }
+\item[{\$}]{ sLang = {\ttfamily null}, }
+\item[{\$}]{ iRPP = {\ttfamily null}, }
+\item[{\$}]{ iPage = {\ttfamily null}, }
+\item[{\$}]{ sSinceId = {\ttfamily null}, }
+\item[{\$}]{ sGeocode = {\ttfamily null}, }
+\item[{\$}]{ bShowUser = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a1936ab230b38949e6498cff4aebbfd10}
+Returns tweets that match a specified query
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sTerm \item[{\em string}]\$sCallback \item[{\em string}]\$sLang \item[{\em integer}]\$iRPP \item[{\em integer}]\$iPage \item[{\em string}]\$sSinceId \item[{\em string}]\$sGeocode \item[{\em boolean}]\$bShowUser \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 880 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::SEARCH_API;
+        return $this->makeRequest( '/', array( 'q' => $sTerm, 'callback' => $sCal
+      lback, 'lang' => $sLang, 'rpp' => $iRPP, 'page' => $iPage, 'since_id' => $sSinceI
+      d, 'geogode' => $sGeocode, 'show_user' => $bShowUser ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a1936ab230b38949e6498cff4aebbfd10_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a22c4db8ed439d600b3df10a35e04cb4b}{
+\index{CPSTwitterApi@{CPSTwitterApi}!unfollowUser@{unfollowUser}}
+\index{unfollowUser@{unfollowUser}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{unfollowUser}]{\setlength{\rightskip}{0pt plus 5cm}unfollowUser (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sId = {\ttfamily null}, }
+\item[{\$}]{ sUserId = {\ttfamily null}, }
+\item[{\$}]{ sScreenName = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a22c4db8ed439d600b3df10a35e04cb4b}
+Allows the authenticating users to unfollow the user specified in the \$sId parameter. Returns the unfollowed user in the requested format when successful. Returns a string describing the failure condition when unsuccessful.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sId \item[{\em string}]\$sUserId \item[{\em string}]\$sScreenName \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 656 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::FRIENDSHIP_API;
+        return $this->makeRequest( 'destroy', array( 'id' => $sId, 'user_id' => $
+      sUserId, 'screen_name' => $sScreenName ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a22c4db8ed439d600b3df10a35e04cb4b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_aa07192673507be5e4bc9a5d342bd03b7}{
+\index{CPSTwitterApi@{CPSTwitterApi}!updateDeliveryDevice@{updateDeliveryDevice}}
+\index{updateDeliveryDevice@{updateDeliveryDevice}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{updateDeliveryDevice}]{\setlength{\rightskip}{0pt plus 5cm}updateDeliveryDevice (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sDevice}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_aa07192673507be5e4bc9a5d342bd03b7}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sDevice \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 746 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::ACCOUNT_API;
+        return $this->makeRequest( 'update_deliver_device', array( 'device' => $s
+      Device ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_aa07192673507be5e4bc9a5d342bd03b7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a12a317aebc0d3877dc8b9222fbdae586}{
+\index{CPSTwitterApi@{CPSTwitterApi}!updateProfile@{updateProfile}}
+\index{updateProfile@{updateProfile}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{updateProfile}]{\setlength{\rightskip}{0pt plus 5cm}updateProfile (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sName = {\ttfamily null}, }
+\item[{\$}]{ sEmail = {\ttfamily null}, }
+\item[{\$}]{ sUrl = {\ttfamily null}, }
+\item[{\$}]{ sLocation = {\ttfamily null}, }
+\item[{\$}]{ sDescription = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a12a317aebc0d3877dc8b9222fbdae586}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sName \item[{\em string}]\$sEmail \item[{\em string}]\$sUrl \item[{\em string}]\$sLocation \item[{\em string}]\$sDescription \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 799 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::ACCOUNT_API;
+        return $this->makeRequest( 'update_profile', array( 'name' => $sName, 'em
+      ail' => $sEmail, 'url' => $sUrl, 'location' => $sLocation, 'description' => $sDes
+      cription ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a12a317aebc0d3877dc8b9222fbdae586_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a9022fbca84af34fe395b05e59b3c4612}{
+\index{CPSTwitterApi@{CPSTwitterApi}!updateProfileBackgroundImage@{updateProfileBackgroundImage}}
+\index{updateProfileBackgroundImage@{updateProfileBackgroundImage}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{updateProfileBackgroundImage}]{\setlength{\rightskip}{0pt plus 5cm}updateProfileBackgroundImage (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sImageData, }
+\item[{\$}]{ bTiled = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a9022fbca84af34fe395b05e59b3c4612}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sImageData \item[{\em boolean}]\$bTiled \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 784 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::ACCOUNT_API;
+        return $this->makeRequest( 'update_profile_background_image', array( 'ima
+      ge' => $sImageData, 'tile' => $bTiled ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a9022fbca84af34fe395b05e59b3c4612_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a05cd15bda52603c2ca5beb3b7acb0b9d}{
+\index{CPSTwitterApi@{CPSTwitterApi}!updateProfileColors@{updateProfileColors}}
+\index{updateProfileColors@{updateProfileColors}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{updateProfileColors}]{\setlength{\rightskip}{0pt plus 5cm}updateProfileColors (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sBG = {\ttfamily null}, }
+\item[{\$}]{ sText = {\ttfamily null}, }
+\item[{\$}]{ sLink = {\ttfamily null}, }
+\item[{\$}]{ sSBFill = {\ttfamily null}, }
+\item[{\$}]{ sSBBorder = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a05cd15bda52603c2ca5beb3b7acb0b9d}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sBG \item[{\em string}]\$sText \item[{\em string}]\$sLink \item[{\em string}]\$sSBFill \item[{\em string}]\$sSBBorder \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 761 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::ACCOUNT_API;
+        return $this->makeRequest( 'update_profile_colors', array( 'profile_backg
+      round_color' => $sBG, 'profile_text_color' => $sText, 'profile_link_color' => $sL
+      ink, 'profile_sidebar_fill_color' => $sSBFill, 'profile_sidebar_border_color' => 
+      $sSBBorder ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a05cd15bda52603c2ca5beb3b7acb0b9d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a0a53559d0a53da91dd0af834b2a2379f}{
+\index{CPSTwitterApi@{CPSTwitterApi}!updateProfileImage@{updateProfileImage}}
+\index{updateProfileImage@{updateProfileImage}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{updateProfileImage}]{\setlength{\rightskip}{0pt plus 5cm}updateProfileImage (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sImageData}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a0a53559d0a53da91dd0af834b2a2379f}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sImageData \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 772 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::ACCOUNT_API;
+        return $this->makeRequest( 'update_profile_image', array( 'image' => $sIm
+      ageData ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a0a53559d0a53da91dd0af834b2a2379f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_a437a821105446fde9bbcb7ebef307f5f}{
+\index{CPSTwitterApi@{CPSTwitterApi}!updateStatus@{updateStatus}}
+\index{updateStatus@{updateStatus}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{updateStatus}]{\setlength{\rightskip}{0pt plus 5cm}updateStatus (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sStatus, }
+\item[{\$}]{ sReplyId = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_a437a821105446fde9bbcb7ebef307f5f}
+Updates the authenticating user's status. Requires the status parameter specified below. Request must be a POST. A status update with text identical to the authenticating user's current status will be ignored to prevent duplicates
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sStatus \item[{\em string}]\$sReplyId \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 576 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::STATUS_API;
+        return $this->makeRequest( 'update', array( 'status' => $sStatus, 'in_rep
+      ly_to_status_id' => $sReplyId ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_a437a821105446fde9bbcb7ebef307f5f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSTwitterApi_aa706fde11e1968f76a5ed19056944fdc}{
+\index{CPSTwitterApi@{CPSTwitterApi}!verifyCredentials@{verifyCredentials}}
+\index{verifyCredentials@{verifyCredentials}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{verifyCredentials}]{\setlength{\rightskip}{0pt plus 5cm}verifyCredentials (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTwitterApi_aa706fde11e1968f76a5ed19056944fdc}
+Returns an HTTP 200 OK response code and a representation of the requesting user if authentication was successful; returns a 401 status code and an error message if not. Use this method to test if supplied user credentials are valid. 
+
+Definition at line 712 of file CPSTwitterApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::ACCOUNT_API;
+        return $this->makeRequest( 'verify_credentials' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSTwitterApi_aa706fde11e1968f76a5ed19056944fdc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSTwitterApi_a57a7ce6c04940622a290e914976de849}{
+\index{CPSTwitterApi@{CPSTwitterApi}!ACCOUNT\_\-API@{ACCOUNT\_\-API}}
+\index{ACCOUNT\_\-API@{ACCOUNT\_\-API}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{ACCOUNT\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ACCOUNT\_\-API} = 'account'}}
+\label{classCPSTwitterApi_a57a7ce6c04940622a290e914976de849}
+
+
+Definition at line 39 of file CPSTwitterApi.php.
+
+\hypertarget{classCPSTwitterApi_ab4c32fba74b8441eb0d1497398718f80}{
+\index{CPSTwitterApi@{CPSTwitterApi}!BLOCK\_\-API@{BLOCK\_\-API}}
+\index{BLOCK\_\-API@{BLOCK\_\-API}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{BLOCK\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf BLOCK\_\-API} = 'blocks'}}
+\label{classCPSTwitterApi_ab4c32fba74b8441eb0d1497398718f80}
+
+
+Definition at line 42 of file CPSTwitterApi.php.
+
+\hypertarget{classCPSTwitterApi_a7f6433ea3fadbcaed427de7f30fa5aa7}{
+\index{CPSTwitterApi@{CPSTwitterApi}!DIRECTMESSAGE\_\-API@{DIRECTMESSAGE\_\-API}}
+\index{DIRECTMESSAGE\_\-API@{DIRECTMESSAGE\_\-API}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{DIRECTMESSAGE\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf DIRECTMESSAGE\_\-API} = 'direct\_\-message'}}
+\label{classCPSTwitterApi_a7f6433ea3fadbcaed427de7f30fa5aa7}
+
+
+Definition at line 35 of file CPSTwitterApi.php.
+
+\hypertarget{classCPSTwitterApi_abcf060692f260345e886ed3d78fe56df}{
+\index{CPSTwitterApi@{CPSTwitterApi}!FAVORITE\_\-API@{FAVORITE\_\-API}}
+\index{FAVORITE\_\-API@{FAVORITE\_\-API}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{FAVORITE\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf FAVORITE\_\-API} = 'favorites'}}
+\label{classCPSTwitterApi_abcf060692f260345e886ed3d78fe56df}
+
+
+Definition at line 40 of file CPSTwitterApi.php.
+
+\hypertarget{classCPSTwitterApi_a4183cb69bce31e4741021ea7a3e9c326}{
+\index{CPSTwitterApi@{CPSTwitterApi}!FOLLOWER\_\-API@{FOLLOWER\_\-API}}
+\index{FOLLOWER\_\-API@{FOLLOWER\_\-API}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{FOLLOWER\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf FOLLOWER\_\-API} = 'followers'}}
+\label{classCPSTwitterApi_a4183cb69bce31e4741021ea7a3e9c326}
+
+
+Definition at line 38 of file CPSTwitterApi.php.
+
+\hypertarget{classCPSTwitterApi_a3fc010ed21ff41fb78f8b0bb606faddb}{
+\index{CPSTwitterApi@{CPSTwitterApi}!FRIEND\_\-API@{FRIEND\_\-API}}
+\index{FRIEND\_\-API@{FRIEND\_\-API}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{FRIEND\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf FRIEND\_\-API} = 'friends'}}
+\label{classCPSTwitterApi_a3fc010ed21ff41fb78f8b0bb606faddb}
+
+
+Definition at line 37 of file CPSTwitterApi.php.
+
+\hypertarget{classCPSTwitterApi_a8179b4b95b3d7982e1cf6d713f119651}{
+\index{CPSTwitterApi@{CPSTwitterApi}!FRIENDSHIP\_\-API@{FRIENDSHIP\_\-API}}
+\index{FRIENDSHIP\_\-API@{FRIENDSHIP\_\-API}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{FRIENDSHIP\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf FRIENDSHIP\_\-API} = 'friendships'}}
+\label{classCPSTwitterApi_a8179b4b95b3d7982e1cf6d713f119651}
+
+
+Definition at line 36 of file CPSTwitterApi.php.
+
+\hypertarget{classCPSTwitterApi_a22f1a8ed1263d6338c4e3a310e4f41d2}{
+\index{CPSTwitterApi@{CPSTwitterApi}!NOTIFICATION\_\-API@{NOTIFICATION\_\-API}}
+\index{NOTIFICATION\_\-API@{NOTIFICATION\_\-API}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{NOTIFICATION\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NOTIFICATION\_\-API} = 'notifications'}}
+\label{classCPSTwitterApi_a22f1a8ed1263d6338c4e3a310e4f41d2}
+
+
+Definition at line 41 of file CPSTwitterApi.php.
+
+\hypertarget{classCPSTwitterApi_a9e8d909f187a5d06bebda16dd0dc3dea}{
+\index{CPSTwitterApi@{CPSTwitterApi}!SEARCH\_\-API@{SEARCH\_\-API}}
+\index{SEARCH\_\-API@{SEARCH\_\-API}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{SEARCH\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf SEARCH\_\-API} = 'search'}}
+\label{classCPSTwitterApi_a9e8d909f187a5d06bebda16dd0dc3dea}
+
+
+Definition at line 44 of file CPSTwitterApi.php.
+
+\hypertarget{classCPSTwitterApi_a19f41a351a36bfa05c541b86e9f84a46}{
+\index{CPSTwitterApi@{CPSTwitterApi}!STATUS\_\-API@{STATUS\_\-API}}
+\index{STATUS\_\-API@{STATUS\_\-API}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{STATUS\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf STATUS\_\-API} = 'statuses'}}
+\label{classCPSTwitterApi_a19f41a351a36bfa05c541b86e9f84a46}
+
+
+Definition at line 33 of file CPSTwitterApi.php.
+
+\hypertarget{classCPSTwitterApi_ad257a5f5d08047d89a236c8cbec1a449}{
+\index{CPSTwitterApi@{CPSTwitterApi}!TRENDS\_\-API@{TRENDS\_\-API}}
+\index{TRENDS\_\-API@{TRENDS\_\-API}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{TRENDS\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf TRENDS\_\-API} = 'trends'}}
+\label{classCPSTwitterApi_ad257a5f5d08047d89a236c8cbec1a449}
+
+
+Definition at line 43 of file CPSTwitterApi.php.
+
+\hypertarget{classCPSTwitterApi_a7186266c619bf7c259df620a27a6be61}{
+\index{CPSTwitterApi@{CPSTwitterApi}!USER\_\-API@{USER\_\-API}}
+\index{USER\_\-API@{USER\_\-API}!CPSTwitterApi@{CPSTwitterApi}}
+\subsubsection[{USER\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf USER\_\-API} = 'users'}}
+\label{classCPSTwitterApi_a7186266c619bf7c259df620a27a6be61}
+
+
+Definition at line 34 of file CPSTwitterApi.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/twitter/\hyperlink{CPSTwitterApi_8php}{CPSTwitterApi.php}\end{DoxyCompactItemize}

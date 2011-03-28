@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classSF__App__02.html#ad0a0692ff1a11536ebbcf3ec058b28ba" title="initializeConfiguration" alt="" coords="151,5,308,35"/>
+<area shape="rect" id="node5" href="$classSF__App__02.html#a96b0f4bab679378904506e1a106c4e60" title="initializePlatform" alt="" coords="167,59,292,88"/>
+<area shape="rect" id="node7" href="$classSF__App__02.html#a074545d4bc47f611f84f1a7852801d57" title="initializeSonetrix" alt="" coords="167,112,292,141"/>
+<area shape="rect" id="node9" href="$classSF__App__02.html#aa40909289ffd00ccc071d938f586fc47" title="processQueryString" alt="" coords="156,165,303,195"/>
+<area shape="rect" id="node11" href="$classSF__App__02.html#a83d6db3f4e5f36ddd8adad2f53133e76" title="redirect" alt="" coords="359,165,428,195"/>
+</map>

@@ -1,0 +1,458 @@
+\hypertarget{classCPSOAuthBehavior}{
+\section{CPSOAuthBehavior Class Reference}
+\label{classCPSOAuthBehavior}\index{CPSOAuthBehavior@{CPSOAuthBehavior}}
+}
+
+
+Inheritance diagram for CPSOAuthBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classCPSOAuthBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSOAuthBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classCPSOAuthBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSOAuthBehavior_a211a2979c22afcd7d9056a2bb55aa449}{getToken} ()
+\item 
+\hyperlink{classCPSOAuthBehavior_a13fb41e10ef1a77aacb14d33ac1ce1be}{getOAuthObject} ()
+\item 
+\hyperlink{classCPSOAuthBehavior_a095c5d389db211932136b53f25f39685}{\_\-\_\-construct} ()
+\item 
+\hyperlink{classCPSOAuthBehavior_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSOAuthBehavior_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSOAuthBehavior_a94d630cf8cc55a8a7929862d81e3a6ab}{getAuthorizeUrl} ()
+\item 
+\hyperlink{classCPSOAuthBehavior_ab53bf3a3bd85d4b1bef5f84fd9b1527c}{storeToken} (\$oToken=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSOAuthBehavior_a5126349c471fcaff1a74b9d117b979b1}{loadToken} ()
+\item 
+\hyperlink{classCPSOAuthBehavior_aa2ddabcd9b27c0cec44f886ea1ded176}{onUserAuthorized} (\$oEvent)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSOAuthBehavior_a22b5346078092b10841a52e5cc930862}{\$m\_\-oOAuth} = null
+\item 
+\hyperlink{classCPSOAuthBehavior_a69e9bc86943e578be80bb4319e3b7b61}{\$m\_\-arCurToken} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 27 of file CPSOAuthBehavior.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSOAuthBehavior_a095c5d389db211932136b53f25f39685}{
+\index{CPSOAuthBehavior@{CPSOAuthBehavior}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSOAuthBehavior@{CPSOAuthBehavior}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOAuthBehavior_a095c5d389db211932136b53f25f39685}
+
+
+Definition at line 69 of file CPSOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  No oauth? No run...
+        if ( ! extension_loaded( 'oauth' ) )
+            throw new CException( Yii::t( 'psOAuthBehavior', 'The "oauth" extensi
+      on is not loaded. Please install and/or load the oath extension (PECL).' ) );
+        
+        //  Call daddy...
+        parent::__construct();
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSOAuthBehavior_a94d630cf8cc55a8a7929862d81e3a6ab}{
+\index{CPSOAuthBehavior@{CPSOAuthBehavior}!getAuthorizeUrl@{getAuthorizeUrl}}
+\index{getAuthorizeUrl@{getAuthorizeUrl}!CPSOAuthBehavior@{CPSOAuthBehavior}}
+\subsubsection[{getAuthorizeUrl}]{\setlength{\rightskip}{0pt plus 5cm}getAuthorizeUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOAuthBehavior_a94d630cf8cc55a8a7929862d81e3a6ab}
+I Appends the current token to the authorizeUrl option
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$oToken \end{DoxyParams}
+
+
+Definition at line 133 of file CPSOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arToken = $this->m_oOAuth->getRequestToken( $this->apiBaseUrl . $this->
+      requestTokenUrl, $this->callbackUrl );
+        return $this->apiBaseUrl . $this->authorizeUrl . '?oauth_token=' . $_arTo
+      ken[ 'oauth_token' ];
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSOAuthBehavior_a13fb41e10ef1a77aacb14d33ac1ce1be}{
+\index{CPSOAuthBehavior@{CPSOAuthBehavior}!getOAuthObject@{getOAuthObject}}
+\index{getOAuthObject@{getOAuthObject}!CPSOAuthBehavior@{CPSOAuthBehavior}}
+\subsubsection[{getOAuthObject}]{\setlength{\rightskip}{0pt plus 5cm}getOAuthObject (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOAuthBehavior_a13fb41e10ef1a77aacb14d33ac1ce1be}
+Retrieves the OAuth object \begin{DoxyReturn}{Returns}
+oauth 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file CPSOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_oOAuth; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSOAuthBehavior_a211a2979c22afcd7d9056a2bb55aa449}{
+\index{CPSOAuthBehavior@{CPSOAuthBehavior}!getToken@{getToken}}
+\index{getToken@{getToken}!CPSOAuthBehavior@{CPSOAuthBehavior}}
+\subsubsection[{getToken}]{\setlength{\rightskip}{0pt plus 5cm}getToken (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOAuthBehavior_a211a2979c22afcd7d9056a2bb55aa449}
+Retrieves the current token \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file CPSOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_arCurToken; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSOAuthBehavior_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSOAuthBehavior@{CPSOAuthBehavior}!init@{init}}
+\index{init@{init}!CPSOAuthBehavior@{CPSOAuthBehavior}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOAuthBehavior_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize this behavior 
+
+Definition at line 101 of file CPSOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Create our object...        
+        $this->m_oOAuth = new OAuth( $this->apiKey, $this->apiSecretKey, OAUTH_SI
+      G_METHOD_HMACSHA1, OAUTH_AUTH_TYPE_URI );
+
+        //  Load any tokens we have...
+        $this->loadToken();
+        
+        //  Have we been authenticated?
+        if ( ! $this->isAuthorized )
+        {
+            if ( isset( $_REQUEST[ 'oauth_token' ] ) )
+            {
+                if ( $this->m_oOAuth->setToken( $_REQUEST[ 'oauth_token' ], $_REQ
+      UEST[ 'oauth_verifier' ] ) )
+                {
+                    $_arToken = $this->m_oOAuth->getAccessToken( $this->apiBaseUr
+      l . $this->accessTokenUrl, null, $_REQUEST[ 'oauth_verifier' ] );
+                    $this->storeToken( $_arToken );
+                    $this->isAuthorized = true;
+                }
+                
+                //  Raise our event
+                if ( $this->isAuthorized )
+                    $this->onUserAuthorized( new CPSOAuthEvent( $this->m_arCurTok
+      en ) );
+            }
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOAuthBehavior_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOAuthBehavior_a5126349c471fcaff1a74b9d117b979b1}{
+\index{CPSOAuthBehavior@{CPSOAuthBehavior}!loadToken@{loadToken}}
+\index{loadToken@{loadToken}!CPSOAuthBehavior@{CPSOAuthBehavior}}
+\subsubsection[{loadToken}]{\setlength{\rightskip}{0pt plus 5cm}loadToken (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOAuthBehavior_a5126349c471fcaff1a74b9d117b979b1}
+Loads a token from the user state oAuthToken 
+
+Definition at line 163 of file CPSOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_oUser = Yii::app()->user;
+        
+        if ( $_oUser )
+        {
+            if ( null != ( $_oToken = $_oUser->getState( $this->getInternalName()
+       . '_oAuthToken' ) ) )
+            {
+                $this->m_arCurToken = $_oToken;
+                $this->isAuthorized = ( $_oUser->getState( $this->
+      getInternalName() . '_isAuthorized' ) == true );
+            }
+            else
+                $_oToken = array();
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=356pt]{classCPSOAuthBehavior_a5126349c471fcaff1a74b9d117b979b1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classCPSOAuthBehavior_a5126349c471fcaff1a74b9d117b979b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOAuthBehavior_aa2ddabcd9b27c0cec44f886ea1ded176}{
+\index{CPSOAuthBehavior@{CPSOAuthBehavior}!onUserAuthorized@{onUserAuthorized}}
+\index{onUserAuthorized@{onUserAuthorized}!CPSOAuthBehavior@{CPSOAuthBehavior}}
+\subsubsection[{onUserAuthorized}]{\setlength{\rightskip}{0pt plus 5cm}onUserAuthorized (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oEvent}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOAuthBehavior_aa2ddabcd9b27c0cec44f886ea1ded176}
+
+
+Definition at line 210 of file CPSOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->raiseEvent( 'onUserAuthorized', $oEvent );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classCPSOAuthBehavior_aa2ddabcd9b27c0cec44f886ea1ded176_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOAuthBehavior_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSOAuthBehavior@{CPSOAuthBehavior}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSOAuthBehavior@{CPSOAuthBehavior}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOAuthBehavior_a2dc262e99b1c246b56f27626bfe699ff}
+Pre-\/initialize 
+
+Implements \hyperlink{interfaceIPSComponent_a2dc262e99b1c246b56f27626bfe699ff}{IPSComponent}.
+
+
+
+Definition at line 86 of file CPSOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::preinit();
+        
+        //  Add our options
+        $this->addOptions( self::getBaseOptions() );
+        
+        //  Events...
+        $this->attachEventHandler( 'onUserAuthorized', array( $this, 'userAuthori
+      zed' ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classCPSOAuthBehavior_a2dc262e99b1c246b56f27626bfe699ff_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOAuthBehavior_ab53bf3a3bd85d4b1bef5f84fd9b1527c}{
+\index{CPSOAuthBehavior@{CPSOAuthBehavior}!storeToken@{storeToken}}
+\index{storeToken@{storeToken}!CPSOAuthBehavior@{CPSOAuthBehavior}}
+\subsubsection[{storeToken}]{\setlength{\rightskip}{0pt plus 5cm}storeToken (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oToken = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOAuthBehavior_ab53bf3a3bd85d4b1bef5f84fd9b1527c}
+Stores the current token in a member variable and in the user state oAuthToken
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$oToken \end{DoxyParams}
+
+
+Definition at line 144 of file CPSOAuthBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        try
+        {
+            Yii::app()->user->setState( $this->getInternalName() . '_oAuthToken',
+       $oToken );
+            Yii::app()->user->setState( $this->getInternalName() . '_isAuthorized
+      ', $this->isAuthorized );
+            $this->m_arCurToken = $oToken;
+        }
+        catch ( Exception $_ex )
+        {
+            $_sName = $this->getInternalName();
+            CPSLog::error( 'pogostick.behaviors', Yii::t( $_sName, 'Error storing
+       OAuth token "{a}/{b}" : {c}', array( "{a}" => $oToken['oauth_token'], "{b}" => $
+      oToken['oauth_token_secret'], "{c}" => $_ex->getMessage() ) ) );
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOAuthBehavior_ab53bf3a3bd85d4b1bef5f84fd9b1527c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classCPSOAuthBehavior_ab53bf3a3bd85d4b1bef5f84fd9b1527c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSOAuthBehavior_a69e9bc86943e578be80bb4319e3b7b61}{
+\index{CPSOAuthBehavior@{CPSOAuthBehavior}!\$m\_\-arCurToken@{\$m\_\-arCurToken}}
+\index{\$m\_\-arCurToken@{\$m\_\-arCurToken}!CPSOAuthBehavior@{CPSOAuthBehavior}}
+\subsubsection[{\$m\_\-arCurToken}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-arCurToken = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSOAuthBehavior_a69e9bc86943e578be80bb4319e3b7b61}
+
+
+Definition at line 43 of file CPSOAuthBehavior.php.
+
+\hypertarget{classCPSOAuthBehavior_a22b5346078092b10841a52e5cc930862}{
+\index{CPSOAuthBehavior@{CPSOAuthBehavior}!\$m\_\-oOAuth@{\$m\_\-oOAuth}}
+\index{\$m\_\-oOAuth@{\$m\_\-oOAuth}!CPSOAuthBehavior@{CPSOAuthBehavior}}
+\subsubsection[{\$m\_\-oOAuth}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-oOAuth = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSOAuthBehavior_a22b5346078092b10841a52e5cc930862}
+
+
+Definition at line 37 of file CPSOAuthBehavior.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/behaviors/\hyperlink{CPSOAuthBehavior_8php}{CPSOAuthBehavior.php}\end{DoxyCompactItemize}

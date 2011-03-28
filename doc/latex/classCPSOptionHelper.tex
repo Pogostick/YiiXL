@@ -1,0 +1,784 @@
+\hypertarget{classCPSOptionHelper}{
+\section{CPSOptionHelper Class Reference}
+\label{classCPSOptionHelper}\index{CPSOptionHelper@{CPSOptionHelper}}
+}
+
+
+Inheritance diagram for CPSOptionHelper:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCPSOptionHelper__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSOptionHelper:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCPSOptionHelper__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSOptionHelper_a015734d78f16cca14cad5df110e13715}{isScriptCallback} (\$sValue)
+\item 
+static \hyperlink{classCPSOptionHelper_af245193a05c6d9de1d9fec6239b9b14b}{parseRulePattern} (\$oPattern, \$bPrivate=false)
+\item 
+static \hyperlink{classCPSOptionHelper_aa50035c5f1b103bc39bb60b4a1be1dae}{defaultRuleSet} (\$bPrivate=false)
+\item 
+static \hyperlink{classCPSOptionHelper_a1196dfb53b5a9c5b1865efd2678c0bb5}{validateOptions} (\hyperlink{interfaceIPSOptionContainer}{IPSOptionContainer} \&\$oContainer)
+\item 
+static \hyperlink{classCPSOptionHelper_af1ecea04b9292bde2418a4608ed30197}{validateOption} (\hyperlink{classCPSOption}{CPSOption} \&\$oOption, \$oValue=null)
+\item 
+static \hyperlink{classCPSOptionHelper_a40877d061316ed1f0bca467b4e86a1b5}{makeOptions} (\hyperlink{interfaceIPSOptionContainer}{IPSOptionContainer} \$oContainer, \$bPublicOnly=true, \$iFormat=\hyperlink{classCPSHelperBase_ae216f8dc124162fce9c831581cccad38}{CPSHelperBase::OF\_\-JSON}, \$bNoCheck=false)
+\item 
+static \hyperlink{classCPSOptionHelper_aea8660a7b4f4ad32037ce9660855bfec}{checkOption} (\hyperlink{classCPSOption}{CPSOption} \$oOption)
+\item 
+static \hyperlink{classCPSOptionHelper_a9a9fdad1deff93bf05246049e7c06869}{checkOptions} (\hyperlink{interfaceIPSOptionContainer}{IPSOptionContainer} \$oContainer)
+\item 
+static \hyperlink{classCPSOptionHelper_a82708c833182535dc89664ea66c54f1a}{checkCallbacks} (\hyperlink{interfaceIPSComponent}{IPSComponent} \$oComponent)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSOptionHelper_a4652b705dc90fe7d967eecbf10901364}{CB\_\-KEY} = '\_\-\_\-pscb\_\-'
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSOptionHelper_ac9639ee4d88b873aa04c7f41627387e1}{fixCallbacks} (\$sOutput, \$arCallbacks)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 23 of file CPSOptionHelper.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSOptionHelper_a82708c833182535dc89664ea66c54f1a}{
+\index{CPSOptionHelper@{CPSOptionHelper}!checkCallbacks@{checkCallbacks}}
+\index{checkCallbacks@{checkCallbacks}!CPSOptionHelper@{CPSOptionHelper}}
+\subsubsection[{checkCallbacks}]{\setlength{\rightskip}{0pt plus 5cm}static checkCallbacks (
+\begin{DoxyParamCaption}
+\item[{{\bf IPSComponent} \$}]{ oComponent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSOptionHelper_a82708c833182535dc89664ea66c54f1a}
+Checks the callback array to see if they're valid.
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CException}]\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+true If all is good. 
+\end{DoxyReturn}
+
+
+Definition at line 375 of file CPSOptionHelper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arCallbacks = $oComponent->callbacks;
+        $_arValidCallbacks = $oComponent->validCallbacks;
+
+        if ( ! empty( $_arCallbacks ) && ! empty( $_arValidCallbacks ) )
+        {
+            foreach ( $_arCallbacks as $_sKey => $_oValue )
+            {
+                if ( ! in_array( $_sKey, $_arValidCallbacks ) )
+                    throw new CException( Yii::t( __CLASS__, '"{x}" must be one o
+      f: {y}', array( '{x}' => $_sKey, '{y}' => implode( ', ', $_arValidCallbacks ) ) )
+       );
+            }
+        }
+
+        //  Clean...
+        return true;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSOptionHelper_aea8660a7b4f4ad32037ce9660855bfec}{
+\index{CPSOptionHelper@{CPSOptionHelper}!checkOption@{checkOption}}
+\index{checkOption@{checkOption}!CPSOptionHelper@{CPSOptionHelper}}
+\subsubsection[{checkOption}]{\setlength{\rightskip}{0pt plus 5cm}static checkOption (
+\begin{DoxyParamCaption}
+\item[{{\bf CPSOption} \$}]{ oOption}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSOptionHelper_aea8660a7b4f4ad32037ce9660855bfec}
+Checks a single option against its pattern.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sKey \item[{\em mixed}]\$oValue \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CException}]\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 334 of file CPSOptionHelper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Required and missing? Bail
+        if ( null === ( $_oValue = $oOption->getValue() ) && $oOption->isRequired
+       )
+            throw new CPSOptionException( Yii::t( __CLASS__, '"{x}" is a required
+       option', array( '{x}' => $oOption->name ) ), 1 );
+
+        //  Check if this is a valid value for this option
+        if ( null !== ( $_arValid = $oOption->getAllowed() ) )
+        {
+            if ( null !== $oValue && ! in_array( $_oValue, $_arValid ) )
+                throw new CException( Yii::t( __CLASS__, '"{x}" must be one of: "
+      {y}"', array( '{x}' => $sKey, '{y}' => implode( ', ', $_arValid ) ) ), 1  );
+        }
+
+        //  Looks clean....
+        return true;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionHelper_aea8660a7b4f4ad32037ce9660855bfec_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOptionHelper_a9a9fdad1deff93bf05246049e7c06869}{
+\index{CPSOptionHelper@{CPSOptionHelper}!checkOptions@{checkOptions}}
+\index{checkOptions@{checkOptions}!CPSOptionHelper@{CPSOptionHelper}}
+\subsubsection[{checkOptions}]{\setlength{\rightskip}{0pt plus 5cm}static checkOptions (
+\begin{DoxyParamCaption}
+\item[{{\bf IPSOptionContainer} \$}]{ oContainer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSOptionHelper_a9a9fdad1deff93bf05246049e7c06869}
+Checks the options array or a passed in array for validity checking...
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arOptions \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CException}]\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 358 of file CPSOptionHelper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  One at a time...
+        foreach ( $oContainer->getRawOptions() as $_oOption )
+            self::checkOption( $_oOption );
+
+        //  We made it here? We cool baby!
+        return true;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSOptionHelper_aa50035c5f1b103bc39bb60b4a1be1dae}{
+\index{CPSOptionHelper@{CPSOptionHelper}!defaultRuleSet@{defaultRuleSet}}
+\index{defaultRuleSet@{defaultRuleSet}!CPSOptionHelper@{CPSOptionHelper}}
+\subsubsection[{defaultRuleSet}]{\setlength{\rightskip}{0pt plus 5cm}static defaultRuleSet (
+\begin{DoxyParamCaption}
+\item[{\$}]{ bPrivate = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSOptionHelper_aa50035c5f1b103bc39bb60b4a1be1dae}
+This is the default rule set for an option 
+
+Definition at line 120 of file CPSOptionHelper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return array(
+            CPSOption::RPT_TYPE => 'string',
+            CPSOption::RPT_DEFAULT => null,
+            CPSOption::RPT_EXTERNAL_NAME => null,
+            CPSOption::RPT_REQUIRED => false,
+            CPSOption::RPT_ALLOWED => null,
+            CPSOption::RPT_PRIVATE => $bPrivate,
+        );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionHelper_aa50035c5f1b103bc39bb60b4a1be1dae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOptionHelper_ac9639ee4d88b873aa04c7f41627387e1}{
+\index{CPSOptionHelper@{CPSOptionHelper}!fixCallbacks@{fixCallbacks}}
+\index{fixCallbacks@{fixCallbacks}!CPSOptionHelper@{CPSOptionHelper}}
+\subsubsection[{fixCallbacks}]{\setlength{\rightskip}{0pt plus 5cm}static fixCallbacks (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sOutput, }
+\item[{\$}]{ arCallbacks}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSOptionHelper_ac9639ee4d88b873aa04c7f41627387e1}
+Fix up the callbacks 
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$oValue \item[{\em mixed}]\$arCallbacks \end{DoxyParams}
+
+
+Definition at line 398 of file CPSOptionHelper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sOut = $sOutput;
+
+        foreach ( $arCallbacks as $_sKey => $_oValue )
+        {
+            $_sQuote = '"';
+
+            //  Indicator to quote key...
+            if ( '!!!' == substr( $_sKey, 0, 3 ) )
+            {
+                $_sQuote = '\'';
+                $_sKey = substr( $_sKey, 3 );
+            }
+
+            $_sSearch = '"' . self::CB_KEY . $_sKey . '":"' . $_sKey . '"';
+
+            if ( self::isScriptCallback( $_oValue ) )
+                $_sReplace = $_sQuote . $_sKey . $_sQuote . ' : ' . $_oValue;
+            else
+                $_sReplace = $_sKey . ' : \'' . $_oValue . '\'';
+
+            $_sOut = str_replace( $_sSearch, $_sReplace, $_sOut );
+        }
+
+        return $_sOut;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classCPSOptionHelper_ac9639ee4d88b873aa04c7f41627387e1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOptionHelper_a015734d78f16cca14cad5df110e13715}{
+\index{CPSOptionHelper@{CPSOptionHelper}!isScriptCallback@{isScriptCallback}}
+\index{isScriptCallback@{isScriptCallback}!CPSOptionHelper@{CPSOptionHelper}}
+\subsubsection[{isScriptCallback}]{\setlength{\rightskip}{0pt plus 5cm}static isScriptCallback (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSOptionHelper_a015734d78f16cca14cad5df110e13715}
+Check to see if the value follows a callback function pattern. Basically we want to check for values that should $\ast$NOT$\ast$ be quoted.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sValue \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file CPSOptionHelper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return is_string( $sValue ) &&
+            (
+                $sValue === 'true' ||
+                $sValue === 'false' ||
+                0 == strncasecmp( $sValue, 'function(', 9 ) ||
+                0 == strncasecmp( $sValue, 'new Date(', 9 ) ||
+                0 == strncasecmp( $sValue, 'jQuery(', 7 ) ||
+                0 == strncasecmp( $sValue, '$(', 2 )
+            );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSOptionHelper_a40877d061316ed1f0bca467b4e86a1b5}{
+\index{CPSOptionHelper@{CPSOptionHelper}!makeOptions@{makeOptions}}
+\index{makeOptions@{makeOptions}!CPSOptionHelper@{CPSOptionHelper}}
+\subsubsection[{makeOptions}]{\setlength{\rightskip}{0pt plus 5cm}static makeOptions (
+\begin{DoxyParamCaption}
+\item[{{\bf IPSOptionContainer} \$}]{ oContainer, }
+\item[{\$}]{ bPublicOnly = {\ttfamily true}, }
+\item[{\$}]{ iFormat = {\ttfamily {\bf CPSHelperBase::OF\_\-JSON}}, }
+\item[{\$}]{ bNoCheck = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSOptionHelper_a40877d061316ed1f0bca467b4e86a1b5}
+
+
+Definition at line 230 of file CPSOptionHelper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Check them first...
+        if ( ! $bNoCheck ) self::validateOptions( $oContainer );
+
+        //  Get our public callbacks...
+        $_arCallbacks = $oContainer->getValue( 'callbacks', array() );
+
+        //  Remove it
+        $oContainer->unsetOption( 'callbacks' );
+
+        //  Our output array
+        $_arOut = array();
+        $_sEncodedOptions = null;
+
+        //  Tag callbacks for special processing afterwards
+        foreach ( $_arCallbacks as $_sKey => $_oValue )
+        {
+            if ( ! empty( $_oValue ) )
+                $_arOut[ "__pscb_{$_sKey}" ] = $_sKey;
+        }
+
+        //  Now build our final array...
+        $_arRaw = $oContainer->getRawOptions( true );
+
+        foreach( $_arRaw as $_sKey => $_oOption )
+        {
+            //  Skip nulls...
+            $_oValue = $_oOption->getValue();
+
+            if ( ! empty( $_oValue ) || '0' === $_oValue )
+            {
+                $_sExtName = $_oOption->getExternalName();
+
+                //  Check for callbacks in the inner array (.i.e. "buttons" from 
+      jqUI dialog)
+                if ( is_array( $_oValue ) )
+                {
+                    foreach ( $_oValue as $_sSubKey => $_oSubValue )
+                    {
+                        if ( self::isScriptCallback( $_oSubValue ) )
+                        {
+                            $_arCallbacks[ $_sSubKey ] = $_oSubValue;
+                            $_arOut[ $_sKey ][ "__pscb_{$_sSubKey}" ] = $_sSubKey
+      ;
+                        }
+                        else
+                        {
+                            if ( ! isset( $_arOut[ $_sExtName ] ) || ! is_array( 
+      $_arOut[ $_sExtName ] ) ) $_arOut[ $_sExtName ] = array();
+                            $_arOut[ $_sExtName ][ $_sSubKey ] = $_oSubValue;
+                        }
+                    }
+                }
+                else
+                {
+                    if ( self::isScriptCallback( $_oValue ) )
+                    {
+                        $_arCallbacks[ $_sKey ] = $_oValue;
+                        $_arOut[ "__pscb_{$_sKey}" ] = $_sKey;
+                    }
+                    else
+                        $_arOut[ $_sExtName ] = $_oValue;
+                }
+            }
+        }
+
+        if ( count( $_arOut ) )
+        {
+            switch ( $iFormat )
+            {
+                case CPSHelperBase::OF_JSON:
+                    $_sEncodedOptions = CJSON::encode( $_arOut );
+                    break;
+
+                case CPSHelperBase::OF_HTTP:
+                    foreach ( $_arOut as $_sKey => $_sValue )
+                    {
+                        if ( ! empty( $_sValue ) )
+                            $_sEncodedOptions .= '&' . $_sKey . '=' . urlencode( 
+      $_sValue );
+                    }
+                    break;
+
+                case CPSHelperBase::OF_ASSOC_ARRAY:
+//                  if ( ! empty( $_arCallbacks ) )
+//                      throw new CPSOptionException( 'Cannot use type "ASSOC_ARR
+      AY" when callbacks are present.' );
+
+                    $_sEncodedOptions = $_arOut;
+                    break;
+            }
+
+            //  Fix up the callbacks and return...
+            return self::fixCallbacks( $_sEncodedOptions, $_arCallbacks );
+        }
+
+        //  Nada
+        return null;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionHelper_a40877d061316ed1f0bca467b4e86a1b5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOptionHelper_af245193a05c6d9de1d9fec6239b9b14b}{
+\index{CPSOptionHelper@{CPSOptionHelper}!parseRulePattern@{parseRulePattern}}
+\index{parseRulePattern@{parseRulePattern}!CPSOptionHelper@{CPSOptionHelper}}
+\subsubsection[{parseRulePattern}]{\setlength{\rightskip}{0pt plus 5cm}static parseRulePattern (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oPattern, }
+\item[{\$}]{ bPrivate = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSOptionHelper_af245193a05c6d9de1d9fec6239b9b14b}
+Parses a rule pattern string
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sKey The key \item[{\em mixed}]\$oPattern The pattern string or array \item[{\em boolean}]\$bPrivate Forces this option to be private \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file CPSOptionHelper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Seed our rules array...
+        $_arRules = self::defaultRuleSet( $bPrivate );
+
+        if ( null !== $oPattern )
+        {
+            //  Split up pattern (type{:defaultValue{:externalName{:isRequired{:a
+      llowedValue(s)}}}})
+            $_arPattern = ( ! is_array( $oPattern ) ) ? explode( ':', $oPattern )
+       : $oPattern;
+
+            //  Type is required, but we can default to string.
+            $_arRules[ CPSOption::RPT_TYPE ] = CPSHelperBase::o( $_arPattern, 0, 
+      CPSHelperBase::o( $_arRules, CPSOption::RPT_TYPE, 'string' ) );
+
+            //  Fix up types...
+            switch ( $_arRules[ CPSOption::RPT_TYPE ] )
+            {
+                case 'int':
+                    $_arRules[ CPSOption::RPT_TYPE ] = 'integer';
+                    break;
+
+                case 'bool':
+                    $_arRules[ CPSOption::RPT_TYPE ] = 'boolean';
+                    break;
+            }
+
+            //  Default value (default default value is null)
+            if ( $_arRules[ CPSOption::RPT_DEFAULT ] = CPSHelperBase::o( $_arPatt
+      ern, 1, CPSHelperBase::o( $_arRules, CPSOption::RPT_DEFAULT ) ) )
+            {
+                //  Evalute default if we have one...
+                if ( $_arRules[ CPSOption::RPT_TYPE ] !== 'string' && ! empty( $_
+      arRules[ CPSOption::RPT_DEFAULT ] ) )
+                    $_arRules[ CPSOption::RPT_DEFAULT ] = eval( 'return ' . $_arR
+      ules[ CPSOption::RPT_DEFAULT ] . ';' );
+            }
+
+            //  Different name for external use?
+            $_arRules[ CPSOption::RPT_EXTERNAL_NAME ] = CPSHelperBase::o( $_arPat
+      tern, 2, CPSHelperBase::o( $_arRules, CPSOption::RPT_EXTERNAL_NAME ) );
+
+            //  Required value? Must eval to bool(true)
+            $_arRules[ CPSOption::RPT_REQUIRED ] = ( bool )( eval( 'return ' . 
+      CPSHelperBase::o( $_arPattern, 3, CPSHelperBase::o( $_arRules, 
+      CPSOption::RPT_REQUIRED, false ) ) . ';' ) === true );
+
+            //  And finally the allowed values. If string contains '|', will be t
+      ransformed to an array
+            $_arRules[ CPSOption::RPT_ALLOWED ] = ( is_string( $_oAllowed = 
+      CPSHelperBase::o( $_arPattern, 4, CPSHelperBase::o( $_arRules, 
+      CPSOption::RPT_ALLOWED ) ) ) && false !== strpos( $_oAllowed, '|' ) ) ? explode( 
+      '|', $_oAllowed ) : $_oAllowed;
+
+            //  Clean rules
+            foreach ( $_arRules as $_sKey => $_oValue ) if ( null === $_arRules[ 
+      $_sKey ] ) unset( $_arRules[ $_sKey ] );
+        }
+
+        //  and return...
+        return $_arRules;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classCPSOptionHelper_af245193a05c6d9de1d9fec6239b9b14b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionHelper_af245193a05c6d9de1d9fec6239b9b14b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOptionHelper_af1ecea04b9292bde2418a4608ed30197}{
+\index{CPSOptionHelper@{CPSOptionHelper}!validateOption@{validateOption}}
+\index{validateOption@{validateOption}!CPSOptionHelper@{CPSOptionHelper}}
+\subsubsection[{validateOption}]{\setlength{\rightskip}{0pt plus 5cm}static validateOption (
+\begin{DoxyParamCaption}
+\item[{{\bf CPSOption} \&\$}]{ oOption, }
+\item[{\$}]{ oValue = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSOptionHelper_af1ecea04b9292bde2418a4608ed30197}
+Validates an option value against its rules. If \$oValue is null, stored value is used. 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSOption}{CPSOption}}]\$oOption \item[{\em mixed}]\$oValue Optional value to use for validation purposes \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{classCPSOptionException}{CPSOptionException}}]\end{DoxyExceptions}
+
+
+Definition at line 149 of file CPSOptionHelper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  We all start innocent
+        $_bPassed = true;
+
+        //  Get the value to test
+        $_oValue = CPSHelperBase::nvl( $oValue, $oOption->getValue( true ) );
+
+        //  Check required values...
+        if ( ! $_bPassed = ( $oOption->getIsRequired() && null === $_oValue ) )
+            throw new CPSOptionException( "Option \"{$oOption->getName()}\" is re
+      quired." );
+
+        //  Fix up types...
+        $_arType = $oOption->getOptionType();
+        if ( ! is_array( $_arType ) ) $_arType = array( $_arType );
+
+        //  Allowed type?
+        foreach ( $_arType as $_sKey => $_sType )
+        {
+            //  Check type...
+            switch ( $_sType )
+            {
+                case 'bool':
+                case 'boolean':
+                    $_bPassed = is_bool( $_oValue );
+                    $_sType = 'boolean';
+                    break;
+
+                case 'int':
+                case 'integer':
+                    $_bPassed = is_int( $_oValue );
+                    $_sType = 'integer';
+                    break;
+
+                case 'float':
+                    $_bPassed = is_float( $_oValue );
+                    break;
+
+                case 'double':
+                    $_bPassed = is_double( $_oValue );
+                    break;
+
+                case 'array':
+                    $_bPassed = is_array( $_oValue );
+                    break;
+
+                case 'object':
+                    $_bPassed = is_object( $_oValue ) || $_oValue === null;
+                    break;
+
+                case 'string':
+                    $_bPassed = is_string( $_oValue ) || $_oValue === null;
+                    break;
+
+                default:
+                    //  If we get here, we have unknown or user-defined type. If 
+      not null, test it.
+                    if ( null !== $_sType && 'NULL' !== $_sType ) $_bPassed = ( $
+      _oValue instanceof $_sType );
+                    break;
+            }
+
+            if ( ! $oOption->isValidType( $_sType ) )
+                throw new CPSOptionException( Yii::t( __CLASS__, 'Invalid type "{
+      y}" specified for "{x}"', array( '{y}' => $_sType, '{x}' => $_sKey ) ), 1  );
+
+            if ( ! $_bPassed )
+            {
+                $_sValType = gettype( $_oValue );
+                throw new CPSOptionException( "Option \"{$oOption->getName()}\" e
+      xpects values to be of type \"{$_sType}\". \"{$_sValType}\" given." );
+            }
+
+            $oOption->setRule( CPSOption::RPT_TYPE, $_sType );
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionHelper_af1ecea04b9292bde2418a4608ed30197_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionHelper_af1ecea04b9292bde2418a4608ed30197_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOptionHelper_a1196dfb53b5a9c5b1865efd2678c0bb5}{
+\index{CPSOptionHelper@{CPSOptionHelper}!validateOptions@{validateOptions}}
+\index{validateOptions@{validateOptions}!CPSOptionHelper@{CPSOptionHelper}}
+\subsubsection[{validateOptions}]{\setlength{\rightskip}{0pt plus 5cm}static validateOptions (
+\begin{DoxyParamCaption}
+\item[{{\bf IPSOptionContainer} \&\$}]{ oContainer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSOptionHelper_a1196dfb53b5a9c5b1865efd2678c0bb5}
+
+
+Definition at line 136 of file CPSOptionHelper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Get the option collection and validate
+        foreach ( $oContainer as $_oOption )
+            self::validateOption( $_oOption );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionHelper_a1196dfb53b5a9c5b1865efd2678c0bb5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classCPSOptionHelper_a1196dfb53b5a9c5b1865efd2678c0bb5_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSOptionHelper_a4652b705dc90fe7d967eecbf10901364}{
+\index{CPSOptionHelper@{CPSOptionHelper}!CB\_\-KEY@{CB\_\-KEY}}
+\index{CB\_\-KEY@{CB\_\-KEY}!CPSOptionHelper@{CPSOptionHelper}}
+\subsubsection[{CB\_\-KEY}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CB\_\-KEY} = '\_\-\_\-pscb\_\-'}}
+\label{classCPSOptionHelper_a4652b705dc90fe7d967eecbf10901364}
+A key for use when mapping callbacks 
+
+Definition at line 32 of file CPSOptionHelper.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/helpers/\hyperlink{CPSOptionHelper_8php}{CPSOptionHelper.php}\end{DoxyCompactItemize}

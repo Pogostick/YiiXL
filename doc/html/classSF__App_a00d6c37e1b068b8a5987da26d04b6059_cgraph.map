@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classSF__App.html#a87941bc6e0f9b9f2d7f1d77f9906eb08" title="initializePlatform" alt="" coords="161,5,287,35"/>
+<area shape="rect" id="node5" href="$classSF__App.html#a1a2c07721f5c3d4bcc78eb557e2dfd21" title="openDatabase" alt="" coords="167,59,281,88"/>
+<area shape="rect" id="node7" href="$classSF__App.html#aa40909289ffd00ccc071d938f586fc47" title="processQueryString" alt="" coords="151,112,297,141"/>
+<area shape="rect" id="node9" href="$classSF__App.html#ac5e7c32ce7cbcf1f9f6e8684e8cefa5f" title="processAppCommands" alt="" coords="347,112,517,141"/>
+<area shape="rect" id="node11" href="$classSF__App.html#a83d6db3f4e5f36ddd8adad2f53133e76" title="redirect" alt="" coords="567,112,636,141"/>
+</map>

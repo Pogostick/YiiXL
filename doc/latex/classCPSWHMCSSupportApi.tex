@@ -1,0 +1,139 @@
+\hypertarget{classCPSWHMCSSupportApi}{
+\section{CPSWHMCSSupportApi Class Reference}
+\label{classCPSWHMCSSupportApi}\index{CPSWHMCSSupportApi@{CPSWHMCSSupportApi}}
+}
+
+
+Inheritance diagram for CPSWHMCSSupportApi:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classCPSWHMCSSupportApi__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSWHMCSSupportApi:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classCPSWHMCSSupportApi__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSWHMCSSupportApi_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSWHMCSSupportApi_aa69607d67136ffc0cc745d2c5a3c94f3}{openTicket} (\$arRequestData=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 20 of file CPSWHMCSSupportApi.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSWHMCSSupportApi_aa69607d67136ffc0cc745d2c5a3c94f3}{
+\index{CPSWHMCSSupportApi@{CPSWHMCSSupportApi}!openTicket@{openTicket}}
+\index{openTicket@{openTicket}!CPSWHMCSSupportApi@{CPSWHMCSSupportApi}}
+\subsubsection[{openTicket}]{\setlength{\rightskip}{0pt plus 5cm}openTicket (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arRequestData = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSSupportApi_aa69607d67136ffc0cc745d2c5a3c94f3}
+Opens a support ticket 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arRequestData \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file CPSWHMCSSupportApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->makeApiCall( self::SUPPORT_API, 'openticket', $arRequestDat
+      a );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{classCPSWHMCSSupportApi_aa69607d67136ffc0cc745d2c5a3c94f3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSSupportApi_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSWHMCSSupportApi@{CPSWHMCSSupportApi}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSWHMCSSupportApi@{CPSWHMCSSupportApi}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSSupportApi_a2dc262e99b1c246b56f27626bfe699ff}
+Preinitialize the component Override to add your own functionality before \hyperlink{classCPSApiComponent_a4be4055f3361d4800e16bc2e2e38cda6}{init()} is called. 
+
+Reimplemented from \hyperlink{classCPSWHMCSApi_a2dc262e99b1c246b56f27626bfe699ff}{CPSWHMCSApi}.
+
+
+
+Definition at line 29 of file CPSWHMCSSupportApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Call daddy...
+        parent::preinit();
+
+        //  Support API
+        $this->apiToUse = self::SUPPORT_API;
+        
+        //  Support::OpenTicket
+        $this->addRequestMapping( 'clientId', 'clientid', true, null, self::SUPPO
+      RT_API, 'openticket' );
+        $this->addRequestMapping( 'name', 'name' );
+        $this->addRequestMapping( 'email', 'email' );
+        $this->addRequestMapping( 'deptId', 'deptid' );
+        $this->addRequestMapping( 'subject', 'subject' );
+        $this->addRequestMapping( 'message', 'message' );
+        $this->addRequestMapping( 'priority', 'priority' );
+        $this->addRequestMapping( 'serviceId', 'serviceid' );
+        $this->addRequestMapping( 'customFields', 'customfields' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=374pt]{classCPSWHMCSSupportApi_a2dc262e99b1c246b56f27626bfe699ff_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/whmcs/\hyperlink{CPSWHMCSSupportApi_8php}{CPSWHMCSSupportApi.php}\end{DoxyCompactItemize}

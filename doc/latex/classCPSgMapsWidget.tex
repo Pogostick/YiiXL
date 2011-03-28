@@ -1,0 +1,114 @@
+\hypertarget{classCPSgMapsWidget}{
+\section{CPSgMapsWidget Class Reference}
+\label{classCPSgMapsWidget}\index{CPSgMapsWidget@{CPSgMapsWidget}}
+}
+
+
+Inheritance diagram for CPSgMapsWidget:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classCPSgMapsWidget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSgMapsWidget:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classCPSgMapsWidget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSgMapsWidget_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSgMapsWidget_a2a2ea08f8240ed4c24058ab80ab89703}{generateJavascript} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSgMapsWidget.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSgMapsWidget_a2a2ea08f8240ed4c24058ab80ab89703}{
+\index{CPSgMapsWidget@{CPSgMapsWidget}!generateJavascript@{generateJavascript}}
+\index{generateJavascript@{generateJavascript}!CPSgMapsWidget@{CPSgMapsWidget}}
+\subsubsection[{generateJavascript}]{\setlength{\rightskip}{0pt plus 5cm}generateJavascript (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSgMapsWidget_a2a2ea08f8240ed4c24058ab80ab89703}
+Our javascript 
+
+Reimplemented from \hyperlink{classCPSgApiWidget_a2a2ea08f8240ed4c24058ab80ab89703}{CPSgApiWidget}.
+
+
+
+Definition at line 54 of file CPSgMapsWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sCode = "var map = new GMap2(document.getElementById(\"{$this->id}\"));
+      ";
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSgMapsWidget_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSgMapsWidget@{CPSgMapsWidget}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSgMapsWidget@{CPSgMapsWidget}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSgMapsWidget_a2dc262e99b1c246b56f27626bfe699ff}
+Initialize our widget 
+
+Reimplemented from \hyperlink{classCPSgApiWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSgApiWidget}.
+
+
+
+Definition at line 31 of file CPSgMapsWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->addOptions(
+            array(
+                //  GMapOptions
+                'size' => 'array',
+                'mapTypes' => 'array',
+                'draggableCursor' => 'string',
+                'draggingCursor' => 'string',
+                'googleBarOptions' => 'array',
+                'backgroundColor' => 'string',
+                
+                //  Method Options
+                'mapCenter' => 'array',
+                'mapType' => 'string',
+            ),
+            true
+        );
+    }
+\end{DoxyCode}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/widgets/gApi/\hyperlink{CPSgMapsWidget_8php}{CPSgMapsWidget.php}\end{DoxyCompactItemize}

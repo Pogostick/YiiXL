@@ -1,0 +1,134 @@
+\hypertarget{classCPSParentChildBehavior}{
+\section{CPSParentChildBehavior Class Reference}
+\label{classCPSParentChildBehavior}\index{CPSParentChildBehavior@{CPSParentChildBehavior}}
+}
+
+
+Inheritance diagram for CPSParentChildBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classCPSParentChildBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSParentChildBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classCPSParentChildBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSParentChildBehavior_a1332d27ba1ecefa899e393e83309735e}{hasChildren} ()
+\item 
+\hyperlink{classCPSParentChildBehavior_a3287c30507ba07950732da41fc9217e8}{childOf} (\$iParentId=null)
+\item 
+\hyperlink{classCPSParentChildBehavior_a22e12f988493e4775b0c668d3696753a}{asUnorderedList} (\$arModel=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSParentChildBehavior.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSParentChildBehavior_a22e12f988493e4775b0c668d3696753a}{
+\index{CPSParentChildBehavior@{CPSParentChildBehavior}!asUnorderedList@{asUnorderedList}}
+\index{asUnorderedList@{asUnorderedList}!CPSParentChildBehavior@{CPSParentChildBehavior}}
+\subsubsection[{asUnorderedList}]{\setlength{\rightskip}{0pt plus 5cm}asUnorderedList (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arModel = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ arOptions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSParentChildBehavior_a22e12f988493e4775b0c668d3696753a}
+Outputs a string of UL/LI tags from an array of models suitable for menu structures
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arModel \item[{\em array}]\$arOptions \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file CPSParentChildBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return CPSTransform::asUnorderedList( $arModel, $arOptions );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSParentChildBehavior_a3287c30507ba07950732da41fc9217e8}{
+\index{CPSParentChildBehavior@{CPSParentChildBehavior}!childOf@{childOf}}
+\index{childOf@{childOf}!CPSParentChildBehavior@{CPSParentChildBehavior}}
+\subsubsection[{childOf}]{\setlength{\rightskip}{0pt plus 5cm}childOf (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iParentId = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSParentChildBehavior_a3287c30507ba07950732da41fc9217e8}
+Named scope to return child models Override as necessary
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]\$iParentId Default to null \end{DoxyParams}
+
+
+Definition at line 45 of file CPSParentChildBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSParentChildBehavior_a1332d27ba1ecefa899e393e83309735e}{
+\index{CPSParentChildBehavior@{CPSParentChildBehavior}!hasChildren@{hasChildren}}
+\index{hasChildren@{hasChildren}!CPSParentChildBehavior@{CPSParentChildBehavior}}
+\subsubsection[{hasChildren}]{\setlength{\rightskip}{0pt plus 5cm}hasChildren (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSParentChildBehavior_a1332d27ba1ecefa899e393e83309735e}
+Returns whether or not this model has children Override as necessary
+
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 34 of file CPSParentChildBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return false;
+    }
+\end{DoxyCode}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/behaviors/\hyperlink{CPSParentChildBehavior_8php}{CPSParentChildBehavior.php}\end{DoxyCompactItemize}

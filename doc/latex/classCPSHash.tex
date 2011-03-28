@@ -1,0 +1,319 @@
+\hypertarget{classCPSHash}{
+\section{CPSHash Class Reference}
+\label{classCPSHash}\index{CPSHash@{CPSHash}}
+}
+
+
+Inheritance diagram for CPSHash:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{classCPSHash__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSHash:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{classCPSHash__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSHash_a3e298220b5cd30c047c32b878c7d049a}{generate} (\$iLength=20, \$eType=self::ALL)
+\item 
+static \hyperlink{classCPSHash_a0dafa79239f1d71f976fdd260bf2349f}{hash} (\$sValueToHash=null, \$eHashType=self::SHA1, \$iLength=32, \$bRawOutput=false)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSHash_ab56e734000051e5c12c8c5cf6d8d160d}{ALL} = 0
+\item 
+const \hyperlink{classCPSHash_a33fc57236d932860ab0ad8e8268e0c99}{ALPHA\_\-LOWER} = 1
+\item 
+const \hyperlink{classCPSHash_a13afa6f8ce77da9bd4a5af5d473d0d8b}{ALPHA\_\-UPPER} = 2
+\item 
+const \hyperlink{classCPSHash_a6bb7987358cd3de8e7c775094597e631}{ALPHA} = 3
+\item 
+const \hyperlink{classCPSHash_a1acce0cfa5c3723599af4c7e325b4312}{ALPHA\_\-NUMERIC} = 4
+\item 
+const \hyperlink{classCPSHash_a371814049e51cde466af6295bdfed4e3}{ALPHA\_\-LOWER\_\-NUMERIC} = 5
+\item 
+const \hyperlink{classCPSHash_a19cabff2391d99103d1bf11b0ed2972e}{NUMERIC} = 6
+\item 
+const \hyperlink{classCPSHash_aa15c0932a4cd96ab710478faace6ccb9}{ALPHA\_\-LOWER\_\-NUMERIC\_\-IDIOTPROOF} = 7
+\item 
+const \hyperlink{classCPSHash_a66be2064e952a39f04c0a54d83d1c779}{MD5} = 1
+\item 
+const \hyperlink{classCPSHash_a1ca7a04dcc397e382e3a4ee5e0e1b9a1}{SHA1} = 2
+\item 
+const \hyperlink{classCPSHash_aeeccfbe476a8ab58ea0c3382287ff0e9}{CRC32} = 18
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSHash_ad0ea7d21fa77c2440dae6c36137c1531}{\$m\_\-arSeed}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSHash.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSHash_a3e298220b5cd30c047c32b878c7d049a}{
+\index{CPSHash@{CPSHash}!generate@{generate}}
+\index{generate@{generate}!CPSHash@{CPSHash}}
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}static generate (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iLength = {\ttfamily 20}, }
+\item[{\$}]{ eType = {\ttfamily self::ALL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSHash_a3e298220b5cd30c047c32b878c7d049a}
+Generates a unique hash code
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em int}]\$iLength \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file CPSHash.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! isset( self::$m_arSeed ) || ! is_array( self::$m_arSeed[ $eType ] 
+      ) ) return md5( time() . time() );
+
+        $_sHash = null;
+        $_iSize = count( self::$m_arSeed[ $eType ] ) - 1;
+        for ( $_i = 0; $_i < $iLength; $_i++ ) $_sHash .= self::$m_arSeed[ $eType
+       ][ mt_rand( 0, $_iSize ) ];
+
+        return $_sHash;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSHash_a0dafa79239f1d71f976fdd260bf2349f}{
+\index{CPSHash@{CPSHash}!hash@{hash}}
+\index{hash@{hash}!CPSHash@{CPSHash}}
+\subsubsection[{hash}]{\setlength{\rightskip}{0pt plus 5cm}static hash (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValueToHash = {\ttfamily null}, }
+\item[{\$}]{ eHashType = {\ttfamily self::SHA1}, }
+\item[{\$}]{ iLength = {\ttfamily 32}, }
+\item[{\$}]{ bRawOutput = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSHash_a0dafa79239f1d71f976fdd260bf2349f}
+Generic hashing method. Will hash any string or generate a random hash and hash that!
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sValueToHash \item[{\em integer}]\$eHashType \item[{\em integer}]\$iLength \item[{\em boolean}]\$bRawOutput \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file CPSHash.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sValue = ( null === $sValueToHash ) ? self::generate( $iLength ) : $sVa
+      lueToHash;
+        
+        switch ( $eHashType )
+        {
+            case self::MD5:
+                $_sHash = md5( $_sValue, $bRawOutput );
+                break;
+                
+            case self::SHA1:
+                $_sHash = sha1( $_sValue, $bRawOutput );
+                break;
+                
+            case self::CRC32:
+                $_sHash = crc32( $_sValue );
+                break;
+
+            default:
+                $_sHash = hash( $eHashType, $_sValue, $bRawOutput );
+                break;
+        }
+        
+        return $_sHash;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSHash_a0dafa79239f1d71f976fdd260bf2349f_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSHash_ad0ea7d21fa77c2440dae6c36137c1531}{
+\index{CPSHash@{CPSHash}!\$m\_\-arSeed@{\$m\_\-arSeed}}
+\index{\$m\_\-arSeed@{\$m\_\-arSeed}!CPSHash@{CPSHash}}
+\subsubsection[{\$m\_\-arSeed}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-arSeed\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSHash_ad0ea7d21fa77c2440dae6c36137c1531}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ array(
+        self::ALL => array('a','b','c','d','e','f','g','h','i','j','k','l','m','n
+      ','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H'
+      ,'I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','0','1',
+      '2','3','4','5','6','7','8','9'),
+        self::ALPHA_LOWER => array('a','b','c','d','e','f','g','h','i','j','k','l
+      ','m','n','o','p','q','r','s','t','u','v','w','x','y','z'),
+        self::ALPHA_UPPER => array('A','B','C','D','E','F','G','H','I','J','K','L
+      ','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'),
+        self::ALPHA => array('A','B','C','D','E','F','G','H','I','J','K','L','M',
+      'N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','
+      h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'),
+        self::ALPHA_NUMERIC => array('A','B','C','D','E','F','G','H','I','J','K',
+      'L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','
+      f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z
+      ','0','1','2','3','4','5','6','7','8','9'),
+        self::ALPHA_LOWER_NUMERIC => array('a','b','c','d','e','f','g','h','i','j
+      ','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3'
+      ,'4','5','6','7','8','9'),
+        self::NUMERIC => array('0','1','2','3','4','5','6','7','8','9'),
+        self::ALPHA_LOWER_NUMERIC_IDIOTPROOF => array('a','b','c','d','e','f','g'
+      ,'h','j','k','m','n','p','q','r','s','t','u','v','w','x','y','z','2','3','4','5',
+      '6','7','8','9'),
+    )
+\end{DoxyCode}
+
+
+Definition at line 55 of file CPSHash.php.
+
+\hypertarget{classCPSHash_ab56e734000051e5c12c8c5cf6d8d160d}{
+\index{CPSHash@{CPSHash}!ALL@{ALL}}
+\index{ALL@{ALL}!CPSHash@{CPSHash}}
+\subsubsection[{ALL}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ALL} = 0}}
+\label{classCPSHash_ab56e734000051e5c12c8c5cf6d8d160d}
+Our hash types 
+
+Definition at line 31 of file CPSHash.php.
+
+\hypertarget{classCPSHash_a6bb7987358cd3de8e7c775094597e631}{
+\index{CPSHash@{CPSHash}!ALPHA@{ALPHA}}
+\index{ALPHA@{ALPHA}!CPSHash@{CPSHash}}
+\subsubsection[{ALPHA}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ALPHA} = 3}}
+\label{classCPSHash_a6bb7987358cd3de8e7c775094597e631}
+
+
+Definition at line 34 of file CPSHash.php.
+
+\hypertarget{classCPSHash_a33fc57236d932860ab0ad8e8268e0c99}{
+\index{CPSHash@{CPSHash}!ALPHA\_\-LOWER@{ALPHA\_\-LOWER}}
+\index{ALPHA\_\-LOWER@{ALPHA\_\-LOWER}!CPSHash@{CPSHash}}
+\subsubsection[{ALPHA\_\-LOWER}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ALPHA\_\-LOWER} = 1}}
+\label{classCPSHash_a33fc57236d932860ab0ad8e8268e0c99}
+
+
+Definition at line 32 of file CPSHash.php.
+
+\hypertarget{classCPSHash_a371814049e51cde466af6295bdfed4e3}{
+\index{CPSHash@{CPSHash}!ALPHA\_\-LOWER\_\-NUMERIC@{ALPHA\_\-LOWER\_\-NUMERIC}}
+\index{ALPHA\_\-LOWER\_\-NUMERIC@{ALPHA\_\-LOWER\_\-NUMERIC}!CPSHash@{CPSHash}}
+\subsubsection[{ALPHA\_\-LOWER\_\-NUMERIC}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ALPHA\_\-LOWER\_\-NUMERIC} = 5}}
+\label{classCPSHash_a371814049e51cde466af6295bdfed4e3}
+
+
+Definition at line 36 of file CPSHash.php.
+
+\hypertarget{classCPSHash_aa15c0932a4cd96ab710478faace6ccb9}{
+\index{CPSHash@{CPSHash}!ALPHA\_\-LOWER\_\-NUMERIC\_\-IDIOTPROOF@{ALPHA\_\-LOWER\_\-NUMERIC\_\-IDIOTPROOF}}
+\index{ALPHA\_\-LOWER\_\-NUMERIC\_\-IDIOTPROOF@{ALPHA\_\-LOWER\_\-NUMERIC\_\-IDIOTPROOF}!CPSHash@{CPSHash}}
+\subsubsection[{ALPHA\_\-LOWER\_\-NUMERIC\_\-IDIOTPROOF}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ALPHA\_\-LOWER\_\-NUMERIC\_\-IDIOTPROOF} = 7}}
+\label{classCPSHash_aa15c0932a4cd96ab710478faace6ccb9}
+
+
+Definition at line 38 of file CPSHash.php.
+
+\hypertarget{classCPSHash_a1acce0cfa5c3723599af4c7e325b4312}{
+\index{CPSHash@{CPSHash}!ALPHA\_\-NUMERIC@{ALPHA\_\-NUMERIC}}
+\index{ALPHA\_\-NUMERIC@{ALPHA\_\-NUMERIC}!CPSHash@{CPSHash}}
+\subsubsection[{ALPHA\_\-NUMERIC}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ALPHA\_\-NUMERIC} = 4}}
+\label{classCPSHash_a1acce0cfa5c3723599af4c7e325b4312}
+
+
+Definition at line 35 of file CPSHash.php.
+
+\hypertarget{classCPSHash_a13afa6f8ce77da9bd4a5af5d473d0d8b}{
+\index{CPSHash@{CPSHash}!ALPHA\_\-UPPER@{ALPHA\_\-UPPER}}
+\index{ALPHA\_\-UPPER@{ALPHA\_\-UPPER}!CPSHash@{CPSHash}}
+\subsubsection[{ALPHA\_\-UPPER}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ALPHA\_\-UPPER} = 2}}
+\label{classCPSHash_a13afa6f8ce77da9bd4a5af5d473d0d8b}
+
+
+Definition at line 33 of file CPSHash.php.
+
+\hypertarget{classCPSHash_aeeccfbe476a8ab58ea0c3382287ff0e9}{
+\index{CPSHash@{CPSHash}!CRC32@{CRC32}}
+\index{CRC32@{CRC32}!CPSHash@{CPSHash}}
+\subsubsection[{CRC32}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CRC32} = 18}}
+\label{classCPSHash_aeeccfbe476a8ab58ea0c3382287ff0e9}
+
+
+Definition at line 45 of file CPSHash.php.
+
+\hypertarget{classCPSHash_a66be2064e952a39f04c0a54d83d1c779}{
+\index{CPSHash@{CPSHash}!MD5@{MD5}}
+\index{MD5@{MD5}!CPSHash@{CPSHash}}
+\subsubsection[{MD5}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MD5} = 1}}
+\label{classCPSHash_a66be2064e952a39f04c0a54d83d1c779}
+Hashing methods 
+
+Definition at line 43 of file CPSHash.php.
+
+\hypertarget{classCPSHash_a19cabff2391d99103d1bf11b0ed2972e}{
+\index{CPSHash@{CPSHash}!NUMERIC@{NUMERIC}}
+\index{NUMERIC@{NUMERIC}!CPSHash@{CPSHash}}
+\subsubsection[{NUMERIC}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NUMERIC} = 6}}
+\label{classCPSHash_a19cabff2391d99103d1bf11b0ed2972e}
+
+
+Definition at line 37 of file CPSHash.php.
+
+\hypertarget{classCPSHash_a1ca7a04dcc397e382e3a4ee5e0e1b9a1}{
+\index{CPSHash@{CPSHash}!SHA1@{SHA1}}
+\index{SHA1@{SHA1}!CPSHash@{CPSHash}}
+\subsubsection[{SHA1}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf SHA1} = 2}}
+\label{classCPSHash_a1ca7a04dcc397e382e3a4ee5e0e1b9a1}
+
+
+Definition at line 44 of file CPSHash.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/helpers/\hyperlink{CPSHash_8php}{CPSHash.php}\end{DoxyCompactItemize}

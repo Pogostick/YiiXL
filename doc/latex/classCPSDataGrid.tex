@@ -1,0 +1,928 @@
+\hypertarget{classCPSDataGrid}{
+\section{CPSDataGrid Class Reference}
+\label{classCPSDataGrid}\index{CPSDataGrid@{CPSDataGrid}}
+}
+
+
+Inheritance diagram for CPSDataGrid:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classCPSDataGrid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSDataGrid:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classCPSDataGrid__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSDataGrid_a714d703744491d6a840be72c0bbc4bdc}{getGridOptions} ()
+\item 
+\hyperlink{classCPSDataGrid_a9d4cb8e1eb461643829da0b608ee73ed}{setGridOptions} (\$arValue)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSDataGrid_acd9b2a44c8b6b5aac349c4577bb0c00c}{getMenuButtonType} (\$sButton)
+\item 
+static \hyperlink{classCPSDataGrid_aea971c9c726d0e1a6f345c986cca7ded}{createEx} (\$arModel, \$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+static \hyperlink{classCPSDataGrid_a4f277aa7b3be8aead6d545302ac7c84b}{create} (\$sDataName, \$arModel, \$arColumns=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$arActions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$oSort=null, \$oPages=null, \$arPagerOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$sLinkView= 'update', \$bEncode=true)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSDataGrid_a7b2253a9182458ca0ad1103d6f5ac7ca}{beginDataGrid} ()
+\item 
+static \hyperlink{classCPSDataGrid_a0ae5d625361f41ef35ce201e37dc7041}{getDataGridRows} ()
+\item 
+static \hyperlink{classCPSDataGrid_ae3e67a9bbb3458e9757437db4a6d9cb1}{endDataGrid} ()
+\item 
+static \hyperlink{classCPSDataGrid_a1ca0021fa727c5725d9fd37e87372dad}{appendSortArrow} (\$sLink)
+\item 
+static \hyperlink{classCPSDataGrid_a8fb3a5e29c0b628c703d714444c975b4}{buildActions} (\hyperlink{classCPSModel}{CPSModel} \$oModel)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSDataGrid_a1ee8c98e418359687d96dff41468fa61}{\$m\_\-iColumnCount}
+\item 
+static \hyperlink{classCPSDataGrid_acd4ff83641d8c0eac7c449802d557a21}{\$m\_\-arGridOptions} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}()
+\item 
+static \hyperlink{classCPSDataGrid_a36b298be9109a11d6fc986b36831f96f}{\$m\_\-arMenuButtonMap}
+\item 
+static \hyperlink{classCPSDataGrid_aca9359f1c287f1fdc37313507050fe58}{\$m\_\-arActionMap}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSDataGrid.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSDataGrid_a1ca0021fa727c5725d9fd37e87372dad}{
+\index{CPSDataGrid@{CPSDataGrid}!appendSortArrow@{appendSortArrow}}
+\index{appendSortArrow@{appendSortArrow}!CPSDataGrid@{CPSDataGrid}}
+\subsubsection[{appendSortArrow}]{\setlength{\rightskip}{0pt plus 5cm}static appendSortArrow (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sLink}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSDataGrid_a1ca0021fa727c5725d9fd37e87372dad}
+Appends a nice little arrow to a sort link.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sLink \end{DoxyParams}
+
+
+Definition at line 335 of file CPSDataGrid.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $sLink;
+        
+        $_iPosNext = stripos( $sLink, '-' );
+        $_iPos = stripos( $sLink, '.desc' );
+        
+        if ( $_iPos !== false && $_iPos < $_iPosNext ) 
+        {
+            $_sDir = 's';
+            $_sTitle = 'Sorted Ascending';
+        }
+        else
+        {
+            $_sTitle = 'Sorted Descending';
+            $_sDir = 'n';
+        }           
+
+        return $sLink . PS::tag( 'span', array( 'title' => $_sTitle, 'class' => "
+      ui-icon ui-icon-arrowthickstop-1-{$_sDir} ps-data-grid-sort-arrow"  ) );
+    }   
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDataGrid_a7b2253a9182458ca0ad1103d6f5ac7ca}{
+\index{CPSDataGrid@{CPSDataGrid}!beginDataGrid@{beginDataGrid}}
+\index{beginDataGrid@{beginDataGrid}!CPSDataGrid@{CPSDataGrid}}
+\subsubsection[{beginDataGrid}]{\setlength{\rightskip}{0pt plus 5cm}static beginDataGrid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSDataGrid_a7b2253a9182458ca0ad1103d6f5ac7ca}
+Creates a data grid from options \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 176 of file CPSDataGrid.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $oSort = PS::o( self::$m_arGridOptions, 'sort', null );
+        $arColumns = PS::o( self::$m_arGridOptions, 'columns', array() );
+        $arModel = PS::o( self::$m_arGridOptions, 'data', null );
+        $_arActions = PS::o( self::$m_arGridOptions, 'actions', array() );
+        $bAddActions = ! empty( $_arActions );
+        $_sGridId = PS::o( self::$m_arGridOptions, 'id', null, true );
+        $_sGridClass = PS::o( self::$m_arGridOptions, 'gridClass', 'ps-data-grid 
+      ui-widget-content', true );
+        
+        $_sHeaders = null;
+        $_oModel = is_array( $arModel ) && count( $arModel ) ? current( $arModel 
+      ) : null;
+
+        if ( ! $_oModel && null != ( $_sModelName = PS::o( self::$m_arGridOptions
+      , 'modelName' ) ) )
+            $_oModel = new $_sModelName();
+
+        foreach ( $arColumns as $_sKey => $_oColumn )
+        {
+            $_sColumn = CPSTransform::cleanColumn( ( is_array( $_oColumn ) ? $_sK
+      ey = array_shift( $_oColumn ) : $_oColumn ) );
+            if ( $_oModel ) $_sModelLabel = $_oModel->getAttributeLabel( $_sColum
+      n );
+            $_sLabel = PS::o( $_oColumn, 'label', ( $oSort ) ? self::appendSortAr
+      row( $oSort->link( $_sColumn ) ) : ( $_sModelLabel ? $_sModelLabel : $_sColumn ),
+       true );
+            $_sHeaders .= PS::tag( 'th', array(), $_sLabel );
+            self::$m_iColumnCount++;
+        }   
+
+        if ( $bAddActions ) 
+        {
+            $_sHeaders .= PS::tag( 'th', array( 'class' => 'ps-actions-header' ),
+       'Actions' );
+            self::$m_iColumnCount++;
+        }
+            
+        //  Begin our grid
+        $_arTableOpts = array(
+            'class' => $_sGridClass,
+        );
+        
+        if ( $_sGridId ) $_arTableOpts['id'] = $_sGridId;
+        
+        return PS::tag( 'table', $_arTableOpts, PS::tag( 'tr', array( 'class' => 
+      'ui-widget-header' ), $_sHeaders ), false );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=354pt]{classCPSDataGrid_a7b2253a9182458ca0ad1103d6f5ac7ca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classCPSDataGrid_a7b2253a9182458ca0ad1103d6f5ac7ca_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDataGrid_a8fb3a5e29c0b628c703d714444c975b4}{
+\index{CPSDataGrid@{CPSDataGrid}!buildActions@{buildActions}}
+\index{buildActions@{buildActions}!CPSDataGrid@{CPSDataGrid}}
+\subsubsection[{buildActions}]{\setlength{\rightskip}{0pt plus 5cm}static buildActions (
+\begin{DoxyParamCaption}
+\item[{{\bf CPSModel} \$}]{ oModel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSDataGrid_a8fb3a5e29c0b628c703d714444c975b4}
+Builds an action cell
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSModel}{CPSModel}}]\$oModel \end{DoxyParams}
+
+
+Creates a generic \char`\"{}action\char`\"{} button
+
+
+
+Definition at line 365 of file CPSDataGrid.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_oId = $_sActions = $_eAction = null;
+        $_sDataName = PS::o( self::$m_arGridOptions, 'dataItemName', 'item' );
+
+        //  Fix up link view array...
+        $_sLinkView = PS::o( self::$m_arGridOptions, 'linkView', null );
+        $_sViewName = PS::nvl( $_sLinkView, 'update' );
+            
+        $_sPK = PS::nvl( PS::o( self::$m_arGridOptions, 'pk' ), $oModel->getTable
+      Schema()->primaryKey );
+        $_arActions = PS::o( self::$m_arGridOptions, 'actions', array( 'edit', 'd
+      elete' ) );
+        
+        //  sub options
+        $_arOptions = PS::o( $_arActions, 'options', array(), true );
+        $_sLockColumn = PS::o( $_arOptions, 'lockColumn', null, true );
+
+        //  Build the actions
+        foreach ( $_arActions as $_sKey => $_oParts )
+        {
+            $_eAction = PS::ACTION_NONE;
+            $_sAction = ( is_numeric( $_oParts ) && $_oParts <= PS::ACTION_GENERI
+      C ) ? self::$m_arActionMap[ $_oParts ] : $_oParts;
+            $_arActionOptions = null;
+            $_arLink = is_array( $_sViewName ) ? $_sViewName : array( $_sViewName
+       );
+
+            //  If action is an array, first element is action, second is viewNam
+      e (which can also be an array)
+            if ( is_array( $_oParts ) )
+            {
+                if ( isset( $_oParts[1] ) )
+                {
+                    $_sViewName = $_oParts[1];
+                    $_arLink = is_array( $_sViewName ) ? $_sViewName : array( $_s
+      ViewName );
+                    $_sAction = array_shift( $_oParts );
+                    unset( $_oParts[1] );
+                }
+                else
+                {
+                    //  The rest art action options...
+                    $_arActionOptions = $_oParts;
+                    $_arLink = PS::nvl( PS::o( $_arActionOptions, 'url' ), $_arLi
+      nk );
+                    if ( ! is_array( $_arLink ) ) $_arLink = array( $_arLink );
+                }
+            }
+
+            //  Invalid action? Skip
+            if ( is_numeric( $_sAction ) )
+                $_eAction = intval( $_sAction );
+            else if ( is_array( $_sAction ) && is_numeric( $_sKey ) )
+                $_eAction = intval( $_sKey );
+            else if ( false === ( $_eAction = array_search( $_sAction, self::$m_a
+      rActionMap, true ) ) )
+                continue;
+            
+            //  Skip lock actions on non-lockable columns
+            if ( ! $_sLockColumn and ( $_eAction == PS::ACTION_LOCK || $_eAction 
+      == PS::ACTION_UNLOCK ) )
+                continue;
+                
+            //  Stuff in the PK(s)
+            $_arLink[ $_sPK ] = $_oId = $oModel->{$_sPK};
+            foreach ( $_arLink as $_sKey => $_sValue )
+            {
+                if ( 0 != preg_match( '/\%\%(.*)+\%\%/i', $_arLink[$_sKey], $_arM
+      atch ) )
+                {
+                    if ( $_arMatch )
+                    {
+                        foreach ( array_keys( $oModel->getAttributes() ) as $_sAt
+      tribute )
+                        {
+                            $_arLink[ $_sKey ] = str_ireplace( "%%{$_sAttribute}%
+      %", $oModel->{$_sAttribute}, $_arLink[ $_sKey ] );
+                        }
+                    }
+                }
+            }
+
+            //  Add the action
+            switch ( $_eAction )
+            {
+                case PS::ACTION_GENERIC:
+                    $_sLabel = PS::o( $_arActionOptions, 'label' );
+                    $_sIconName = PS::o( $_arActionOptions, 'icon' );
+                    $_sConfirm = PS::o( $_arActionOptions, 'confirm' );
+
+                    //  Build an action
+                    $_sActions .= PS::jquiButton( $_sLabel, $_arLink,
+                        array(
+                            'confirm' => $_sConfirm,
+                            'iconOnly' => true, 
+                            'icon' => $_sIconName,
+                            'iconSize' => 'small'
+                        )
+                    );
+                    break;
+                    
+                case PS::ACTION_LOCK:           //  Special case if model contain
+      s lock column
+                    $_sLockName = ( ! $oModel->{$_sLockColumn} ) ? 'Lock' : 'Unlo
+      ck';
+                    $_sIconName = ( $oModel->{$_sLockColumn} ) ? 'locked' : 'unlo
+      cked';
+
+                    //  Lock import file
+                    $_sActions .= PS::jquiButton( $_sLockName, $_arLink,
+                        array(
+                            'confirm' => "Do you really want to " . strtolower( $
+      _sLockName ) . " this {$_sDataName}?",
+                            'iconOnly' => true, 
+                            'icon' => $_sIconName,
+                            'iconSize' => 'small'
+                        )
+                    );
+                    break;
+                
+                case PS::ACTION_VIEW:
+                    $_sActions .= PS::jquiButton( 'View', $_arLink, array( 'iconO
+      nly' => true, 'icon' => 'gear', 'iconSize' => 'small' ) );
+                    break;
+                    
+                case PS::ACTION_EDIT:
+                    $_sActions .= PS::jquiButton( 'Edit', $_arLink, array( 'iconO
+      nly' => true, 'icon' => 'pencil', 'iconSize' => 'small' ) );
+                    break;
+                    
+                case PS::ACTION_DELETE:
+                    $_sActions .= PS::jquiButton( 'Delete', array( 'delete', $_sP
+      K => $_oId ),
+                        array(
+                            'confirm' => "Do you really want to delete this {$_sD
+      ataName}?",
+                            'iconOnly' => true, 
+                            'icon' => 'trash', 
+                            'iconSize' => 'small'
+                        )
+                    );
+                    break;
+                    
+                default:    //  Catchall for prefab stuff...
+                    $_sActions .= str_ireplace( '%%PK_VALUE%%', $_oId, $_sAction 
+      );
+                    break;
+            }
+        }
+        
+        return $_sActions;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDataGrid_a4f277aa7b3be8aead6d545302ac7c84b}{
+\index{CPSDataGrid@{CPSDataGrid}!create@{create}}
+\index{create@{create}!CPSDataGrid@{CPSDataGrid}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static create (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sDataName, }
+\item[{\$}]{ arModel, }
+\item[{\$}]{ arColumns = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ arActions = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ oSort = {\ttfamily null}, }
+\item[{\$}]{ oPages = {\ttfamily null}, }
+\item[{\$}]{ arPagerOptions = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ sLinkView = {\ttfamily 'update'}, }
+\item[{\$}]{ bEncode = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSDataGrid_a4f277aa7b3be8aead6d545302ac7c84b}
+Outputs a data grid with pager on the bottom
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sDataName \item[{\em array}]\$arModel \item[{\em array}]\$arColumns \item[{\em array}]\$arActions \item[{\em CSort}]\$oSort \item[{\em CPagination}]\$oPages \item[{\em array}]\$arPagerOptions \item[{\em mixed}]\$sLinkView \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSDataGrid_aea971c9c726d0e1a6f345c986cca7ded}{CPSDataGrid::createEx} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[\hyperlink{deprecated__deprecated000007}{Deprecated}]Please use \hyperlink{classCPSDataGrid_aea971c9c726d0e1a6f345c986cca7ded}{CPSDataGrid::createEx()} \end{Desc}
+
+
+Definition at line 519 of file CPSDataGrid.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Build option array for createEx
+        return self::createEx( $arModel, 
+            array(
+                'modelName'     => PS::o( $arPagerOptions, 'modelName', null, tru
+      e ),
+                'accordion'     => PS::o( $arPagerOptions, 'accordion', false, tr
+      ue ),
+                'gridHeader'    => PS::o( $arPagerOptions, 'gridHeader', null, tr
+      ue ),
+                'divComment'    => PS::o( $arPagerOptions, 'divComment', array(),
+       true ),
+                'pk'            => PS::o( $arPagerOptions, 'pk', null, true ),
+                'pages'         => $oPages,
+                'sort'          => $oSort,
+                'actions'       => $arActions,
+                'columns'       => $arColumns,
+                'dataItemName'  => $sDataName,
+                'linkView'      => $sLinkView,
+                'encode'        => $bEncode,
+                'pagerOptions'  => $arPagerOptions,
+            )
+        );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDataGrid_aea971c9c726d0e1a6f345c986cca7ded}{
+\index{CPSDataGrid@{CPSDataGrid}!createEx@{createEx}}
+\index{createEx@{createEx}!CPSDataGrid@{CPSDataGrid}}
+\subsubsection[{createEx}]{\setlength{\rightskip}{0pt plus 5cm}static createEx (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arModel, }
+\item[{\$}]{ arOptions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSDataGrid_aea971c9c726d0e1a6f345c986cca7ded}
+Outputs a data grid with pager on the bottom
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arModel Array of models \item[{\em array}]\$arOptions Grid options \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file CPSDataGrid.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Initialize...
+        $_sFormHeader = $_sOut = $_sPager = null;
+        self::$m_iColumnCount = 0;
+        self::$m_arGridOptions = $arOptions;
+        
+        //  Register our css...
+        PS::_rcf( PS::_publish( Yii::getPathOfAlias( 'pogostick.templates.css' ) 
+      . DIRECTORY_SEPARATOR . 'ps-data-grid.css' ) );
+        
+        //  Store our model, get our options
+        self::$m_arGridOptions['data'] = $arModel;
+        $_arPagerOptions = PS::o( $arOptions, 'pagerOptions', array(), true );
+        $_sPagerClass = PS::o( $arOptions, 'pagerClass', 'CPSLinkPager', true );
+        $_bAccordion = PS::o( $arOptions, 'accordion', false, true );
+        $_sGridHeader = PS::o( $arOptions, 'gridHeader', null, true );
+        $_oPages = PS::o( $arOptions, 'pages', null, true );
+        $_arFormHeader = PS::o( $arOptions, 'formHeader', null, true );
+        $_sItemName = PS::o( $arOptions, 'itemName', 'itme' );
+        
+        if ( null !== $_arFormHeader )
+        {
+            $_arFormHeader['flashMessage'] = PS::o( $arOptions, 'flashMessage' );
+      
+            $_arFormHeader['itemName'] = PS::o( $_arFormHeader, 'itemName', $_sIt
+      emName );
+            $_sFormHeader = PS::o( $_arFormHeader, 'title', 'Form Header', true )
+      ;
+        }
+        else
+        {
+            if ( null !== ( $_arMenuButtons = PS::o( $arOptions, 'menuButtons', n
+      ull, true ) ) )
+            {
+                $_sFormHeader = PS::o( $_arFormHeader, 'title', 'Form Header', tr
+      ue );
+                $_arFormHeader = array(
+                    'menuButtons' => $_arMenuButtons,
+                    'itemName' => PS::o( $arOptions, 'dataItemName', $_sItemName 
+      ),
+                );
+            }
+        }
+        
+        //  Make a form header!
+        if ( $_arFormHeader ) echo CPSForm::formHeaderEx( $_sFormHeader, $_arForm
+      Header );
+        
+        //  Only work with CPSLinkPagers
+        if ( ! is_a( $_sPagerClass, 'CPSLinkPager' ) ) $_sPagerClass = 'CPSLinkPa
+      ger';
+
+        $_iPagerLocation = PS::o( $_arPagerOptions, 'location', PS::PL_TOP_RIGHT,
+       true );
+
+        //  Create widget...
+        if ( $_oPages ) 
+        {
+            $_oWidget = Yii::app()->controller->createWidget( $_sPagerClass, arra
+      y_merge( array( 'pages' => $_oPages ), $_arPagerOptions ) );
+        
+            if ( $_oWidget ) 
+            {
+                $_oWidget->pagerLocation = PS::nvl( $_iPagerLocation, $_oWidget->
+      pagerLocation );
+                $_sPager = $_oWidget->run( true );
+
+                //  Where do you want it?
+                if ( $_oWidget->pagerLocation == PS::PL_TOP_LEFT || $_oWidget->pa
+      gerLocation == PS::PL_TOP_RIGHT ) $_sOut .= $_sPager;
+            }
+        }
+
+        //  Add accordion header if requested...
+        if ( $_bAccordion ) echo '<h3 class="ui-accordion-header ui-helper-reset 
+      ui-state-active ui-corner-top ps-grid-accordion-header"><span class="ui-icon ui-i
+      con-triangle-1-s" ></span><a href="#"><strong>' . $_sGridHeader . '</strong></a><
+      /h3>';
+        
+        //  Build our grid
+        $_sOut .= self::beginDataGrid();
+        $_sOut .= self::getDataGridRows();
+        $_sOut .= self::endDataGrid();
+
+        //  Display on the bottom...
+        if ( $_oWidget && ( $_oWidget->pagerLocation == PS::PL_BOTTOM_LEFT || $_o
+      Widget->pagerLocation == PS::PL_BOTTOM_RIGHT ) ) 
+            $_sOut .= $_sPager;
+        
+        return $_sOut;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSDataGrid_aea971c9c726d0e1a6f345c986cca7ded_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDataGrid_ae3e67a9bbb3458e9757437db4a6d9cb1}{
+\index{CPSDataGrid@{CPSDataGrid}!endDataGrid@{endDataGrid}}
+\index{endDataGrid@{endDataGrid}!CPSDataGrid@{CPSDataGrid}}
+\subsubsection[{endDataGrid}]{\setlength{\rightskip}{0pt plus 5cm}static endDataGrid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSDataGrid_ae3e67a9bbb3458e9757437db4a6d9cb1}
+Closes a data grid 
+
+Definition at line 325 of file CPSDataGrid.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return PS::closeTag( 'table' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classCPSDataGrid_ae3e67a9bbb3458e9757437db4a6d9cb1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDataGrid_a0ae5d625361f41ef35ce201e37dc7041}{
+\index{CPSDataGrid@{CPSDataGrid}!getDataGridRows@{getDataGridRows}}
+\index{getDataGridRows@{getDataGridRows}!CPSDataGrid@{CPSDataGrid}}
+\subsubsection[{getDataGridRows}]{\setlength{\rightskip}{0pt plus 5cm}static getDataGridRows (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSDataGrid_a0ae5d625361f41ef35ce201e37dc7041}
+
+
+Definition at line 224 of file CPSDataGrid.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Pull are variables from the options
+        $_sNoDataMessage = PS::o( self::$m_arGridOptions, 'noDataMessage', 'No Re
+      cords Found', true );
+        $arModel = PS::o( self::$m_arGridOptions, 'data', array() );
+        $sLinkView = PS::o( self::$m_arGridOptions, 'linkView', null );
+        $arColumns = PS::o( self::$m_arGridOptions, 'columns', array() );
+        $sPK = PS::o( self::$m_arGridOptions, 'pk', null );
+        $bEncode = PS::o( self::$m_arGridOptions, 'encode', true );
+        $arDivComment = PS::o( self::$m_arGridOptions, 'divComment', array() );
+        $_sRowIdTemplate = PS::o( self::$m_arGridOptions, 'rowIdTemplate', '_grid
+      _row_{pk}' );
+        
+        //  sub options
+        $_arOptions = PS::o( $arActions, 'options', array(), true );
+        $_sLockColumn = PS::o( $_arOptions, 'lockColumn', null, true );
+        
+        //  Build the grid rows
+        $_sOut = null;
+        $_iRow = 0;
+        
+        //  Build the output row
+        $_arRowOpts = array();
+        
+        if ( count( $arDivComment ) && $_oModel->hasErrors() )
+            $_arRowOpts = array( 'class' => $arDivComment[1], 'title' => implode(
+       ', ', current( $_oModel->getErrors() ) ) );
+            
+        $_arRowOpts['class'] = PS::o( $_arRowOpts, 'class', 'ui-widget-content' )
+      ;
+        
+        if ( ! $arModel || ( is_array( $arModel ) && ! count( $arModel ) ) ) 
+        {
+            $_sOut .= PS::tag( 'tr', $_arRowOpts, PS::tag( 'td', array( 'class' =
+      > 'ps-data-grid-no-data-found', 'colspan' => self::$m_iColumnCount ), $_sNoDataMe
+      ssage ) );
+        }
+        else
+        {
+            $_sBaseClass = $_arOptions['class'];
+            
+            foreach ( $arModel as $_iIndex => $_oModel )
+            {
+                $_sActions = null;
+                $_sPK = PS::nvl( $sPK, $_oModel->getTableSchema()->primaryKey );
+                $_sTD = CPSTransform::column( $_oModel, $arColumns, $sLinkView, '
+      td', array( 'encode' => $bEncode ) );
+                    
+                //  Build actions...
+                if ( $_sActions = self::buildActions( $_oModel ) )
+                    $_sTD .= PS::tag( 'td', array( 'class' => 'ps-grid-actions' )
+      , '<div class="ps-grid-actions-inner">' . $_sActions . '<hr /></div>' );
+                
+                //  Row id template? Fill it in
+                if ( $_sRowIdTemplate ) 
+                {
+                    if ( false !== stripos( $_sRowIdTemplate, '{#}' ) )
+                        $_arRowOpts['id'] = str_ireplace( '{#}', $_iRow, $_sRowId
+      Template );
+                    else if ( false !== stripos( $_sRowIdTemplate, '{pk}' ) && $_
+      sPK )
+                        $_arRowOpts['id'] = str_ireplace( '{pk}', $_oModel->{$_sP
+      K}, $_sRowIdTemplate );
+                }
+                
+                //  Mark odd rows
+                $_sClass = $_sBaseClass;
+                
+                if ( $_iRow % 2 == 0 ) 
+                {
+                    $_sClass .= ' ui-state-default ps-data-grid-row-odd';
+                }
+                else
+                {
+                    $_sClass .= ' ui-state-active ps-data-grid-row-even';
+                }
+                
+                $_arOptions['class'] = $_sClass;
+                
+                $_sOut .= PS::tag( 'tr', $_arOptions, $_sTD );
+                
+                //  Add subrows...
+                if ( ! empty( $_oModel->subRows ) )
+                {
+                    foreach ( $_oModel->subRows as $_oRow )
+                    {
+                        $_arInnerOptions = PS::smart_array_merge( PS::o( $_oRow, 
+      '_innerHtmlOptions', array(), true ), array( 'encode' => false ) );
+                        $_arOuterOptions = PS::smart_array_merge( array( 'class' 
+      => 'ps-sub-row' ), PS::o( $_oRow, '_outerHtmlOptions', array(), true ) );
+                        
+                        $_sRow = CPSTransform::column( $_oRow, array_keys( $_oRow
+       ), null, 'td', $_arInnerOptions );
+
+                        if ( ! empty( $arActions ) )
+                        {
+                            $_sRow .= PS::tag( 'td', PS::smart_array_merge( $_arI
+      nnerOptions, array( 'class' => 'grid-actions' ) ), '<div class="_grid_actions">&n
+      bsp;<hr /></div>' );
+                        }
+                            
+                        $_sOut .= PS::tag( 'tr', $_arOuterOptions, $_sRow );
+                    }
+                }
+                
+                $_iRow++;
+            }
+        }
+        
+        return $_sOut;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classCPSDataGrid_a0ae5d625361f41ef35ce201e37dc7041_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classCPSDataGrid_a0ae5d625361f41ef35ce201e37dc7041_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDataGrid_a714d703744491d6a840be72c0bbc4bdc}{
+\index{CPSDataGrid@{CPSDataGrid}!getGridOptions@{getGridOptions}}
+\index{getGridOptions@{getGridOptions}!CPSDataGrid@{CPSDataGrid}}
+\subsubsection[{getGridOptions}]{\setlength{\rightskip}{0pt plus 5cm}getGridOptions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDataGrid_a714d703744491d6a840be72c0bbc4bdc}
+
+
+Definition at line 41 of file CPSDataGrid.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_arGridOptions; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSDataGrid_acd9b2a44c8b6b5aac349c4577bb0c00c}{
+\index{CPSDataGrid@{CPSDataGrid}!getMenuButtonType@{getMenuButtonType}}
+\index{getMenuButtonType@{getMenuButtonType}!CPSDataGrid@{CPSDataGrid}}
+\subsubsection[{getMenuButtonType}]{\setlength{\rightskip}{0pt plus 5cm}static getMenuButtonType (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sButton}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSDataGrid_acd9b2a44c8b6b5aac349c4577bb0c00c}
+Converts a string action to its corresponding enum 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sAction \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file CPSDataGrid.php.
+
+
+
+
+\begin{DoxyCode}
+{ return is_numeric( $sButton ) ? intval( $sButton ) : PS::o( self::
+      $m_arMenuButtonMap, $sButton ); }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=390pt]{classCPSDataGrid_acd9b2a44c8b6b5aac349c4577bb0c00c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSDataGrid_a9d4cb8e1eb461643829da0b608ee73ed}{
+\index{CPSDataGrid@{CPSDataGrid}!setGridOptions@{setGridOptions}}
+\index{setGridOptions@{setGridOptions}!CPSDataGrid@{CPSDataGrid}}
+\subsubsection[{setGridOptions}]{\setlength{\rightskip}{0pt plus 5cm}setGridOptions (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSDataGrid_a9d4cb8e1eb461643829da0b608ee73ed}
+
+
+Definition at line 42 of file CPSDataGrid.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_arGridOptions = $arValue; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSDataGrid_aca9359f1c287f1fdc37313507050fe58}{
+\index{CPSDataGrid@{CPSDataGrid}!\$m\_\-arActionMap@{\$m\_\-arActionMap}}
+\index{\$m\_\-arActionMap@{\$m\_\-arActionMap}!CPSDataGrid@{CPSDataGrid}}
+\subsubsection[{\$m\_\-arActionMap}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-arActionMap\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSDataGrid_aca9359f1c287f1fdc37313507050fe58}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ array(
+        PS::ACTION_CREATE => 'create',
+        PS::ACTION_VIEW => 'show',
+        PS::ACTION_EDIT => 'edit',
+        PS::ACTION_SAVE => 'save',
+        PS::ACTION_DELETE => 'delete',
+        PS::ACTION_LOCK => 'lock',
+        PS::ACTION_UNLOCK => 'unlock',
+        PS::ACTION_PREVIEW => 'preview',
+    )
+\end{DoxyCode}
+Map of predefined row-\/level actions to names 
+
+Definition at line 67 of file CPSDataGrid.php.
+
+\hypertarget{classCPSDataGrid_acd4ff83641d8c0eac7c449802d557a21}{
+\index{CPSDataGrid@{CPSDataGrid}!\$m\_\-arGridOptions@{\$m\_\-arGridOptions}}
+\index{\$m\_\-arGridOptions@{\$m\_\-arGridOptions}!CPSDataGrid@{CPSDataGrid}}
+\subsubsection[{\$m\_\-arGridOptions}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-arGridOptions = {\bf array}()\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSDataGrid_acd4ff83641d8c0eac7c449802d557a21}
+
+
+Definition at line 40 of file CPSDataGrid.php.
+
+\hypertarget{classCPSDataGrid_a36b298be9109a11d6fc986b36831f96f}{
+\index{CPSDataGrid@{CPSDataGrid}!\$m\_\-arMenuButtonMap@{\$m\_\-arMenuButtonMap}}
+\index{\$m\_\-arMenuButtonMap@{\$m\_\-arMenuButtonMap}!CPSDataGrid@{CPSDataGrid}}
+\subsubsection[{\$m\_\-arMenuButtonMap}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-arMenuButtonMap\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSDataGrid_a36b298be9109a11d6fc986b36831f96f}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ array(
+        'none'      => null,
+        'new'       => PS::ACTION_CREATE,
+        'create'    => PS::ACTION_CREATE,
+        'view'      => PS::ACTION_VIEW,
+        'edit'      => PS::ACTION_EDIT,
+        'update'    => PS::ACTION_EDIT,
+        'save'      => PS::ACTION_SAVE,
+        'delete'    => PS::ACTION_DELETE,
+        'lock'      => PS::ACTION_LOCK,
+        'unlock'    => PS::ACTION_UNLOCK,
+        'admin'     => PS::ACTION_ADMIN,
+        'cancel'    => PS::ACTION_CANCEL,
+        'return'    => PS::ACTION_CANCEL,
+        'preview'   => PS::ACTION_PREVIEW,
+    )
+\end{DoxyCode}
+Map of predefined menuButton names to types 
+
+Definition at line 47 of file CPSDataGrid.php.
+
+\hypertarget{classCPSDataGrid_a1ee8c98e418359687d96dff41468fa61}{
+\index{CPSDataGrid@{CPSDataGrid}!\$m\_\-iColumnCount@{\$m\_\-iColumnCount}}
+\index{\$m\_\-iColumnCount@{\$m\_\-iColumnCount}!CPSDataGrid@{CPSDataGrid}}
+\subsubsection[{\$m\_\-iColumnCount}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-iColumnCount\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSDataGrid_a1ee8c98e418359687d96dff41468fa61}
+
+
+Definition at line 33 of file CPSDataGrid.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/widgets/\hyperlink{CPSDataGrid_8php}{CPSDataGrid.php}\end{DoxyCompactItemize}

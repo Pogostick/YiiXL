@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classYiiXLBase.html#a63e266f4aeea2000b20b5808038b8aa7" title="Constructs a unique name based on component, hashes by default." alt="" coords="109,5,323,35"/>
+<area shape="rect" id="node7" href="$classCXLOAuthBehavior.html#a5126349c471fcaff1a74b9d117b979b1" title="Loads a token from the user state oAuthToken." alt="" coords="109,59,323,88"/>
+<area shape="rect" id="node11" href="$classCXLOAuthBehavior.html#a8027c4853ebf41108725eb798ebfcd59" title="Stores the current token in a member variable and in the user state oAuthToken." alt="" coords="107,112,325,141"/>
+<area shape="rect" id="node5" href="$classYiiXLBase.html#a06e30551462355a35c656bf1e7ded6f9" title="Registers a piece of CSS code." alt="" coords="377,5,540,35"/>
+<area shape="rect" id="node9" href="$classCXLOAuthBehavior.html#a4be4055f3361d4800e16bc2e2e38cda6" title="Initialize this behavior." alt="" coords="375,85,543,115"/>
+</map>

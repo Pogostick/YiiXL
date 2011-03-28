@@ -1,0 +1,334 @@
+\hypertarget{classCPSRestBehavior}{
+\section{CPSRestBehavior Class Reference}
+\label{classCPSRestBehavior}\index{CPSRestBehavior@{CPSRestBehavior}}
+}
+
+
+Inheritance diagram for CPSRestBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classCPSRestBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSRestBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classCPSRestBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSRestBehavior_a6553035abe6356a4ca842b3830583410}{getRestActions} ()
+\item 
+\hyperlink{classCPSRestBehavior_ae769f00b96dcdb6c7c0c761c3a4de0cd}{setRestActions} (\$restActions)
+\item 
+\hyperlink{classCPSRestBehavior_ad2fda622d44df662f045744074950eb3}{addRestAction} (\$actionName, \$method= 'GET', \$access=\hyperlink{classCPSController_a437b41cb9e13e41157d57e7736366295}{CPSCRUDController::ACCESS\_\-TO\_\-AUTH})
+\item 
+\hyperlink{classCPSRestBehavior_ad63fb44302b80922988514238a32e6fa}{hasAction} (\$actionName, \$method= 'GET')
+\item 
+\hyperlink{classCPSRestBehavior_ae6184c2ab5f3c23fd889d48f6cb7b675}{createAction} (\$sActionId)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSRestBehavior_a3c7475de624dc901f0531c2ed2b571af}{dispatchRequest} (CAction \$oAction)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSRestBehavior_a4e62c524fa45179f327db8f3513897a7}{\$\_\-restActions} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 44 of file CPSRestBehavior.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSRestBehavior_ad2fda622d44df662f045744074950eb3}{
+\index{CPSRestBehavior@{CPSRestBehavior}!addRestAction@{addRestAction}}
+\index{addRestAction@{addRestAction}!CPSRestBehavior@{CPSRestBehavior}}
+\subsubsection[{addRestAction}]{\setlength{\rightskip}{0pt plus 5cm}addRestAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ actionName, }
+\item[{\$}]{ method = {\ttfamily 'GET'}, }
+\item[{\$}]{ access = {\ttfamily {\bf CPSCRUDController::ACCESS\_\-TO\_\-AUTH}}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSRestBehavior_ad2fda622d44df662f045744074950eb3}
+
+
+Definition at line 68 of file CPSRestBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->_restActions[ $actionName ] = array(
+            'method' => $method,
+            'access' => $access,
+        );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSRestBehavior_ae6184c2ab5f3c23fd889d48f6cb7b675}{
+\index{CPSRestBehavior@{CPSRestBehavior}!createAction@{createAction}}
+\index{createAction@{createAction}!CPSRestBehavior@{CPSRestBehavior}}
+\subsubsection[{createAction}]{\setlength{\rightskip}{0pt plus 5cm}createAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sActionId}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSRestBehavior_ae6184c2ab5f3c23fd889d48f6cb7b675}
+Creates the action instance based on the action name. The action can be either an inline action or an object. The latter is created by looking up the action map specified in \hyperlink{}{actions}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]ID of the action. If empty, the \hyperlink{}{default action} will be used. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+CAction the action instance, null if the action does not exist. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+actions 
+\end{DoxySeeAlso}
+
+
+Definition at line 98 of file CPSRestBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sActionId = ( $sActionId === '' ) ? $this->getOwner()->defaultAction : 
+      $sActionId;
+
+        //  Is it a valid request?
+        if ( ! method_exists( $this->getOwner(), 'get' . $_sActionId ) && ! metho
+      d_exists( $this->getOwner(), 'post' . $_sActionId ) && ! method_exists( $this->ge
+      tOwner(), 'request' . $_sActionId ) )
+            return $this->getOwner()->missingAction( $_sActionId );
+
+        return new CPSRESTAction( $this->getOwner(), $_sActionId );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSRestBehavior_a3c7475de624dc901f0531c2ed2b571af}{
+\index{CPSRestBehavior@{CPSRestBehavior}!dispatchRequest@{dispatchRequest}}
+\index{dispatchRequest@{dispatchRequest}!CPSRestBehavior@{CPSRestBehavior}}
+\subsubsection[{dispatchRequest}]{\setlength{\rightskip}{0pt plus 5cm}dispatchRequest (
+\begin{DoxyParamCaption}
+\item[{CAction \$}]{ oAction}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSRestBehavior_a3c7475de624dc901f0531c2ed2b571af}
+Runs the named REST action. Filters specified via \hyperlink{}{filters()} will be applied. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sActionId Action id \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CHttpException}]if the action does not exist or the action name is not proper. \end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+filters 
+
+\hyperlink{classCPSRestBehavior_ae6184c2ab5f3c23fd889d48f6cb7b675}{createAction} 
+
+runAction  protected 
+\end{DoxySeeAlso}
+
+
+Definition at line 123 of file CPSRestBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sActionId = $oAction->getId();
+        $_arParams = $_REQUEST;
+        $_arUrlParams = array();
+        $_arOpts = array();
+
+        //  If additional parameters are specified in the URL, convert to paramet
+      ers...
+        $_sUri = Yii::app()->getRequest()->getRequestUri();
+
+        if ( null != ( $_sUri = trim( str_ireplace( '/' . $this->getOwner()->getI
+      d() . '/' . $_sActionId, '', $_sUri ) ) ) )
+        {
+            $_sUri = trim( $_sUri, '/?' );
+            $_arOpts = ( ! empty( $_sUri ) ? explode( '/', $_sUri ) : array() );
+
+            foreach ( $_arOpts as $_sKey => $_oValue )
+            {
+                if ( false !== strpos( $_oValue, '=' ) )
+                {
+                    if ( null != ( $_arTemp = explode( '=', $_oValue ) ) )
+                        $_arOpts[ $_arTemp[0] ] = $_arTemp[1];
+
+                    unset( $_arOpts[ $_sKey ] );
+                }
+                else
+                    $_arOpts[ $_sKey ] = $_oValue;
+            }
+        }
+
+        //  Any query string? (?x=y&...)
+        if ( null != ( $_sQuery = parse_url( $_sUri, PHP_URL_QUERY ) ) )
+            $_arOpts = array_merge( explode( '=', $_sQuery ), $_arOpts );
+
+        //  load into url params
+        foreach ( $_arOpts as $_sKey => $_sValue )
+            if ( ! isset( $_arUrlParams[ $_sKey ] ) ) $_arUrlParams[ $_sKey ] = $
+      _sValue;
+
+        //  Is it a valid request?
+        $_sType = strtolower( $this->getOwner()->getRequest()->getRequestType() )
+      ;
+        $_sMethod = $_sType . ucfirst( $_sActionId );
+
+        if ( $_sType == 'post' )
+        {
+            foreach ( $_POST as $_sKey => $_oValue )
+            {
+                if ( ! is_array( $_oValue ) )
+                    $_arUrlParams[ $_sKey ] = $_oValue;
+                else
+                {
+                    foreach ( $_oValue as $_sSubKey => $_oSubValue )
+                        $_arUrlParams[ $_sSubKey ] = $_oSubValue;
+                }
+            }
+        }
+
+        if ( ! method_exists( $this->getOwner(), $_sMethod ) )
+        {
+            //  Is it a valid catchall request?
+            if ( ! method_exists( $this->getOwner(), 'request' . $_sActionId ) )
+                //  No clue what it is, so must be bogus. Hand off to missing act
+      ion...
+                return $this->getOwner()->missingAction( $_sActionId );
+
+            $_sMethod = 'request' . $_sActionId;
+        }
+
+        //  All rest methods echo their output
+        echo call_user_func_array( array( $this->getOwner(), $_sMethod ), array_v
+      alues( $_arUrlParams ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSRestBehavior_a6553035abe6356a4ca842b3830583410}{
+\index{CPSRestBehavior@{CPSRestBehavior}!getRestActions@{getRestActions}}
+\index{getRestActions@{getRestActions}!CPSRestBehavior@{CPSRestBehavior}}
+\subsubsection[{getRestActions}]{\setlength{\rightskip}{0pt plus 5cm}getRestActions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSRestBehavior_a6553035abe6356a4ca842b3830583410}
+
+
+Definition at line 55 of file CPSRestBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_restActions; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSRestBehavior_ad63fb44302b80922988514238a32e6fa}{
+\index{CPSRestBehavior@{CPSRestBehavior}!hasAction@{hasAction}}
+\index{hasAction@{hasAction}!CPSRestBehavior@{CPSRestBehavior}}
+\subsubsection[{hasAction}]{\setlength{\rightskip}{0pt plus 5cm}hasAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ actionName, }
+\item[{\$}]{ method = {\ttfamily 'GET'}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSRestBehavior_ad63fb44302b80922988514238a32e6fa}
+Determines if this behavior knows about a particular action. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$actionName \item[{\em string}]\$method \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file CPSRestBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $_action = CPSHelperBase::o( $this->_restActions, $actionName ) )
+            return ( CPSHelperBase::o( $this->_restActions[$actionName], 'method'
+       ) == $method );
+
+        return false;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{classCPSRestBehavior_ad63fb44302b80922988514238a32e6fa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSRestBehavior_ae769f00b96dcdb6c7c0c761c3a4de0cd}{
+\index{CPSRestBehavior@{CPSRestBehavior}!setRestActions@{setRestActions}}
+\index{setRestActions@{setRestActions}!CPSRestBehavior@{CPSRestBehavior}}
+\subsubsection[{setRestActions}]{\setlength{\rightskip}{0pt plus 5cm}setRestActions (
+\begin{DoxyParamCaption}
+\item[{\$}]{ restActions}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSRestBehavior_ae769f00b96dcdb6c7c0c761c3a4de0cd}
+
+
+Definition at line 56 of file CPSRestBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_restActions = $restActions; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSRestBehavior_a4e62c524fa45179f327db8f3513897a7}{
+\index{CPSRestBehavior@{CPSRestBehavior}!\$\_\-restActions@{\$\_\-restActions}}
+\index{\$\_\-restActions@{\$\_\-restActions}!CPSRestBehavior@{CPSRestBehavior}}
+\subsubsection[{\$\_\-restActions}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-restActions = {\bf array}()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSRestBehavior_a4e62c524fa45179f327db8f3513897a7}
+
+
+Definition at line 54 of file CPSRestBehavior.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/behaviors/\hyperlink{CPSRestBehavior_8php}{CPSRestBehavior.php}\end{DoxyCompactItemize}

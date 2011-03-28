@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classYiiXLBase.html#ac2bdee30f3e1ff39d01e094d6c6c311e" title="Stores a flash message." alt="" coords="177,5,284,35"/>
+<area shape="rect" id="node5" href="$classCXLController.html#aee989705ca23d787542be0bf30a28000" title="Returns the data model based on the primary key given in the GET variable." alt="" coords="164,59,297,88"/>
+<area shape="rect" id="node7" href="$classCXLController.html#a60bcb5a5a2a82bb81a4ae4b07ef4d3bb" title="_load" alt="" coords="376,5,432,35"/>
+<area shape="rect" id="node13" href="$classYiiXLBase.html#abba281d4c1813d0fb984cbca6784930a" title="Retrieves an option from the given array." alt="" coords="355,59,453,88"/>
+<area shape="rect" id="node15" href="$group__propaccs__cxlcontroller.html#ga24e8b6f39d6a823d94317e35f1b94758" title="setModelClass" alt="" coords="347,112,461,141"/>
+<area shape="rect" id="node9" href="$classCXLController.html#aa4366f95a403727195880be2634228bb" title="Loads a model(s) based on criteria and scopes." alt="" coords="511,5,655,35"/>
+<area shape="rect" id="node11" href="$classCXLController.html#a34b95849087b6c8b67b8f2be164ff920" title="Builds a string suitable for eval." alt="" coords="704,5,861,35"/>
+</map>

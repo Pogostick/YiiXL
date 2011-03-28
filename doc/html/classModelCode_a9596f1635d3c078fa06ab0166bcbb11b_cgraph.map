@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classModelCode.html#ab09877095074b6bfc650a85200d0189b" title="generateClassName" alt="" coords="321,34,473,63"/>
+<area shape="rect" id="node5" href="$classModelCode.html#a0375bc447ca8e3632ff8f909a324f96c" title="removePrefix" alt="" coords="531,34,637,63"/>
+<area shape="rect" id="node7" href="$classModelCode.html#a6e265367e1344ab4817a0f31a6025892" title="generateRelations" alt="" coords="127,86,263,115"/>
+<area shape="rect" id="node15" href="$classModelCode.html#a3c33fb60a7ac31271b9479cbda88578a" title="generateRules" alt="" coords="139,139,251,169"/>
+<area shape="rect" id="node17" href="$classModelCode.html#a5eac2a49f496d7dd3bb5c85125d721b1" title="getTableSchema" alt="" coords="131,193,259,222"/>
+<area shape="rect" id="node10" href="$classModelCode.html#a3efd4c5c31f9bc04aaeab3db78805a7e" title="generateRelationName" alt="" coords="313,87,481,117"/>
+<area shape="rect" id="node12" href="$classModelCode.html#a1599d29ee50f29d0ba66d77013b0e767" title="isRelationTable" alt="" coords="340,141,455,170"/>
+</map>

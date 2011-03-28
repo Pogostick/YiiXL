@@ -1,0 +1,557 @@
+\hypertarget{classCPSCrudCommand}{
+\section{CPSCrudCommand Class Reference}
+\label{classCPSCrudCommand}\index{CPSCrudCommand@{CPSCrudCommand}}
+}
+
+
+Inheritance diagram for CPSCrudCommand:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classCPSCrudCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSCrudCommand:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classCPSCrudCommand__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSCrudCommand_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSCrudCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{run} (\$arArgs)
+\item 
+\hyperlink{classCPSCrudCommand_a49dc0a7897a19cca4729069259c39623}{generateController} (\$sSourceFile, \$arParams)
+\item 
+\hyperlink{classCPSCrudCommand_a81be02780978c8c023217c75e1dd863d}{generateView} (\$sSource, \$arParams=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSCrudCommand_a383b6e2ef409c302d0a231b05d7392a9}{generateInputLabel} (\$sModelClass, \$oColumn)
+\item 
+\hyperlink{classCPSCrudCommand_a3a57c7a7020dbfaab8ae96210650be3e}{generateInputField} (\$sModelClass, \$oColumn)
+\item 
+\hyperlink{classCPSCrudCommand_a4cc928ef4def3a84c181608d31bf7608}{getHelp} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSCrudCommand_af71005841ce53adac00581ab0ba24c1f}{VERSION} = '1.0.6'
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Command that generates a Pogostick Yii CRUD set 
+
+Definition at line 23 of file CPSCrudCommand.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSCrudCommand_a49dc0a7897a19cca4729069259c39623}{
+\index{CPSCrudCommand@{CPSCrudCommand}!generateController@{generateController}}
+\index{generateController@{generateController}!CPSCrudCommand@{CPSCrudCommand}}
+\subsubsection[{generateController}]{\setlength{\rightskip}{0pt plus 5cm}generateController (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSourceFile, }
+\item[{\$}]{ arParams}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCrudCommand_a49dc0a7897a19cca4729069259c39623}
+Generate a controller, ingore lack of PK for views
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$sSourceFile \item[{\em mixed}]\$arParams \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSControllerCommand_a49dc0a7897a19cca4729069259c39623}{CPSControllerCommand}.
+
+
+
+Definition at line 129 of file CPSCrudCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        list( $_sControllerClass, $_sModelClass ) = $arParams;
+        
+        $_oModel = CPSModel::model( $_sModelClass );
+
+        //  Fall back to default ones
+        if ( ! is_file( $sSourceFile ) ) $sSourceFile = YII_PATH . '/cli/views/sh
+      ell/crud/' . basename( $sSourceFile );
+
+        //  Render
+        return $this->renderFile( 
+            $sSourceFile,
+            array(
+                'ID' => PS::nvl( $_oModel->tableSchema->primaryKey, '' ),
+                'controllerClass' => $_sControllerClass,
+                'modelClass' => $_sModelClass,
+                'baseClass' => $this->controllerBaseClass,
+                'databaseName' => $this->databaseName,
+            ),
+            true
+        );
+
+//      echo "Model \"" . $this->bold( $_sModelClass ) . "\" not found. Unable to
+       generate controller \"" . $this->bold( $_sControllerClass ) . "\".\n";
+        
+//      return null;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCrudCommand_a49dc0a7897a19cca4729069259c39623_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCrudCommand_a3a57c7a7020dbfaab8ae96210650be3e}{
+\index{CPSCrudCommand@{CPSCrudCommand}!generateInputField@{generateInputField}}
+\index{generateInputField@{generateInputField}!CPSCrudCommand@{CPSCrudCommand}}
+\subsubsection[{generateInputField}]{\setlength{\rightskip}{0pt plus 5cm}generateInputField (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sModelClass, }
+\item[{\$}]{ oColumn}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCrudCommand_a3a57c7a7020dbfaab8ae96210650be3e}
+Generates an input field
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sModelClass \item[{\em CDbColumnSchema}]\$oColumn \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classCPSControllerCommand_a3a57c7a7020dbfaab8ae96210650be3e}{CPSControllerCommand}.
+
+
+
+Definition at line 219 of file CPSCrudCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $oColumn->type === 'boolean' ) return "PS::field( PS::CHECK, \$model
+      , '{$oColumn->name}' )";
+        
+        if ( false !== stripos( $oColumn->dbType, 'text' ) )
+            return "PS::field( PS::TEXTAREA, \$model, '{$oColumn->name}', array( 
+      'rows' => 6, 'cols' => 50 ) )";
+            
+        $_sType = ( preg_match( '/^(password|pass|passwd|passcode)$/i', $oColumn-
+      >name ) ) ? 'PS::PASSWORD' : 'PS::TEXT';
+
+        if ( $oColumn->type !== 'string' || $oColumn->size === null )
+            return "PS::field( {$_sType}, \$model, '{$_oColumn->name}' )";
+
+        if ( ( $_iSize = $_iMaxLength = $oColumn->size ) > 60 ) $_iSize = 60;
+
+        return "PS::field( {$_sType}, $model, '{$oColumn->name}', array( 'size' =
+      > $_iSize, 'maxlength' => $_iMaxLength ) )";
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCrudCommand_a383b6e2ef409c302d0a231b05d7392a9}{
+\index{CPSCrudCommand@{CPSCrudCommand}!generateInputLabel@{generateInputLabel}}
+\index{generateInputLabel@{generateInputLabel}!CPSCrudCommand@{CPSCrudCommand}}
+\subsubsection[{generateInputLabel}]{\setlength{\rightskip}{0pt plus 5cm}generateInputLabel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sModelClass, }
+\item[{\$}]{ oColumn}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCrudCommand_a383b6e2ef409c302d0a231b05d7392a9}
+Generates an input label
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sModelClass \item[{\em CDbColumnSchema}]\$oColumn \end{DoxyParams}
+
+
+Definition at line 208 of file CPSCrudCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Does nothing as PS::field() method will provide label
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCrudCommand_a81be02780978c8c023217c75e1dd863d}{
+\index{CPSCrudCommand@{CPSCrudCommand}!generateView@{generateView}}
+\index{generateView@{generateView}!CPSCrudCommand@{CPSCrudCommand}}
+\subsubsection[{generateView}]{\setlength{\rightskip}{0pt plus 5cm}generateView (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSource, }
+\item[{\$}]{ arParams = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCrudCommand_a81be02780978c8c023217c75e1dd863d}
+Generate a view
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sSource \item[{\em string}]\$sModelClass \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 163 of file CPSCrudCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        list( $_sControllerClass, $_sModelClass, $_sAction ) = $arParams;
+
+        try
+        {
+            if ( $_oModel = CPSModel::model( $_sModelClass ) )
+            {
+                $_oTable = $_oModel->getTableSchema();
+                $_arColumns = $_oTable->columns;
+                
+                if ( isset( $_oTable->primaryKey ) ) unset( $_arColumns[ $_oTable
+      ->primaryKey ] );
+
+                //  Check source file...
+                if ( ! is_file( $sSource ) ) 
+                {
+                    //  Try our generic view, then default framework
+                    if ( ! is_file( $sSource = Yii::getPathOfAlias( 'pogostick.te
+      mplates.crud' ) . '/view.php' ) )
+                        $sSource = YII_PATH . '/cli/views/shell/crud/' . basename
+      ( $sSource );
+                }
+                
+                return $this->renderFile( $sSource,
+                    array(
+                        'ID' => PS::nvl( $_oTable->primaryKey, '' ),
+                        'modelClass' => $_sModelClass,
+                        'columns' => $_arColumns
+                    ),
+                    true
+                );
+            }
+        }
+        catch ( Exception $_ex )
+        {
+        }
+
+        echo "Model \"" . $this->bold( $_sModelClass ) . "\" not found. Unable to
+       generate view \"" . $this->bold( $_sAction ) . "\".\n";
+        return null;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=376pt]{classCPSCrudCommand_a81be02780978c8c023217c75e1dd863d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCrudCommand_a4cc928ef4def3a84c181608d31bf7608}{
+\index{CPSCrudCommand@{CPSCrudCommand}!getHelp@{getHelp}}
+\index{getHelp@{getHelp}!CPSCrudCommand@{CPSCrudCommand}}
+\subsubsection[{getHelp}]{\setlength{\rightskip}{0pt plus 5cm}getHelp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCrudCommand_a4cc928ef4def3a84c181608d31bf7608}
+Display help 
+
+Reimplemented from \hyperlink{classCPSControllerCommand_a4cc928ef4def3a84c181608d31bf7608}{CPSControllerCommand}.
+
+
+
+Definition at line 240 of file CPSCrudCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sName = $this->bold( $this->name );
+        $_sOptions = $this->getDisplayOptions();
+        
+        return <<<EOD
+USAGE
+    \033[1m{$_sName}\033[0m <\033[1mmodel-class\033[0m> [\033[1mcontroller-ID\033
+      [0m] [options]
+
+DESCRIPTION
+  This command generates a controller and views that accomplish
+  CRUD operations for the specified data model.
+
+PARAMETERS
+ * model-class: required, the name of the data model class. This can
+   also be specified as a path alias (e.g. application.models.Post).
+   If the model class belongs to a module, it should be specified
+   as 'ModuleID.models.ClassName'.
+
+ * controller-ID: optional, the controller ID (e.g. 'post').
+   If this is not specified, the model class name will be used
+   as the controller ID. In this case, if the model belongs to
+   a module, the controller will also be created under the same
+   module.
+
+   If the controller should be located under a subdirectory,
+   please specify the controller ID as 'path/to/ControllerID'
+   (e.g. 'admin/user').
+
+   If the controller belongs to a module (different from the module
+   that the model belongs to), please specify the controller ID
+   as 'ModuleID/ControllerID' or 'ModuleID/path/to/Controller'.
+
+OPTIONS
+
+  -f, --force                  if the files exists, you will be able to 
+                                   optionally overwrite them.
+                                   
+  -d, --database               The database component to use. 
+                                   Defaults to 'db'
+
+  -b, --base-class             The base class to use for generated controllers. 
+                                   Defaults to 'CPSCRUDController'
+                                   
+  -t, --template-path          The template path to use.
+  
+  -n, --template-name          The name of the template to use. 
+                                   Defaults to 'controller.php'
+
+{$_sOptions}
+EXAMPLES
+ * Generates CRUD for the Post model:
+        {$_sName} Post
+
+ * Generates CRUD for the Post model which belongs to module 'admin':
+        {$_sName} admin.models.Post
+
+ * Generates CRUD for the Post model. The generated controller should
+   belong to module 'admin', but not the model class:
+        {$_sName} Post admin/post
+
+EOD;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=388pt]{classCPSCrudCommand_a4cc928ef4def3a84c181608d31bf7608_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classCPSCrudCommand_a4cc928ef4def3a84c181608d31bf7608_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSCrudCommand_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSCrudCommand@{CPSCrudCommand}!init@{init}}
+\index{init@{init}!CPSCrudCommand@{CPSCrudCommand}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCrudCommand_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize the command 
+
+Reimplemented from \hyperlink{classCPSControllerCommand_a4be4055f3361d4800e16bc2e2e38cda6}{CPSControllerCommand}.
+
+
+
+Definition at line 42 of file CPSCrudCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::init();
+        
+        //  Add our options
+        $this->addOptions( self::getBaseOptions() );
+
+        //  Set base values
+        $this->actions = array( 'index', 'create', 'update', 'admin', '_form' );
+
+        $this->baseClass = 'CPSModel';
+        $this->templateName = 'model.php';
+
+        $this->controllerBaseClass = 'CPSCRUDController';
+        $this->controllerTemplateName = 'controller.php';
+
+        $this->name = 'pscrud';
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSCrudCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{
+\index{CPSCrudCommand@{CPSCrudCommand}!run@{run}}
+\index{run@{run}!CPSCrudCommand@{CPSCrudCommand}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arArgs}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSCrudCommand_a330e31e8c3572ce01a4e1c8485c6aedd}
+Runs the command
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arArgs Command line parameters specific for this command \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classCPSControllerCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{CPSControllerCommand}.
+
+
+
+Definition at line 66 of file CPSCrudCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Process arguments...
+        $arArgs = $this->processArguments( $arArgs );
+
+        //  Check args...
+        if ( ! ( $_sModelClass = PS::o( $arArgs, 0, null ) ) )
+        {
+            echo $this->bold( 'Error' ) . ': model class name is required.' . PHP
+      _EOL;
+            echo $this->getHelp();
+            return;
+        }
+        
+        //  Any id?
+        $_sControllerId = trim( PS::o( $arArgs, 1, null ) );
+        
+        //  Load the module
+        $_oModule = $this->loadModule( $_sModelClass );
+                
+        //  Import the model
+        $_sModelClass = Yii::import( $_sModelClass );
+
+        //  Get controller stuff
+        list( $_sControllerClass, $_sControllerFile, $_sControllerId ) = $this->
+      parseControllerId( $_sModelClass, $_sControllerId, $_oModule );
+
+        $_sViewPath = $_oModule->viewPath . DIRECTORY_SEPARATOR . str_replace( '.
+      ', DIRECTORY_SEPARATOR, $_sControllerId );
+        
+        //  Build our parameter array
+        $_arList = array(
+            basename( $_sControllerFile ) => array(
+                'source' => $this->templatePath . DIRECTORY_SEPARATOR . $this->co
+      ntrollerTemplateName,
+                'target' => $_sControllerFile,
+                'callback' => array( $this, 'generateController' ),
+                'params' => array( $_sControllerClass, $_sModelClass ),
+            ),
+        );
+
+        //  Actions
+        foreach ( $this->actions as $_sAction )
+        {
+            $_arList[ $_sAction.'.php' ] = array(
+                'source' => $this->templatePath . DIRECTORY_SEPARATOR . $_sAction
+       . '.php',
+                'target' => $_sViewPath . DIRECTORY_SEPARATOR . $_sAction . '.php
+      ',
+                'callback' => array( $this, 'generateView' ),
+                'params' => array( $_sControllerClass, $_sModelClass, $_sAction )
+      ,
+            );
+        }
+
+        //  Show generator header
+        echo $this->displayParameters( 'CRUD Generator', array( 'Output Path' => 
+      $_sViewPath ) );
+        
+        //  Generate
+        $_arList = $this->copyFiles( $_arList );
+        echo $this->getResultDisplay( $_arList );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSCrudCommand_a330e31e8c3572ce01a4e1c8485c6aedd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSCrudCommand_af71005841ce53adac00581ab0ba24c1f}{
+\index{CPSCrudCommand@{CPSCrudCommand}!VERSION@{VERSION}}
+\index{VERSION@{VERSION}!CPSCrudCommand@{CPSCrudCommand}}
+\subsubsection[{VERSION}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf VERSION} = '1.0.6'}}
+\label{classCPSCrudCommand_af71005841ce53adac00581ab0ba24c1f}
+Our version 
+
+Reimplemented from \hyperlink{classCPSControllerCommand_af71005841ce53adac00581ab0ba24c1f}{CPSControllerCommand}.
+
+
+
+Definition at line 32 of file CPSCrudCommand.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/commands/\hyperlink{CPSCrudCommand_8php}{CPSCrudCommand.php}\end{DoxyCompactItemize}

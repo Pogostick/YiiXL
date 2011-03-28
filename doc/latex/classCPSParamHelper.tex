@@ -1,0 +1,440 @@
+\hypertarget{classCPSParamHelper}{
+\section{CPSParamHelper Class Reference}
+\label{classCPSParamHelper}\index{CPSParamHelper@{CPSParamHelper}}
+}
+
+
+Inheritance diagram for CPSParamHelper:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCPSParamHelper__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSParamHelper:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCPSParamHelper__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSParamHelper_adbe68e5cc8d1aa5d9902864c926b6c30}{getParameter} (\$sKey)
+\item 
+\hyperlink{classCPSParamHelper_a40f227a458ea32355358fcb19713d6a3}{setParameter} (\$sKey, \$sValue)
+\item 
+\hyperlink{classCPSParamHelper_a015cb52e5774a1972d296c9694d2a3c3}{getParameters} ()
+\item 
+\hyperlink{classCPSParamHelper_ab6a0925ece1b5a8a738472b53d11dddf}{resetParameters} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSParamHelper_a79bb28c511184548bcefbd367d4fadf9}{buildParameterSet} (\$arSource=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$arColumns=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+static \hyperlink{classCPSParamHelper_a63c76688969153ba5b4d4fb858d6c679}{findParam} (\$arSource=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$sColumn, \$sCondition=null, \$sOperator= '=', \$sTemplate= '\{column\}', \$bOr=false)
+\item 
+static \hyperlink{classCPSParamHelper_a07939baf7e00c9559ecb32ea1f1f07d3}{makeParam} (\$sColumn, \$oValue, \$sCondition=null, \$sOperator= '=', \$sTemplate= '\{column\}', \$bOr=false)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSParamHelper_a81adfd9f391cd4b9ff0f9fedd745e9d1}{\$m\_\-arParams} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSParamHelper.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSParamHelper_a79bb28c511184548bcefbd367d4fadf9}{
+\index{CPSParamHelper@{CPSParamHelper}!buildParameterSet@{buildParameterSet}}
+\index{buildParameterSet@{buildParameterSet}!CPSParamHelper@{CPSParamHelper}}
+\subsubsection[{buildParameterSet}]{\setlength{\rightskip}{0pt plus 5cm}static buildParameterSet (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arSource = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ arColumns = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSParamHelper_a79bb28c511184548bcefbd367d4fadf9}
+Given a source array and an array of columns, populates a parameter array with data. Returns the completed condition string.
+
+Data in \$arColumns can be strings or arrays to override defaults:
+
+\$arColumns = array( 'user\_\-name', // Exact, '=' 'email' =$>$ array( 'template' =$>$ '\%\{column\}', 'operator' =$>$ 'like' ), // Or... 'email' =$>$ array( 'like' =$>$ true ), // Same as above
+
+'password', ... )
+
+You can also specify special array parameters which will auto-\/set the values. These are:
+
+lt Sets operator to '$<$' lte Sets operator to '$<$=' eq Sets operator to '=' gt Sets operator to '$>$' gte Sets operator to '$>$=' like Sets operator to 'like' and template to '\%\{column\}' $^\wedge$like Sets operator to 'like' and template to '\{column\}' like\$ Sets operator to 'like' and template to '\%\{column\}'
+
+Additional accepted parameters:
+
+operator The operator for the condition template The template for the column in the condition dateOnly If true, will compare only the date portion of column
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arSource \item[{\em array}]\$arColumns\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 77 of file CPSParamHelper.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        self::resetParameters();
+        
+        $_sCondition = null;
+        
+        foreach ( $arColumns as $_sKey => $_oColumn )
+        {
+            $_sTemplate = '{column}';
+            $_sOperator = '=';
+            $_sColumn = $_oColumn;
+            $_bOr = false;
+            
+            if ( is_array( $_sColumn ) )
+            {
+                //  Set the column name
+                $_sColumn = $_sKey;
+                
+                //  No data? Don't process...
+                if ( isset( $arSource[ $_sColumn ] ) )
+                {
+                    if ( $_bLike = PS::o( $_oColumn, 'like', false ) )
+                    {
+                        //  Special 'like' case...
+                        $_sTemplate = '%{column}%';
+                        $_sOperator = 'like';
+                    }
+                    else if ( $_bLike = PS::o( $_oColumn, '^like', false ) )
+                    {
+                        //  Special 'like' case...
+                        $_sTemplate = '{column}%';
+                        $_sOperator = 'like';
+                    }
+                    else if ( $_bLike = PS::o( $_oColumn, 'like$', false ) )
+                    {
+                        //  Special 'like' case...
+                        $_sTemplate = '%{column}';
+                        $_sOperator = 'like';
+                    }
+                    else
+                    {
+                        //  Special operators...
+                        if ( PS::o( $_oColumn, 'lt' ) ) $_sOperator = '<';
+                        if ( PS::o( $_oColumn, 'lte' ) ) $_sOperator = '<=';
+                        if ( PS::o( $_oColumn, 'eq' ) ) $_sOperator = '=';
+                        if ( PS::o( $_oColumn, 'gt' ) ) $_sOperator = '>';
+                        if ( PS::o( $_oColumn, 'gte' ) ) $_sOperator = '>=';
+                        if ( PS::o( $_oColumn, 'or' ) ) $_bOr = true;
+                        
+                        //  All others...
+                        $_sTemplate = PS::o( $_oColumn, 'template', '{column}' );
+      
+                        
+                        //  Will override special ones above if both are supplied
+      .
+                        $_sOperator = PS::o( $_oColumn, 'operator', '=' );
+                    }
+                    
+                    //  Date only...
+                    if ( PS::o( $_oColumn, 'dateOnly', false ) ) $_sTemplate = "d
+      ate({$_sTemplate})";
+                }
+                else
+                    $_sColumn = null;
+            }
+            
+            //  Make the parameter if we have a value...
+            if ( null != $_sColumn ) $_sCondition = self::findParam( $arSource, $
+      _sColumn, $_sCondition, $_sOperator, $_sTemplate, $_bOr );
+        }
+
+        //  Return the new conditions...
+        return $_sCondition;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSParamHelper_a79bb28c511184548bcefbd367d4fadf9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSParamHelper_a63c76688969153ba5b4d4fb858d6c679}{
+\index{CPSParamHelper@{CPSParamHelper}!findParam@{findParam}}
+\index{findParam@{findParam}!CPSParamHelper@{CPSParamHelper}}
+\subsubsection[{findParam}]{\setlength{\rightskip}{0pt plus 5cm}static findParam (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arSource = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ sColumn, }
+\item[{\$}]{ sCondition = {\ttfamily null}, }
+\item[{\$}]{ sOperator = {\ttfamily '='}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSParamHelper_a63c76688969153ba5b4d4fb858d6c679}
+Given a source array, a column name, and an optional condition, if the column exists in the array, it will be added to the condition string and placed in the generic parameter array.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arSource The source array (i.e. \$\_\-POST) \item[{\em string}]\$sColumn The column name to pull out \item[{\em string}]\$sCondition Any existing condition string to which to append \item[{\em string}]\$sOperator The operator for the column (i.e. '=' ) \item[{\em string}]\$sTemplate The template for the condition (i.e. '\%\{column\}' for 'like' operators) \item[{\em string}]\$bOr If true, condition will be \char`\"{}OR\char`\"{} instead of \char`\"{}AND\char`\"{}\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The amended condition string 
+\end{DoxyReturn}
+
+
+Definition at line 162 of file CPSParamHelper.php.
+
+
+
+
+\begin{DoxyCode}
+                                                                                 
+                                              {column}', $bOr = false )
+    {
+        if ( isset( $arSource[ $sColumn ] ) )
+        {
+            //  Only process if value isn't blank. 
+            $_sTemp = trim( PS::o( $arSource, $sColumn ) );
+            if ( strlen( $_sTemp ) ) $sCondition = self::makeParam( $sColumn, $_s
+      Temp, $sCondition, $sOperator, $sTemplate, $bOr );
+        }
+        
+        //  Return the condition string...
+        return $sCondition;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=374pt]{classCPSParamHelper_a63c76688969153ba5b4d4fb858d6c679_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classCPSParamHelper_a63c76688969153ba5b4d4fb858d6c679_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSParamHelper_adbe68e5cc8d1aa5d9902864c926b6c30}{
+\index{CPSParamHelper@{CPSParamHelper}!getParameter@{getParameter}}
+\index{getParameter@{getParameter}!CPSParamHelper@{CPSParamHelper}}
+\subsubsection[{getParameter}]{\setlength{\rightskip}{0pt plus 5cm}getParameter (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sKey}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSParamHelper_adbe68e5cc8d1aa5d9902864c926b6c30}
+
+
+Definition at line 34 of file CPSParamHelper.php.
+
+
+
+
+\begin{DoxyCode}
+{ return PS::o( self::$m_arParams, $sKey ); }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSParamHelper_a015cb52e5774a1972d296c9694d2a3c3}{
+\index{CPSParamHelper@{CPSParamHelper}!getParameters@{getParameters}}
+\index{getParameters@{getParameters}!CPSParamHelper@{CPSParamHelper}}
+\subsubsection[{getParameters}]{\setlength{\rightskip}{0pt plus 5cm}getParameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSParamHelper_a015cb52e5774a1972d296c9694d2a3c3}
+
+
+Definition at line 36 of file CPSParamHelper.php.
+
+
+
+
+\begin{DoxyCode}
+{ return self::$m_arParams; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSParamHelper_a07939baf7e00c9559ecb32ea1f1f07d3}{
+\index{CPSParamHelper@{CPSParamHelper}!makeParam@{makeParam}}
+\index{makeParam@{makeParam}!CPSParamHelper@{CPSParamHelper}}
+\subsubsection[{makeParam}]{\setlength{\rightskip}{0pt plus 5cm}static makeParam (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sColumn, }
+\item[{\$}]{ oValue, }
+\item[{\$}]{ sCondition = {\ttfamily null}, }
+\item[{\$}]{ sOperator = {\ttfamily '='}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSParamHelper_a07939baf7e00c9559ecb32ea1f1f07d3}
+Given a column name, a value, and an optional condition, it will be added to the condition string and placed in the generic parameter array.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sColumn The column name to pull out \item[{\em string}]\$oValue The column value \item[{\em string}]\$sCondition Any existing condition string to which to append \item[{\em string}]\$sOperator The operator for the column (i.e. '=' ) \item[{\em string}]\$sTemplate The template for the condition (i.e. '\%\{column\}' for 'like' operators) \item[{\em string}]\$bOr If true, condition will be \char`\"{}OR\char`\"{} instead of \char`\"{}AND\char`\"{}\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The amended condition string 
+\end{DoxyReturn}
+
+
+Definition at line 188 of file CPSParamHelper.php.
+
+
+
+
+\begin{DoxyCode}
+                                                                                 
+                                  {column}', $bOr = false )
+    {
+        $_sParam = ':' . $sColumn;
+        $sCondition .= ( $sCondition ? ( $bOr ? ' or ' : ' and ' ) : '' ) . "`{$s
+      Column}` {$sOperator} {$_sParam}";
+        self::setParameter( $_sParam, str_ireplace( '{column}', $oValue, $sTempla
+      te ) );
+        
+        //  Return the condition string...
+        return $sCondition;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classCPSParamHelper_a07939baf7e00c9559ecb32ea1f1f07d3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=398pt]{classCPSParamHelper_a07939baf7e00c9559ecb32ea1f1f07d3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSParamHelper_ab6a0925ece1b5a8a738472b53d11dddf}{
+\index{CPSParamHelper@{CPSParamHelper}!resetParameters@{resetParameters}}
+\index{resetParameters@{resetParameters}!CPSParamHelper@{CPSParamHelper}}
+\subsubsection[{resetParameters}]{\setlength{\rightskip}{0pt plus 5cm}resetParameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSParamHelper_ab6a0925ece1b5a8a738472b53d11dddf}
+
+
+Definition at line 37 of file CPSParamHelper.php.
+
+
+
+
+\begin{DoxyCode}
+{ self::$m_arParams = array(); }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classCPSParamHelper_ab6a0925ece1b5a8a738472b53d11dddf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSParamHelper_a40f227a458ea32355358fcb19713d6a3}{
+\index{CPSParamHelper@{CPSParamHelper}!setParameter@{setParameter}}
+\index{setParameter@{setParameter}!CPSParamHelper@{CPSParamHelper}}
+\subsubsection[{setParameter}]{\setlength{\rightskip}{0pt plus 5cm}setParameter (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sKey, }
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSParamHelper_a40f227a458ea32355358fcb19713d6a3}
+
+
+Definition at line 35 of file CPSParamHelper.php.
+
+
+
+
+\begin{DoxyCode}
+{ self::$m_arParams[ $sKey ] = $sValue; }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSParamHelper_a40f227a458ea32355358fcb19713d6a3_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSParamHelper_a81adfd9f391cd4b9ff0f9fedd745e9d1}{
+\index{CPSParamHelper@{CPSParamHelper}!\$m\_\-arParams@{\$m\_\-arParams}}
+\index{\$m\_\-arParams@{\$m\_\-arParams}!CPSParamHelper@{CPSParamHelper}}
+\subsubsection[{\$m\_\-arParams}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-arParams = {\bf array}()\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSParamHelper_a81adfd9f391cd4b9ff0f9fedd745e9d1}
+
+
+Definition at line 33 of file CPSParamHelper.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/helpers/\hyperlink{CPSParamHelper_8php}{CPSParamHelper.php}\end{DoxyCompactItemize}

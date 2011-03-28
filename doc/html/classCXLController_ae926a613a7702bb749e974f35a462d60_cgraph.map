@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classYiiXLBase.html#a1d56b31ce9c7910652552fbbff54e753" title="YiiXLBase::_gan" alt="" coords="476,191,596,220"/>
+<area shape="rect" id="node7" href="$classYiiXLBase.html#a1f5b11e66cea38099ad43bd1c41b6dc6" title="Returns a flash message." alt="" coords="277,59,387,88"/>
+<area shape="rect" id="node11" href="$classYiiXLBase.html#a982d30aee3a52f73b0e935ef7c81b03b" title="Registers a piece of javascript code." alt="" coords="277,112,387,141"/>
+<area shape="rect" id="node15" href="$classYiiXLBase.html#aa5c4459afda5a8a58c46a26aecafaf37" title="Stores a variable from the user session." alt="" coords="277,5,387,35"/>
+<area shape="rect" id="node18" href="$classYiiXLBase.html#abba281d4c1813d0fb984cbca6784930a" title="Retrieves an option from the given array." alt="" coords="487,296,585,325"/>
+<area shape="rect" id="node20" href="$classCXLController.html#a8324b095d3faa196d784f84a3f0cef25" title="Renders a view." alt="" coords="281,269,383,299"/>
+<area shape="rect" id="node22" href="$classCXLController.html#a592bdbc48efc56a00e5b49582db7c09f" title="Sets the standard page navigation options (title, crumbs, menu, etc." alt="" coords="239,216,425,245"/>
+<area shape="rect" id="node5" href="$classYiiXLBase.html#ae09ab8187b8a6c8c52edbf143ab29178" title="Shorthand version of Yii::app()." alt="" coords="647,191,751,220"/>
+<area shape="rect" id="node9" href="$classYiiXLBase.html#ae7d5a13ae379e82d5d28bbc2a480f524" title="YiiXLBase::_gu" alt="" coords="480,32,592,61"/>
+<area shape="rect" id="node13" href="$classYiiXLBase.html#a666bf0c7e9a3320e2e1ca2d9b65301e6" title="NVL = Null VaLue." alt="" coords="483,112,589,141"/>
+</map>

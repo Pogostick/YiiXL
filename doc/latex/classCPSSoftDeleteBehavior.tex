@@ -1,0 +1,304 @@
+\hypertarget{classCPSSoftDeleteBehavior}{
+\section{CPSSoftDeleteBehavior Class Reference}
+\label{classCPSSoftDeleteBehavior}\index{CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}}
+}
+
+
+Inheritance diagram for CPSSoftDeleteBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classCPSSoftDeleteBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSSoftDeleteBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classCPSSoftDeleteBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSSoftDeleteBehavior_acfca6a64b247ac498c62cab1cb17b2bf}{getSoftDeleteColumn} ()
+\item 
+\hyperlink{classCPSSoftDeleteBehavior_a8403e0437bbd46b1a63d1216d8ef6a9a}{setSoftDeleteColumn} (\$sValue)
+\item 
+\hyperlink{classCPSSoftDeleteBehavior_a70ab6a41977a11c4db38e4de7bf977e4}{getSoftDeleteValue} ()
+\item 
+\hyperlink{classCPSSoftDeleteBehavior_a04005e887e480efb1759492f50b54f72}{setSoftDeleteValue} (\$arValue)
+\item 
+\hyperlink{classCPSSoftDeleteBehavior_a54bb021b1c92fb0f780ad1af74a9019e}{beforeDelete} (\$oEvent)
+\item 
+\hyperlink{classCPSSoftDeleteBehavior_aa85f738e3261c66a902042efd6f568ef}{beforeFind} (\$oEvent)
+\item 
+\hyperlink{classCPSSoftDeleteBehavior_a9c49f1fbbec2cb6693f6566bafd3683c}{undelete} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSSoftDeleteBehavior_a437e6cd4c0206616755f3d8ccbe23dcd}{\$m\_\-sSoftDeleteColumn} = null
+\item 
+\hyperlink{classCPSSoftDeleteBehavior_afffc6767951dd7ae09c5571eaf276a47}{\$m\_\-arSoftDeleteValue} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}( 0, 1 )
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file CPSSoftDeleteBehavior.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSSoftDeleteBehavior_a54bb021b1c92fb0f780ad1af74a9019e}{
+\index{CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}!beforeDelete@{beforeDelete}}
+\index{beforeDelete@{beforeDelete}!CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}}
+\subsubsection[{beforeDelete}]{\setlength{\rightskip}{0pt plus 5cm}beforeDelete (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oEvent}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSoftDeleteBehavior_a54bb021b1c92fb0f780ad1af74a9019e}
+Soft deletes models that have that feature  CEvent \$oEvent \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file CPSSoftDeleteBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Pass it on...
+        if ( parent::beforeDelete( $oEvent ) )
+        {
+            //  We want to be the top of the chain...
+            if ( $this->m_sSoftDeleteColumn && $oEvent->isValid && ! $oEvent->han
+      dled )
+            {
+                //  Perform a soft delete if this model allows
+                if ( $oEvent->sender->hasAttribute( $this->m_sSoftDeleteColumn ) 
+      )
+                {
+                    $oEvent->isValid = false;
+                    $oEvent->handled = true;
+                    $oEvent->sender->setAttribute( $this->m_sSoftDeleteColumn, $t
+      his->m_arSoftDeleteValue[ 1 ] );
+                    if ( ! $oEvent->sender->update( array( $this->m_sSoftDeleteCo
+      lumn ) ) )
+                        throw new CDbException( 'Error saving soft delete row.' )
+      ;
+                }
+            }
+            
+            return true;
+        }
+        
+        return false;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSoftDeleteBehavior_aa85f738e3261c66a902042efd6f568ef}{
+\index{CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}!beforeFind@{beforeFind}}
+\index{beforeFind@{beforeFind}!CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}}
+\subsubsection[{beforeFind}]{\setlength{\rightskip}{0pt plus 5cm}beforeFind (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oEvent}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSoftDeleteBehavior_aa85f738e3261c66a902042efd6f568ef}
+Insert our soft-\/delete criteria 
+\begin{DoxyParams}{Parameters}
+\item[{\em CEvent}]\$oEvent \end{DoxyParams}
+
+
+Definition at line 110 of file CPSSoftDeleteBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $this->m_sSoftDeleteColumn && $this->owner->hasAttribute( $this->m_s
+      SoftDeleteColumn ) ) 
+        {
+            //  Merge in the soft delete indicator
+            $oEvent->sender->getDbCriteria()->mergeWith(
+                array( 
+                    'condition' => $this->m_sSoftDeleteColumn . ' = :softDeleteVa
+      lue', 
+                    'params' => array( ':softDeleteValue' => $this->m_arSoftDelet
+      eValue[ 0 ] ),
+                )
+            );
+        }
+
+        //  Pass it on...
+        return parent::beforeFind( $oEvent );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSoftDeleteBehavior_acfca6a64b247ac498c62cab1cb17b2bf}{
+\index{CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}!getSoftDeleteColumn@{getSoftDeleteColumn}}
+\index{getSoftDeleteColumn@{getSoftDeleteColumn}!CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}}
+\subsubsection[{getSoftDeleteColumn}]{\setlength{\rightskip}{0pt plus 5cm}getSoftDeleteColumn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSoftDeleteBehavior_acfca6a64b247ac498c62cab1cb17b2bf}
+Returns the soft-\/delete column for this model \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file CPSSoftDeleteBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_sSoftDeleteColumn; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSoftDeleteBehavior_a70ab6a41977a11c4db38e4de7bf977e4}{
+\index{CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}!getSoftDeleteValue@{getSoftDeleteValue}}
+\index{getSoftDeleteValue@{getSoftDeleteValue}!CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}}
+\subsubsection[{getSoftDeleteValue}]{\setlength{\rightskip}{0pt plus 5cm}getSoftDeleteValue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSoftDeleteBehavior_a70ab6a41977a11c4db38e4de7bf977e4}
+Returns the soft-\/delete values for this model \mbox{[}false,true\mbox{]} \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file CPSSoftDeleteBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_arSoftDeleteValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSoftDeleteBehavior_a8403e0437bbd46b1a63d1216d8ef6a9a}{
+\index{CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}!setSoftDeleteColumn@{setSoftDeleteColumn}}
+\index{setSoftDeleteColumn@{setSoftDeleteColumn}!CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}}
+\subsubsection[{setSoftDeleteColumn}]{\setlength{\rightskip}{0pt plus 5cm}setSoftDeleteColumn (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSoftDeleteBehavior_a8403e0437bbd46b1a63d1216d8ef6a9a}
+
+
+Definition at line 58 of file CPSSoftDeleteBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_sSoftDeleteColumn = $sValue; }   
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSoftDeleteBehavior_a04005e887e480efb1759492f50b54f72}{
+\index{CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}!setSoftDeleteValue@{setSoftDeleteValue}}
+\index{setSoftDeleteValue@{setSoftDeleteValue}!CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}}
+\subsubsection[{setSoftDeleteValue}]{\setlength{\rightskip}{0pt plus 5cm}setSoftDeleteValue (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSoftDeleteBehavior_a04005e887e480efb1759492f50b54f72}
+
+
+Definition at line 70 of file CPSSoftDeleteBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_arSoftDeleteValue = $arValue; }  
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSoftDeleteBehavior_a9c49f1fbbec2cb6693f6566bafd3683c}{
+\index{CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}!undelete@{undelete}}
+\index{undelete@{undelete}!CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}}
+\subsubsection[{undelete}]{\setlength{\rightskip}{0pt plus 5cm}undelete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSoftDeleteBehavior_a9c49f1fbbec2cb6693f6566bafd3683c}
+Undeletes a soft-\/deleted model
+
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 136 of file CPSSoftDeleteBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $this->m_sSoftDeleteColumn )
+        {
+            //  Perform a soft delete if this model allows
+            if ( $this->hasAttribute( $this->m_sSoftDeleteColumn ) )
+            {
+                $this->setAttribute( $this->m_sSoftDeleteColumn, $this->m_arSoftD
+      eleteValue[ 0 ] );
+                return $this->update( array( $this->m_sSoftDeleteColumn ) );
+            }
+        }
+        
+        //  Otherwise, not possible
+        return false;
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSSoftDeleteBehavior_afffc6767951dd7ae09c5571eaf276a47}{
+\index{CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}!\$m\_\-arSoftDeleteValue@{\$m\_\-arSoftDeleteValue}}
+\index{\$m\_\-arSoftDeleteValue@{\$m\_\-arSoftDeleteValue}!CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}}
+\subsubsection[{\$m\_\-arSoftDeleteValue}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-arSoftDeleteValue = {\bf array}( 0, 1 )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSSoftDeleteBehavior_afffc6767951dd7ae09c5571eaf276a47}
+
+
+Definition at line 42 of file CPSSoftDeleteBehavior.php.
+
+\hypertarget{classCPSSoftDeleteBehavior_a437e6cd4c0206616755f3d8ccbe23dcd}{
+\index{CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}!\$m\_\-sSoftDeleteColumn@{\$m\_\-sSoftDeleteColumn}}
+\index{\$m\_\-sSoftDeleteColumn@{\$m\_\-sSoftDeleteColumn}!CPSSoftDeleteBehavior@{CPSSoftDeleteBehavior}}
+\subsubsection[{\$m\_\-sSoftDeleteColumn}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sSoftDeleteColumn = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSSoftDeleteBehavior_a437e6cd4c0206616755f3d8ccbe23dcd}
+
+
+Definition at line 36 of file CPSSoftDeleteBehavior.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/behaviors/\hyperlink{CPSSoftDeleteBehavior_8php}{CPSSoftDeleteBehavior.php}\end{DoxyCompactItemize}

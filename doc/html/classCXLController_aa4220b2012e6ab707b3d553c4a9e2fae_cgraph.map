@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$group__propaccs__cxlcontroller.html#gacea2c7c705d91ba736a41e67314e5ae3" title="Convenience access to isPostRequest." alt="" coords="201,5,332,35"/>
+<area shape="rect" id="node9" href="$classYiiXLBase.html#abba281d4c1813d0fb984cbca6784930a" title="Retrieves an option from the given array." alt="" coords="217,59,316,88"/>
+<area shape="rect" id="node5" href="$classYiiXLBase.html#a58562fcc2fc0a157f361c6eae58b641c" title="YiiXLBase::isPostRequest" alt="" coords="381,5,560,35"/>
+<area shape="rect" id="node7" href="$classYiiXLBase.html#ad94454df47e24b75197910a090e61ffa" title="Returns the current request." alt="" coords="609,5,719,35"/>
+</map>

@@ -1,0 +1,745 @@
+\hypertarget{classCXLLog}{
+\section{CXLLog Class Reference}
+\label{classCXLLog}\index{CXLLog@{CXLLog}}
+}
+
+
+Inheritance diagram for CXLLog:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{classCXLLog__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLLog:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{classCXLLog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLLog_af69323cd61028fc50a9a83f87e474031}{logTrace} (\$message, \$category=null)
+\item 
+\hyperlink{classCXLLog_ad210b310780d22f0822826c7ab1b880e}{logEmergency} (\$message, \$category=null)
+\item 
+\hyperlink{classCXLLog_adffc6a79e12e0f1eb6e303985f6098b4}{logAlert} (\$message, \$category=null)
+\item 
+\hyperlink{classCXLLog_adbd22734b81e8f4240fba1f6a45eaf0a}{logCritical} (\$message, \$category=null)
+\item 
+\hyperlink{classCXLLog_a6f300bb6c899105c400a53d85f2e02a8}{logError} (\$message, \$category=null)
+\item 
+\hyperlink{classCXLLog_a4ca1d287757805ece6a3dc58feb89cdd}{logWarning} (\$message, \$category=null)
+\item 
+\hyperlink{classCXLLog_afb70d778267eb9c1a2ed51de373d9ebf}{logNotice} (\$message, \$category=null)
+\item 
+\hyperlink{classCXLLog_a0ca6d5e09b9c1300dcad8c23ba03339f}{logInfo} (\$message, \$category=null)
+\item 
+\hyperlink{classCXLLog_a5ecf86754e0cccf7e796375f947aa7e2}{logDebug} (\$message, \$category=null)
+\item 
+\hyperlink{classCXLLog_a7717f3825de0e907b3aad286565c66d5}{logUser} (\$message, \$category=null)
+\item 
+\hyperlink{classCXLLog_a16eecef77a5a2646770036b2a96ab915}{logAuth} (\$message, \$category=null)
+\item 
+\hyperlink{classCXLLog_aec359c02838e47991b36593a758cd36c}{logSyslog} (\$message, \$category=null)
+\item 
+\hyperlink{classCXLLog_aacbacc31e92697eb7e556766a5e03758}{logAuthPriv} (\$message, \$category=null)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCXLLog_a32176804491a64a10ca2f6eb4dcb6a80}{initialize} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCXLLog_aa607ab5e557e6ebb60b85c5a20ad067f}{CLASS\_\-LOG\_\-TAG} = 'yiixl.core.helpers.CXLLog'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLLog_a04d7843ce3340c0a92f05fc31116b954}{\_\-log} (\$message, \$level=\hyperlink{interfaceIXLLogger_a951775da27343035f4aa2c323df714f4}{LOG\_\-INFO}, \$category=null)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCXLLog_aa70290a86387975ab9608f6287417443}{\$\_\-caller}
+\item 
+static \hyperlink{classCXLLog_a14345e9f074575d9f774e70533a51264}{\$\_\-callerLineNumber}
+\item 
+static \hyperlink{classCXLLog_a939fa17840a3090aae1372c6c1cdb756}{\$\_\-validLogLevels}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A logging helper Utilizes the PHP syslog predefined logging constants. See \hyperlink{}{http://php.net/manual/en/function.syslog.php} for more information. 
+
+Definition at line 23 of file CXLLog.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLLog_a04d7843ce3340c0a92f05fc31116b954}{
+\index{CXLLog@{CXLLog}!\_\-log@{\_\-log}}
+\index{\_\-log@{\_\-log}!CXLLog@{CXLLog}}
+\subsubsection[{\_\-log}]{\setlength{\rightskip}{0pt plus 5cm}\_\-log (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ level = {\ttfamily {\bf LOG\_\-INFO}}, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLLog_a04d7843ce3340c0a92f05fc31116b954}
+Polymorphic logger 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \item[{\em int}]\$level \end{DoxyParams}
+level indicates tje severity of the item being logged. Possible values are: \begin{TabularC}{0}
+\hline
+\end{TabularC}
+Levels (in descending order) 
+
+Constant 
+
+Description  
+
+LOG\_\-EMERG 
+
+system is unusable  
+
+LOG\_\-ALERT 
+
+action must be taken immediately  
+
+LOG\_\-CRIT 
+
+critical conditions  
+
+LOG\_\-ERR 
+
+error conditions  
+
+LOG\_\-WARNING 
+
+warning conditions  
+
+LOG\_\-NOTICE 
+
+normal, but significant, condition  
+
+LOG\_\-INFO 
+
+informational message  
+
+LOG\_\-DEBUG 
+
+debug-\/level message  
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$category \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns true on success or false on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 264 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return Yii::log( $message, $level, $category );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classCXLLog_a04d7843ce3340c0a92f05fc31116b954_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLog_a32176804491a64a10ca2f6eb4dcb6a80}{
+\index{CXLLog@{CXLLog}!initialize@{initialize}}
+\index{initialize@{initialize}!CXLLog@{CXLLog}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}static initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCXLLog_a32176804491a64a10ca2f6eb4dcb6a80}
+Initializer 
+
+Definition at line 60 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  Phone home...
+    parent::initialize();
+    
+    //  Initialize our valid log lvles
+    self::$_validLogLevels = array();
+
+    $_class = new ReflectionClass( __CLASS__ );
+    $_constants = $_class->getConstants();
+
+    foreach ( $_constants as $_name => $_value )
+    {
+      if ( 0 == strncasecmp( $_name, 'LOG_', 4 ) )
+        self::$_validLogLevels[strtolower( substr( $_name, 4 ) )] = $_value;
+    }
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLLog_adffc6a79e12e0f1eb6e303985f6098b4}{
+\index{CXLLog@{CXLLog}!logAlert@{logAlert}}
+\index{logAlert@{logAlert}!CXLLog@{CXLLog}}
+\subsubsection[{logAlert}]{\setlength{\rightskip}{0pt plus 5cm}logAlert (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLog_adffc6a79e12e0f1eb6e303985f6098b4}
+Logs a message 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \item[{\em string}]\$category \end{DoxyParams}
+
+
+Definition at line 107 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return self::_log( $message, self::LOG_ALERT, $category );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classCXLLog_adffc6a79e12e0f1eb6e303985f6098b4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLog_a16eecef77a5a2646770036b2a96ab915}{
+\index{CXLLog@{CXLLog}!logAuth@{logAuth}}
+\index{logAuth@{logAuth}!CXLLog@{CXLLog}}
+\subsubsection[{logAuth}]{\setlength{\rightskip}{0pt plus 5cm}logAuth (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLog_a16eecef77a5a2646770036b2a96ab915}
+Logs a message 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \item[{\em string}]\$category \end{DoxyParams}
+
+
+Definition at line 187 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return self::_log( $message, self::LOG_AUTH, $category );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classCXLLog_a16eecef77a5a2646770036b2a96ab915_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLog_aacbacc31e92697eb7e556766a5e03758}{
+\index{CXLLog@{CXLLog}!logAuthPriv@{logAuthPriv}}
+\index{logAuthPriv@{logAuthPriv}!CXLLog@{CXLLog}}
+\subsubsection[{logAuthPriv}]{\setlength{\rightskip}{0pt plus 5cm}logAuthPriv (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLog_aacbacc31e92697eb7e556766a5e03758}
+Logs a message 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \item[{\em string}]\$category \end{DoxyParams}
+
+
+Definition at line 207 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return self::_log( $message, self::LOG_AUTHPRIV, $category );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classCXLLog_aacbacc31e92697eb7e556766a5e03758_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLog_adbd22734b81e8f4240fba1f6a45eaf0a}{
+\index{CXLLog@{CXLLog}!logCritical@{logCritical}}
+\index{logCritical@{logCritical}!CXLLog@{CXLLog}}
+\subsubsection[{logCritical}]{\setlength{\rightskip}{0pt plus 5cm}logCritical (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLog_adbd22734b81e8f4240fba1f6a45eaf0a}
+Logs a message 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \item[{\em string}]\$category \end{DoxyParams}
+
+
+Definition at line 117 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return self::_log( $message, self::LOG_CRITICAL, $category );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classCXLLog_adbd22734b81e8f4240fba1f6a45eaf0a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLog_a5ecf86754e0cccf7e796375f947aa7e2}{
+\index{CXLLog@{CXLLog}!logDebug@{logDebug}}
+\index{logDebug@{logDebug}!CXLLog@{CXLLog}}
+\subsubsection[{logDebug}]{\setlength{\rightskip}{0pt plus 5cm}logDebug (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLog_a5ecf86754e0cccf7e796375f947aa7e2}
+Logs a message 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \item[{\em string}]\$category \end{DoxyParams}
+
+
+Definition at line 167 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return self::_log( $message, self::LOG_DEBUG, $category );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classCXLLog_a5ecf86754e0cccf7e796375f947aa7e2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLog_ad210b310780d22f0822826c7ab1b880e}{
+\index{CXLLog@{CXLLog}!logEmergency@{logEmergency}}
+\index{logEmergency@{logEmergency}!CXLLog@{CXLLog}}
+\subsubsection[{logEmergency}]{\setlength{\rightskip}{0pt plus 5cm}logEmergency (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLog_ad210b310780d22f0822826c7ab1b880e}
+Logs a message 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \item[{\em string}]\$category \end{DoxyParams}
+
+
+Definition at line 97 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return self::_log( $message, self::LOG_EMERG, $category );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classCXLLog_ad210b310780d22f0822826c7ab1b880e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLog_a6f300bb6c899105c400a53d85f2e02a8}{
+\index{CXLLog@{CXLLog}!logError@{logError}}
+\index{logError@{logError}!CXLLog@{CXLLog}}
+\subsubsection[{logError}]{\setlength{\rightskip}{0pt plus 5cm}logError (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLog_a6f300bb6c899105c400a53d85f2e02a8}
+Logs a message 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \item[{\em string}]\$category \end{DoxyParams}
+
+
+Definition at line 127 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return self::_log( $message, self::LOG_ERROR, $category );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classCXLLog_a6f300bb6c899105c400a53d85f2e02a8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLog_a0ca6d5e09b9c1300dcad8c23ba03339f}{
+\index{CXLLog@{CXLLog}!logInfo@{logInfo}}
+\index{logInfo@{logInfo}!CXLLog@{CXLLog}}
+\subsubsection[{logInfo}]{\setlength{\rightskip}{0pt plus 5cm}logInfo (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLog_a0ca6d5e09b9c1300dcad8c23ba03339f}
+Logs a message 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \item[{\em string}]\$category \end{DoxyParams}
+
+
+Definition at line 157 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return self::_log( $message, self::LOG_INFO, $category );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classCXLLog_a0ca6d5e09b9c1300dcad8c23ba03339f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLog_afb70d778267eb9c1a2ed51de373d9ebf}{
+\index{CXLLog@{CXLLog}!logNotice@{logNotice}}
+\index{logNotice@{logNotice}!CXLLog@{CXLLog}}
+\subsubsection[{logNotice}]{\setlength{\rightskip}{0pt plus 5cm}logNotice (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLog_afb70d778267eb9c1a2ed51de373d9ebf}
+Logs a message 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \item[{\em string}]\$category \end{DoxyParams}
+
+
+Definition at line 147 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return self::_log( $message, self::LOG_NOTICE, $category );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classCXLLog_afb70d778267eb9c1a2ed51de373d9ebf_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLog_aec359c02838e47991b36593a758cd36c}{
+\index{CXLLog@{CXLLog}!logSyslog@{logSyslog}}
+\index{logSyslog@{logSyslog}!CXLLog@{CXLLog}}
+\subsubsection[{logSyslog}]{\setlength{\rightskip}{0pt plus 5cm}logSyslog (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLog_aec359c02838e47991b36593a758cd36c}
+Logs a message 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \item[{\em string}]\$category \end{DoxyParams}
+
+
+Definition at line 197 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return self::_log( $message, self::LOG_SYSLOG, $category );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classCXLLog_aec359c02838e47991b36593a758cd36c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLog_af69323cd61028fc50a9a83f87e474031}{
+\index{CXLLog@{CXLLog}!logTrace@{logTrace}}
+\index{logTrace@{logTrace}!CXLLog@{CXLLog}}
+\subsubsection[{logTrace}]{\setlength{\rightskip}{0pt plus 5cm}logTrace (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLog_af69323cd61028fc50a9a83f87e474031}
+Logs a trace message (really a debug) 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \item[{\em string}]\$category \end{DoxyParams}
+
+
+Definition at line 87 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    self::_log( $message, self::LOG_DEBUG, $category );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classCXLLog_af69323cd61028fc50a9a83f87e474031_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLog_a7717f3825de0e907b3aad286565c66d5}{
+\index{CXLLog@{CXLLog}!logUser@{logUser}}
+\index{logUser@{logUser}!CXLLog@{CXLLog}}
+\subsubsection[{logUser}]{\setlength{\rightskip}{0pt plus 5cm}logUser (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLog_a7717f3825de0e907b3aad286565c66d5}
+Logs a message 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \item[{\em string}]\$category \end{DoxyParams}
+
+
+Definition at line 177 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return self::_log( $message, self::LOG_USER, $category );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classCXLLog_a7717f3825de0e907b3aad286565c66d5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLLog_a4ca1d287757805ece6a3dc58feb89cdd}{
+\index{CXLLog@{CXLLog}!logWarning@{logWarning}}
+\index{logWarning@{logWarning}!CXLLog@{CXLLog}}
+\subsubsection[{logWarning}]{\setlength{\rightskip}{0pt plus 5cm}logWarning (
+\begin{DoxyParamCaption}
+\item[{\$}]{ message, }
+\item[{\$}]{ category = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLLog_a4ca1d287757805ece6a3dc58feb89cdd}
+Logs a message 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$message \item[{\em string}]\$category \end{DoxyParams}
+
+
+Definition at line 137 of file CXLLog.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return self::_log( $message, self::LOG_WARNING, $category );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classCXLLog_a4ca1d287757805ece6a3dc58feb89cdd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLLog_aa70290a86387975ab9608f6287417443}{
+\index{CXLLog@{CXLLog}!\$\_\-caller@{\$\_\-caller}}
+\index{\$\_\-caller@{\$\_\-caller}!CXLLog@{CXLLog}}
+\subsubsection[{\$\_\-caller}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-caller\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCXLLog_aa70290a86387975ab9608f6287417443}
+
+
+Definition at line 41 of file CXLLog.php.
+
+\hypertarget{classCXLLog_a14345e9f074575d9f774e70533a51264}{
+\index{CXLLog@{CXLLog}!\$\_\-callerLineNumber@{\$\_\-callerLineNumber}}
+\index{\$\_\-callerLineNumber@{\$\_\-callerLineNumber}!CXLLog@{CXLLog}}
+\subsubsection[{\$\_\-callerLineNumber}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-callerLineNumber\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCXLLog_a14345e9f074575d9f774e70533a51264}
+
+
+Definition at line 46 of file CXLLog.php.
+
+\hypertarget{classCXLLog_a939fa17840a3090aae1372c6c1cdb756}{
+\index{CXLLog@{CXLLog}!\$\_\-validLogLevels@{\$\_\-validLogLevels}}
+\index{\$\_\-validLogLevels@{\$\_\-validLogLevels}!CXLLog@{CXLLog}}
+\subsubsection[{\$\_\-validLogLevels}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-validLogLevels\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCXLLog_a939fa17840a3090aae1372c6c1cdb756}
+
+
+Definition at line 51 of file CXLLog.php.
+
+\hypertarget{classCXLLog_aa607ab5e557e6ebb60b85c5a20ad067f}{
+\index{CXLLog@{CXLLog}!CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}}
+\index{CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}!CXLLog@{CXLLog}}
+\subsubsection[{CLASS\_\-LOG\_\-TAG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CLASS\_\-LOG\_\-TAG} = 'yiixl.core.helpers.CXLLog'}}
+\label{classCXLLog_aa607ab5e557e6ebb60b85c5a20ad067f}
+Our logging tag 
+
+Definition at line 32 of file CXLLog.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLLog_8php}{CXLLog.php}\end{DoxyCompactItemize}

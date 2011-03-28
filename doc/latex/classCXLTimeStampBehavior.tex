@@ -1,0 +1,490 @@
+\hypertarget{classCXLTimeStampBehavior}{
+\section{CXLTimeStampBehavior Class Reference}
+\label{classCXLTimeStampBehavior}\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+}
+
+
+Inheritance diagram for CXLTimeStampBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classCXLTimeStampBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLTimeStampBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classCXLTimeStampBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLTimeStampBehavior_af4acef2afbd2be93afee6dcc132b5634}{getCreatedColumnName} ()
+\item 
+\hyperlink{classCXLTimeStampBehavior_aefa0bd89eae6e37ce37bca6738781c61}{setCreatedColumnName} (\$sValue)
+\item 
+\hyperlink{classCXLTimeStampBehavior_a14d422fab23670511b207155a0657557}{getCreatedByColumnName} ()
+\item 
+\hyperlink{classCXLTimeStampBehavior_af3cf22407098fb8c99099ace3f51fa16}{setCreatedByColumnName} (\$sValue)
+\item 
+\hyperlink{classCXLTimeStampBehavior_a0905d98612ed716b9368a0e0ac5e5aeb}{getLastModifiedColumnName} ()
+\item 
+\hyperlink{classCXLTimeStampBehavior_aa43f21092ab8266b9991a5399ec94c44}{setLastModifiedColumnName} (\$sValue)
+\item 
+\hyperlink{classCXLTimeStampBehavior_a3f2fd113a089ac3e6523c758c5452d64}{getLastModifiedByColumnName} ()
+\item 
+\hyperlink{classCXLTimeStampBehavior_add7a6532e6d878ba7a4446657a2b3b5d}{setLastModifiedByColumnName} (\$sValue)
+\item 
+\hyperlink{classCXLTimeStampBehavior_a256dd113f3eddd49910867cd68ec8fc3}{getDateTimeFunction} ()
+\item 
+\hyperlink{classCXLTimeStampBehavior_aefc5940715628851cc5f6a8c0889b9cd}{setDateTimeFunction} (\$sValue)
+\item 
+\hyperlink{classCXLTimeStampBehavior_a586e177c0e7073ec63f7ccd6546ff3fd}{beforeValidate} (\$event)
+\item 
+\hyperlink{classCXLTimeStampBehavior_ae99ec12f90f0458dbd6e2d9dcce34620}{showDates} ()
+\item 
+\hyperlink{classCXLTimeStampBehavior_aa5ac765fd764508a2e486e01a725b4a1}{touch} (\$additionalColumns=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLTimeStampBehavior_a99123cf87dc35241fa4de90963dfcb55}{\$\_\-createdColumnName} = null
+\item 
+\hyperlink{classCXLTimeStampBehavior_a1cc2ac641f86886d76944efce3a63bd9}{\$\_\-createdByColumnName} = null
+\item 
+\hyperlink{classCXLTimeStampBehavior_a8f1b45a01bfe979c5ae98050cfcf804f}{\$\_\-lastModifiedColumnName} = null
+\item 
+\hyperlink{classCXLTimeStampBehavior_a8aed01de613f89819b5268c88f933969}{\$\_\-lastModifiedByColumnName} = null
+\item 
+\hyperlink{classCXLTimeStampBehavior_a32224a162adf0502123d01d3fcbbcce7}{\$\_\-dateTimeFunction} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file CXLTimestampBehavior.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLTimeStampBehavior_a586e177c0e7073ec63f7ccd6546ff3fd}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!beforeValidate@{beforeValidate}}
+\index{beforeValidate@{beforeValidate}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{beforeValidate}]{\setlength{\rightskip}{0pt plus 5cm}beforeValidate (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLTimeStampBehavior_a586e177c0e7073ec63f7ccd6546ff3fd}
+Timestamps row 
+\begin{DoxyParams}{Parameters}
+\item[{\em CModelEvent}]\$event \end{DoxyParams}
+
+
+Definition at line 77 of file CXLTimestampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  Handle created stamp
+    if ( $event->sender->isNewRecord )
+    {
+      if ( $this->_createdColumnName && $event->sender->hasAttribute( $this->_cre
+      atedColumnName ) )
+        $this->getOwner()->setAttribute( $this->_createdColumnName, ( null === $t
+      his->_dateTimeFunction ) ? date('Y-m-d H:i:s') : eval('return ' . $this->_dateTim
+      eFunction . ';') );
+
+      if ( $this->_createdByColumnName && $event->sender->hasAttribute( $this->_c
+      reatedByColumnName ) && ! $event->sender->getAttribute( $this->_createdByColumnNa
+      me ) )
+        $this->getOwner()->setAttribute( $this->_createdByColumnName, Yii::app()-
+      >user->getId() );
+    }
+
+    //  Handle lmod stamp
+    if ( $this->_lastModifiedColumnName && $event->sender->hasAttribute( $this->_
+      lastModifiedColumnName ) )
+        $this->getOwner()->setAttribute( $this->_lastModifiedColumnName, ( null =
+      == $this->_dateTimeFunction ) ? date('Y-m-d H:i:s') : eval('return ' . $this->_da
+      teTimeFunction . ';') );
+
+    //  Handle user id stamp
+    if ( $this->_lastModifiedByColumnName && $event->sender->hasAttribute( $this-
+      >_lastModifiedByColumnName ) && ! $event->sender->getAttribute( $this->_lastModif
+      iedByColumnName ) )
+      $this->getOwner()->setAttribute( $this->_lastModifiedByColumnName, Yii::app
+      ()->user->getId() );
+
+    return parent::beforeValidate( $event );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLTimeStampBehavior_a14d422fab23670511b207155a0657557}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!getCreatedByColumnName@{getCreatedByColumnName}}
+\index{getCreatedByColumnName@{getCreatedByColumnName}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{getCreatedByColumnName}]{\setlength{\rightskip}{0pt plus 5cm}getCreatedByColumnName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLTimeStampBehavior_a14d422fab23670511b207155a0657557}
+
+
+Definition at line 45 of file CXLTimestampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_createdByColumnName; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLTimeStampBehavior_af4acef2afbd2be93afee6dcc132b5634}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!getCreatedColumnName@{getCreatedColumnName}}
+\index{getCreatedColumnName@{getCreatedColumnName}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{getCreatedColumnName}]{\setlength{\rightskip}{0pt plus 5cm}getCreatedColumnName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLTimeStampBehavior_af4acef2afbd2be93afee6dcc132b5634}
+
+
+Definition at line 38 of file CXLTimestampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_createdColumnName; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLTimeStampBehavior_a256dd113f3eddd49910867cd68ec8fc3}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!getDateTimeFunction@{getDateTimeFunction}}
+\index{getDateTimeFunction@{getDateTimeFunction}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{getDateTimeFunction}]{\setlength{\rightskip}{0pt plus 5cm}getDateTimeFunction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLTimeStampBehavior_a256dd113f3eddd49910867cd68ec8fc3}
+
+
+Definition at line 66 of file CXLTimestampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_dateTimeFunction; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLTimeStampBehavior_a3f2fd113a089ac3e6523c758c5452d64}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!getLastModifiedByColumnName@{getLastModifiedByColumnName}}
+\index{getLastModifiedByColumnName@{getLastModifiedByColumnName}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{getLastModifiedByColumnName}]{\setlength{\rightskip}{0pt plus 5cm}getLastModifiedByColumnName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLTimeStampBehavior_a3f2fd113a089ac3e6523c758c5452d64}
+
+
+Definition at line 59 of file CXLTimestampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_lastModifiedByColumnName; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLTimeStampBehavior_a0905d98612ed716b9368a0e0ac5e5aeb}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!getLastModifiedColumnName@{getLastModifiedColumnName}}
+\index{getLastModifiedColumnName@{getLastModifiedColumnName}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{getLastModifiedColumnName}]{\setlength{\rightskip}{0pt plus 5cm}getLastModifiedColumnName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLTimeStampBehavior_a0905d98612ed716b9368a0e0ac5e5aeb}
+
+
+Definition at line 52 of file CXLTimestampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_lastModifiedColumnName; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLTimeStampBehavior_af3cf22407098fb8c99099ace3f51fa16}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!setCreatedByColumnName@{setCreatedByColumnName}}
+\index{setCreatedByColumnName@{setCreatedByColumnName}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{setCreatedByColumnName}]{\setlength{\rightskip}{0pt plus 5cm}setCreatedByColumnName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLTimeStampBehavior_af3cf22407098fb8c99099ace3f51fa16}
+
+
+Definition at line 46 of file CXLTimestampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_createdByColumnName = $sValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLTimeStampBehavior_aefa0bd89eae6e37ce37bca6738781c61}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!setCreatedColumnName@{setCreatedColumnName}}
+\index{setCreatedColumnName@{setCreatedColumnName}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{setCreatedColumnName}]{\setlength{\rightskip}{0pt plus 5cm}setCreatedColumnName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLTimeStampBehavior_aefa0bd89eae6e37ce37bca6738781c61}
+
+
+Definition at line 39 of file CXLTimestampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_createdColumnName = $sValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLTimeStampBehavior_aefc5940715628851cc5f6a8c0889b9cd}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!setDateTimeFunction@{setDateTimeFunction}}
+\index{setDateTimeFunction@{setDateTimeFunction}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{setDateTimeFunction}]{\setlength{\rightskip}{0pt plus 5cm}setDateTimeFunction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLTimeStampBehavior_aefc5940715628851cc5f6a8c0889b9cd}
+
+
+Definition at line 67 of file CXLTimestampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_dateTimeFunction = $sValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLTimeStampBehavior_add7a6532e6d878ba7a4446657a2b3b5d}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!setLastModifiedByColumnName@{setLastModifiedByColumnName}}
+\index{setLastModifiedByColumnName@{setLastModifiedByColumnName}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{setLastModifiedByColumnName}]{\setlength{\rightskip}{0pt plus 5cm}setLastModifiedByColumnName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLTimeStampBehavior_add7a6532e6d878ba7a4446657a2b3b5d}
+
+
+Definition at line 60 of file CXLTimestampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_lastModifiedByColumnName = $sValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLTimeStampBehavior_aa43f21092ab8266b9991a5399ec94c44}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!setLastModifiedColumnName@{setLastModifiedColumnName}}
+\index{setLastModifiedColumnName@{setLastModifiedColumnName}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{setLastModifiedColumnName}]{\setlength{\rightskip}{0pt plus 5cm}setLastModifiedColumnName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLTimeStampBehavior_aa43f21092ab8266b9991a5399ec94c44}
+
+
+Definition at line 53 of file CXLTimestampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_lastModifiedColumnName = $sValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLTimeStampBehavior_ae99ec12f90f0458dbd6e2d9dcce34620}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!showDates@{showDates}}
+\index{showDates@{showDates}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{showDates}]{\setlength{\rightskip}{0pt plus 5cm}showDates (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLTimeStampBehavior_ae99ec12f90f0458dbd6e2d9dcce34620}
+Returns formatted create/lmod dates for forms \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 108 of file CXLTimestampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+      if ( ! $this->getOwner()->isNewRecord )
+      return XL::showDates( $this->getOwner(), $this->_createdColumnName, $this->
+      _lastModifiedColumnName, 'D M j, Y' );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLTimeStampBehavior_aa5ac765fd764508a2e486e01a725b4a1}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!touch@{touch}}
+\index{touch@{touch}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{touch}]{\setlength{\rightskip}{0pt plus 5cm}touch (
+\begin{DoxyParamCaption}
+\item[{\$}]{ additionalColumns = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLTimeStampBehavior_aa5ac765fd764508a2e486e01a725b4a1}
+Sets lmod date(s) and saves Will optionally touch other columns. You can pass in a single column name or an array of columns. This is useful for updating not only the lmod column but a last login date for example. Only the columns that have been touched are updated. If no columns are updated, no database action is performed.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$additionalColumns The single column name or array of columns to touch in addition to configured lmod column \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 123 of file CXLTimestampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+      $_touchValue = ( null === $this->_dateTimeFunction ) ? date( 'Y-m-d H:i:s' 
+      ) : eval( 'return ' . $this->_dateTimeFunction . ';' );
+      $_updateList = array();
+
+      //  Any other columns to touch?
+      if ( null !== $additionalColumns )
+      {
+        foreach ( XL::makeArray( $additionalColumns ) as $_attribute )
+        {
+          if ( $this->getOwner()->hasAttribute( $_attribute ) )
+          {
+            $this->getOwner()->setAttribute( $_attribute, $_touchValue );
+            $_updateList[] = $_attribute;
+        }
+        }
+    }
+
+    if ( $this->_lastModifiedColumnName && $this->getOwner()->hasAttribute( $this
+      ->_lastModifiedColumnName ) )
+    {
+      $this->getOwner()->setAttribute( $this->_lastModifiedColumnName, $_touchVal
+      ue );
+        $_updateList[] = $this->_lastModifiedColumnName;
+    }
+
+    //  Only update if and what we've touched...
+    return count( $_updateList ) ? $this->getOwner()->update( $_updateList ) : tr
+      ue;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{classCXLTimeStampBehavior_aa5ac765fd764508a2e486e01a725b4a1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLTimeStampBehavior_a1cc2ac641f86886d76944efce3a63bd9}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!\$\_\-createdByColumnName@{\$\_\-createdByColumnName}}
+\index{\$\_\-createdByColumnName@{\$\_\-createdByColumnName}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{\$\_\-createdByColumnName}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-createdByColumnName = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLTimeStampBehavior_a1cc2ac641f86886d76944efce3a63bd9}
+
+
+Definition at line 44 of file CXLTimestampBehavior.php.
+
+\hypertarget{classCXLTimeStampBehavior_a99123cf87dc35241fa4de90963dfcb55}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!\$\_\-createdColumnName@{\$\_\-createdColumnName}}
+\index{\$\_\-createdColumnName@{\$\_\-createdColumnName}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{\$\_\-createdColumnName}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-createdColumnName = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLTimeStampBehavior_a99123cf87dc35241fa4de90963dfcb55}
+
+
+Definition at line 37 of file CXLTimestampBehavior.php.
+
+\hypertarget{classCXLTimeStampBehavior_a32224a162adf0502123d01d3fcbbcce7}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!\$\_\-dateTimeFunction@{\$\_\-dateTimeFunction}}
+\index{\$\_\-dateTimeFunction@{\$\_\-dateTimeFunction}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{\$\_\-dateTimeFunction}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-dateTimeFunction = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLTimeStampBehavior_a32224a162adf0502123d01d3fcbbcce7}
+
+
+Definition at line 65 of file CXLTimestampBehavior.php.
+
+\hypertarget{classCXLTimeStampBehavior_a8aed01de613f89819b5268c88f933969}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!\$\_\-lastModifiedByColumnName@{\$\_\-lastModifiedByColumnName}}
+\index{\$\_\-lastModifiedByColumnName@{\$\_\-lastModifiedByColumnName}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{\$\_\-lastModifiedByColumnName}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-lastModifiedByColumnName = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLTimeStampBehavior_a8aed01de613f89819b5268c88f933969}
+
+
+Definition at line 58 of file CXLTimestampBehavior.php.
+
+\hypertarget{classCXLTimeStampBehavior_a8f1b45a01bfe979c5ae98050cfcf804f}{
+\index{CXLTimeStampBehavior@{CXLTimeStampBehavior}!\$\_\-lastModifiedColumnName@{\$\_\-lastModifiedColumnName}}
+\index{\$\_\-lastModifiedColumnName@{\$\_\-lastModifiedColumnName}!CXLTimeStampBehavior@{CXLTimeStampBehavior}}
+\subsubsection[{\$\_\-lastModifiedColumnName}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-lastModifiedColumnName = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLTimeStampBehavior_a8f1b45a01bfe979c5ae98050cfcf804f}
+
+
+Definition at line 51 of file CXLTimestampBehavior.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLTimestampBehavior_8php}{CXLTimestampBehavior.php}\end{DoxyCompactItemize}

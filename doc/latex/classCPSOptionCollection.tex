@@ -1,0 +1,643 @@
+\hypertarget{classCPSOptionCollection}{
+\section{CPSOptionCollection Class Reference}
+\label{classCPSOptionCollection}\index{CPSOptionCollection@{CPSOptionCollection}}
+}
+
+
+Inheritance diagram for CPSOptionCollection:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classCPSOptionCollection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSOptionCollection:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classCPSOptionCollection__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSOptionCollection_a095c5d389db211932136b53f25f39685}{\_\-\_\-construct} ()
+\item 
+\hyperlink{classCPSOptionCollection_a08c68129fce5aa8f1f5249a7f414e1c5}{add} (\$key, \$value=null, \$rulePattern=null)
+\item 
+\hyperlink{classCPSOptionCollection_a6396460647ad00b3d3e7b4a17ffba2cf}{getValue} (\$key, \$defaultValue=null)
+\item 
+\hyperlink{classCPSOptionCollection_af9c6e03c5c8d22713805cdfec266f5be}{setValue} (\$key, \$value=null, \$addIfMissing=true)
+\item 
+\hyperlink{classCPSOptionCollection_a0b2c058c88f3e26e33921dcf05063466}{toArray} (\$publicOnly=false, \$optionFilter=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSOptionCollection_aab6ce43b09210145cbaa172c0aa90850}{addOption} (\$key, \$value=null, \$rulePattern=null)
+\item 
+\hyperlink{classCPSOptionCollection_a81e3f5a80b8819b6b35f788ea02c1be5}{addOptions} (\$options=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSOptionCollection_a712d4f15cb85488b151858c0408e2094}{setOption} (\$key, \$value=null)
+\item 
+\hyperlink{classCPSOptionCollection_a37af0ef8b9249b85d1e65874b75b34d8}{setOptions} (\$options=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$clearFirst=false)
+\item 
+\hyperlink{classCPSOptionCollection_a83519c09446eca599235b20a2cdcd094}{unsetOption} (\$key)
+\item 
+\hyperlink{classCPSOptionCollection_a4ad97078795bf124eea4d40f387ab03c}{getOption} (\$key, \$defaultValue=null, \$unsetValue=false)
+\item 
+\hyperlink{classCPSOptionCollection_ae6c9f80a7bf2bbc392f7cb4381050abf}{getOptions} (\$publicOnly=false, \$optionFilter=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 20 of file CPSOptionCollection.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSOptionCollection_a095c5d389db211932136b53f25f39685}{
+\index{CPSOptionCollection@{CPSOptionCollection}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSOptionCollection@{CPSOptionCollection}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOptionCollection_a095c5d389db211932136b53f25f39685}
+Constructor 
+
+Definition at line 29 of file CPSOptionCollection.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  This is a case-sensitive collection
+        $this->caseSensitive = true;
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSOptionCollection_a08c68129fce5aa8f1f5249a7f414e1c5}{
+\index{CPSOptionCollection@{CPSOptionCollection}!add@{add}}
+\index{add@{add}!CPSOptionCollection@{CPSOptionCollection}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}add (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ value = {\ttfamily null}, }
+\item[{\$}]{ rulePattern = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOptionCollection_a08c68129fce5aa8f1f5249a7f414e1c5}
+Adds an item into the collection.
+
+Items consist of a key and a value. The value passed in here may either be an actual value for your key or you may pass in an array where the format is as follows:
+
+array( $<$actual\_\-value$>$, $<$rules\_\-pattern$>$ )
+
+Please see \hyperlink{classCPSOption}{CPSOption} for rule pattern definitions.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key key \item[{\em mixed}]\$rulePattern value rules \item[{\em mixed}]\$value An optional value \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSOption}{CPSOption} 
+\end{DoxySeeAlso}
+
+
+Definition at line 53 of file CPSOptionCollection.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Already here?
+        if ( $this->contains( $key ) )
+            $this->setOption( $key, $value );
+        else
+        {
+            //  Add to the collection
+            $_option = new CPSOption( $key, $value, $rulePattern );
+            parent::add( $_option->getName(), $_option );
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionCollection_a08c68129fce5aa8f1f5249a7f414e1c5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classCPSOptionCollection_a08c68129fce5aa8f1f5249a7f414e1c5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOptionCollection_aab6ce43b09210145cbaa172c0aa90850}{
+\index{CPSOptionCollection@{CPSOptionCollection}!addOption@{addOption}}
+\index{addOption@{addOption}!CPSOptionCollection@{CPSOptionCollection}}
+\subsubsection[{addOption}]{\setlength{\rightskip}{0pt plus 5cm}addOption (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ value = {\ttfamily null}, }
+\item[{\$}]{ rulePattern = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOptionCollection_aab6ce43b09210145cbaa172c0aa90850}
+Alias of \hyperlink{classCPSOptionCollection_a08c68129fce5aa8f1f5249a7f414e1c5}{CPSOptionCollection::add()} 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key key \item[{\em mixed}]\$value An optional value \item[{\em mixed}]\$rulePattern value rules \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSOptionCollection_a08c68129fce5aa8f1f5249a7f414e1c5}{CPSOptionCollection::add()} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{interfaceIPSOptionContainer_a2f44a489b3ea996e216b465075b2d966}{IPSOptionContainer}.
+
+
+
+Definition at line 133 of file CPSOptionCollection.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->add( $key, $value, $rulePattern );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionCollection_aab6ce43b09210145cbaa172c0aa90850_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classCPSOptionCollection_aab6ce43b09210145cbaa172c0aa90850_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOptionCollection_a81e3f5a80b8819b6b35f788ea02c1be5}{
+\index{CPSOptionCollection@{CPSOptionCollection}!addOptions@{addOptions}}
+\index{addOptions@{addOptions}!CPSOptionCollection@{CPSOptionCollection}}
+\subsubsection[{addOptions}]{\setlength{\rightskip}{0pt plus 5cm}addOptions (
+\begin{DoxyParamCaption}
+\item[{\$}]{ options = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOptionCollection_a81e3f5a80b8819b6b35f788ea02c1be5}
+Adds an array of options to the collection. Array should be key/pattern pairs:
+
+array( 'key' =$>$ 'pattern', ..., )
+
+Where:
+
+key = Name of option pattern = Rule pattern
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$options \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSOptionCollection_a08c68129fce5aa8f1f5249a7f414e1c5}{add} 
+
+\hyperlink{classCPSOptionHelper_af245193a05c6d9de1d9fec6239b9b14b}{CPSOptionHelper::parseRulePattern()} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{interfaceIPSOptionContainer_a81e3f5a80b8819b6b35f788ea02c1be5}{IPSOptionContainer}.
+
+
+
+Definition at line 155 of file CPSOptionCollection.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        foreach ( $options as $_key => $_rulePattern )
+            $this->addOption( $_key, null, $_rulePattern );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionCollection_a81e3f5a80b8819b6b35f788ea02c1be5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOptionCollection_a4ad97078795bf124eea4d40f387ab03c}{
+\index{CPSOptionCollection@{CPSOptionCollection}!getOption@{getOption}}
+\index{getOption@{getOption}!CPSOptionCollection@{CPSOptionCollection}}
+\subsubsection[{getOption}]{\setlength{\rightskip}{0pt plus 5cm}getOption (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ defaultValue = {\ttfamily null}, }
+\item[{\$}]{ unsetValue = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOptionCollection_a4ad97078795bf124eea4d40f387ab03c}
+Retrieves an option value 
+
+Implements \hyperlink{interfaceIPSOptionContainer_a4ad97078795bf124eea4d40f387ab03c}{IPSOptionContainer}.
+
+
+
+Definition at line 196 of file CPSOptionCollection.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_value = CPSHelperBase::nvl( $this->itemAt( $key ), $defaultValue );
+        if ( $unsetValue ) $this->unsetOption( $key );
+        return $_value;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classCPSOptionCollection_a4ad97078795bf124eea4d40f387ab03c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOptionCollection_ae6c9f80a7bf2bbc392f7cb4381050abf}{
+\index{CPSOptionCollection@{CPSOptionCollection}!getOptions@{getOptions}}
+\index{getOptions@{getOptions}!CPSOptionCollection@{CPSOptionCollection}}
+\subsubsection[{getOptions}]{\setlength{\rightskip}{0pt plus 5cm}getOptions (
+\begin{DoxyParamCaption}
+\item[{\$}]{ publicOnly = {\ttfamily false}, }
+\item[{\$}]{ optionFilter = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOptionCollection_ae6c9f80a7bf2bbc392f7cb4381050abf}
+Returns options in an array. 
+\begin{DoxyParams}{Parameters}
+\item[{\em boolean}]If true, only returns non-\/private options \item[{\em array}]\$optionFilter Only options named in this array will be returned \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 209 of file CPSOptionCollection.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_optionList = array();
+        if ( empty( $optionFilter ) ) $optionFilter = null;
+
+        foreach ( $this as $_key => $_option )
+        {
+            if ( $publicOnly && $_option->getIsPrivate() )
+                continue;
+
+            if ( $optionFilter && !in_array( $_key, $optionFilter ) )
+                continue;
+
+            $_optionList[ $_key ] = $_option->getValue();
+        }
+
+        return $_optionList;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSOptionCollection_a6396460647ad00b3d3e7b4a17ffba2cf}{
+\index{CPSOptionCollection@{CPSOptionCollection}!getValue@{getValue}}
+\index{getValue@{getValue}!CPSOptionCollection@{CPSOptionCollection}}
+\subsubsection[{getValue}]{\setlength{\rightskip}{0pt plus 5cm}getValue (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ defaultValue = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOptionCollection_a6396460647ad00b3d3e7b4a17ffba2cf}
+Gets an options value 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key \item[{\em mixed}]\$defaultValue \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file CPSOptionCollection.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $this->contains( $key ) )
+            return $this->itemAt( $key )->getValue();
+
+        return $defaultValue;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classCPSOptionCollection_a6396460647ad00b3d3e7b4a17ffba2cf_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOptionCollection_a712d4f15cb85488b151858c0408e2094}{
+\index{CPSOptionCollection@{CPSOptionCollection}!setOption@{setOption}}
+\index{setOption@{setOption}!CPSOptionCollection@{CPSOptionCollection}}
+\subsubsection[{setOption}]{\setlength{\rightskip}{0pt plus 5cm}setOption (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ value = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOptionCollection_a712d4f15cb85488b151858c0408e2094}
+Sets an option
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key \item[{\em mixed}]\$value \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSOptionCollection_a4ad97078795bf124eea4d40f387ab03c}{getOption} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{interfaceIPSOptionContainer_a712d4f15cb85488b151858c0408e2094}{IPSOptionContainer}.
+
+
+
+Definition at line 168 of file CPSOptionCollection.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->setValue( $key, $value ); }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionCollection_a712d4f15cb85488b151858c0408e2094_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionCollection_a712d4f15cb85488b151858c0408e2094_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOptionCollection_a37af0ef8b9249b85d1e65874b75b34d8}{
+\index{CPSOptionCollection@{CPSOptionCollection}!setOptions@{setOptions}}
+\index{setOptions@{setOptions}!CPSOptionCollection@{CPSOptionCollection}}
+\subsubsection[{setOptions}]{\setlength{\rightskip}{0pt plus 5cm}setOptions (
+\begin{DoxyParamCaption}
+\item[{\$}]{ options = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ clearFirst = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOptionCollection_a37af0ef8b9249b85d1e65874b75b34d8}
+Set options in bulk
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$options An array containing option\_\-key =$>$ value pairs \item[{\em boolean}]\$clearFirst If true, the option collection is cleared before the options are added. \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSOptionCollection_ae6c9f80a7bf2bbc392f7cb4381050abf}{getOptions} 
+\end{DoxySeeAlso}
+
+
+Definition at line 177 of file CPSOptionCollection.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $clearFirst ) $this->clear();
+
+        foreach ( $options as $_key => $_option )
+            $this->setValue( $_key, $_option );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionCollection_a37af0ef8b9249b85d1e65874b75b34d8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOptionCollection_af9c6e03c5c8d22713805cdfec266f5be}{
+\index{CPSOptionCollection@{CPSOptionCollection}!setValue@{setValue}}
+\index{setValue@{setValue}!CPSOptionCollection@{CPSOptionCollection}}
+\subsubsection[{setValue}]{\setlength{\rightskip}{0pt plus 5cm}setValue (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ value = {\ttfamily null}, }
+\item[{\$}]{ addIfMissing = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOptionCollection_af9c6e03c5c8d22713805cdfec266f5be}
+Sets an options value 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key \item[{\em mixed}]\$value \item[{\em boolean}]\$addIfMissing If option is not found, it is added \end{DoxyParams}
+
+
+Definition at line 86 of file CPSOptionCollection.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( null === ( $_option = $this->itemAt( $key ) ) && $addIfMissing )
+            $this->add( $key, $value );
+
+        //  Is one defined? Return it...
+        $this->itemAt( $key )->setValue( $value );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionCollection_af9c6e03c5c8d22713805cdfec266f5be_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOptionCollection_af9c6e03c5c8d22713805cdfec266f5be_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOptionCollection_a0b2c058c88f3e26e33921dcf05063466}{
+\index{CPSOptionCollection@{CPSOptionCollection}!toArray@{toArray}}
+\index{toArray@{toArray}!CPSOptionCollection@{CPSOptionCollection}}
+\subsubsection[{toArray}]{\setlength{\rightskip}{0pt plus 5cm}toArray (
+\begin{DoxyParamCaption}
+\item[{\$}]{ publicOnly = {\ttfamily false}, }
+\item[{\$}]{ optionFilter = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOptionCollection_a0b2c058c88f3e26e33921dcf05063466}
+Return this as an array 
+\begin{DoxyParams}{Parameters}
+\item[{\em boolean}]\$publicOnly \item[{\em array}]\$optionFilter \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file CPSOptionCollection.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_result = array();
+        if ( array() === $optionFilter ) $optionFilter = null;
+
+        $_data = parent::toArray();
+
+        foreach ( $_data as $_key => $_option )
+        {
+            if ( $publicOnly && $_option->getIsPrivate() )
+                continue;
+
+            if ( $optionFilter && ! in_array( $_key, $optionFilter ) )
+                continue;
+
+            $_result[$_key] = $_option;
+        }
+
+        return $_result;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSOptionCollection_a83519c09446eca599235b20a2cdcd094}{
+\index{CPSOptionCollection@{CPSOptionCollection}!unsetOption@{unsetOption}}
+\index{unsetOption@{unsetOption}!CPSOptionCollection@{CPSOptionCollection}}
+\subsubsection[{unsetOption}]{\setlength{\rightskip}{0pt plus 5cm}unsetOption (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOptionCollection_a83519c09446eca599235b20a2cdcd094}
+Unsets a single option 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key \end{DoxyParams}
+
+
+Implements \hyperlink{interfaceIPSOptionContainer_a83519c09446eca599235b20a2cdcd094}{IPSOptionContainer}.
+
+
+
+Definition at line 189 of file CPSOptionCollection.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->remove( $key ); }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classCPSOptionCollection_a83519c09446eca599235b20a2cdcd094_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/base/\hyperlink{CPSOptionCollection_8php}{CPSOptionCollection.php}\end{DoxyCompactItemize}

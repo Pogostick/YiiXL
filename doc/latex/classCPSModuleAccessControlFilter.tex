@@ -1,0 +1,94 @@
+\hypertarget{classCPSModuleAccessControlFilter}{
+\section{CPSModuleAccessControlFilter Class Reference}
+\label{classCPSModuleAccessControlFilter}\index{CPSModuleAccessControlFilter@{CPSModuleAccessControlFilter}}
+}
+
+
+Inheritance diagram for CPSModuleAccessControlFilter:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classCPSModuleAccessControlFilter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSModuleAccessControlFilter:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classCPSModuleAccessControlFilter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSModuleAccessControlFilter_a761ef24f6700868d0719c74b601a7e08}{preFilter} (\$oFilterChain)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSModuleAccessControlFilter.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSModuleAccessControlFilter_a761ef24f6700868d0719c74b601a7e08}{
+\index{CPSModuleAccessControlFilter@{CPSModuleAccessControlFilter}!preFilter@{preFilter}}
+\index{preFilter@{preFilter}!CPSModuleAccessControlFilter@{CPSModuleAccessControlFilter}}
+\subsubsection[{preFilter}]{\setlength{\rightskip}{0pt plus 5cm}preFilter (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oFilterChain}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSModuleAccessControlFilter_a761ef24f6700868d0719c74b601a7e08}
+Performs the pre-\/action filtering. 
+\begin{DoxyParams}{Parameters}
+\item[{\em CFilterChain}]\$oFilterChain the filter chain that the filter is on. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean whether the filtering process should continue and the action should be executed.  protected 
+\end{DoxyReturn}
+
+
+Definition at line 34 of file CPSModuleAccessControlFilter.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_oApp = Yii::app();
+        $_oModule = Yii::app()->controller->module;
+        $_oRequest = $_oApp->getRequest();
+        $_oUser = $_oModule->user;
+        $_sVerb = $_oRequest->getRequestType();
+        $_sIP = $_oRequest->getUserHostAddress();
+        $_arRules = $this->getRules();
+        
+        foreach ( $_arRules as $_oRule )
+        {
+            //  Is allowed?
+            if ( ( $_iAllow = $_oRule->isUserAllowed( $_oUser, $oFilterChain->con
+      troller, $oFilterChain->action, $_sIP, $_sVerb ) ) > 0 )
+                return true;
+            
+            if ( $_iAllow < 0 )
+            {
+                $this->accessDenied( $_oUser );
+                return false;
+            }
+        }
+
+        //  If we made it here, it's all good...
+        return true;
+    }
+\end{DoxyCode}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/filters/\hyperlink{CPSModuleAccessControlFilter_8php}{CPSModuleAccessControlFilter.php}\end{DoxyCompactItemize}

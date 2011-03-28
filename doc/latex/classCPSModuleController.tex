@@ -1,0 +1,70 @@
+\hypertarget{classCPSModuleController}{
+\section{CPSModuleController Class Reference}
+\label{classCPSModuleController}\index{CPSModuleController@{CPSModuleController}}
+}
+
+
+Inheritance diagram for CPSModuleController:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classCPSModuleController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSModuleController:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classCPSModuleController__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSModuleController_a6dd745751fad17eb8121cfe741fec50d}{filterAccessControl} (\$filterChain)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file CPSModuleController.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSModuleController_a6dd745751fad17eb8121cfe741fec50d}{
+\index{CPSModuleController@{CPSModuleController}!filterAccessControl@{filterAccessControl}}
+\index{filterAccessControl@{filterAccessControl}!CPSModuleController@{CPSModuleController}}
+\subsubsection[{filterAccessControl}]{\setlength{\rightskip}{0pt plus 5cm}filterAccessControl (
+\begin{DoxyParamCaption}
+\item[{\$}]{ filterChain}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModuleController_a6dd745751fad17eb8121cfe741fec50d}
+The filter method for 'accessControl' filter. This filter is a wrapper of \hyperlink{classCPSModuleAccessControlFilter}{CPSModuleAccessControlFilter}. To use this filter, you must override the \hyperlink{}{accessRules} method. 
+\begin{DoxyParams}{Parameters}
+\item[{\em CFilterChain}]the filter chain that the filter is on. \end{DoxyParams}
+
+
+Definition at line 33 of file CPSModuleController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $filter = new CPSModuleAccessControlFilter();
+        $filter->setRules( $this->accessRules() );
+        $filter->filter( $filterChain );
+    }
+\end{DoxyCode}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/controllers/\hyperlink{CPSModuleController_8php}{CPSModuleController.php}\end{DoxyCompactItemize}

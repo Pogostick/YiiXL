@@ -1,0 +1,311 @@
+\hypertarget{classCXLOptions}{
+\section{CXLOptions Class Reference}
+\label{classCXLOptions}\index{CXLOptions@{CXLOptions}}
+}
+
+
+Inheritance diagram for CXLOptions:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=366pt]{classCXLOptions__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLOptions:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=366pt]{classCXLOptions__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCXLOptions_ad3b069fcc716a41662fc6256f080438c}{setOptions} (\hyperlink{interfaceIXLComponent}{IXLComponent} \$object, array \$options)
+\item 
+static \hyperlink{classCXLOptions_ad1f41e1f366a38ac2842039518c8c042}{setConstructorOptions} (\hyperlink{interfaceIXLComponent}{IXLComponent} \$object, \$options)
+\item 
+static \hyperlink{classCXLOptions_ac60142407cbd4e84b84ef377481d0d3a}{loadConfiguration} (\hyperlink{interfaceIXLComponent}{IXLComponent} \$object, \$options=array(), \$overwriteExisting=true)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCXLOptions_aa607ab5e557e6ebb60b85c5a20ad067f}{CLASS\_\-LOG\_\-TAG} = 'yiixl.core.helpers.CXLOptions'
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCXLOptions_ac5e46edc6ee7eaffb86f699aff80e72a}{\_\-cleanKey} (\$key)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides abstracted options setting functionality 
+
+Definition at line 20 of file CXLOptions.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLOptions_ac5e46edc6ee7eaffb86f699aff80e72a}{
+\index{CXLOptions@{CXLOptions}!\_\-cleanKey@{\_\-cleanKey}}
+\index{\_\-cleanKey@{\_\-cleanKey}!CXLOptions@{CXLOptions}}
+\subsubsection[{\_\-cleanKey}]{\setlength{\rightskip}{0pt plus 5cm}static \_\-cleanKey (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCXLOptions_ac5e46edc6ee7eaffb86f699aff80e72a}
+Cleans up key names 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 128 of file CXLOptions.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return str_replace( 
+      ' ', 
+      '', 
+      ucwords( 
+        str_replace( 
+          '_', 
+          '', 
+          strtolower( $key )
+        )
+      )
+    );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLOptions_ac5e46edc6ee7eaffb86f699aff80e72a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLOptions_ac60142407cbd4e84b84ef377481d0d3a}{
+\index{CXLOptions@{CXLOptions}!loadConfiguration@{loadConfiguration}}
+\index{loadConfiguration@{loadConfiguration}!CXLOptions@{CXLOptions}}
+\subsubsection[{loadConfiguration}]{\setlength{\rightskip}{0pt plus 5cm}static loadConfiguration (
+\begin{DoxyParamCaption}
+\item[{{\bf IXLComponent} \$}]{ object, }
+\item[{\$}]{ options = {\ttfamily array()}, }
+\item[{\$}]{ overwriteExisting = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCXLOptions_ac60142407cbd4e84b84ef377481d0d3a}
+Loads an array into properties if they exist. 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{interfaceIXLComponent}{IXLComponent}}]\$object \item[{\em array}]\$objectOptions \item[{\em array}]\$options \item[{\em boolean}]\$overwriteExisting \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file CXLOptions.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    XL::logDebug( 'Loading configuration options: ' . print_r( $options, true ), 
+      $object::CLASS_LOG_TAG );
+
+    //  Get a handle on the options to modify
+    $_objectOptions = $object->getOptions();
+    
+    //  Make a copy for posterity
+    if ( $overwriteExisting || empty( $_objectOptions ) )
+      $_objectOptions = $options;
+    else
+      $_objectOptions = array_merge( $_objectOptions, $options );
+    
+    $object->loadOptions( $_objectOptions );
+
+    //  Try to set each one
+    try
+    {
+      foreach ( $options as $_key => $_value )
+      {
+        try
+        {
+          //  See if __set has a better time with this...
+          if ( is_callable( array( $object, 'set' . $_key ) ) )
+            $object->{'set' . $_key}( $_value );
+          else if ( property_exists( $object, $_key ) )
+            $object->{$_key} = $_key;
+        }
+        catch ( Exception $_ex )
+        {
+          //  Completely ignore errors...
+        }
+      }
+    }
+    catch ( Exception $_ex )
+    {
+      XL::logError( 'Exception while loading configuration options: ' . $_ex->get
+      Message(), $object::CLASS_LOG_TAG );
+      return false;
+    }
+    
+    return true;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=368pt]{classCXLOptions_ac60142407cbd4e84b84ef377481d0d3a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=370pt]{classCXLOptions_ac60142407cbd4e84b84ef377481d0d3a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLOptions_ad1f41e1f366a38ac2842039518c8c042}{
+\index{CXLOptions@{CXLOptions}!setConstructorOptions@{setConstructorOptions}}
+\index{setConstructorOptions@{setConstructorOptions}!CXLOptions@{CXLOptions}}
+\subsubsection[{setConstructorOptions}]{\setlength{\rightskip}{0pt plus 5cm}static setConstructorOptions (
+\begin{DoxyParamCaption}
+\item[{{\bf IXLComponent} \$}]{ object, }
+\item[{\$}]{ options}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCXLOptions_ad1f41e1f366a38ac2842039518c8c042}
+Sets the options in \$object 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{interfaceIXLComponent}{IXLComponent}}]\$object \item[{\em array}]\$options \end{DoxyParams}
+
+
+Definition at line 59 of file CXLOptions.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( $options instanceof CXLConfig )
+      $options = $options->toArray();
+
+    if ( is_array( $options ) )
+      self::setOptions( $object, $options );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLOptions_ad1f41e1f366a38ac2842039518c8c042_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLOptions_ad3b069fcc716a41662fc6256f080438c}{
+\index{CXLOptions@{CXLOptions}!setOptions@{setOptions}}
+\index{setOptions@{setOptions}!CXLOptions@{CXLOptions}}
+\subsubsection[{setOptions}]{\setlength{\rightskip}{0pt plus 5cm}static setOptions (
+\begin{DoxyParamCaption}
+\item[{{\bf IXLComponent} \$}]{ object, }
+\item[{array \$}]{ options}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCXLOptions_ad3b069fcc716a41662fc6256f080438c}
+Sets options of an object 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{interfaceIXLComponent}{IXLComponent}}]\$object \item[{\em array}]\$options \end{DoxyParams}
+
+
+Definition at line 40 of file CXLOptions.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( ! is_object( $object ) )
+      return;
+
+    foreach ( $options as $_key => $_value )
+    {
+      $_method = 'set' . self::_cleanKey( $_key );
+
+      if ( is_callable( array( $object, $_method ) ) )
+        $object->$_method( $_value );
+    }
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classCXLOptions_ad3b069fcc716a41662fc6256f080438c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classCXLOptions_ad3b069fcc716a41662fc6256f080438c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLOptions_aa607ab5e557e6ebb60b85c5a20ad067f}{
+\index{CXLOptions@{CXLOptions}!CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}}
+\index{CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}!CXLOptions@{CXLOptions}}
+\subsubsection[{CLASS\_\-LOG\_\-TAG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CLASS\_\-LOG\_\-TAG} = 'yiixl.core.helpers.CXLOptions'}}
+\label{classCXLOptions_aa607ab5e557e6ebb60b85c5a20ad067f}
+Our logging tag 
+
+Definition at line 29 of file CXLOptions.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLOptions_8php}{CXLOptions.php}\end{DoxyCompactItemize}

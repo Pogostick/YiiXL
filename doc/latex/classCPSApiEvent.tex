@@ -1,0 +1,196 @@
+\hypertarget{classCPSApiEvent}{
+\section{CPSApiEvent Class Reference}
+\label{classCPSApiEvent}\index{CPSApiEvent@{CPSApiEvent}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSApiEvent_accd14bda49a1044b4d8dd93f020f11ee}{getUrl} ()
+\item 
+\hyperlink{classCPSApiEvent_a55f162785567258fe5138af282e588c2}{getQuery} ()
+\item 
+\hyperlink{classCPSApiEvent_ade48155878625792024b8c27e997d423}{getUrlResults} ()
+\item 
+\hyperlink{classCPSApiEvent_a1b8ec42a51f004d1021b63d878cd847e}{setUrlResults} (\$sValue)
+\item 
+\hyperlink{classCPSApiEvent_a21b46e09a674be0eb1de3222c2ae95d7}{\_\-\_\-construct} (\$sUrl=null, \$sQuery=null, \$sResults=null, \$oSender=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSApiEvent_ab16efc62694fc7d6620d2f951db167ac}{\$m\_\-sUrl} = null
+\item 
+\hyperlink{classCPSApiEvent_a3d8ef5c5637fd1aa893e2a3a62b45a5a}{\$m\_\-sQuery} = null
+\item 
+\hyperlink{classCPSApiEvent_a754b3666c127a03700fe876153602f62}{\$m\_\-sResults} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file CPSApiEvent.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSApiEvent_a21b46e09a674be0eb1de3222c2ae95d7}{
+\index{CPSApiEvent@{CPSApiEvent}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSApiEvent@{CPSApiEvent}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUrl = {\ttfamily null}, }
+\item[{\$}]{ sQuery = {\ttfamily null}, }
+\item[{\$}]{ sResults = {\ttfamily null}, }
+\item[{\$}]{ oSender = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSApiEvent_a21b46e09a674be0eb1de3222c2ae95d7}
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$sender \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCPSApiEvent}{CPSApiEvent} 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file CPSApiEvent.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::__construct( $oSender );
+
+        $this->m_sUrl = $sUrl;
+        $this->m_sQuery = $sQuery;
+        $this->m_sResults = $sResults;
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSApiEvent_a55f162785567258fe5138af282e588c2}{
+\index{CPSApiEvent@{CPSApiEvent}!getQuery@{getQuery}}
+\index{getQuery@{getQuery}!CPSApiEvent@{CPSApiEvent}}
+\subsubsection[{getQuery}]{\setlength{\rightskip}{0pt plus 5cm}getQuery (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSApiEvent_a55f162785567258fe5138af282e588c2}
+
+
+Definition at line 58 of file CPSApiEvent.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_sQuery; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSApiEvent_accd14bda49a1044b4d8dd93f020f11ee}{
+\index{CPSApiEvent@{CPSApiEvent}!getUrl@{getUrl}}
+\index{getUrl@{getUrl}!CPSApiEvent@{CPSApiEvent}}
+\subsubsection[{getUrl}]{\setlength{\rightskip}{0pt plus 5cm}getUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSApiEvent_accd14bda49a1044b4d8dd93f020f11ee}
+
+
+Definition at line 57 of file CPSApiEvent.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_sUrl; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSApiEvent_ade48155878625792024b8c27e997d423}{
+\index{CPSApiEvent@{CPSApiEvent}!getUrlResults@{getUrlResults}}
+\index{getUrlResults@{getUrlResults}!CPSApiEvent@{CPSApiEvent}}
+\subsubsection[{getUrlResults}]{\setlength{\rightskip}{0pt plus 5cm}getUrlResults (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSApiEvent_ade48155878625792024b8c27e997d423}
+
+
+Definition at line 59 of file CPSApiEvent.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_sResults; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSApiEvent_a1b8ec42a51f004d1021b63d878cd847e}{
+\index{CPSApiEvent@{CPSApiEvent}!setUrlResults@{setUrlResults}}
+\index{setUrlResults@{setUrlResults}!CPSApiEvent@{CPSApiEvent}}
+\subsubsection[{setUrlResults}]{\setlength{\rightskip}{0pt plus 5cm}setUrlResults (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSApiEvent_a1b8ec42a51f004d1021b63d878cd847e}
+
+
+Definition at line 60 of file CPSApiEvent.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_sResults = $sValue; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSApiEvent_a3d8ef5c5637fd1aa893e2a3a62b45a5a}{
+\index{CPSApiEvent@{CPSApiEvent}!\$m\_\-sQuery@{\$m\_\-sQuery}}
+\index{\$m\_\-sQuery@{\$m\_\-sQuery}!CPSApiEvent@{CPSApiEvent}}
+\subsubsection[{\$m\_\-sQuery}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sQuery = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSApiEvent_a3d8ef5c5637fd1aa893e2a3a62b45a5a}
+
+
+Definition at line 43 of file CPSApiEvent.php.
+
+\hypertarget{classCPSApiEvent_a754b3666c127a03700fe876153602f62}{
+\index{CPSApiEvent@{CPSApiEvent}!\$m\_\-sResults@{\$m\_\-sResults}}
+\index{\$m\_\-sResults@{\$m\_\-sResults}!CPSApiEvent@{CPSApiEvent}}
+\subsubsection[{\$m\_\-sResults}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sResults = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSApiEvent_a754b3666c127a03700fe876153602f62}
+
+
+Definition at line 49 of file CPSApiEvent.php.
+
+\hypertarget{classCPSApiEvent_ab16efc62694fc7d6620d2f951db167ac}{
+\index{CPSApiEvent@{CPSApiEvent}!\$m\_\-sUrl@{\$m\_\-sUrl}}
+\index{\$m\_\-sUrl@{\$m\_\-sUrl}!CPSApiEvent@{CPSApiEvent}}
+\subsubsection[{\$m\_\-sUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sUrl = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSApiEvent_ab16efc62694fc7d6620d2f951db167ac}
+
+
+Definition at line 37 of file CPSApiEvent.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/events/\hyperlink{CPSApiEvent_8php}{CPSApiEvent.php}\end{DoxyCompactItemize}

@@ -1,0 +1,219 @@
+\hypertarget{classCPSBaseActiveRecordBehavior}{
+\section{CPSBaseActiveRecordBehavior Class Reference}
+\label{classCPSBaseActiveRecordBehavior}\index{CPSBaseActiveRecordBehavior@{CPSBaseActiveRecordBehavior}}
+}
+
+
+Inheritance diagram for CPSBaseActiveRecordBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSBaseActiveRecordBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSBaseActiveRecordBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classCPSBaseActiveRecordBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSBaseActiveRecordBehavior_a095c5d389db211932136b53f25f39685}{\_\-\_\-construct} ()
+\item 
+\hyperlink{classCPSBaseActiveRecordBehavior_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSBaseActiveRecordBehavior_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSBaseActiveRecordBehavior_aa18c8754403c04289ac8fbfc467df4ac}{getInternalName} ()
+\item 
+\hyperlink{classCPSBaseActiveRecordBehavior_a0c8c21c19fd1818f2f472ae1d81f086d}{setInternalName} (\$sValue)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSBaseActiveRecordBehavior.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSBaseActiveRecordBehavior_a095c5d389db211932136b53f25f39685}{
+\index{CPSBaseActiveRecordBehavior@{CPSBaseActiveRecordBehavior}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSBaseActiveRecordBehavior@{CPSBaseActiveRecordBehavior}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSBaseActiveRecordBehavior_a095c5d389db211932136b53f25f39685}
+Constructor 
+
+Definition at line 31 of file CPSBaseActiveRecordBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Log it and check for issues...
+        if ( defined( 'PYE_TRACE_LEVEL' ) && PYE_TRACE_LEVEL > 4 )
+            CPSLog::trace( 'pogostick.behaviors', __CLASS__ . ' constructed' );
+
+        //  Preinitialize
+        $this->preinit();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSBaseActiveRecordBehavior_a095c5d389db211932136b53f25f39685_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSBaseActiveRecordBehavior_aa18c8754403c04289ac8fbfc467df4ac}{
+\index{CPSBaseActiveRecordBehavior@{CPSBaseActiveRecordBehavior}!getInternalName@{getInternalName}}
+\index{getInternalName@{getInternalName}!CPSBaseActiveRecordBehavior@{CPSBaseActiveRecordBehavior}}
+\subsubsection[{getInternalName}]{\setlength{\rightskip}{0pt plus 5cm}getInternalName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSBaseActiveRecordBehavior_aa18c8754403c04289ac8fbfc467df4ac}
+Get the internal name of our component \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIPSComponent_aa18c8754403c04289ac8fbfc467df4ac}{IPSComponent}.
+
+
+
+Definition at line 64 of file CPSBaseActiveRecordBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_internalName; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSBaseActiveRecordBehavior_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSBaseActiveRecordBehavior@{CPSBaseActiveRecordBehavior}!init@{init}}
+\index{init@{init}!CPSBaseActiveRecordBehavior@{CPSBaseActiveRecordBehavior}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSBaseActiveRecordBehavior_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize 
+
+Definition at line 56 of file CPSBaseActiveRecordBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSBaseActiveRecordBehavior_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSBaseActiveRecordBehavior@{CPSBaseActiveRecordBehavior}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSBaseActiveRecordBehavior@{CPSBaseActiveRecordBehavior}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSBaseActiveRecordBehavior_a2dc262e99b1c246b56f27626bfe699ff}
+Preinitialize the object 
+
+Implements \hyperlink{interfaceIPSComponent_a2dc262e99b1c246b56f27626bfe699ff}{IPSComponent}.
+
+
+
+Definition at line 48 of file CPSBaseActiveRecordBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        CPSHelperBase::createInternalName( $this );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSBaseActiveRecordBehavior_a2dc262e99b1c246b56f27626bfe699ff_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classCPSBaseActiveRecordBehavior_a2dc262e99b1c246b56f27626bfe699ff_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSBaseActiveRecordBehavior_a0c8c21c19fd1818f2f472ae1d81f086d}{
+\index{CPSBaseActiveRecordBehavior@{CPSBaseActiveRecordBehavior}!setInternalName@{setInternalName}}
+\index{setInternalName@{setInternalName}!CPSBaseActiveRecordBehavior@{CPSBaseActiveRecordBehavior}}
+\subsubsection[{setInternalName}]{\setlength{\rightskip}{0pt plus 5cm}setInternalName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSBaseActiveRecordBehavior_a0c8c21c19fd1818f2f472ae1d81f086d}
+Set the internal name of this component 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\end{DoxyParams}
+
+
+Implements \hyperlink{interfaceIPSComponent_a08e716b913e06fdbb77e84f81c0a3a35}{IPSComponent}.
+
+
+
+Definition at line 70 of file CPSBaseActiveRecordBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_internalName = $sValue; }
+\end{DoxyCode}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/behaviors/\hyperlink{CPSBaseActiveRecordBehavior_8php}{CPSBaseActiveRecordBehavior.php}\end{DoxyCompactItemize}

@@ -1,0 +1,258 @@
+\hypertarget{classCPSFacebookConnect}{
+\section{CPSFacebookConnect Class Reference}
+\label{classCPSFacebookConnect}\index{CPSFacebookConnect@{CPSFacebookConnect}}
+}
+
+
+Inheritance diagram for CPSFacebookConnect:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classCPSFacebookConnect__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSFacebookConnect:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classCPSFacebookConnect__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFacebookConnect_a095c5d389db211932136b53f25f39685}{\_\-\_\-construct} ()
+\item 
+\hyperlink{classCPSFacebookConnect_afb0fafe7e02a3ae1993c01c19fad2bae}{run} ()
+\item 
+\hyperlink{classCPSFacebookConnect_a59080ee7d7949e19f5af41e26ff53806}{registerClientScripts} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFacebookConnect_a2a2ea08f8240ed4c24058ab80ab89703}{generateJavascript} ()
+\item 
+\hyperlink{classCPSFacebookConnect_acc5a32d52db57b80885add51c076ed42}{generateHtml} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file CPSFacebookConnect.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSFacebookConnect_a095c5d389db211932136b53f25f39685}{
+\index{CPSFacebookConnect@{CPSFacebookConnect}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSFacebookConnect@{CPSFacebookConnect}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookConnect_a095c5d389db211932136b53f25f39685}
+Our init function 
+
+Definition at line 30 of file CPSFacebookConnect.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::__construct();
+
+        $this->addOptions(
+            array(
+                'appId' => 'string',
+                'callbackUrl' => 'string',
+                'xdrUrl' => 'string',
+            )
+        );
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSFacebookConnect_acc5a32d52db57b80885add51c076ed42}{
+\index{CPSFacebookConnect@{CPSFacebookConnect}!generateHtml@{generateHtml}}
+\index{generateHtml@{generateHtml}!CPSFacebookConnect@{CPSFacebookConnect}}
+\subsubsection[{generateHtml}]{\setlength{\rightskip}{0pt plus 5cm}generateHtml (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookConnect_acc5a32d52db57b80885add51c076ed42}
+Generates the javascript code for the widget \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSWidget_acc5a32d52db57b80885add51c076ed42}{CPSWidget}.
+
+
+
+Definition at line 69 of file CPSFacebookConnect.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( '' );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookConnect_a2a2ea08f8240ed4c24058ab80ab89703}{
+\index{CPSFacebookConnect@{CPSFacebookConnect}!generateJavascript@{generateJavascript}}
+\index{generateJavascript@{generateJavascript}!CPSFacebookConnect@{CPSFacebookConnect}}
+\subsubsection[{generateJavascript}]{\setlength{\rightskip}{0pt plus 5cm}generateJavascript (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookConnect_a2a2ea08f8240ed4c24058ab80ab89703}
+Generates the javascript code for the widget \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSWidget_a2a2ea08f8240ed4c24058ab80ab89703}{CPSWidget}.
+
+
+
+Definition at line 53 of file CPSFacebookConnect.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sUrl = $this->getOption( 'xdrUrl' );
+        $_sOut =<<<JSCRIPT
+FB.init('{$this->apiKey}', '{$_sUrl}' );
+FB.ensureInit(
+    function()
+    {
+//      FB.Connect.showPermissionDialog( "email" );
+    }
+);
+JSCRIPT;
+
+        return( $_sOut );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookConnect_a2a2ea08f8240ed4c24058ab80ab89703_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookConnect_a59080ee7d7949e19f5af41e26ff53806}{
+\index{CPSFacebookConnect@{CPSFacebookConnect}!registerClientScripts@{registerClientScripts}}
+\index{registerClientScripts@{registerClientScripts}!CPSFacebookConnect@{CPSFacebookConnect}}
+\subsubsection[{registerClientScripts}]{\setlength{\rightskip}{0pt plus 5cm}registerClientScripts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookConnect_a59080ee7d7949e19f5af41e26ff53806}
+Register the necessary Facebook Connect scripts... 
+
+Reimplemented from \hyperlink{classCPSWidget_a59080ee7d7949e19f5af41e26ff53806}{CPSWidget}.
+
+
+
+Definition at line 78 of file CPSFacebookConnect.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::registerClientScripts();
+
+        $this->pushScriptFile( 'http://static.ak.connect.facebook.com/js/api_lib/
+      v0.4/FeatureLoader.js.php', CClientScript::POS_END );
+        PS::_rs( 'Yii.' . __CLASS__ . '#' . $this->id, $this->generateJavascript(
+      ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=370pt]{classCPSFacebookConnect_a59080ee7d7949e19f5af41e26ff53806_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classCPSFacebookConnect_a59080ee7d7949e19f5af41e26ff53806_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookConnect_afb0fafe7e02a3ae1993c01c19fad2bae}{
+\index{CPSFacebookConnect@{CPSFacebookConnect}!run@{run}}
+\index{run@{run}!CPSFacebookConnect@{CPSFacebookConnect}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookConnect_afb0fafe7e02a3ae1993c01c19fad2bae}
+
+
+Definition at line 47 of file CPSFacebookConnect.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Register the scripts/css
+        $this->registerClientScripts();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSFacebookConnect_afb0fafe7e02a3ae1993c01c19fad2bae_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/facebook/\hyperlink{CPSFacebookConnect_8php}{CPSFacebookConnect.php}\end{DoxyCompactItemize}

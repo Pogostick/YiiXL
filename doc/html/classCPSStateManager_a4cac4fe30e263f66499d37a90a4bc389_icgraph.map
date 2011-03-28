@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSStateManager.html#ae29eea2995e7e3e2789181f632ae95a5" title="getFlashes" alt="" coords="157,5,248,35"/>
+<area shape="rect" id="node5" href="$classCPSStateManager.html#aafc00fb76764975385c8a3fa54cfece3" title="setState" alt="" coords="164,59,241,88"/>
+<area shape="rect" id="node7" href="$classCPSStateManager.html#a7ae4f6603338ff51e36d4da8219b3a64" title="setFlash" alt="" coords="296,59,371,88"/>
+<area shape="rect" id="node9" href="$classCPSStateManager.html#a3ac1554d96ad28d5ab40d8ea5b6a11fe" title="getFlash" alt="" coords="420,59,495,88"/>
+<area shape="rect" id="node11" href="$classCPSStateManager.html#a0ac89d09ac48bba800f8dd87a0e790fc" title="hasFlash" alt="" coords="545,59,623,88"/>
+</map>

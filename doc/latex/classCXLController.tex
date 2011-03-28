@@ -1,0 +1,2739 @@
+\hypertarget{classCXLController}{
+\section{CXLController Class Reference}
+\label{classCXLController}\index{CXLController@{CXLController}}
+}
+
+
+Inheritance diagram for CXLController:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classCXLController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLController:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classCXLController__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLController_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCXLController_ae353790f09e1f72e1cc81d21a6eb9bed}{actions} ()
+\item 
+\hyperlink{classCXLController_ab9196d5e77e86dc16866c3b5373963a2}{genericAction} (\$actionId, \$model=null, \$extraParameters=array(), \$modelVariableName= 'model', \$flashMessageKey=null, \$flashMessageValue=null, \$flashMessageDefaultValue=null)
+\item 
+\hyperlink{classCXLController_aee989705ca23d787542be0bf30a28000}{loadCurrentModel} (\$id=null)
+\item 
+\hyperlink{classCXLController_a3d33455ae87de01aa0051c43be585ee7}{missingAction} (\$actionId=null)
+\item 
+\hyperlink{classCXLController_a8471fa2c95307d608c34f15dae47d254}{actionError} ()
+\item 
+\hyperlink{classCXLController_adf1a35ad20e475c59cc0967d5764aa22}{getRequest} ()
+\item 
+\hyperlink{classCXLController_ae348b4354879b012496b19989bf6d9cf}{beforeAction} (\$action)
+\item 
+\hyperlink{classCXLController_acaf53d84b70927098a40b8e626985146}{newRender} (\$viewName, \$viewData=null, \$returnString=false)
+\item 
+\hyperlink{classCXLController_a8324b095d3faa196d784f84a3f0cef25}{renderPartial} (\$view, \$data=null, \$return=false, \$processOutput=false)
+\item 
+\hyperlink{classCXLController_ae926a613a7702bb749e974f35a462d60}{setStandardFormOptions} (\$model, \$optionList=array())
+\item 
+\hyperlink{classCXLController_a136cf4fecb17df00146f6889ffdbccee}{setContentType} (\$contentType, \$noLayout=true)
+\item 
+\hyperlink{classCXLController_a592bdbc48efc56a00e5b49582db7c09f}{setViewNavigationOptions} (\&\$options=array())
+\item 
+\hyperlink{classCXLController_acea2c7c705d91ba736a41e67314e5ae3}{getIsPostRequest} ()
+\item 
+\hyperlink{classCXLController_aed1df55c262bb0238ae6ef0921a2552b}{getIsAjaxRequest} ()
+\item 
+\hyperlink{classCXLController_ae32b7248cefed2da5b054c1a4ab674b1}{getAppBaseUrl} ()
+\item 
+\hyperlink{classCXLController_a637e84e2e9e99a87ea9b5f1771551af4}{getMenu} ()
+\item 
+\hyperlink{classCXLController_a5cf6c2464263681fdc1186bb94ee9ad8}{setMenu} (\$value)
+\item 
+\hyperlink{classCXLController_ab53bf1b4b27392839a16ecf3ad62e88b}{getBreadcrumbs} ()
+\item 
+\hyperlink{classCXLController_a9f9822dfb5d491a6e0b9c836d6ce4e3f}{setBreadcrumbs} (\$value)
+\item 
+\hyperlink{classCXLController_af6a608839df34306457a0f877695bce0}{getPageHeading} ()
+\item 
+\hyperlink{classCXLController_aee7c1dbb383543b39ff09bf25dc6adf0}{setPageHeading} (\$value)
+\item 
+\hyperlink{classCXLController_af06d6acbc7631d7109d3281191b33bc9}{getActionMethodPrefix} ()
+\item 
+\hyperlink{classCXLController_acfc34f281282bbec29fe66ca52419651}{setActionMethodPrefix} (\$value)
+\item 
+\hyperlink{classCXLController_a71e9b2625e1f13a65ea101b53d2f264d}{getCurrentModel} ()
+\item 
+\hyperlink{classCXLController_aef6109e8c58719533639e6526717fb1b}{getModelClass} ()
+\item 
+\hyperlink{classCXLController_a68388edace82b8984b694c1d4e6beb82}{getContentTemplate} ()
+\item 
+\hyperlink{classCXLController_a5166a144947cae70bcb6ad5b508cefcc}{setContentTemplate} (\$value)
+\item 
+\hyperlink{classCXLController_a9a7643aeb71f6ca0cdfd394f9bd7deda}{getAutoFindLayout} ()
+\item 
+\hyperlink{classCXLController_a39204785aa23a9a43f8a6e1bb3998efb}{setAutoFindLayout} (\$value)
+\item 
+\hyperlink{classCXLController_aee02b55545c3a77d1bf4b3480856e774}{getAutoFindAction} ()
+\item 
+\hyperlink{classCXLController_a8f4e999ffe16e8a84221c6e0de6f7bd9}{setAutoFindAction} (\$value)
+\item 
+\hyperlink{classCXLController_aa02a564e1ffff40fd78f509309154d95}{getAdminCommandMap} ()
+\item 
+\hyperlink{classCXLController_a23588c95ee01933abc6e0590c1aa1138}{setAdminCommandMap} (\$value)
+\item 
+\hyperlink{classCXLController_ad7fa598cf33ccbba931578de18f074bf}{addCommandToMap} (\$key, \$value=null, \$property=null)
+\item 
+\hyperlink{classCXLController_ae3e26353e430eb74e086211a9bfcb957}{getPortletActions} ()
+\item 
+\hyperlink{classCXLController_a62630bbea4f9a6d711684891ad307fda}{setPortletActions} (\$value)
+\item 
+\hyperlink{classCXLController_a1103c34c21ad3fac33acc05c977edd46}{addPortletAction} (\$sName, \$arCallback)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCXLController_aa607ab5e557e6ebb60b85c5a20ad067f}{CLASS\_\-LOG\_\-TAG} = 'yiixl.core.components.CXLController'
+\item 
+const \hyperlink{classCXLController_a4634a091c35db33009455321e1d259e3}{PAGE\_\-SIZE} = 10
+\item 
+const \hyperlink{classCXLController_acfa3d37fd2964302d32a8905a102196d}{COMMAND\_\-FIELD\_\-NAME} = '\_\-\_\-yxl'
+\item 
+const \hyperlink{classCXLController_a21930d5a45a39f983d1b157fd28819dc}{SEARCH\_\-HELP\_\-TEXT} = 'You may optionally enter a comparison operator ($<$b$>$\&lt;$<$/b$>$, $<$b$>$\&lt;=$<$/b$>$, $<$b$>$\&gt;$<$/b$>$, $<$b$>$\&gt;=$<$/b$>$, $<$b$>$\&lt;\&gt;$<$/b$>$or $<$b$>$=$<$/b$>$) at the beginning of each search value to specify how the comparison should be done.'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLController_a1da4e93942345da876819fb6b8614a26}{setCurrentModel} (\$value)
+\item 
+\hyperlink{classCXLController_a24e8b6f39d6a823d94317e35f1b94758}{setModelClass} (\$value)
+\item 
+\hyperlink{classCXLController_a09cb66dd061fa338ab2a85a31f5ccf00}{getViewData} ()
+\item 
+\hyperlink{classCXLController_ade714d0b090e663e7acd6ef596d602ec}{setViewData} (\$value)
+\item 
+\hyperlink{classCXLController_a095ad5a2da0a46cf0c5225c826b7fe4c}{getExtraViewDataList} ()
+\item 
+\hyperlink{classCXLController_a537201d018053eaff662e290be1a8a81}{setExtraViewDataList} (\$value)
+\item 
+\hyperlink{classCXLController_a1f4c82d1446cb4a49f0da9bc76e5aa1e}{getExtraViewDataPrefix} ()
+\item 
+\hyperlink{classCXLController_ae80dd653d6c5d9e7be65cd7ae3f05627}{setExtraViewDataPrefix} (\$value)
+\item 
+\hyperlink{classCXLController_ae4991b44dadced9ed4c2548c8a52b72e}{processCommand} (\$arData=array(), \$sIndexName=self::COMMAND\_\-FIELD\_\-NAME)
+\item 
+\hyperlink{classCXLController_af6aedd6d8077a2728f4e7f1fad56d5a2}{saveCurrentModel} (\&\$model, \$arData=array(), \$sRedirectAction= 'show', \$bAttributesSet=false, \$sModelName=null, \$sSuccessMessage=null, \$bNoCommit=false, \$bSafeOnly=false)
+\item 
+\hyperlink{classCXLController_aefd99225a64bed9ce7e820c430fc37d4}{saveTransactionCurrentModel} (\&\$model, \$arData=array(), \$bAttributesSet=false, \$sSuccessMessage=null)
+\item 
+\hyperlink{classCXLController_a138d56ab26b272430a88450638c6d466}{loadPaged} (\$bSort=false, \$oCriteria=null)
+\item 
+\hyperlink{classCXLController_aacb2f651978f6aa962de80bc0248b3d9}{genericModelLoad} (\$sMethod, \&\$oCrit=null, \$arScope=array(), \$arOptions=array())
+\item 
+\hyperlink{classCXLController_a90f83714d8df3e6f07b28fb5d25e7116}{load} (\$id=null)
+\item 
+\hyperlink{classCXLController_a4e6ee9ca4aff15fe9592ad24f5ebd509}{loadAll} (\&\$oCrit=null)
+\item 
+\hyperlink{classCXLController_a97e32933f78c7a0e8e6829ac513deb4d}{loadCount} (\&\$oCrit=null)
+\item 
+\hyperlink{classCXLController_a594123c5fb3f7fab375d51468f7d5074}{getModelLoadString} (\$arScope=array(), \$arOptions=array())
+\item 
+\hyperlink{classCXLController_a1605f43b777d563c5027f018633e7a30}{pushAction} (\$action)
+\item 
+\hyperlink{classCXLController_aaebe806c849a4c263ea874b67ba9c98b}{popAction} ()
+\item 
+\hyperlink{classCXLController_ac265d939123b5e6488026368b49ecd30}{addViewData} (\$variableName, \$variableData=null)
+\item 
+\hyperlink{classCXLController_aac45f7bcfa0fb866aff383996519ec35}{clearSearchCriteria} ()
+\item 
+\hyperlink{classCXLController_a7063f698c3d296c849e56a97a007b280}{\_\-ajaxReturn} (\$payload=false, \$encode=false, \$encodeOptions=ENT\_\-NOQUOTES)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLController_a4192f529627c76fa7a70ae23b9582516}{\$\_\-menu} = array( )
+\item 
+\hyperlink{classCXLController_aa29f8061f06b0d1991b405eb2b5817fd}{\$\_\-breadcrumbs} = array( )
+\item 
+\hyperlink{classCXLController_a4d69ce5758da90c27ff027a2a585b12d}{\$\_\-pageHeading}
+\item 
+\hyperlink{classCXLController_aa59919f08891da659e63b956bc0eb51b}{\$\_\-actionMethodPrefix} = 'action'
+\item 
+\hyperlink{classCXLController_abdf2c7ca76e9731f3240034f06c59369}{\$\_\-currentModel} = null
+\item 
+\hyperlink{classCXLController_a90080dcb26627bf719d96ab99e51f958}{\$\_\-modelClass} = null
+\item 
+\hyperlink{classCXLController_a60dfb02e8707a7eabb0f0573a607ba6d}{\$\_\-contentTemplate} = null
+\item 
+\hyperlink{classCXLController_ab2767a4ea7c0e2a4469056d506d354ba}{\$\_\-autoFindLayout} = true
+\item 
+\hyperlink{classCXLController_a6f28f5590fd179dd9b15a0647118661e}{\$\_\-autoFindAction} = true
+\item 
+\hyperlink{classCXLController_aec275c56f2c1e8ffe8a5e454a2b695b5}{\$\_\-adminCommandMap} = array( )
+\item 
+\hyperlink{classCXLController_a1a4bf00b331c163adc5f346e51ecb51f}{\$\_\-actionStack} = array( )
+\item 
+\hyperlink{classCXLController_a2e9a5f68d4557c2e220a4a8b01cf9b1b}{\$\_\-portletActions} = array( )
+\item 
+\hyperlink{classCXLController_a32acaa681d9d516f9964704f41590546}{\$\_\-viewData} = array( )
+\item 
+\hyperlink{classCXLController_a7d16c40c2d533779317b383d69e59ea0}{\$\_\-extraViewDataList} = array( )
+\item 
+\hyperlink{classCXLController_a41793f2872b496a2d4effc0da5f82a3c}{\$\_\-extraViewDataPrefix} = '\_\-'
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCXLController}{CXLController} Provides filtered access to resources 
+
+Definition at line 21 of file CXLController.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLController_a7063f698c3d296c849e56a97a007b280}{
+\index{CXLController@{CXLController}!\_\-ajaxReturn@{\_\-ajaxReturn}}
+\index{\_\-ajaxReturn@{\_\-ajaxReturn}!CXLController@{CXLController}}
+\subsubsection[{\_\-ajaxReturn}]{\setlength{\rightskip}{0pt plus 5cm}\_\-ajaxReturn (
+\begin{DoxyParamCaption}
+\item[{\$}]{ payload = {\ttfamily false}, }
+\item[{\$}]{ encode = {\ttfamily false}, }
+\item[{\$}]{ encodeOptions = {\ttfamily ENT\_\-NOQUOTES}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a7063f698c3d296c849e56a97a007b280}
+Turns off the layout, echos the JSON encoded version of data and returns. Optionally encoding HTML characters. 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$payload The response data \item[{\em boolean}]\$encode If true, response is run through htmlspecialchars() \item[{\em integer}]\$encodeOptions Options for htmlspecialchars. Defaults to ENT\_\-NOQUOTES \end{DoxyParams}
+
+
+Definition at line 1058 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->layout = false;
+
+    if ( false === $payload || true === $payload ) $payload = ( $payload ? '1' : 
+      '0' );
+
+    $_result = json_encode( $payload );
+    if ( $encode ) $_result = htmlspecialchars( $_result, $encodeOptions );
+
+    echo $_result;
+    return;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a8471fa2c95307d608c34f15dae47d254}{
+\index{CXLController@{CXLController}!actionError@{actionError}}
+\index{actionError@{actionError}!CXLController@{CXLController}}
+\subsubsection[{actionError}]{\setlength{\rightskip}{0pt plus 5cm}actionError (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a8471fa2c95307d608c34f15dae47d254}
+Our error handler... 
+
+Definition at line 298 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( null === ( $_error = XL::_gco( 'errorHandler' )->error ) )
+    {
+      if ( ! $this->isAjaxRequest() ) 
+        throw new CHttpException( 404, 'Page not found.' );
+      
+      echo $_error['message'];
+    }
+
+    $this->render( 
+      'error', 
+      array( 
+        'error' => $_error 
+      )
+    );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classCXLController_a8471fa2c95307d608c34f15dae47d254_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_ae353790f09e1f72e1cc81d21a6eb9bed}{
+\index{CXLController@{CXLController}!actions@{actions}}
+\index{actions@{actions}!CXLController@{CXLController}}
+\subsubsection[{actions}]{\setlength{\rightskip}{0pt plus 5cm}actions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_ae353790f09e1f72e1cc81d21a6eb9bed}
+How about a default action that displays static pages? Huh? Huh?
+
+In your configuration file, configure the urlManager as follows:
+
+'urlManager' =$>$ array( 'urlFormat' =$>$ 'path', 'showScriptName' =$>$ false, 'rules' =$>$ array( ... all your rules should be first ... // Add this as the last line in your rules. '$<$view:+$>$' =$>$ 'default/\_\-static', ),
+
+The above assumes your default controller is DefaultController. If is different simply change the route above (default/\_\-static) to your default route.
+
+Finally, create a directory under your default controller's view path:
+
+/path/to/your/app/protected/views/default/\_\-static
+
+Place your static files in there, for example:
+
+/path/to/your/app/protected/views/default/\_\-static/aboutUs.php /path/to/your/app/protected/views/default/\_\-static/contactUs.php /path/to/your/app/protected/views/default/\_\-static/help.php
+
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 210 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return array_merge(
+      array(
+        '_static' => array(
+          'class' => 'CViewAction',
+          'basePath' => '_static',
+        ),
+      ), parent::actions()
+    );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_ad7fa598cf33ccbba931578de18f074bf}{
+\index{CXLController@{CXLController}!addCommandToMap@{addCommandToMap}}
+\index{addCommandToMap@{addCommandToMap}!CXLController@{CXLController}}
+\subsubsection[{addCommandToMap}]{\setlength{\rightskip}{0pt plus 5cm}addCommandToMap (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ value = {\ttfamily null}, }
+\item[{\$}]{ property = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_ad7fa598cf33ccbba931578de18f074bf}
+
+
+Definition at line 776 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_adminCommandMap[$key] = $value;
+    if ( $property ) $this->addActionControls( $property, array( $key ) ); return
+       $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a1103c34c21ad3fac33acc05c977edd46}{
+\index{CXLController@{CXLController}!addPortletAction@{addPortletAction}}
+\index{addPortletAction@{addPortletAction}!CXLController@{CXLController}}
+\subsubsection[{addPortletAction}]{\setlength{\rightskip}{0pt plus 5cm}addPortletAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sName, }
+\item[{\$}]{ arCallback}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a1103c34c21ad3fac33acc05c977edd46}
+
+
+Definition at line 793 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_portletActions[$sName] = $arCallback;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_ac265d939123b5e6488026368b49ecd30}{
+\index{CXLController@{CXLController}!addViewData@{addViewData}}
+\index{addViewData@{addViewData}!CXLController@{CXLController}}
+\subsubsection[{addViewData}]{\setlength{\rightskip}{0pt plus 5cm}addViewData (
+\begin{DoxyParamCaption}
+\item[{\$}]{ variableName, }
+\item[{\$}]{ variableData = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_ac265d939123b5e6488026368b49ecd30}
+Pushes a variable onto the view data stack
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$variableName \item[{\em mixed}]\$variableData \end{DoxyParams}
+
+
+Definition at line 1035 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_viewData[$variableName] = $variableData;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_ae348b4354879b012496b19989bf6d9cf}{
+\index{CXLController@{CXLController}!beforeAction@{beforeAction}}
+\index{beforeAction@{beforeAction}!CXLController@{CXLController}}
+\subsubsection[{beforeAction}]{\setlength{\rightskip}{0pt plus 5cm}beforeAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ action}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_ae348b4354879b012496b19989bf6d9cf}
+See if there are any commands that need processing 
+\begin{DoxyParams}{Parameters}
+\item[{\em CAction}]\$action \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 330 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  If we have commands, give it a shot...
+    if ( count( $this->_adminCommandMap ) && parent::beforeAction( $action ) ) 
+      $this->processCommand();
+
+    return true;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_ae348b4354879b012496b19989bf6d9cf_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_aac45f7bcfa0fb866aff383996519ec35}{
+\index{CXLController@{CXLController}!clearSearchCriteria@{clearSearchCriteria}}
+\index{clearSearchCriteria@{clearSearchCriteria}!CXLController@{CXLController}}
+\subsubsection[{clearSearchCriteria}]{\setlength{\rightskip}{0pt plus 5cm}clearSearchCriteria (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_aac45f7bcfa0fb866aff383996519ec35}
+Clears the current search criteria \begin{DoxyReturn}{Returns}
+null 
+\end{DoxyReturn}
+
+
+Definition at line 1044 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->m_arCurrentSearchCriteria = null;
+    Yii::app()->user->clearState( $this->m_sSearchStateId );
+
+    return null;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_ab9196d5e77e86dc16866c3b5373963a2}{
+\index{CXLController@{CXLController}!genericAction@{genericAction}}
+\index{genericAction@{genericAction}!CXLController@{CXLController}}
+\subsubsection[{genericAction}]{\setlength{\rightskip}{0pt plus 5cm}genericAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ actionId, }
+\item[{\$}]{ model = {\ttfamily null}, }
+\item[{\$}]{ extraParameters = {\ttfamily array(~)}, }
+\item[{\$}]{ modelVariableName = {\ttfamily 'model'}, }
+\item[{\$}]{ flashMessageKey = {\ttfamily null}, }
+\item[{\$}]{ flashMessageValue = {\ttfamily null}, }
+\item[{\$}]{ flashMessageDefaultValue = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_ab9196d5e77e86dc16866c3b5373963a2}
+A generic action that renders a page and passes in the model
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]The action id \item[{\em CModel}]The model \item[{\em array}]Extra parameters to pass to the view \item[{\em string}]The name of the variable to pass to the view. Defaults to 'model' \end{DoxyParams}
+
+
+Definition at line 230 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( $flashMessageKey ) 
+      XL::_sf( $flashMessageKey, $flashMessageValue, $flashMessageDefaultValue );
+      
+    
+    $this->render( 
+      $actionId, 
+      array_merge( 
+        $extraParameters, 
+        array( 
+          $modelVariableName => ( $model ) ? $model : $this->loadCurrentModel() 
+        )
+      )
+    );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_ab9196d5e77e86dc16866c3b5373963a2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_aacb2f651978f6aa962de80bc0248b3d9}{
+\index{CXLController@{CXLController}!genericModelLoad@{genericModelLoad}}
+\index{genericModelLoad@{genericModelLoad}!CXLController@{CXLController}}
+\subsubsection[{genericModelLoad}]{\setlength{\rightskip}{0pt plus 5cm}genericModelLoad (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sMethod, }
+\item[{\&\$}]{ oCrit = {\ttfamily null}, }
+\item[{\$}]{ arScope = {\ttfamily array(~)}, }
+\item[{\$}]{ arOptions = {\ttfamily array(~)}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_aacb2f651978f6aa962de80bc0248b3d9}
+Loads a model(s) based on criteria and scopes.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]The method to append \item[{\em CDbCriteria}]The criteria for the lookup \item[{\em array}]Scopes to apply to this request \item[{\em array}]Options for the data load \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+CActiveRecord$|$array 
+\end{DoxyReturn}
+
+
+Definition at line 957 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_sMethod = $this->getModelLoadString( $arScope, $arOptions ) . $sMethod;
+    return eval( "return (" . $_sMethod . ");" );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classCXLController_aacb2f651978f6aa962de80bc0248b3d9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_aacb2f651978f6aa962de80bc0248b3d9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_af06d6acbc7631d7109d3281191b33bc9}{
+\index{CXLController@{CXLController}!getActionMethodPrefix@{getActionMethodPrefix}}
+\index{getActionMethodPrefix@{getActionMethodPrefix}!CXLController@{CXLController}}
+\subsubsection[{getActionMethodPrefix}]{\setlength{\rightskip}{0pt plus 5cm}getActionMethodPrefix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_af06d6acbc7631d7109d3281191b33bc9}
+
+
+Definition at line 700 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_actionMethodPrefix;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_aa02a564e1ffff40fd78f509309154d95}{
+\index{CXLController@{CXLController}!getAdminCommandMap@{getAdminCommandMap}}
+\index{getAdminCommandMap@{getAdminCommandMap}!CXLController@{CXLController}}
+\subsubsection[{getAdminCommandMap}]{\setlength{\rightskip}{0pt plus 5cm}getAdminCommandMap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_aa02a564e1ffff40fd78f509309154d95}
+
+
+Definition at line 765 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_adminCommandMap;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_ae32b7248cefed2da5b054c1a4ab674b1}{
+\index{CXLController@{CXLController}!getAppBaseUrl@{getAppBaseUrl}}
+\index{getAppBaseUrl@{getAppBaseUrl}!CXLController@{CXLController}}
+\subsubsection[{getAppBaseUrl}]{\setlength{\rightskip}{0pt plus 5cm}getAppBaseUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_ae32b7248cefed2da5b054c1a4ab674b1}
+Returns the base url of the current app \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 658 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return XL::_gbu();
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classCXLController_ae32b7248cefed2da5b054c1a4ab674b1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_aee02b55545c3a77d1bf4b3480856e774}{
+\index{CXLController@{CXLController}!getAutoFindAction@{getAutoFindAction}}
+\index{getAutoFindAction@{getAutoFindAction}!CXLController@{CXLController}}
+\subsubsection[{getAutoFindAction}]{\setlength{\rightskip}{0pt plus 5cm}getAutoFindAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_aee02b55545c3a77d1bf4b3480856e774}
+
+
+Definition at line 755 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_autoFindAction;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a9a7643aeb71f6ca0cdfd394f9bd7deda}{
+\index{CXLController@{CXLController}!getAutoFindLayout@{getAutoFindLayout}}
+\index{getAutoFindLayout@{getAutoFindLayout}!CXLController@{CXLController}}
+\subsubsection[{getAutoFindLayout}]{\setlength{\rightskip}{0pt plus 5cm}getAutoFindLayout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a9a7643aeb71f6ca0cdfd394f9bd7deda}
+
+
+Definition at line 744 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_autoFindLayout;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_ab53bf1b4b27392839a16ecf3ad62e88b}{
+\index{CXLController@{CXLController}!getBreadcrumbs@{getBreadcrumbs}}
+\index{getBreadcrumbs@{getBreadcrumbs}!CXLController@{CXLController}}
+\subsubsection[{getBreadcrumbs}]{\setlength{\rightskip}{0pt plus 5cm}getBreadcrumbs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_ab53bf1b4b27392839a16ecf3ad62e88b}
+
+
+Definition at line 678 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_breadcrumbs;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a68388edace82b8984b694c1d4e6beb82}{
+\index{CXLController@{CXLController}!getContentTemplate@{getContentTemplate}}
+\index{getContentTemplate@{getContentTemplate}!CXLController@{CXLController}}
+\subsubsection[{getContentTemplate}]{\setlength{\rightskip}{0pt plus 5cm}getContentTemplate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a68388edace82b8984b694c1d4e6beb82}
+
+
+Definition at line 733 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_contentTemplate;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a71e9b2625e1f13a65ea101b53d2f264d}{
+\index{CXLController@{CXLController}!getCurrentModel@{getCurrentModel}}
+\index{getCurrentModel@{getCurrentModel}!CXLController@{CXLController}}
+\subsubsection[{getCurrentModel}]{\setlength{\rightskip}{0pt plus 5cm}getCurrentModel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a71e9b2625e1f13a65ea101b53d2f264d}
+
+
+Definition at line 711 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_currentModel;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a095ad5a2da0a46cf0c5225c826b7fe4c}{
+\index{CXLController@{CXLController}!getExtraViewDataList@{getExtraViewDataList}}
+\index{getExtraViewDataList@{getExtraViewDataList}!CXLController@{CXLController}}
+\subsubsection[{getExtraViewDataList}]{\setlength{\rightskip}{0pt plus 5cm}getExtraViewDataList (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a095ad5a2da0a46cf0c5225c826b7fe4c}
+
+
+Definition at line 810 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_extraViewDataList;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a1f4c82d1446cb4a49f0da9bc76e5aa1e}{
+\index{CXLController@{CXLController}!getExtraViewDataPrefix@{getExtraViewDataPrefix}}
+\index{getExtraViewDataPrefix@{getExtraViewDataPrefix}!CXLController@{CXLController}}
+\subsubsection[{getExtraViewDataPrefix}]{\setlength{\rightskip}{0pt plus 5cm}getExtraViewDataPrefix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a1f4c82d1446cb4a49f0da9bc76e5aa1e}
+
+
+Definition at line 821 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_extraViewDataPrefix;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_aed1df55c262bb0238ae6ef0921a2552b}{
+\index{CXLController@{CXLController}!getIsAjaxRequest@{getIsAjaxRequest}}
+\index{getIsAjaxRequest@{getIsAjaxRequest}!CXLController@{CXLController}}
+\subsubsection[{getIsAjaxRequest}]{\setlength{\rightskip}{0pt plus 5cm}getIsAjaxRequest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_aed1df55c262bb0238ae6ef0921a2552b}
+Convenience access to isAjaxRequest \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 649 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return XL::isAjaxRequest();
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_aed1df55c262bb0238ae6ef0921a2552b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_acea2c7c705d91ba736a41e67314e5ae3}{
+\index{CXLController@{CXLController}!getIsPostRequest@{getIsPostRequest}}
+\index{getIsPostRequest@{getIsPostRequest}!CXLController@{CXLController}}
+\subsubsection[{getIsPostRequest}]{\setlength{\rightskip}{0pt plus 5cm}getIsPostRequest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_acea2c7c705d91ba736a41e67314e5ae3}
+Convenience access to isPostRequest \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 640 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return XL::isPostRequest();
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_acea2c7c705d91ba736a41e67314e5ae3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_acea2c7c705d91ba736a41e67314e5ae3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_a637e84e2e9e99a87ea9b5f1771551af4}{
+\index{CXLController@{CXLController}!getMenu@{getMenu}}
+\index{getMenu@{getMenu}!CXLController@{CXLController}}
+\subsubsection[{getMenu}]{\setlength{\rightskip}{0pt plus 5cm}getMenu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a637e84e2e9e99a87ea9b5f1771551af4}
+
+
+Definition at line 667 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_menu;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_aef6109e8c58719533639e6526717fb1b}{
+\index{CXLController@{CXLController}!getModelClass@{getModelClass}}
+\index{getModelClass@{getModelClass}!CXLController@{CXLController}}
+\subsubsection[{getModelClass}]{\setlength{\rightskip}{0pt plus 5cm}getModelClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_aef6109e8c58719533639e6526717fb1b}
+
+
+Definition at line 722 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_modelClass;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a594123c5fb3f7fab375d51468f7d5074}{
+\index{CXLController@{CXLController}!getModelLoadString@{getModelLoadString}}
+\index{getModelLoadString@{getModelLoadString}!CXLController@{CXLController}}
+\subsubsection[{getModelLoadString}]{\setlength{\rightskip}{0pt plus 5cm}getModelLoadString (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arScope = {\ttfamily array(~)}, }
+\item[{\$}]{ arOptions = {\ttfamily array(~)}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a594123c5fb3f7fab375d51468f7d5074}
+Builds a string suitable for \hyperlink{}{eval}. The verb is intentionally not appeneded.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arScope \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\begin{Desc}
+\item[\hyperlink{todo__todo000003}{Todo}]Will be deprecated after upgrade to PHP v5.3 \end{Desc}
+
+
+Definition at line 1004 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_sScopes = ( count( $arScope ) ) ? implode( '->', $arScope ) . '->' : null;
+    return $this->_modelClass . '::model()->' . $_sScopes;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_a594123c5fb3f7fab375d51468f7d5074_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_af6a608839df34306457a0f877695bce0}{
+\index{CXLController@{CXLController}!getPageHeading@{getPageHeading}}
+\index{getPageHeading@{getPageHeading}!CXLController@{CXLController}}
+\subsubsection[{getPageHeading}]{\setlength{\rightskip}{0pt plus 5cm}getPageHeading (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_af6a608839df34306457a0f877695bce0}
+
+
+Definition at line 689 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->m_sPageHeading;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_ae3e26353e430eb74e086211a9bfcb957}{
+\index{CXLController@{CXLController}!getPortletActions@{getPortletActions}}
+\index{getPortletActions@{getPortletActions}!CXLController@{CXLController}}
+\subsubsection[{getPortletActions}]{\setlength{\rightskip}{0pt plus 5cm}getPortletActions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_ae3e26353e430eb74e086211a9bfcb957}
+
+
+Definition at line 782 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_portletActions;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_adf1a35ad20e475c59cc0967d5764aa22}{
+\index{CXLController@{CXLController}!getRequest@{getRequest}}
+\index{getRequest@{getRequest}!CXLController@{CXLController}}
+\subsubsection[{getRequest}]{\setlength{\rightskip}{0pt plus 5cm}getRequest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_adf1a35ad20e475c59cc0967d5764aa22}
+Convenience access to Yii request 
+
+Definition at line 320 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return XL::_gr();
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classCXLController_adf1a35ad20e475c59cc0967d5764aa22_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_a09cb66dd061fa338ab2a85a31f5ccf00}{
+\index{CXLController@{CXLController}!getViewData@{getViewData}}
+\index{getViewData@{getViewData}!CXLController@{CXLController}}
+\subsubsection[{getViewData}]{\setlength{\rightskip}{0pt plus 5cm}getViewData (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a09cb66dd061fa338ab2a85a31f5ccf00}
+
+
+Definition at line 799 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_viewData;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CXLController@{CXLController}!init@{init}}
+\index{init@{init}!CXLController@{CXLController}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize the controller 
+
+Definition at line 154 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  Phone home...
+    parent::init();
+
+    //  Find layout...
+    if ( PHP_SAPI != 'cli' && $this->_autoFindLayout && ! XL::_a() instanceof CCo
+      nsoleApplication )
+    {
+      if ( file_exists( XL::_gbp() . '/views/layouts/' . $this->getId() . '.php' 
+      ) ) 
+        $this->_pageLayout = $this->getId();
+    }
+
+    //  Allow errors
+    $this->addActionControl( self::ACCESS_TO_ANY, 'error' );
+
+    //  Ensure conformity
+    if ( !is_array( $this->_extraViewDataList ) ) 
+      $this->_extraViewDataList = array();
+
+    //  Add "currentUser" value to extra view data
+    if ( null === XL::o( $this->_extraViewDataList, $this->_extraViewDataPrefix .
+       'currentUser' ) ) 
+      $this->_extraViewDataList[$this->_extraViewDataPrefix . 'currentUser'] = 
+      XL::_gcu();
+
+    //  And some defaults...
+    $this->defaultAction = 'index';
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_a90f83714d8df3e6f07b28fb5d25e7116}{
+\index{CXLController@{CXLController}!load@{load}}
+\index{load@{load}!CXLController@{CXLController}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}load (
+\begin{DoxyParamCaption}
+\item[{\$}]{ id = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a90f83714d8df3e6f07b28fb5d25e7116}
+
+
+Definition at line 969 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->genericModelLoad( 'findByPk(' . $id . ')' );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_a90f83714d8df3e6f07b28fb5d25e7116_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=374pt]{classCXLController_a90f83714d8df3e6f07b28fb5d25e7116_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_a4e6ee9ca4aff15fe9592ad24f5ebd509}{
+\index{CXLController@{CXLController}!loadAll@{loadAll}}
+\index{loadAll@{loadAll}!CXLController@{CXLController}}
+\subsubsection[{loadAll}]{\setlength{\rightskip}{0pt plus 5cm}loadAll (
+\begin{DoxyParamCaption}
+\item[{\&\$}]{ oCrit = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a4e6ee9ca4aff15fe9592ad24f5ebd509}
+Loads all data using supplied criteria 
+\begin{DoxyParams}{Parameters}
+\item[{\em CDbCriteria}]\$oCrit \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Array of CActiveRecord 
+\end{DoxyReturn}
+\begin{Desc}
+\item[\hyperlink{todo__todo000002}{Todo}]When using PHP v5.3, \hyperlink{}{eval} will no longer be needed \end{Desc}
+
+
+Definition at line 980 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->genericModelLoad( 'findAll(' . ( null !== $oCrit ? '$oCrit' : '
+      ' ) . ')', $oCrit );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_a4e6ee9ca4aff15fe9592ad24f5ebd509_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classCXLController_a4e6ee9ca4aff15fe9592ad24f5ebd509_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_a97e32933f78c7a0e8e6829ac513deb4d}{
+\index{CXLController@{CXLController}!loadCount@{loadCount}}
+\index{loadCount@{loadCount}!CXLController@{CXLController}}
+\subsubsection[{loadCount}]{\setlength{\rightskip}{0pt plus 5cm}loadCount (
+\begin{DoxyParamCaption}
+\item[{\&\$}]{ oCrit = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a97e32933f78c7a0e8e6829ac513deb4d}
+Returns the count of rows that match the supplied criteria
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em CDbCriteria}]\$oCrit \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer The number of rows 
+\end{DoxyReturn}
+
+
+Definition at line 991 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_sCrit = ( $oCrit ) ? '$oCrit' : null;
+    return $this->genericModelLoad( 'count(' . $_sCrit . ')', $oCrit );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_a97e32933f78c7a0e8e6829ac513deb4d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classCXLController_a97e32933f78c7a0e8e6829ac513deb4d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_aee989705ca23d787542be0bf30a28000}{
+\index{CXLController@{CXLController}!loadCurrentModel@{loadCurrentModel}}
+\index{loadCurrentModel@{loadCurrentModel}!CXLController@{CXLController}}
+\subsubsection[{loadCurrentModel}]{\setlength{\rightskip}{0pt plus 5cm}loadCurrentModel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ id = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_aee989705ca23d787542be0bf30a28000}
+Returns the data model based on the primary key given in the GET variable. If the data model is not found, an HTTP exception will be raised.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]the primary key value. Defaults to null, meaning using the 'id' GET variable \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CHttpException}]\end{DoxyExceptions}
+
+
+Definition at line 253 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( null === $this->_currentModel )
+    {
+      $_id = XL::o( $_GET, 'id', $id );
+      $this->_currentModel = $this->load( $_id );
+
+      //  No data? bug out
+      if ( null === $this->_currentModel )
+        $this->redirect( array( $this->defaultAction ) );
+
+      //  Get the name of this model...
+      $this->setModelClass( get_class( $this->_currentModel ) );
+    }
+
+    //  Return our model...
+    return $this->_currentModel;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_aee989705ca23d787542be0bf30a28000_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classCXLController_aee989705ca23d787542be0bf30a28000_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_a138d56ab26b272430a88450638c6d466}{
+\index{CXLController@{CXLController}!loadPaged@{loadPaged}}
+\index{loadPaged@{loadPaged}!CXLController@{CXLController}}
+\subsubsection[{loadPaged}]{\setlength{\rightskip}{0pt plus 5cm}loadPaged (
+\begin{DoxyParamCaption}
+\item[{\$}]{ bSort = {\ttfamily false}, }
+\item[{\$}]{ oCriteria = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a138d56ab26b272430a88450638c6d466}
+Loads a page of models 
+\begin{DoxyParams}{Parameters}
+\item[{\em boolean}]Whether or not to apply a sort. Defaults to false\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Element 0 is the results of the find. Element 1 is the pagination object 
+\end{DoxyReturn}
+
+
+Definition at line 926 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_oSort = $_oCrit = $_oPage = null;
+
+    //  Make criteria
+    $_oCrit = XL::nvl( $oCriteria, new CDbCriteria() );
+    $_oPage = new CPagination( $this->loadCount( $_oCrit ) );
+    $_oPage->pageSize = XL::o( $_REQUEST, 'perPage', self::PAGE_SIZE );
+    if ( isset( $_REQUEST, $_REQUEST['page'] ) ) $_oPage->setCurrentPage( intval(
+       $_REQUEST['page'] ) - 1 );
+    $_oPage->applyLimit( $_oCrit );
+
+    //  Sort...
+    if ( $bSort )
+    {
+      $_oSort = new CPSSort( $this->_modelClass );
+      $_oSort->applyOrder( $_oCrit );
+    }
+
+    //  Return an array of what we've build...
+    return array( $this->loadAll( $_oCrit ), $_oCrit, $_oPage, $_oSort );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_a138d56ab26b272430a88450638c6d466_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_a3d33455ae87de01aa0051c43be585ee7}{
+\index{CXLController@{CXLController}!missingAction@{missingAction}}
+\index{missingAction@{missingAction}!CXLController@{CXLController}}
+\subsubsection[{missingAction}]{\setlength{\rightskip}{0pt plus 5cm}missingAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ actionId = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a3d33455ae87de01aa0051c43be585ee7}
+Provide automatic missing action mapping... Also handles a theme change request from any portlets
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$actionId \end{DoxyParams}
+
+
+Definition at line 278 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( $this->_autoFindAction )
+    {
+      if ( empty( $actionId ) ) $actionId = $this->defaultAction;
+
+      if ( $this->getViewFile( $actionId ) )
+      {
+        $this->render( $actionId );
+        return;
+      }
+    }
+
+    parent::missingAction( $actionId );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_acaf53d84b70927098a40b8e626985146}{
+\index{CXLController@{CXLController}!newRender@{newRender}}
+\index{newRender@{newRender}!CXLController@{CXLController}}
+\subsubsection[{newRender}]{\setlength{\rightskip}{0pt plus 5cm}newRender (
+\begin{DoxyParamCaption}
+\item[{\$}]{ viewName, }
+\item[{\$}]{ viewData = {\ttfamily null}, }
+\item[{\$}]{ returnString = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_acaf53d84b70927098a40b8e626985146}
+Renders a view with a layout.
+
+This method first calls \hyperlink{}{renderPartial} to render the view (called content view). It then renders the layout view which may embed the content view at appropriate place. In the layout view, the content view rendering result can be accessed via variable {\ttfamily \$content}. At the end, it calls \hyperlink{}{processOutput} to insert scripts and dynamic contents if they are available.
+
+By default, the layout view script is \char`\"{}protected/views/layouts/main.php\char`\"{}. This may be customized by changing \hyperlink{}{layout}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]name of the view to be rendered. See \hyperlink{}{getViewFile} for details about how the view script is resolved. \item[{\em array}]data to be extracted into PHP variables and made available to the view script \item[{\em boolean}]whether the rendering result should be returned instead of being displayed to end users. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string the rendering result. Null if the rendering result is not required. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCXLController_a8324b095d3faa196d784f84a3f0cef25}{renderPartial} 
+
+getLayoutFile 
+\end{DoxySeeAlso}
+
+
+Definition at line 359 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  make sure we're all on the same page...
+    $this->_pageLayout = $this->layout;
+
+    $_output = $this->renderPartial( $viewName, $viewData, true );
+
+    if ( $this->_pageLayout && false !== ( $_layoutFile = $this->getLayoutFile( $
+      this->_pageLayout ) ) )
+    {
+      //  Process content layout if required
+      if ( $this->_contentTemplate && false !== ( $_contentTemplateFile = $this->
+      getLayoutFile( $this->_contentTemplate ) ) ) $_output = $this->renderPartial( $_c
+      ontentTemplateFile, $viewData, true );
+
+      $_output = $this->renderFile( $_layoutFile, array( 'content' => $_output ),
+       true );
+      $_output = $this->processOutput( $_output );
+    }
+
+    if ( $returnString ) return $_output;
+
+    echo $_output;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classCXLController_acaf53d84b70927098a40b8e626985146_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_aaebe806c849a4c263ea874b67ba9c98b}{
+\index{CXLController@{CXLController}!popAction@{popAction}}
+\index{popAction@{popAction}!CXLController@{CXLController}}
+\subsubsection[{popAction}]{\setlength{\rightskip}{0pt plus 5cm}popAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_aaebe806c849a4c263ea874b67ba9c98b}
+Retrieves the latest pushed action \begin{DoxyReturn}{Returns}
+CAction 
+\end{DoxyReturn}
+
+
+Definition at line 1024 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return array_pop( $this->_actionStack );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_ae4991b44dadced9ed4c2548c8a52b72e}{
+\index{CXLController@{CXLController}!processCommand@{processCommand}}
+\index{processCommand@{processCommand}!CXLController@{CXLController}}
+\subsubsection[{processCommand}]{\setlength{\rightskip}{0pt plus 5cm}processCommand (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arData = {\ttfamily array(~)}, }
+\item[{\$}]{ sIndexName = {\ttfamily self::COMMAND\_\-FIELD\_\-NAME}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_ae4991b44dadced9ed4c2548c8a52b72e}
+Executes any commands Maps to \hyperlink{}{CXLController::commandMap} and calls the appropriate method.
+
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 842 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  Our return variable
+    $_oResults = null;
+
+    //  Get command's method...
+    $_sCmd = XL::o( $_REQUEST, $sIndexName );
+
+    //  Do we have a command mapping?
+    if ( null !== ( $_arCmd = XL::o( $this->_adminCommandMap, $_sCmd ) ) )
+    {
+      //  Get any miscellaneous data into the appropriate array
+      if ( count( $arData ) )
+      {
+        if ( $this->getIsPostRequest() ) $_POST = array_merge( $_POST, $arData );
+      
+        else $_GET = array_merge( $_GET, $arData );
+      }
+
+      $_oResults = call_user_func( $_arCmd[1] );
+    }
+
+    //  Return the results
+    return $_oResults;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_ae4991b44dadced9ed4c2548c8a52b72e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classCXLController_ae4991b44dadced9ed4c2548c8a52b72e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_a1605f43b777d563c5027f018633e7a30}{
+\index{CXLController@{CXLController}!pushAction@{pushAction}}
+\index{pushAction@{pushAction}!CXLController@{CXLController}}
+\subsubsection[{pushAction}]{\setlength{\rightskip}{0pt plus 5cm}pushAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ action}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a1605f43b777d563c5027f018633e7a30}
+Pushes an action onto the action queue
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em CAction}]\$action \end{DoxyParams}
+
+
+Definition at line 1015 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    array_push( $this->_actionStack, $action );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a8324b095d3faa196d784f84a3f0cef25}{
+\index{CXLController@{CXLController}!renderPartial@{renderPartial}}
+\index{renderPartial@{renderPartial}!CXLController@{CXLController}}
+\subsubsection[{renderPartial}]{\setlength{\rightskip}{0pt plus 5cm}renderPartial (
+\begin{DoxyParamCaption}
+\item[{\$}]{ view, }
+\item[{\$}]{ data = {\ttfamily null}, }
+\item[{\$}]{ return = {\ttfamily false}, }
+\item[{\$}]{ processOutput = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a8324b095d3faa196d784f84a3f0cef25}
+Renders a view.
+
+The named view refers to a PHP script (resolved via \hyperlink{}{getViewFile}) that is included by this method. If \$data is an associative array, it will be extracted as PHP variables and made available to the script.
+
+This method differs from \hyperlink{}{render()} in that it does not apply a layout to the rendered result. It is thus mostly used in rendering a partial view, or an AJAX response.
+
+This override adds the current user to the data automatically in the \$\_\-currentUser variable
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]name of the view to be rendered. See \hyperlink{}{getViewFile} for details about how the view script is resolved. \item[{\em array}]data to be extracted into PHP variables and made available to the view script \item[{\em boolean}]whether the rendering result should be returned instead of being displayed to end users \item[{\em boolean}]whether the rendering result should be postprocessed using \hyperlink{}{processOutput}. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string the rendering result. Null if the rendering result is not required. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CException}]if the view does not exist \end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+getViewFile 
+
+processOutput 
+
+render 
+\end{DoxySeeAlso}
+
+
+Definition at line 404 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( false === ( $_viewFile = $this->getViewFile( $view ) ) )
+    {
+      throw new CException(
+        Yii::t(
+          self::CLASS_LOG_TAG,
+          '{controller} cannot find the requested view "{view}".', 
+          array(
+            '{controller}' => get_class( $this ),
+            '{view}' => $view
+          )
+        )
+      );
+    }
+
+    if ( null === $data ) 
+      $data = array();
+
+    $_output = $this->renderFile(
+      $_viewFile, 
+      array_merge(
+        $this->_extraViewDataList, 
+        $this->_viewData, 
+        $data
+      ),
+      true
+    );
+
+    if ( $processOutput ) 
+      $_output = $this->processOutput( $_output );
+
+    if ( $return ) 
+      return $_output;
+
+    echo $_output;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classCXLController_a8324b095d3faa196d784f84a3f0cef25_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_af6aedd6d8077a2728f4e7f1fad56d5a2}{
+\index{CXLController@{CXLController}!saveCurrentModel@{saveCurrentModel}}
+\index{saveCurrentModel@{saveCurrentModel}!CXLController@{CXLController}}
+\subsubsection[{saveCurrentModel}]{\setlength{\rightskip}{0pt plus 5cm}saveCurrentModel (
+\begin{DoxyParamCaption}
+\item[{\&\$}]{ model, }
+\item[{\$}]{ arData = {\ttfamily array(~)}, }
+\item[{\$}]{ sRedirectAction = {\ttfamily 'show'}, }
+\item[{\$}]{ bAttributesSet = {\ttfamily false}, }
+\item[{\$}]{ sModelName = {\ttfamily null}, }
+\item[{\$}]{ sSuccessMessage = {\ttfamily null}, }
+\item[{\$}]{ bNoCommit = {\ttfamily false}, }
+\item[{\$}]{ bSafeOnly = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_af6aedd6d8077a2728f4e7f1fad56d5a2}
+Saves the data in the model
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em CModel}]\$model The model to save \item[{\em array}]\$arData The array of data to merge with the model \item[{\em string}]\$sRedirectAction Where to redirect after a successful save \item[{\em boolean}]\$bAttributesSet If true, attributes will not be set from \$arData \item[{\em string}]\$sModelName Optional model name \item[{\em string}]\$sSuccessMessage Flash message to set if successful \item[{\em boolean}]\$bNoCommit If true, transaction will not be committed \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 879 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_sMessage = XL::nvl( $sSuccessMessage, 'Your changes have been saved.' );
+    $_sModelName = XL::nvl( $sModelName, XL::nvl( $model->getModelClass(), $this-
+      >_modelClass ) );
+
+    if ( isset( $arData, $arData[$_sModelName] ) )
+    {
+      if ( !$bAttributesSet ) $model->setAttributes( $arData[$_sModelName], $bSaf
+      eOnly );
+
+      if ( $model->save() )
+      {
+        if ( !$bNoCommit && $model instanceof CPSModel && $model->hasTransaction(
+      ) ) $model->commitTransaction();
+
+        Yii::app()->user->setFlash( 'success', $_sMessage );
+
+        if ( $sRedirectAction ) $this->redirect( array( $sRedirectAction, 'id' =>
+       $model->id ) );
+
+        return true;
+      }
+    }
+
+    return false;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classCXLController_af6aedd6d8077a2728f4e7f1fad56d5a2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=378pt]{classCXLController_af6aedd6d8077a2728f4e7f1fad56d5a2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_aefd99225a64bed9ce7e820c430fc37d4}{
+\index{CXLController@{CXLController}!saveTransactionCurrentModel@{saveTransactionCurrentModel}}
+\index{saveTransactionCurrentModel@{saveTransactionCurrentModel}!CXLController@{CXLController}}
+\subsubsection[{saveTransactionCurrentModel}]{\setlength{\rightskip}{0pt plus 5cm}saveTransactionCurrentModel (
+\begin{DoxyParamCaption}
+\item[{\&\$}]{ model, }
+\item[{\$}]{ arData = {\ttfamily array(~)}, }
+\item[{\$}]{ bAttributesSet = {\ttfamily false}, }
+\item[{\$}]{ sSuccessMessage = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_aefd99225a64bed9ce7e820c430fc37d4}
+
+
+Definition at line 915 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->saveCurrentModel( $model, $arData, false, $bAttributesSet, null
+      , $sSuccessMessage, true );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_aefd99225a64bed9ce7e820c430fc37d4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_acfc34f281282bbec29fe66ca52419651}{
+\index{CXLController@{CXLController}!setActionMethodPrefix@{setActionMethodPrefix}}
+\index{setActionMethodPrefix@{setActionMethodPrefix}!CXLController@{CXLController}}
+\subsubsection[{setActionMethodPrefix}]{\setlength{\rightskip}{0pt plus 5cm}setActionMethodPrefix (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_acfc34f281282bbec29fe66ca52419651}
+
+
+Definition at line 705 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_actionMethodPrefix = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a23588c95ee01933abc6e0590c1aa1138}{
+\index{CXLController@{CXLController}!setAdminCommandMap@{setAdminCommandMap}}
+\index{setAdminCommandMap@{setAdminCommandMap}!CXLController@{CXLController}}
+\subsubsection[{setAdminCommandMap}]{\setlength{\rightskip}{0pt plus 5cm}setAdminCommandMap (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a23588c95ee01933abc6e0590c1aa1138}
+
+
+Definition at line 770 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_adminCommandMap = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a8f4e999ffe16e8a84221c6e0de6f7bd9}{
+\index{CXLController@{CXLController}!setAutoFindAction@{setAutoFindAction}}
+\index{setAutoFindAction@{setAutoFindAction}!CXLController@{CXLController}}
+\subsubsection[{setAutoFindAction}]{\setlength{\rightskip}{0pt plus 5cm}setAutoFindAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a8f4e999ffe16e8a84221c6e0de6f7bd9}
+
+
+Definition at line 760 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_autoFindAction = $value;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a39204785aa23a9a43f8a6e1bb3998efb}{
+\index{CXLController@{CXLController}!setAutoFindLayout@{setAutoFindLayout}}
+\index{setAutoFindLayout@{setAutoFindLayout}!CXLController@{CXLController}}
+\subsubsection[{setAutoFindLayout}]{\setlength{\rightskip}{0pt plus 5cm}setAutoFindLayout (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a39204785aa23a9a43f8a6e1bb3998efb}
+
+
+Definition at line 749 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_autoFindLayout = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a9f9822dfb5d491a6e0b9c836d6ce4e3f}{
+\index{CXLController@{CXLController}!setBreadcrumbs@{setBreadcrumbs}}
+\index{setBreadcrumbs@{setBreadcrumbs}!CXLController@{CXLController}}
+\subsubsection[{setBreadcrumbs}]{\setlength{\rightskip}{0pt plus 5cm}setBreadcrumbs (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a9f9822dfb5d491a6e0b9c836d6ce4e3f}
+
+
+Definition at line 683 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_breadcrumbs = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a5166a144947cae70bcb6ad5b508cefcc}{
+\index{CXLController@{CXLController}!setContentTemplate@{setContentTemplate}}
+\index{setContentTemplate@{setContentTemplate}!CXLController@{CXLController}}
+\subsubsection[{setContentTemplate}]{\setlength{\rightskip}{0pt plus 5cm}setContentTemplate (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a5166a144947cae70bcb6ad5b508cefcc}
+
+
+Definition at line 738 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_contentTemplate = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a136cf4fecb17df00146f6889ffdbccee}{
+\index{CXLController@{CXLController}!setContentType@{setContentType}}
+\index{setContentType@{setContentType}!CXLController@{CXLController}}
+\subsubsection[{setContentType}]{\setlength{\rightskip}{0pt plus 5cm}setContentType (
+\begin{DoxyParamCaption}
+\item[{\$}]{ contentType, }
+\item[{\$}]{ noLayout = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a136cf4fecb17df00146f6889ffdbccee}
+Sets the content type for this page to the specified MIME type 
+\begin{DoxyParams}{Parameters}
+\item[{\em $<$type$>$}]\$contentType The MIME type to set \item[{\em boolean}]\$noLayout If true, the layout for this page is set to false \end{DoxyParams}
+
+
+Definition at line 554 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( $noLayout ) $this->layout = false;
+    header( 'Content-Type: ' . $contentType );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a1da4e93942345da876819fb6b8614a26}{
+\index{CXLController@{CXLController}!setCurrentModel@{setCurrentModel}}
+\index{setCurrentModel@{setCurrentModel}!CXLController@{CXLController}}
+\subsubsection[{setCurrentModel}]{\setlength{\rightskip}{0pt plus 5cm}setCurrentModel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a1da4e93942345da876819fb6b8614a26}
+
+
+Definition at line 716 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_currentModel = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a537201d018053eaff662e290be1a8a81}{
+\index{CXLController@{CXLController}!setExtraViewDataList@{setExtraViewDataList}}
+\index{setExtraViewDataList@{setExtraViewDataList}!CXLController@{CXLController}}
+\subsubsection[{setExtraViewDataList}]{\setlength{\rightskip}{0pt plus 5cm}setExtraViewDataList (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a537201d018053eaff662e290be1a8a81}
+
+
+Definition at line 815 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_extraViewDataList = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_ae80dd653d6c5d9e7be65cd7ae3f05627}{
+\index{CXLController@{CXLController}!setExtraViewDataPrefix@{setExtraViewDataPrefix}}
+\index{setExtraViewDataPrefix@{setExtraViewDataPrefix}!CXLController@{CXLController}}
+\subsubsection[{setExtraViewDataPrefix}]{\setlength{\rightskip}{0pt plus 5cm}setExtraViewDataPrefix (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_ae80dd653d6c5d9e7be65cd7ae3f05627}
+
+
+Definition at line 826 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_extraViewDataPrefix = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a5cf6c2464263681fdc1186bb94ee9ad8}{
+\index{CXLController@{CXLController}!setMenu@{setMenu}}
+\index{setMenu@{setMenu}!CXLController@{CXLController}}
+\subsubsection[{setMenu}]{\setlength{\rightskip}{0pt plus 5cm}setMenu (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a5cf6c2464263681fdc1186bb94ee9ad8}
+
+
+Definition at line 672 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_menu = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a24e8b6f39d6a823d94317e35f1b94758}{
+\index{CXLController@{CXLController}!setModelClass@{setModelClass}}
+\index{setModelClass@{setModelClass}!CXLController@{CXLController}}
+\subsubsection[{setModelClass}]{\setlength{\rightskip}{0pt plus 5cm}setModelClass (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a24e8b6f39d6a823d94317e35f1b94758}
+
+
+Definition at line 727 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_modelClass = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_a24e8b6f39d6a823d94317e35f1b94758_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_aee7c1dbb383543b39ff09bf25dc6adf0}{
+\index{CXLController@{CXLController}!setPageHeading@{setPageHeading}}
+\index{setPageHeading@{setPageHeading}!CXLController@{CXLController}}
+\subsubsection[{setPageHeading}]{\setlength{\rightskip}{0pt plus 5cm}setPageHeading (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_aee7c1dbb383543b39ff09bf25dc6adf0}
+
+
+Definition at line 694 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->m_sPageHeading = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a62630bbea4f9a6d711684891ad307fda}{
+\index{CXLController@{CXLController}!setPortletActions@{setPortletActions}}
+\index{setPortletActions@{setPortletActions}!CXLController@{CXLController}}
+\subsubsection[{setPortletActions}]{\setlength{\rightskip}{0pt plus 5cm}setPortletActions (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a62630bbea4f9a6d711684891ad307fda}
+
+
+Definition at line 787 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_portletActions = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_ae926a613a7702bb749e974f35a462d60}{
+\index{CXLController@{CXLController}!setStandardFormOptions@{setStandardFormOptions}}
+\index{setStandardFormOptions@{setStandardFormOptions}!CXLController@{CXLController}}
+\subsubsection[{setStandardFormOptions}]{\setlength{\rightskip}{0pt plus 5cm}setStandardFormOptions (
+\begin{DoxyParamCaption}
+\item[{\$}]{ model, }
+\item[{\$}]{ optionList = {\ttfamily array(~)}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_ae926a613a7702bb749e974f35a462d60}
+Creates a standard form options array and loads page niceties 
+\begin{DoxyParams}{Parameters}
+\item[{\em CModel}]\$model \item[{\em string$|$array}]If a string is passed in, it is used as the title. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 448 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  Shortcut... only passed in the title...
+    if ( is_string( $optionList ) )
+    {
+      $_title = $optionList;
+
+      $optionList = array(
+        'title' => XL::_gan() . ' :: ' . $_title,
+        'breadcrumbs' => array( $_title ),
+      );
+    }
+
+    //  Abbreviated arguments?
+    if ( is_array( $model ) && array( ) === $optionList )
+    {
+      $optionList = $model;
+      $model = XL::o( $optionList, 'model' );
+    }
+
+    //  Set the standard nav options
+    $this->setViewNavigationOptions( $optionList );
+
+    $_formId = XL::o( $optionList, 'id', 'ps-edit-form' );
+
+    //  Put a cool flash span on the page
+    if ( XL::o( $options, 'enableFlash', true, true ) )
+    {
+      $_flashClass = XL::o( $options, 'flashSuccessClass', 'operation-result-succ
+      ess' );
+
+      if ( null === ( $_message = XL::_gf( 'success' ) ) )
+      {
+        if ( null !== ( $_message = XL::_gf( 'failure' ) ) ) $_flashClass = 
+      XL::o( $options, 'flashFailureClass', 'operation-result-failure' );
+      }
+
+      $_spanId = XL::o( $options, 'flashSpanId', 'operation-result', true );
+      XL::_ss( 'psForm-flash-html', XL::tag( 'span', array( 'id' => $_spanId, 'cl
+      ass' => $_flashClass ), $_message ) );
+
+      //  Register a nice little fader...
+      $_fader = <<<SCRIPT
+$('#{$_spanId}').fadeIn('500',function(){
+  $(this).delay(3000).fadeOut(3500);
+});
+SCRIPT;
+
+      XL::_rs( $_formId . '.' . $_spanId . '.fader', $_fader, CClientScript::POS_
+      READY );
+    }
+
+    XL::setFormFieldContainerClass( XL::o( $optionList, 'rowClass', 'row' ) );
+
+    $_formOptions = array(
+      'id' => $_formId,
+      'showLegend' => XL::o( $optionList, 'showLegend', true ),
+      'showDates' => XL::o( $optionList, 'showDates', false ),
+      'method' => XL::o( $optionList, 'method', 'POST' ),
+      'uiStyle' => XL::o( $optionList, 'uiStyle', XL::UI_JQUERY ),
+      'formClass' => XL::o( $optionList, 'formClass', 'form' ),
+      'formModel' => $model,
+      'errorCss' => XL::o( $optionList, 'errorCss', 'error' ),
+      //  We want error summary...
+      'errorSummary' => XL::o( $optionList, 'errorSummary', true ),
+      'errorSummaryOptions' => array(
+        'header' => '<p>The following problems occurred:</p>',
+      ),
+      'validate' => XL::o( $optionList, 'validate', true ),
+      'validateOptions' => XL::o( $optionList, 'validateOptions', array(
+        'ignoreTitle' => true,
+        'errorClass' => 'ps-validate-error',
+        )
+      ),
+    );
+
+    //  Do some auto-page-setup...
+    if ( null !== ( $_header = XL::o( $optionList, 'header', XL::o( $optionList, 
+      'title' ) ) ) )
+    {
+      if ( null !== ( $_headerIcon = XL::o( $optionList, 'headerIcon' ) ) ) $_hea
+      der = XL::tag( 'span', array( ), XL::image( $_headerIcon ) ) . $_header;
+
+      echo XL::tag( 'h1', array( 'class' => 'ui-generated-header' ), $_header );
+    }
+
+    //  Do some auto-page-setup...
+    if ( null !== ( $_subHeader = XL::o( $optionList, 'subHeader' ) ) ) echo XL::
+      tag( 'div', array( ), $_subHeader );
+
+    if ( false !== XL::o( $optionList, 'renderSearch', false ) )
+    {
+      echo XL::tag( 'p', array( ), self::SEARCH_HELP_TEXT );
+      echo XL::link( 'Advanced Search', '#', array( 'class' => 'search-button' ) 
+      );
+
+      echo XL::tag(
+        'div', array( 'class' => 'search-form' ), $this->renderPartial( '_search'
+      , array( 'model' => $model ), true )
+      );
+
+      //  Register the search script, if any
+      if ( null !== ( $_searchScript = XL::o( $optionList, '__searchScript' ) ) )
+       XL::_rs( 'search', $_searchScript );
+    }
+
+    if ( XL::UI_JQUERY == ( $_uiStyle = XL::o( $optionList, 'uiStyle', XL::UI_JQU
+      ERY ) ) ) CPSjqUIWrapper::loadScripts();
+
+    return $_formOptions;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_ae926a613a7702bb749e974f35a462d60_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLController_ade714d0b090e663e7acd6ef596d602ec}{
+\index{CXLController@{CXLController}!setViewData@{setViewData}}
+\index{setViewData@{setViewData}!CXLController@{CXLController}}
+\subsubsection[{setViewData}]{\setlength{\rightskip}{0pt plus 5cm}setViewData (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_ade714d0b090e663e7acd6ef596d602ec}
+
+
+Definition at line 804 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_viewData = $value;
+    return $this;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLController_a592bdbc48efc56a00e5b49582db7c09f}{
+\index{CXLController@{CXLController}!setViewNavigationOptions@{setViewNavigationOptions}}
+\index{setViewNavigationOptions@{setViewNavigationOptions}!CXLController@{CXLController}}
+\subsubsection[{setViewNavigationOptions}]{\setlength{\rightskip}{0pt plus 5cm}setViewNavigationOptions (
+\begin{DoxyParamCaption}
+\item[{\&\$}]{ options = {\ttfamily array(~)}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLController_a592bdbc48efc56a00e5b49582db7c09f}
+Sets the standard page navigation options (title, crumbs, menu, etc.) 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$options \end{DoxyParams}
+
+
+Definition at line 564 of file CXLController.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  Page title
+    $_title = XL::o( $options, 'title', null, true );
+    $_subtitle = XL::o( $options, 'subtitle', null, true );
+    $_header = XL::o( $options, 'header' );
+
+    //  Generate subtitle from header...
+    if ( null === $_title && null === $_subtitle && null !== $_header ) $_subtitl
+      e = $_header;
+
+    if ( $_subtitle ) $_title = XL::_gan() . ' :: ' . $_subtitle;
+
+    if ( !$_title ) $_title = XL::_gan();
+
+    $this->setPageTitle( $options['title'] = $_title );
+
+    //  Set crumbs
+    $this->_breadcrumbs = XL::o( $options, 'breadcrumbs' );
+
+    //  Let side menu be set from here as well...
+    if ( null !== ( $_menuItems = XL::o( $options, 'menu', null ) ) )
+    {
+      //  Rebuild menu items if not in standard format
+      $_finalMenu = array( );
+
+      foreach ( $_menuItems as $_itemLabel => $_itemLink )
+      {
+        if ( null === ( $_label = XL::o( $_itemLink, 'label', null, true ) ) ) $_
+      label = $_itemLabel;
+
+        if ( null === ( $_link = XL::o( $_itemLink, 'link', null, true ) ) ) $_li
+      nk = $_itemLink;
+
+        $_finalMenu[] = array(
+          'label' => $_label,
+          'url' => $_link,
+        );
+      }
+
+      $options['menu'] = $this->_menu = $_finalMenu;
+    }
+
+    $_enableSearch = ( XL::o( $options, 'enableSearch', false ) || XL::o( $option
+      s, 'renderSearch', false ) );
+
+    //  Drop the search script on the page if enabled...
+    if ( false !== $_enableSearch )
+    {
+      $_searchSelector = XL::o( $options, 'searchSelector', '.search-button' );
+      $_toggleSpeed = XL::o( $options, 'toggleSpeed', 'fast' );
+      $_searchForm = XL::o( $options, 'searchForm', '.search-form' );
+      $_targetFormId = XL::o( $options, 'id', 'ps-edit-form' );
+
+      $_searchScript = <<<JS
+$(function(){
+  $('{$_searchSelector}').click(function(){
+    $('{$_searchForm}').slideToggle('{$_toggleSpeed}');
+    return false;
+  });
+
+  $('{$_searchForm} form').submit(function(){
+    $.fn.yiiGridView.update('{$_targetFormId}', {
+      data: $(this).serialize()
+    });
+    return false;
+  });
+});
+JS;
+      $options['__searchScript'] = $_searchScript;
+    }
+
+    //  Return reconstructed options for standard form use
+    return $options;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLController_a592bdbc48efc56a00e5b49582db7c09f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=396pt]{classCXLController_a592bdbc48efc56a00e5b49582db7c09f_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLController_aa59919f08891da659e63b956bc0eb51b}{
+\index{CXLController@{CXLController}!\$\_\-actionMethodPrefix@{\$\_\-actionMethodPrefix}}
+\index{\$\_\-actionMethodPrefix@{\$\_\-actionMethodPrefix}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-actionMethodPrefix}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-actionMethodPrefix = 'action'\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_aa59919f08891da659e63b956bc0eb51b}
+
+
+Definition at line 82 of file CXLController.php.
+
+\hypertarget{classCXLController_a1a4bf00b331c163adc5f346e51ecb51f}{
+\index{CXLController@{CXLController}!\$\_\-actionStack@{\$\_\-actionStack}}
+\index{\$\_\-actionStack@{\$\_\-actionStack}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-actionStack}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-actionStack = array( )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a1a4bf00b331c163adc5f346e51ecb51f}
+
+
+Definition at line 122 of file CXLController.php.
+
+\hypertarget{classCXLController_aec275c56f2c1e8ffe8a5e454a2b695b5}{
+\index{CXLController@{CXLController}!\$\_\-adminCommandMap@{\$\_\-adminCommandMap}}
+\index{\$\_\-adminCommandMap@{\$\_\-adminCommandMap}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-adminCommandMap}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-adminCommandMap = array( )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_aec275c56f2c1e8ffe8a5e454a2b695b5}
+
+
+Definition at line 117 of file CXLController.php.
+
+\hypertarget{classCXLController_a6f28f5590fd179dd9b15a0647118661e}{
+\index{CXLController@{CXLController}!\$\_\-autoFindAction@{\$\_\-autoFindAction}}
+\index{\$\_\-autoFindAction@{\$\_\-autoFindAction}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-autoFindAction}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-autoFindAction = true\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a6f28f5590fd179dd9b15a0647118661e}
+
+
+Definition at line 111 of file CXLController.php.
+
+\hypertarget{classCXLController_ab2767a4ea7c0e2a4469056d506d354ba}{
+\index{CXLController@{CXLController}!\$\_\-autoFindLayout@{\$\_\-autoFindLayout}}
+\index{\$\_\-autoFindLayout@{\$\_\-autoFindLayout}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-autoFindLayout}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-autoFindLayout = true\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_ab2767a4ea7c0e2a4469056d506d354ba}
+
+
+Definition at line 105 of file CXLController.php.
+
+\hypertarget{classCXLController_aa29f8061f06b0d1991b405eb2b5817fd}{
+\index{CXLController@{CXLController}!\$\_\-breadcrumbs@{\$\_\-breadcrumbs}}
+\index{\$\_\-breadcrumbs@{\$\_\-breadcrumbs}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-breadcrumbs}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-breadcrumbs = array( )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_aa29f8061f06b0d1991b405eb2b5817fd}
+
+
+Definition at line 71 of file CXLController.php.
+
+\hypertarget{classCXLController_a60dfb02e8707a7eabb0f0573a607ba6d}{
+\index{CXLController@{CXLController}!\$\_\-contentTemplate@{\$\_\-contentTemplate}}
+\index{\$\_\-contentTemplate@{\$\_\-contentTemplate}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-contentTemplate}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-contentTemplate = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a60dfb02e8707a7eabb0f0573a607ba6d}
+
+
+Definition at line 99 of file CXLController.php.
+
+\hypertarget{classCXLController_abdf2c7ca76e9731f3240034f06c59369}{
+\index{CXLController@{CXLController}!\$\_\-currentModel@{\$\_\-currentModel}}
+\index{\$\_\-currentModel@{\$\_\-currentModel}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-currentModel}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-currentModel = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_abdf2c7ca76e9731f3240034f06c59369}
+
+
+Definition at line 87 of file CXLController.php.
+
+\hypertarget{classCXLController_a7d16c40c2d533779317b383d69e59ea0}{
+\index{CXLController@{CXLController}!\$\_\-extraViewDataList@{\$\_\-extraViewDataList}}
+\index{\$\_\-extraViewDataList@{\$\_\-extraViewDataList}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-extraViewDataList}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-extraViewDataList = array( )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a7d16c40c2d533779317b383d69e59ea0}
+
+
+Definition at line 138 of file CXLController.php.
+
+\hypertarget{classCXLController_a41793f2872b496a2d4effc0da5f82a3c}{
+\index{CXLController@{CXLController}!\$\_\-extraViewDataPrefix@{\$\_\-extraViewDataPrefix}}
+\index{\$\_\-extraViewDataPrefix@{\$\_\-extraViewDataPrefix}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-extraViewDataPrefix}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-extraViewDataPrefix = '\_\-'\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a41793f2872b496a2d4effc0da5f82a3c}
+
+
+Definition at line 144 of file CXLController.php.
+
+\hypertarget{classCXLController_a4192f529627c76fa7a70ae23b9582516}{
+\index{CXLController@{CXLController}!\$\_\-menu@{\$\_\-menu}}
+\index{\$\_\-menu@{\$\_\-menu}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-menu}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-menu = array( )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a4192f529627c76fa7a70ae23b9582516}
+
+
+Definition at line 63 of file CXLController.php.
+
+\hypertarget{classCXLController_a90080dcb26627bf719d96ab99e51f958}{
+\index{CXLController@{CXLController}!\$\_\-modelClass@{\$\_\-modelClass}}
+\index{\$\_\-modelClass@{\$\_\-modelClass}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-modelClass}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-modelClass = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a90080dcb26627bf719d96ab99e51f958}
+
+
+Definition at line 93 of file CXLController.php.
+
+\hypertarget{classCXLController_a4d69ce5758da90c27ff027a2a585b12d}{
+\index{CXLController@{CXLController}!\$\_\-pageHeading@{\$\_\-pageHeading}}
+\index{\$\_\-pageHeading@{\$\_\-pageHeading}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-pageHeading}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-pageHeading\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a4d69ce5758da90c27ff027a2a585b12d}
+
+
+Definition at line 77 of file CXLController.php.
+
+\hypertarget{classCXLController_a2e9a5f68d4557c2e220a4a8b01cf9b1b}{
+\index{CXLController@{CXLController}!\$\_\-portletActions@{\$\_\-portletActions}}
+\index{\$\_\-portletActions@{\$\_\-portletActions}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-portletActions}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-portletActions = array( )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a2e9a5f68d4557c2e220a4a8b01cf9b1b}
+
+
+Definition at line 127 of file CXLController.php.
+
+\hypertarget{classCXLController_a32acaa681d9d516f9964704f41590546}{
+\index{CXLController@{CXLController}!\$\_\-viewData@{\$\_\-viewData}}
+\index{\$\_\-viewData@{\$\_\-viewData}!CXLController@{CXLController}}
+\subsubsection[{\$\_\-viewData}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-viewData = array( )\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLController_a32acaa681d9d516f9964704f41590546}
+
+
+Definition at line 132 of file CXLController.php.
+
+\hypertarget{classCXLController_aa607ab5e557e6ebb60b85c5a20ad067f}{
+\index{CXLController@{CXLController}!CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}}
+\index{CLASS\_\-LOG\_\-TAG@{CLASS\_\-LOG\_\-TAG}!CXLController@{CXLController}}
+\subsubsection[{CLASS\_\-LOG\_\-TAG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CLASS\_\-LOG\_\-TAG} = 'yiixl.core.components.CXLController'}}
+\label{classCXLController_aa607ab5e557e6ebb60b85c5a20ad067f}
+Our logging tag  string 
+
+Definition at line 31 of file CXLController.php.
+
+\hypertarget{classCXLController_acfa3d37fd2964302d32a8905a102196d}{
+\index{CXLController@{CXLController}!COMMAND\_\-FIELD\_\-NAME@{COMMAND\_\-FIELD\_\-NAME}}
+\index{COMMAND\_\-FIELD\_\-NAME@{COMMAND\_\-FIELD\_\-NAME}!CXLController@{CXLController}}
+\subsubsection[{COMMAND\_\-FIELD\_\-NAME}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf COMMAND\_\-FIELD\_\-NAME} = '\_\-\_\-yxl'}}
+\label{classCXLController_acfa3d37fd2964302d32a8905a102196d}
+The name of our command form field  string 
+
+Definition at line 47 of file CXLController.php.
+
+\hypertarget{classCXLController_a4634a091c35db33009455321e1d259e3}{
+\index{CXLController@{CXLController}!PAGE\_\-SIZE@{PAGE\_\-SIZE}}
+\index{PAGE\_\-SIZE@{PAGE\_\-SIZE}!CXLController@{CXLController}}
+\subsubsection[{PAGE\_\-SIZE}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PAGE\_\-SIZE} = 10}}
+\label{classCXLController_a4634a091c35db33009455321e1d259e3}
+The number of items to display per page  integer 
+
+Definition at line 42 of file CXLController.php.
+
+\hypertarget{classCXLController_a21930d5a45a39f983d1b157fd28819dc}{
+\index{CXLController@{CXLController}!SEARCH\_\-HELP\_\-TEXT@{SEARCH\_\-HELP\_\-TEXT}}
+\index{SEARCH\_\-HELP\_\-TEXT@{SEARCH\_\-HELP\_\-TEXT}!CXLController@{CXLController}}
+\subsubsection[{SEARCH\_\-HELP\_\-TEXT}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf SEARCH\_\-HELP\_\-TEXT} = 'You may optionally enter a comparison operator ($<$b$>$\&lt;$<$/b$>$, $<$b$>$\&lt;=$<$/b$>$, $<$b$>$\&gt;$<$/b$>$, $<$b$>$\&gt;=$<$/b$>$, $<$b$>$\&lt;\&gt;$<$/b$>$or $<$b$>$=$<$/b$>$) at the beginning of each search value to specify how the comparison should be done.'}}
+\label{classCXLController_a21930d5a45a39f983d1b157fd28819dc}
+Standard search text for rendering  string 
+
+Definition at line 52 of file CXLController.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLController_8php}{CXLController.php}\end{DoxyCompactItemize}

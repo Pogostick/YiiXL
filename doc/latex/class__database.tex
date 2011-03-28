@@ -1,0 +1,1107 @@
+\hypertarget{class__database}{
+\section{\_\-database Class Reference}
+\label{class__database}\index{\_\-database@{\_\-database}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class__database_a095c5d389db211932136b53f25f39685}{\_\-\_\-construct} ()
+\item 
+\hyperlink{class__database_a78572828d11dcdf2a498497d9001d557}{connect} ()
+\item 
+\hyperlink{class__database_a6b251c8058230359b2922377699c4f29}{query} (\$sql)
+\item 
+\hyperlink{class__database_aea18ceaf3a26a43a17ac75a1deae8eb5}{nextr} ()
+\item 
+\hyperlink{class__database_af3975c6052edb19e579b858ade41a833}{get\_\-row} (\$mode=\char`\"{}both\char`\"{})
+\item 
+\hyperlink{class__database_aab759ecaf5cca95ae93a43f3ae01eb1c}{get\_\-all} (\$mode=\char`\"{}both\char`\"{}, \$key=false)
+\item 
+\hyperlink{class__database_a2470114c975ff2d134f750d82b92ab13}{f} (\$index)
+\item 
+\hyperlink{class__database_af63fb7393e4693d1f2f2a324e3b3f3f2}{go\_\-to} (\$row)
+\item 
+\hyperlink{class__database_a488ba76d7261d5bd6a2d01ab8dd6da0d}{nf} ()
+\item 
+\hyperlink{class__database_aa186461b75e39e01df8ec9d05bc56e5f}{af} ()
+\item 
+\hyperlink{class__database_ad4b2a8a3e107f7ed256cb345303c82cd}{error} (\$string=\char`\"{}\char`\"{})
+\item 
+\hyperlink{class__database_a933f2cde8dc7f87875e257d0a4902e99}{insert\_\-id} ()
+\item 
+\hyperlink{class__database_a812cda4574715397b7ffd0be994adf10}{escape} (\$string)
+\item 
+\hyperlink{class__database_aa118461de946085fe42989193337044a}{destroy} ()
+\item 
+\hyperlink{class__database_a095c5d389db211932136b53f25f39685}{\_\-\_\-construct} ()
+\item 
+\hyperlink{class__database_a78572828d11dcdf2a498497d9001d557}{connect} ()
+\item 
+\hyperlink{class__database_a6b251c8058230359b2922377699c4f29}{query} (\$sql)
+\item 
+\hyperlink{class__database_aea18ceaf3a26a43a17ac75a1deae8eb5}{nextr} ()
+\item 
+\hyperlink{class__database_af3975c6052edb19e579b858ade41a833}{get\_\-row} (\$mode=\char`\"{}both\char`\"{})
+\item 
+\hyperlink{class__database_aab759ecaf5cca95ae93a43f3ae01eb1c}{get\_\-all} (\$mode=\char`\"{}both\char`\"{}, \$key=false)
+\item 
+\hyperlink{class__database_a2470114c975ff2d134f750d82b92ab13}{f} (\$index)
+\item 
+\hyperlink{class__database_af63fb7393e4693d1f2f2a324e3b3f3f2}{go\_\-to} (\$row)
+\item 
+\hyperlink{class__database_a488ba76d7261d5bd6a2d01ab8dd6da0d}{nf} ()
+\item 
+\hyperlink{class__database_aa186461b75e39e01df8ec9d05bc56e5f}{af} ()
+\item 
+\hyperlink{class__database_ad4b2a8a3e107f7ed256cb345303c82cd}{error} (\$string=\char`\"{}\char`\"{})
+\item 
+\hyperlink{class__database_a933f2cde8dc7f87875e257d0a4902e99}{insert\_\-id} ()
+\item 
+\hyperlink{class__database_a812cda4574715397b7ffd0be994adf10}{escape} (\$string)
+\item 
+\hyperlink{class__database_aa118461de946085fe42989193337044a}{destroy} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class__database_ac7c3353107070daa85f641882931b358}{\$settings}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2 of file class.\_\-database.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class__database_a095c5d389db211932136b53f25f39685}{
+\index{\_\-database@{\_\-database}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!_database@{\_\-database}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_a095c5d389db211932136b53f25f39685}
+
+
+Definition at line 19 of file class.\_\-database.php.
+
+
+
+
+\begin{DoxyCode}
+                           {
+        global $db_config;
+        $this->settings = array_merge($this->settings, $db_config);
+        if($this->settings["error_file"] === true) $this->settings["error_file"] 
+      = dirname(__FILE__)."/__mysql_errors.log";
+    }
+\end{DoxyCode}
+
+
+\hypertarget{class__database_a095c5d389db211932136b53f25f39685}{
+\index{\_\-database@{\_\-database}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!_database@{\_\-database}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_a095c5d389db211932136b53f25f39685}
+
+
+Definition at line 19 of file class.\_\-database\_\-i.php.
+
+
+
+
+\begin{DoxyCode}
+                           {
+        global $db_config;
+        $this->settings = array_merge($this->settings, $db_config);
+        if($this->settings["error_file"] === true) $this->settings["error_file"] 
+      = dirname(__FILE__)."/__mysql_errors.log";
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class__database_aa186461b75e39e01df8ec9d05bc56e5f}{
+\index{\_\-database@{\_\-database}!af@{af}}
+\index{af@{af}!_database@{\_\-database}}
+\subsubsection[{af}]{\setlength{\rightskip}{0pt plus 5cm}af (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_aa186461b75e39e01df8ec9d05bc56e5f}
+
+
+Definition at line 111 of file class.\_\-database.php.
+
+
+
+
+\begin{DoxyCode}
+                  {
+        return mysql_affected_rows();
+    }
+\end{DoxyCode}
+
+
+\hypertarget{class__database_aa186461b75e39e01df8ec9d05bc56e5f}{
+\index{\_\-database@{\_\-database}!af@{af}}
+\index{af@{af}!_database@{\_\-database}}
+\subsubsection[{af}]{\setlength{\rightskip}{0pt plus 5cm}af (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_aa186461b75e39e01df8ec9d05bc56e5f}
+
+
+Definition at line 119 of file class.\_\-database\_\-i.php.
+
+
+
+
+\begin{DoxyCode}
+                  {
+        return $this->data->affected_rows;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{class__database_a78572828d11dcdf2a498497d9001d557}{
+\index{\_\-database@{\_\-database}!connect@{connect}}
+\index{connect@{connect}!_database@{\_\-database}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_a78572828d11dcdf2a498497d9001d557}
+
+
+Definition at line 25 of file class.\_\-database.php.
+
+
+
+
+\begin{DoxyCode}
+                       {
+        if (!$this->link) {
+            $this->link = ($this->settings["persist"]) ? 
+                mysql_pconnect(
+                    $this->settings["servername"].":".$this->settings["serverport
+      "], 
+                    $this->settings["username"], 
+                    $this->settings["password"]
+                ) : 
+                mysql_connect(
+                    $this->settings["servername"].":".$this->settings["serverport
+      "], 
+                    $this->settings["username"], 
+                    $this->settings["password"]
+                ) or $this->error();
+        }
+        if (!mysql_select_db($this->settings["database"], $this->link)) $this->er
+      ror();
+        if($this->link) mysql_query("SET NAMES 'utf8'");
+        return ($this->link) ? true : false;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class__database_a78572828d11dcdf2a498497d9001d557_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{class__database_a78572828d11dcdf2a498497d9001d557_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class__database_a78572828d11dcdf2a498497d9001d557}{
+\index{\_\-database@{\_\-database}!connect@{connect}}
+\index{connect@{connect}!_database@{\_\-database}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_a78572828d11dcdf2a498497d9001d557}
+
+
+Definition at line 25 of file class.\_\-database\_\-i.php.
+
+
+
+
+\begin{DoxyCode}
+                       {
+        $this->data = new mysqli(
+            $this->settings["servername"], 
+            $this->settings["username"], 
+            $this->settings["password"], 
+            $this->settings["database"],
+            $this->settings["serverport"]
+        );
+
+        if(mysqli_connect_errno()) { 
+            $this->error("Connection error: ".mysqli_connect_error() ); 
+            return false; 
+        }
+        if(!$this->data->set_charset("utf8")) {
+            $this->error("Error loading character set utf8");
+            return false;
+        }
+        return true;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class__database_a78572828d11dcdf2a498497d9001d557_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class__database_aa118461de946085fe42989193337044a}{
+\index{\_\-database@{\_\-database}!destroy@{destroy}}
+\index{destroy@{destroy}!_database@{\_\-database}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_aa118461de946085fe42989193337044a}
+
+
+Definition at line 146 of file class.\_\-database\_\-i.php.
+
+
+
+
+\begin{DoxyCode}
+                       {
+        if(isset($this->result)) $this->result->free();
+        if($this->data) $this->data->close();
+    }
+\end{DoxyCode}
+
+
+\hypertarget{class__database_aa118461de946085fe42989193337044a}{
+\index{\_\-database@{\_\-database}!destroy@{destroy}}
+\index{destroy@{destroy}!_database@{\_\-database}}
+\subsubsection[{destroy}]{\setlength{\rightskip}{0pt plus 5cm}destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_aa118461de946085fe42989193337044a}
+
+
+Definition at line 139 of file class.\_\-database.php.
+
+
+
+
+\begin{DoxyCode}
+                      {
+        if (isset($this->result)) mysql_free_result($this->result);
+        if (isset($this->link)) mysql_close($this->link);
+    }
+\end{DoxyCode}
+
+
+\hypertarget{class__database_ad4b2a8a3e107f7ed256cb345303c82cd}{
+\index{\_\-database@{\_\-database}!error@{error}}
+\index{error@{error}!_database@{\_\-database}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}error (
+\begin{DoxyParamCaption}
+\item[{\$}]{ string = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_ad4b2a8a3e107f7ed256cb345303c82cd}
+
+
+Definition at line 114 of file class.\_\-database.php.
+
+
+
+
+\begin{DoxyCode}
+                               {
+        $error = mysql_error();
+        if($this->settings["show_error"]) echo $error;
+        if($this->settings["error_file"] !== false) {
+            $handle = @fopen($this->settings["error_file"], "a+");
+            if($handle) {
+                @fwrite($handle, "[".date("Y-m-d H:i:s")."] ".$string." <".$error
+      .">\n");
+                @fclose($handle);
+            }
+        }
+        if($this->settings["dieonerror"]) {
+            if(isset($this->result)) mysql_free_result($this->result);
+            mysql_close($this->link);
+            die();
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class__database_ad4b2a8a3e107f7ed256cb345303c82cd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class__database_ad4b2a8a3e107f7ed256cb345303c82cd}{
+\index{\_\-database@{\_\-database}!error@{error}}
+\index{error@{error}!_database@{\_\-database}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}error (
+\begin{DoxyParamCaption}
+\item[{\$}]{ string = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_ad4b2a8a3e107f7ed256cb345303c82cd}
+
+
+Definition at line 122 of file class.\_\-database\_\-i.php.
+
+
+
+
+\begin{DoxyCode}
+                                 {
+        $error = $this->data->error;
+        if($this->settings["show_error"]) echo $error;
+        if($this->settings["error_file"] !== false) {
+            $handle = @fopen($this->settings["error_file"], "a+");
+            if($handle) {
+                @fwrite($handle, "[".date("Y-m-d H:i:s")."] ".$string." <".$error
+      .">\n");
+                @fclose($handle);
+            }
+        }
+        if($this->settings["dieonerror"]) {
+            if(isset($this->result)) $this->result->free();
+            @$this->data->close();
+            die();
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{class__database_a812cda4574715397b7ffd0be994adf10}{
+\index{\_\-database@{\_\-database}!escape@{escape}}
+\index{escape@{escape}!_database@{\_\-database}}
+\subsubsection[{escape}]{\setlength{\rightskip}{0pt plus 5cm}escape (
+\begin{DoxyParamCaption}
+\item[{\$}]{ string}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_a812cda4574715397b7ffd0be994adf10}
+
+
+Definition at line 141 of file class.\_\-database\_\-i.php.
+
+
+
+
+\begin{DoxyCode}
+                             {
+        if(!$this->data) return addslashes($string);
+        return $this->data->escape_string($string);
+    }
+\end{DoxyCode}
+
+
+\hypertarget{class__database_a812cda4574715397b7ffd0be994adf10}{
+\index{\_\-database@{\_\-database}!escape@{escape}}
+\index{escape@{escape}!_database@{\_\-database}}
+\subsubsection[{escape}]{\setlength{\rightskip}{0pt plus 5cm}escape (
+\begin{DoxyParamCaption}
+\item[{\$}]{ string}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_a812cda4574715397b7ffd0be994adf10}
+
+
+Definition at line 134 of file class.\_\-database.php.
+
+
+
+
+\begin{DoxyCode}
+                            {
+        if(!$this->link) return addslashes($string);
+        return mysql_real_escape_string($string);
+    }
+\end{DoxyCode}
+
+
+\hypertarget{class__database_a2470114c975ff2d134f750d82b92ab13}{
+\index{\_\-database@{\_\-database}!f@{f}}
+\index{f@{f}!_database@{\_\-database}}
+\subsubsection[{f}]{\setlength{\rightskip}{0pt plus 5cm}f (
+\begin{DoxyParamCaption}
+\item[{\$}]{ index}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_a2470114c975ff2d134f750d82b92ab13}
+
+
+Definition at line 100 of file class.\_\-database\_\-i.php.
+
+
+
+
+\begin{DoxyCode}
+                       {
+        return stripslashes($this->row[$index]);
+    }
+\end{DoxyCode}
+
+
+\hypertarget{class__database_a2470114c975ff2d134f750d82b92ab13}{
+\index{\_\-database@{\_\-database}!f@{f}}
+\index{f@{f}!_database@{\_\-database}}
+\subsubsection[{f}]{\setlength{\rightskip}{0pt plus 5cm}f (
+\begin{DoxyParamCaption}
+\item[{\$}]{ index}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_a2470114c975ff2d134f750d82b92ab13}
+
+
+Definition at line 95 of file class.\_\-database.php.
+
+
+
+
+\begin{DoxyCode}
+                       {
+        return stripslashes($this->row[$index]);
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class__database_a2470114c975ff2d134f750d82b92ab13_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class__database_aab759ecaf5cca95ae93a43f3ae01eb1c}{
+\index{\_\-database@{\_\-database}!get\_\-all@{get\_\-all}}
+\index{get\_\-all@{get\_\-all}!_database@{\_\-database}}
+\subsubsection[{get\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}get\_\-all (
+\begin{DoxyParamCaption}
+\item[{\$}]{ mode = {\ttfamily \char`\"{}both\char`\"{}}, }
+\item[{\$}]{ key = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_aab759ecaf5cca95ae93a43f3ae01eb1c}
+
+
+Definition at line 82 of file class.\_\-database.php.
+
+
+
+
+\begin{DoxyCode}
+                                                   {
+        if(!$this->result) {
+            $this->error("No query pending");
+            return false;
+        }
+        $return = array();
+        while($this->nextr()) {
+            if($key !== false) $return[$this->f($key)] = $this->get_row($mode);
+            else $return[] = $this->get_row($mode);
+        }
+        return $return;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class__database_aab759ecaf5cca95ae93a43f3ae01eb1c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class__database_aab759ecaf5cca95ae93a43f3ae01eb1c}{
+\index{\_\-database@{\_\-database}!get\_\-all@{get\_\-all}}
+\index{get\_\-all@{get\_\-all}!_database@{\_\-database}}
+\subsubsection[{get\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}get\_\-all (
+\begin{DoxyParamCaption}
+\item[{\$}]{ mode = {\ttfamily \char`\"{}both\char`\"{}}, }
+\item[{\$}]{ key = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_aab759ecaf5cca95ae93a43f3ae01eb1c}
+
+
+Definition at line 87 of file class.\_\-database\_\-i.php.
+
+
+
+
+\begin{DoxyCode}
+                                                   {
+        if(!$this->result) {
+            $this->error("No query pending");
+            return false;
+        }
+        $return = array();
+        while($this->nextr()) {
+            if($key !== false) $return[$this->f($key)] = $this->get_row($mode);
+            else $return[] = $this->get_row($mode);
+        }
+        return $return;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class__database_aab759ecaf5cca95ae93a43f3ae01eb1c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class__database_af3975c6052edb19e579b858ade41a833}{
+\index{\_\-database@{\_\-database}!get\_\-row@{get\_\-row}}
+\index{get\_\-row@{get\_\-row}!_database@{\_\-database}}
+\subsubsection[{get\_\-row}]{\setlength{\rightskip}{0pt plus 5cm}get\_\-row (
+\begin{DoxyParamCaption}
+\item[{\$}]{ mode = {\ttfamily \char`\"{}both\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_af3975c6052edb19e579b858ade41a833}
+
+
+Definition at line 65 of file class.\_\-database\_\-i.php.
+
+
+
+
+\begin{DoxyCode}
+                                     {
+        if(!$this->row) return false;
+
+        $return = array();
+        switch($mode) {
+            case "assoc":
+                foreach($this->row as $k => $v) {
+                    if(!is_int($k)) $return[$k] = $v;
+                }
+                break;
+            case "num":
+                foreach($this->row as $k => $v) {
+                    if(is_int($k)) $return[$k] = $v;
+                }
+                break;
+            default:
+                $return = $this->row;
+                break;
+        }
+        return array_map("stripslashes",$return);
+    }
+\end{DoxyCode}
+
+
+\hypertarget{class__database_af3975c6052edb19e579b858ade41a833}{
+\index{\_\-database@{\_\-database}!get\_\-row@{get\_\-row}}
+\index{get\_\-row@{get\_\-row}!_database@{\_\-database}}
+\subsubsection[{get\_\-row}]{\setlength{\rightskip}{0pt plus 5cm}get\_\-row (
+\begin{DoxyParamCaption}
+\item[{\$}]{ mode = {\ttfamily \char`\"{}both\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_af3975c6052edb19e579b858ade41a833}
+
+
+Definition at line 60 of file class.\_\-database.php.
+
+
+
+
+\begin{DoxyCode}
+                                     {
+        if(!$this->row) return false;
+
+        $return = array();
+        switch($mode) {
+            case "assoc":
+                foreach($this->row as $k => $v) {
+                    if(!is_int($k)) $return[$k] = $v;
+                }
+                break;
+            case "num":
+                foreach($this->row as $k => $v) {
+                    if(is_int($k)) $return[$k] = $v;
+                }
+                break;
+            default:
+                $return = $this->row;
+                break;
+        }
+        return array_map("stripslashes",$return);
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class__database_af3975c6052edb19e579b858ade41a833_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class__database_af63fb7393e4693d1f2f2a324e3b3f3f2}{
+\index{\_\-database@{\_\-database}!go\_\-to@{go\_\-to}}
+\index{go\_\-to@{go\_\-to}!_database@{\_\-database}}
+\subsubsection[{go\_\-to}]{\setlength{\rightskip}{0pt plus 5cm}go\_\-to (
+\begin{DoxyParamCaption}
+\item[{\$}]{ row}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_af63fb7393e4693d1f2f2a324e3b3f3f2}
+
+
+Definition at line 104 of file class.\_\-database\_\-i.php.
+
+
+
+
+\begin{DoxyCode}
+                         {
+        if(!$this->result) {
+            $this->error("No query pending");
+            return false;
+        }
+        if(!$this->data->data_seek($row)) $this->error();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{class__database_af63fb7393e4693d1f2f2a324e3b3f3f2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class__database_af63fb7393e4693d1f2f2a324e3b3f3f2}{
+\index{\_\-database@{\_\-database}!go\_\-to@{go\_\-to}}
+\index{go\_\-to@{go\_\-to}!_database@{\_\-database}}
+\subsubsection[{go\_\-to}]{\setlength{\rightskip}{0pt plus 5cm}go\_\-to (
+\begin{DoxyParamCaption}
+\item[{\$}]{ row}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_af63fb7393e4693d1f2f2a324e3b3f3f2}
+
+
+Definition at line 99 of file class.\_\-database.php.
+
+
+
+
+\begin{DoxyCode}
+                         {
+        if(!$this->result) {
+            $this->error("No query pending");
+            return false;
+        }
+        if(!mysql_data_seek($this->result, $row)) $this->error();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{class__database_af63fb7393e4693d1f2f2a324e3b3f3f2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class__database_a933f2cde8dc7f87875e257d0a4902e99}{
+\index{\_\-database@{\_\-database}!insert\_\-id@{insert\_\-id}}
+\index{insert\_\-id@{insert\_\-id}!_database@{\_\-database}}
+\subsubsection[{insert\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}insert\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_a933f2cde8dc7f87875e257d0a4902e99}
+
+
+Definition at line 138 of file class.\_\-database\_\-i.php.
+
+
+
+
+\begin{DoxyCode}
+                         {
+        return $this->data->insert_id;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{class__database_a933f2cde8dc7f87875e257d0a4902e99}{
+\index{\_\-database@{\_\-database}!insert\_\-id@{insert\_\-id}}
+\index{insert\_\-id@{insert\_\-id}!_database@{\_\-database}}
+\subsubsection[{insert\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}insert\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_a933f2cde8dc7f87875e257d0a4902e99}
+
+
+Definition at line 130 of file class.\_\-database.php.
+
+
+
+
+\begin{DoxyCode}
+                         {
+        if(!$this->link) return false;
+        return mysql_insert_id();
+    }
+\end{DoxyCode}
+
+
+\hypertarget{class__database_aea18ceaf3a26a43a17ac75a1deae8eb5}{
+\index{\_\-database@{\_\-database}!nextr@{nextr}}
+\index{nextr@{nextr}!_database@{\_\-database}}
+\subsubsection[{nextr}]{\setlength{\rightskip}{0pt plus 5cm}nextr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_aea18ceaf3a26a43a17ac75a1deae8eb5}
+
+
+Definition at line 50 of file class.\_\-database.php.
+
+
+
+
+\begin{DoxyCode}
+                     {
+        if(!$this->result) {
+            $this->error("No query pending");
+            return false;
+        }
+        unset($this->row);
+        $this->row = mysql_fetch_array($this->result, MYSQL_BOTH);
+        return ($this->row) ? true : false ;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class__database_aea18ceaf3a26a43a17ac75a1deae8eb5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class__database_aea18ceaf3a26a43a17ac75a1deae8eb5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class__database_aea18ceaf3a26a43a17ac75a1deae8eb5}{
+\index{\_\-database@{\_\-database}!nextr@{nextr}}
+\index{nextr@{nextr}!_database@{\_\-database}}
+\subsubsection[{nextr}]{\setlength{\rightskip}{0pt plus 5cm}nextr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_aea18ceaf3a26a43a17ac75a1deae8eb5}
+
+
+Definition at line 55 of file class.\_\-database\_\-i.php.
+
+
+
+
+\begin{DoxyCode}
+                    {
+        if(!$this->result) {
+            $this->error("No query pending");
+            return false;
+        }
+        unset($this->row);
+        $this->row = $this->result->fetch_array(MYSQL_BOTH);
+        return ($this->row) ? true : false ;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class__database_aea18ceaf3a26a43a17ac75a1deae8eb5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class__database_a488ba76d7261d5bd6a2d01ab8dd6da0d}{
+\index{\_\-database@{\_\-database}!nf@{nf}}
+\index{nf@{nf}!_database@{\_\-database}}
+\subsubsection[{nf}]{\setlength{\rightskip}{0pt plus 5cm}nf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_a488ba76d7261d5bd6a2d01ab8dd6da0d}
+
+
+Definition at line 112 of file class.\_\-database\_\-i.php.
+
+
+
+
+\begin{DoxyCode}
+                  {
+        if (!$this->result) {
+            $this->error("nf: no result set");
+            return false;
+        }
+        return $this->result->num_rows;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class__database_a488ba76d7261d5bd6a2d01ab8dd6da0d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class__database_a488ba76d7261d5bd6a2d01ab8dd6da0d}{
+\index{\_\-database@{\_\-database}!nf@{nf}}
+\index{nf@{nf}!_database@{\_\-database}}
+\subsubsection[{nf}]{\setlength{\rightskip}{0pt plus 5cm}nf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_a488ba76d7261d5bd6a2d01ab8dd6da0d}
+
+
+Definition at line 107 of file class.\_\-database.php.
+
+
+
+
+\begin{DoxyCode}
+                  {
+        if ($numb = mysql_num_rows($this->result) === false) $this->error();
+        return mysql_num_rows($this->result);
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class__database_a488ba76d7261d5bd6a2d01ab8dd6da0d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class__database_a6b251c8058230359b2922377699c4f29}{
+\index{\_\-database@{\_\-database}!query@{query}}
+\index{query@{query}!_database@{\_\-database}}
+\subsubsection[{query}]{\setlength{\rightskip}{0pt plus 5cm}query (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sql}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_a6b251c8058230359b2922377699c4f29}
+
+
+Definition at line 44 of file class.\_\-database.php.
+
+
+
+
+\begin{DoxyCode}
+                         {
+        if (!$this->link && !$this->connect()) $this->error();
+        if (!($this->result = mysql_query($sql, $this->link))) $this->error($sql)
+      ;
+        return ($this->result) ? true : false;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{class__database_a6b251c8058230359b2922377699c4f29_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class__database_a6b251c8058230359b2922377699c4f29}{
+\index{\_\-database@{\_\-database}!query@{query}}
+\index{query@{query}!_database@{\_\-database}}
+\subsubsection[{query}]{\setlength{\rightskip}{0pt plus 5cm}query (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sql}
+\end{DoxyParamCaption}
+)}}
+\label{class__database_a6b251c8058230359b2922377699c4f29}
+
+
+Definition at line 45 of file class.\_\-database\_\-i.php.
+
+
+
+
+\begin{DoxyCode}
+                         {
+        if(!$this->data && !$this->connect()) {
+            $this->error("Could node connect for query: ".$sql);
+            return false;
+        }
+        //echo $sql."<br />:";
+        if(!($this->result = $this->data->query($sql))) $this->error($sql);
+        return ($this->result) ? true : false;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{class__database_a6b251c8058230359b2922377699c4f29_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{class__database_ac7c3353107070daa85f641882931b358}{
+\index{\_\-database@{\_\-database}!\$settings@{\$settings}}
+\index{\$settings@{\$settings}!_database@{\_\-database}}
+\subsubsection[{\$settings}]{\setlength{\rightskip}{0pt plus 5cm}\$settings}}
+\label{class__database_ac7c3353107070daa85f641882931b358}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ array(
+            "servername"=> "localhost",
+            "serverport"=> "3306",
+            "username"  => false,
+            "password"  => false,
+            "database"  => false,
+            "persist"   => false,
+            "dieonerror"=> false,
+            "showerror" => false,
+            "error_file"=> true
+        )
+\end{DoxyCode}
+
+
+Definition at line 7 of file class.\_\-database.php.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/external/jquery-\/plugins/jsTree/\_\-demo/\_\-inc/\hyperlink{class_8__database_8php}{class.\_\-database.php}\item 
+/usr/local/yiixl/lib/original/external/jquery-\/plugins/jsTree/\_\-demo/\_\-inc/\hyperlink{class_8__database__i_8php}{class.\_\-database\_\-i.php}\end{DoxyCompactItemize}

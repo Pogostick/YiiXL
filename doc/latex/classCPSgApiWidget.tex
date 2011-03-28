@@ -1,0 +1,241 @@
+\hypertarget{classCPSgApiWidget}{
+\section{CPSgApiWidget Class Reference}
+\label{classCPSgApiWidget}\index{CPSgApiWidget@{CPSgApiWidget}}
+}
+
+
+Inheritance diagram for CPSgApiWidget:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classCPSgApiWidget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSgApiWidget:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classCPSgApiWidget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSgApiWidget_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSgApiWidget_afb0fafe7e02a3ae1993c01c19fad2bae}{run} ()
+\item 
+\hyperlink{classCPSgApiWidget_a59080ee7d7949e19f5af41e26ff53806}{registerClientScripts} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSgApiWidget_a2a2ea08f8240ed4c24058ab80ab89703}{generateJavascript} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 23 of file CPSgApiWidget.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSgApiWidget_a2a2ea08f8240ed4c24058ab80ab89703}{
+\index{CPSgApiWidget@{CPSgApiWidget}!generateJavascript@{generateJavascript}}
+\index{generateJavascript@{generateJavascript}!CPSgApiWidget@{CPSgApiWidget}}
+\subsubsection[{generateJavascript}]{\setlength{\rightskip}{0pt plus 5cm}generateJavascript (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSgApiWidget_a2a2ea08f8240ed4c24058ab80ab89703}
+Generates the needed javascript \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCPSWidget_a2a2ea08f8240ed4c24058ab80ab89703}{CPSWidget}.
+
+
+
+Reimplemented in \hyperlink{classCPSgMapsWidget_a2a2ea08f8240ed4c24058ab80ab89703}{CPSgMapsWidget}.
+
+
+
+Definition at line 60 of file CPSgApiWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->script = '';
+
+        if ( is_array( $this->apisToLoad ) )
+        {
+            foreach ( $this->apisToLoad as $_sApi => $_sVersion )
+                $this->script .= "google.load(\"{$_sApi}\", \"{$_sVersion}\");\n"
+      ;
+        }
+
+        return $this->script;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSgApiWidget_a2a2ea08f8240ed4c24058ab80ab89703_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSgApiWidget_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSgApiWidget@{CPSgApiWidget}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSgApiWidget@{CPSgApiWidget}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSgApiWidget_a2dc262e99b1c246b56f27626bfe699ff}
+Constructor 
+
+Reimplemented from \hyperlink{classCPSApiWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSApiWidget}.
+
+
+
+Reimplemented in \hyperlink{classCPSgMapsWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSgMapsWidget}.
+
+
+
+Definition at line 33 of file CPSgApiWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Daddy...
+        parent::preinit();
+
+        //  Our object settings
+        $this->addOption( 'apisToLoad', array(), 'array:array():::maps|search|fee
+      ds|language|gdata|earth|visualization' );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSgApiWidget_a59080ee7d7949e19f5af41e26ff53806}{
+\index{CPSgApiWidget@{CPSgApiWidget}!registerClientScripts@{registerClientScripts}}
+\index{registerClientScripts@{registerClientScripts}!CPSgApiWidget@{CPSgApiWidget}}
+\subsubsection[{registerClientScripts}]{\setlength{\rightskip}{0pt plus 5cm}registerClientScripts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSgApiWidget_a59080ee7d7949e19f5af41e26ff53806}
+Registers the scripts necessary for this widget 
+
+Reimplemented from \hyperlink{classCPSWidget_a59080ee7d7949e19f5af41e26ff53806}{CPSWidget}.
+
+
+
+Definition at line 76 of file CPSgApiWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::registerClientScripts();
+
+        $_sApiKey = $this->apiKey;
+
+        //  Register scripts necessary
+        $this->pushScriptFile( "http://www.google.com/jsapi?key={$_sApiKey}", CCl
+      ientScript::POS_HEAD );
+        $this->pushScriptFile( "http://maps.google.com/maps?file=api&v=2&key={$_s
+      ApiKey}&sensor=false", CClientScript::POS_HEAD );
+        $this->pushScriptFile( 'http://gmaps-utility-library.googlecode.com/svn/t
+      runk/markermanager/1.1/src/markermanager.js', CClientScript::POS_HEAD );
+        $this->pushScriptFile( 'http://gmaps-utility-library.googlecode.com/svn/t
+      runk/extinfowindow/release/src/extinfowindow.js', CClientScript::POS_HEAD );
+
+        PS::_rs( "Yii.{__CLASS__}.#.{$this->id}", $this->generateJavascript() );
+        PS::_rs( "Yii.{__CLASS__}.#.{$this->id}.onLoad", 'initialize();' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=370pt]{classCPSgApiWidget_a59080ee7d7949e19f5af41e26ff53806_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classCPSgApiWidget_a59080ee7d7949e19f5af41e26ff53806_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSgApiWidget_afb0fafe7e02a3ae1993c01c19fad2bae}{
+\index{CPSgApiWidget@{CPSgApiWidget}!run@{run}}
+\index{run@{run}!CPSgApiWidget@{CPSgApiWidget}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSgApiWidget_afb0fafe7e02a3ae1993c01c19fad2bae}
+Runs the widget 
+
+Definition at line 49 of file CPSgApiWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::run();
+        $this->registerClientScripts();
+        echo $this->generateHtml();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSgApiWidget_afb0fafe7e02a3ae1993c01c19fad2bae_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/widgets/gApi/\hyperlink{CPSgApiWidget_8php}{CPSgApiWidget.php}\end{DoxyCompactItemize}

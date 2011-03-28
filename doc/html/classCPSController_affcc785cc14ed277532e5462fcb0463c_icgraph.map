@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSController.html#a746b3a617d7e9d1c0012aa471cf25325" title="loadModel" alt="" coords="105,136,191,165"/>
+<area shape="rect" id="node5" href="$classCPSCRUDController.html#a1c7da1e1bd646d3dcb9077f2390daba7" title="CPSCRUDController::actionDelete" alt="" coords="263,5,497,35"/>
+<area shape="rect" id="node7" href="$classCPSCRUDController.html#af0a5fa203c2223483f8a9fbca5f25f9b" title="CPSCRUDController::actionUpdate" alt="" coords="569,84,809,113"/>
+<area shape="rect" id="node11" href="$classCPSCRUDController.html#a4719f8c8bc82f251a57b2c96066df9cf" title="CPSCRUDController::actionView" alt="" coords="579,189,800,219"/>
+<area shape="rect" id="node13" href="$classCPSCRUDController.html#a3ebb55fc0dbd9ce833626b342eaf5a11" title="CPSCRUDController::commandDelete" alt="" coords="249,163,511,192"/>
+<area shape="rect" id="node15" href="$classCPSCRUDController.html#a1cab0ecf37574f60029f78b6f94852ba" title="CPSCRUDController::commandUndelete" alt="" coords="241,216,519,245"/>
+<area shape="rect" id="node17" href="$classCPSController.html#a5d552693681c1d3c932a6ae5fbb56ac5" title="genericAction" alt="" coords="325,109,435,139"/>
+<area shape="rect" id="node9" href="$classCPSCRUDController.html#a0e897ab49575e5cf90669511a707e530" title="CPSCRUDController::actionCreate" alt="" coords="859,84,1096,113"/>
+</map>

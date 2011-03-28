@@ -1,0 +1,30 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCXLComponent.html#a18dc38882c1e91ddb65892e4fad6d68f" title="CXLComponent::_getCallerObject" alt="" coords="117,5,352,35"/>
+<area shape="rect" id="node5" href="$classCXLSoftDeleteBehavior.html#a470a61d16341c345d6cebeb932890113" title="CXLSoftDeleteBehavior::beforeDelete" alt="" coords="104,59,365,88"/>
+<area shape="rect" id="node7" href="$classCXLSoftDeleteBehavior.html#a0d137abaa3f9f1ae67349e02c627ac26" title="CXLSoftDeleteBehavior::beforeFind" alt="" coords="113,112,356,141"/>
+<area shape="rect" id="node9" href="$classYiiXLBase.html#a0f367d426ee389cfe233f63c598eeedb" title="getOption" alt="" coords="192,165,277,195"/>
+<area shape="rect" id="node11" href="$classCXLWidget.html#ad1145e067eca389073867be1a9d5d57e" title="CXLWidget::getOption" alt="" coords="156,219,313,248"/>
+<area shape="rect" id="node19" href="$classCXLConfig.html#aeeefab349db1835b9112b2767a0e039f" title="CXLConfig::getOption" alt="" coords="156,272,313,301"/>
+<area shape="rect" id="node23" href="$classCXLComponent.html#ad1145e067eca389073867be1a9d5d57e" title="CXLComponent::getOption" alt="" coords="139,325,331,355"/>
+<area shape="rect" id="node25" href="$classCXLWidget.html#a4be4055f3361d4800e16bc2e2e38cda6" title="CXLWidget::init" alt="" coords="177,379,292,408"/>
+<area shape="rect" id="node27" href="$classCXLController.html#a4be4055f3361d4800e16bc2e2e38cda6" title="CXLController::init" alt="" coords="168,432,301,461"/>
+<area shape="rect" id="node29" href="$classCXLController.html#aee989705ca23d787542be0bf30a28000" title="CXLController::loadCurrentModel" alt="" coords="120,485,349,515"/>
+<area shape="rect" id="node33" href="$classCXLController.html#a138d56ab26b272430a88450638c6d466" title="CXLController::loadPaged" alt="" coords="144,539,325,568"/>
+<area shape="rect" id="node35" href="$classYiiXLBase.html#ae6db9da820434b8923fa9e87849822fa" title="oo" alt="" coords="216,592,253,621"/>
+<area shape="rect" id="node37" href="$classCXLController.html#ae4991b44dadced9ed4c2548c8a52b72e" title="CXLController::processCommand" alt="" coords="119,645,351,675"/>
+<area shape="rect" id="node41" href="$classYiiXLBase.html#a06e30551462355a35c656bf1e7ded6f9" title="registerCss" alt="" coords="188,699,281,728"/>
+<area shape="rect" id="node43" href="$classCXLController.html#ae926a613a7702bb749e974f35a462d60" title="CXLController::setStandardFormOptions" alt="" coords="424,777,701,807"/>
+<area shape="rect" id="node45" href="$classCXLController.html#a592bdbc48efc56a00e5b49582db7c09f" title="CXLController::setViewNavigationOptions" alt="" coords="93,803,376,832"/>
+<area shape="rect" id="node48" href="$classYiiXLBase.html#a738b26d91bc5e75ef095583e5977c291" title="smartCall" alt="" coords="193,856,276,885"/>
+<area shape="rect" id="node52" href="$classCXLSoftDeleteBehavior.html#a9c49f1fbbec2cb6693f6566bafd3683c" title="CXLSoftDeleteBehavior::undelete" alt="" coords="117,909,352,939"/>
+<area shape="rect" id="node54" href="$classYiiXLBase.html#a62ea6eb4323d1c2f553d2bf12288e6e1" title="uo" alt="" coords="216,963,253,992"/>
+<area shape="rect" id="node13" href="$classCXLWidget.html#a13868aafdf32adbae02f5a6f67b09a85" title="CXLWidget::_renderContainer" alt="" coords="460,219,665,248"/>
+<area shape="rect" id="node15" href="$classCXLWidget.html#a30bcc620a40b8f755dbafb28ff1c76d4" title="CXLWidget::_render" alt="" coords="751,219,895,248"/>
+<area shape="rect" id="node17" href="$classCXLWidget.html#afb0fafe7e02a3ae1993c01c19fad2bae" title="CXLWidget::run" alt="" coords="944,219,1061,248"/>
+<area shape="rect" id="node21" href="$classCXLConfig.html#a4537dad3b44254124991341cc91b28fb" title="CXLConfig::__get" alt="" coords="499,272,627,301"/>
+<area shape="rect" id="node31" href="$classCXLController.html#ab9196d5e77e86dc16866c3b5373963a2" title="CXLController::genericAction" alt="" coords="461,485,664,515"/>
+<area shape="rect" id="node39" href="$classCXLController.html#ae348b4354879b012496b19989bf6d9cf" title="CXLController::beforeAction" alt="" coords="464,645,661,675"/>
+<area shape="rect" id="node50" href="$classCXLComponent.html#ae3c1612573015dbb405087f657944fe6" title="CXLComponent::__call" alt="" coords="481,856,644,885"/>
+<area shape="rect" id="node56" href="$classCXLConfig.html#a41af7dd29c879b4c30978876ebdf4ba7" title="CXLConfig::__unset" alt="" coords="491,936,635,965"/>
+<area shape="rect" id="node58" href="$classYiiXLBase.html#a087a87bf580b88bb900700b3c944dfba" title="unsetOption" alt="" coords="513,989,612,1019"/>
+</map>

@@ -1,0 +1,231 @@
+\hypertarget{classCPSFacebookApiException}{
+\section{CPSFacebookApiException Class Reference}
+\label{classCPSFacebookApiException}\index{CPSFacebookApiException@{CPSFacebookApiException}}
+}
+
+
+Inheritance diagram for CPSFacebookApiException:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classCPSFacebookApiException__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSFacebookApiException:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classCPSFacebookApiException__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFacebookApiException_ae077eb8a032a325ceb939bfabfa5f472}{getResult} ()
+\item 
+\hyperlink{classCPSFacebookApiException_aa7d9da69694e5a4bf2f0c1d7e85eb0f1}{\_\-\_\-construct} (\$result)
+\item 
+\hyperlink{classCPSFacebookApiException_a830b5c75df72b32396701bc563fbe3c7}{getType} ()
+\item 
+\hyperlink{classCPSFacebookApiException_a7516ca30af0db3cdbf9a7739b48ce91d}{\_\-\_\-toString} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFacebookApiException_a4880874cac761eb1c11879f22950db5b}{\$\_\-result}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 996 of file CPSFacebook.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSFacebookApiException_aa7d9da69694e5a4bf2f0c1d7e85eb0f1}{
+\index{CPSFacebookApiException@{CPSFacebookApiException}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSFacebookApiException@{CPSFacebookApiException}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ result}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookApiException_aa7d9da69694e5a4bf2f0c1d7e85eb0f1}
+Make a new API Exception with the given result. 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$result the result from the API server \end{DoxyParams}
+
+
+Definition at line 1016 of file CPSFacebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->_result = $result;
+        $_code = PS::o( $_result, 'error_code', 0 );
+
+        if ( isset( $result['error_description'] ) )
+        {
+            //  OAuth 2.0 Draft 10 style
+            $_message = $result['error_description'];
+        }
+        else if ( isset( $result['error'] ) && is_array( $result['error'] ) )
+        {
+            // OAuth 2.0 Draft 00 style
+            $_message = $result['error']['message'];
+        }
+        else if ( isset( $result['error_msg'] ) )
+        {
+            // Rest server style
+            $_message = $result['error_msg'];
+        }
+        else
+        {
+            $_message = 'Unknown Error. Check getResult()';
+        }
+
+        parent::__construct( $_message, $_code );
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSFacebookApiException_a7516ca30af0db3cdbf9a7739b48ce91d}{
+\index{CPSFacebookApiException@{CPSFacebookApiException}!\_\-\_\-toString@{\_\-\_\-toString}}
+\index{\_\-\_\-toString@{\_\-\_\-toString}!CPSFacebookApiException@{CPSFacebookApiException}}
+\subsubsection[{\_\-\_\-toString}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-toString (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookApiException_a7516ca30af0db3cdbf9a7739b48ce91d}
+A string representation of this exception \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 1076 of file CPSFacebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_temp = $this->getType() . ': ' . ( $this->code != 0 ? $this->code . ': 
+      ' : '' ) . $this->message;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classCPSFacebookApiException_a7516ca30af0db3cdbf9a7739b48ce91d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFacebookApiException_ae077eb8a032a325ceb939bfabfa5f472}{
+\index{CPSFacebookApiException@{CPSFacebookApiException}!getResult@{getResult}}
+\index{getResult@{getResult}!CPSFacebookApiException@{CPSFacebookApiException}}
+\subsubsection[{getResult}]{\setlength{\rightskip}{0pt plus 5cm}getResult (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookApiException_ae077eb8a032a325ceb939bfabfa5f472}
+
+
+Definition at line 1006 of file CPSFacebook.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_result; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFacebookApiException_a830b5c75df72b32396701bc563fbe3c7}{
+\index{CPSFacebookApiException@{CPSFacebookApiException}!getType@{getType}}
+\index{getType@{getType}!CPSFacebookApiException@{CPSFacebookApiException}}
+\subsubsection[{getType}]{\setlength{\rightskip}{0pt plus 5cm}getType (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFacebookApiException_a830b5c75df72b32396701bc563fbe3c7}
+Returns the associated type for the error. This will default to 'Exception' when a type is not available. \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 1049 of file CPSFacebook.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( isset( $this->_result['error'] ) )
+        {
+            $_error = $this->_result['error'];
+            if ( is_string( $_error ) )
+            {
+                // OAuth 2.0 Draft 10 style
+                return $_error;
+            }
+            else if ( is_array( $_error ) )
+            {
+                // OAuth 2.0 Draft 00 style
+                if ( isset( $_error['type'] ) )
+                {
+                    return $_error['type'];
+                }
+            }
+        }
+
+        return 'Exception';
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classCPSFacebookApiException_a830b5c75df72b32396701bc563fbe3c7_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSFacebookApiException_a4880874cac761eb1c11879f22950db5b}{
+\index{CPSFacebookApiException@{CPSFacebookApiException}!\$\_\-result@{\$\_\-result}}
+\index{\$\_\-result@{\$\_\-result}!CPSFacebookApiException@{CPSFacebookApiException}}
+\subsubsection[{\$\_\-result}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-result\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFacebookApiException_a4880874cac761eb1c11879f22950db5b}
+
+
+Definition at line 1005 of file CPSFacebook.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/facebook/\hyperlink{CPSFacebook_8php}{CPSFacebook.php}\end{DoxyCompactItemize}

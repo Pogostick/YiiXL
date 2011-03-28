@@ -1,0 +1,274 @@
+\hypertarget{classCPSOAuthComponent}{
+\section{CPSOAuthComponent Class Reference}
+\label{classCPSOAuthComponent}\index{CPSOAuthComponent@{CPSOAuthComponent}}
+}
+
+
+Inheritance diagram for CPSOAuthComponent:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classCPSOAuthComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSOAuthComponent:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classCPSOAuthComponent__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSOAuthComponent_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSOAuthComponent_a48bb515fcba316fcb3d741ce84b57cec}{makeRequest} (\$sAction, \$arRequestData=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$sMethod=null, \$arHeaders=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSOAuthComponent.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSOAuthComponent_a48bb515fcba316fcb3d741ce84b57cec}{
+\index{CPSOAuthComponent@{CPSOAuthComponent}!makeRequest@{makeRequest}}
+\index{makeRequest@{makeRequest}!CPSOAuthComponent@{CPSOAuthComponent}}
+\subsubsection[{makeRequest}]{\setlength{\rightskip}{0pt plus 5cm}makeRequest (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sAction, }
+\item[{\$}]{ arRequestData = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ sMethod = {\ttfamily null}, }
+\item[{\$}]{ arHeaders = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSOAuthComponent_a48bb515fcba316fcb3d741ce84b57cec}
+
+
+Definition at line 48 of file CPSOAuthComponent.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Default...
+        $_arRequestData = $this->requestData;
+        $_arReqArgs = array();
+        $_bRequireAuth = false;
+        $_sResults = null;
+
+        //  Check data...
+        if ( null != $arRequestData ) $_arRequestData = array_merge( $_arRequestD
+      ata, $arRequestData );
+
+        //  Add the request data to the Url...
+        if ( is_array( $this->requestMap )  )
+        {
+            $_arMap = ( isset( $this->requestMap[ $this->apiToUse ][ $sAction ] )
+       ) ? $this->requestMap[ $this->apiToUse ][ $sAction ] : null;
+            $_arOptions = ( isset( $_arMap[ 'options' ] ) ) ? $_arMap[ 'options' 
+      ] : null;
+            $_arReqOneOf = ( isset( $_arOptions[ '_requireOneOf' ] ) ) ? $_arOpti
+      ons[ '_requireOneOf' ] : null;
+            $_sMethod = ( isset( $_arOptions[ '_method' ] ) ) ? $_arOptions[ '_me
+      thod' ] : ( null != $sMethod ) ? $sMethod : CPSApiBehavior::HTTP_GET;
+            $_arParams = ( isset( $_arParams[ 'params' ] ) ) ? $_arParams[ 'param
+      s' ] : null;
+
+            $_bThere = ( null == $_arReqOneOf );
+            
+            //  Build our query
+            if ( is_array( $_arParams ) )
+            {
+                foreach ( $_arParams as $_sKey => $_bRequired )
+                {
+                    //  Check required items
+                    if ( null != $_arReqOneOf && ! $_bThere )
+                        $_bThere = in_array( $_sKey, $_arReqOneOf );
+
+                    if ( $_bRequired && ! isset( $_arRequestData[ $_sKey ] ) )
+                    {
+                        throw new CException(
+                            Yii::t(
+                                __CLASS__,
+                                'Required parameter {param} was not included in r
+      equestData',
+                                array(
+                                    '{param}' => $_sKey,
+                                )
+                            )
+                        );
+                    }
+
+                    //  Add to query string if set...
+                    if ( isset( $_arRequestData[ $_sKey ] ) )
+                        $_arReqArgs[ $_sKey ] = $_arRequestData[ $_sKey ];
+                }
+            }
+        }
+
+        //  Check requireOneOf option...
+        if ( ! $_bThere )
+        {
+            throw new CException(
+                Yii::t(
+                    __CLASS__,
+                    'This call requires one of the following parameters: {params}
+      ',
+                    array(
+                        '{param}' => implode( ', ', $_requireOneOf ),
+                    )
+                )
+            );
+        }
+
+        //  Build the url...
+        $_sUrl = $this->apiBaseUrl . '/' . $this->apiToUse . ( ( $sAction == '/' 
+      ) ? '' : '/' . $sAction ) . '.json';
+
+        //  Handle events...
+        $_oEvent = new CPSApiEvent( $_sUrl, $_arReqArgs, null, $this );
+        $this->onBeforeApiCall( $_oEvent );
+
+        //  Make the call...
+        try
+        {
+            $_arToken = $this->getToken();
+            if ( $this->getOAuthObject()->setToken( $_arToken[ 'oauth_token' ], $
+      _arToken[ 'oauth_token_secret' ] ) )
+            {
+                if ( $this->getOAuthObject()->fetch( $_sUrl, $_arReqArgs, $_sMeth
+      od, $arHeaders ) )
+                {
+                    //  Get results...
+                    $_sResults = $this->getOAuthObject()->getLastResponse();
+                }
+                else
+                {
+                    //  Get error response
+                }
+            }
+        }
+        catch ( Exception $_ex )
+        {
+            $_sResults = null;
+            CPSLog::error( 'pogostick.base', Yii::t( $this->getInternalName(), 'E
+      rror making OAuth fetch request in {class}: {message}', array( "{class}" => get_c
+      lass( $this ), 'message' => $_ex->getMessage() ) ) );
+        }
+
+        //  Handle events...
+        $_oEvent->urlResults = $_sResults;
+        $this->onAfterApiCall( $_oEvent );
+
+        //  Raise our completion event...
+        $_oEvent->setUrlResults( $_sResults );
+        $this->onRequestComplete( $_oEvent );
+
+        //  If user doesn't want JSON output, then reformat
+        switch ( $this->format )
+        {
+            case 'xml':
+                $_sResults = CPSTransform::arrayToXml( json_decode( $_sResults, t
+      rue ), 'Results' );
+                break;
+                
+            case 'json':
+                //  Already in array format
+                break;
+
+            case 'array':
+                $_sResults = json_decode( $_sResults );
+                break;
+        }
+
+        //  Return results...
+        return $_sResults;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSOAuthComponent_a48bb515fcba316fcb3d741ce84b57cec_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{classCPSOAuthComponent_a48bb515fcba316fcb3d741ce84b57cec_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSOAuthComponent_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSOAuthComponent@{CPSOAuthComponent}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSOAuthComponent@{CPSOAuthComponent}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSOAuthComponent_a2dc262e99b1c246b56f27626bfe699ff}
+Preinitialize 
+
+Reimplemented from \hyperlink{classCPSComponent_a2dc262e99b1c246b56f27626bfe699ff}{CPSComponent}.
+
+
+
+Reimplemented in \hyperlink{classCPSTwitterApi_a2dc262e99b1c246b56f27626bfe699ff}{CPSTwitterApi}.
+
+
+
+Definition at line 31 of file CPSOAuthComponent.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Call daddy
+        parent::preinit();
+
+        //  Attach our api behavior
+        $this->attachBehavior( $this->getInternalName(), 'pogostick.behaviors.CPS
+      OAuthBehavior' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{classCPSOAuthComponent_a2dc262e99b1c246b56f27626bfe699ff_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/\hyperlink{CPSOAuthComponent_8php}{CPSOAuthComponent.php}\end{DoxyCompactItemize}

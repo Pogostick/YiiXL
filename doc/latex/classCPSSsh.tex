@@ -1,0 +1,935 @@
+\hypertarget{classCPSSsh}{
+\section{CPSSsh Class Reference}
+\label{classCPSSsh}\index{CPSSsh@{CPSSsh}}
+}
+
+
+Inheritance diagram for CPSSsh:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classCPSSsh__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSSsh:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classCPSSsh__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSSsh_ae78e05faf338016b4c1baeae80316a12}{getHostName} ()
+\item 
+\hyperlink{classCPSSsh_a0b9a6db81fce56df66374e0da839c18b}{setHostName} (\$value)
+\item 
+\hyperlink{classCPSSsh_a845fffe6111394d26fd5b336d5bdd9a2}{getHostPort} ()
+\item 
+\hyperlink{classCPSSsh_ace14fafdee989e8e2c63c97aba55e7a2}{setHostPort} (\$value)
+\item 
+\hyperlink{classCPSSsh_aafd6d1ef27e6acc5833aba4012e5ee77}{getUserName} ()
+\item 
+\hyperlink{classCPSSsh_a22f791d05aab2806e131af24487fd9ff}{setUserName} (\$value)
+\item 
+\hyperlink{classCPSSsh_a04e0957baeb7acde9c0c86556da2d43f}{getPassword} ()
+\item 
+\hyperlink{classCPSSsh_a1da155ea4c8dda7eb4cf986f05634003}{setPassword} (\$value)
+\item 
+\hyperlink{classCPSSsh_afc841edb470c7b8c50e78daaf634228a}{getPublicKey} ()
+\item 
+\hyperlink{classCPSSsh_a04c351b17c0fab37fd13de3badbf4d90}{setPublicKey} (\$value)
+\item 
+\hyperlink{classCPSSsh_af8437180fb9517471bed3d55b79893fb}{connect} (\$hostName=null, \$userName=null, \$password=null, \$hostPort=null)
+\item 
+\hyperlink{classCPSSsh_abe175fcf658475bc56e9d6fa02bc88ec}{disconnect} ()
+\item 
+\hyperlink{classCPSSsh_a38b50584ad0013c2476003f46a995e15}{fopen} (\$path, \$mode= 'r')
+\item 
+\hyperlink{classCPSSsh_ac35682e9c70da42914cd2078791b63e5}{lstat} (\$path)
+\item 
+\hyperlink{classCPSSsh_acc01f0607737714c1ef2caacfc7af6ce}{mkdir} (\$directoryName, \$mode=0777, \$recursive=false)
+\item 
+\hyperlink{classCPSSsh_aad9f6133b72f0213b3cb1d3a497083d9}{readlink} (\$link)
+\item 
+\hyperlink{classCPSSsh_a8d72a3f8e929f935fe69606f691c873a}{realpath} (\$path)
+\item 
+\hyperlink{classCPSSsh_a4d3ace76ac5651cc4b8e45ad72861422}{rename} (\$path, \$fromName, \$toName)
+\item 
+\hyperlink{classCPSSsh_a5c2fb19d078f1905ecd5988d7add2c9b}{rmdir} (\$path)
+\item 
+\hyperlink{classCPSSsh_a893a92915f20d637be8bcee4201900a5}{stat} (\$path)
+\item 
+\hyperlink{classCPSSsh_aec3e3319826b954ee04ec148bb8fff4d}{symlink} (\$targetName, \$link)
+\item 
+\hyperlink{classCPSSsh_ad6244fc254de2b00ab567e4e0b82a4b3}{unlink} (\$path)
+\item 
+\hyperlink{classCPSSsh_a6b3ea2d54c7397714777048290fd851c}{exec} (\$command, \$terminalType= 'vanilla', \$environment=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$width=80, \$height=25, \$widthHeightType=SSH2\_\-TERM\_\-UNIT\_\-CHARS)
+\item 
+\hyperlink{classCPSSsh_a815c67fbeee1b1a6db7000511efee19b}{shell} (\$terminalType= 'vanilla', \$environment=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$width=80, \$height=25, \$widthHeightType=SSH2\_\-TERM\_\-UNIT\_\-CHARS)
+\item 
+\hyperlink{classCPSSsh_a4706216d9b34d9c5a0e249764d01d8f9}{tunnel} (\$hostName, \$port)
+\item 
+\hyperlink{classCPSSsh_aee459d6c2cffbcb4ebf75a2880b19c11}{consumeStream} (\$stream, \$bufferSize=4096)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSSsh_aea4d2182573f32e00024b6d3ab307669}{\$\_\-hostName}
+\item 
+\hyperlink{classCPSSsh_a7144786d61ff1e88b8599df72eef589a}{\$\_\-hostPort}
+\item 
+\hyperlink{classCPSSsh_adad05d8340094323803ec5acd86329a1}{\$\_\-userName}
+\item 
+\hyperlink{classCPSSsh_ab2d9cec4126c2a36b45c4e24bccc0be7}{\$\_\-password}
+\item 
+\hyperlink{classCPSSsh_aa75ed584b43a95e58e9d1a173036a6f8}{\$\_\-publicKey}
+\item 
+\hyperlink{classCPSSsh_a7ee516ff732b630349455f5c9f9c85a8}{\$\_\-sessionId}
+\item 
+\hyperlink{classCPSSsh_ae9e1f0a5c641603ae7ed3388ae8a2368}{\$\_\-sftpId}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 44 of file CPSSsh.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSSsh_af8437180fb9517471bed3d55b79893fb}{
+\index{CPSSsh@{CPSSsh}!connect@{connect}}
+\index{connect@{connect}!CPSSsh@{CPSSsh}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}connect (
+\begin{DoxyParamCaption}
+\item[{\$}]{ hostName = {\ttfamily null}, }
+\item[{\$}]{ userName = {\ttfamily null}, }
+\item[{\$}]{ password = {\ttfamily null}, }
+\item[{\$}]{ hostPort = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_af8437180fb9517471bed3d55b79893fb}
+Connects to a host via ssh.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$userName \item[{\em string}]\$password \item[{\em string}]\$hostName \item[{\em integer}]\$hostPort \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 108 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! function_exists( 'ssh2_connect' ) )
+            throw new CException( 500, 'You must install the ssh2 extensions on y
+      our server to use this class.' );
+
+        if ( $this->_sessionId )
+            $this->disconnect();
+
+        if ( false !== ( $this->_sessionId = ssh2_connect( PS::nvl( $hostName, $t
+      his->_hostName, 'localhost' ), PS::nvl( $hostPort, $this->_hostPort, 22 ) ) ) )
+        {
+            if ( ssh2_auth_password( $this->_sessionId, PS::nvl( $userName, $this
+      ->_userName ), PS::nvl( $password, $this->_password ) ) )
+            {
+                $this->_sftpId = ssh2_sftp( $this->_sessionId );
+                return true;
+            }
+        }
+
+        return false;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classCPSSsh_af8437180fb9517471bed3d55b79893fb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSSsh_aee459d6c2cffbcb4ebf75a2880b19c11}{
+\index{CPSSsh@{CPSSsh}!consumeStream@{consumeStream}}
+\index{consumeStream@{consumeStream}!CPSSsh@{CPSSsh}}
+\subsubsection[{consumeStream}]{\setlength{\rightskip}{0pt plus 5cm}consumeStream (
+\begin{DoxyParamCaption}
+\item[{\$}]{ stream, }
+\item[{\$}]{ bufferSize = {\ttfamily 4096}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_aee459d6c2cffbcb4ebf75a2880b19c11}
+
+
+Definition at line 269 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_result = null;
+        
+        stream_set_blocking( $stream, true );
+
+        while ( $_buffer = fread( $stream, $bufferSize ) )
+            $_result .= $_buffer;
+
+        fclose( $stream );
+
+        return $_result;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classCPSSsh_aee459d6c2cffbcb4ebf75a2880b19c11_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSSsh_abe175fcf658475bc56e9d6fa02bc88ec}{
+\index{CPSSsh@{CPSSsh}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!CPSSsh@{CPSSsh}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_abe175fcf658475bc56e9d6fa02bc88ec}
+Resets the current session 
+
+Definition at line 131 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  There is apparently no "disconnect" or "close" ssh method.
+        $this->_sessionId = null;
+        $this->_sftpId = null;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classCPSSsh_abe175fcf658475bc56e9d6fa02bc88ec_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSSsh_a6b3ea2d54c7397714777048290fd851c}{
+\index{CPSSsh@{CPSSsh}!exec@{exec}}
+\index{exec@{exec}!CPSSsh@{CPSSsh}}
+\subsubsection[{exec}]{\setlength{\rightskip}{0pt plus 5cm}exec (
+\begin{DoxyParamCaption}
+\item[{\$}]{ command, }
+\item[{\$}]{ terminalType = {\ttfamily 'vanilla'}, }
+\item[{\$}]{ environment = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ width = {\ttfamily 80}, }
+\item[{\$}]{ height = {\ttfamily 25}, }
+\item[{\$}]{ widthHeightType = {\ttfamily SSH2\_\-TERM\_\-UNIT\_\-CHARS}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_a6b3ea2d54c7397714777048290fd851c}
+
+
+Definition at line 254 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->consumeStream( ssh2_exec( $this->_sessionId, $command, $ter
+      minalType, $environment, $width, $height, $widthHeightType ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classCPSSsh_a6b3ea2d54c7397714777048290fd851c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSSsh_a38b50584ad0013c2476003f46a995e15}{
+\index{CPSSsh@{CPSSsh}!fopen@{fopen}}
+\index{fopen@{fopen}!CPSSsh@{CPSSsh}}
+\subsubsection[{fopen}]{\setlength{\rightskip}{0pt plus 5cm}fopen (
+\begin{DoxyParamCaption}
+\item[{\$}]{ path, }
+\item[{\$}]{ mode = {\ttfamily 'r'}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_a38b50584ad0013c2476003f46a995e15}
+Opens a remote file
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$path \item[{\em string}]\$mode \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 145 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return fopen( "ssh2.sftp://{$this->_sftpId}{$path}", $mode );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_ae78e05faf338016b4c1baeae80316a12}{
+\index{CPSSsh@{CPSSsh}!getHostName@{getHostName}}
+\index{getHostName@{getHostName}!CPSSsh@{CPSSsh}}
+\subsubsection[{getHostName}]{\setlength{\rightskip}{0pt plus 5cm}getHostName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_ae78e05faf338016b4c1baeae80316a12}
+
+
+Definition at line 54 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_hostName; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_a845fffe6111394d26fd5b336d5bdd9a2}{
+\index{CPSSsh@{CPSSsh}!getHostPort@{getHostPort}}
+\index{getHostPort@{getHostPort}!CPSSsh@{CPSSsh}}
+\subsubsection[{getHostPort}]{\setlength{\rightskip}{0pt plus 5cm}getHostPort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_a845fffe6111394d26fd5b336d5bdd9a2}
+
+
+Definition at line 61 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_hostPort; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_a04e0957baeb7acde9c0c86556da2d43f}{
+\index{CPSSsh@{CPSSsh}!getPassword@{getPassword}}
+\index{getPassword@{getPassword}!CPSSsh@{CPSSsh}}
+\subsubsection[{getPassword}]{\setlength{\rightskip}{0pt plus 5cm}getPassword (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_a04e0957baeb7acde9c0c86556da2d43f}
+
+
+Definition at line 75 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_password; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_afc841edb470c7b8c50e78daaf634228a}{
+\index{CPSSsh@{CPSSsh}!getPublicKey@{getPublicKey}}
+\index{getPublicKey@{getPublicKey}!CPSSsh@{CPSSsh}}
+\subsubsection[{getPublicKey}]{\setlength{\rightskip}{0pt plus 5cm}getPublicKey (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_afc841edb470c7b8c50e78daaf634228a}
+
+
+Definition at line 82 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_publicKey; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_aafd6d1ef27e6acc5833aba4012e5ee77}{
+\index{CPSSsh@{CPSSsh}!getUserName@{getUserName}}
+\index{getUserName@{getUserName}!CPSSsh@{CPSSsh}}
+\subsubsection[{getUserName}]{\setlength{\rightskip}{0pt plus 5cm}getUserName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_aafd6d1ef27e6acc5833aba4012e5ee77}
+
+
+Definition at line 68 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_userName; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_ac35682e9c70da42914cd2078791b63e5}{
+\index{CPSSsh@{CPSSsh}!lstat@{lstat}}
+\index{lstat@{lstat}!CPSSsh@{CPSSsh}}
+\subsubsection[{lstat}]{\setlength{\rightskip}{0pt plus 5cm}lstat (
+\begin{DoxyParamCaption}
+\item[{\$}]{ path}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_ac35682e9c70da42914cd2078791b63e5}
+Stats a symbolic link on the remote filesystem without following the link.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$path \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 156 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return ssh2_sftp_lstat( $this->_sftpId, $path );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_acc01f0607737714c1ef2caacfc7af6ce}{
+\index{CPSSsh@{CPSSsh}!mkdir@{mkdir}}
+\index{mkdir@{mkdir}!CPSSsh@{CPSSsh}}
+\subsubsection[{mkdir}]{\setlength{\rightskip}{0pt plus 5cm}mkdir (
+\begin{DoxyParamCaption}
+\item[{\$}]{ directoryName, }
+\item[{\$}]{ mode = {\ttfamily 0777}, }
+\item[{\$}]{ recursive = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_acc01f0607737714c1ef2caacfc7af6ce}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em $<$type$>$}]\$directoryName \item[{\em $<$type$>$}]\$mode \item[{\em $<$type$>$}]\$recursive \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 168 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return ssh2_sftp_mkdir( $this->_sftpId, $directoryName, $mode, $recursive
+       );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_aad9f6133b72f0213b3cb1d3a497083d9}{
+\index{CPSSsh@{CPSSsh}!readlink@{readlink}}
+\index{readlink@{readlink}!CPSSsh@{CPSSsh}}
+\subsubsection[{readlink}]{\setlength{\rightskip}{0pt plus 5cm}readlink (
+\begin{DoxyParamCaption}
+\item[{\$}]{ link}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_aad9f6133b72f0213b3cb1d3a497083d9}
+Returns the target of a symbolic link
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$link Path of the symbolic link \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 179 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return ssh2_sftp_readlink( $this->_sftpId, $link );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_a8d72a3f8e929f935fe69606f691c873a}{
+\index{CPSSsh@{CPSSsh}!realpath@{realpath}}
+\index{realpath@{realpath}!CPSSsh@{CPSSsh}}
+\subsubsection[{realpath}]{\setlength{\rightskip}{0pt plus 5cm}realpath (
+\begin{DoxyParamCaption}
+\item[{\$}]{ path}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_a8d72a3f8e929f935fe69606f691c873a}
+Translates filename into the effective real path on the remote filesystem
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$path Path of the file \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 191 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return ssh2_sftp_realpath( $this->_sftpId, $path );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_a4d3ace76ac5651cc4b8e45ad72861422}{
+\index{CPSSsh@{CPSSsh}!rename@{rename}}
+\index{rename@{rename}!CPSSsh@{CPSSsh}}
+\subsubsection[{rename}]{\setlength{\rightskip}{0pt plus 5cm}rename (
+\begin{DoxyParamCaption}
+\item[{\$}]{ path, }
+\item[{\$}]{ fromName, }
+\item[{\$}]{ toName}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_a4d3ace76ac5651cc4b8e45ad72861422}
+Renames a file on the remote filesystem
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$path \item[{\em string}]\$fromName \item[{\em string}]\$toName \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 204 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return ssh2_sftp_rename( $this->_sftpId, $fromName, $toName );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_a5c2fb19d078f1905ecd5988d7add2c9b}{
+\index{CPSSsh@{CPSSsh}!rmdir@{rmdir}}
+\index{rmdir@{rmdir}!CPSSsh@{CPSSsh}}
+\subsubsection[{rmdir}]{\setlength{\rightskip}{0pt plus 5cm}rmdir (
+\begin{DoxyParamCaption}
+\item[{\$}]{ path}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_a5c2fb19d078f1905ecd5988d7add2c9b}
+Remove a directory
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$path \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 215 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return ssh2_sftp_rmdir( $this->_sftpId, $path );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_a0b9a6db81fce56df66374e0da839c18b}{
+\index{CPSSsh@{CPSSsh}!setHostName@{setHostName}}
+\index{setHostName@{setHostName}!CPSSsh@{CPSSsh}}
+\subsubsection[{setHostName}]{\setlength{\rightskip}{0pt plus 5cm}setHostName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_a0b9a6db81fce56df66374e0da839c18b}
+
+
+Definition at line 55 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_hostName = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_ace14fafdee989e8e2c63c97aba55e7a2}{
+\index{CPSSsh@{CPSSsh}!setHostPort@{setHostPort}}
+\index{setHostPort@{setHostPort}!CPSSsh@{CPSSsh}}
+\subsubsection[{setHostPort}]{\setlength{\rightskip}{0pt plus 5cm}setHostPort (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_ace14fafdee989e8e2c63c97aba55e7a2}
+
+
+Definition at line 62 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_hostPort = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_a1da155ea4c8dda7eb4cf986f05634003}{
+\index{CPSSsh@{CPSSsh}!setPassword@{setPassword}}
+\index{setPassword@{setPassword}!CPSSsh@{CPSSsh}}
+\subsubsection[{setPassword}]{\setlength{\rightskip}{0pt plus 5cm}setPassword (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_a1da155ea4c8dda7eb4cf986f05634003}
+
+
+Definition at line 76 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_password = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_a04c351b17c0fab37fd13de3badbf4d90}{
+\index{CPSSsh@{CPSSsh}!setPublicKey@{setPublicKey}}
+\index{setPublicKey@{setPublicKey}!CPSSsh@{CPSSsh}}
+\subsubsection[{setPublicKey}]{\setlength{\rightskip}{0pt plus 5cm}setPublicKey (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_a04c351b17c0fab37fd13de3badbf4d90}
+
+
+Definition at line 83 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_publicKey = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_a22f791d05aab2806e131af24487fd9ff}{
+\index{CPSSsh@{CPSSsh}!setUserName@{setUserName}}
+\index{setUserName@{setUserName}!CPSSsh@{CPSSsh}}
+\subsubsection[{setUserName}]{\setlength{\rightskip}{0pt plus 5cm}setUserName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_a22f791d05aab2806e131af24487fd9ff}
+
+
+Definition at line 69 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_userName = $value; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_a815c67fbeee1b1a6db7000511efee19b}{
+\index{CPSSsh@{CPSSsh}!shell@{shell}}
+\index{shell@{shell}!CPSSsh@{CPSSsh}}
+\subsubsection[{shell}]{\setlength{\rightskip}{0pt plus 5cm}shell (
+\begin{DoxyParamCaption}
+\item[{\$}]{ terminalType = {\ttfamily 'vanilla'}, }
+\item[{\$}]{ environment = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ width = {\ttfamily 80}, }
+\item[{\$}]{ height = {\ttfamily 25}, }
+\item[{\$}]{ widthHeightType = {\ttfamily SSH2\_\-TERM\_\-UNIT\_\-CHARS}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_a815c67fbeee1b1a6db7000511efee19b}
+
+
+Definition at line 259 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return ssh2_shell( $this->_sessionId, $terminalType, $environment, $width
+      , $height, $widthHeightType );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_a893a92915f20d637be8bcee4201900a5}{
+\index{CPSSsh@{CPSSsh}!stat@{stat}}
+\index{stat@{stat}!CPSSsh@{CPSSsh}}
+\subsubsection[{stat}]{\setlength{\rightskip}{0pt plus 5cm}stat (
+\begin{DoxyParamCaption}
+\item[{\$}]{ path}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_a893a92915f20d637be8bcee4201900a5}
+Stats a file on the remote filesystem following any symbolic links
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$path \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 226 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return ssh2_sftp_stat( $this->_sftpId, $path );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_aec3e3319826b954ee04ec148bb8fff4d}{
+\index{CPSSsh@{CPSSsh}!symlink@{symlink}}
+\index{symlink@{symlink}!CPSSsh@{CPSSsh}}
+\subsubsection[{symlink}]{\setlength{\rightskip}{0pt plus 5cm}symlink (
+\begin{DoxyParamCaption}
+\item[{\$}]{ targetName, }
+\item[{\$}]{ link}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_aec3e3319826b954ee04ec148bb8fff4d}
+Create a symlink
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$targetName \item[{\em string}]\$link \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 238 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return ssh2_sftp_symlink( $this->_sftpId, $targetName, $link );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_a4706216d9b34d9c5a0e249764d01d8f9}{
+\index{CPSSsh@{CPSSsh}!tunnel@{tunnel}}
+\index{tunnel@{tunnel}!CPSSsh@{CPSSsh}}
+\subsubsection[{tunnel}]{\setlength{\rightskip}{0pt plus 5cm}tunnel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ hostName, }
+\item[{\$}]{ port}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_a4706216d9b34d9c5a0e249764d01d8f9}
+
+
+Definition at line 264 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return ssh2_tunnel( $this->_sessionId, $hostName, $port );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSSsh_ad6244fc254de2b00ab567e4e0b82a4b3}{
+\index{CPSSsh@{CPSSsh}!unlink@{unlink}}
+\index{unlink@{unlink}!CPSSsh@{CPSSsh}}
+\subsubsection[{unlink}]{\setlength{\rightskip}{0pt plus 5cm}unlink (
+\begin{DoxyParamCaption}
+\item[{\$}]{ path}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSsh_ad6244fc254de2b00ab567e4e0b82a4b3}
+Deletes a file on the remote filesystem
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$path \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 249 of file CPSSsh.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return ssh2_sftp_unlink( $this->_sftpId, $path );
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSSsh_aea4d2182573f32e00024b6d3ab307669}{
+\index{CPSSsh@{CPSSsh}!\$\_\-hostName@{\$\_\-hostName}}
+\index{\$\_\-hostName@{\$\_\-hostName}!CPSSsh@{CPSSsh}}
+\subsubsection[{\$\_\-hostName}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-hostName\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSSsh_aea4d2182573f32e00024b6d3ab307669}
+
+
+Definition at line 53 of file CPSSsh.php.
+
+\hypertarget{classCPSSsh_a7144786d61ff1e88b8599df72eef589a}{
+\index{CPSSsh@{CPSSsh}!\$\_\-hostPort@{\$\_\-hostPort}}
+\index{\$\_\-hostPort@{\$\_\-hostPort}!CPSSsh@{CPSSsh}}
+\subsubsection[{\$\_\-hostPort}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-hostPort\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSSsh_a7144786d61ff1e88b8599df72eef589a}
+
+
+Definition at line 60 of file CPSSsh.php.
+
+\hypertarget{classCPSSsh_ab2d9cec4126c2a36b45c4e24bccc0be7}{
+\index{CPSSsh@{CPSSsh}!\$\_\-password@{\$\_\-password}}
+\index{\$\_\-password@{\$\_\-password}!CPSSsh@{CPSSsh}}
+\subsubsection[{\$\_\-password}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-password\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSSsh_ab2d9cec4126c2a36b45c4e24bccc0be7}
+
+
+Definition at line 74 of file CPSSsh.php.
+
+\hypertarget{classCPSSsh_aa75ed584b43a95e58e9d1a173036a6f8}{
+\index{CPSSsh@{CPSSsh}!\$\_\-publicKey@{\$\_\-publicKey}}
+\index{\$\_\-publicKey@{\$\_\-publicKey}!CPSSsh@{CPSSsh}}
+\subsubsection[{\$\_\-publicKey}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-publicKey\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSSsh_aa75ed584b43a95e58e9d1a173036a6f8}
+
+
+Definition at line 81 of file CPSSsh.php.
+
+\hypertarget{classCPSSsh_a7ee516ff732b630349455f5c9f9c85a8}{
+\index{CPSSsh@{CPSSsh}!\$\_\-sessionId@{\$\_\-sessionId}}
+\index{\$\_\-sessionId@{\$\_\-sessionId}!CPSSsh@{CPSSsh}}
+\subsubsection[{\$\_\-sessionId}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-sessionId\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSSsh_a7ee516ff732b630349455f5c9f9c85a8}
+
+
+Definition at line 88 of file CPSSsh.php.
+
+\hypertarget{classCPSSsh_ae9e1f0a5c641603ae7ed3388ae8a2368}{
+\index{CPSSsh@{CPSSsh}!\$\_\-sftpId@{\$\_\-sftpId}}
+\index{\$\_\-sftpId@{\$\_\-sftpId}!CPSSsh@{CPSSsh}}
+\subsubsection[{\$\_\-sftpId}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-sftpId\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSSsh_ae9e1f0a5c641603ae7ed3388ae8a2368}
+
+
+Definition at line 93 of file CPSSsh.php.
+
+\hypertarget{classCPSSsh_adad05d8340094323803ec5acd86329a1}{
+\index{CPSSsh@{CPSSsh}!\$\_\-userName@{\$\_\-userName}}
+\index{\$\_\-userName@{\$\_\-userName}!CPSSsh@{CPSSsh}}
+\subsubsection[{\$\_\-userName}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-userName\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSSsh_adad05d8340094323803ec5acd86329a1}
+
+
+Definition at line 67 of file CPSSsh.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/\hyperlink{CPSSsh_8php}{CPSSsh.php}\end{DoxyCompactItemize}

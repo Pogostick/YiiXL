@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classYiiXLBase.html#a891a2db3b73ee6c336384be49b163932" title="_shs" alt="" coords="209,5,260,35"/>
+<area shape="rect" id="node5" href="$classCXLController.html#ae926a613a7702bb749e974f35a462d60" title="CXLController::setStandardFormOptions" alt="" coords="96,59,373,88"/>
+<area shape="rect" id="node7" href="$classCXLOAuthBehavior.html#a8027c4853ebf41108725eb798ebfcd59" title="CXLOAuthBehavior::storeToken" alt="" coords="125,112,344,141"/>
+<area shape="rect" id="node9" href="$classCXLOAuthBehavior.html#a4be4055f3361d4800e16bc2e2e38cda6" title="CXLOAuthBehavior::init" alt="" coords="423,112,591,141"/>
+</map>

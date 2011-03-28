@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node9" href="$classYiiXL.html" title="Main YiiXL entry point." alt="" coords="83,237,133,267"/>
+<area shape="rect" id="node2" href="$interfaceIXLUIHelper.html" title="This interface defines a static UI helper class that can be mixed into the main YiiXL system..." alt="" coords="5,83,99,112"/>
+<area shape="rect" id="node4" href="$interfaceIXLHelper.html" title="This interface defines a static helper class that can be mixed into the main YiiXL system..." alt="" coords="11,5,93,35"/>
+<area shape="rect" id="node6" href="$interfaceIXLLogger.html" title="This interface defines a logger." alt="" coords="123,83,205,112"/>
+<area shape="rect" id="node11" href="$classXL.html" title="Alias for YiiXL (three characters less typing FTW!)." alt="" coords="89,315,127,344"/>
+</map>

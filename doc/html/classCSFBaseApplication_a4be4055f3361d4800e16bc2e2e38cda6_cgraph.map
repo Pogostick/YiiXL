@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCSFBaseApplication.html#a96b0f4bab679378904506e1a106c4e60" title="initializePlatform" alt="" coords="108,5,233,35"/>
+<area shape="rect" id="node5" href="$classCSFBaseApplication.html#aa40909289ffd00ccc071d938f586fc47" title="processQueryString" alt="" coords="97,59,244,88"/>
+<area shape="rect" id="node7" href="$classCSFBaseApplication.html#aed904ee937df5c26c42b9995d2e3a69b" title="processApplicationCommand" alt="" coords="295,59,503,88"/>
+<area shape="rect" id="node9" href="$classCSFBaseApplication.html#a83d6db3f4e5f36ddd8adad2f53133e76" title="redirect" alt="" coords="553,59,623,88"/>
+</map>

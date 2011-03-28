@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSOAuthComponent.html#a48bb515fcba316fcb3d741ce84b57cec" title="CPSOAuthComponent::makeRequest" alt="" coords="187,139,445,168"/>
+<area shape="rect" id="node5" href="$classCPSTransform.html#afb9fa6864edba1cdfc91092132bc1da3" title="CPSTransform::arrayToXml" alt="" coords="539,5,728,35"/>
+<area shape="rect" id="node7" href="$classCPSLog.html#a99034739d5e469b037364bf2f5694e11" title="CPSLog::error" alt="" coords="579,59,688,88"/>
+<area shape="rect" id="node15" href="$classCPSComponent.html#aa18c8754403c04289ac8fbfc467df4ac" title="CPSComponent::getInternalName" alt="" coords="515,112,752,141"/>
+<area shape="rect" id="node17" href="$classCPSApiComponent.html#a78645643d5dbedc1f2d94cf4444972ff" title="CPSApiComponent::onAfterApiCall" alt="" coords="513,165,753,195"/>
+<area shape="rect" id="node19" href="$classCPSApiComponent.html#a557a9b057d808b200135c94fca584e0e" title="CPSApiComponent::onBeforeApiCall" alt="" coords="508,219,759,248"/>
+<area shape="rect" id="node21" href="$classCPSApiComponent.html#a2ad6936786c03a9799b272b89fbf0cd5" title="CPSApiComponent::onRequestComplete" alt="" coords="493,272,773,301"/>
+<area shape="rect" id="node9" href="$classCPSLog.html#a4c3be4120dc6dee2c97a6dde9428ac76" title="CPSLog::log" alt="" coords="821,59,920,88"/>
+<area shape="rect" id="node11" href="$classCPSLog.html#a66291d27410fbf7ba4978f513c13e6f0" title="CPSLog::_getCallingMethod" alt="" coords="968,32,1165,61"/>
+<area shape="rect" id="node13" href="$classCPSLog.html#a8471574061e9457cc6e5be7c151b9cfb" title="CPSLog::_processMessage" alt="" coords="971,85,1163,115"/>
+</map>

@@ -1,0 +1,918 @@
+\hypertarget{classCPSModelCommand}{
+\section{CPSModelCommand Class Reference}
+\label{classCPSModelCommand}\index{CPSModelCommand@{CPSModelCommand}}
+}
+
+
+Inheritance diagram for CPSModelCommand:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classCPSModelCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSModelCommand:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classCPSModelCommand__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSModelCommand_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSModelCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{run} (\$arArgs)
+\item 
+\hyperlink{classCPSModelCommand_afae31a43a5d0c7b44333eba3cc20f70e}{generateModel} (\$sView, \$arParams)
+\item 
+\hyperlink{classCPSModelCommand_a4cc928ef4def3a84c181608d31bf7608}{getHelp} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSModelCommand_af71005841ce53adac00581ab0ba24c1f}{VERSION} = '1.0.6'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSModelCommand_a9bc05d24f230cd747c52f296785addf7}{getClassName} (\$sTable)
+\item 
+\hyperlink{classCPSModelCommand_a44e4634608e647ea2224d25ecb599087}{isRelationTable} (\$oTable)
+\item 
+\hyperlink{classCPSModelCommand_a6e265367e1344ab4817a0f31a6025892}{generateRelations} ()
+\item 
+\hyperlink{classCPSModelCommand_af175be165627c37bf50c6332fa2c6fed}{generateClassName} (\$sTable)
+\item 
+\hyperlink{classCPSModelCommand_a89ac3c8019aec5f4b1b91f5e1203ce1c}{generateClassNames} (\$oSchema, \$sPattern=null)
+\item 
+\hyperlink{classCPSModelCommand_aa2e3086ca2c90c8a7cd1bd18fc7f39b7}{generateRelationName} (\$sTableName, \$sFKName, \$bMultiple)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Command that generates a Pogostick Yii Model 
+
+Definition at line 26 of file CPSModelCommand.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSModelCommand_af175be165627c37bf50c6332fa2c6fed}{
+\index{CPSModelCommand@{CPSModelCommand}!generateClassName@{generateClassName}}
+\index{generateClassName@{generateClassName}!CPSModelCommand@{CPSModelCommand}}
+\subsubsection[{generateClassName}]{\setlength{\rightskip}{0pt plus 5cm}generateClassName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sTable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSModelCommand_af175be165627c37bf50c6332fa2c6fed}
+Generates model class name based on a table name
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]the table name \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string the generated model class name 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_af175be165627c37bf50c6332fa2c6fed}{CPSCodeTableCommand}.
+
+
+
+Definition at line 466 of file CPSModelCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return str_replace( ' ', '',
+            ucwords(
+                trim(
+                    strtolower(
+                        str_replace( array( '-', '_' ), ' ',
+                            preg_replace( '/(?<![A-Z])[A-Z]/', ' \0', $sTable )
+                        )
+                    )
+                )
+            )
+        );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModelCommand_a89ac3c8019aec5f4b1b91f5e1203ce1c}{
+\index{CPSModelCommand@{CPSModelCommand}!generateClassNames@{generateClassNames}}
+\index{generateClassNames@{generateClassNames}!CPSModelCommand@{CPSModelCommand}}
+\subsubsection[{generateClassNames}]{\setlength{\rightskip}{0pt plus 5cm}generateClassNames (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oSchema, }
+\item[{\$}]{ sPattern = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSModelCommand_a89ac3c8019aec5f4b1b91f5e1203ce1c}
+Generates the mapping table between table names and class names.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em CDbSchema}]the database schema \item[{\em string}]a regular expression that may be used to filter table names \end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_a89ac3c8019aec5f4b1b91f5e1203ce1c}{CPSCodeTableCommand}.
+
+
+
+Definition at line 487 of file CPSModelCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arTables = array();
+        
+        foreach ( $oSchema->getTableNames() as $_sTableName )
+        {
+            if ( $sPattern === null ) 
+                $_arTables[ $_sTableName ] = $this->generateClassName( $_sTableNa
+      me );
+            else if ( preg_match( $sPattern, $_sTableName, $_arMatches ) )
+            {
+                if ( count( $_arMatches ) > 1 && ! empty( $_arMatches[ 1 ] ) )
+                    $_sClassName = $this->generateClassName( $_arMatches[ 1 ] );
+                else
+                    $_sClassName = $this->generateClassName( $_arMatches[ 0 ] );
+                    
+                $_arTables[ $_sTableName ] = PS::nvl( $_sClassName, $_sTableName 
+      );
+            }
+        }
+        
+        $this->tables = $_arTables;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classCPSModelCommand_a89ac3c8019aec5f4b1b91f5e1203ce1c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSModelCommand_afae31a43a5d0c7b44333eba3cc20f70e}{
+\index{CPSModelCommand@{CPSModelCommand}!generateModel@{generateModel}}
+\index{generateModel@{generateModel}!CPSModelCommand@{CPSModelCommand}}
+\subsubsection[{generateModel}]{\setlength{\rightskip}{0pt plus 5cm}generateModel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sView, }
+\item[{\$}]{ arParams}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModelCommand_afae31a43a5d0c7b44333eba3cc20f70e}
+Generate a model
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sView \item[{\em array}]\$arParams \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_afae31a43a5d0c7b44333eba3cc20f70e}{CPSCodeTableCommand}.
+
+
+
+Definition at line 209 of file CPSModelCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arRules = $_arLabels = $_arRelations = array();
+        list( $_sClassName, $_sTableName, $_sBaseClass, $this->databaseName ) = $
+      arParams;
+
+        $_sContents = file_get_contents( $sView );
+
+        //  No table? Try view...
+        if ( null !== ( $_oTable = $this->schema->getTable( $_sTableName ) ) )
+        {
+            $_arRequired = $_arIntegers = $_arNumerical = array();
+            
+            foreach ( $_oTable->columns as $_oColumn )
+            {
+                $label = ucwords( trim( strtolower( str_replace( array( '-', '_' 
+      ), ' ', preg_replace( '/(?<![A-Z])[A-Z]/', ' \0', $_oColumn->name ) ) ) ) );
+                $label = preg_replace( '/\s+/', ' ', $label );
+                
+                if ( strcasecmp( substr( $label, -3 ),' id' ) === 0 ) $label = su
+      bstr( $label, 0, -3 );
+                $_arLabels[ $_oColumn->name ] = $label;
+                
+                if ( $_oColumn->isPrimaryKey && $_oTable->sequenceName !== null |
+      | $_oColumn->isForeignKey )
+                    continue;
+                    
+                if ( ! $_oColumn->allowNull && $_oColumn->defaultValue === null )
+       $_arRequired[] = $_oColumn->name;
+                
+                switch ( $_oColumn->type )
+                {
+                    case 'integer':
+                        $_arIntegers[] = $_oColumn->name;
+                        break;
+                        
+                    case 'double':
+                        $_arNumerical[] = $_oColumn->name;
+                        break;
+                        
+                    case 'string':
+                        if ( $_oColumn->size > 0 )
+                            $_arRules[] = "array( '{$_oColumn->name}', 'length', 
+      'max' => {$_oColumn->size} )";
+                         break;
+                }
+            }
+            
+            if ( $_arRequired !== array() ) $_arRules[] = "array( '" . implode( '
+      , ', $_arRequired ) . "', 'required' )";
+            if ( $_arIntegers !== array() ) $_arRules[] = "array( '" . implode( '
+      , ', $_arIntegers ) . "', 'numerical', 'integerOnly' => true )";
+            if ( $_arNumerical !== array() ) $_arRules[] = "array( '" . implode( 
+      ', ', $_arNumerical ) . "', 'numerical' )";
+
+            if ( isset( $this->relations[ $_sClassName ] ) && is_array( $this->re
+      lations[ $_sClassName ] ) )
+                $_arRelations = $this->relations[ $_sClassName ];
+        }
+        else
+            $this->echoString( "The table \"{$_sTableName}\" cannot be accessed",
+       'Warning' );
+
+        // fall back to default ones
+        if ( ! is_file( $sView ) ) $sView = YII_PATH . '/cli/views/shell/model/' 
+      . basename( $sView );
+        
+        return $this->renderFile( $sView, 
+            array(
+                'className' => $_sClassName,
+                'tableName' => $_sTableName,
+                'baseClass' => $_sBaseClass,
+                'dbToUse' => $this->databaseName,
+                'columns'=> PS::nvl( $_oTable->columns, array() ),
+                'rules' => $_arRules,
+                'labels' => $_arLabels,
+                'relations' => $_arRelations,
+            ),
+            true
+        );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSModelCommand_afae31a43a5d0c7b44333eba3cc20f70e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSModelCommand_aa2e3086ca2c90c8a7cd1bd18fc7f39b7}{
+\index{CPSModelCommand@{CPSModelCommand}!generateRelationName@{generateRelationName}}
+\index{generateRelationName@{generateRelationName}!CPSModelCommand@{CPSModelCommand}}
+\subsubsection[{generateRelationName}]{\setlength{\rightskip}{0pt plus 5cm}generateRelationName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sTableName, }
+\item[{\$}]{ sFKName, }
+\item[{\$}]{ bMultiple}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSModelCommand_aa2e3086ca2c90c8a7cd1bd18fc7f39b7}
+Generate a name for use as a relation name (inside relations() function in a model).
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]the name of the table to hold the relation \item[{\em string}]the foreign key name \item[{\em boolean}]whether the relation would contain multiple objects \end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_aa2e3086ca2c90c8a7cd1bd18fc7f39b7}{CPSCodeTableCommand}.
+
+
+
+Definition at line 516 of file CPSModelCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( strcasecmp( substr( $sFKName, -2 ), 'id' ) === 0 && strcasecmp( $sFK
+      Name, 'id' ) )
+            $_sRelationName = rtrim( substr( $sFKName, 0, -2 ), '_' );
+        else
+            $_sRelationName = $sFKName;
+            
+        $_sRelationName[ 0 ] = strtolower( $_sRelationName );
+
+        $_sRawName = $_sRelationName;
+        
+        if ( $bMultiple ) $_sRelationName = $this->pluralize( $_sRelationName );
+
+        $_oTable = $this->schema->getTable( $sTableName );
+        
+        $_i = 0;
+        
+        while ( isset( $_oTable->columns[ $_sRelationName ] ) )
+            $_sRelationName = $_sRawName . ( $_i++ );
+            
+        return $_sRelationName;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModelCommand_a6e265367e1344ab4817a0f31a6025892}{
+\index{CPSModelCommand@{CPSModelCommand}!generateRelations@{generateRelations}}
+\index{generateRelations@{generateRelations}!CPSModelCommand@{CPSModelCommand}}
+\subsubsection[{generateRelations}]{\setlength{\rightskip}{0pt plus 5cm}generateRelations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSModelCommand_a6e265367e1344ab4817a0f31a6025892}
+Generate code to put in ActiveRecord class's relations() function.
+
+\begin{DoxyReturn}{Returns}
+array indexed by table names, each entry contains array of php code to go in appropriate ActiveRecord class. Empty array is returned if database couldn't be connected. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_a6e265367e1344ab4817a0f31a6025892}{CPSCodeTableCommand}.
+
+
+
+Definition at line 408 of file CPSModelCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arRelations = $_arClasses = array();
+        
+        foreach ( $this->schema->getTables() as $_oTable )
+        {
+            $_sTableName = $_oTable->name;
+
+            if ( $this->isRelationTable( $_oTable ) )
+            {
+                $_arPK = $_oTable->primaryKey;
+                $_arFK = $_oTable->foreignKeys;
+
+                $_sTableParent = $_arFK[ $_arPK[ 1 ]][ 0 ];
+                $_sTableChild = $_arFK[ $_arPK[ 0 ]][ 0 ];
+                
+                $_sParentClassName = $this->getClassName( $_sTableParent );
+                $_sChildClassName = $this->getClassName( $_sTableChild );
+
+                $_sRelationName = $this->generateRelationName( $_sTableParent, $_
+      sTableChild, true );
+                $_arRelations[ $_sParentClassName ][ $_sRelationName ] = "array( 
+      self::MANY_MANY, '$_sChildClassName', '$_sTableName( $_arPK[0], $_arPK[1] )' )";
+
+                $_sRelationName  =$this->generateRelationName( $_sTableChild, $_s
+      TableParent, true );
+                $_arRelations[ $_sChildClassName ][ $_sRelationName ] = "array( s
+      elf::MANY_MANY, '$_sParentClassName', '$_sTableName( $_arPK[0], $_arPK[1] )' )";
+            }
+            else
+            {
+                $_arClasses[ $_sTableName ] = $_sClassName = $this->getClassName(
+       $_sTableName );
+                
+                foreach ( $_oTable->foreignKeys as $_sFKName => $_arFKEntry )
+                {
+                    //  Put table and key name in variables for easier reading
+                    $_sParentTableName = $_arFKEntry[ 0 ]; // Table name that cur
+      rent fk references to
+                    $_sParentTableKey = $_arFKEntry[ 1 ];   // Key in that table 
+      being referenced
+                    $_sParentClassName = $this->getClassName( $_sParentTableName 
+      );
+
+                    //  Add relation for this table
+                    $_sRelationName = $this->generateRelationName( $_sTableName, 
+      $_sFKName, false );
+                    $_arRelations[ $_sClassName ][ $_sRelationName ] = "array( se
+      lf::BELONGS_TO, '$_sParentClassName', '$_sFKName' )";
+
+                    //  Add relation for the referenced table
+                    $_sRelationType = $_oTable->primaryKey === $_sFKName ? 'HAS_O
+      NE' : 'HAS_MANY';
+                    $_sRelationName = $this->generateRelationName( $_sParentTable
+      Name, $_sTableName, $_sRelationType === 'HAS_MANY' );
+                    $_arRelations[ $_sParentClassName ][ $_sRelationName ] = "arr
+      ay( self::$_sRelationType, '$_sClassName', '$_sFKName' )";
+                }
+            }
+        }
+        
+        $this->relations = $_arRelations;
+        $this->classes = $_arClasses;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classCPSModelCommand_a6e265367e1344ab4817a0f31a6025892_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSModelCommand_a9bc05d24f230cd747c52f296785addf7}{
+\index{CPSModelCommand@{CPSModelCommand}!getClassName@{getClassName}}
+\index{getClassName@{getClassName}!CPSModelCommand@{CPSModelCommand}}
+\subsubsection[{getClassName}]{\setlength{\rightskip}{0pt plus 5cm}getClassName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sTable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSModelCommand_a9bc05d24f230cd747c52f296785addf7}
+Gets the name of class given a table name
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sTable \end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_a9bc05d24f230cd747c52f296785addf7}{CPSCodeTableCommand}.
+
+
+
+Definition at line 379 of file CPSModelCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return PS::nvl( $this->tables[ $sTable ], $this->generateClassName( $sTab
+      le ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModelCommand_a4cc928ef4def3a84c181608d31bf7608}{
+\index{CPSModelCommand@{CPSModelCommand}!getHelp@{getHelp}}
+\index{getHelp@{getHelp}!CPSModelCommand@{CPSModelCommand}}
+\subsubsection[{getHelp}]{\setlength{\rightskip}{0pt plus 5cm}getHelp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModelCommand_a4cc928ef4def3a84c181608d31bf7608}
+Shows the usage 
+
+Reimplemented from \hyperlink{classCPSConsoleCommand_a4cc928ef4def3a84c181608d31bf7608}{CPSConsoleCommand}.
+
+
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_a4cc928ef4def3a84c181608d31bf7608}{CPSCodeTableCommand}.
+
+
+
+Definition at line 283 of file CPSModelCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sName = $this->bold( $this->name );
+        $_sOptions = $this->getDisplayOptions();
+        
+        return <<<EOD
+USAGE
+    \033[1mpsmodel\033[0m <\033[1mclass-name\033[0m> [\033[1mtable-name\033[0m] [
+      options]
+    
+This command generates a model class with the specified class name.
+
+PARAMETERS
+ * class-name: required, model class name. By default, the generated
+   model class file will be placed under the directory aliased as
+   'application.models'. To override this default, specify the class
+   name in terms of a path alias, e.g., 'application.somewhere.ClassName'.
+
+   If the model class belongs to a module, it should be specified
+   as 'ModuleID.models.ClassName'.
+
+   If the class name ends with '*', then a model class will be generated
+   for EVERY table in the database.
+
+   If the class name contains a regular expression deliminated by slashes,
+   then a model class will be generated for those tables whose name
+   matches the regular expression. If the regular expression contains
+   sub-patterns, the first sub-pattern will be used to generate the model
+   class name.
+
+ * table-name: optional, the associated database table name. If not given,
+   it is assumed to be the model class name.
+
+   Note, when the class name ends with '*', this parameter will be
+   ignored.
+
+OPTIONS
+
+  -f, --force                  if the model class exists, you will be able to 
+                                   optionally overwrite it.
+                                   
+  -d, --database               The database component to use. 
+                                   Defaults to 'db'
+                                   
+  -b, --base-class             The base class to use for generated models. 
+                                   Defaults to 'CPSModel'
+                                   
+  -n, --template-name          The name of the template to use. 
+                                   Defaults to 'model.php'
+                                   
+  -t, --template-path          The template path to use.
+
+{$_sOptions}
+EXAMPLES
+ * Generates the Post model:
+        {$_sName} Post
+
+ * Generates the Post model using component db_posts:
+        {$_sName} Post -d=db_posts
+
+ * Generates the Post model which is associated with table 'posts':
+        {$_sName} Post posts
+
+ * Generates the Post model which should belong to module 'admin':
+        {$_sName} admin.models.Post
+
+ * Generates a model class for every table in the current database:
+        {$_sName} *
+
+ * Generates a model class for every table based on CSubClass:
+        {$_sName} * -b=CSubClass
+
+ * Same as above, but the model class files should be generated
+   under 'protected/models2':
+        {$_sName} application.models2.*
+
+ * Generates a model class for every table whose name is prefixed
+   with 'tbl_' in the current database. The model class will not
+   contain the table prefix.
+        {$_sName} /^tbl_(.*)$/
+
+ * Same as above, but the model class files should be generated
+   under 'protected/models2':
+        {$_sName} application.models2./^tbl_(.*)$/
+
+EOD;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=388pt]{classCPSModelCommand_a4cc928ef4def3a84c181608d31bf7608_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classCPSModelCommand_a4cc928ef4def3a84c181608d31bf7608_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSModelCommand_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSModelCommand@{CPSModelCommand}!init@{init}}
+\index{init@{init}!CPSModelCommand@{CPSModelCommand}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModelCommand_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize the command 
+
+Reimplemented from \hyperlink{classCPSConsoleCommand_a4be4055f3361d4800e16bc2e2e38cda6}{CPSConsoleCommand}.
+
+
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_a4be4055f3361d4800e16bc2e2e38cda6}{CPSCodeTableCommand}.
+
+
+
+Definition at line 45 of file CPSModelCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::init();
+        
+        //  Add our options
+        $this->addOptions( self::getBaseOptions() );
+
+        //  Set base values
+        $this->baseClass = 'CPSModel';
+        $this->templatePath = Yii::getPathOfAlias( 'pogostick.templates' );
+        $this->templateName = 'model.php';
+//      $this->name = 'psmodel';
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModelCommand_a44e4634608e647ea2224d25ecb599087}{
+\index{CPSModelCommand@{CPSModelCommand}!isRelationTable@{isRelationTable}}
+\index{isRelationTable@{isRelationTable}!CPSModelCommand@{CPSModelCommand}}
+\subsubsection[{isRelationTable}]{\setlength{\rightskip}{0pt plus 5cm}isRelationTable (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oTable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSModelCommand_a44e4634608e647ea2224d25ecb599087}
+Checks if the given table is a \char`\"{}many to many\char`\"{} helper table.
+
+Their PK has 2 fields, and both of those fields are also FK to other separate tables.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em CDbTableSchema}]table to inspect \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean true if table matches description of helpter table. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_a44e4634608e647ea2224d25ecb599087}{CPSCodeTableCommand}.
+
+
+
+Definition at line 392 of file CPSModelCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_sPK = $oTable->primaryKey;
+        
+        return ( count( $_sPK ) === 2 // we want 2 columns
+            && isset( $oTable->foreignKeys[ $_sPK[ 0 ] ], $oTable->foreignKeys[ $
+      _sPK[ 1 ] ] )   // Both PKs there...
+            && $oTable->foreignKeys[ $_sPK[ 0 ] ][ 0 ] !== $oTable->foreignKeys[ 
+      $_sPK[ 1 ]][ 0 ] ); // and the foreign keys point different tables
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSModelCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{
+\index{CPSModelCommand@{CPSModelCommand}!run@{run}}
+\index{run@{run}!CPSModelCommand@{CPSModelCommand}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arArgs}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSModelCommand_a330e31e8c3572ce01a4e1c8485c6aedd}
+Execute the action. 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arArgs command line parameters specific for this command \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classCPSConsoleCommand_acd971ca71798c549bd4f74ed4ee6729e}{CPSConsoleCommand}.
+
+
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_a330e31e8c3572ce01a4e1c8485c6aedd}{CPSCodeTableCommand}.
+
+
+
+Definition at line 63 of file CPSModelCommand.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Our base path...
+        $_sBasePath = Yii::getPathOfAlias( 'application.models' );
+        
+        //  Process arguments...
+        $arArgs = $this->processArguments( $arArgs );
+        
+        //  Check args...
+        if ( ! ( $_sClassName = PS::o( $arArgs, 0, null ) ) )
+        {
+            echo "\033[1mError\033[0m: model class name is required.\n";
+            echo $this->getHelp();
+            return;
+        }
+
+        //  Process the model name...
+        if ( ! preg_match('/^[\w\.\-\*]*(.*?)$/', $_sClassName, $_arMatches ) )
+        {
+            echo "\033[1mError\033[0m: model class \"" . $_sClassName . "\" is in
+      valid.\n";
+            return;
+        }
+
+        //  Get database set up
+        if ( ! $this->getDbConnection() )
+            return;
+
+        //  Without regular expressions
+        if ( empty( $_arMatches[ 1 ] ) )
+        {
+            $this->generateClassNames( $this->schema );
+            
+            if ( ( $_iPos = strrpos( $_sClassName, '.' ) ) !== false )
+            {
+                //  i.e. module.models.* becomes base=module.models, class=*
+                $_sBasePath = Yii::getPathOfAlias( substr( $_sClassName, 0, $_iPo
+      s ) );
+                $_sClassName = substr( $_sClassName, $_iPos + 1 );
+            }
+
+            //  Generate all models
+            if ( $_sClassName == '*' ) 
+                $this->generateRelations();
+            else
+            {
+                $_sTableName = PS::nvl( $arArgs[ 1 ], $_sClassName );
+                $_arTables = $this->tables;
+                $_arTables[ $_sTableName ] = $_sClassName;
+                $this->tables = $_arTables;
+                $this->generateRelations();
+                $this->classes = array( $_sTableName => $_sClassName );
+            }
+        }
+        else  // with regular expressions
+        {
+            $_sPattern = $_arMatches[ 1 ];
+            
+            if ( false !== ( $_iPos = strrpos( $_sClassFile, $_sPattern ) ) )
+                $_sBasePath = Yii::getPathOfAlias( rtrim( substr( $_sClassName, 0
+      , $_iPos ), '.' ) );
+            else
+                $_sBasePath = Yii::getPathOfAlias( 'application.models' );
+            
+            // only regexp is given
+            $this->generateClassNames( $this->schema, $_sPattern );
+            $_arClasses = $this->tables;
+            $this->generateRelations();
+            $this->classes = $_arClasses;
+        }
+
+        $this->displayParameters( 'Model Generator', array( 'Output Path' => $_sB
+      asePath ) );
+            
+        if ( count( $this->classes ) > 1 )
+        {
+            $_i = 1;
+            
+            echo "\nModel classes matching your criteria:\n";
+            echo "============================================================\n\
+      n";
+            
+            foreach ( $this->classes as $_sTableName => $_sClassName )
+                echo "    " . ( $_i++ ) . ". " . $this->bold( $_sClassName ) . " 
+      ({$_sTableName})\n";
+            
+            $_sPrompt = "\nDo you want to generate these classes? [\033[1mY\033[0
+      mes|\033[1mN\033[0mo] ";
+            
+            while ( $_sPrompt )
+            {
+                echo "$_sPrompt";
+                
+                switch ( substr( strtolower( trim( fgets( STDIN ) ) ), 0, 1 ) )
+                {
+                    case 'y':
+                        //  We got the answer we want!
+                        break 2;
+                        
+                    case 'n':
+                    case 'q':
+                        return;
+                }
+            }
+            
+            echo "\n";
+        }
+
+        $_arParams = $_arFiles = array();
+        $_arClasses = $this->classes;
+        $_sModelTemplate = $this->templatePath . DIRECTORY_SEPARATOR . $this->tem
+      plateName;
+        
+        foreach ( $this->classes as $_sTableName => $_sClassName )
+        {
+            $_sClassFile = $_sBasePath . DIRECTORY_SEPARATOR . $_sClassName . '.p
+      hp';
+            
+            $_arParams[ $_sClassName . '.php' ] = array(
+                'source' => $_sModelTemplate,
+                'target' => $_sClassFile,
+                'callback' => array( $this, 'generateModel' ),
+                'params' => array( $_sClassName, $_sTableName, $this->baseClass, 
+      $this->databaseName ),
+            );
+
+            if ( strlen( $_sClassName ) > $this->colWidth ) $this->colWidth = str
+      len( $_sClassName );
+        }
+
+        //  Load them all up
+        $_arParams = $this->copyFiles( $_arParams );
+        
+        echo $this->getResultDisplay( $_arParams, true, $_iGen );
+
+        if ( $_iGen )
+        {
+            echo <<<EOD
+============================================================
+
+If you have a '{$this->databaseName}' database connection, you 
+may test any generated models now with the following commands:
+
+    \$_oModel = {$_sClassName}::model()->find();
+    print_r( \$_oModel );
+
+EOD;
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSModelCommand_a330e31e8c3572ce01a4e1c8485c6aedd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSModelCommand_af71005841ce53adac00581ab0ba24c1f}{
+\index{CPSModelCommand@{CPSModelCommand}!VERSION@{VERSION}}
+\index{VERSION@{VERSION}!CPSModelCommand@{CPSModelCommand}}
+\subsubsection[{VERSION}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf VERSION} = '1.0.6'}}
+\label{classCPSModelCommand_af71005841ce53adac00581ab0ba24c1f}
+Our version 
+
+Reimplemented from \hyperlink{classCPSConsoleCommand_af71005841ce53adac00581ab0ba24c1f}{CPSConsoleCommand}.
+
+
+
+Reimplemented in \hyperlink{classCPSCodeTableCommand_af71005841ce53adac00581ab0ba24c1f}{CPSCodeTableCommand}.
+
+
+
+Definition at line 35 of file CPSModelCommand.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/commands/\hyperlink{CPSModelCommand_8php}{CPSModelCommand.php}\end{DoxyCompactItemize}

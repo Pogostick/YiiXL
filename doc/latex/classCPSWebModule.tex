@@ -1,0 +1,409 @@
+\hypertarget{classCPSWebModule}{
+\section{CPSWebModule Class Reference}
+\label{classCPSWebModule}\index{CPSWebModule@{CPSWebModule}}
+}
+
+
+Inheritance diagram for CPSWebModule:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classCPSWebModule__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSWebModule:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classCPSWebModule__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSWebModule_aef403af504f818f9acbff3caaa01cf69}{getDebugMode} ()
+\item 
+\hyperlink{classCPSWebModule_a801a26c6b865883afdac89cbcc3a07c3}{setDebugMode} (\$value)
+\item 
+\hyperlink{classCPSWebModule_ae21d2d711f414697477df2a4726e8daf}{getConfigPath} ()
+\item 
+\hyperlink{classCPSWebModule_a8115b613ae055d17768f138534ac45f3}{setConfigPath} (\$sValue)
+\item 
+\hyperlink{classCPSWebModule_a5b344fe2f40c0f235b4ede8e1c1ea4a3}{getAssetPath} ()
+\item 
+\hyperlink{classCPSWebModule_af9acd3d053a814ffec785ab8d9c24d82}{setAssetPath} (\$sValue)
+\item 
+\hyperlink{classCPSWebModule_a7d8986335d8119f7e20f5b9a4c1f15f7}{getAssetUrl} ()
+\item 
+\hyperlink{classCPSWebModule_a4162847310de81b83504109485866a7c}{getDB} ()
+\item 
+\hyperlink{classCPSWebModule_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSWebModule_aa7790060a53895524f446d7e4ef8131e}{setAssetUrl} (\$sUrl)
+\item 
+\hyperlink{classCPSWebModule_a233a839508289d6db0e8ae92c65bb7d6}{\_\-setAssetPaths} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSWebModule_a1768a9df40beec6e4b8c6d853396bb81}{\$\_\-debugMode} = null
+\item 
+\hyperlink{classCPSWebModule_a05a571c47e275207658ec3ff2a228291}{\$\_\-configPath} = null
+\item 
+\hyperlink{classCPSWebModule_a4bce993140269e2ecd8ab4243735e621}{\$\_\-assetPath} = null
+\item 
+\hyperlink{classCPSWebModule_a181134a3a040d43e6913ad39fa94ee66}{\$\_\-assetUrl} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSWebModule.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSWebModule_a233a839508289d6db0e8ae92c65bb7d6}{
+\index{CPSWebModule@{CPSWebModule}!\_\-setAssetPaths@{\_\-setAssetPaths}}
+\index{\_\-setAssetPaths@{\_\-setAssetPaths}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{\_\-setAssetPaths}]{\setlength{\rightskip}{0pt plus 5cm}\_\-setAssetPaths (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSWebModule_a233a839508289d6db0e8ae92c65bb7d6}
+Initializes the asset manager for this module 
+
+Definition at line 86 of file CPSWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_assetManager = CPSHelperBase::_a()->getAssetManager();
+        if ( ! $this->_assetPath ) $this->_assetPath = $_assetManager->getBasePat
+      h() . DIRECTORY_SEPARATOR . $this->getId();
+        if ( ! is_dir( $this->_assetPath ) ) @mkdir( $this->_assetPath );
+        $this->_assetUrl = $_assetManager->publish( $this->_assetPath, true, -1 )
+      ;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{classCPSWebModule_a233a839508289d6db0e8ae92c65bb7d6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classCPSWebModule_a233a839508289d6db0e8ae92c65bb7d6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWebModule_a5b344fe2f40c0f235b4ede8e1c1ea4a3}{
+\index{CPSWebModule@{CPSWebModule}!getAssetPath@{getAssetPath}}
+\index{getAssetPath@{getAssetPath}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{getAssetPath}]{\setlength{\rightskip}{0pt plus 5cm}getAssetPath (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebModule_a5b344fe2f40c0f235b4ede8e1c1ea4a3}
+
+
+Definition at line 37 of file CPSWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_assetPath; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebModule_a7d8986335d8119f7e20f5b9a4c1f15f7}{
+\index{CPSWebModule@{CPSWebModule}!getAssetUrl@{getAssetUrl}}
+\index{getAssetUrl@{getAssetUrl}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{getAssetUrl}]{\setlength{\rightskip}{0pt plus 5cm}getAssetUrl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebModule_a7d8986335d8119f7e20f5b9a4c1f15f7}
+
+
+Definition at line 41 of file CPSWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_assetUrl; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebModule_ae21d2d711f414697477df2a4726e8daf}{
+\index{CPSWebModule@{CPSWebModule}!getConfigPath@{getConfigPath}}
+\index{getConfigPath@{getConfigPath}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{getConfigPath}]{\setlength{\rightskip}{0pt plus 5cm}getConfigPath (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebModule_ae21d2d711f414697477df2a4726e8daf}
+
+
+Definition at line 33 of file CPSWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_configPath; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebModule_a4162847310de81b83504109485866a7c}{
+\index{CPSWebModule@{CPSWebModule}!getDB@{getDB}}
+\index{getDB@{getDB}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{getDB}]{\setlength{\rightskip}{0pt plus 5cm}getDB (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebModule_a4162847310de81b83504109485866a7c}
+
+
+Definition at line 45 of file CPSWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ return Yii::app()->getDB(); }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebModule_aef403af504f818f9acbff3caaa01cf69}{
+\index{CPSWebModule@{CPSWebModule}!getDebugMode@{getDebugMode}}
+\index{getDebugMode@{getDebugMode}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{getDebugMode}]{\setlength{\rightskip}{0pt plus 5cm}getDebugMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebModule_aef403af504f818f9acbff3caaa01cf69}
+
+
+Definition at line 29 of file CPSWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_debugMode; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebModule_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSWebModule@{CPSWebModule}!init@{init}}
+\index{init@{init}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebModule_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize 
+
+Definition at line 55 of file CPSWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Phone home...
+        parent::init();
+        
+        //  import the module-level models and components
+        $this->setImport(
+            array(
+                $this->id . '.models.*',
+                $this->id . '.components.*',
+            )
+        );
+
+        //  Read private configuration...
+        if ( ! empty( $this->_configPath ) ) $this->configure( require( $this->
+      basePath . $this->_configPath ) );
+        
+        //  Get our asset manager going...
+        $this->_setAssetPaths();
+
+        //  Who doesn't need this???
+        if ( false !== ( CPSHelperBase::o( CPSHelperBase::_cs()->scriptMap, 'jque
+      ry.js' ) ) )
+            CPSHelperBase::_cs()->registerCoreScript( 'jquery' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWebModule_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWebModule_af9acd3d053a814ffec785ab8d9c24d82}{
+\index{CPSWebModule@{CPSWebModule}!setAssetPath@{setAssetPath}}
+\index{setAssetPath@{setAssetPath}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{setAssetPath}]{\setlength{\rightskip}{0pt plus 5cm}setAssetPath (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebModule_af9acd3d053a814ffec785ab8d9c24d82}
+
+
+Definition at line 38 of file CPSWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_assetPath = $sValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebModule_aa7790060a53895524f446d7e4ef8131e}{
+\index{CPSWebModule@{CPSWebModule}!setAssetUrl@{setAssetUrl}}
+\index{setAssetUrl@{setAssetUrl}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{setAssetUrl}]{\setlength{\rightskip}{0pt plus 5cm}setAssetUrl (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUrl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSWebModule_aa7790060a53895524f446d7e4ef8131e}
+
+
+Definition at line 42 of file CPSWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_assetUrl = $sUrl; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebModule_a8115b613ae055d17768f138534ac45f3}{
+\index{CPSWebModule@{CPSWebModule}!setConfigPath@{setConfigPath}}
+\index{setConfigPath@{setConfigPath}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{setConfigPath}]{\setlength{\rightskip}{0pt plus 5cm}setConfigPath (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebModule_a8115b613ae055d17768f138534ac45f3}
+
+
+Definition at line 34 of file CPSWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_configPath = $sValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebModule_a801a26c6b865883afdac89cbcc3a07c3}{
+\index{CPSWebModule@{CPSWebModule}!setDebugMode@{setDebugMode}}
+\index{setDebugMode@{setDebugMode}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{setDebugMode}]{\setlength{\rightskip}{0pt plus 5cm}setDebugMode (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebModule_a801a26c6b865883afdac89cbcc3a07c3}
+
+
+Definition at line 30 of file CPSWebModule.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_debugMode = $value; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSWebModule_a4bce993140269e2ecd8ab4243735e621}{
+\index{CPSWebModule@{CPSWebModule}!\$\_\-assetPath@{\$\_\-assetPath}}
+\index{\$\_\-assetPath@{\$\_\-assetPath}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{\$\_\-assetPath}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-assetPath = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSWebModule_a4bce993140269e2ecd8ab4243735e621}
+
+
+Definition at line 36 of file CPSWebModule.php.
+
+\hypertarget{classCPSWebModule_a181134a3a040d43e6913ad39fa94ee66}{
+\index{CPSWebModule@{CPSWebModule}!\$\_\-assetUrl@{\$\_\-assetUrl}}
+\index{\$\_\-assetUrl@{\$\_\-assetUrl}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{\$\_\-assetUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-assetUrl = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSWebModule_a181134a3a040d43e6913ad39fa94ee66}
+
+
+Definition at line 40 of file CPSWebModule.php.
+
+\hypertarget{classCPSWebModule_a05a571c47e275207658ec3ff2a228291}{
+\index{CPSWebModule@{CPSWebModule}!\$\_\-configPath@{\$\_\-configPath}}
+\index{\$\_\-configPath@{\$\_\-configPath}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{\$\_\-configPath}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-configPath = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSWebModule_a05a571c47e275207658ec3ff2a228291}
+
+
+Definition at line 32 of file CPSWebModule.php.
+
+\hypertarget{classCPSWebModule_a1768a9df40beec6e4b8c6d853396bb81}{
+\index{CPSWebModule@{CPSWebModule}!\$\_\-debugMode@{\$\_\-debugMode}}
+\index{\$\_\-debugMode@{\$\_\-debugMode}!CPSWebModule@{CPSWebModule}}
+\subsubsection[{\$\_\-debugMode}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-debugMode = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSWebModule_a1768a9df40beec6e4b8c6d853396bb81}
+
+
+Definition at line 28 of file CPSWebModule.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/base/\hyperlink{CPSWebModule_8php}{CPSWebModule.php}\end{DoxyCompactItemize}

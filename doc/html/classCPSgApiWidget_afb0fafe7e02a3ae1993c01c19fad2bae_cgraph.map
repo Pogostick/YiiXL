@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSWidget.html#acc5a32d52db57b80885add51c076ed42" title="CPSWidget::generateHtml" alt="" coords="97,5,284,35"/>
+<area shape="rect" id="node5" href="$classCPSgApiWidget.html#a59080ee7d7949e19f5af41e26ff53806" title="registerClientScripts" alt="" coords="116,59,265,88"/>
+<area shape="rect" id="node7" href="$classCPSgApiWidget.html#a2a2ea08f8240ed4c24058ab80ab89703" title="generateJavascript" alt="" coords="356,32,497,61"/>
+<area shape="rect" id="node9" href="$classCPSWidget.html#a4589f8bb22c9e9837302ea2cc7c80570" title="CPSWidget::pushScriptFile" alt="" coords="333,85,520,115"/>
+</map>

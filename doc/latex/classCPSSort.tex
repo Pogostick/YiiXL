@@ -1,0 +1,95 @@
+\hypertarget{classCPSSort}{
+\section{CPSSort Class Reference}
+\label{classCPSSort}\index{CPSSort@{CPSSort}}
+}
+
+
+Inheritance diagram for CPSSort:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classCPSSort__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSSort:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classCPSSort__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSSort_a7e304951e7585dcf2bef6490a18b177b}{resolveLabel} (\$sAttribute)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 40 of file CPSSort.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSSort_a7e304951e7585dcf2bef6490a18b177b}{
+\index{CPSSort@{CPSSort}!resolveLabel@{resolveLabel}}
+\index{resolveLabel@{resolveLabel}!CPSSort@{CPSSort}}
+\subsubsection[{resolveLabel}]{\setlength{\rightskip}{0pt plus 5cm}resolveLabel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sAttribute}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSSort_a7e304951e7585dcf2bef6490a18b177b}
+Resolves the attribute label based on label definition in the AR class. This will invoke \hyperlink{}{CActiveRecord::getAttributeLabel} to determine what label to use. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]the attribute name. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string the attribute label 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.0.6 
+\end{DoxySince}
+
+
+Definition at line 53 of file CPSSort.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( false !== ( $_i = strpos( $sAttribute, '->' ) ) )
+        {
+            $_sColumn = substr( $sAttribute, $_i + 2 );
+
+            if ( null === ( $_sLabel = CActiveRecord::model( $this->modelClass )-
+      >getAttributeLabel( $sAttribute ) ) )
+            {
+                $_oBaseModel = CActiveRecord::model( $this->modelClass );
+                
+                if ( null !== ( $_oRelation = $_oBaseModel->getActiveRelation( $_
+      sColumn  ) ) )
+                    $_sLabel = CActiveRecord::model( $_oRelation->className )->ge
+      tAttributeLabel( $_sColumn );
+                else
+                    $_sLabel = $_oBaseModel->getAttributeLabel( $_sColumn );
+            }
+        }
+        else
+            $_sLabel = CActiveRecord::model( $this->modelClass )->getAttributeLab
+      el( $sAttribute );
+            
+        return $_sLabel;
+    }
+\end{DoxyCode}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/\hyperlink{CPSSort_8php}{CPSSort.php}\end{DoxyCompactItemize}

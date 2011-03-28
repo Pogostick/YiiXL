@@ -1,0 +1,1415 @@
+\hypertarget{classSonetrixClient}{
+\section{SonetrixClient Class Reference}
+\label{classSonetrixClient}\index{SonetrixClient@{SonetrixClient}}
+}
+
+
+Inheritance diagram for SonetrixClient:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classSonetrixClient__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for SonetrixClient:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classSonetrixClient__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSonetrixClient_aa8a87ef1ba1c9f78959fcbd772429544}{\_\-\_\-construct} (\$sAppId, \$iPTC=SonetrixPlatformTypes::Facebook, \$sDevKey=null, \$sAppKey=null, \$oFacebook=null, \$sAppProfileId=null)
+\item 
+\hyperlink{classSonetrixClient_a2cccfe0c7f4aabf470d2d5f9f507e308}{setDemoData} (\$sdData, \$bDebug=false)
+\item 
+\hyperlink{classSonetrixClient_a681775b9584b96e7d2bcc9f9c0e529ae}{setHashUID} (\$iHashUID)
+\item 
+\hyperlink{classSonetrixClient_ab92d640a0f2167dc6ef8c9ee419a7f78}{getHashUID} ()
+\item 
+\hyperlink{classSonetrixClient_acefc468f5e6a8c55dae2b78e39d8a400}{user\_\-install} (\$sUser=\char`\"{}\char`\"{}, \$sSigSessionKey=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classSonetrixClient_a9eca8f37b3a21b8f49476dff0aac1553}{user\_\-uninstall} (\$sUser=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classSonetrixClient_a420b1ea102ea7dfe199366eea42cfc13}{user\_\-pageView} (\$sUser=\char`\"{}\char`\"{}, \$sPage=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classSonetrixClient_a09ca56569d3a84b88e047acf61b86b35}{user\_\-trackInvites} (\$sUser=\char`\"{}\char`\"{}, \$sIDList=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classSonetrixClient_ad18a1632dc984669877b26ad657b3b30}{user\_\-trackReferral} (\$sUser=\char`\"{}\char`\"{}, \$sRefID=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classSonetrixClient_a780883e3c247b29d696d150b21f1da7d}{user\_\-getInvitees} (\$sUser=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classSonetrixClient_a1441b0c5ef54c474618356b34ca2b82e}{stats\_\-getStatsYM} (\$iYear, \$iMonth)
+\item 
+\hyperlink{classSonetrixClient_a937ec2e1055b8ccfae32ab80f9a4302e}{stats\_\-getStatsYMD} (\$iYear, \$iMonth, \$iDay=\char`\"{}0\char`\"{})
+\item 
+\hyperlink{classSonetrixClient_a1e6fa40aeb089a6fb97fcbbe9ec10298}{array\_\-to\_\-string} (\$\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array})
+\item 
+\hyperlink{classSonetrixClient_a22670c6ec1e99fa964f08a6419638341}{string\_\-to\_\-array} (\$string)
+\item 
+\hyperlink{classSonetrixClient_abd4a996c59fa716c190a9dfff3656b4e}{processQueryString} (\$sPFUserId=null)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classSonetrixClient_a12804ac5dcb2455ae3119f387641f5aa}{STAT\_\-ADDS} = 0
+\item 
+const \hyperlink{classSonetrixClient_a09f6e412c2a4aafdd9e16c7bf9c4ec85}{STAT\_\-GENDER} = 1
+\item 
+const \hyperlink{classSonetrixClient_a06eba9e43261b72ca95f5030d3cae017}{STAT\_\-AGE} = 2
+\item 
+const \hyperlink{classSonetrixClient_aaa7126588b810c9b0d17b81922be0a88}{STAT\_\-INVITES} = 3
+\item 
+const \hyperlink{classSonetrixClient_a4ac3e460ee02ac10bfb658decf181af2}{PF\_\-FACEBOOK} = 1000
+\item 
+const \hyperlink{classSonetrixClient_a502e2dfe7e28c0a91549444f1f4a6abe}{PF\_\-MySpace} = 1001
+\item 
+const \hyperlink{classSonetrixClient_a0f114d21419d464659b0771683bec488}{PF\_\-Bebo} = 1002
+\item 
+const \hyperlink{classSonetrixClient_ad2891ce22c2e75ada4a612cf8fff5685}{PF\_\-Meebo} = 1003
+\item 
+const \hyperlink{classSonetrixClient_a6769a04dfc6dfa871e2649b8da5d2bc7}{PF\_\-Orkut} = 1004
+\item 
+const \hyperlink{classSonetrixClient_ad576cd314e932752cf96eae2c0c2e10c}{PF\_\-OpenSocial} = 1005
+\item 
+const \hyperlink{classSonetrixClient_a41bdcc39f5464386850c0a59e2e488da}{PF\_\-Friendster} = 1006
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSonetrixClient_ab858a44baaf36d886e558c7195563468}{buildPayload} (\$sCmd, \$arData=null)
+\item 
+\hyperlink{classSonetrixClient_a9e9f916c28233d549a4392952d872994}{getRequest} (\$sUrl, \$sQueryString)
+\item 
+\hyperlink{classSonetrixClient_a961a2f3e2349415890c493194472e6c9}{XmlToArray} (\$sXml)
+\item 
+\hyperlink{classSonetrixClient_a422ca92c2fe20490d9f70520061dbcd5}{getPFUserId} (\$sPFUserId=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSonetrixClient_afd680e0c3a487e8558cd5ad9d1cb0611}{\$m\_\-sUserAgent} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{classSonetrixClient_acd79de47be3cc9eb08fa4190b5d8a8bb}{\$m\_\-sAppId} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{classSonetrixClient_a24e788d955d13e6906581754ac15bd6b}{\$m\_\-sAppProfileId} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{classSonetrixClient_ab16efc62694fc7d6620d2f951db167ac}{\$m\_\-sUrl} = \char`\"{}http://www.sonetrix.com/ws/fb.php\char`\"{}
+\item 
+\hyperlink{classSonetrixClient_ab06d5fc246adce3ed8bb29dc52bcdd0e}{\$m\_\-bIsValid} = false
+\item 
+\hyperlink{classSonetrixClient_a61a6667d5f1e9f48e90a0fc603c20be0}{\$m\_\-sdDemo} = null
+\item 
+\hyperlink{classSonetrixClient_a3832cbb70bb294d8f8800acdb598abe1}{\$m\_\-iHashUID} = null
+\item 
+\hyperlink{classSonetrixClient_a2f73148a503cb4a30acce7c8c1b48753}{\$m\_\-bLogCalls} = false
+\item 
+\hyperlink{classSonetrixClient_ab294fcb3988981bf2d504f3f3b07dd99}{\$m\_\-iPTC} = SonetrixPlatformTypes::Facebook
+\item 
+\hyperlink{classSonetrixClient_a251ed856d45aa28d717a012291b71d26}{\$m\_\-sReferrer} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{classSonetrixClient_a18f4e0dc2a0b958c79a301411d4be3db}{\$m\_\-sSourceIP} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{classSonetrixClient_a664f01f92cfc167d1219ec19e9451dbb}{\$m\_\-oFacebook} = null
+\item 
+\hyperlink{classSonetrixClient_aca2665de105ba9e1a89b58722bd21f16}{\$m\_\-sPFUserId} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{classSonetrixClient_a83e31531b8c35eca0840ad9bb8d07645}{\$m\_\-sDevKey} = null
+\item 
+\hyperlink{classSonetrixClient_aeba89a380900e90bdfe18c08bf057a13}{\$m\_\-sAppKey} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 49 of file SonetrixClient.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSonetrixClient_aa8a87ef1ba1c9f78959fcbd772429544}{
+\index{SonetrixClient@{SonetrixClient}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sAppId, }
+\item[{\$}]{ iPTC = {\ttfamily SonetrixPlatformTypes::Facebook}, }
+\item[{\$}]{ sDevKey = {\ttfamily null}, }
+\item[{\$}]{ sAppKey = {\ttfamily null}, }
+\item[{\$}]{ oFacebook = {\ttfamily null}, }
+\item[{\$}]{ sAppProfileId = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_aa8a87ef1ba1c9f78959fcbd772429544}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sAppId \end{DoxyParams}
+
+
+Definition at line 94 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_sReferrer = $_SERVER['HTTP_REFERER'];
+        $this->m_sSourceIP = $_SERVER['REMOTE_ADDR'];
+        $this->m_sAppId = $sAppId;
+        $this->m_sAppProfileId = $sAppProfileId;
+        $this->m_sUserAgent = "Sonetrix API PHP5 Client 0.95b (curl/sonetrix.com)
+       " . phpversion();
+        $this->m_sDevKey = $sDevKey;
+        $this->m_sAppKey = $sAppKey;
+
+        //  Set to false to disable Sonetrix
+        $this->m_bIsValid = true;
+
+        //  Platform type code...
+        $this->m_iPTC = $iPTC;
+
+        //  The Facebook API object...
+        $this->m_oFacebook = $oFacebook;
+
+        //  Get demo data if available...
+        if ( null != $this->m_oFacebook && $this->m_oFacebook->user )
+        {
+            //  Store user id
+            $this->m_sPFUserId = $this->m_oFacebook->user;
+
+            //  Get hash from preferences...
+            try
+            {
+                $sPref = $this->m_oFacebook->api_client->data_getUserPreference( 
+      SonetrixPreferences::HashUID );
+            }
+            catch ( Exception $_ex )
+            {
+                $sPref = null;
+            }
+
+            //  Not there? Make a new one...
+            if ( null == $sPref || "" == $sPref )
+            {
+                //  Pull demo data...
+                try
+                {
+                    $arDemoData = $this->m_oFacebook->api_client->users_getInfo( 
+      $this->m_sPFUserId, "birthday,current_location,sex" );
+
+                    //  Set the demo data...
+                    $iHashUID = $this->setDemoData( $this->array_to_string( $arDe
+      moData ) );
+                    if ( $iHashUID != "" && $iHashUID != null )
+                        $this->m_oFacebook->api_client->data_setUserPreference( 
+      SonetrixPreferences::HashUID, $iHashUID );
+                }
+                catch ( Exception $_ex )
+                {
+                    //  Ignore...
+                }
+            }
+            else
+                $this->setHashUID( $sPref );
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=390pt]{classSonetrixClient_aa8a87ef1ba1c9f78959fcbd772429544_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSonetrixClient_a1e6fa40aeb089a6fb97fcbbe9ec10298}{
+\index{SonetrixClient@{SonetrixClient}!array\_\-to\_\-string@{array\_\-to\_\-string}}
+\index{array\_\-to\_\-string@{array\_\-to\_\-string}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{array\_\-to\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}array\_\-to\_\-string (
+\begin{DoxyParamCaption}
+\item[{\$}]{ array}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_a1e6fa40aeb089a6fb97fcbbe9ec10298}
+Converts an array to a string that is safe to pass via a URL
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$array \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 462 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+       $retval = '';
+       $null_value = "^^^";
+       if ( $array != null )
+       {
+           foreach ($array as $index => $val) {
+               if(gettype($val)=='array') $value='^^array^'.$this->array_to_strin
+      g($val);    else $value=$val;
+               if (!$value)
+                   $value = $null_value;
+               $retval .= urlencode(base64_encode($index)) . '|' . urlencode(base
+      64_encode($value)) . '||';
+           }
+       }
+       return urlencode(substr($retval, 0, -2));
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classSonetrixClient_a1e6fa40aeb089a6fb97fcbbe9ec10298_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_ab858a44baaf36d886e558c7195563468}{
+\index{SonetrixClient@{SonetrixClient}!buildPayload@{buildPayload}}
+\index{buildPayload@{buildPayload}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{buildPayload}]{\setlength{\rightskip}{0pt plus 5cm}buildPayload (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sCmd, }
+\item[{\$}]{ arData = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_ab858a44baaf36d886e558c7195563468}
+
+
+Definition at line 155 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Start with the command
+        $sOut = "c=$sCmd";
+
+        //  Sonetrix application key
+        if ( null != $this->m_sAppKey )
+            $sOut = "&ak=" . $this->m_sAppKey;
+
+        //  Sonetrix developer key
+        if ( null != $this->m_sDevKey )
+            $sOut = "&dk=" . $this->m_sDevKey;
+
+        //  Add platform type code...
+        $sOut .= "&ptc=" . $this->m_iPTC;
+
+        //  Add on app id
+        $sOut .= "&uai=" . $this->m_sAppId;
+
+        //  Add app profile id if available
+        if ( "" != $this->m_sAppProfileId )
+            $sOut .= "&uapi=" . $this->m_sAppProfileId;
+
+        //  Add hash uid / demo data
+        if ( null != $this->m_iHashUID )
+        {
+            $sOut .= "&huid=" . $this->m_iHashUID;
+        }
+        else
+        {
+            if ( null != $this->m_sdDemo )
+                $sOut .= "&ud=" . $this->m_sdDemo;
+        }
+
+        //  Add referrer if available
+        if ( "" != $this->m_sReferrer && null != $this->m_sReferrer )
+            $sOut .= "&href=" . urlencode( $this->m_sReferrer );
+
+        //  And source IP address..
+        $sOut .= "&srcip=" . urlencode( $this->m_sSourceIP );
+
+        //  Add additional parameters if provided
+        if ( null != $arData )
+        {
+            foreach ( $arData as $sKey => $oValue )
+            {
+                $sOut .= "&" . $sKey . "=" . $oValue;
+            }
+        }
+
+        return( $sOut );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classSonetrixClient_ab858a44baaf36d886e558c7195563468_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_ab92d640a0f2167dc6ef8c9ee419a7f78}{
+\index{SonetrixClient@{SonetrixClient}!getHashUID@{getHashUID}}
+\index{getHashUID@{getHashUID}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{getHashUID}]{\setlength{\rightskip}{0pt plus 5cm}getHashUID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_ab92d640a0f2167dc6ef8c9ee419a7f78}
+Returns the hash for the current user
+
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 239 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( $this->m_iHashUID );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSonetrixClient_a422ca92c2fe20490d9f70520061dbcd5}{
+\index{SonetrixClient@{SonetrixClient}!getPFUserId@{getPFUserId}}
+\index{getPFUserId@{getPFUserId}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{getPFUserId}]{\setlength{\rightskip}{0pt plus 5cm}getPFUserId (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sPFUserId = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_a422ca92c2fe20490d9f70520061dbcd5}
+
+
+Definition at line 507 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( $sPFUserId == null ? $this->PFUserId : $sPFUserId );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classSonetrixClient_a422ca92c2fe20490d9f70520061dbcd5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_a9e9f916c28233d549a4392952d872994}{
+\index{SonetrixClient@{SonetrixClient}!getRequest@{getRequest}}
+\index{getRequest@{getRequest}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{getRequest}]{\setlength{\rightskip}{0pt plus 5cm}getRequest (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUrl, }
+\item[{\$}]{ sQueryString}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_a9e9f916c28233d549a4392952d872994}
+Make the REST request
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sUrl \item[{\em unknown\_\-type}]\$sQueryString \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 376 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( function_exists( 'curl_init' ) )
+        {
+            // Use CURL if installed...
+            $oConn = curl_init();
+            curl_setopt( $oConn, CURLOPT_URL, $sUrl . "?" . $sQueryString );
+            curl_setopt( $oConn, CURLOPT_RETURNTRANSFER, true );
+            curl_setopt( $oConn, CURLOPT_USERAGENT, $this->m_sUserAgent );
+            curl_setopt( $oConn, CURLOPT_TIMEOUT, 60 );
+            $sResult = curl_exec( $oConn );
+            curl_close( $oConn );
+        }
+        else
+        {
+            // Non-CURL based version...
+            $oContext =
+                array('http' =>
+                    array('method' => 'POST',
+                        'header' => 'Content-type: application/x-www-form-urlenco
+      ded'."\r\n".
+                        'User-Agent: ' . $m_sUserAgent ."\r\n".
+                        'Content-length: ' . strlen( $sQueryString ),
+                        'content' => $post_string)
+                    );
+
+            $oContextId = stream_context_create( $oContext );
+
+            $oSocket = fopen( $sUrl . "?" . $sQueryString, 'r', false, $oContextI
+      d );
+
+            if ( $oSocket )
+            {
+                $sResult = '';
+
+                while ( !feof( $oSocket ) )
+                    $sResult .= fgets( $oSocket, 4096 );
+
+                fclose( $oSocket );
+            }
+        }
+
+        return( $sResult );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classSonetrixClient_a9e9f916c28233d549a4392952d872994_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_abd4a996c59fa716c190a9dfff3656b4e}{
+\index{SonetrixClient@{SonetrixClient}!processQueryString@{processQueryString}}
+\index{processQueryString@{processQueryString}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{processQueryString}]{\setlength{\rightskip}{0pt plus 5cm}processQueryString (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sPFUserId = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_abd4a996c59fa716c190a9dfff3656b4e}
+
+
+Definition at line 512 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Handle query string
+        if ( isset( $_REQUEST['ids'] ) )
+            $this->user_trackInvites( $this->getPFUserId( $sPFUserId ), implode( 
+      ",", $_REQUEST['ids'] ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classSonetrixClient_abd4a996c59fa716c190a9dfff3656b4e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_a2cccfe0c7f4aabf470d2d5f9f507e308}{
+\index{SonetrixClient@{SonetrixClient}!setDemoData@{setDemoData}}
+\index{setDemoData@{setDemoData}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{setDemoData}]{\setlength{\rightskip}{0pt plus 5cm}setDemoData (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sdData, }
+\item[{\$}]{ bDebug = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_a2cccfe0c7f4aabf470d2d5f9f507e308}
+Set the demo data for this connection
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sdData \end{DoxyParams}
+
+
+Definition at line 213 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_sdDemo = $sdData;
+
+        //  Get a hash UID from Sonetrix...
+        $iHashUID = intval( $this->getRequest( $this->m_sUrl, $this->
+      buildPayload( "hash" ) ) );
+        $this->setHashUID( $iHashUID );
+        return( $iHashUID );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classSonetrixClient_a2cccfe0c7f4aabf470d2d5f9f507e308_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classSonetrixClient_a2cccfe0c7f4aabf470d2d5f9f507e308_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_a681775b9584b96e7d2bcc9f9c0e529ae}{
+\index{SonetrixClient@{SonetrixClient}!setHashUID@{setHashUID}}
+\index{setHashUID@{setHashUID}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{setHashUID}]{\setlength{\rightskip}{0pt plus 5cm}setHashUID (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iHashUID}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_a681775b9584b96e7d2bcc9f9c0e529ae}
+Sets the has for the current user
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$iHashUID \end{DoxyParams}
+
+
+Definition at line 228 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_iHashUID = $iHashUID;
+        return( $iHashUID );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=382pt]{classSonetrixClient_a681775b9584b96e7d2bcc9f9c0e529ae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_a1441b0c5ef54c474618356b34ca2b82e}{
+\index{SonetrixClient@{SonetrixClient}!stats\_\-getStatsYM@{stats\_\-getStatsYM}}
+\index{stats\_\-getStatsYM@{stats\_\-getStatsYM}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{stats\_\-getStatsYM}]{\setlength{\rightskip}{0pt plus 5cm}stats\_\-getStatsYM (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iYear, }
+\item[{\$}]{ iMonth}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_a1441b0c5ef54c474618356b34ca2b82e}
+Get stats for a year/month
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$iYear \item[{\em unknown\_\-type}]\$iMonth \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 346 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( $this->stats_getStatsYMD( $iYear, $iMonth ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classSonetrixClient_a1441b0c5ef54c474618356b34ca2b82e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_a937ec2e1055b8ccfae32ab80f9a4302e}{
+\index{SonetrixClient@{SonetrixClient}!stats\_\-getStatsYMD@{stats\_\-getStatsYMD}}
+\index{stats\_\-getStatsYMD@{stats\_\-getStatsYMD}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{stats\_\-getStatsYMD}]{\setlength{\rightskip}{0pt plus 5cm}stats\_\-getStatsYMD (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iYear, }
+\item[{\$}]{ iMonth, }
+\item[{\$}]{ iDay = {\ttfamily \char`\"{}0\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_a937ec2e1055b8ccfae32ab80f9a4302e}
+Get stats for a year/month/day
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$iYear \item[{\em unknown\_\-type}]\$iMonth \item[{\em unknown\_\-type}]\$iDay \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 359 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! $this->m_bIsValid )
+            return( null );
+
+        $sPayload = $this->buildPayload( "stats", array( "mm" => $iMonth, "yy" =>
+       $iYear, "dd" => $iDay, "hh" => "-1" ) );
+        $sXml = $this->getRequest( $this->m_sUrl, $sPayload );
+        return( XmlToArray( $sXml ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classSonetrixClient_a937ec2e1055b8ccfae32ab80f9a4302e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classSonetrixClient_a937ec2e1055b8ccfae32ab80f9a4302e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_a22670c6ec1e99fa964f08a6419638341}{
+\index{SonetrixClient@{SonetrixClient}!string\_\-to\_\-array@{string\_\-to\_\-array}}
+\index{string\_\-to\_\-array@{string\_\-to\_\-array}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{string\_\-to\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}string\_\-to\_\-array (
+\begin{DoxyParamCaption}
+\item[{\$}]{ string}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_a22670c6ec1e99fa964f08a6419638341}
+Converts a string created by \hyperlink{classSonetrixClient_a1e6fa40aeb089a6fb97fcbbe9ec10298}{array\_\-to\_\-string()} back into an array.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$string \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 484 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+       $retval = array();
+       $string = urldecode($string);
+       $tmp_array = explode('||', $string);
+       $null_value = urlencode(base64_encode("^^^"));
+       foreach ($tmp_array as $tmp_val) {
+           list($index, $value) = explode('|', $tmp_val);
+           $decoded_index = base64_decode(urldecode($index));
+           if($value != $null_value){
+               $val= base64_decode(urldecode($value));
+               if(substr($val,0,8)=='^^array^') $val=$this->string_to_array(subst
+      r($val,8));
+               $retval[$decoded_index]=$val;
+              }
+           else
+               $retval[$decoded_index] = NULL;
+       }
+       return $retval;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSonetrixClient_a780883e3c247b29d696d150b21f1da7d}{
+\index{SonetrixClient@{SonetrixClient}!user\_\-getInvitees@{user\_\-getInvitees}}
+\index{user\_\-getInvitees@{user\_\-getInvitees}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{user\_\-getInvitees}]{\setlength{\rightskip}{0pt plus 5cm}user\_\-getInvitees (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUser = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_a780883e3c247b29d696d150b21f1da7d}
+Get a comma separated list of previously invited users...
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sUser \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 330 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! $this->m_bIsValid )
+            return( null );
+
+        $sPayload = $this->buildPayload( "invitees", array( "u" => ( $sUser == ""
+       ? $this->m_sPFUserId : $sUser ) ) );
+        return( $this->getRequest( $this->m_sUrl, $sPayload ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classSonetrixClient_a780883e3c247b29d696d150b21f1da7d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_acefc468f5e6a8c55dae2b78e39d8a400}{
+\index{SonetrixClient@{SonetrixClient}!user\_\-install@{user\_\-install}}
+\index{user\_\-install@{user\_\-install}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{user\_\-install}]{\setlength{\rightskip}{0pt plus 5cm}user\_\-install (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUser = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{\$}]{ sSigSessionKey = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_acefc468f5e6a8c55dae2b78e39d8a400}
+Track a user install
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sUser \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 250 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! $this->m_bIsValid )
+            return( false );
+
+        $sPayload = $this->buildPayload( "install", array( "u" => ( $sUser == "" 
+      ? $this->m_sPFUserId : $sUser ), "ssk" => urlencode( $sSigSessionKey ) ) );
+        return( $this->setHashUID( intval( $this->getRequest( $this->m_sUrl, $sPa
+      yload ) ) ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classSonetrixClient_acefc468f5e6a8c55dae2b78e39d8a400_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_a420b1ea102ea7dfe199366eea42cfc13}{
+\index{SonetrixClient@{SonetrixClient}!user\_\-pageView@{user\_\-pageView}}
+\index{user\_\-pageView@{user\_\-pageView}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{user\_\-pageView}]{\setlength{\rightskip}{0pt plus 5cm}user\_\-pageView (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUser = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{\$}]{ sPage = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_a420b1ea102ea7dfe199366eea42cfc13}
+Track a page view
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sUser \item[{\em unknown\_\-type}]\$sPage \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 281 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! $this->m_bIsValid )
+            return( false );
+
+        $sPayload = $this->buildPayload( "hit", array( "u" => ( $sUser == "" ? $t
+      his->m_sPFUserId : $sUser ), "p" => urlencode( $sPage ) ) );
+        $sResult = $this->getRequest( $this->m_sUrl, $sPayload );
+        return( $sResult == "OK" );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classSonetrixClient_a420b1ea102ea7dfe199366eea42cfc13_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_a09ca56569d3a84b88e047acf61b86b35}{
+\index{SonetrixClient@{SonetrixClient}!user\_\-trackInvites@{user\_\-trackInvites}}
+\index{user\_\-trackInvites@{user\_\-trackInvites}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{user\_\-trackInvites}]{\setlength{\rightskip}{0pt plus 5cm}user\_\-trackInvites (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUser = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{\$}]{ sIDList = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_a09ca56569d3a84b88e047acf61b86b35}
+Track user invites
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sUser \item[{\em unknown\_\-type}]\$sIDList \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 298 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! $this->m_bIsValid )
+            return( false );
+
+        $sPayload = $this->buildPayload( "invite", array( "u" => ( $sUser == "" ?
+       $this->m_sPFUserId : $sUser ), "list" => urlencode( $sIDList ) ) );
+        $sResult = $this->getRequest( $this->m_sUrl, $sPayload );
+        return( $sResult == "OK" );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{classSonetrixClient_a09ca56569d3a84b88e047acf61b86b35_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{classSonetrixClient_a09ca56569d3a84b88e047acf61b86b35_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_ad18a1632dc984669877b26ad657b3b30}{
+\index{SonetrixClient@{SonetrixClient}!user\_\-trackReferral@{user\_\-trackReferral}}
+\index{user\_\-trackReferral@{user\_\-trackReferral}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{user\_\-trackReferral}]{\setlength{\rightskip}{0pt plus 5cm}user\_\-trackReferral (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUser = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{\$}]{ sRefID = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_ad18a1632dc984669877b26ad657b3b30}
+Track conversions
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sUser \item[{\em unknown\_\-type}]\$sIDList \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 315 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! $this->m_bIsValid )
+            return( false );
+
+        $sPayload = $this->buildPayload( "convert", array( "u" => ( $sUser == "" 
+      ? $this->m_sPFUserId : $sUser ), "r" => $sRefID ) );
+        return( $this->getRequest( $this->m_sUrl, $sPayload ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classSonetrixClient_ad18a1632dc984669877b26ad657b3b30_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_a9eca8f37b3a21b8f49476dff0aac1553}{
+\index{SonetrixClient@{SonetrixClient}!user\_\-uninstall@{user\_\-uninstall}}
+\index{user\_\-uninstall@{user\_\-uninstall}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{user\_\-uninstall}]{\setlength{\rightskip}{0pt plus 5cm}user\_\-uninstall (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUser = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{classSonetrixClient_a9eca8f37b3a21b8f49476dff0aac1553}
+Track a user uninstall
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sUser \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 265 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! $this->m_bIsValid )
+            return( false );
+
+        $sPayload = $this->buildPayload( "uninstall", array( "u" => ( $sUser == "
+      " ? $this->m_sPFUserId : $sUser ) ) );
+        return( $this->getRequest( $this->m_sUrl, $sPayload ) == "OK" );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classSonetrixClient_a9eca8f37b3a21b8f49476dff0aac1553_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSonetrixClient_a961a2f3e2349415890c493194472e6c9}{
+\index{SonetrixClient@{SonetrixClient}!XmlToArray@{XmlToArray}}
+\index{XmlToArray@{XmlToArray}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{XmlToArray}]{\setlength{\rightskip}{0pt plus 5cm}XmlToArray (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sXml}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_a961a2f3e2349415890c493194472e6c9}
+Enter description here...
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sXml \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 425 of file SonetrixClient.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $arData = array();
+
+        if ( $sXml )
+        {
+            $oAttrs = $sXml->attributes();
+
+            foreach ( $sXml->children() as $oChild)
+            {
+                if ( !empty($oAttrs['list'] ) )
+                {
+                    $arData[] = $this->XmlToArray( $oChild );
+                }
+                else
+                {
+                    $arData[ $oChild->___n ] = $this->XmlToArray( $oChild );
+                }
+            }
+        }
+
+        if ( sizeof( $arData ) > 0 )
+        {
+            return( $arData );
+        }
+        else
+        {
+            return( ( string )$sXml->CDATA() );
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classSonetrixClient_a961a2f3e2349415890c493194472e6c9_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classSonetrixClient_ab06d5fc246adce3ed8bb29dc52bcdd0e}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-bIsValid@{\$m\_\-bIsValid}}
+\index{\$m\_\-bIsValid@{\$m\_\-bIsValid}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-bIsValid}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-bIsValid = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_ab06d5fc246adce3ed8bb29dc52bcdd0e}
+
+
+Definition at line 78 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a2f73148a503cb4a30acce7c8c1b48753}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-bLogCalls@{\$m\_\-bLogCalls}}
+\index{\$m\_\-bLogCalls@{\$m\_\-bLogCalls}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-bLogCalls}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-bLogCalls = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_a2f73148a503cb4a30acce7c8c1b48753}
+
+
+Definition at line 81 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a3832cbb70bb294d8f8800acdb598abe1}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-iHashUID@{\$m\_\-iHashUID}}
+\index{\$m\_\-iHashUID@{\$m\_\-iHashUID}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-iHashUID}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-iHashUID = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_a3832cbb70bb294d8f8800acdb598abe1}
+
+
+Definition at line 80 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_ab294fcb3988981bf2d504f3f3b07dd99}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-iPTC@{\$m\_\-iPTC}}
+\index{\$m\_\-iPTC@{\$m\_\-iPTC}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-iPTC}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-iPTC = SonetrixPlatformTypes::Facebook\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_ab294fcb3988981bf2d504f3f3b07dd99}
+
+
+Definition at line 82 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a664f01f92cfc167d1219ec19e9451dbb}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-oFacebook@{\$m\_\-oFacebook}}
+\index{\$m\_\-oFacebook@{\$m\_\-oFacebook}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-oFacebook}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-oFacebook = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_a664f01f92cfc167d1219ec19e9451dbb}
+
+
+Definition at line 85 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_acd79de47be3cc9eb08fa4190b5d8a8bb}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-sAppId@{\$m\_\-sAppId}}
+\index{\$m\_\-sAppId@{\$m\_\-sAppId}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-sAppId}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sAppId = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_acd79de47be3cc9eb08fa4190b5d8a8bb}
+
+
+Definition at line 75 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_aeba89a380900e90bdfe18c08bf057a13}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-sAppKey@{\$m\_\-sAppKey}}
+\index{\$m\_\-sAppKey@{\$m\_\-sAppKey}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-sAppKey}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sAppKey = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_aeba89a380900e90bdfe18c08bf057a13}
+
+
+Definition at line 88 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a24e788d955d13e6906581754ac15bd6b}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-sAppProfileId@{\$m\_\-sAppProfileId}}
+\index{\$m\_\-sAppProfileId@{\$m\_\-sAppProfileId}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-sAppProfileId}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sAppProfileId = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_a24e788d955d13e6906581754ac15bd6b}
+
+
+Definition at line 76 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a61a6667d5f1e9f48e90a0fc603c20be0}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-sdDemo@{\$m\_\-sdDemo}}
+\index{\$m\_\-sdDemo@{\$m\_\-sdDemo}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-sdDemo}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sdDemo = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_a61a6667d5f1e9f48e90a0fc603c20be0}
+
+
+Definition at line 79 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a83e31531b8c35eca0840ad9bb8d07645}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-sDevKey@{\$m\_\-sDevKey}}
+\index{\$m\_\-sDevKey@{\$m\_\-sDevKey}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-sDevKey}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sDevKey = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_a83e31531b8c35eca0840ad9bb8d07645}
+
+
+Definition at line 87 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_aca2665de105ba9e1a89b58722bd21f16}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-sPFUserId@{\$m\_\-sPFUserId}}
+\index{\$m\_\-sPFUserId@{\$m\_\-sPFUserId}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-sPFUserId}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sPFUserId = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_aca2665de105ba9e1a89b58722bd21f16}
+
+
+Definition at line 86 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a251ed856d45aa28d717a012291b71d26}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-sReferrer@{\$m\_\-sReferrer}}
+\index{\$m\_\-sReferrer@{\$m\_\-sReferrer}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-sReferrer}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sReferrer = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_a251ed856d45aa28d717a012291b71d26}
+
+
+Definition at line 83 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a18f4e0dc2a0b958c79a301411d4be3db}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-sSourceIP@{\$m\_\-sSourceIP}}
+\index{\$m\_\-sSourceIP@{\$m\_\-sSourceIP}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-sSourceIP}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sSourceIP = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_a18f4e0dc2a0b958c79a301411d4be3db}
+
+
+Definition at line 84 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_ab16efc62694fc7d6620d2f951db167ac}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-sUrl@{\$m\_\-sUrl}}
+\index{\$m\_\-sUrl@{\$m\_\-sUrl}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-sUrl}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sUrl = \char`\"{}http://www.sonetrix.com/ws/fb.php\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_ab16efc62694fc7d6620d2f951db167ac}
+
+
+Definition at line 77 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_afd680e0c3a487e8558cd5ad9d1cb0611}{
+\index{SonetrixClient@{SonetrixClient}!\$m\_\-sUserAgent@{\$m\_\-sUserAgent}}
+\index{\$m\_\-sUserAgent@{\$m\_\-sUserAgent}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{\$m\_\-sUserAgent}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sUserAgent = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSonetrixClient_afd680e0c3a487e8558cd5ad9d1cb0611}
+
+
+Definition at line 74 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a0f114d21419d464659b0771683bec488}{
+\index{SonetrixClient@{SonetrixClient}!PF\_\-Bebo@{PF\_\-Bebo}}
+\index{PF\_\-Bebo@{PF\_\-Bebo}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{PF\_\-Bebo}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PF\_\-Bebo} = 1002}}
+\label{classSonetrixClient_a0f114d21419d464659b0771683bec488}
+
+
+Definition at line 68 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a4ac3e460ee02ac10bfb658decf181af2}{
+\index{SonetrixClient@{SonetrixClient}!PF\_\-FACEBOOK@{PF\_\-FACEBOOK}}
+\index{PF\_\-FACEBOOK@{PF\_\-FACEBOOK}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{PF\_\-FACEBOOK}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PF\_\-FACEBOOK} = 1000}}
+\label{classSonetrixClient_a4ac3e460ee02ac10bfb658decf181af2}
+Supported Platforms 
+
+Definition at line 66 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a41bdcc39f5464386850c0a59e2e488da}{
+\index{SonetrixClient@{SonetrixClient}!PF\_\-Friendster@{PF\_\-Friendster}}
+\index{PF\_\-Friendster@{PF\_\-Friendster}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{PF\_\-Friendster}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PF\_\-Friendster} = 1006}}
+\label{classSonetrixClient_a41bdcc39f5464386850c0a59e2e488da}
+
+
+Definition at line 72 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_ad2891ce22c2e75ada4a612cf8fff5685}{
+\index{SonetrixClient@{SonetrixClient}!PF\_\-Meebo@{PF\_\-Meebo}}
+\index{PF\_\-Meebo@{PF\_\-Meebo}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{PF\_\-Meebo}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PF\_\-Meebo} = 1003}}
+\label{classSonetrixClient_ad2891ce22c2e75ada4a612cf8fff5685}
+
+
+Definition at line 69 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a502e2dfe7e28c0a91549444f1f4a6abe}{
+\index{SonetrixClient@{SonetrixClient}!PF\_\-MySpace@{PF\_\-MySpace}}
+\index{PF\_\-MySpace@{PF\_\-MySpace}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{PF\_\-MySpace}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PF\_\-MySpace} = 1001}}
+\label{classSonetrixClient_a502e2dfe7e28c0a91549444f1f4a6abe}
+
+
+Definition at line 67 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_ad576cd314e932752cf96eae2c0c2e10c}{
+\index{SonetrixClient@{SonetrixClient}!PF\_\-OpenSocial@{PF\_\-OpenSocial}}
+\index{PF\_\-OpenSocial@{PF\_\-OpenSocial}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{PF\_\-OpenSocial}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PF\_\-OpenSocial} = 1005}}
+\label{classSonetrixClient_ad576cd314e932752cf96eae2c0c2e10c}
+
+
+Definition at line 71 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a6769a04dfc6dfa871e2649b8da5d2bc7}{
+\index{SonetrixClient@{SonetrixClient}!PF\_\-Orkut@{PF\_\-Orkut}}
+\index{PF\_\-Orkut@{PF\_\-Orkut}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{PF\_\-Orkut}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PF\_\-Orkut} = 1004}}
+\label{classSonetrixClient_a6769a04dfc6dfa871e2649b8da5d2bc7}
+
+
+Definition at line 70 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a12804ac5dcb2455ae3119f387641f5aa}{
+\index{SonetrixClient@{SonetrixClient}!STAT\_\-ADDS@{STAT\_\-ADDS}}
+\index{STAT\_\-ADDS@{STAT\_\-ADDS}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{STAT\_\-ADDS}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf STAT\_\-ADDS} = 0}}
+\label{classSonetrixClient_a12804ac5dcb2455ae3119f387641f5aa}
+Statistic Types 
+
+Definition at line 58 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a06eba9e43261b72ca95f5030d3cae017}{
+\index{SonetrixClient@{SonetrixClient}!STAT\_\-AGE@{STAT\_\-AGE}}
+\index{STAT\_\-AGE@{STAT\_\-AGE}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{STAT\_\-AGE}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf STAT\_\-AGE} = 2}}
+\label{classSonetrixClient_a06eba9e43261b72ca95f5030d3cae017}
+
+
+Definition at line 60 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_a09f6e412c2a4aafdd9e16c7bf9c4ec85}{
+\index{SonetrixClient@{SonetrixClient}!STAT\_\-GENDER@{STAT\_\-GENDER}}
+\index{STAT\_\-GENDER@{STAT\_\-GENDER}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{STAT\_\-GENDER}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf STAT\_\-GENDER} = 1}}
+\label{classSonetrixClient_a09f6e412c2a4aafdd9e16c7bf9c4ec85}
+
+
+Definition at line 59 of file SonetrixClient.php.
+
+\hypertarget{classSonetrixClient_aaa7126588b810c9b0d17b81922be0a88}{
+\index{SonetrixClient@{SonetrixClient}!STAT\_\-INVITES@{STAT\_\-INVITES}}
+\index{STAT\_\-INVITES@{STAT\_\-INVITES}!SonetrixClient@{SonetrixClient}}
+\subsubsection[{STAT\_\-INVITES}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf STAT\_\-INVITES} = 3}}
+\label{classSonetrixClient_aaa7126588b810c9b0d17b81922be0a88}
+
+
+Definition at line 61 of file SonetrixClient.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/snowframe/components/\hyperlink{SonetrixClient_8php}{SonetrixClient.php}\end{DoxyCompactItemize}

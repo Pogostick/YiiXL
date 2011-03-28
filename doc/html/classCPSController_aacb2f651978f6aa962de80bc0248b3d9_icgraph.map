@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCPSController.html#affcc785cc14ed277532e5462fcb0463c" title="load" alt="" coords="212,189,260,218"/>
+<area shape="rect" id="node23" href="$classCPSController.html#a4e6ee9ca4aff15fe9592ad24f5ebd509" title="loadAll" alt="" coords="204,309,268,338"/>
+<area shape="rect" id="node29" href="$classCPSController.html#a97e32933f78c7a0e8e6829ac513deb4d" title="loadCount" alt="" coords="193,256,279,285"/>
+<area shape="rect" id="node5" href="$classCPSController.html#a746b3a617d7e9d1c0012aa471cf25325" title="loadModel" alt="" coords="329,164,415,193"/>
+<area shape="rect" id="node7" href="$classCPSCRUDController.html#a1c7da1e1bd646d3dcb9077f2390daba7" title="CPSCRUDController::actionDelete" alt="" coords="487,58,721,88"/>
+<area shape="rect" id="node9" href="$classCPSCRUDController.html#af0a5fa203c2223483f8a9fbca5f25f9b" title="CPSCRUDController::actionUpdate" alt="" coords="793,33,1033,62"/>
+<area shape="rect" id="node13" href="$classCPSCRUDController.html#a4719f8c8bc82f251a57b2c96066df9cf" title="CPSCRUDController::actionView" alt="" coords="803,138,1024,168"/>
+<area shape="rect" id="node15" href="$classCPSCRUDController.html#a3ebb55fc0dbd9ce833626b342eaf5a11" title="CPSCRUDController::commandDelete" alt="" coords="473,216,735,245"/>
+<area shape="rect" id="node17" href="$classCPSCRUDController.html#a1cab0ecf37574f60029f78b6f94852ba" title="CPSCRUDController::commandUndelete" alt="" coords="465,269,743,298"/>
+<area shape="rect" id="node19" href="$classCPSController.html#a5d552693681c1d3c932a6ae5fbb56ac5" title="genericAction" alt="" coords="549,112,659,141"/>
+<area shape="rect" id="node11" href="$classCPSCRUDController.html#a0e897ab49575e5cf90669511a707e530" title="CPSCRUDController::actionCreate" alt="" coords="1083,33,1320,62"/>
+<area shape="rect" id="node25" href="$classCPSController.html#a138d56ab26b272430a88450638c6d466" title="loadPaged" alt="" coords="328,309,416,338"/>
+<area shape="rect" id="node27" href="$classCPSCRUDController.html#a742f460213a7175d366eb851efc50ea3" title="CPSCRUDController::actionAdmin" alt="" coords="487,322,721,352"/>
+</map>

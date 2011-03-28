@@ -1,0 +1,136 @@
+\hypertarget{classCPSEnhanceJS}{
+\section{CPSEnhanceJS Class Reference}
+\label{classCPSEnhanceJS}\index{CPSEnhanceJS@{CPSEnhanceJS}}
+}
+
+
+Inheritance diagram for CPSEnhanceJS:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classCPSEnhanceJS__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSEnhanceJS:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classCPSEnhanceJS__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSEnhanceJS_a561cda05113b81fc962133829351f41e}{loadScripts} (\$oWidget=null, \$sTheme=null)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSEnhanceJS_ae357f9dc377f7de0d12010b2ced28cbc}{PS\_\-WIDGET\_\-NAME} = 'EnhanceJS'
+\item 
+const \hyperlink{classCPSEnhanceJS_a8ccb5e1d65c091f944a6aa8c5be834ca}{PS\_\-EXTERNAL\_\-PATH} = '/EnhanceJS'
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 44 of file CPSEnhanceJS.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSEnhanceJS_a561cda05113b81fc962133829351f41e}{
+\index{CPSEnhanceJS@{CPSEnhanceJS}!loadScripts@{loadScripts}}
+\index{loadScripts@{loadScripts}!CPSEnhanceJS@{CPSEnhanceJS}}
+\subsubsection[{loadScripts}]{\setlength{\rightskip}{0pt plus 5cm}static loadScripts (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oWidget = {\ttfamily null}, }
+\item[{\$}]{ sTheme = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSEnhanceJS_a561cda05113b81fc962133829351f41e}
+Registers the needed CSS and JavaScript.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$oWidget The widget making this call, if any \item[{\em string}]\$sTheme The theme to use. If it's specified, will override theme set at the time of creation \end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classCPSEnhanceJSTree_a561cda05113b81fc962133829351f41e}{CPSEnhanceJSTree}.
+
+
+
+Definition at line 71 of file CPSEnhanceJS.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        static $_bLoaded = false;
+
+        if ( ! $_bLoaded )
+        {
+            //  Instantiate if needed...
+            $_oWidget = ( null == $oWidget ) ? new CPSEnhanceJS() : $oWidget;
+
+            //  Save then Set baseUrl...
+            $_sOldPath = $_oWidget->baseUrl;
+            $_oWidget->baseUrl = $_oWidget->extLibUrl . self::PS_EXTERNAL_PATH;
+
+            //  jQuery first...
+            if ( false !== ( PS::o( PS::_cs()->scriptMap, 'jquery.js' ) ) )
+                PS::_cs()->registerCoreScript( 'jquery' );
+
+            //  Register scripts necessary
+            $_oWidget->pushScriptFile( $_oWidget->baseUrl . '/enhance.js' );
+            PS::_rs( 'ps.enhancejs.init', 'enhance({loadScripts:"tree/js/jQuery.t
+      ree.js"});', CClientScript::POS_HEAD );
+
+            //  Restore path
+            $_oWidget->baseUrl = $_sOldPath;
+
+            //  And mark completed...
+            $_bLoaded = true;
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSEnhanceJS_a8ccb5e1d65c091f944a6aa8c5be834ca}{
+\index{CPSEnhanceJS@{CPSEnhanceJS}!PS\_\-EXTERNAL\_\-PATH@{PS\_\-EXTERNAL\_\-PATH}}
+\index{PS\_\-EXTERNAL\_\-PATH@{PS\_\-EXTERNAL\_\-PATH}!CPSEnhanceJS@{CPSEnhanceJS}}
+\subsubsection[{PS\_\-EXTERNAL\_\-PATH}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PS\_\-EXTERNAL\_\-PATH} = '/EnhanceJS'}}
+\label{classCPSEnhanceJS_a8ccb5e1d65c091f944a6aa8c5be834ca}
+The path where the assets for this widget are stored (underneath the psYiiExtensions/external base Currently, a CDN is in use and no local files are required... 
+
+Reimplemented in \hyperlink{classCPSEnhanceJSTree_a8ccb5e1d65c091f944a6aa8c5be834ca}{CPSEnhanceJSTree}.
+
+
+
+Definition at line 59 of file CPSEnhanceJS.php.
+
+\hypertarget{classCPSEnhanceJS_ae357f9dc377f7de0d12010b2ced28cbc}{
+\index{CPSEnhanceJS@{CPSEnhanceJS}!PS\_\-WIDGET\_\-NAME@{PS\_\-WIDGET\_\-NAME}}
+\index{PS\_\-WIDGET\_\-NAME@{PS\_\-WIDGET\_\-NAME}!CPSEnhanceJS@{CPSEnhanceJS}}
+\subsubsection[{PS\_\-WIDGET\_\-NAME}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf PS\_\-WIDGET\_\-NAME} = 'EnhanceJS'}}
+\label{classCPSEnhanceJS_ae357f9dc377f7de0d12010b2ced28cbc}
+The name of this widget 
+
+Reimplemented in \hyperlink{classCPSEnhanceJSTree_ae357f9dc377f7de0d12010b2ced28cbc}{CPSEnhanceJSTree}.
+
+
+
+Definition at line 53 of file CPSEnhanceJS.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/widgets/\hyperlink{CPSEnhanceJS_8php}{CPSEnhanceJS.php}\end{DoxyCompactItemize}

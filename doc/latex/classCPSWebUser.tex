@@ -1,0 +1,379 @@
+\hypertarget{classCPSWebUser}{
+\section{CPSWebUser Class Reference}
+\label{classCPSWebUser}\index{CPSWebUser@{CPSWebUser}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSWebUser_a491b3681067e7f3651afb7ff1bf533e8}{getStateManager} ()
+\item 
+\hyperlink{classCPSWebUser_a345ca6205883a4aee6b89cd27fd093b6}{setStateManager} (\$value)
+\item 
+\hyperlink{classCPSWebUser_a1ff82bdcd6747129d97e12934db2def8}{\_\-\_\-construct} (\$keyPrefix=null)
+\item 
+\hyperlink{classCPSWebUser_a8bf40ae0d2528f36e3df46e28f56e1c8}{getState} (\$key, \$defaultValue=null, \$isFlash=false)
+\item 
+\hyperlink{classCPSWebUser_aafc00fb76764975385c8a3fa54cfece3}{setState} (\$key, \$value, \$defaultValue=null, \$isFlash=false)
+\item 
+\hyperlink{classCPSWebUser_ab04376998e1a1094f4c415a79018ca96}{hasState} (\$key)
+\item 
+\hyperlink{classCPSWebUser_a5623d45a4dfcce122b732b0377364d66}{clearStates} ()
+\item 
+\hyperlink{classCPSWebUser_ae29eea2995e7e3e2789181f632ae95a5}{getFlashes} (\$delete=true)
+\item 
+\hyperlink{classCPSWebUser_a3ac1554d96ad28d5ab40d8ea5b6a11fe}{getFlash} (\$key, \$defaultValue=null, \$delete=true)
+\item 
+\hyperlink{classCPSWebUser_a7ae4f6603338ff51e36d4da8219b3a64}{setFlash} (\$key, \$value, \$defaultValue=null)
+\item 
+\hyperlink{classCPSWebUser_a0ac89d09ac48bba800f8dd87a0e790fc}{hasFlash} (\$key)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSWebUser_a107270c20cd489703e8868eaa0621a43}{\$\_\-stateManager} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file CPSWebUser.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSWebUser_a1ff82bdcd6747129d97e12934db2def8}{
+\index{CPSWebUser@{CPSWebUser}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSWebUser@{CPSWebUser}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ keyPrefix = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebUser_a1ff82bdcd6747129d97e12934db2def8}
+Constructor with optional state key prefix override 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$keyPrefix \end{DoxyParams}
+
+
+Definition at line 42 of file CPSWebUser.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Initialize the state key prefix
+        $this->_stateManager = new CPSStateManager( $keyPrefix );
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSWebUser_a5623d45a4dfcce122b732b0377364d66}{
+\index{CPSWebUser@{CPSWebUser}!clearStates@{clearStates}}
+\index{clearStates@{clearStates}!CPSWebUser@{CPSWebUser}}
+\subsubsection[{clearStates}]{\setlength{\rightskip}{0pt plus 5cm}clearStates (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebUser_a5623d45a4dfcce122b732b0377364d66}
+Clears all user identity information from persistent storage. This will remove the data stored via \hyperlink{}{setState}. 
+
+Definition at line 100 of file CPSWebUser.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->_stateManager->clearStates();
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebUser_a3ac1554d96ad28d5ab40d8ea5b6a11fe}{
+\index{CPSWebUser@{CPSWebUser}!getFlash@{getFlash}}
+\index{getFlash@{getFlash}!CPSWebUser@{CPSWebUser}}
+\subsubsection[{getFlash}]{\setlength{\rightskip}{0pt plus 5cm}getFlash (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ defaultValue = {\ttfamily null}, }
+\item[{\$}]{ delete = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebUser_a3ac1554d96ad28d5ab40d8ea5b6a11fe}
+Returns a flash message. A flash message is available only in the current and the next requests. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key key identifying the flash message \item[{\em mixed}]\$defaultValue value to be returned if the flash message is not available. \item[{\em boolean}]\$delete whether to delete this flash message after accessing it. Defaults to true. This parameter has been available since version 1.0.2. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed the message message 
+\end{DoxyReturn}
+
+
+Definition at line 126 of file CPSWebUser.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->_stateManager->getFlash( $key, $defaultValue, $delete );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebUser_ae29eea2995e7e3e2789181f632ae95a5}{
+\index{CPSWebUser@{CPSWebUser}!getFlashes@{getFlashes}}
+\index{getFlashes@{getFlashes}!CPSWebUser@{CPSWebUser}}
+\subsubsection[{getFlashes}]{\setlength{\rightskip}{0pt plus 5cm}getFlashes (
+\begin{DoxyParamCaption}
+\item[{\$}]{ delete = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebUser_ae29eea2995e7e3e2789181f632ae95a5}
+Returns all flash messages. This method is similar to \hyperlink{}{getFlash} except that it returns all currently available flash messages. 
+\begin{DoxyParams}{Parameters}
+\item[{\em boolean}]\$delete whether to delete the flash messages after calling this method. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array flash messages (key =$>$ message). 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file CPSWebUser.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->_stateManager->getFlashes( $delete );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebUser_a8bf40ae0d2528f36e3df46e28f56e1c8}{
+\index{CPSWebUser@{CPSWebUser}!getState@{getState}}
+\index{getState@{getState}!CPSWebUser@{CPSWebUser}}
+\subsubsection[{getState}]{\setlength{\rightskip}{0pt plus 5cm}getState (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ defaultValue = {\ttfamily null}, }
+\item[{\$}]{ isFlash = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebUser_a8bf40ae0d2528f36e3df46e28f56e1c8}
+Returns the value of a variable that is stored in user session.
+
+This function is designed to be used by CWebUser descendant classes who want to store additional user information in user session. A variable, if stored in user session using \hyperlink{}{setState} can be retrieved back using this function.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key variable name \item[{\em mixed}]\$defaultValue default value \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed the value of the variable. If it doesn't exist in the session, the provided default value will be returned 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSWebUser_aafc00fb76764975385c8a3fa54cfece3}{setState} 
+\end{DoxySeeAlso}
+
+
+Definition at line 61 of file CPSWebUser.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->_stateManager->getState( $key, $defaultValue, $isFlash );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebUser_a491b3681067e7f3651afb7ff1bf533e8}{
+\index{CPSWebUser@{CPSWebUser}!getStateManager@{getStateManager}}
+\index{getStateManager@{getStateManager}!CPSWebUser@{CPSWebUser}}
+\subsubsection[{getStateManager}]{\setlength{\rightskip}{0pt plus 5cm}getStateManager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebUser_a491b3681067e7f3651afb7ff1bf533e8}
+
+
+Definition at line 31 of file CPSWebUser.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_stateManager; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebUser_a0ac89d09ac48bba800f8dd87a0e790fc}{
+\index{CPSWebUser@{CPSWebUser}!hasFlash@{hasFlash}}
+\index{hasFlash@{hasFlash}!CPSWebUser@{CPSWebUser}}
+\subsubsection[{hasFlash}]{\setlength{\rightskip}{0pt plus 5cm}hasFlash (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebUser_a0ac89d09ac48bba800f8dd87a0e790fc}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key key identifying the flash message \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean whether the specified flash message exists 
+\end{DoxyReturn}
+
+
+Definition at line 148 of file CPSWebUser.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->_stateManager->hasFlash( $key );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebUser_ab04376998e1a1094f4c415a79018ca96}{
+\index{CPSWebUser@{CPSWebUser}!hasState@{hasState}}
+\index{hasState@{hasState}!CPSWebUser@{CPSWebUser}}
+\subsubsection[{hasState}]{\setlength{\rightskip}{0pt plus 5cm}hasState (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebUser_ab04376998e1a1094f4c415a79018ca96}
+Returns a value indicating whether there is a state of the specified name. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key state name \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean whether there is a state of the specified name. 
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.0.3 
+\end{DoxySince}
+
+
+Definition at line 91 of file CPSWebUser.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->_stateManager->hasState( $key );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebUser_a7ae4f6603338ff51e36d4da8219b3a64}{
+\index{CPSWebUser@{CPSWebUser}!setFlash@{setFlash}}
+\index{setFlash@{setFlash}!CPSWebUser@{CPSWebUser}}
+\subsubsection[{setFlash}]{\setlength{\rightskip}{0pt plus 5cm}setFlash (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ value, }
+\item[{\$}]{ defaultValue = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebUser_a7ae4f6603338ff51e36d4da8219b3a64}
+Stores a flash message. A flash message is available only in the current and the next requests. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key key identifying the flash message \item[{\em mixed}]\$value flash message \item[{\em mixed}]\$defaultValue if this value is the same as the flash message, the flash message will be removed. (Therefore, you can use setFlash('key',null) to remove a flash message.) \end{DoxyParams}
+
+
+Definition at line 139 of file CPSWebUser.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->_stateManager->setFlash( $key, $value, $defaultValue );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebUser_aafc00fb76764975385c8a3fa54cfece3}{
+\index{CPSWebUser@{CPSWebUser}!setState@{setState}}
+\index{setState@{setState}!CPSWebUser@{CPSWebUser}}
+\subsubsection[{setState}]{\setlength{\rightskip}{0pt plus 5cm}setState (
+\begin{DoxyParamCaption}
+\item[{\$}]{ key, }
+\item[{\$}]{ value, }
+\item[{\$}]{ defaultValue = {\ttfamily null}, }
+\item[{\$}]{ isFlash = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebUser_aafc00fb76764975385c8a3fa54cfece3}
+Stores a variable in user session.
+
+This function is designed to be used by CWebUser descendant classes who want to store additional user information in user session. By storing a variable using this function, the variable may be retrieved back later using \hyperlink{}{getState}. The variable will be persistent across page requests during a user session.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$key variable name \item[{\em mixed}]\$value variable value \item[{\em mixed}]\$defaultValue default value. If \$value===\$defaultValue, the variable will be removed from the session \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSWebUser_a8bf40ae0d2528f36e3df46e28f56e1c8}{getState} 
+\end{DoxySeeAlso}
+
+
+Definition at line 80 of file CPSWebUser.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->_stateManager->setState( $key, $value, $defaultValue, $isFlash );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWebUser_a345ca6205883a4aee6b89cd27fd093b6}{
+\index{CPSWebUser@{CPSWebUser}!setStateManager@{setStateManager}}
+\index{setStateManager@{setStateManager}!CPSWebUser@{CPSWebUser}}
+\subsubsection[{setStateManager}]{\setlength{\rightskip}{0pt plus 5cm}setStateManager (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWebUser_a345ca6205883a4aee6b89cd27fd093b6}
+
+
+Definition at line 32 of file CPSWebUser.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_stateManager = $value; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSWebUser_a107270c20cd489703e8868eaa0621a43}{
+\index{CPSWebUser@{CPSWebUser}!\$\_\-stateManager@{\$\_\-stateManager}}
+\index{\$\_\-stateManager@{\$\_\-stateManager}!CPSWebUser@{CPSWebUser}}
+\subsubsection[{\$\_\-stateManager}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-stateManager = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSWebUser_a107270c20cd489703e8868eaa0621a43}
+
+
+Definition at line 30 of file CPSWebUser.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/\hyperlink{CPSWebUser_8php}{CPSWebUser.php}\end{DoxyCompactItemize}

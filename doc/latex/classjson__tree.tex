@@ -1,0 +1,476 @@
+\hypertarget{classjson__tree}{
+\section{json\_\-tree Class Reference}
+\label{classjson__tree}\index{json\_\-tree@{json\_\-tree}}
+}
+
+
+Inheritance diagram for json\_\-tree:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classjson__tree__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for json\_\-tree:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classjson__tree__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classjson__tree_af584f19c94c86dac1e2ce0c5925e26ad}{\_\-\_\-construct} (\$table=\char`\"{}tree\char`\"{}, \$fields=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$add\_\-fields=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(\char`\"{}title\char`\"{}=$>$\char`\"{}title\char`\"{},\char`\"{}type\char`\"{}=$>$\char`\"{}type\char`\"{}))
+\item 
+\hyperlink{classjson__tree_ac9d9bf3c8445db1706adaff0a4965e25}{create\_\-node} (\$data)
+\item 
+\hyperlink{classjson__tree_ac896dcdd1535057e14cd62090a252f8f}{set\_\-data} (\$data)
+\item 
+\hyperlink{classjson__tree_ab8c85249b5295bb65cc7351e6a415906}{rename\_\-node} (\$data)
+\item 
+\hyperlink{classjson__tree_a9ce104764aac589b3c6faa3336d18a07}{move\_\-node} (\$data)
+\item 
+\hyperlink{classjson__tree_aa67515e6b060a39b45943138da065883}{remove\_\-node} (\$data)
+\item 
+\hyperlink{classjson__tree_ad3fd3b76ef6bcc1035c30a0e7a4f65cc}{get\_\-children} (\$data)
+\item 
+\hyperlink{classjson__tree_a687ec15184ed16cef8b602fbb06c7158}{search} (\$data)
+\item 
+\hyperlink{classjson__tree_a438616d6ee8d5a957b96f4316934217c}{\_\-create\_\-default} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 477 of file class.tree.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classjson__tree_af584f19c94c86dac1e2ce0c5925e26ad}{
+\index{json\_\-tree@{json\_\-tree}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!json_tree@{json\_\-tree}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ table = {\ttfamily \char`\"{}tree\char`\"{}}, }
+\item[{\$}]{ fields = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ add\_\-fields = {\ttfamily {\bf array}(\char`\"{}title\char`\"{}~=$>$~\char`\"{}title\char`\"{},~\char`\"{}type\char`\"{}~=$>$~\char`\"{}type\char`\"{})}}
+\end{DoxyParamCaption}
+)}}
+\label{classjson__tree_af584f19c94c86dac1e2ce0c5925e26ad}
+
+
+Definition at line 478 of file class.tree.php.
+
+
+
+
+\begin{DoxyCode}
+                                                                                 
+                                             {
+        parent::__construct($table, $fields);
+        $this->fields = array_merge($this->fields, $add_fields);
+        $this->add_fields = $add_fields;
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classjson__tree_a438616d6ee8d5a957b96f4316934217c}{
+\index{json\_\-tree@{json\_\-tree}!\_\-create\_\-default@{\_\-create\_\-default}}
+\index{\_\-create\_\-default@{\_\-create\_\-default}!json_tree@{json\_\-tree}}
+\subsubsection[{\_\-create\_\-default}]{\setlength{\rightskip}{0pt plus 5cm}\_\-create\_\-default (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classjson__tree_a438616d6ee8d5a957b96f4316934217c}
+
+
+Definition at line 561 of file class.tree.php.
+
+
+
+
+\begin{DoxyCode}
+                               {
+        $this->_drop();
+        $this->create_node(array(
+            "id" => 1,
+            "position" => 0,
+            "title" => "C:",
+            "type" => "drive"
+        ));
+        $this->create_node(array(
+            "id" => 1,
+            "position" => 1,
+            "title" => "D:",
+            "type" => "drive"
+        ));
+        $this->create_node(array(
+            "id" => 2,
+            "position" => 0,
+            "title" => "_demo",
+            "type" => "folder"
+        ));
+        $this->create_node(array(
+            "id" => 2,
+            "position" => 1,
+            "title" => "_docs",
+            "type" => "folder"
+        ));
+        $this->create_node(array(
+            "id" => 4,
+            "position" => 0,
+            "title" => "index.html",
+            "type" => "default"
+        ));
+        $this->create_node(array(
+            "id" => 5,
+            "position" => 1,
+            "title" => "doc.html",
+            "type" => "default"
+        ));
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classjson__tree_a438616d6ee8d5a957b96f4316934217c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{classjson__tree_a438616d6ee8d5a957b96f4316934217c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classjson__tree_ac9d9bf3c8445db1706adaff0a4965e25}{
+\index{json\_\-tree@{json\_\-tree}!create\_\-node@{create\_\-node}}
+\index{create\_\-node@{create\_\-node}!json_tree@{json\_\-tree}}
+\subsubsection[{create\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}create\_\-node (
+\begin{DoxyParamCaption}
+\item[{\$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{classjson__tree_ac9d9bf3c8445db1706adaff0a4965e25}
+
+
+Definition at line 484 of file class.tree.php.
+
+
+
+
+\begin{DoxyCode}
+                                {
+        $id = parent::_create((int)$data[$this->fields["id"]], (int)$data[$this->
+      fields["position"]]);
+        if($id) {
+            $data["id"] = $id;
+            $this->set_data($data);
+            return  "{ \"status\" : 1, \"id\" : ".(int)$id." }";
+        }
+        return "{ \"status\" : 0 }";
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classjson__tree_ac9d9bf3c8445db1706adaff0a4965e25_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=398pt]{classjson__tree_ac9d9bf3c8445db1706adaff0a4965e25_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classjson__tree_ad3fd3b76ef6bcc1035c30a0e7a4f65cc}{
+\index{json\_\-tree@{json\_\-tree}!get\_\-children@{get\_\-children}}
+\index{get\_\-children@{get\_\-children}!json_tree@{json\_\-tree}}
+\subsubsection[{get\_\-children}]{\setlength{\rightskip}{0pt plus 5cm}get\_\-children (
+\begin{DoxyParamCaption}
+\item[{\$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{classjson__tree_ad3fd3b76ef6bcc1035c30a0e7a4f65cc}
+
+
+Definition at line 531 of file class.tree.php.
+
+
+
+
+\begin{DoxyCode}
+                                 {
+        $tmp = $this->_get_children((int)$data["id"]);
+        if((int)$data["id"] === 1 && count($tmp) === 0) {
+            $this->_create_default();
+            $tmp = $this->_get_children((int)$data["id"]);
+        }
+        $result = array();
+        if((int)$data["id"] === 0) return json_encode($result);
+        foreach($tmp as $k => $v) {
+            $result[] = array(
+                "attr" => array("id" => "node_".$k, "rel" => $v[$this->fields["ty
+      pe"]]),
+                "data" => $v[$this->fields["title"]],
+                "state" => ((int)$v[$this->fields["right"]] - (int)$v[$this->fiel
+      ds["left"]] > 1) ? "closed" : ""
+            );
+        }
+        return json_encode($result);
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classjson__tree_ad3fd3b76ef6bcc1035c30a0e7a4f65cc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classjson__tree_a9ce104764aac589b3c6faa3336d18a07}{
+\index{json\_\-tree@{json\_\-tree}!move\_\-node@{move\_\-node}}
+\index{move\_\-node@{move\_\-node}!json_tree@{json\_\-tree}}
+\subsubsection[{move\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}move\_\-node (
+\begin{DoxyParamCaption}
+\item[{\$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{classjson__tree_a9ce104764aac589b3c6faa3336d18a07}
+
+
+Definition at line 506 of file class.tree.php.
+
+
+
+
+\begin{DoxyCode}
+                              { 
+        $id = parent::_move((int)$data["id"], (int)$data["ref"], (int)$data["posi
+      tion"], (int)$data["copy"]);
+        if(!$id) return "{ \"status\" : 0 }";
+        if((int)$data["copy"] && count($this->add_fields)) {
+            $ids    = array_keys($this->_get_children($id, true));
+            $data   = $this->_get_children((int)$data["id"], true);
+
+            $i = 0;
+            foreach($data as $dk => $dv) {
+                $s = "UPDATE `".$this->table."` SET `".$this->fields["id"]."` = `
+      ".$this->fields["id"]."` "; 
+                foreach($this->add_fields as $k => $v) {
+                    if(isset($dv[$k]))  $s .= ", `".$this->fields[$v]."` = \"".$t
+      his->db->escape($dv[$k])."\" ";
+                    else                $s .= ", `".$this->fields[$v]."` = `".$th
+      is->fields[$v]."` ";
+                }
+                $s .= "WHERE `".$this->fields["id"]."` = ".$ids[$i];
+                $this->db->query($s);
+                $i++;
+            }
+        }
+        return "{ \"status\" : 1, \"id\" : ".$id." }";
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classjson__tree_a9ce104764aac589b3c6faa3336d18a07_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classjson__tree_aa67515e6b060a39b45943138da065883}{
+\index{json\_\-tree@{json\_\-tree}!remove\_\-node@{remove\_\-node}}
+\index{remove\_\-node@{remove\_\-node}!json_tree@{json\_\-tree}}
+\subsubsection[{remove\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}remove\_\-node (
+\begin{DoxyParamCaption}
+\item[{\$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{classjson__tree_aa67515e6b060a39b45943138da065883}
+
+
+Definition at line 527 of file class.tree.php.
+
+
+
+
+\begin{DoxyCode}
+                                {
+        $id = parent::_remove((int)$data["id"]);
+        return "{ \"status\" : 1 }";
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classjson__tree_aa67515e6b060a39b45943138da065883_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classjson__tree_ab8c85249b5295bb65cc7351e6a415906}{
+\index{json\_\-tree@{json\_\-tree}!rename\_\-node@{rename\_\-node}}
+\index{rename\_\-node@{rename\_\-node}!json_tree@{json\_\-tree}}
+\subsubsection[{rename\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}rename\_\-node (
+\begin{DoxyParamCaption}
+\item[{\$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{classjson__tree_ab8c85249b5295bb65cc7351e6a415906}
+
+
+Definition at line 504 of file class.tree.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->set_data($data); }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classjson__tree_ab8c85249b5295bb65cc7351e6a415906_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classjson__tree_a687ec15184ed16cef8b602fbb06c7158}{
+\index{json\_\-tree@{json\_\-tree}!search@{search}}
+\index{search@{search}!json_tree@{json\_\-tree}}
+\subsubsection[{search}]{\setlength{\rightskip}{0pt plus 5cm}search (
+\begin{DoxyParamCaption}
+\item[{\$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{classjson__tree_a687ec15184ed16cef8b602fbb06c7158}
+
+
+Definition at line 548 of file class.tree.php.
+
+
+
+
+\begin{DoxyCode}
+                           {
+        $this->db->query("SELECT `".$this->fields["left"]."`, `".$this->fields["r
+      ight"]."` FROM `".$this->table."` WHERE `".$this->fields["title"]."` LIKE '%".$th
+      is->db->escape($data["search_str"])."%'");
+        if($this->db->nf() === 0) return "[]";
+        $q = "SELECT DISTINCT `".$this->fields["id"]."` FROM `".$this->table."` W
+      HERE 0 ";
+        while($this->db->nextr()) {
+            $q .= " OR (`".$this->fields["left"]."` < ".(int)$this->db->f(0)." AN
+      D `".$this->fields["right"]."` > ".(int)$this->db->f(1).") ";
+        }
+        $result = array();
+        $this->db->query($q);
+        while($this->db->nextr()) { $result[] = "#node_".$this->db->f(0); }
+        return json_encode($result);
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classjson__tree_ac896dcdd1535057e14cd62090a252f8f}{
+\index{json\_\-tree@{json\_\-tree}!set\_\-data@{set\_\-data}}
+\index{set\_\-data@{set\_\-data}!json_tree@{json\_\-tree}}
+\subsubsection[{set\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}set\_\-data (
+\begin{DoxyParamCaption}
+\item[{\$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{classjson__tree_ac896dcdd1535057e14cd62090a252f8f}
+
+
+Definition at line 493 of file class.tree.php.
+
+
+
+
+\begin{DoxyCode}
+                             {
+        if(count($this->add_fields) == 0) { return "{ \"status\" : 1 }"; }
+        $s = "UPDATE `".$this->table."` SET `".$this->fields["id"]."` = `".$this-
+      >fields["id"]."` "; 
+        foreach($this->add_fields as $k => $v) {
+            if(isset($data[$k]))    $s .= ", `".$this->fields[$v]."` = \"".$this-
+      >db->escape($data[$k])."\" ";
+            else                    $s .= ", `".$this->fields[$v]."` = `".$this->
+      fields[$v]."` ";
+        }
+        $s .= "WHERE `".$this->fields["id"]."` = ".(int)$data["id"];
+        $this->db->query($s);
+        return "{ \"status\" : 1 }";
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classjson__tree_ac896dcdd1535057e14cd62090a252f8f_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/external/jquery-\/plugins/jsTree/\_\-demo/\_\-inc/\hyperlink{class_8tree_8php}{class.tree.php}\end{DoxyCompactItemize}

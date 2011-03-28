@@ -1,0 +1,549 @@
+\hypertarget{classCPSYelpApi}{
+\section{CPSYelpApi Class Reference}
+\label{classCPSYelpApi}\index{CPSYelpApi@{CPSYelpApi}}
+}
+
+
+Inheritance diagram for CPSYelpApi:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classCPSYelpApi__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSYelpApi:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classCPSYelpApi__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSYelpApi_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSYelpApi_abbc7cfd6f653a4f824454111b1b4bd83}{getReviewsByBounds} (\$fTLLat, \$fTLLong, \$fBRLat, \$fBRLong, \$sSearchTerm=null, \$iMaxResults=10, \$sCategories=null)
+\item 
+\hyperlink{classCPSYelpApi_a3231452e69758a94b0b659d1598b84f0}{getReviewsByPoint} (\$fLat, \$fLong, \$iRadius=null, \$sSearchTerm=null, \$iMaxResults=10, \$sCategories=null)
+\item 
+\hyperlink{classCPSYelpApi_a5de03f812e5cbf44675d49536cd65a9e}{getReviewsByNeighborhood} (\$sLocation, \$iRadius=null, \$sSearchTerm=null, \$iMaxResults=10, \$sCountryCode=null, \$sCategories=null)
+\item 
+\hyperlink{classCPSYelpApi_a69f527b0718ffd791c4e7fb7146d9c1a}{getPhoneByNumber} (\$sPhone, \$sCountryCode=null, \$sCategories=null)
+\item 
+\hyperlink{classCPSYelpApi_abac78cf39007878c6ec3eaed9c2b9961}{getNeighborhoodByPoint} (\$fLat, \$fLong, \$sCountryCode=null, \$sCategories=null)
+\item 
+\hyperlink{classCPSYelpApi_a658f708430f9aaa6dfcc13fabdb4adc3}{getNeighborhoodByLocation} (\$sLocation, \$sCountryCode=null, \$sCategories=null)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSYelpApi_a9b561bcfa096fa859d70ff6e96b51b19}{YELP\_\-REVIEW\_\-API} = 'review'
+\item 
+const \hyperlink{classCPSYelpApi_a8123f4b6b144f8a3eb0d4ed3b6fb2128}{YELP\_\-PHONE\_\-API} = 'phone'
+\item 
+const \hyperlink{classCPSYelpApi_ada9a084b29490d7ad96bc435526966e5}{YELP\_\-NEIGHBORHOOD\_\-API} = 'neighborhood'
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file CPSYelpApi.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSYelpApi_a658f708430f9aaa6dfcc13fabdb4adc3}{
+\index{CPSYelpApi@{CPSYelpApi}!getNeighborhoodByLocation@{getNeighborhoodByLocation}}
+\index{getNeighborhoodByLocation@{getNeighborhoodByLocation}!CPSYelpApi@{CPSYelpApi}}
+\subsubsection[{getNeighborhoodByLocation}]{\setlength{\rightskip}{0pt plus 5cm}getNeighborhoodByLocation (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sLocation, }
+\item[{\$}]{ sCountryCode = {\ttfamily null}, }
+\item[{\$}]{ sCategories = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSYelpApi_a658f708430f9aaa6dfcc13fabdb4adc3}
+Gets data from the Yelp Neighborhood API
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$sLocation \item[{\em mixed}]\$sCountryCode \item[{\em mixed}]\$sCategories \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 261 of file CPSYelpApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::YELP_NEIGHBORHOOD_API;
+
+        $this->requestData = array(
+            'location' => $sLocation,
+        );
+
+        if ( $sCountryCode != null )
+            $this->requestData[ 'countryCode' ] = $sCountryCode;
+
+        if ( $sCategories != null )
+            $this->requestData[ 'category' ] = $sCategories;
+
+        return( $this->makeRequest( 'location' ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSYelpApi_a658f708430f9aaa6dfcc13fabdb4adc3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSYelpApi_abac78cf39007878c6ec3eaed9c2b9961}{
+\index{CPSYelpApi@{CPSYelpApi}!getNeighborhoodByPoint@{getNeighborhoodByPoint}}
+\index{getNeighborhoodByPoint@{getNeighborhoodByPoint}!CPSYelpApi@{CPSYelpApi}}
+\subsubsection[{getNeighborhoodByPoint}]{\setlength{\rightskip}{0pt plus 5cm}getNeighborhoodByPoint (
+\begin{DoxyParamCaption}
+\item[{\$}]{ fLat, }
+\item[{\$}]{ fLong, }
+\item[{\$}]{ sCountryCode = {\ttfamily null}, }
+\item[{\$}]{ sCategories = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSYelpApi_abac78cf39007878c6ec3eaed9c2b9961}
+Gets data from the Yelp Neighborhood API by geo-\/point
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$fLat \item[{\em mixed}]\$fLong \item[{\em mixed}]\$sCountryCode \item[{\em mixed}]\$sCategories \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 235 of file CPSYelpApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::YELP_NEIGHBORHOOD_API;
+
+        $this->requestData = array(
+            'latitude' => $fLat,
+            'longitude' => $fLong,
+        );
+
+        if ( $sCountryCode != null )
+            $this->requestData[ 'countryCode' ] = $sCountryCode;
+
+        if ( $sCategories != null )
+            $this->requestData[ 'category' ] = $sCategories;
+
+        return( $this->makeRequest( 'phone' ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSYelpApi_abac78cf39007878c6ec3eaed9c2b9961_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSYelpApi_a69f527b0718ffd791c4e7fb7146d9c1a}{
+\index{CPSYelpApi@{CPSYelpApi}!getPhoneByNumber@{getPhoneByNumber}}
+\index{getPhoneByNumber@{getPhoneByNumber}!CPSYelpApi@{CPSYelpApi}}
+\subsubsection[{getPhoneByNumber}]{\setlength{\rightskip}{0pt plus 5cm}getPhoneByNumber (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sPhone, }
+\item[{\$}]{ sCountryCode = {\ttfamily null}, }
+\item[{\$}]{ sCategories = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSYelpApi_a69f527b0718ffd791c4e7fb7146d9c1a}
+
+
+Definition at line 209 of file CPSYelpApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::YELP_PHONE_API;
+
+        $this->requestData = array(
+            'phone' => $sPhone,
+        );
+
+        if ( $sCountryCode != null )
+            $this->requestData[ 'countryCode' ] = $sCountryCode;
+
+        if ( $sCategories != null )
+            $this->requestData[ 'category' ] = $sCategories;
+
+        return( $this->makeRequest( 'number' ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSYelpApi_a69f527b0718ffd791c4e7fb7146d9c1a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSYelpApi_abbc7cfd6f653a4f824454111b1b4bd83}{
+\index{CPSYelpApi@{CPSYelpApi}!getReviewsByBounds@{getReviewsByBounds}}
+\index{getReviewsByBounds@{getReviewsByBounds}!CPSYelpApi@{CPSYelpApi}}
+\subsubsection[{getReviewsByBounds}]{\setlength{\rightskip}{0pt plus 5cm}getReviewsByBounds (
+\begin{DoxyParamCaption}
+\item[{\$}]{ fTLLat, }
+\item[{\$}]{ fTLLong, }
+\item[{\$}]{ fBRLat, }
+\item[{\$}]{ fBRLong, }
+\item[{\$}]{ sSearchTerm = {\ttfamily null}, }
+\item[{\$}]{ iMaxResults = {\ttfamily 10}, }
+\item[{\$}]{ sCategories = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSYelpApi_abbc7cfd6f653a4f824454111b1b4bd83}
+Calls the Yelp API and retrieves reviews by bounding rectancle.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$fTLLat \item[{\em mixed}]\$fTLLong \item[{\em mixed}]\$fBRLat \item[{\em mixed}]\$fBRLong \item[{\em mixed}]\$sSearchTerm \item[{\em mixed}]\$iMaxResults \item[{\em mixed}]\$sCategories \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 111 of file CPSYelpApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::YELP_REVIEW_API;
+
+        $this->requestData = array(
+            'topLeftLatitude' => $fTLLat,
+            'topLeftLongitude' => $fTLLong,
+            'bottomRightLatitude' => $fBRLat,
+            'bottomRightLongitude' => $fBRLong,
+            'maxResults' => $iMaxResults,
+        );
+
+        if ( $sSearchTerm != null )
+            $this->requestData[ 'searchTerm' ] = $sSearchTerm;
+
+        if ( $sCategories != null )
+            $this->requestData[ 'category' ] = $sCategories;
+
+        return( $this->makeRequest( 'boundingBox' ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSYelpApi_abbc7cfd6f653a4f824454111b1b4bd83_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSYelpApi_a5de03f812e5cbf44675d49536cd65a9e}{
+\index{CPSYelpApi@{CPSYelpApi}!getReviewsByNeighborhood@{getReviewsByNeighborhood}}
+\index{getReviewsByNeighborhood@{getReviewsByNeighborhood}!CPSYelpApi@{CPSYelpApi}}
+\subsubsection[{getReviewsByNeighborhood}]{\setlength{\rightskip}{0pt plus 5cm}getReviewsByNeighborhood (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sLocation, }
+\item[{\$}]{ iRadius = {\ttfamily null}, }
+\item[{\$}]{ sSearchTerm = {\ttfamily null}, }
+\item[{\$}]{ iMaxResults = {\ttfamily 10}, }
+\item[{\$}]{ sCountryCode = {\ttfamily null}, }
+\item[{\$}]{ sCategories = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSYelpApi_a5de03f812e5cbf44675d49536cd65a9e}
+Calls the Yelp API and retrieves reviews by location
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$sLocation \item[{\em mixed}]\$iRadius \item[{\em mixed}]\$sSearchTerm \item[{\em mixed}]\$iMaxResults \item[{\em mixed}]\$sCategories \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 175 of file CPSYelpApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::YELP_REVIEW_API;
+
+        $this->requestData = array(
+            'latitude' => $fLat,
+            'longitude' => $fLong,
+            'maxResults' => $iMaxResults,
+            'location' => $sLocation,
+        );
+
+        if ( $iRadius != null )
+            $this->requestData[ 'radius' ] = $iRadius;
+
+        if ( $sSearchTerm != null )
+            $this->requestData[ 'searchTerm' ] = $sSearchTerm;
+
+        if ( $sCountryCode != null )
+            $this->requestData[ 'countryCode' ] = $sCountryCode;
+
+        if ( $sCategories != null )
+            $this->requestData[ 'category' ] = $sCategories;
+
+        return( $this->makeRequest( 'location' ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSYelpApi_a5de03f812e5cbf44675d49536cd65a9e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSYelpApi_a3231452e69758a94b0b659d1598b84f0}{
+\index{CPSYelpApi@{CPSYelpApi}!getReviewsByPoint@{getReviewsByPoint}}
+\index{getReviewsByPoint@{getReviewsByPoint}!CPSYelpApi@{CPSYelpApi}}
+\subsubsection[{getReviewsByPoint}]{\setlength{\rightskip}{0pt plus 5cm}getReviewsByPoint (
+\begin{DoxyParamCaption}
+\item[{\$}]{ fLat, }
+\item[{\$}]{ fLong, }
+\item[{\$}]{ iRadius = {\ttfamily null}, }
+\item[{\$}]{ sSearchTerm = {\ttfamily null}, }
+\item[{\$}]{ iMaxResults = {\ttfamily 10}, }
+\item[{\$}]{ sCategories = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSYelpApi_a3231452e69758a94b0b659d1598b84f0}
+Calls the Yelp API and retrieves reviews by geo-\/point
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$fLat \item[{\em mixed}]\$fLong \item[{\em mixed}]\$iRadius \item[{\em mixed}]\$sSearchTerm \item[{\em mixed}]\$iMaxResults \item[{\em mixed}]\$sCategories \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 143 of file CPSYelpApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->apiToUse = self::YELP_REVIEW_API;
+
+        $this->requestData = array(
+            'latitude' => $fLat,
+            'longitude' => $fLong,
+            'maxResults' => $iMaxResults,
+        );
+
+        if ( $iRadius != null )
+            $this->requestData[ 'radius' ] = $iRadius;
+
+        if ( $sSearchTerm != null )
+            $this->requestData[ 'searchTerm' ] = $sSearchTerm;
+
+        if ( $sCategories != null )
+            $this->requestData[ 'category' ] = $sCategories;
+
+        return( $this->makeRequest( 'point' ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSYelpApi_a3231452e69758a94b0b659d1598b84f0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSYelpApi_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSYelpApi@{CPSYelpApi}!init@{init}}
+\index{init@{init}!CPSYelpApi@{CPSYelpApi}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSYelpApi_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize 
+
+Reimplemented from \hyperlink{classCPSApiComponent_a4be4055f3361d4800e16bc2e2e38cda6}{CPSApiComponent}.
+
+
+
+Definition at line 40 of file CPSYelpApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Call daddy
+        parent::init();
+
+        //  Set Yelp API defaults
+        $this->requireApiQueryName = true;
+        $this->apiQueryName = 'ywsid';
+        $this->apiBaseUrl = 'http://api.yelp.com';
+
+        //  The valid Yelp APIs to call
+        $this->apiSubUrls =
+            array(
+                self::YELP_REVIEW_API => 'business_review_search',
+                self::YELP_PHONE_API => 'phone_search',
+                self::YELP_NEIGHBORHOOD_API => 'neighborhood_search',
+            );
+
+        //  Create the base array
+        $this->requestMap = array();
+
+        //  Review API
+        $this->addRequestMapping( 'searchTerm', 'term', false, null, self::YELP_R
+      EVIEW_API, 'boundingBox' );
+        $this->addRequestMapping( 'maxResults', 'num_biz_requested' );
+        $this->addRequestMapping( 'topLeftLatitude', 'tl_lat', true );
+        $this->addRequestMapping( 'topLeftLongitude', 'tl_long', true );
+        $this->addRequestMapping( 'bottomRightLatitude', 'br_lat', true );
+        $this->addRequestMapping( 'bottomRightLongitude', 'br_long', true );
+        $this->addRequestMapping( 'category' );
+
+        $this->addRequestMapping( 'searchTerm', 'term', false, null, self::YELP_R
+      EVIEW_API, 'point' );
+        $this->addRequestMapping( 'maxResults', 'num_biz_requested' );
+        $this->addRequestMapping( 'latitude', 'lat', true );
+        $this->addRequestMapping( 'longitude', 'long', true );
+        $this->addRequestMapping( 'radius' );
+        $this->addRequestMapping( 'category' );
+
+        $this->addRequestMapping( 'searchTerm', 'term', false, null, self::YELP_R
+      EVIEW_API, 'location' );
+        $this->addRequestMapping( 'maxResults', 'num_biz_requested' );
+        $this->addRequestMapping( 'location', 'location', true );
+        $this->addRequestMapping( 'countryCode', 'cc' );
+        $this->addRequestMapping( 'radius' );
+        $this->addRequestMapping( 'category' );
+
+        //  Phone API
+        $this->addRequestMapping( 'phoneNumber', 'phone', false, null, self::YELP
+      _PHONE_API, 'number' );
+        $this->addRequestMapping( 'countryCode', 'cc' );
+        $this->addRequestMapping( 'category' );
+
+        //  Neighborhood API
+        $this->addRequestMapping( 'latitude', 'lat', true, null, self::YELP_NEIGH
+      BORHOOD_API, 'point' );
+        $this->addRequestMapping( 'longitude', 'long', true );
+        $this->addRequestMapping( 'category' );
+
+        $this->addRequestMapping( 'location', null, true, null, self::YELP_NEIGHB
+      ORHOOD_API, 'location' );
+        $this->addRequestMapping( 'countryCode', 'cc' );
+        $this->addRequestMapping( 'category' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=358pt]{classCPSYelpApi_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSYelpApi_ada9a084b29490d7ad96bc435526966e5}{
+\index{CPSYelpApi@{CPSYelpApi}!YELP\_\-NEIGHBORHOOD\_\-API@{YELP\_\-NEIGHBORHOOD\_\-API}}
+\index{YELP\_\-NEIGHBORHOOD\_\-API@{YELP\_\-NEIGHBORHOOD\_\-API}!CPSYelpApi@{CPSYelpApi}}
+\subsubsection[{YELP\_\-NEIGHBORHOOD\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf YELP\_\-NEIGHBORHOOD\_\-API} = 'neighborhood'}}
+\label{classCPSYelpApi_ada9a084b29490d7ad96bc435526966e5}
+
+
+Definition at line 30 of file CPSYelpApi.php.
+
+\hypertarget{classCPSYelpApi_a8123f4b6b144f8a3eb0d4ed3b6fb2128}{
+\index{CPSYelpApi@{CPSYelpApi}!YELP\_\-PHONE\_\-API@{YELP\_\-PHONE\_\-API}}
+\index{YELP\_\-PHONE\_\-API@{YELP\_\-PHONE\_\-API}!CPSYelpApi@{CPSYelpApi}}
+\subsubsection[{YELP\_\-PHONE\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf YELP\_\-PHONE\_\-API} = 'phone'}}
+\label{classCPSYelpApi_a8123f4b6b144f8a3eb0d4ed3b6fb2128}
+
+
+Definition at line 29 of file CPSYelpApi.php.
+
+\hypertarget{classCPSYelpApi_a9b561bcfa096fa859d70ff6e96b51b19}{
+\index{CPSYelpApi@{CPSYelpApi}!YELP\_\-REVIEW\_\-API@{YELP\_\-REVIEW\_\-API}}
+\index{YELP\_\-REVIEW\_\-API@{YELP\_\-REVIEW\_\-API}!CPSYelpApi@{CPSYelpApi}}
+\subsubsection[{YELP\_\-REVIEW\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf YELP\_\-REVIEW\_\-API} = 'review'}}
+\label{classCPSYelpApi_a9b561bcfa096fa859d70ff6e96b51b19}
+
+
+Definition at line 28 of file CPSYelpApi.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/yelp/\hyperlink{CPSYelpApi_8php}{CPSYelpApi.php}\end{DoxyCompactItemize}

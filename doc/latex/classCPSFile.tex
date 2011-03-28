@@ -1,0 +1,538 @@
+\hypertarget{classCPSFile}{
+\section{CPSFile Class Reference}
+\label{classCPSFile}\index{CPSFile@{CPSFile}}
+}
+
+
+Inheritance diagram for CPSFile:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classCPSFile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSFile:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classCPSFile__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFile_afdeebfe3fcf5806fc79c074a6a3a6eb1}{getFileName} ()
+\item 
+\hyperlink{classCPSFile_a1b1482c674bfd28271ba857daeb9199b}{getFileHandle} ()
+\item 
+\hyperlink{classCPSFile_aae2e3c4d391bb2351f514744bf7fba9e}{validHandle} ()
+\item 
+\hyperlink{classCPSFile_ad81e40515c7001c2a87387139b2a67de}{\_\-\_\-construct} (\$sName)
+\item 
+\hyperlink{classCPSFile_a44a2ac59a3b91f8c18905dce700934d6}{open} ()
+\item 
+\hyperlink{classCPSFile_aa69c8bf1f1dcf4e72552efff1fe3e87e}{close} ()
+\item 
+\hyperlink{classCPSFile_ae58f5bfc44861200aa7b5ccb9b7a096a}{filesize} ()
+\item 
+\hyperlink{classCPSFile_a168004cb787954e08154d53996c3b3a1}{atime} ()
+\item 
+\hyperlink{classCPSFile_a6395b5e84b44077d841d8515b8d0edb9}{fileowner} ()
+\item 
+\hyperlink{classCPSFile_abdd0b8e262c2a85a189c9bed3889ce9b}{filegroup} ()
+\item 
+\hyperlink{classCPSFile_aacd8c35344e506b2482ea295e9254efb}{fseek} (\$iOffset=0)
+\item 
+\hyperlink{classCPSFile_aae5813010acec168823283ed5d15d46c}{ftell} ()
+\item 
+\hyperlink{classCPSFile_a5b19ed5f237444f20db557482cef799e}{fgets} (\$iOffset=0)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSFile_a72ce389198502eabc1a52fb24abd8685}{\$m\_\-sFileName} = false
+\item 
+\hyperlink{classCPSFile_ae1c439cc9ed3168e874825f2f8e01dfc}{\$m\_\-iFileHandle} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 47 of file CPSFile.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSFile_ad81e40515c7001c2a87387139b2a67de}{
+\index{CPSFile@{CPSFile}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSFile@{CPSFile}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ config}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFile_ad81e40515c7001c2a87387139b2a67de}
+Constructs a component. 
+
+Reimplemented from \hyperlink{classCPSComponent_af7f9493844d2d66e924e3c1df51ce616}{CPSComponent}.
+
+
+
+Definition at line 72 of file CPSFile.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_sFileName = $sName;
+        $this->open();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{classCPSFile_ad81e40515c7001c2a87387139b2a67de_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSFile_a168004cb787954e08154d53996c3b3a1}{
+\index{CPSFile@{CPSFile}!atime@{atime}}
+\index{atime@{atime}!CPSFile@{CPSFile}}
+\subsubsection[{atime}]{\setlength{\rightskip}{0pt plus 5cm}atime (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFile_a168004cb787954e08154d53996c3b3a1}
+
+
+Definition at line 100 of file CPSFile.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->validHandle() && fileatime( $this->m_sFileName );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classCPSFile_a168004cb787954e08154d53996c3b3a1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFile_aa69c8bf1f1dcf4e72552efff1fe3e87e}{
+\index{CPSFile@{CPSFile}!close@{close}}
+\index{close@{close}!CPSFile@{CPSFile}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFile_aa69c8bf1f1dcf4e72552efff1fe3e87e}
+
+
+Definition at line 89 of file CPSFile.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        @fclose( $this->m_iFileHandle );
+        $this->m_iFileSize = $this->m_iFileHandle = false;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFile_a5b19ed5f237444f20db557482cef799e}{
+\index{CPSFile@{CPSFile}!fgets@{fgets}}
+\index{fgets@{fgets}!CPSFile@{CPSFile}}
+\subsubsection[{fgets}]{\setlength{\rightskip}{0pt plus 5cm}fgets (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iOffset = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFile_a5b19ed5f237444f20db557482cef799e}
+Retrieves a string from the current file 
+
+Definition at line 128 of file CPSFile.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( false !== $this->ftell() )
+            rewind( $this->m_iFileHandle );
+
+        return fgets( $this->m_iFileHandle );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classCPSFile_a5b19ed5f237444f20db557482cef799e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFile_abdd0b8e262c2a85a189c9bed3889ce9b}{
+\index{CPSFile@{CPSFile}!filegroup@{filegroup}}
+\index{filegroup@{filegroup}!CPSFile@{CPSFile}}
+\subsubsection[{filegroup}]{\setlength{\rightskip}{0pt plus 5cm}filegroup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFile_abdd0b8e262c2a85a189c9bed3889ce9b}
+
+
+Definition at line 110 of file CPSFile.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->validHandle() && filegroup( $this->m_sFileName );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classCPSFile_abdd0b8e262c2a85a189c9bed3889ce9b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFile_a6395b5e84b44077d841d8515b8d0edb9}{
+\index{CPSFile@{CPSFile}!fileowner@{fileowner}}
+\index{fileowner@{fileowner}!CPSFile@{CPSFile}}
+\subsubsection[{fileowner}]{\setlength{\rightskip}{0pt plus 5cm}fileowner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFile_a6395b5e84b44077d841d8515b8d0edb9}
+
+
+Definition at line 105 of file CPSFile.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->validHandle() && fileowner( $this->m_sFileName );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classCPSFile_a6395b5e84b44077d841d8515b8d0edb9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFile_ae58f5bfc44861200aa7b5ccb9b7a096a}{
+\index{CPSFile@{CPSFile}!filesize@{filesize}}
+\index{filesize@{filesize}!CPSFile@{CPSFile}}
+\subsubsection[{filesize}]{\setlength{\rightskip}{0pt plus 5cm}filesize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFile_ae58f5bfc44861200aa7b5ccb9b7a096a}
+
+
+Definition at line 95 of file CPSFile.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->validHandle() && filesize( $this->m_sFileName );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classCPSFile_ae58f5bfc44861200aa7b5ccb9b7a096a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFile_aacd8c35344e506b2482ea295e9254efb}{
+\index{CPSFile@{CPSFile}!fseek@{fseek}}
+\index{fseek@{fseek}!CPSFile@{CPSFile}}
+\subsubsection[{fseek}]{\setlength{\rightskip}{0pt plus 5cm}fseek (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iOffset = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFile_aacd8c35344e506b2482ea295e9254efb}
+
+
+Definition at line 115 of file CPSFile.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->validHandle() && fseek( $this->m_iFileHandle, $iOffset );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classCPSFile_aacd8c35344e506b2482ea295e9254efb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFile_aae5813010acec168823283ed5d15d46c}{
+\index{CPSFile@{CPSFile}!ftell@{ftell}}
+\index{ftell@{ftell}!CPSFile@{CPSFile}}
+\subsubsection[{ftell}]{\setlength{\rightskip}{0pt plus 5cm}ftell (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFile_aae5813010acec168823283ed5d15d46c}
+
+
+Definition at line 120 of file CPSFile.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->validHandle() && ftell( $this->m_iFileHandle );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classCPSFile_aae5813010acec168823283ed5d15d46c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classCPSFile_aae5813010acec168823283ed5d15d46c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFile_a1b1482c674bfd28271ba857daeb9199b}{
+\index{CPSFile@{CPSFile}!getFileHandle@{getFileHandle}}
+\index{getFileHandle@{getFileHandle}!CPSFile@{CPSFile}}
+\subsubsection[{getFileHandle}]{\setlength{\rightskip}{0pt plus 5cm}getFileHandle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFile_a1b1482c674bfd28271ba857daeb9199b}
+
+
+Definition at line 65 of file CPSFile.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_iFileHandle; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFile_afdeebfe3fcf5806fc79c074a6a3a6eb1}{
+\index{CPSFile@{CPSFile}!getFileName@{getFileName}}
+\index{getFileName@{getFileName}!CPSFile@{CPSFile}}
+\subsubsection[{getFileName}]{\setlength{\rightskip}{0pt plus 5cm}getFileName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFile_afdeebfe3fcf5806fc79c074a6a3a6eb1}
+
+
+Definition at line 58 of file CPSFile.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_sFileName; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSFile_a44a2ac59a3b91f8c18905dce700934d6}{
+\index{CPSFile@{CPSFile}!open@{open}}
+\index{open@{open}!CPSFile@{CPSFile}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFile_a44a2ac59a3b91f8c18905dce700934d6}
+
+
+Definition at line 78 of file CPSFile.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( file_exists( $this->m_sFileName ) )
+        {
+            if ( false !== ( $this->m_iFileHandle = @fopen( $this->m_sFileName, '
+      a+' ) ) )
+                $this->m_iFileHandle = @fopen( $this->m_sFileName, 'r' );
+        }
+
+        return $this->validHandle();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classCPSFile_a44a2ac59a3b91f8c18905dce700934d6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classCPSFile_a44a2ac59a3b91f8c18905dce700934d6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSFile_aae2e3c4d391bb2351f514744bf7fba9e}{
+\index{CPSFile@{CPSFile}!validHandle@{validHandle}}
+\index{validHandle@{validHandle}!CPSFile@{CPSFile}}
+\subsubsection[{validHandle}]{\setlength{\rightskip}{0pt plus 5cm}validHandle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSFile_aae2e3c4d391bb2351f514744bf7fba9e}
+
+
+Definition at line 66 of file CPSFile.php.
+
+
+
+
+\begin{DoxyCode}
+{ return ( false !== $this->m_iFileHandle ); }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=356pt]{classCPSFile_aae2e3c4d391bb2351f514744bf7fba9e_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSFile_ae1c439cc9ed3168e874825f2f8e01dfc}{
+\index{CPSFile@{CPSFile}!\$m\_\-iFileHandle@{\$m\_\-iFileHandle}}
+\index{\$m\_\-iFileHandle@{\$m\_\-iFileHandle}!CPSFile@{CPSFile}}
+\subsubsection[{\$m\_\-iFileHandle}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-iFileHandle = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFile_ae1c439cc9ed3168e874825f2f8e01dfc}
+
+
+Definition at line 64 of file CPSFile.php.
+
+\hypertarget{classCPSFile_a72ce389198502eabc1a52fb24abd8685}{
+\index{CPSFile@{CPSFile}!\$m\_\-sFileName@{\$m\_\-sFileName}}
+\index{\$m\_\-sFileName@{\$m\_\-sFileName}!CPSFile@{CPSFile}}
+\subsubsection[{\$m\_\-sFileName}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sFileName = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSFile_a72ce389198502eabc1a52fb24abd8685}
+
+
+Definition at line 57 of file CPSFile.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/\hyperlink{CPSFile_8php}{CPSFile.php}\end{DoxyCompactItemize}

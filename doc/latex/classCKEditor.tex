@@ -1,0 +1,971 @@
+\hypertarget{classCKEditor}{
+\section{CKEditor Class Reference}
+\label{classCKEditor}\index{CKEditor@{CKEditor}}
+}
+
+
+\hyperlink{classCKEditor}{CKEditor} class that can be used to create editor instances in PHP pages on server side.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCKEditor_af5592b1cfc47d4b2af1d1c058e2ff548}{CKEditor} (\$\hyperlink{standalone_8php_a94a267f018012b013582daafb6a89618}{basePath}=null)
+\item 
+\hyperlink{classCKEditor_a7379361d078919956eb2ce371f0e85d9}{editor} (\$name, \$value=\char`\"{}\char`\"{}, \$\hyperlink{events_8php_a3f176ffce3afa63656bfc989470e3e24}{config}=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$events=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCKEditor_ac798a39de3a7a9e96295b34dd497d73c}{replace} (\$id, \$\hyperlink{events_8php_a3f176ffce3afa63656bfc989470e3e24}{config}=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$events=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCKEditor_ae4962c323d713734f27740845a315c68}{replaceAll} (\$className=null)
+\item 
+\hyperlink{classCKEditor_a016cd23cfdcf8e5dff8555129776f80d}{addEventHandler} (\$event, \$javascriptCode)
+\item 
+\hyperlink{classCKEditor_a711b8195ab3ccc474b2a13a2d6639787}{clearEventHandlers} (\$event=null)
+\item 
+\hyperlink{classCKEditor_af31450c711eefdf7b446e53feae93b98}{addGlobalEventHandler} (\$event, \$javascriptCode)
+\item 
+\hyperlink{classCKEditor_ad67af605e90bb21364347dffab4b6c08}{clearGlobalEventHandlers} (\$event=null)
+\item 
+\hyperlink{classCKEditor_a8ae3723f80da5cc6652f2f0b059824fd}{\_\-\_\-construct} (\$\hyperlink{standalone_8php_a94a267f018012b013582daafb6a89618}{basePath}=null)
+\item 
+\hyperlink{classCKEditor_a7379361d078919956eb2ce371f0e85d9}{editor} (\$name, \$value=\char`\"{}\char`\"{}, \$\hyperlink{events_8php_a3f176ffce3afa63656bfc989470e3e24}{config}=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$events=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCKEditor_ac798a39de3a7a9e96295b34dd497d73c}{replace} (\$id, \$\hyperlink{events_8php_a3f176ffce3afa63656bfc989470e3e24}{config}=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$events=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCKEditor_ae4962c323d713734f27740845a315c68}{replaceAll} (\$className=null)
+\item 
+\hyperlink{classCKEditor_a016cd23cfdcf8e5dff8555129776f80d}{addEventHandler} (\$event, \$javascriptCode)
+\item 
+\hyperlink{classCKEditor_a711b8195ab3ccc474b2a13a2d6639787}{clearEventHandlers} (\$event=null)
+\item 
+\hyperlink{classCKEditor_af31450c711eefdf7b446e53feae93b98}{addGlobalEventHandler} (\$event, \$javascriptCode)
+\item 
+\hyperlink{classCKEditor_ad67af605e90bb21364347dffab4b6c08}{clearGlobalEventHandlers} (\$event=null)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCKEditor_a9cd745428004768fe921475a29a7d870}{\$basePath}
+\item 
+\hyperlink{classCKEditor_a49c7011be9c979d9174c52a8b83e5d8e}{\$config} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}()
+\item 
+\hyperlink{classCKEditor_a533c66c9995bd9f022b5f5b325c12ad4}{\$initialized} = false
+\item 
+\hyperlink{classCKEditor_a5970de8e632edcc5a145c18382ad5f86}{\$returnOutput} = false
+\item 
+\hyperlink{classCKEditor_a98562b08f6a3c136e6478d9f563fb2ea}{\$textareaAttributes} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}( \char`\"{}rows\char`\"{} =$>$ 8, \char`\"{}cols\char`\"{} =$>$ 60 )
+\item 
+\hyperlink{classCKEditor_a2b69de9676dd97c675cd4d9bcceb684c}{\$timestamp} = \char`\"{}ABLC4TW\char`\"{}
+\item 
+const \hyperlink{classCKEditor_a265a39dcf2f0b7c6b96574362aa01ad9}{version} = '3.5'
+\item 
+const \hyperlink{classCKEditor_a60f5680e2f56092a5803e2e95315eb88}{timestamp} = 'ABLC4TW'
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCKEditor}{CKEditor} class that can be used to create editor instances in PHP pages on server side. \begin{DoxySeeAlso}{See also}
+\href{http://ckeditor.com}{\tt http://ckeditor.com}
+\end{DoxySeeAlso}
+Sample usage: 
+\begin{DoxyCode}
+ $CKEditor = new CKEditor();
+ $CKEditor->editor("editor1", "<p>Initial value.</p>");
+\end{DoxyCode}
+ 
+
+Definition at line 18 of file ckeditor\_\-php4.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCKEditor_a8ae3723f80da5cc6652f2f0b059824fd}{
+\index{CKEditor@{CKEditor}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CKEditor@{CKEditor}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ basePath = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_a8ae3723f80da5cc6652f2f0b059824fd}
+Main Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$basePath}](string) URL to the CKEditor installation directory (optional). \end{DoxyParams}
+
+
+Definition at line 96 of file ckeditor\_\-php5.php.
+
+
+
+
+\begin{DoxyCode}
+                                           {
+        if (!empty($basePath)) {
+            $this->basePath = $basePath;
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCKEditor_a016cd23cfdcf8e5dff8555129776f80d}{
+\index{CKEditor@{CKEditor}!addEventHandler@{addEventHandler}}
+\index{addEventHandler@{addEventHandler}!CKEditor@{CKEditor}}
+\subsubsection[{addEventHandler}]{\setlength{\rightskip}{0pt plus 5cm}addEventHandler (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event, }
+\item[{\$}]{ javascriptCode}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_a016cd23cfdcf8e5dff8555129776f80d}
+Adds event listener. Events are fired by CKEditor in various situations.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$event}](string) Event name. \item[{\em \$javascriptCode}](string) Javascript anonymous function or function name.\end{DoxyParams}
+Example usage: 
+\begin{DoxyCode}
+ $CKEditor->addEventHandler('instanceReady', 'function (ev) {
+     alert("Loaded: " + ev.editor.name);
+ }');
+\end{DoxyCode}
+ 
+
+Definition at line 275 of file ckeditor\_\-php4.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if (!isset($this->_events[$event])) {
+            $this->_events[$event] = array();
+        }
+        // Avoid duplicates.
+        if (!in_array($javascriptCode, $this->_events[$event])) {
+            $this->_events[$event][] = $javascriptCode;
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCKEditor_a016cd23cfdcf8e5dff8555129776f80d}{
+\index{CKEditor@{CKEditor}!addEventHandler@{addEventHandler}}
+\index{addEventHandler@{addEventHandler}!CKEditor@{CKEditor}}
+\subsubsection[{addEventHandler}]{\setlength{\rightskip}{0pt plus 5cm}addEventHandler (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event, }
+\item[{\$}]{ javascriptCode}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_a016cd23cfdcf8e5dff8555129776f80d}
+Adds event listener. Events are fired by CKEditor in various situations.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$event}](string) Event name. \item[{\em \$javascriptCode}](string) Javascript anonymous function or function name.\end{DoxyParams}
+Example usage: 
+\begin{DoxyCode}
+ $CKEditor->addEventHandler('instanceReady', 'function (ev) {
+     alert("Loaded: " + ev.editor.name);
+ }');
+\end{DoxyCode}
+ 
+
+Definition at line 271 of file ckeditor\_\-php5.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if (!isset($this->events[$event])) {
+            $this->events[$event] = array();
+        }
+        // Avoid duplicates.
+        if (!in_array($javascriptCode, $this->events[$event])) {
+            $this->events[$event][] = $javascriptCode;
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCKEditor_af31450c711eefdf7b446e53feae93b98}{
+\index{CKEditor@{CKEditor}!addGlobalEventHandler@{addGlobalEventHandler}}
+\index{addGlobalEventHandler@{addGlobalEventHandler}!CKEditor@{CKEditor}}
+\subsubsection[{addGlobalEventHandler}]{\setlength{\rightskip}{0pt plus 5cm}addGlobalEventHandler (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event, }
+\item[{\$}]{ javascriptCode}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_af31450c711eefdf7b446e53feae93b98}
+Adds global event listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$event}](string) Event name. \item[{\em \$javascriptCode}](string) Javascript anonymous function or function name.\end{DoxyParams}
+Example usage: 
+\begin{DoxyCode}
+ $CKEditor->addGlobalEventHandler('dialogDefinition', 'function (ev) {
+     alert("Loading dialog: " + ev.data.name);
+ }');
+\end{DoxyCode}
+ 
+
+Definition at line 315 of file ckeditor\_\-php4.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if (!isset($this->_globalEvents[$event])) {
+            $this->_globalEvents[$event] = array();
+        }
+        // Avoid duplicates.
+        if (!in_array($javascriptCode, $this->_globalEvents[$event])) {
+            $this->_globalEvents[$event][] = $javascriptCode;
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCKEditor_af31450c711eefdf7b446e53feae93b98}{
+\index{CKEditor@{CKEditor}!addGlobalEventHandler@{addGlobalEventHandler}}
+\index{addGlobalEventHandler@{addGlobalEventHandler}!CKEditor@{CKEditor}}
+\subsubsection[{addGlobalEventHandler}]{\setlength{\rightskip}{0pt plus 5cm}addGlobalEventHandler (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event, }
+\item[{\$}]{ javascriptCode}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_af31450c711eefdf7b446e53feae93b98}
+Adds global event listener.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$event}](string) Event name. \item[{\em \$javascriptCode}](string) Javascript anonymous function or function name.\end{DoxyParams}
+Example usage: 
+\begin{DoxyCode}
+ $CKEditor->addGlobalEventHandler('dialogDefinition', 'function (ev) {
+     alert("Loading dialog: " + ev.data.name);
+ }');
+\end{DoxyCode}
+ 
+
+Definition at line 311 of file ckeditor\_\-php5.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if (!isset($this->globalEvents[$event])) {
+            $this->globalEvents[$event] = array();
+        }
+        // Avoid duplicates.
+        if (!in_array($javascriptCode, $this->globalEvents[$event])) {
+            $this->globalEvents[$event][] = $javascriptCode;
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCKEditor_af5592b1cfc47d4b2af1d1c058e2ff548}{
+\index{CKEditor@{CKEditor}!CKEditor@{CKEditor}}
+\index{CKEditor@{CKEditor}!CKEditor@{CKEditor}}
+\subsubsection[{CKEditor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CKEditor} (
+\begin{DoxyParamCaption}
+\item[{\$}]{ basePath = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_af5592b1cfc47d4b2af1d1c058e2ff548}
+Main Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$basePath}](string) URL to the CKEditor installation directory (optional). \end{DoxyParams}
+
+
+Definition at line 100 of file ckeditor\_\-php4.php.
+
+
+
+
+\begin{DoxyCode}
+                                        {
+        if (!empty($basePath)) {
+            $this->basePath = $basePath;
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCKEditor_a711b8195ab3ccc474b2a13a2d6639787}{
+\index{CKEditor@{CKEditor}!clearEventHandlers@{clearEventHandlers}}
+\index{clearEventHandlers@{clearEventHandlers}!CKEditor@{CKEditor}}
+\subsubsection[{clearEventHandlers}]{\setlength{\rightskip}{0pt plus 5cm}clearEventHandlers (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_a711b8195ab3ccc474b2a13a2d6639787}
+Clear registered event handlers. Note: this function will have no effect on already created editor instances.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$event}](string) Event name, if not set all event handlers will be removed (optional). \end{DoxyParams}
+
+
+Definition at line 288 of file ckeditor\_\-php5.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if (!empty($event)) {
+            $this->events[$event] = array();
+        }
+        else {
+            $this->events = array();
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCKEditor_a711b8195ab3ccc474b2a13a2d6639787}{
+\index{CKEditor@{CKEditor}!clearEventHandlers@{clearEventHandlers}}
+\index{clearEventHandlers@{clearEventHandlers}!CKEditor@{CKEditor}}
+\subsubsection[{clearEventHandlers}]{\setlength{\rightskip}{0pt plus 5cm}clearEventHandlers (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_a711b8195ab3ccc474b2a13a2d6639787}
+Clear registered event handlers. Note: this function will have no effect on already created editor instances.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$event}](string) Event name, if not set all event handlers will be removed (optional). \end{DoxyParams}
+
+
+Definition at line 292 of file ckeditor\_\-php4.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if (!empty($event)) {
+            $this->_events[$event] = array();
+        }
+        else {
+            $this->_events = array();
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCKEditor_ad67af605e90bb21364347dffab4b6c08}{
+\index{CKEditor@{CKEditor}!clearGlobalEventHandlers@{clearGlobalEventHandlers}}
+\index{clearGlobalEventHandlers@{clearGlobalEventHandlers}!CKEditor@{CKEditor}}
+\subsubsection[{clearGlobalEventHandlers}]{\setlength{\rightskip}{0pt plus 5cm}clearGlobalEventHandlers (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_ad67af605e90bb21364347dffab4b6c08}
+Clear registered global event handlers. Note: this function will have no effect if the event handler has been already printed/returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$event}](string) Event name, if not set all event handlers will be removed (optional). \end{DoxyParams}
+
+
+Definition at line 332 of file ckeditor\_\-php4.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if (!empty($event)) {
+            $this->_globalEvents[$event] = array();
+        }
+        else {
+            $this->_globalEvents = array();
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCKEditor_ad67af605e90bb21364347dffab4b6c08}{
+\index{CKEditor@{CKEditor}!clearGlobalEventHandlers@{clearGlobalEventHandlers}}
+\index{clearGlobalEventHandlers@{clearGlobalEventHandlers}!CKEditor@{CKEditor}}
+\subsubsection[{clearGlobalEventHandlers}]{\setlength{\rightskip}{0pt plus 5cm}clearGlobalEventHandlers (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_ad67af605e90bb21364347dffab4b6c08}
+Clear registered global event handlers. Note: this function will have no effect if the event handler has been already printed/returned.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$event}](string) Event name, if not set all event handlers will be removed (optional). \end{DoxyParams}
+
+
+Definition at line 328 of file ckeditor\_\-php5.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if (!empty($event)) {
+            $this->globalEvents[$event] = array();
+        }
+        else {
+            $this->globalEvents = array();
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCKEditor_a7379361d078919956eb2ce371f0e85d9}{
+\index{CKEditor@{CKEditor}!editor@{editor}}
+\index{editor@{editor}!CKEditor@{CKEditor}}
+\subsubsection[{editor}]{\setlength{\rightskip}{0pt plus 5cm}editor (
+\begin{DoxyParamCaption}
+\item[{\$}]{ name, }
+\item[{\$}]{ value = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{\$}]{ config = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ events = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_a7379361d078919956eb2ce371f0e85d9}
+Creates a CKEditor instance. In incompatible browsers CKEditor will downgrade to plain HTML $<$textarea$>$ element.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$name}](string) Name of the CKEditor instance (this will be also the \char`\"{}name\char`\"{} attribute of textarea element). \item[{\em \$value}](string) Initial value (optional). \item[{\em \$config}](array) The specific configurations to apply to this editor instance (optional). \item[{\em \$events}](array) Event listeners for this editor instance (optional).\end{DoxyParams}
+Example usage: 
+\begin{DoxyCode}
+ $CKEditor = new CKEditor();
+ $CKEditor->editor("field1", "<p>Initial value.</p>");
+\end{DoxyCode}
+
+
+Advanced example: 
+\begin{DoxyCode}
+ $CKEditor = new CKEditor();
+ $config = array();
+ $config['toolbar'] = array(
+     array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike' ),
+     array( 'Image', 'Link', 'Unlink', 'Anchor' )
+ );
+ $events['instanceReady'] = 'function (ev) {
+     alert("Loaded: " + ev.editor.name);
+ }';
+ $CKEditor->editor("field1", "<p>Initial value.</p>", $config, $events);
+\end{DoxyCode}
+ 
+
+Definition at line 131 of file ckeditor\_\-php5.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $attr = "";
+        foreach ($this->textareaAttributes as $key => $val) {
+            $attr.= " " . $key . '="' . str_replace('"', '&quot;', $val) . '"';
+        }
+        $out = "<textarea name=\"" . $name . "\"" . $attr . ">" . htmlspecialchar
+      s($value) . "</textarea>\n";
+        if (!$this->initialized) {
+            $out .= $this->init();
+        }
+
+        $_config = $this->configSettings($config, $events);
+
+        $js = $this->returnGlobalEvents();
+        if (!empty($_config))
+            $js .= "CKEDITOR.replace('".$name."', ".$this->jsEncode($_config).");
+      ";
+        else
+            $js .= "CKEDITOR.replace('".$name."');";
+
+        $out .= $this->script($js);
+
+        if (!$this->returnOutput) {
+            print $out;
+            $out = "";
+        }
+
+        return $out;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCKEditor_a7379361d078919956eb2ce371f0e85d9}{
+\index{CKEditor@{CKEditor}!editor@{editor}}
+\index{editor@{editor}!CKEditor@{CKEditor}}
+\subsubsection[{editor}]{\setlength{\rightskip}{0pt plus 5cm}editor (
+\begin{DoxyParamCaption}
+\item[{\$}]{ name, }
+\item[{\$}]{ value = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{\$}]{ config = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ events = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_a7379361d078919956eb2ce371f0e85d9}
+Creates a CKEditor instance. In incompatible browsers CKEditor will downgrade to plain HTML $<$textarea$>$ element.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$name}](string) Name of the CKEditor instance (this will be also the \char`\"{}name\char`\"{} attribute of textarea element). \item[{\em \$value}](string) Initial value (optional). \item[{\em \$config}](array) The specific configurations to apply to this editor instance (optional). \item[{\em \$events}](array) Event listeners for this editor instance (optional).\end{DoxyParams}
+Example usage: 
+\begin{DoxyCode}
+ $CKEditor = new CKEditor();
+ $CKEditor->editor("field1", "<p>Initial value.</p>");
+\end{DoxyCode}
+
+
+Advanced example: 
+\begin{DoxyCode}
+ $CKEditor = new CKEditor();
+ $config = array();
+ $config['toolbar'] = array(
+     array( 'Source', '-', 'Bold', 'Italic', 'Underline', 'Strike' ),
+     array( 'Image', 'Link', 'Unlink', 'Anchor' )
+ );
+ $events['instanceReady'] = 'function (ev) {
+     alert("Loaded: " + ev.editor.name);
+ }';
+ $CKEditor->editor("field1", "<p>Initial value.</p>", $config, $events);
+\end{DoxyCode}
+ 
+
+Definition at line 135 of file ckeditor\_\-php4.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $attr = "";
+        foreach ($this->textareaAttributes as $key => $val) {
+            $attr.= " " . $key . '="' . str_replace('"', '&quot;', $val) . '"';
+        }
+        $out = "<textarea name=\"" . $name . "\"" . $attr . ">" . htmlspecialchar
+      s($value) . "</textarea>\n";
+        if (!$this->initialized) {
+            $out .= $this->init();
+        }
+
+        $_config = $this->configSettings($config, $events);
+
+        $js = $this->returnGlobalEvents();
+        if (!empty($_config))
+            $js .= "CKEDITOR.replace('".$name."', ".$this->jsEncode($_config).");
+      ";
+        else
+            $js .= "CKEDITOR.replace('".$name."');";
+
+        $out .= $this->script($js);
+
+        if (!$this->returnOutput) {
+            print $out;
+            $out = "";
+        }
+
+        return $out;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCKEditor_ac798a39de3a7a9e96295b34dd497d73c}{
+\index{CKEditor@{CKEditor}!replace@{replace}}
+\index{replace@{replace}!CKEditor@{CKEditor}}
+\subsubsection[{replace}]{\setlength{\rightskip}{0pt plus 5cm}replace (
+\begin{DoxyParamCaption}
+\item[{\$}]{ id, }
+\item[{\$}]{ config = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ events = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_ac798a39de3a7a9e96295b34dd497d73c}
+Replaces a $<$textarea$>$ with a CKEditor instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$id}](string) The id or name of textarea element. \item[{\em \$config}](array) The specific configurations to apply to this editor instance (optional). \item[{\em \$events}](array) Event listeners for this editor instance (optional).\end{DoxyParams}
+Example 1: adding CKEditor to $<$textarea name=\char`\"{}article\char`\"{}$>$$<$/textarea$>$ element: 
+\begin{DoxyCode}
+ $CKEditor = new CKEditor();
+ $CKEditor->replace("article");
+\end{DoxyCode}
+ 
+
+Definition at line 177 of file ckeditor\_\-php4.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $out = "";
+        if (!$this->initialized) {
+            $out .= $this->init();
+        }
+
+        $_config = $this->configSettings($config, $events);
+
+        $js = $this->returnGlobalEvents();
+        if (!empty($_config)) {
+            $js .= "CKEDITOR.replace('".$id."', ".$this->jsEncode($_config).");";
+      
+        }
+        else {
+            $js .= "CKEDITOR.replace('".$id."');";
+        }
+        $out .= $this->script($js);
+
+        if (!$this->returnOutput) {
+            print $out;
+            $out = "";
+        }
+
+        return $out;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCKEditor_ac798a39de3a7a9e96295b34dd497d73c}{
+\index{CKEditor@{CKEditor}!replace@{replace}}
+\index{replace@{replace}!CKEditor@{CKEditor}}
+\subsubsection[{replace}]{\setlength{\rightskip}{0pt plus 5cm}replace (
+\begin{DoxyParamCaption}
+\item[{\$}]{ id, }
+\item[{\$}]{ config = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ events = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_ac798a39de3a7a9e96295b34dd497d73c}
+Replaces a $<$textarea$>$ with a CKEditor instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$id}](string) The id or name of textarea element. \item[{\em \$config}](array) The specific configurations to apply to this editor instance (optional). \item[{\em \$events}](array) Event listeners for this editor instance (optional).\end{DoxyParams}
+Example 1: adding CKEditor to $<$textarea name=\char`\"{}article\char`\"{}$>$$<$/textarea$>$ element: 
+\begin{DoxyCode}
+ $CKEditor = new CKEditor();
+ $CKEditor->replace("article");
+\end{DoxyCode}
+ 
+
+Definition at line 173 of file ckeditor\_\-php5.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $out = "";
+        if (!$this->initialized) {
+            $out .= $this->init();
+        }
+
+        $_config = $this->configSettings($config, $events);
+
+        $js = $this->returnGlobalEvents();
+        if (!empty($_config)) {
+            $js .= "CKEDITOR.replace('".$id."', ".$this->jsEncode($_config).");";
+      
+        }
+        else {
+            $js .= "CKEDITOR.replace('".$id."');";
+        }
+        $out .= $this->script($js);
+
+        if (!$this->returnOutput) {
+            print $out;
+            $out = "";
+        }
+
+        return $out;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCKEditor_ae4962c323d713734f27740845a315c68}{
+\index{CKEditor@{CKEditor}!replaceAll@{replaceAll}}
+\index{replaceAll@{replaceAll}!CKEditor@{CKEditor}}
+\subsubsection[{replaceAll}]{\setlength{\rightskip}{0pt plus 5cm}replaceAll (
+\begin{DoxyParamCaption}
+\item[{\$}]{ className = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_ae4962c323d713734f27740845a315c68}
+Replace all $<$textarea$>$ elements available in the document with editor instances.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$className}](string) If set, replace all textareas with class className in the page.\end{DoxyParams}
+Example 1: replace all $<$textarea$>$ elements in the page. 
+\begin{DoxyCode}
+ $CKEditor = new CKEditor();
+ $CKEditor->replaceAll();
+\end{DoxyCode}
+
+
+Example 2: replace all $<$textarea class=\char`\"{}myClassName\char`\"{}$>$ elements in the page. 
+\begin{DoxyCode}
+ $CKEditor = new CKEditor();
+ $CKEditor->replaceAll( 'myClassName' );
+\end{DoxyCode}
+ 
+
+Definition at line 220 of file ckeditor\_\-php4.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $out = "";
+        if (!$this->initialized) {
+            $out .= $this->init();
+        }
+
+        $_config = $this->configSettings();
+
+        $js = $this->returnGlobalEvents();
+        if (empty($_config)) {
+            if (empty($className)) {
+                $js .= "CKEDITOR.replaceAll();";
+            }
+            else {
+                $js .= "CKEDITOR.replaceAll('".$className."');";
+            }
+        }
+        else {
+            $classDetection = "";
+            $js .= "CKEDITOR.replaceAll( function(textarea, config) {\n";
+            if (!empty($className)) {
+                $js .= "    var classRegex = new RegExp('(?:^| )' + '". 
+      $className ."' + '(?:$| )');\n";
+                $js .= "    if (!classRegex.test(textarea.className))\n";
+                $js .= "        return false;\n";
+            }
+            $js .= "    CKEDITOR.tools.extend(config, ". $this->jsEncode($_config
+      ) .", true);";
+            $js .= "} );";
+
+        }
+
+        $out .= $this->script($js);
+
+        if (!$this->returnOutput) {
+            print $out;
+            $out = "";
+        }
+
+        return $out;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCKEditor_ae4962c323d713734f27740845a315c68}{
+\index{CKEditor@{CKEditor}!replaceAll@{replaceAll}}
+\index{replaceAll@{replaceAll}!CKEditor@{CKEditor}}
+\subsubsection[{replaceAll}]{\setlength{\rightskip}{0pt plus 5cm}replaceAll (
+\begin{DoxyParamCaption}
+\item[{\$}]{ className = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCKEditor_ae4962c323d713734f27740845a315c68}
+Replace all $<$textarea$>$ elements available in the document with editor instances.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em \$className}](string) If set, replace all textareas with class className in the page.\end{DoxyParams}
+Example 1: replace all $<$textarea$>$ elements in the page. 
+\begin{DoxyCode}
+ $CKEditor = new CKEditor();
+ $CKEditor->replaceAll();
+\end{DoxyCode}
+
+
+Example 2: replace all $<$textarea class=\char`\"{}myClassName\char`\"{}$>$ elements in the page. 
+\begin{DoxyCode}
+ $CKEditor = new CKEditor();
+ $CKEditor->replaceAll( 'myClassName' );
+\end{DoxyCode}
+ 
+
+Definition at line 216 of file ckeditor\_\-php5.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $out = "";
+        if (!$this->initialized) {
+            $out .= $this->init();
+        }
+
+        $_config = $this->configSettings();
+
+        $js = $this->returnGlobalEvents();
+        if (empty($_config)) {
+            if (empty($className)) {
+                $js .= "CKEDITOR.replaceAll();";
+            }
+            else {
+                $js .= "CKEDITOR.replaceAll('".$className."');";
+            }
+        }
+        else {
+            $classDetection = "";
+            $js .= "CKEDITOR.replaceAll( function(textarea, config) {\n";
+            if (!empty($className)) {
+                $js .= "    var classRegex = new RegExp('(?:^| )' + '". 
+      $className ."' + '(?:$| )');\n";
+                $js .= "    if (!classRegex.test(textarea.className))\n";
+                $js .= "        return false;\n";
+            }
+            $js .= "    CKEDITOR.tools.extend(config, ". $this->jsEncode($_config
+      ) .", true);";
+            $js .= "} );";
+
+        }
+
+        $out .= $this->script($js);
+
+        if (!$this->returnOutput) {
+            print $out;
+            $out = "";
+        }
+
+        return $out;
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCKEditor_a9cd745428004768fe921475a29a7d870}{
+\index{CKEditor@{CKEditor}!\$basePath@{\$basePath}}
+\index{\$basePath@{\$basePath}!CKEditor@{CKEditor}}
+\subsubsection[{\$basePath}]{\setlength{\rightskip}{0pt plus 5cm}\${\bf basePath}}}
+\label{classCKEditor_a9cd745428004768fe921475a29a7d870}
+URL to the CKEditor installation directory (absolute or relative to document root). If not set, \hyperlink{classCKEditor}{CKEditor} will try to guess it's path.
+
+Example usage: 
+\begin{DoxyCode}
+ $CKEditor->basePath = '/ckeditor/';
+\end{DoxyCode}
+ 
+
+Definition at line 40 of file ckeditor\_\-php4.php.
+
+\hypertarget{classCKEditor_a49c7011be9c979d9174c52a8b83e5d8e}{
+\index{CKEditor@{CKEditor}!\$config@{\$config}}
+\index{\$config@{\$config}!CKEditor@{CKEditor}}
+\subsubsection[{\$config}]{\setlength{\rightskip}{0pt plus 5cm}\${\bf config} = {\bf array}()}}
+\label{classCKEditor_a49c7011be9c979d9174c52a8b83e5d8e}
+An array that holds the global CKEditor configuration. For the list of available options, see \href{http://docs.cksource.com/ckeditor_api/symbols/CKEDITOR.config.html}{\tt http://docs.cksource.com/ckeditor\_\-api/symbols/CKEDITOR.config.html}
+
+Example usage: 
+\begin{DoxyCode}
+ $CKEditor->config['height'] = 400;
+ // Use @@ at the beggining of a string to ouput it without surrounding quotes.
+ $CKEditor->config['width'] = '@@screen.width * 0.8';
+\end{DoxyCode}
+ 
+
+Definition at line 52 of file ckeditor\_\-php4.php.
+
+\hypertarget{classCKEditor_a533c66c9995bd9f022b5f5b325c12ad4}{
+\index{CKEditor@{CKEditor}!\$initialized@{\$initialized}}
+\index{\$initialized@{\$initialized}!CKEditor@{CKEditor}}
+\subsubsection[{\$initialized}]{\setlength{\rightskip}{0pt plus 5cm}\$initialized = false}}
+\label{classCKEditor_a533c66c9995bd9f022b5f5b325c12ad4}
+A boolean variable indicating whether \hyperlink{classCKEditor}{CKEditor} has been initialized. Set it to true only if you have already included $<$script$>$ tag loading ckeditor.js in your website. 
+
+Definition at line 58 of file ckeditor\_\-php4.php.
+
+\hypertarget{classCKEditor_a5970de8e632edcc5a145c18382ad5f86}{
+\index{CKEditor@{CKEditor}!\$returnOutput@{\$returnOutput}}
+\index{\$returnOutput@{\$returnOutput}!CKEditor@{CKEditor}}
+\subsubsection[{\$returnOutput}]{\setlength{\rightskip}{0pt plus 5cm}\${\bf returnOutput} = false}}
+\label{classCKEditor_a5970de8e632edcc5a145c18382ad5f86}
+Boolean variable indicating whether created code should be printed out or returned by a function.
+
+Example 1: get the code creating CKEditor instance and print it on a page with the \char`\"{}echo\char`\"{} function. 
+\begin{DoxyCode}
+ $CKEditor = new CKEditor();
+ $CKEditor->returnOutput = true;
+ $code = $CKEditor->editor("editor1", "<p>Initial value.</p>");
+ echo "<p>Editor 1:</p>";
+ echo $code;
+\end{DoxyCode}
+ 
+
+Definition at line 71 of file ckeditor\_\-php4.php.
+
+\hypertarget{classCKEditor_a98562b08f6a3c136e6478d9f563fb2ea}{
+\index{CKEditor@{CKEditor}!\$textareaAttributes@{\$textareaAttributes}}
+\index{\$textareaAttributes@{\$textareaAttributes}!CKEditor@{CKEditor}}
+\subsubsection[{\$textareaAttributes}]{\setlength{\rightskip}{0pt plus 5cm}\${\bf textareaAttributes} = {\bf array}( \char`\"{}rows\char`\"{} =$>$ 8, \char`\"{}cols\char`\"{} =$>$ 60 )}}
+\label{classCKEditor_a98562b08f6a3c136e6478d9f563fb2ea}
+An array with textarea attributes.
+
+When CKEditor is created with the \hyperlink{classCKEditor_a7379361d078919956eb2ce371f0e85d9}{editor()} method, a HTML $<$textarea$>$ element is created, it will be displayed to anyone with JavaScript disabled or with incompatible browser. 
+
+Definition at line 78 of file ckeditor\_\-php4.php.
+
+\hypertarget{classCKEditor_a2b69de9676dd97c675cd4d9bcceb684c}{
+\index{CKEditor@{CKEditor}!\$timestamp@{\$timestamp}}
+\index{\$timestamp@{\$timestamp}!CKEditor@{CKEditor}}
+\subsubsection[{\$timestamp}]{\setlength{\rightskip}{0pt plus 5cm}\${\bf timestamp} = \char`\"{}ABLC4TW\char`\"{}}}
+\label{classCKEditor_a2b69de9676dd97c675cd4d9bcceb684c}
+A string indicating the creation date of CKEditor. Do not change it unless you want to force browsers to not use previously cached version of CKEditor. 
+
+Definition at line 83 of file ckeditor\_\-php4.php.
+
+\hypertarget{classCKEditor_a60f5680e2f56092a5803e2e95315eb88}{
+\index{CKEditor@{CKEditor}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!CKEditor@{CKEditor}}
+\subsubsection[{timestamp}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf timestamp} = 'ABLC4TW'}}
+\label{classCKEditor_a60f5680e2f56092a5803e2e95315eb88}
+A constant string unique for each release of CKEditor. 
+
+Definition at line 27 of file ckeditor\_\-php5.php.
+
+\hypertarget{classCKEditor_a265a39dcf2f0b7c6b96574362aa01ad9}{
+\index{CKEditor@{CKEditor}!version@{version}}
+\index{version@{version}!CKEditor@{CKEditor}}
+\subsubsection[{version}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf version} = '3.5'}}
+\label{classCKEditor_a265a39dcf2f0b7c6b96574362aa01ad9}
+The version of CKEditor. 
+
+Definition at line 23 of file ckeditor\_\-php5.php.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/external/ckeditor/\hyperlink{ckeditor__php4_8php}{ckeditor\_\-php4.php}\item 
+/usr/local/yiixl/lib/original/external/ckeditor/\hyperlink{ckeditor__php5_8php}{ckeditor\_\-php5.php}\end{DoxyCompactItemize}

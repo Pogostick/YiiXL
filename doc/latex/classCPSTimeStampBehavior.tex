@@ -1,0 +1,485 @@
+\hypertarget{classCPSTimeStampBehavior}{
+\section{CPSTimeStampBehavior Class Reference}
+\label{classCPSTimeStampBehavior}\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+}
+
+
+Inheritance diagram for CPSTimeStampBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classCPSTimeStampBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSTimeStampBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classCPSTimeStampBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSTimeStampBehavior_a8f30d2f5137dec1a5bcba7f92bac85ea}{getCreatedColumn} ()
+\item 
+\hyperlink{classCPSTimeStampBehavior_ac971c96e31951188e5bdaa4a1b1bb830}{setCreatedColumn} (\$sValue)
+\item 
+\hyperlink{classCPSTimeStampBehavior_a0520eaecacbc08f3715a45f48b364dc1}{getCreatedByColumn} ()
+\item 
+\hyperlink{classCPSTimeStampBehavior_aad8ce1abdb4c67d3bba0b7e23eace5cc}{setCreatedByColumn} (\$sValue)
+\item 
+\hyperlink{classCPSTimeStampBehavior_adc811d2d32eb4d41d2f8258123fe816a}{getLModColumn} ()
+\item 
+\hyperlink{classCPSTimeStampBehavior_a3879514c9fffb4454e80ab7842b7b31f}{setLModColumn} (\$sValue)
+\item 
+\hyperlink{classCPSTimeStampBehavior_a387974600fbbb7e54a35e8d1872d217e}{getLModByColumn} ()
+\item 
+\hyperlink{classCPSTimeStampBehavior_a456d37e379c8461458723668d7e499a2}{setLModByColumn} (\$sValue)
+\item 
+\hyperlink{classCPSTimeStampBehavior_a256dd113f3eddd49910867cd68ec8fc3}{getDateTimeFunction} ()
+\item 
+\hyperlink{classCPSTimeStampBehavior_aefc5940715628851cc5f6a8c0889b9cd}{setDateTimeFunction} (\$sValue)
+\item 
+\hyperlink{classCPSTimeStampBehavior_aa5c060e82c03c840ac5f7cb630cd251b}{beforeValidate} (\$oEvent)
+\item 
+\hyperlink{classCPSTimeStampBehavior_ae99ec12f90f0458dbd6e2d9dcce34620}{showDates} ()
+\item 
+\hyperlink{classCPSTimeStampBehavior_aa5ac765fd764508a2e486e01a725b4a1}{touch} (\$additionalColumns=null)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSTimeStampBehavior_acb667183b5f36f920d81dd529029b1cb}{\$m\_\-sCreatedColumn} = null
+\item 
+\hyperlink{classCPSTimeStampBehavior_a878fd48a0be875af51d1713e5c7406cd}{\$m\_\-sCreatedByColumn} = null
+\item 
+\hyperlink{classCPSTimeStampBehavior_a2b569f58b9a9d36d7740ef74e38965d8}{\$m\_\-sLModColumn} = null
+\item 
+\hyperlink{classCPSTimeStampBehavior_ab00e4dbf2eb5aad2fa70ff6d024eb310}{\$m\_\-sLModByColumn} = null
+\item 
+\hyperlink{classCPSTimeStampBehavior_a36fc4c35bb816130af2c51aa1bf23cf2}{\$m\_\-sDateTimeFunction} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file CPSTimeStampBehavior.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSTimeStampBehavior_aa5c060e82c03c840ac5f7cb630cd251b}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!beforeValidate@{beforeValidate}}
+\index{beforeValidate@{beforeValidate}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{beforeValidate}]{\setlength{\rightskip}{0pt plus 5cm}beforeValidate (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oEvent}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTimeStampBehavior_aa5c060e82c03c840ac5f7cb630cd251b}
+Timestamps row 
+\begin{DoxyParams}{Parameters}
+\item[{\em CModelEvent}]\$oEvent \end{DoxyParams}
+
+
+Definition at line 86 of file CPSTimeStampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Handle created stamp
+        if ( $oEvent->sender->isNewRecord )
+        {
+            if ( $this->m_sCreatedColumn && $oEvent->sender->hasAttribute( $this-
+      >m_sCreatedColumn ) )
+                $this->owner->setAttribute( $this->m_sCreatedColumn, ( null === $
+      this->m_sDateTimeFunction ) ? date('Y-m-d H:i:s') : eval('return ' . $this->m_sDa
+      teTimeFunction . ';') );
+                    
+            if ( $this->m_sCreatedByColumn && $oEvent->sender->hasAttribute( $thi
+      s->m_sCreatedByColumn ) && ! $oEvent->sender->getAttribute( $this->m_sCreatedByCo
+      lumn ) )
+                $this->owner->setAttribute( $this->m_sCreatedByColumn, Yii::app()
+      ->user->getId() );
+        }
+            
+        //  Handle lmod stamp
+        if ( $this->m_sLModColumn && $oEvent->sender->hasAttribute( $this->m_sLMo
+      dColumn ) )
+                $this->owner->setAttribute( $this->m_sLModColumn, ( null === $thi
+      s->m_sDateTimeFunction ) ? date('Y-m-d H:i:s') : eval('return ' . $this->m_sDateT
+      imeFunction . ';') );
+                
+        //  Handle user id stamp
+        if ( $this->m_sLModByColumn && $oEvent->sender->hasAttribute( $this->m_sL
+      ModByColumn ) && ! $oEvent->sender->getAttribute( $this->m_sLModByColumn ) )
+            $this->owner->setAttribute( $this->m_sLModByColumn, Yii::app()->user-
+      >getId() );
+                
+        return parent::beforeValidate( $oEvent );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSTimeStampBehavior_a0520eaecacbc08f3715a45f48b364dc1}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!getCreatedByColumn@{getCreatedByColumn}}
+\index{getCreatedByColumn@{getCreatedByColumn}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{getCreatedByColumn}]{\setlength{\rightskip}{0pt plus 5cm}getCreatedByColumn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTimeStampBehavior_a0520eaecacbc08f3715a45f48b364dc1}
+
+
+Definition at line 48 of file CPSTimeStampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_sCreatedByColumn; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSTimeStampBehavior_a8f30d2f5137dec1a5bcba7f92bac85ea}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!getCreatedColumn@{getCreatedColumn}}
+\index{getCreatedColumn@{getCreatedColumn}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{getCreatedColumn}]{\setlength{\rightskip}{0pt plus 5cm}getCreatedColumn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTimeStampBehavior_a8f30d2f5137dec1a5bcba7f92bac85ea}
+
+
+Definition at line 39 of file CPSTimeStampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_sCreatedColumn; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSTimeStampBehavior_a256dd113f3eddd49910867cd68ec8fc3}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!getDateTimeFunction@{getDateTimeFunction}}
+\index{getDateTimeFunction@{getDateTimeFunction}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{getDateTimeFunction}]{\setlength{\rightskip}{0pt plus 5cm}getDateTimeFunction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTimeStampBehavior_a256dd113f3eddd49910867cd68ec8fc3}
+
+
+Definition at line 75 of file CPSTimeStampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_sDateTimeFunction; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSTimeStampBehavior_a387974600fbbb7e54a35e8d1872d217e}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!getLModByColumn@{getLModByColumn}}
+\index{getLModByColumn@{getLModByColumn}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{getLModByColumn}]{\setlength{\rightskip}{0pt plus 5cm}getLModByColumn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTimeStampBehavior_a387974600fbbb7e54a35e8d1872d217e}
+
+
+Definition at line 66 of file CPSTimeStampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_sLModByColumn; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSTimeStampBehavior_adc811d2d32eb4d41d2f8258123fe816a}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!getLModColumn@{getLModColumn}}
+\index{getLModColumn@{getLModColumn}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{getLModColumn}]{\setlength{\rightskip}{0pt plus 5cm}getLModColumn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTimeStampBehavior_adc811d2d32eb4d41d2f8258123fe816a}
+
+
+Definition at line 57 of file CPSTimeStampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_sLModColumn; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSTimeStampBehavior_aad8ce1abdb4c67d3bba0b7e23eace5cc}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!setCreatedByColumn@{setCreatedByColumn}}
+\index{setCreatedByColumn@{setCreatedByColumn}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{setCreatedByColumn}]{\setlength{\rightskip}{0pt plus 5cm}setCreatedByColumn (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTimeStampBehavior_aad8ce1abdb4c67d3bba0b7e23eace5cc}
+
+
+Definition at line 49 of file CPSTimeStampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_sCreatedByColumn = $sValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSTimeStampBehavior_ac971c96e31951188e5bdaa4a1b1bb830}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!setCreatedColumn@{setCreatedColumn}}
+\index{setCreatedColumn@{setCreatedColumn}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{setCreatedColumn}]{\setlength{\rightskip}{0pt plus 5cm}setCreatedColumn (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTimeStampBehavior_ac971c96e31951188e5bdaa4a1b1bb830}
+
+
+Definition at line 40 of file CPSTimeStampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_sCreatedColumn = $sValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSTimeStampBehavior_aefc5940715628851cc5f6a8c0889b9cd}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!setDateTimeFunction@{setDateTimeFunction}}
+\index{setDateTimeFunction@{setDateTimeFunction}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{setDateTimeFunction}]{\setlength{\rightskip}{0pt plus 5cm}setDateTimeFunction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTimeStampBehavior_aefc5940715628851cc5f6a8c0889b9cd}
+
+
+Definition at line 76 of file CPSTimeStampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_sDateTimeFunction = $sValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSTimeStampBehavior_a456d37e379c8461458723668d7e499a2}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!setLModByColumn@{setLModByColumn}}
+\index{setLModByColumn@{setLModByColumn}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{setLModByColumn}]{\setlength{\rightskip}{0pt plus 5cm}setLModByColumn (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTimeStampBehavior_a456d37e379c8461458723668d7e499a2}
+
+
+Definition at line 67 of file CPSTimeStampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_sLModByColumn = $sValue; }   
+\end{DoxyCode}
+
+
+\hypertarget{classCPSTimeStampBehavior_a3879514c9fffb4454e80ab7842b7b31f}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!setLModColumn@{setLModColumn}}
+\index{setLModColumn@{setLModColumn}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{setLModColumn}]{\setlength{\rightskip}{0pt plus 5cm}setLModColumn (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTimeStampBehavior_a3879514c9fffb4454e80ab7842b7b31f}
+
+
+Definition at line 58 of file CPSTimeStampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_sLModColumn = $sValue; } 
+\end{DoxyCode}
+
+
+\hypertarget{classCPSTimeStampBehavior_ae99ec12f90f0458dbd6e2d9dcce34620}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!showDates@{showDates}}
+\index{showDates@{showDates}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{showDates}]{\setlength{\rightskip}{0pt plus 5cm}showDates (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTimeStampBehavior_ae99ec12f90f0458dbd6e2d9dcce34620}
+Returns formatted create/lmod dates for forms 
+
+Definition at line 117 of file CPSTimeStampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! $this->owner->isNewRecord ) return CPSHelperBase::showDates( $this
+      ->owner, $this->m_sCreatedColumn, $this->m_sLModColumn, 'D M j, Y' );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSTimeStampBehavior_aa5ac765fd764508a2e486e01a725b4a1}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!touch@{touch}}
+\index{touch@{touch}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{touch}]{\setlength{\rightskip}{0pt plus 5cm}touch (
+\begin{DoxyParamCaption}
+\item[{\$}]{ additionalColumns = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSTimeStampBehavior_aa5ac765fd764508a2e486e01a725b4a1}
+Sets lmod date(s) and saves Will optionally touch other columns. You can pass in a single column name or an array of columns. This is useful for updating not only the lmod column but a last login date for example. Only the columns that have been touched are updated. If no columns are updated, no database action is performed.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$additionalColumns The single column name or array of columns to touch in addition to configured lmod column \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 131 of file CPSTimeStampBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_touchValue = ( null === $this->m_sDateTimeFunction ) ? date( 'Y-m-d H:i
+      :s' ) : eval( 'return ' . $this->m_sDateTimeFunction . ';' );
+        $_updateList = array();
+        
+        //  Any other columns to touch?
+        if ( null !== $additionalColumns )
+        {
+            foreach ( CPSHelperBase::makeArray( $additionalColumns ) as $_attribu
+      te )
+            {
+                if ( $this->owner->hasAttribute( $_attribute ) )
+                {
+                    $this->owner->setAttribute( $_attribute, $_touchValue );
+                    $_updateList[] = $_attribute;
+                }
+            }
+        }
+        
+        if ( $this->m_sLModColumn && $this->owner->hasAttribute( $this->m_sLModCo
+      lumn ) ) 
+        {
+            $this->owner->setAttribute( $this->m_sLModColumn, $_touchValue );
+            $_updateList[] = $this->m_sLModColumn;
+        }
+            
+        //  Only update if and what we've touched...
+        return count( $_updateList ) ? $this->owner->update( $_updateList ) : tru
+      e;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classCPSTimeStampBehavior_aa5ac765fd764508a2e486e01a725b4a1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSTimeStampBehavior_a878fd48a0be875af51d1713e5c7406cd}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!\$m\_\-sCreatedByColumn@{\$m\_\-sCreatedByColumn}}
+\index{\$m\_\-sCreatedByColumn@{\$m\_\-sCreatedByColumn}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{\$m\_\-sCreatedByColumn}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sCreatedByColumn = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSTimeStampBehavior_a878fd48a0be875af51d1713e5c7406cd}
+
+
+Definition at line 47 of file CPSTimeStampBehavior.php.
+
+\hypertarget{classCPSTimeStampBehavior_acb667183b5f36f920d81dd529029b1cb}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!\$m\_\-sCreatedColumn@{\$m\_\-sCreatedColumn}}
+\index{\$m\_\-sCreatedColumn@{\$m\_\-sCreatedColumn}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{\$m\_\-sCreatedColumn}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sCreatedColumn = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSTimeStampBehavior_acb667183b5f36f920d81dd529029b1cb}
+
+
+Definition at line 38 of file CPSTimeStampBehavior.php.
+
+\hypertarget{classCPSTimeStampBehavior_a36fc4c35bb816130af2c51aa1bf23cf2}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!\$m\_\-sDateTimeFunction@{\$m\_\-sDateTimeFunction}}
+\index{\$m\_\-sDateTimeFunction@{\$m\_\-sDateTimeFunction}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{\$m\_\-sDateTimeFunction}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sDateTimeFunction = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSTimeStampBehavior_a36fc4c35bb816130af2c51aa1bf23cf2}
+
+
+Definition at line 74 of file CPSTimeStampBehavior.php.
+
+\hypertarget{classCPSTimeStampBehavior_ab00e4dbf2eb5aad2fa70ff6d024eb310}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!\$m\_\-sLModByColumn@{\$m\_\-sLModByColumn}}
+\index{\$m\_\-sLModByColumn@{\$m\_\-sLModByColumn}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{\$m\_\-sLModByColumn}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sLModByColumn = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSTimeStampBehavior_ab00e4dbf2eb5aad2fa70ff6d024eb310}
+
+
+Definition at line 65 of file CPSTimeStampBehavior.php.
+
+\hypertarget{classCPSTimeStampBehavior_a2b569f58b9a9d36d7740ef74e38965d8}{
+\index{CPSTimeStampBehavior@{CPSTimeStampBehavior}!\$m\_\-sLModColumn@{\$m\_\-sLModColumn}}
+\index{\$m\_\-sLModColumn@{\$m\_\-sLModColumn}!CPSTimeStampBehavior@{CPSTimeStampBehavior}}
+\subsubsection[{\$m\_\-sLModColumn}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sLModColumn = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSTimeStampBehavior_a2b569f58b9a9d36d7740ef74e38965d8}
+
+
+Definition at line 56 of file CPSTimeStampBehavior.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/behaviors/\hyperlink{CPSTimeStampBehavior_8php}{CPSTimeStampBehavior.php}\end{DoxyCompactItemize}

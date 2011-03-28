@@ -1,0 +1,613 @@
+\hypertarget{classCPSUserIdentity}{
+\section{CPSUserIdentity Class Reference}
+\label{classCPSUserIdentity}\index{CPSUserIdentity@{CPSUserIdentity}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSUserIdentity_a12251d0c022e9e21c137a105ff683f13}{getId} ()
+\item 
+\hyperlink{classCPSUserIdentity_aedb8a2d647c84d8b613e0eb65778e671}{setId} (\$iValue)
+\item 
+\hyperlink{classCPSUserIdentity_a93111a7cb02edd6d769aeec0921174d1}{getUserType} ()
+\item 
+\hyperlink{classCPSUserIdentity_ac5718c6f5c3c700f3911d644ab8b1a21}{setUserType} (\$mValue)
+\item 
+\hyperlink{classCPSUserIdentity_a3710d677dc2cf402f471be9a28281940}{getAuthModel} ()
+\item 
+\hyperlink{classCPSUserIdentity_a1612de4800e80ac3069d4e7dbf8fc0a7}{setAuthModel} (\$oValue)
+\item 
+\hyperlink{classCPSUserIdentity_a7b7bf1385142fab0d25f5a8d1c0026c3}{getAuthAttributes} ()
+\item 
+\hyperlink{classCPSUserIdentity_a82d08eb0501b94eac210ecabb20e3576}{setAuthAttributes} (\$arValue)
+\item 
+\hyperlink{classCPSUserIdentity_a114b61ba02fa6660704abd5e02cbc182}{getAllowEmailLogins} ()
+\item 
+\hyperlink{classCPSUserIdentity_a5232d830bd0fd0fdbf533f07df2bb921}{setAllowEmailLogins} (\$bValue)
+\item 
+\hyperlink{classCPSUserIdentity_aac5b1d7698855dcc53805a4fb2c366c5}{\_\-\_\-construct} (\$sUserName, \$sPassword, \$mUserType=null)
+\item 
+\hyperlink{classCPSUserIdentity_a9d4e54a068e9d6a0ba77fc031e84b3a4}{authenticate} (\$mUserType=null)
+\item 
+\hyperlink{classCPSUserIdentity_a691b36fca62e6932b3d3ca4c35575873}{onLoginFailure} (\hyperlink{classCPSAuthenticationEvent}{CPSAuthenticationEvent} \$oEvent)
+\item 
+\hyperlink{classCPSUserIdentity_a241daa7d5fc4a48b871a6cea8142f0ac}{onLoginSuccess} (\hyperlink{classCPSAuthenticationEvent}{CPSAuthenticationEvent} \$oEvent)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSUserIdentity_adbde7ebe6e6375e221f3f05e339813db}{authenticatePassword} (\$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$sClassName=\_\-\_\-CLASS\_\-\_\-)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSUserIdentity_a8df6ae6a230022910f3ee9ad3eb0ae6b}{\$m\_\-iUserId}
+\item 
+\hyperlink{classCPSUserIdentity_a03c042bf46af7a0170b937e5adf4a113}{\$m\_\-mUserType}
+\item 
+\hyperlink{classCPSUserIdentity_aad5342b604a5d72702f5ea319a9e2769}{\$m\_\-oAuthModel}
+\item 
+\hyperlink{classCPSUserIdentity_a1a6452cba19c0faa3ae64444cbca0694}{\$m\_\-arAuthAttributes}
+\item 
+\hyperlink{classCPSUserIdentity_aac8ef41aa781120c03b61a9a0b2fba12}{\$m\_\-bAllowEmailLogins} = true
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 21 of file CPSUserIdentity.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSUserIdentity_aac5b1d7698855dcc53805a4fb2c366c5}{
+\index{CPSUserIdentity@{CPSUserIdentity}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sUserName, }
+\item[{\$}]{ sPassword, }
+\item[{\$}]{ mUserType = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSUserIdentity_aac5b1d7698855dcc53805a4fb2c366c5}
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]user name \item[{\em string}]password \end{DoxyParams}
+
+
+Definition at line 83 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_mUserType = $mUserType;
+
+        parent::__construct( $sUserName, $sPassword );
+
+        Yii::import( 'pogostick.events.CPSAuthenticationEvent' );
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSUserIdentity_a9d4e54a068e9d6a0ba77fc031e84b3a4}{
+\index{CPSUserIdentity@{CPSUserIdentity}!authenticate@{authenticate}}
+\index{authenticate@{authenticate}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{authenticate}]{\setlength{\rightskip}{0pt plus 5cm}authenticate (
+\begin{DoxyParamCaption}
+\item[{\$}]{ mUserType = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSUserIdentity_a9d4e54a068e9d6a0ba77fc031e84b3a4}
+Authenticates a user based on \hyperlink{}{userName} and \hyperlink{}{password}. Derived classes should override this method, or an exception will be thrown. This method is required by \hyperlink{}{IUserIdentity}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$mUserType \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean whether authentication succeeds. 
+\end{DoxyReturn}
+
+
+Definition at line 99 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! $this->m_oAuthModel )
+            throw new CException( Yii::t( 'psYiiExtensions', '{class}::authModel 
+      must be set or {class}::authenticate() must be overridden.', array( '{class}' => 
+      get_class( $this ) ) ) );
+
+        //  Attach our event handlers
+        if ( ! $this->hasEventHandler( 'onLoginFailure' ) ) $this->attachEventHan
+      dler( 'onLoginFailure', array( $this, 'loginFailure' ) );
+        if ( ! $this->hasEventHandler( 'onLoginSuccess' ) ) $this->attachEventHan
+      dler( 'onLoginSuccess', array( $this, 'loginSuccess' ) );
+
+        $this->username = trim( strtolower( $this->username ) );
+        if ( null !== $mUserType ) $this->m_mUserType = $mUserType;
+
+        $_conditionList = array( $this->m_arAuthAttributes['username'] . ' = :' .
+       $this->m_arAuthAttributes['username'] );
+        $_parameterList = array( ':' . $this->m_arAuthAttributes['username'] => $
+      this->username );
+
+        if ( $this->m_bAllowEmailLogins && $this->m_arAuthAttributes['email'] )
+        {
+            $_conditionList[] = $this->m_arAuthAttributes['email'] . ' = :' . $th
+      is->m_arAuthAttributes['email'];
+            $_parameterList[ ':' . $this->m_arAuthAttributes['email'] ] = $this->
+      username;
+        }
+
+        if ( null === ( $_user = $this->m_oAuthModel->find( implode( ' OR ', $_co
+      nditionList ), $_parameterList ) ) )
+            $this->errorCode = self::ERROR_USERNAME_INVALID;
+        else
+        {
+            //  Get our event
+            $_event = new CPSAuthenticationEvent( $this, $_user, $this );
+
+            if ( $this->password !== $_user->getAttribute( $this->m_arAuthAttribu
+      tes['password'] ) )
+            {
+                $this->errorCode = self::ERROR_PASSWORD_INVALID;
+                $this->onLoginFailure( $_event );
+            }
+            else
+            {
+                $this->errorCode = self::ERROR_NONE;
+                $this->setId( $_user->id );
+                $this->setUserType( $_user->user_type_code );
+                $this->onLoginSuccess( $_event );
+            }
+        }
+
+        return ! $this->errorCode;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classCPSUserIdentity_a9d4e54a068e9d6a0ba77fc031e84b3a4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSUserIdentity_adbde7ebe6e6375e221f3f05e339813db}{
+\index{CPSUserIdentity@{CPSUserIdentity}!authenticatePassword@{authenticatePassword}}
+\index{authenticatePassword@{authenticatePassword}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{authenticatePassword}]{\setlength{\rightskip}{0pt plus 5cm}static authenticatePassword (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arOptions = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ sClassName = {\ttfamily \_\-\_\-CLASS\_\-\_\-}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSUserIdentity_adbde7ebe6e6375e221f3f05e339813db}
+Authenticates the password. This acts as an 'authenticate' validator as declared in rules().
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em CFormModel}]\$oForm The data to validate \item[{\em string}]\$sUser \item[{\em string}]\$sPassword \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 153 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_bResult = false;
+        $_sUser = PS::o( $arOptions, 'userName' );
+        $_sPass = PS::o( $arOptions, 'password' );
+        $_oFormModel = PS::o( $arOptions, 'formModel' );
+
+        $_oIdent = new $sClassName( $_sUser, $_sPass );
+        $_oIdent->setAuthModel( PS::o( $arOptions, 'authModel' ) );
+        $_oIdent->authenticate();
+
+        switch ( $_oIdent->errorCode )
+        {
+            case self::ERROR_NONE:
+                $_iDuration = PS::o( $arOptions, 'rememberMe', false ) ? 3600 * 2
+      4 * 30 : 0;
+                Yii::app()->user->login( $_oIdent, $_iDuration );
+                $_bResult = true;
+                break;
+
+            default:
+                if ( $_oFormModel ) $_oFormModel->addError( 'form', 'User name or
+       password is incorrect.' );
+                break;
+        }
+
+        return $_bResult;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSUserIdentity_a114b61ba02fa6660704abd5e02cbc182}{
+\index{CPSUserIdentity@{CPSUserIdentity}!getAllowEmailLogins@{getAllowEmailLogins}}
+\index{getAllowEmailLogins@{getAllowEmailLogins}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{getAllowEmailLogins}]{\setlength{\rightskip}{0pt plus 5cm}getAllowEmailLogins (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSUserIdentity_a114b61ba02fa6660704abd5e02cbc182}
+
+
+Definition at line 70 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_bAllowEmailLogins; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSUserIdentity_a7b7bf1385142fab0d25f5a8d1c0026c3}{
+\index{CPSUserIdentity@{CPSUserIdentity}!getAuthAttributes@{getAuthAttributes}}
+\index{getAuthAttributes@{getAuthAttributes}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{getAuthAttributes}]{\setlength{\rightskip}{0pt plus 5cm}getAuthAttributes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSUserIdentity_a7b7bf1385142fab0d25f5a8d1c0026c3}
+
+
+Definition at line 62 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_arAuthAttributes; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSUserIdentity_a3710d677dc2cf402f471be9a28281940}{
+\index{CPSUserIdentity@{CPSUserIdentity}!getAuthModel@{getAuthModel}}
+\index{getAuthModel@{getAuthModel}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{getAuthModel}]{\setlength{\rightskip}{0pt plus 5cm}getAuthModel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSUserIdentity_a3710d677dc2cf402f471be9a28281940}
+
+
+Definition at line 49 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_oAuthModel; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSUserIdentity_a12251d0c022e9e21c137a105ff683f13}{
+\index{CPSUserIdentity@{CPSUserIdentity}!getId@{getId}}
+\index{getId@{getId}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{getId}]{\setlength{\rightskip}{0pt plus 5cm}getId (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSUserIdentity_a12251d0c022e9e21c137a105ff683f13}
+
+
+Definition at line 33 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_iUserId; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSUserIdentity_a93111a7cb02edd6d769aeec0921174d1}{
+\index{CPSUserIdentity@{CPSUserIdentity}!getUserType@{getUserType}}
+\index{getUserType@{getUserType}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{getUserType}]{\setlength{\rightskip}{0pt plus 5cm}getUserType (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSUserIdentity_a93111a7cb02edd6d769aeec0921174d1}
+
+
+Definition at line 41 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_mUserType; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSUserIdentity_a691b36fca62e6932b3d3ca4c35575873}{
+\index{CPSUserIdentity@{CPSUserIdentity}!onLoginFailure@{onLoginFailure}}
+\index{onLoginFailure@{onLoginFailure}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{onLoginFailure}]{\setlength{\rightskip}{0pt plus 5cm}onLoginFailure (
+\begin{DoxyParamCaption}
+\item[{{\bf CPSAuthenticationEvent} \$}]{ oEvent}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSUserIdentity_a691b36fca62e6932b3d3ca4c35575873}
+Raises the onLoginFailure event 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSAuthenticationEvent}{CPSAuthenticationEvent}}]\$oEvent \end{DoxyParams}
+
+
+Definition at line 188 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->raiseEvent( 'onLoginFailure', $oEvent );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{classCPSUserIdentity_a691b36fca62e6932b3d3ca4c35575873_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSUserIdentity_a241daa7d5fc4a48b871a6cea8142f0ac}{
+\index{CPSUserIdentity@{CPSUserIdentity}!onLoginSuccess@{onLoginSuccess}}
+\index{onLoginSuccess@{onLoginSuccess}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{onLoginSuccess}]{\setlength{\rightskip}{0pt plus 5cm}onLoginSuccess (
+\begin{DoxyParamCaption}
+\item[{{\bf CPSAuthenticationEvent} \$}]{ oEvent}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSUserIdentity_a241daa7d5fc4a48b871a6cea8142f0ac}
+Raises the onLoginSuccess event 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classCPSAuthenticationEvent}{CPSAuthenticationEvent}}]\$oEvent \end{DoxyParams}
+
+
+Definition at line 197 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->raiseEvent( 'onLoginSuccess', $oEvent );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classCPSUserIdentity_a241daa7d5fc4a48b871a6cea8142f0ac_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSUserIdentity_a5232d830bd0fd0fdbf533f07df2bb921}{
+\index{CPSUserIdentity@{CPSUserIdentity}!setAllowEmailLogins@{setAllowEmailLogins}}
+\index{setAllowEmailLogins@{setAllowEmailLogins}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{setAllowEmailLogins}]{\setlength{\rightskip}{0pt plus 5cm}setAllowEmailLogins (
+\begin{DoxyParamCaption}
+\item[{\$}]{ bValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSUserIdentity_a5232d830bd0fd0fdbf533f07df2bb921}
+
+
+Definition at line 71 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_bAllowEmailLogins = $bValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSUserIdentity_a82d08eb0501b94eac210ecabb20e3576}{
+\index{CPSUserIdentity@{CPSUserIdentity}!setAuthAttributes@{setAuthAttributes}}
+\index{setAuthAttributes@{setAuthAttributes}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{setAuthAttributes}]{\setlength{\rightskip}{0pt plus 5cm}setAuthAttributes (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSUserIdentity_a82d08eb0501b94eac210ecabb20e3576}
+
+
+Definition at line 63 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_arAuthAttributes = $arValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSUserIdentity_a1612de4800e80ac3069d4e7dbf8fc0a7}{
+\index{CPSUserIdentity@{CPSUserIdentity}!setAuthModel@{setAuthModel}}
+\index{setAuthModel@{setAuthModel}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{setAuthModel}]{\setlength{\rightskip}{0pt plus 5cm}setAuthModel (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSUserIdentity_a1612de4800e80ac3069d4e7dbf8fc0a7}
+
+
+Definition at line 50 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_oAuthModel = $oValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSUserIdentity_aedb8a2d647c84d8b613e0eb65778e671}{
+\index{CPSUserIdentity@{CPSUserIdentity}!setId@{setId}}
+\index{setId@{setId}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{setId}]{\setlength{\rightskip}{0pt plus 5cm}setId (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSUserIdentity_aedb8a2d647c84d8b613e0eb65778e671}
+
+
+Definition at line 34 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_iUserId = $iValue; }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classCPSUserIdentity_aedb8a2d647c84d8b613e0eb65778e671_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSUserIdentity_ac5718c6f5c3c700f3911d644ab8b1a21}{
+\index{CPSUserIdentity@{CPSUserIdentity}!setUserType@{setUserType}}
+\index{setUserType@{setUserType}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{setUserType}]{\setlength{\rightskip}{0pt plus 5cm}setUserType (
+\begin{DoxyParamCaption}
+\item[{\$}]{ mValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSUserIdentity_ac5718c6f5c3c700f3911d644ab8b1a21}
+
+
+Definition at line 42 of file CPSUserIdentity.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_mUserType = $mValue; }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classCPSUserIdentity_ac5718c6f5c3c700f3911d644ab8b1a21_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSUserIdentity_a1a6452cba19c0faa3ae64444cbca0694}{
+\index{CPSUserIdentity@{CPSUserIdentity}!\$m\_\-arAuthAttributes@{\$m\_\-arAuthAttributes}}
+\index{\$m\_\-arAuthAttributes@{\$m\_\-arAuthAttributes}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{\$m\_\-arAuthAttributes}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-arAuthAttributes\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSUserIdentity_a1a6452cba19c0faa3ae64444cbca0694}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ array(
+        'username' => 'username',
+        'password' => 'password',
+        'email' => 'email',
+    )
+\end{DoxyCode}
+
+
+Definition at line 57 of file CPSUserIdentity.php.
+
+\hypertarget{classCPSUserIdentity_aac8ef41aa781120c03b61a9a0b2fba12}{
+\index{CPSUserIdentity@{CPSUserIdentity}!\$m\_\-bAllowEmailLogins@{\$m\_\-bAllowEmailLogins}}
+\index{\$m\_\-bAllowEmailLogins@{\$m\_\-bAllowEmailLogins}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{\$m\_\-bAllowEmailLogins}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-bAllowEmailLogins = true\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSUserIdentity_aac8ef41aa781120c03b61a9a0b2fba12}
+
+
+Definition at line 69 of file CPSUserIdentity.php.
+
+\hypertarget{classCPSUserIdentity_a8df6ae6a230022910f3ee9ad3eb0ae6b}{
+\index{CPSUserIdentity@{CPSUserIdentity}!\$m\_\-iUserId@{\$m\_\-iUserId}}
+\index{\$m\_\-iUserId@{\$m\_\-iUserId}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{\$m\_\-iUserId}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-iUserId\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSUserIdentity_a8df6ae6a230022910f3ee9ad3eb0ae6b}
+
+
+Definition at line 32 of file CPSUserIdentity.php.
+
+\hypertarget{classCPSUserIdentity_a03c042bf46af7a0170b937e5adf4a113}{
+\index{CPSUserIdentity@{CPSUserIdentity}!\$m\_\-mUserType@{\$m\_\-mUserType}}
+\index{\$m\_\-mUserType@{\$m\_\-mUserType}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{\$m\_\-mUserType}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-mUserType\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSUserIdentity_a03c042bf46af7a0170b937e5adf4a113}
+
+
+Definition at line 40 of file CPSUserIdentity.php.
+
+\hypertarget{classCPSUserIdentity_aad5342b604a5d72702f5ea319a9e2769}{
+\index{CPSUserIdentity@{CPSUserIdentity}!\$m\_\-oAuthModel@{\$m\_\-oAuthModel}}
+\index{\$m\_\-oAuthModel@{\$m\_\-oAuthModel}!CPSUserIdentity@{CPSUserIdentity}}
+\subsubsection[{\$m\_\-oAuthModel}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-oAuthModel\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSUserIdentity_aad5342b604a5d72702f5ea319a9e2769}
+
+
+Definition at line 48 of file CPSUserIdentity.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/\hyperlink{CPSUserIdentity_8php}{CPSUserIdentity.php}\end{DoxyCompactItemize}

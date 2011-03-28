@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCXLController.html#aacb2f651978f6aa962de80bc0248b3d9" title="Loads a model(s) based on criteria and scopes." alt="" coords="205,59,344,88"/>
+<area shape="rect" id="node5" href="$classCXLController.html#a90f83714d8df3e6f07b28fb5d25e7116" title="load" alt="" coords="412,5,460,35"/>
+<area shape="rect" id="node11" href="$classCXLController.html#a4e6ee9ca4aff15fe9592ad24f5ebd509" title="Loads all data using supplied criteria." alt="" coords="404,59,468,88"/>
+<area shape="rect" id="node15" href="$classCXLController.html#a97e32933f78c7a0e8e6829ac513deb4d" title="Returns the count of rows that match the supplied criteria." alt="" coords="393,112,479,141"/>
+<area shape="rect" id="node7" href="$classCXLController.html#aee989705ca23d787542be0bf30a28000" title="Returns the data model based on the primary key given in the GET variable." alt="" coords="529,5,663,35"/>
+<area shape="rect" id="node9" href="$classCXLController.html#ab9196d5e77e86dc16866c3b5373963a2" title="A generic action that renders a page and passes in the model." alt="" coords="712,5,821,35"/>
+<area shape="rect" id="node13" href="$classCXLController.html#a138d56ab26b272430a88450638c6d466" title="Loads a page of models." alt="" coords="552,85,640,115"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCXLBaseJobProcess.html#affa56f73ffc8554251c1cda1e6a8fbf1" title="Runs the process but stops the timer on the case of an exception." alt="" coords="96,59,235,88"/>
+<area shape="rect" id="node5" href="$classCXLBaseJobProcess.html#a7d4ad4038b036a67eece619e6f88c89e" title="Process the job." alt="" coords="291,5,363,35"/>
+<area shape="rect" id="node7" href="$classCXLBaseJobProcess.html#a3f20c6773be010b2744fb3451651746c" title="Starts the internal job timer." alt="" coords="283,59,371,88"/>
+<area shape="rect" id="node9" href="$classCXLBaseJobProcess.html#a013c0d9ca789c13c56b13cb96d26174a" title="Stops the internal job timer." alt="" coords="284,112,369,141"/>
+</map>

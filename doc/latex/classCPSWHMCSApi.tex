@@ -1,0 +1,245 @@
+\hypertarget{classCPSWHMCSApi}{
+\section{CPSWHMCSApi Class Reference}
+\label{classCPSWHMCSApi}\index{CPSWHMCSApi@{CPSWHMCSApi}}
+}
+
+
+Inheritance diagram for CPSWHMCSApi:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWHMCSApi__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSWHMCSApi:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classCPSWHMCSApi__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSWHMCSApi_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSWHMCSApi_a0270d3c5c68d48cd7705bd8cb532b585}{makeApiCall} (\$sApiName, \$sSubApiName, \$arRequestData=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSWHMCSApi_a4cd3e96565485f7e9109773d8ab6de40}{CLIENT\_\-API} = 'client'
+\item 
+const \hyperlink{classCPSWHMCSApi_ad43172e74f8477298850651b0cca3a5e}{SUPPORT\_\-API} = 'support'
+\item 
+const \hyperlink{classCPSWHMCSApi_a72067cda85b4e918f4fe3a1292227879}{MODULE\_\-API} = 'module'
+\item 
+const \hyperlink{classCPSWHMCSApi_a36cc0ed56cc1893b22c3d8578b23ee9b}{QUOTE\_\-API} = 'quotes'
+\item 
+const \hyperlink{classCPSWHMCSApi_a550795e231e81e5688a95f44c6495d81}{ORDER\_\-API} = 'orders'
+\item 
+const \hyperlink{classCPSWHMCSApi_a9580b89431cd08a4216a20b1ef9cbcfa}{BILLING\_\-API} = 'billing'
+\item 
+const \hyperlink{classCPSWHMCSApi_ae5f7cfe2a796124746ddb5ce917c1043}{MISC\_\-API} = 'miscellaneous'
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 20 of file CPSWHMCSApi.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSWHMCSApi_a0270d3c5c68d48cd7705bd8cb532b585}{
+\index{CPSWHMCSApi@{CPSWHMCSApi}!makeApiCall@{makeApiCall}}
+\index{makeApiCall@{makeApiCall}!CPSWHMCSApi@{CPSWHMCSApi}}
+\subsubsection[{makeApiCall}]{\setlength{\rightskip}{0pt plus 5cm}makeApiCall (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sApiName, }
+\item[{\$}]{ sSubApiName, }
+\item[{\$}]{ arRequestData = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSApi_a0270d3c5c68d48cd7705bd8cb532b585}
+Makes an API call to the local install of WHMCS
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sAction \item[{\em array}]\$arRequestData \end{DoxyParams}
+
+
+Definition at line 59 of file CPSWHMCSApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arResults = array();
+        
+        $this->apiToUse = $sApiName;
+        $arRequestData['username'] = $this->apiUserName;
+        $arRequestData['password'] = md5( $this->apiPassword );
+        $arRequestData['action'] = $sSubApiName;
+        
+        if ( $_arResponse = parent::makeRequest( $sSubApiName, $arRequestData, 'P
+      OST' ) )
+        {
+            if ( false !== strpos( $_arResponse, '<?xml' ) )
+            {
+                $_oXml = simplexml_load_string( $_arResponse );
+                if ( $_oXml->result == 'success' )
+                    return $_oXml;
+
+                $this->lastErrorMessage = $_oXml->message;
+            }
+            else
+            {
+                if ( $_arData = explode( ';', $_arResponse ) )
+                {
+                    foreach ( $_arData as $_oItem )
+                    {
+                        $_sItem = explode( '=', $_oItem );
+                        if ( trim( $_sItem[0] ) ) $_arResults[ $_sItem[0] ] = $_s
+      Item[1];
+                    }
+
+                    if ( PS::o( $_arResults, 'result' ) == 'success' )
+                        return $_arResults;
+
+                    $this->lastErrorMessage = PS::o( $_arResults, 'message' );
+                }
+            }
+        }
+        else
+            $this->lastErrorMessage = 'Unknown error making API call';
+        
+        return false;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{classCPSWHMCSApi_a0270d3c5c68d48cd7705bd8cb532b585_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSApi_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSWHMCSApi@{CPSWHMCSApi}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSWHMCSApi@{CPSWHMCSApi}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSApi_a2dc262e99b1c246b56f27626bfe699ff}
+Preinitialize the component Override to add your own functionality before \hyperlink{classCPSApiComponent_a4be4055f3361d4800e16bc2e2e38cda6}{init()} is called. 
+
+Reimplemented from \hyperlink{classCPSComponent_a2dc262e99b1c246b56f27626bfe699ff}{CPSComponent}.
+
+
+
+Reimplemented in \hyperlink{classCPSWHMCSBillingApi_a2dc262e99b1c246b56f27626bfe699ff}{CPSWHMCSBillingApi}, and \hyperlink{classCPSWHMCSSupportApi_a2dc262e99b1c246b56f27626bfe699ff}{CPSWHMCSSupportApi}.
+
+
+
+Definition at line 41 of file CPSWHMCSApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Call daddy...
+        parent::preinit();
+
+        //  Add ours...
+        $this->addOptions( self::getBaseOptions() );
+    
+        //  And our settings...
+        $this->apiQueryName = 'action';
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSWHMCSApi_a9580b89431cd08a4216a20b1ef9cbcfa}{
+\index{CPSWHMCSApi@{CPSWHMCSApi}!BILLING\_\-API@{BILLING\_\-API}}
+\index{BILLING\_\-API@{BILLING\_\-API}!CPSWHMCSApi@{CPSWHMCSApi}}
+\subsubsection[{BILLING\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf BILLING\_\-API} = 'billing'}}
+\label{classCPSWHMCSApi_a9580b89431cd08a4216a20b1ef9cbcfa}
+
+
+Definition at line 31 of file CPSWHMCSApi.php.
+
+\hypertarget{classCPSWHMCSApi_a4cd3e96565485f7e9109773d8ab6de40}{
+\index{CPSWHMCSApi@{CPSWHMCSApi}!CLIENT\_\-API@{CLIENT\_\-API}}
+\index{CLIENT\_\-API@{CLIENT\_\-API}!CPSWHMCSApi@{CPSWHMCSApi}}
+\subsubsection[{CLIENT\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf CLIENT\_\-API} = 'client'}}
+\label{classCPSWHMCSApi_a4cd3e96565485f7e9109773d8ab6de40}
+
+
+Definition at line 26 of file CPSWHMCSApi.php.
+
+\hypertarget{classCPSWHMCSApi_ae5f7cfe2a796124746ddb5ce917c1043}{
+\index{CPSWHMCSApi@{CPSWHMCSApi}!MISC\_\-API@{MISC\_\-API}}
+\index{MISC\_\-API@{MISC\_\-API}!CPSWHMCSApi@{CPSWHMCSApi}}
+\subsubsection[{MISC\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MISC\_\-API} = 'miscellaneous'}}
+\label{classCPSWHMCSApi_ae5f7cfe2a796124746ddb5ce917c1043}
+
+
+Definition at line 32 of file CPSWHMCSApi.php.
+
+\hypertarget{classCPSWHMCSApi_a72067cda85b4e918f4fe3a1292227879}{
+\index{CPSWHMCSApi@{CPSWHMCSApi}!MODULE\_\-API@{MODULE\_\-API}}
+\index{MODULE\_\-API@{MODULE\_\-API}!CPSWHMCSApi@{CPSWHMCSApi}}
+\subsubsection[{MODULE\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MODULE\_\-API} = 'module'}}
+\label{classCPSWHMCSApi_a72067cda85b4e918f4fe3a1292227879}
+
+
+Definition at line 28 of file CPSWHMCSApi.php.
+
+\hypertarget{classCPSWHMCSApi_a550795e231e81e5688a95f44c6495d81}{
+\index{CPSWHMCSApi@{CPSWHMCSApi}!ORDER\_\-API@{ORDER\_\-API}}
+\index{ORDER\_\-API@{ORDER\_\-API}!CPSWHMCSApi@{CPSWHMCSApi}}
+\subsubsection[{ORDER\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ORDER\_\-API} = 'orders'}}
+\label{classCPSWHMCSApi_a550795e231e81e5688a95f44c6495d81}
+
+
+Definition at line 30 of file CPSWHMCSApi.php.
+
+\hypertarget{classCPSWHMCSApi_a36cc0ed56cc1893b22c3d8578b23ee9b}{
+\index{CPSWHMCSApi@{CPSWHMCSApi}!QUOTE\_\-API@{QUOTE\_\-API}}
+\index{QUOTE\_\-API@{QUOTE\_\-API}!CPSWHMCSApi@{CPSWHMCSApi}}
+\subsubsection[{QUOTE\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf QUOTE\_\-API} = 'quotes'}}
+\label{classCPSWHMCSApi_a36cc0ed56cc1893b22c3d8578b23ee9b}
+
+
+Definition at line 29 of file CPSWHMCSApi.php.
+
+\hypertarget{classCPSWHMCSApi_ad43172e74f8477298850651b0cca3a5e}{
+\index{CPSWHMCSApi@{CPSWHMCSApi}!SUPPORT\_\-API@{SUPPORT\_\-API}}
+\index{SUPPORT\_\-API@{SUPPORT\_\-API}!CPSWHMCSApi@{CPSWHMCSApi}}
+\subsubsection[{SUPPORT\_\-API}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf SUPPORT\_\-API} = 'support'}}
+\label{classCPSWHMCSApi_ad43172e74f8477298850651b0cca3a5e}
+
+
+Definition at line 27 of file CPSWHMCSApi.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/whmcs/\hyperlink{CPSWHMCSApi_8php}{CPSWHMCSApi.php}\end{DoxyCompactItemize}

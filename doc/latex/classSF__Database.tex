@@ -1,0 +1,655 @@
+\hypertarget{classSF__Database}{
+\section{SF\_\-Database Class Reference}
+\label{classSF__Database}\index{SF\_\-Database@{SF\_\-Database}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSF__Database_a3c340f556311885a446b78d09fe251fe}{\_\-\_\-construct} (\$db\_\-host, \$db\_\-user, \$db\_\-pass, \$db\_\-name, \$bOpen=true)
+\item 
+\hyperlink{classSF__Database_a9519b5bba407a1a89f324fcc7f26c0e2}{\_\-\_\-get} (\$sProp)
+\item 
+\hyperlink{classSF__Database_a9dc5da61781d3ffe5bc80275a129d08a}{openDatabase} ()
+\item 
+\hyperlink{classSF__Database_a758f42d99646ba28d9f7e1e98e7c53aa}{closeDatabase} ()
+\item 
+\hyperlink{classSF__Database_a42aa90065617eb50272b78b6cb6fc204}{getColumn} (\$sSQL, \$sColName)
+\item 
+\hyperlink{classSF__Database_afe9f39bb0724efbb1bfce415adf58944}{getRecordset} (\$sSQL, \$bAutoFetch=true)
+\item 
+\hyperlink{classSF__Database_a81c4a9c9c1c23b0bd6e72aaa79e06cf1}{execSQL} (\$sSQL)
+\item 
+\hyperlink{classSF__Database_a566d5b96d7daf38fa67aec957c86d28f}{execute} (\$sSQL)
+\item 
+\hyperlink{classSF__Database_a6384591ddfa09e979deb8a695bca0f67}{lastInsertId} ()
+\item 
+\hyperlink{classSF__Database_a38916f407b1f86fc9d67ae4eb1b8b98b}{getPagedRecordset} (\$sSQL, \$bFetch, \$iCurPage, \$sTable, \$sLink, \$sQueryString=\char`\"{}\char`\"{})
+\item 
+\hyperlink{classSF__Database_a6773cb271409c3c3d9439a5bb1132b7b}{getCodeDescription} (\$lCodeUID, \$sTable=\char`\"{}code\_\-t\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSF__Database_a73d9cd9d8601e4eafbed60c48eb8d766}{\$m\_\-dbConn} = null
+\item 
+\hyperlink{classSF__Database_a78c5edb74261bdb997d4c8cc68c7db2d}{\$m\_\-dbHost} = null
+\item 
+\hyperlink{classSF__Database_a2e3854a1e3a0d95f189610658ed12289}{\$m\_\-dbUser} = null
+\item 
+\hyperlink{classSF__Database_a871958f5b15e77a7c1f1d3eb3e603abc}{\$m\_\-dbPass} = null
+\item 
+\hyperlink{classSF__Database_afa7eed8ace632016b43ba2d17ec73447}{\$m\_\-dbName} = null
+\item 
+\hyperlink{classSF__Database_a559f47903c9f09f15cb286680b3f767c}{\$m\_\-iPerPage} = 25
+\item 
+\hyperlink{classSF__Database_a247553d616cac3fa76915f9f09fb59b2}{\$m\_\-iCurPage} = 1
+\item 
+\hyperlink{classSF__Database_a57f2664c28b26868140aa5445f5b1c95}{\$m\_\-sPager} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 30 of file SF\_\-Database.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSF__Database_a3c340f556311885a446b78d09fe251fe}{
+\index{SF\_\-Database@{SF\_\-Database}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!SF_Database@{SF\_\-Database}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ db\_\-host, }
+\item[{\$}]{ db\_\-user, }
+\item[{\$}]{ db\_\-pass, }
+\item[{\$}]{ db\_\-name, }
+\item[{\$}]{ bOpen = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Database_a3c340f556311885a446b78d09fe251fe}
+Constructs a database object
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$db\_\-host \item[{\em unknown\_\-type}]\$db\_\-user \item[{\em unknown\_\-type}]\$db\_\-pass \item[{\em unknown\_\-type}]\$db\_\-name \item[{\em unknown\_\-type}]\$bOpen \end{DoxyParams}
+
+
+Definition at line 84 of file SF\_\-Database.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_dbConn = null;
+        $this->m_dbHost = $db_host;
+        $this->m_dbUser = $db_user;
+        $this->m_dbPass = $db_pass;
+        $this->m_dbName = $db_name;
+
+        //  Open up if wanted
+        if ( $bOpen )
+           $this->openDatabase();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classSF__Database_a3c340f556311885a446b78d09fe251fe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSF__Database_a9519b5bba407a1a89f324fcc7f26c0e2}{
+\index{SF\_\-Database@{SF\_\-Database}!\_\-\_\-get@{\_\-\_\-get}}
+\index{\_\-\_\-get@{\_\-\_\-get}!SF_Database@{SF\_\-Database}}
+\subsubsection[{\_\-\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-get (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sProp}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Database_a9519b5bba407a1a89f324fcc7f26c0e2}
+Property getter 
+
+Definition at line 100 of file SF\_\-Database.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $sProp == "Pager" )
+            return( $this->m_sPager );
+            
+        //  Pass along to parent...
+        return( parent::__get( $sProp ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Database_a758f42d99646ba28d9f7e1e98e7c53aa}{
+\index{SF\_\-Database@{SF\_\-Database}!closeDatabase@{closeDatabase}}
+\index{closeDatabase@{closeDatabase}!SF_Database@{SF\_\-Database}}
+\subsubsection[{closeDatabase}]{\setlength{\rightskip}{0pt plus 5cm}closeDatabase (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Database_a758f42d99646ba28d9f7e1e98e7c53aa}
+Closes an open database connection 
+
+Definition at line 128 of file SF\_\-Database.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $this->m_dbConn )
+            mysql_close( $this->m_dbConn );
+
+        $this->m_dbConn = null;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Database_a81c4a9c9c1c23b0bd6e72aaa79e06cf1}{
+\index{SF\_\-Database@{SF\_\-Database}!execSQL@{execSQL}}
+\index{execSQL@{execSQL}!SF_Database@{SF\_\-Database}}
+\subsubsection[{execSQL}]{\setlength{\rightskip}{0pt plus 5cm}execSQL (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSQL}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Database_a81c4a9c9c1c23b0bd6e72aaa79e06cf1}
+Executes a query and returns the number of affected rows.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sSQL \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 184 of file SF\_\-Database.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->debug( "execSQL: " . $sSQL );
+        $rs = mysql_query( $sSQL, $this->m_dbConn );
+        $rc = mysql_affected_rows( $this->m_dbConn );
+        return( $rc );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Database_a566d5b96d7daf38fa67aec957c86d28f}{
+\index{SF\_\-Database@{SF\_\-Database}!execute@{execute}}
+\index{execute@{execute}!SF_Database@{SF\_\-Database}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}execute (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSQL}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Database_a566d5b96d7daf38fa67aec957c86d28f}
+Executes a query and returns the result
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sSQL \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 198 of file SF\_\-Database.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( $this->getRecordset( $sSQL, false ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classSF__Database_a566d5b96d7daf38fa67aec957c86d28f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Database_a6773cb271409c3c3d9439a5bb1132b7b}{
+\index{SF\_\-Database@{SF\_\-Database}!getCodeDescription@{getCodeDescription}}
+\index{getCodeDescription@{getCodeDescription}!SF_Database@{SF\_\-Database}}
+\subsubsection[{getCodeDescription}]{\setlength{\rightskip}{0pt plus 5cm}getCodeDescription (
+\begin{DoxyParamCaption}
+\item[{\$}]{ lCodeUID, }
+\item[{\$}]{ sTable = {\ttfamily \char`\"{}code\_\-t\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Database_a6773cb271409c3c3d9439a5bb1132b7b}
+Gets a code description 
+
+Definition at line 286 of file SF\_\-Database.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $rs = $this->getRecordset( "select code_desc_text from $sTable where code
+      _uid = $lCodeUID" );
+        if ( $rs )
+        {
+            return( $rs['code_desc_text'] );
+        }
+
+        return( '' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{classSF__Database_a6773cb271409c3c3d9439a5bb1132b7b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Database_a42aa90065617eb50272b78b6cb6fc204}{
+\index{SF\_\-Database@{SF\_\-Database}!getColumn@{getColumn}}
+\index{getColumn@{getColumn}!SF_Database@{SF\_\-Database}}
+\subsubsection[{getColumn}]{\setlength{\rightskip}{0pt plus 5cm}getColumn (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSQL, }
+\item[{\$}]{ sColName}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Database_a42aa90065617eb50272b78b6cb6fc204}
+Retrieves a single column (or null if not found) from a SQL statement
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sSQL \item[{\em unknown\_\-type}]\$sColName \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 143 of file SF\_\-Database.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $rs = mysql_query( $sSQL, $this->m_dbConn );
+
+        $iRows = 0;
+
+        if ( $rs )
+            $iRows = mysql_numrows( $rs );
+
+        if ( $iRows > 0 )
+            return( mysql_result( $rs, 0, $sColName ) );
+
+        return( null );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classSF__Database_a42aa90065617eb50272b78b6cb6fc204_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Database_a38916f407b1f86fc9d67ae4eb1b8b98b}{
+\index{SF\_\-Database@{SF\_\-Database}!getPagedRecordset@{getPagedRecordset}}
+\index{getPagedRecordset@{getPagedRecordset}!SF_Database@{SF\_\-Database}}
+\subsubsection[{getPagedRecordset}]{\setlength{\rightskip}{0pt plus 5cm}getPagedRecordset (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSQL, }
+\item[{\$}]{ bFetch, }
+\item[{\$}]{ iCurPage, }
+\item[{\$}]{ sTable, }
+\item[{\$}]{ sLink, }
+\item[{\$}]{ sQueryString = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Database_a38916f407b1f86fc9d67ae4eb1b8b98b}
+Get a paged recordset returning a pager string... 
+
+Definition at line 216 of file SF\_\-Database.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Counting the offset
+        $iOffset = ( $this->m_iCurPage - 1 ) * $this->m_iPerPage;
+        $sSQL .= " limit $iOffset, {$this->m_iPerPage}";
+        $rs = $this->getRecordset( $sSQL, $bFetch );
+
+        $iCount = $this->getColumn( "select count(1) as num_rows from $sTable", "
+      num_rows" );
+
+        //  How many pages we have when using paging?
+        $iMaxPage = ceil( $iCount / $this->m_iPerPage );
+
+        $self = $_SERVER['PHP_SELF'];
+
+        if ( $this->m_iCurPage > 1 )
+        {
+            $iPage = $this->m_iCurPage - 1;
+            $sPrevLink = "page=$iPage";
+            $sFirstLink = "page=1";
+        }
+        else
+        {
+            $sPrevLink = "";
+            $sFirstLink = "";
+        }
+
+        if ( $this->m_iCurPage < $iMaxPage )
+        {
+            $iPage = $this->m_iCurPage + 1;
+            $sNextLink = "page=$iPage";
+            $sLastLink = "page=$iMaxPage";
+        }
+        else
+        {
+            $sNextLink = "";
+            $sLastLink = "";
+        }
+
+        $sOut = "";
+
+        if ( $sFirstLink != "" )
+            $sOut .= "<a href=\"$sLink" . ( $sQueryString != "" ? $sQueryString .
+       "&" : "?" ) . $sFirstLink . "\"><<</a>&nbsp;";
+        else
+            $sOut .= "<<&nbsp;";
+
+        if ( $sPrevLink != "" )
+            $sOut .= "<a href=\"$sLink" . ( $sQueryString != "" ? $sQueryString .
+       "&" : "?" ) . $sPrevLink . "\"><</a>&nbsp;";
+        else
+            $sOut .= "<&nbsp;";
+
+        $sOut .= "&nbsp;{$this->m_iCurPage} of {$iMaxPage}&nbsp;";
+
+        if ( $sNextLink != "" )
+            $sOut .= "<a href=\"$sLink" . ( $sQueryString != "" ? $sQueryString .
+       "&" : "?" ) . $sNextLink . "\">></a>&nbsp;";
+        else
+            $sOut .= ">&nbsp;";
+
+        if ( $sLastLink != "" )
+            $sOut .= "<a href=\"$sLink" . ( $sQueryString != "" ? $sQueryString .
+       "&" : "?" ) . $sLastLink . "\">>></a>&nbsp;";
+        else
+            $sOut .= ">>&nbsp;";
+
+        $this->m_sPager = $sOut;
+
+        return( $rs );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classSF__Database_a38916f407b1f86fc9d67ae4eb1b8b98b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Database_afe9f39bb0724efbb1bfce415adf58944}{
+\index{SF\_\-Database@{SF\_\-Database}!getRecordset@{getRecordset}}
+\index{getRecordset@{getRecordset}!SF_Database@{SF\_\-Database}}
+\subsubsection[{getRecordset}]{\setlength{\rightskip}{0pt plus 5cm}getRecordset (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sSQL, }
+\item[{\$}]{ bAutoFetch = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Database_afe9f39bb0724efbb1bfce415adf58944}
+Returns a recordset with an optional fetch
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em unknown\_\-type}]\$sSQL \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unknown 
+\end{DoxyReturn}
+
+
+Definition at line 164 of file SF\_\-Database.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $rs = null;
+
+        $this->debug( "getRecordset: " . $sSQL );
+        
+        $rs = mysql_query( $sSQL, $this->m_dbConn );
+
+        if ( $rs && $bAutoFetch )
+            return( mysql_fetch_array( $rs ) );
+
+        return( $rs );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{classSF__Database_afe9f39bb0724efbb1bfce415adf58944_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSF__Database_a6384591ddfa09e979deb8a695bca0f67}{
+\index{SF\_\-Database@{SF\_\-Database}!lastInsertId@{lastInsertId}}
+\index{lastInsertId@{lastInsertId}!SF_Database@{SF\_\-Database}}
+\subsubsection[{lastInsertId}]{\setlength{\rightskip}{0pt plus 5cm}lastInsertId (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Database_a6384591ddfa09e979deb8a695bca0f67}
+Returns the last auto\_\-increment value
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 208 of file SF\_\-Database.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return( mysql_insert_id( $this->m_dbConn ) );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classSF__Database_a9dc5da61781d3ffe5bc80275a129d08a}{
+\index{SF\_\-Database@{SF\_\-Database}!openDatabase@{openDatabase}}
+\index{openDatabase@{openDatabase}!SF_Database@{SF\_\-Database}}
+\subsubsection[{openDatabase}]{\setlength{\rightskip}{0pt plus 5cm}openDatabase (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classSF__Database_a9dc5da61781d3ffe5bc80275a129d08a}
+
+
+Definition at line 112 of file SF\_\-Database.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( !$this->m_dbConn )
+        {
+            $this->m_dbConn = mysql_connect( $this->m_dbHost, $this->m_dbUser, $t
+      his->m_dbPass );
+
+            if ( $this->m_dbConn && $this->m_dbName )
+                @mysql_select_db( $this->m_dbName, $this->m_dbConn );
+        }
+
+        return( $this->m_dbConn != null );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classSF__Database_a9dc5da61781d3ffe5bc80275a129d08a_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classSF__Database_a73d9cd9d8601e4eafbed60c48eb8d766}{
+\index{SF\_\-Database@{SF\_\-Database}!\$m\_\-dbConn@{\$m\_\-dbConn}}
+\index{\$m\_\-dbConn@{\$m\_\-dbConn}!SF_Database@{SF\_\-Database}}
+\subsubsection[{\$m\_\-dbConn}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-dbConn = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Database_a73d9cd9d8601e4eafbed60c48eb8d766}
+Enter description here...
+
+unknown\_\-type 
+
+Definition at line 37 of file SF\_\-Database.php.
+
+\hypertarget{classSF__Database_a78c5edb74261bdb997d4c8cc68c7db2d}{
+\index{SF\_\-Database@{SF\_\-Database}!\$m\_\-dbHost@{\$m\_\-dbHost}}
+\index{\$m\_\-dbHost@{\$m\_\-dbHost}!SF_Database@{SF\_\-Database}}
+\subsubsection[{\$m\_\-dbHost}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-dbHost = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Database_a78c5edb74261bdb997d4c8cc68c7db2d}
+Enter description here...
+
+unknown\_\-type 
+
+Definition at line 43 of file SF\_\-Database.php.
+
+\hypertarget{classSF__Database_afa7eed8ace632016b43ba2d17ec73447}{
+\index{SF\_\-Database@{SF\_\-Database}!\$m\_\-dbName@{\$m\_\-dbName}}
+\index{\$m\_\-dbName@{\$m\_\-dbName}!SF_Database@{SF\_\-Database}}
+\subsubsection[{\$m\_\-dbName}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-dbName = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Database_afa7eed8ace632016b43ba2d17ec73447}
+Enter description here...
+
+unknown\_\-type 
+
+Definition at line 61 of file SF\_\-Database.php.
+
+\hypertarget{classSF__Database_a871958f5b15e77a7c1f1d3eb3e603abc}{
+\index{SF\_\-Database@{SF\_\-Database}!\$m\_\-dbPass@{\$m\_\-dbPass}}
+\index{\$m\_\-dbPass@{\$m\_\-dbPass}!SF_Database@{SF\_\-Database}}
+\subsubsection[{\$m\_\-dbPass}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-dbPass = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Database_a871958f5b15e77a7c1f1d3eb3e603abc}
+Enter description here...
+
+unknown\_\-type 
+
+Definition at line 55 of file SF\_\-Database.php.
+
+\hypertarget{classSF__Database_a2e3854a1e3a0d95f189610658ed12289}{
+\index{SF\_\-Database@{SF\_\-Database}!\$m\_\-dbUser@{\$m\_\-dbUser}}
+\index{\$m\_\-dbUser@{\$m\_\-dbUser}!SF_Database@{SF\_\-Database}}
+\subsubsection[{\$m\_\-dbUser}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-dbUser = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Database_a2e3854a1e3a0d95f189610658ed12289}
+Enter description here...
+
+unknown\_\-type 
+
+Definition at line 49 of file SF\_\-Database.php.
+
+\hypertarget{classSF__Database_a247553d616cac3fa76915f9f09fb59b2}{
+\index{SF\_\-Database@{SF\_\-Database}!\$m\_\-iCurPage@{\$m\_\-iCurPage}}
+\index{\$m\_\-iCurPage@{\$m\_\-iCurPage}!SF_Database@{SF\_\-Database}}
+\subsubsection[{\$m\_\-iCurPage}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-iCurPage = 1\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Database_a247553d616cac3fa76915f9f09fb59b2}
+Current page of pager 
+
+Definition at line 69 of file SF\_\-Database.php.
+
+\hypertarget{classSF__Database_a559f47903c9f09f15cb286680b3f767c}{
+\index{SF\_\-Database@{SF\_\-Database}!\$m\_\-iPerPage@{\$m\_\-iPerPage}}
+\index{\$m\_\-iPerPage@{\$m\_\-iPerPage}!SF_Database@{SF\_\-Database}}
+\subsubsection[{\$m\_\-iPerPage}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-iPerPage = 25\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Database_a559f47903c9f09f15cb286680b3f767c}
+Rows per page for pager 
+
+Definition at line 65 of file SF\_\-Database.php.
+
+\hypertarget{classSF__Database_a57f2664c28b26868140aa5445f5b1c95}{
+\index{SF\_\-Database@{SF\_\-Database}!\$m\_\-sPager@{\$m\_\-sPager}}
+\index{\$m\_\-sPager@{\$m\_\-sPager}!SF_Database@{SF\_\-Database}}
+\subsubsection[{\$m\_\-sPager}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sPager = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classSF__Database_a57f2664c28b26868140aa5445f5b1c95}
+Pager results 
+
+Definition at line 73 of file SF\_\-Database.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/snowframe/base/\hyperlink{SF__Database_8php}{SF\_\-Database.php}\end{DoxyCompactItemize}

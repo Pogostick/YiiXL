@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classSFApplication.html#a6deb2041e7ee4cbb3511c0f5a7ea8a03" title="inviteRedirect" alt="" coords="157,5,264,35"/>
+<area shape="rect" id="node7" href="$classSFApplication.html#ac5e7c32ce7cbcf1f9f6e8684e8cefa5f" title="processAppCommands" alt="" coords="125,59,296,88"/>
+<area shape="rect" id="node5" href="$classSFApplication.html#ae1ecd9ab5b45268eb8405fcd83011fb0" title="loadPage" alt="" coords="379,5,459,35"/>
+<area shape="rect" id="node9" href="$classSFApplication.html#aa40909289ffd00ccc071d938f586fc47" title="processQueryString" alt="" coords="345,59,492,88"/>
+<area shape="rect" id="node11" href="$classSFApplication.html#a00d6c37e1b068b8a5987da26d04b6059" title="__construct" alt="" coords="541,59,637,88"/>
+</map>

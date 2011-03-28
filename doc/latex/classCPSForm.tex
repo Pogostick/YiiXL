@@ -1,0 +1,672 @@
+\hypertarget{classCPSForm}{
+\section{CPSForm Class Reference}
+\label{classCPSForm}\index{CPSForm@{CPSForm}}
+}
+
+
+Inheritance diagram for CPSForm:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{classCPSForm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSForm:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{classCPSForm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSForm_ac13da1fcb700bedd58bfe9d517689e75}{create} (\&\$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+static \hyperlink{classCPSForm_a3ff5ebd31312034b030ce1273675dde2}{formHeaderEx} (\$sTitle, \$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+static \hyperlink{classCPSForm_abdc7cb1b60d042a0308ef8885a4ea842}{formHeader} (\$sTitle, \$arMenuItems=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$sDivClass= 'ps-\/form-\/header', \$bShowFlashDiv=true, \$\_\-sHtmlInjection=null)
+\item 
+static \hyperlink{classCPSForm_a8e1373c33441797032b0d9865be4297f}{searchBar} (\$arOptions=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+static \hyperlink{classCPSForm_ac2b4267a947155171acc31b8d70a798b}{createMenuButtons} (\$sItemName, \$arWhich=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$sAdminName=null, \$sAdminAction=null)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classCPSForm_a5928a64b83ef2247c22303d1afb01781}{SEARCH\_\-PREFIX} = '\#\#pss\_\-'
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSForm_ab8c9743da4d2bf130427aa9e59fa9243}{\$m\_\-sSearchFieldLabelTemplate} = '$<$label class=\char`\"{}ps-\/form-\/search-\/label\char`\"{} for=\char`\"{}\{fieldId\}\char`\"{}$>$\{title\}$<$/label$>$'
+\item 
+static \hyperlink{classCPSForm_af73e8ea30d5e912f9a7d9cd6e950dd54}{\$m\_\-sSearchFieldTemplate} = '\{label\}$<$span class=\char`\"{}ps-\/form-\/search-\/field ui-\/widget-\/container\char`\"{}$>$\{field\}$<$/span$>$'
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 25 of file CPSForm.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSForm_ac13da1fcb700bedd58bfe9d517689e75}{
+\index{CPSForm@{CPSForm}!create@{create}}
+\index{create@{create}!CPSForm@{CPSForm}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static create (
+\begin{DoxyParamCaption}
+\item[{\&\$}]{ arOptions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSForm_ac13da1fcb700bedd58bfe9d517689e75}
+Creates a form from an option array
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arOptions \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\begin{Desc}
+\item[\hyperlink{todo__todo000010}{Todo}]document this function \end{Desc}
+
+
+Definition at line 51 of file CPSForm.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_bHaveButtonBar = false;
+
+        //  Make sure we have some form fields...
+        if ( ! $_arFields = PS::o( $arOptions, 'fields', null, true ) )
+            throw new CPSException( 'You must define form fields to use this meth
+      od.' );
+
+        //  Return as string?
+        $_bReturnString = PS::o( $arOptions, 'returnString', false, true );
+        $_showLegend = PS::o( $arOptions, 'showLegend', true, true );
+        $_bShowDates = PS::o( $arOptions, 'showDates', true, true );
+        $_bValidate = PS::o( $arOptions, 'validate', false );
+        $_bErrorSummary = PS::o( $arOptions, 'errorSummary', true, true );
+        $_errorSummaryOptions = PS::o( $arOptions, 'errorSummaryOptions', array()
+      , true );
+        $_errorSummaryHeader = PS::o( $_errorSummaryOptions, 'header', null, true
+       );
+        $_sFormId = PS::o( $arOptions, 'id', 'ps-edit-form' );
+        $_eUIStyle = PS::o( $arOptions, 'uiStyle', PS::UI_DEFAULT );
+
+        if ( ! isset( $arOptions['name'] ) ) $arOptions['name'] = $_sFormId;
+
+        //  Our model?
+        $_oModel = PS::o( $arOptions, 'formModel', null, true );
+
+        //  Throw in a neato keano flash span
+        if ( null === PS::_gs( 'psForm-flash-html' ) && ! PS::o( $arOptions, 'noF
+      lash', false, true ) )
+        {
+            $_flashClass = PS::o( $options, 'flashSuccessClass', 'operation-resul
+      t-success' );
+            
+            if ( null === ( $_message = PS::_gf( 'success' ) ) )
+            {
+                if ( null !== ( $_message = PS::_gf( 'failure' ) ) )
+                    $_flashClass = PS::o( $options, 'flashFailureClass', 'operati
+      on-result-failure' );
+            }
+            
+            $_spanId = PS::o( $options, 'flashSpanId', 'operation-result', true )
+      ;
+            PS::_ss( 'psForm-flash-html', PS::tag( 'span', array( 'id' => $_spanI
+      d, 'class' => $_flashClass ), $_message ) );
+
+            //  Register a nice little fader...
+            $_fader =<<<SCRIPT
+$('#{$_spanId}').fadeIn('500',function(){
+    $(this).delay(3000).fadeOut(3500);
+});
+SCRIPT;
+
+            PS::_rs( $_sFormId . '.' . $_spanId . '.fader', $_fader, CClientScrip
+      t::POS_READY );
+        }
+
+        //  Let's begin...
+        $_sOut = PS::beginFormEx( $arOptions );
+        
+        //  Error summary wanted?
+        if ( $_oModel && $_bErrorSummary )
+            $_sOut .= PS::errorSummary( $_oModel, $_errorSummaryHeader, null, $_e
+      rrorSummaryOptions );
+
+        //  Now create form fields...
+        foreach ( $_arFields as $_arValue )
+        {
+            $_bPassed = true;
+
+            //  First element must be type...
+            $_sType = array_shift( $_arValue );
+
+            //  Handle a runtime conditional column display
+            if ( $_sCondition = PS::o( $_arValue, 'condition', null, true ) )
+            {
+                if ( is_bool( $_sCondition ) )
+                    $_bPassed = $_sCondition;
+                else
+                    $_bPassed = eval( 'return(' . $_sCondition . ');' );
+            }
+
+            if ( $_bPassed )
+            {
+                switch ( strtolower( $_sType ) )
+                {
+                    case 'html':
+                        $_sOut .= implode( $_arValue );
+                        break;
+
+                    case 'hidden':
+                    case 'hiddenfield':
+                        $_sType = 'hiddenfield';
+                        //  Intentional drop through...
+
+                    case 'beginfieldset':
+                    case 'endfieldset':
+                        $_sOut .= call_user_func_array( array( 'PS', $_sType ), $
+      _arValue );
+                        break;
+
+                    case 'submit':
+                        //  Fix up the argument array
+                        $_arSubmit = ( is_array( $_arValue ) && count( $_arValue 
+      ) == 1 ) ? $_arValue[0] : $_arValue;
+                        $_sLabel = PS::o( $_arSubmit, 'label', $_sType, true );
+                        if ( PS::UI_JQUERY == $_eUIStyle ) $_arSubmit['jqui'] = t
+      rue;
+                        $_arValue = array( $_sLabel, $_arSubmit, 'formId' => $_sF
+      ormId );
+                        $_sOut .= call_user_func_array( array( 'PS', 'submitButto
+      nBar' ), $_arValue );
+                        $_bHaveButtonBar = true;
+                        break;
+
+                    default:
+                        $_sMethod = $_sType;
+
+                        switch ( $_sType )
+                        {
+                            case 'label':   //  No special array manipulation nee
+      ded.
+                                $_sMethod = $_sType;
+                                break;
+
+                            default:        //  Format for PS::field() call
+                                //  Push model into the front of the array...
+                                array_unshift( $_arValue, $_sType, $_oModel );
+                                $_sMethod = 'field';
+                                break;
+                        }
+
+                        //  Make the field
+                        $_sOut .= call_user_func_array( array( 'PS', $_sMethod ),
+       $_arValue );
+
+                        //  CKEditor needs special handing for validate...
+                        if ( $_bValidate && $_sType == PS::CKEDITOR )
+                        {
+                            $_sFieldId = PS::getLastFieldId();
+                            $_sFormId = PS::getCurrentFormId();
+                            $_sScript = "jQuery('#{$_sFormId}').submit(function(e
+      ){ jQuery('#{$_sFieldId}').val(CKEDITOR.instances.{$_sFieldId}.getData()); return
+       true; });";
+                            PS::_rs( '#psForm.ckeditor.' . $_sFieldId . '.get_dat
+      a', $_sScript, CClientScript::POS_READY );
+                        }
+                        break;
+                }
+            }
+        }
+
+        //  Does user want dates? Show 'em
+        if ( $_bShowDates && $_oModel instanceof CPSModel && ! $_oModel->isNewRec
+      ord )
+            $_sOut .= $_oModel->showDates();
+
+        //  Add legend
+        $_requiredLabel = PS::getRequiredLabel();
+
+        if ( $_showLegend && $_requiredLabel )
+        {
+            $_sOut .= '<div class="ps-form-legend">Fields with ' . $_requiredLabe
+      l . ' are required</div>';
+        }
+
+        //  Ok, done building form...
+        $_sOut .= PS::endForm();
+        
+        //  Does user want data returned?
+        if ( $_bReturnString ) return $_sOut;
+
+        //  Guess not, just spit it out...
+        echo $_sOut;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classCPSForm_ac13da1fcb700bedd58bfe9d517689e75_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSForm_ac2b4267a947155171acc31b8d70a798b}{
+\index{CPSForm@{CPSForm}!createMenuButtons@{createMenuButtons}}
+\index{createMenuButtons@{createMenuButtons}!CPSForm@{CPSForm}}
+\subsubsection[{createMenuButtons}]{\setlength{\rightskip}{0pt plus 5cm}static createMenuButtons (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sItemName, }
+\item[{\$}]{ arWhich = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ sAdminName = {\ttfamily null}, }
+\item[{\$}]{ sAdminAction = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSForm_ac2b4267a947155171acc31b8d70a798b}
+Send in an array of standard actions and they will be converted to spiffy action buttons. 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arWhich \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 347 of file CPSForm.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arOut = array();
+
+        if ( null === $sAdminName ) $sAdminName = ucfirst( $sItemName ) . ' Manag
+      er';
+        if ( null === $sAdminAction ) $sAdminAction = array( 'admin' );
+
+        foreach ( $arWhich as $_sButton => $_arOptions )
+        {
+            if ( is_numeric( $_sButton ) && ! is_array( $_arOptions ) )
+                $_sButton = $_arOptions;
+
+            $_iButton = CPSDataGrid::getMenuButtonType( $_sButton );
+
+            switch ( $_iButton )
+            {
+                case PS::ACTION_PREVIEW:
+                    $_arOut[ 'preview' ] = array(
+                        'label' => 'Preview',
+                        'url' => array( '#' ),
+                        'icon' => 'lightbulb',
+                        'id' => PS::o( $_arOptions, 'id' ),
+                    );
+
+                    if ( $_sTarget = PS::o( $_arOptions, 'target' ) )
+                        $_arOut['preview']['onClick'] = '$(\'' . $_sTarget . '\')
+      .toggle(); return false;';
+                    break;
+
+                case PS::ACTION_VIEW:
+                    $_arOut[ 'view' ] = array(
+                        'label' => 'View',
+                        'url' => array( 'show' ),
+                        'icon' => 'check',
+                    );
+                    break;
+
+                case PS::ACTION_CREATE:
+                    $_arOut[ 'new' ] = array(
+                        'label' => 'New ' . $sItemName,
+                        'url' => array( 'create' ),
+                        'icon' => 'pencil',
+                    );
+                    break;
+
+                case PS::ACTION_EDIT:
+                    $_arOut[ 'update' ] = array(
+                        'label' => intval( $_sButton ) == PS::ACTION_EDIT ? 'Edit
+      ' : 'Update',
+                        'url' => array( 'update' ),
+                        'icon' => 'pencil',
+                    );
+                    break;
+
+                case PS::ACTION_SAVE:
+                    $_arOut[ 'save' ] = array(
+                        'label' => 'Save',
+                        'url' => '_submit_',
+                        'icon' => 'disk',
+                    );
+                    break;
+
+                case PS::ACTION_DELETE:
+                    $_arOut[ 'delete' ] = array(
+                        'label' => 'Delete',
+                        'url' => array( 'delete' ),
+                        'confirm' => 'Do you really want to delete this ' . $sIte
+      mName . '?',
+                        'icon' => 'trash',
+                    );
+                    break;
+
+                case PS::ACTION_RETURN:
+                case PS::ACTION_CANCEL:
+                    $_arOut[ 'cancel' ] = array(
+                        'label' => 'Cancel',
+                        'url' => $sAdminAction,
+                        'icon' => 'cancel',
+                    );
+                    break;
+
+                case PS::ACTION_ADMIN:
+                    $_arOut[ 'return' ] = array(
+                        'label' => $sAdminName,
+                        'url' => $sAdminAction,
+                        'icon' => 'arrowreturnthick-1-w',
+                    );
+                    break;
+
+                case PS::ACTION_LOCK:
+                    $_arOut[ 'lock' ] = array(
+                        'label' => 'Lock',
+                        'url' => array( 'lock' ),
+                        'icon' => 'unlocked',
+                    );
+                    break;
+
+                case PS::ACTION_UNLOCK:
+                    $_arOut[ 'unlock' ] = array(
+                        'label' => 'Unlock',
+                        'url' => array( 'unlock' ),
+                        'icon' => 'locked',
+                    );
+                    break;
+            }
+        }
+
+        //  Return our buttons
+        return $_arOut;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSForm_ac2b4267a947155171acc31b8d70a798b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSForm_abdc7cb1b60d042a0308ef8885a4ea842}{
+\index{CPSForm@{CPSForm}!formHeader@{formHeader}}
+\index{formHeader@{formHeader}!CPSForm@{CPSForm}}
+\subsubsection[{formHeader}]{\setlength{\rightskip}{0pt plus 5cm}static formHeader (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sTitle, }
+\item[{\$}]{ arMenuItems = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ sDivClass = {\ttfamily 'ps-\/form-\/header'}, }
+\item[{\$}]{ bShowFlashDiv = {\ttfamily true}, }
+\item[{\$}]{ \_\-sHtmlInjection = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSForm_abdc7cb1b60d042a0308ef8885a4ea842}
+Makes a nice form header \begin{Desc}
+\item[\hyperlink{deprecated__deprecated000005}{Deprecated}]Use formHeaderEx \end{Desc}
+
+
+Definition at line 297 of file CPSForm.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Be nice and let people call this instead
+        if ( in_array( 'menuItems', $arMenuItems ) ) return self::formHeaderEx( $
+      sTitle, $arMenuItems );
+
+        //  Otherwise, screw you
+        trigger_error( 'CPSForm::formHeader is deprecated. Please use formHeaderE
+      x instead', defined( E_USER_DEPRECATED ) ? E_USER_DEPRECATED : E_USER_WARNING );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classCPSForm_abdc7cb1b60d042a0308ef8885a4ea842_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSForm_a3ff5ebd31312034b030ce1273675dde2}{
+\index{CPSForm@{CPSForm}!formHeaderEx@{formHeaderEx}}
+\index{formHeaderEx@{formHeaderEx}!CPSForm@{CPSForm}}
+\subsubsection[{formHeaderEx}]{\setlength{\rightskip}{0pt plus 5cm}static formHeaderEx (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sTitle, }
+\item[{\$}]{ arOptions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSForm_a3ff5ebd31312034b030ce1273675dde2}
+Creates a standard form header
+
+Pass in menu item array as follows:
+
+array( 'id' =$>$ array( 'label', 'url', 'icon' ), ... )
+
+Each item is made into a jQuery UI button with an optional jQUI icon.
+
+Example:
+
+echo \hyperlink{classCPSForm_abdc7cb1b60d042a0308ef8885a4ea842}{CPSForm::formHeader}( 'Site Manager', array( 'new' =$>$ array( 'label' =$>$ 'New Site', 'url' =$>$ array( 'create' ), 'formId' =$>$ 'id for form' // optional 'icon' =$>$ 'circle-\/plus', ) ) );
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sTitle \item[{\em array}]\$arMenuItems \item[{\em string}]\$sDivClass \item[{\em boolean}]\$bShowFlashDiv If true, will output a standard ps-\/flash-\/display div \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 234 of file CPSForm.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $arMenuItems = PS::o( $arOptions, 'menuItems', array() );
+
+        $sDivClass = PS::o( $arOptions, 'divClass', 'ps-form-header' );
+        $bShowFlashDiv = PS::o( $arOptions, 'showFlashDiv', true );
+        $_sHtmlInjection = PS::o( $arOptions, 'htmlInject', null );
+        $_sFlashMessage = PS::o( $arOptions, 'flashMessage' );
+        $_sSubHeader = PS::o( $arOptions, 'subHeader', null );
+        $_sFormId = PS::o( $arOptions, 'formId', 'ps-edit-form', true );
+
+        $_bIcon = false;
+        $_sClass = $_sLink = $_sOut = null;
+        $_sFlash = $bShowFlashDiv ? PS::flashMessage( 'success', true ) : null;
+        $_sExtra = null;//'style="margin-bottom:' . ( $_sFlash ? '32px' : '10px' 
+      ) . '";"';
+
+        if ( $_sFlashMessage ) $_sFlashMessage = '<div class="ps-subheader-flash"
+      >' . $_sFlashMessage . '</div>';
+
+        if ( in_array( 'menuButtons', $arOptions ) )
+        {
+            $arMenuItems = array_merge(
+                $arMenuItems,
+                self::createMenuButtons(
+                    PS::o( $arOptions, 'itemName', 'item', true ),
+                    PS::o( $arOptions, 'menuButtons', array(), true ),
+                    PS::o( $arOptions, 'adminName', null, true ),
+                    PS::o( $arOptions, 'adminAction', null, true )
+                )
+            );
+        }
+
+        //  Create menu
+        foreach ( $arMenuItems as $_sId => $_arItem )
+        {
+            $_sOnClick = null;
+            $_sAccess = PS::o( $_arItem, 'access', null, true );
+
+            //  Can user have this item?
+            if ( $_sAccess && $_sAccess != Yii::app()->user->accessRole )
+                continue;
+
+            $_sLabel = PS::o( $_arItem, 'label', $sTitle, true );
+            $_sLink = PS::normalizeUrl( PS::o( $_arItem, 'url', array('#'), true 
+      ) );
+            $_arItem['formId'] = $_sFormId;
+            $_sOut .= PS::jquiButton( $_sLabel, $_sLink, $_arItem );
+        }
+
+        return <<<HTML
+        <div class="{$sDivClass}" {$_sExtra}>
+            <h1 class="ps-form-header-left">{$sTitle}</h1>{$_sFlash}
+            <p style="clear:both;">{$_sOut}</p>
+            <div style="clear:both"></div>
+            {$_sHtmlInjection}{$_sFlashMessage}
+        </div>
+        {$_sSubHeader}
+HTML;
+
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classCPSForm_a3ff5ebd31312034b030ce1273675dde2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSForm_a8e1373c33441797032b0d9865be4297f}{
+\index{CPSForm@{CPSForm}!searchBar@{searchBar}}
+\index{searchBar@{searchBar}!CPSForm@{CPSForm}}
+\subsubsection[{searchBar}]{\setlength{\rightskip}{0pt plus 5cm}static searchBar (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arOptions = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSForm_a8e1373c33441797032b0d9865be4297f}
+Output a generic search bar...
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$arOptions \end{DoxyParams}
+
+
+Definition at line 311 of file CPSForm.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arFields = PS::o( $arOptions, 'fields', array(), true );
+        $_sDivClass = PS::o( $arOptions, 'class', 'ps-search-bar', true );
+
+        foreach ( $_arFields as $_sName => $_arField )
+        {
+            $_sTitle = PS::o( $_arField, 'title', 'Search', true );
+            $_eType = PS::o( $_arField, 'type', 'text', true );
+            $_arTypeOptions = PS::o( $_arField, 'typeOptions', array(), true );
+            $_arData = PS::o( $_arField, 'data', array(), true );
+
+            //  Setup some css...
+            $_sClass = PS::o( $_arTypeOptions, 'class', null, true );
+            $_arTypeOptions['class'] = trim( $_sClass );
+
+            $_arTypeOptions['id'] = PS::o( $_arTypeOptions, 'id', PS::getWidgetId
+      ( self::SEARCH_PREFIX ) . '_' . $_eType );
+            if ( ! is_numeric( $_eType ) ) $_arTypeOptions['size'] = PS::o( $_arT
+      ypeOptions, 'size', '15' );
+
+            if ( $_sTitle ) $_sTitle .= ':';
+
+            $_sField = PS::activefield( $_eType, null, $_sName, $_arTypeOptions, 
+      array(), $_arData );
+            $_sLabel = strtr( self::$m_sSearchFieldLabelTemplate, array( '{fieldI
+      d}' => $_arTypeOptions['id'], '{title}' => $_sTitle ) );
+            $_sOut .= strtr( self::$m_sSearchFieldTemplate, array( '{label}' => $
+      _sLabel, '{field}' => $_sField ) );
+        }
+
+        return <<<HTML
+        <div class="{$_sDivClass}">{$_sOut}</div>
+HTML;
+    }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSForm_ab8c9743da4d2bf130427aa9e59fa9243}{
+\index{CPSForm@{CPSForm}!\$m\_\-sSearchFieldLabelTemplate@{\$m\_\-sSearchFieldLabelTemplate}}
+\index{\$m\_\-sSearchFieldLabelTemplate@{\$m\_\-sSearchFieldLabelTemplate}!CPSForm@{CPSForm}}
+\subsubsection[{\$m\_\-sSearchFieldLabelTemplate}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sSearchFieldLabelTemplate = '$<$label class=\char`\"{}ps-\/form-\/search-\/label\char`\"{} for=\char`\"{}\{fieldId\}\char`\"{}$>$\{title\}$<$/label$>$'\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSForm_ab8c9743da4d2bf130427aa9e59fa9243}
+
+
+Definition at line 37 of file CPSForm.php.
+
+\hypertarget{classCPSForm_af73e8ea30d5e912f9a7d9cd6e950dd54}{
+\index{CPSForm@{CPSForm}!\$m\_\-sSearchFieldTemplate@{\$m\_\-sSearchFieldTemplate}}
+\index{\$m\_\-sSearchFieldTemplate@{\$m\_\-sSearchFieldTemplate}!CPSForm@{CPSForm}}
+\subsubsection[{\$m\_\-sSearchFieldTemplate}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sSearchFieldTemplate = '\{label\}$<$span class=\char`\"{}ps-\/form-\/search-\/field ui-\/widget-\/container\char`\"{}$>$\{field\}$<$/span$>$'\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{classCPSForm_af73e8ea30d5e912f9a7d9cd6e950dd54}
+
+
+Definition at line 38 of file CPSForm.php.
+
+\hypertarget{classCPSForm_a5928a64b83ef2247c22303d1afb01781}{
+\index{CPSForm@{CPSForm}!SEARCH\_\-PREFIX@{SEARCH\_\-PREFIX}}
+\index{SEARCH\_\-PREFIX@{SEARCH\_\-PREFIX}!CPSForm@{CPSForm}}
+\subsubsection[{SEARCH\_\-PREFIX}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf SEARCH\_\-PREFIX} = '\#\#pss\_\-'}}
+\label{classCPSForm_a5928a64b83ef2247c22303d1afb01781}
+
+
+Definition at line 31 of file CPSForm.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/helpers/\hyperlink{CPSForm_8php}{CPSForm.php}\end{DoxyCompactItemize}

@@ -1,0 +1,418 @@
+\hypertarget{classCPSWHMCSClientApi}{
+\section{CPSWHMCSClientApi Class Reference}
+\label{classCPSWHMCSClientApi}\index{CPSWHMCSClientApi@{CPSWHMCSClientApi}}
+}
+
+
+Inheritance diagram for CPSWHMCSClientApi:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classCPSWHMCSClientApi__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSWHMCSClientApi:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classCPSWHMCSClientApi__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSWHMCSClientApi_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSWHMCSClientApi_a619bc608e1605357f83107396ee75bd7}{addClient} (\$arRequestData=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSWHMCSClientApi_a629cb6c4481550eb847f834e3010b78f}{updateClient} (\$arRequestData=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSWHMCSClientApi_a9b4a4c2071ec29da8b57507f824c1817}{deleteClient} (\$iClientId)
+\item 
+\hyperlink{classCPSWHMCSClientApi_a81bbebdbfaa0d2e514b5313cacd92f72}{getClientsDetails} (\$iClientId)
+\item 
+\hyperlink{classCPSWHMCSClientApi_a7e298e9dbfd4322701dd3b9addd1432d}{getClientsProducts} (\$iClientId)
+\item 
+\hyperlink{classCPSWHMCSClientApi_a431fcd2819eb9ed114e8bbb473aa782b}{addInvoicePayment} (\$arRequestData=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 20 of file CPSWHMCSClientApi.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSWHMCSClientApi_a619bc608e1605357f83107396ee75bd7}{
+\index{CPSWHMCSClientApi@{CPSWHMCSClientApi}!addClient@{addClient}}
+\index{addClient@{addClient}!CPSWHMCSClientApi@{CPSWHMCSClientApi}}
+\subsubsection[{addClient}]{\setlength{\rightskip}{0pt plus 5cm}addClient (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arRequestData = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSClientApi_a619bc608e1605357f83107396ee75bd7}
+Adds a client to the system
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arRequestData \end{DoxyParams}
+
+
+Definition at line 104 of file CPSWHMCSClientApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $arRequestData['country'] != 'US' && empty( $arRequestData['state'] 
+      ) )
+            $arRequestData['state'] = 'NONE';
+
+        return $this->makeApiCall( self::CLIENT_API, 'addclient', $arRequestData 
+      );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classCPSWHMCSClientApi_a619bc608e1605357f83107396ee75bd7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSClientApi_a431fcd2819eb9ed114e8bbb473aa782b}{
+\index{CPSWHMCSClientApi@{CPSWHMCSClientApi}!addInvoicePayment@{addInvoicePayment}}
+\index{addInvoicePayment@{addInvoicePayment}!CPSWHMCSClientApi@{CPSWHMCSClientApi}}
+\subsubsection[{addInvoicePayment}]{\setlength{\rightskip}{0pt plus 5cm}addInvoicePayment (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arRequestData = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSClientApi_a431fcd2819eb9ed114e8bbb473aa782b}
+Records an invoice payment
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arRequestData \end{DoxyParams}
+
+
+Definition at line 169 of file CPSWHMCSClientApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->makeApiCall( self::CLIENT_API, 'addinvoicepayment', $arRequ
+      estData );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=380pt]{classCPSWHMCSClientApi_a431fcd2819eb9ed114e8bbb473aa782b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSClientApi_a9b4a4c2071ec29da8b57507f824c1817}{
+\index{CPSWHMCSClientApi@{CPSWHMCSClientApi}!deleteClient@{deleteClient}}
+\index{deleteClient@{deleteClient}!CPSWHMCSClientApi@{CPSWHMCSClientApi}}
+\subsubsection[{deleteClient}]{\setlength{\rightskip}{0pt plus 5cm}deleteClient (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iClientId}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSClientApi_a9b4a4c2071ec29da8b57507f824c1817}
+Deletes a client
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]\$iClientId \end{DoxyParams}
+
+
+Definition at line 127 of file CPSWHMCSClientApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arData = array(
+            'clientId' => $iClientId,
+        );
+
+        return $this->makeApiCall( self::CLIENT_API, 'deleteclient', $_arData );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{classCPSWHMCSClientApi_a9b4a4c2071ec29da8b57507f824c1817_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSClientApi_a81bbebdbfaa0d2e514b5313cacd92f72}{
+\index{CPSWHMCSClientApi@{CPSWHMCSClientApi}!getClientsDetails@{getClientsDetails}}
+\index{getClientsDetails@{getClientsDetails}!CPSWHMCSClientApi@{CPSWHMCSClientApi}}
+\subsubsection[{getClientsDetails}]{\setlength{\rightskip}{0pt plus 5cm}getClientsDetails (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iClientId}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSClientApi_a81bbebdbfaa0d2e514b5313cacd92f72}
+Retrieves a clients' details
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]\$iClientId \end{DoxyParams}
+
+
+Definition at line 141 of file CPSWHMCSClientApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arData = array(
+            'clientId' => $iClientId,
+        );
+
+        return $this->makeApiCall( self::CLIENT_API, 'getclientsdetails', $_arDat
+      a );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=368pt]{classCPSWHMCSClientApi_a81bbebdbfaa0d2e514b5313cacd92f72_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSClientApi_a7e298e9dbfd4322701dd3b9addd1432d}{
+\index{CPSWHMCSClientApi@{CPSWHMCSClientApi}!getClientsProducts@{getClientsProducts}}
+\index{getClientsProducts@{getClientsProducts}!CPSWHMCSClientApi@{CPSWHMCSClientApi}}
+\subsubsection[{getClientsProducts}]{\setlength{\rightskip}{0pt plus 5cm}getClientsProducts (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iClientId}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSClientApi_a7e298e9dbfd4322701dd3b9addd1432d}
+Retrieves a clients' products
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]\$iClientId \end{DoxyParams}
+
+
+Definition at line 155 of file CPSWHMCSClientApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arData = array(
+            'clientId' => $iClientId,
+        );
+
+        return $this->makeApiCall( self::CLIENT_API, 'getclientsproducts', $_arDa
+      ta );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=378pt]{classCPSWHMCSClientApi_a7e298e9dbfd4322701dd3b9addd1432d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSClientApi_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSWHMCSClientApi@{CPSWHMCSClientApi}!init@{init}}
+\index{init@{init}!CPSWHMCSClientApi@{CPSWHMCSClientApi}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSClientApi_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize 
+
+Reimplemented from \hyperlink{classCPSApiComponent_a4be4055f3361d4800e16bc2e2e38cda6}{CPSApiComponent}.
+
+
+
+Definition at line 29 of file CPSWHMCSClientApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Call daddy...
+        parent::init();
+
+        //  Client API
+        $this->apiToUse = self::CLIENT_API;
+        
+        //  Create the base array
+        $this->requestMap = array();
+
+        //  Client::AddClient
+        $this->addRequestMapping( 'firstName', 'firstname', true, null, self::CLI
+      ENT_API, 'addclient' );
+        $this->addRequestMapping( 'lastName', 'lastname', true );
+        $this->addRequestMapping( 'companyName', 'companyname' );
+        $this->addRequestMapping( 'emailAddress', 'email', true );
+        $this->addRequestMapping( 'address1', 'address1', true );
+        $this->addRequestMapping( 'address2', 'address2' );
+        $this->addRequestMapping( 'city', 'city', true );
+        $this->addRequestMapping( 'state', 'state', true );
+        $this->addRequestMapping( 'postalCode', 'postcode', true );
+        $this->addRequestMapping( 'country', 'country', true );
+        $this->addRequestMapping( 'phoneNumber', 'phonenumber', true );
+        $this->addRequestMapping( 'password2', 'password2' );
+        $this->addRequestMapping( 'currency', 'currency', true );
+        $this->addRequestMapping( 'noEmail', 'noemail', true );
+        
+        //  Client::UpdateClient
+        $this->addRequestMapping( 'clientId', 'clientid', true, null, self::CLIEN
+      T_API, 'updateclient' );
+        $this->addRequestMapping( 'status' );
+        $this->addRequestMapping( 'firstName', 'firstname' );
+        $this->addRequestMapping( 'lastName', 'lastname' );
+        $this->addRequestMapping( 'companyName', 'companyname' );
+        $this->addRequestMapping( 'emailAddress', 'email' );
+        $this->addRequestMapping( 'address1', 'address1' );
+        $this->addRequestMapping( 'address2', 'address2' );
+        $this->addRequestMapping( 'city', 'city' );
+        $this->addRequestMapping( 'state', 'state' );
+        $this->addRequestMapping( 'postalCode', 'postcode' );
+        $this->addRequestMapping( 'country', 'country' );
+        $this->addRequestMapping( 'phoneNumber', 'phonenumber' );
+        $this->addRequestMapping( 'password2', 'password2' );
+        $this->addRequestMapping( 'creditBalance', 'credit' );
+        $this->addRequestMapping( 'taxExempt', 'taxexempt' );
+        $this->addRequestMapping( 'notes' );
+        $this->addRequestMapping( 'cardType', 'cardtype' );
+        $this->addRequestMapping( 'cardNumber', 'cardnum' );
+        $this->addRequestMapping( 'cardExpireDate', 'expdate' );
+        $this->addRequestMapping( 'startDate', 'startdate' );
+        $this->addRequestMapping( 'cardIssueNumber', 'issuenumber' );
+
+        //  Client::DeleteClient
+        $this->addRequestMapping( 'clientId', 'clientid', true, null, self::CLIEN
+      T_API, 'deleteclient' );
+
+        //  Client::AddInvoicePayment
+        $this->addRequestMapping( 'invoiceId', 'invoiceid', true, null, self::CLI
+      ENT_API, 'addinvoicepayment' );
+        $this->addRequestMapping( 'transactionId', 'transid', true );
+        $this->addRequestMapping( 'invoiceAmount', 'amount' );
+        $this->addRequestMapping( 'fees', null, true );
+        $this->addRequestMapping( 'gateway', null, true );
+        $this->addRequestMapping( 'noEmail', 'noemail' );
+        $this->addRequestMapping( 'paymentDate', 'date' );
+
+        //  Client::GetClientsDetails
+        $this->addRequestMapping( 'clientId', 'clientid', true, null, self::CLIEN
+      T_API, 'getclientsdetails' );
+
+        //  Client::GetClientsProducts
+        $this->addRequestMapping( 'clientId', 'clientid', true, null, self::CLIEN
+      T_API, 'getclientsproducts' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=358pt]{classCPSWHMCSClientApi_a4be4055f3361d4800e16bc2e2e38cda6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWHMCSClientApi_a629cb6c4481550eb847f834e3010b78f}{
+\index{CPSWHMCSClientApi@{CPSWHMCSClientApi}!updateClient@{updateClient}}
+\index{updateClient@{updateClient}!CPSWHMCSClientApi@{CPSWHMCSClientApi}}
+\subsubsection[{updateClient}]{\setlength{\rightskip}{0pt plus 5cm}updateClient (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arRequestData = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWHMCSClientApi_a629cb6c4481550eb847f834e3010b78f}
+Updates a client record
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arRequestData \end{DoxyParams}
+
+
+Definition at line 117 of file CPSWHMCSClientApi.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return $this->makeApiCall( self::CLIENT_API, 'updateclient', $arRequestDa
+      ta );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classCPSWHMCSClientApi_a629cb6c4481550eb847f834e3010b78f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/components/whmcs/\hyperlink{CPSWHMCSClientApi_8php}{CPSWHMCSClientApi.php}\end{DoxyCompactItemize}

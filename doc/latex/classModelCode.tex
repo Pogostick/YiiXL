@@ -1,0 +1,945 @@
+\hypertarget{classModelCode}{
+\section{ModelCode Class Reference}
+\label{classModelCode}\index{ModelCode@{ModelCode}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classModelCode_a17dba92d96b9dd48c62f3ede3eef94d4}{rules} ()
+\item 
+\hyperlink{classModelCode_aae54d2938df6eac42a9a9020a64ae31b}{attributeLabels} ()
+\item 
+\hyperlink{classModelCode_aeb759ab8b65c078ab7455db4e42c585c}{requiredTemplates} ()
+\item 
+\hyperlink{classModelCode_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classModelCode_a9596f1635d3c078fa06ab0166bcbb11b}{prepare} ()
+\item 
+\hyperlink{classModelCode_a4a6d3897ac77e9586589fdd4d6e5ecf9}{validateTableName} (\$attribute, \$params)
+\item 
+\hyperlink{classModelCode_af93ad690038df66799f9ddd39364e8d0}{validateModelPath} (\$attribute, \$params)
+\item 
+\hyperlink{classModelCode_ac532afcf2e4495bba874d71b56c59508}{validateBaseClass} (\$attribute, \$params)
+\item 
+\hyperlink{classModelCode_a5eac2a49f496d7dd3bb5c85125d721b1}{getTableSchema} (\$tableName)
+\item 
+\hyperlink{classModelCode_af6d7c7e90de1505aa2ce2da6cbc5857c}{generateLabels} (\$table)
+\item 
+\hyperlink{classModelCode_a3c33fb60a7ac31271b9479cbda88578a}{generateRules} (\$table)
+\item 
+\hyperlink{classModelCode_a04e057d2d5a8d5abf778dda06374d723}{getRelations} (\$className)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classModelCode_a061ded67e1c12c266312830d080f46a7}{\$tablePrefix}
+\item 
+\hyperlink{classModelCode_aea06aaf672e3fe5fbf45958ae2782244}{\$tableName}
+\item 
+\hyperlink{classModelCode_aaba2952ca851db29e7fffe58808aa4aa}{\$modelClass}
+\item 
+\hyperlink{classModelCode_a349ce28f73e8c77a58b4f0eca3f4252b}{\$modelPath} = 'application.models'
+\item 
+\hyperlink{classModelCode_a190491cf77e760fce1f6a9c9f226a18e}{\$baseClass} = 'CActiveRecord'
+\item 
+\hyperlink{classModelCode_a87a1491288adbff7947ce1bb223dcd3a}{\$databaseComponent} = 'db'
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classModelCode_a0375bc447ca8e3632ff8f909a324f96c}{removePrefix} (\$tableName, \$addBrackets=true)
+\item 
+\hyperlink{classModelCode_a6e265367e1344ab4817a0f31a6025892}{generateRelations} ()
+\item 
+\hyperlink{classModelCode_a1599d29ee50f29d0ba66d77013b0e767}{isRelationTable} (\$table)
+\item 
+\hyperlink{classModelCode_ab09877095074b6bfc650a85200d0189b}{generateClassName} (\$tableName)
+\item 
+\hyperlink{classModelCode_a3efd4c5c31f9bc04aaeab3db78805a7e}{generateRelationName} (\$tableName, \$fkName, \$multiple)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classModelCode_a5787b67dccb801e89f4ff779d42edece}{\$relations}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 5 of file ModelCode.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classModelCode_aae54d2938df6eac42a9a9020a64ae31b}{
+\index{ModelCode@{ModelCode}!attributeLabels@{attributeLabels}}
+\index{attributeLabels@{attributeLabels}!ModelCode@{ModelCode}}
+\subsubsection[{attributeLabels}]{\setlength{\rightskip}{0pt plus 5cm}attributeLabels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classModelCode_aae54d2938df6eac42a9a9020a64ae31b}
+
+
+Definition at line 34 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return array_merge(parent::attributeLabels(), array(
+            'tablePrefix'=>'Table Prefix',
+            'tableName'=>'Table Name',
+            'modelPath'=>'Model Path',
+            'modelClass'=>'Model Class',
+            'baseClass'=>'Base Class',
+            'databaseComponent'=>'Database'
+        ));
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classModelCode_ab09877095074b6bfc650a85200d0189b}{
+\index{ModelCode@{ModelCode}!generateClassName@{generateClassName}}
+\index{generateClassName@{generateClassName}!ModelCode@{ModelCode}}
+\subsubsection[{generateClassName}]{\setlength{\rightskip}{0pt plus 5cm}generateClassName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ tableName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classModelCode_ab09877095074b6bfc650a85200d0189b}
+
+
+Definition at line 301 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if($this->tableName===$tableName || ($pos=strrpos($this->tableName,'.'))!
+      ==false && substr($this->tableName,$pos+1)===$tableName)
+            return $this->modelClass;
+
+        $tableName=$this->removePrefix($tableName,false);
+        $className='';
+        foreach(explode('_',$tableName) as $name)
+        {
+            if($name!=='')
+                $className.=ucfirst($name);
+        }
+        return $className;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classModelCode_ab09877095074b6bfc650a85200d0189b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classModelCode_ab09877095074b6bfc650a85200d0189b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classModelCode_af6d7c7e90de1505aa2ce2da6cbc5857c}{
+\index{ModelCode@{ModelCode}!generateLabels@{generateLabels}}
+\index{generateLabels@{generateLabels}!ModelCode@{ModelCode}}
+\subsubsection[{generateLabels}]{\setlength{\rightskip}{0pt plus 5cm}generateLabels (
+\begin{DoxyParamCaption}
+\item[{\$}]{ table}
+\end{DoxyParamCaption}
+)}}
+\label{classModelCode_af6d7c7e90de1505aa2ce2da6cbc5857c}
+
+
+Definition at line 145 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $labels=array();
+        foreach($table->columns as $column)
+        {
+            $label=ucwords(trim(strtolower(str_replace(array('-','_'),' ',preg_re
+      place('/(?<![A-Z])[A-Z]/', ' \0', $column->name)))));
+            $label=preg_replace('/\s+/',' ',$label);
+            if(strcasecmp(substr($label,-3),' id')===0)
+                $label=substr($label,0,-3);
+            if($label==='Id')
+                $label='ID';
+            $labels[$column->name]=$label;
+        }
+        return $labels;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classModelCode_a3efd4c5c31f9bc04aaeab3db78805a7e}{
+\index{ModelCode@{ModelCode}!generateRelationName@{generateRelationName}}
+\index{generateRelationName@{generateRelationName}!ModelCode@{ModelCode}}
+\subsubsection[{generateRelationName}]{\setlength{\rightskip}{0pt plus 5cm}generateRelationName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ tableName, }
+\item[{\$}]{ fkName, }
+\item[{\$}]{ multiple}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classModelCode_a3efd4c5c31f9bc04aaeab3db78805a7e}
+Generate a name for use as a relation name (inside relations() function in a model). 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]the name of the table to hold the relation \item[{\em string}]the foreign key name \item[{\em boolean}]whether the relation would contain multiple objects \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string the relation name 
+\end{DoxyReturn}
+
+
+Definition at line 323 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if(strcasecmp(substr($fkName,-2),'id')===0 && strcasecmp($fkName,'id'))
+            $relationName=rtrim(substr($fkName, 0, -2),'_');
+        else
+            $relationName=$fkName;
+        $relationName[0]=strtolower($relationName);
+
+        $rawName=$relationName;
+        if($multiple)
+            $relationName=$this->pluralize($relationName);
+
+        $table=Yii::app()->getComponent($this->databaseComponent)->schema->getTab
+      le($tableName);
+        $i=0;
+        while(isset($table->columns[$relationName]))
+            $relationName=$rawName.($i++);
+
+        $names=preg_split('/_+/',$relationName,-1,PREG_SPLIT_NO_EMPTY);
+        if(empty($names)) return $relationName;  // unlikely
+        for($name=$names[0], $i=1;$i<count($names);++$i)
+            $name.=ucfirst($names[$i]);
+        return $name;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classModelCode_a3efd4c5c31f9bc04aaeab3db78805a7e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classModelCode_a6e265367e1344ab4817a0f31a6025892}{
+\index{ModelCode@{ModelCode}!generateRelations@{generateRelations}}
+\index{generateRelations@{generateRelations}!ModelCode@{ModelCode}}
+\subsubsection[{generateRelations}]{\setlength{\rightskip}{0pt plus 5cm}generateRelations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classModelCode_a6e265367e1344ab4817a0f31a6025892}
+
+
+Definition at line 235 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $relations=array();
+        foreach(Yii::app()->getComponent($this->databaseComponent)->schema->getTa
+      bles() as $table)
+        {
+            if($this->tablePrefix!='' && strpos($table->name,$this->tablePrefix)!
+      ==0)
+                continue;
+            $tableName=$table->name;
+
+            if ($this->isRelationTable($table))
+            {
+                $pks=$table->primaryKey;
+                $fks=$table->foreignKeys;
+
+                $table0=$fks[$pks[0]][0];
+                $table1=$fks[$pks[1]][0];
+                $className0=$this->generateClassName($table0);
+                $className1=$this->generateClassName($table1);
+
+                $unprefixedTableName=$this->removePrefix($tableName);
+
+                $relationName=$this->generateRelationName($table0, $table1, true)
+      ;
+                $relations[$className0][$relationName]="array(self::MANY_MANY, '$
+      className1', '$unprefixedTableName($pks[0], $pks[1])')";
+
+                $relationName=$this->generateRelationName($table1, $table0, true)
+      ;
+                $relations[$className1][$relationName]="array(self::MANY_MANY, '$
+      className0', '$unprefixedTableName($pks[1], $pks[0])')";
+            }
+            else
+            {
+                $className=$this->generateClassName($tableName);
+                foreach ($table->foreignKeys as $fkName => $fkEntry)
+                {
+                    // Put table and key name in variables for easier reading
+                    $refTable=$fkEntry[0]; // Table name that current fk referenc
+      es to
+                    $refKey=$fkEntry[1];   // Key in that table being referenced
+                    $refClassName=$this->generateClassName($refTable);
+
+                    // Add relation for this table
+                    $relationName=$this->generateRelationName($tableName, $fkName
+      , false);
+                    $relations[$className][$relationName]="array(self::BELONGS_TO
+      , '$refClassName', '$fkName')";
+
+                    // Add relation for the referenced table
+                    $relationType=$table->primaryKey === $fkName ? 'HAS_ONE' : 'H
+      AS_MANY';
+                    $relationName=$this->generateRelationName($refTable, $this->
+      removePrefix($tableName,false), $relationType==='HAS_MANY');
+                    $relations[$refClassName][$relationName]="array(self::$relati
+      onType, '$className', '$fkName')";
+                }
+            }
+        }
+        return $relations;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classModelCode_a6e265367e1344ab4817a0f31a6025892_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classModelCode_a6e265367e1344ab4817a0f31a6025892_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classModelCode_a3c33fb60a7ac31271b9479cbda88578a}{
+\index{ModelCode@{ModelCode}!generateRules@{generateRules}}
+\index{generateRules@{generateRules}!ModelCode@{ModelCode}}
+\subsubsection[{generateRules}]{\setlength{\rightskip}{0pt plus 5cm}generateRules (
+\begin{DoxyParamCaption}
+\item[{\$}]{ table}
+\end{DoxyParamCaption}
+)}}
+\label{classModelCode_a3c33fb60a7ac31271b9479cbda88578a}
+
+
+Definition at line 161 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $rules=array();
+        $required=array();
+        $integers=array();
+        $numerical=array();
+        $length=array();
+        $safe=array();
+        foreach($table->columns as $column)
+        {
+            if($column->isPrimaryKey && $table->sequenceName!==null)
+                continue;
+            $r=!$column->allowNull && $column->defaultValue===null;
+            if($r)
+                $required[]=$column->name;
+            if($column->type==='integer')
+                $integers[]=$column->name;
+            else if($column->type==='double')
+                $numerical[]=$column->name;
+            else if($column->type==='string' && $column->size>0)
+                $length[$column->size][]=$column->name;
+            else if(!$column->isPrimaryKey && !$r)
+                $safe[]=$column->name;
+        }
+        if($required!==array())
+            $rules[]="array('".implode(', ',$required)."', 'required')";
+        if($integers!==array())
+            $rules[]="array('".implode(', ',$integers)."', 'numerical', 'integerO
+      nly'=>true)";
+        if($numerical!==array())
+            $rules[]="array('".implode(', ',$numerical)."', 'numerical')";
+        if($length!==array())
+        {
+            foreach($length as $len=>$cols)
+                $rules[]="array('".implode(', ',$cols)."', 'length', 'max'=>$len)
+      ";
+        }
+        if($safe!==array())
+            $rules[]="array('".implode(', ',$safe)."', 'safe')";
+
+        return $rules;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classModelCode_a3c33fb60a7ac31271b9479cbda88578a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classModelCode_a04e057d2d5a8d5abf778dda06374d723}{
+\index{ModelCode@{ModelCode}!getRelations@{getRelations}}
+\index{getRelations@{getRelations}!ModelCode@{ModelCode}}
+\subsubsection[{getRelations}]{\setlength{\rightskip}{0pt plus 5cm}getRelations (
+\begin{DoxyParamCaption}
+\item[{\$}]{ className}
+\end{DoxyParamCaption}
+)}}
+\label{classModelCode_a04e057d2d5a8d5abf778dda06374d723}
+
+
+Definition at line 202 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return isset($this->relations[$className]) ? $this->relations[$className]
+       : array();
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classModelCode_a5eac2a49f496d7dd3bb5c85125d721b1}{
+\index{ModelCode@{ModelCode}!getTableSchema@{getTableSchema}}
+\index{getTableSchema@{getTableSchema}!ModelCode@{ModelCode}}
+\subsubsection[{getTableSchema}]{\setlength{\rightskip}{0pt plus 5cm}getTableSchema (
+\begin{DoxyParamCaption}
+\item[{\$}]{ tableName}
+\end{DoxyParamCaption}
+)}}
+\label{classModelCode_a5eac2a49f496d7dd3bb5c85125d721b1}
+
+
+Definition at line 140 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return Yii::app()->getComponent($this->databaseComponent)->getSchema()->g
+      etTable($tableName);
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classModelCode_a5eac2a49f496d7dd3bb5c85125d721b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classModelCode_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{ModelCode@{ModelCode}!init@{init}}
+\index{init@{init}!ModelCode@{ModelCode}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classModelCode_a4be4055f3361d4800e16bc2e2e38cda6}
+
+
+Definition at line 53 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if(Yii::app()->getComponent($this->databaseComponent)===null)
+            throw new CHttpException(500,'An active database ("db") connection is
+       required to run this generator.');
+        $this->tablePrefix=Yii::app()->getComponent($this->databaseComponent)->ta
+      blePrefix;
+        parent::init();
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classModelCode_a1599d29ee50f29d0ba66d77013b0e767}{
+\index{ModelCode@{ModelCode}!isRelationTable@{isRelationTable}}
+\index{isRelationTable@{isRelationTable}!ModelCode@{ModelCode}}
+\subsubsection[{isRelationTable}]{\setlength{\rightskip}{0pt plus 5cm}isRelationTable (
+\begin{DoxyParamCaption}
+\item[{\$}]{ table}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classModelCode_a1599d29ee50f29d0ba66d77013b0e767}
+Checks if the given table is a \char`\"{}many to many\char`\"{} pivot table. Their PK has 2 fields, and both of those fields are also FK to other separate tables. 
+\begin{DoxyParams}{Parameters}
+\item[{\em CDbTableSchema}]table to inspect \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean true if table matches description of helpter table. 
+\end{DoxyReturn}
+
+
+Definition at line 292 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $pk=$table->primaryKey;
+        return (count($pk) === 2 // we want 2 columns
+            && isset($table->foreignKeys[$pk[0]]) // pk column 1 is also a foreig
+      n key
+            && isset($table->foreignKeys[$pk[1]]) // pk column 2 is also a forieg
+      n key
+            && $table->foreignKeys[$pk[0]][0] !== $table->foreignKeys[$pk[1]][0])
+      ; // and the foreign keys point different tables
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=396pt]{classModelCode_a1599d29ee50f29d0ba66d77013b0e767_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classModelCode_a9596f1635d3c078fa06ab0166bcbb11b}{
+\index{ModelCode@{ModelCode}!prepare@{prepare}}
+\index{prepare@{prepare}!ModelCode@{ModelCode}}
+\subsubsection[{prepare}]{\setlength{\rightskip}{0pt plus 5cm}prepare (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classModelCode_a9596f1635d3c078fa06ab0166bcbb11b}
+
+
+Definition at line 61 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->files=array();
+        $templatePath=$this->templatePath;
+
+        if(($pos=strrpos($this->tableName,'.'))!==false)
+        {
+            $schema=substr($this->tableName,0,$pos);
+            $tableName=substr($this->tableName,$pos+1);
+        }
+        else
+        {
+            $schema='';
+            $tableName=$this->tableName;
+        }
+        if($tableName[strlen($tableName)-1]==='*')
+        {
+            $tables=Yii::app()->getComponent($this->databaseComponent)->schema->g
+      etTables($schema);
+            if($this->tablePrefix!='')
+            {
+                foreach($tables as $i=>$table)
+                {
+                    if(strpos($table->name,$this->tablePrefix)!==0)
+                        unset($tables[$i]);
+                }
+            }
+        }
+        else
+            $tables=array($this->getTableSchema($this->tableName));
+
+        $this->relations=$this->generateRelations();
+
+        foreach($tables as $table)
+        {
+            $tableName=$this->removePrefix($table->name);
+            $className=$this->generateClassName($table->name);
+            $params=array(
+                'tableName'=>$schema==='' ? $tableName : $schema.'.'.$tableName,
+                'modelClass'=>$className,
+                'columns'=>$table->columns,
+                'labels'=>$this->generateLabels($table),
+                'rules'=>$this->generateRules($table),
+                'relations'=>isset($this->relations[$className]) ? $this->relatio
+      ns[$className] : array(),
+            );
+            $this->files[]=new CCodeFile(
+                Yii::getPathOfAlias($this->modelPath).'/'.$className.'.php',
+                $this->render($templatePath.'/model.php', $params)
+            );
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classModelCode_a9596f1635d3c078fa06ab0166bcbb11b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classModelCode_a0375bc447ca8e3632ff8f909a324f96c}{
+\index{ModelCode@{ModelCode}!removePrefix@{removePrefix}}
+\index{removePrefix@{removePrefix}!ModelCode@{ModelCode}}
+\subsubsection[{removePrefix}]{\setlength{\rightskip}{0pt plus 5cm}removePrefix (
+\begin{DoxyParamCaption}
+\item[{\$}]{ tableName, }
+\item[{\$}]{ addBrackets = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classModelCode_a0375bc447ca8e3632ff8f909a324f96c}
+
+
+Definition at line 207 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if($addBrackets && Yii::app()->getComponent($this->databaseComponent)->ta
+      blePrefix=='')
+            return $tableName;
+        $prefix=$this->tablePrefix!='' ? $this->tablePrefix : Yii::app()->getComp
+      onent($this->databaseComponent)->tablePrefix;
+        if($prefix!='')
+        {
+            if($addBrackets && Yii::app()->getComponent($this->databaseComponent)
+      ->tablePrefix!='')
+            {
+                $prefix=Yii::app()->getComponent($this->databaseComponent)->table
+      Prefix;
+                $lb='{{';
+                $rb='}}';
+            }
+            else
+                $lb=$rb='';
+            if(($pos=strrpos($tableName,'.'))!==false)
+            {
+                $schema=substr($tableName,0,$pos);
+                $name=substr($tableName,$pos+1);
+                if(strpos($name,$prefix)===0)
+                    return $schema.'.'.$lb.substr($name,strlen($prefix)).$rb;
+            }
+            else if(strpos($tableName,$prefix)===0)
+                return $lb.substr($tableName,strlen($prefix)).$rb;
+        }
+        return $tableName;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classModelCode_a0375bc447ca8e3632ff8f909a324f96c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classModelCode_aeb759ab8b65c078ab7455db4e42c585c}{
+\index{ModelCode@{ModelCode}!requiredTemplates@{requiredTemplates}}
+\index{requiredTemplates@{requiredTemplates}!ModelCode@{ModelCode}}
+\subsubsection[{requiredTemplates}]{\setlength{\rightskip}{0pt plus 5cm}requiredTemplates (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classModelCode_aeb759ab8b65c078ab7455db4e42c585c}
+
+
+Definition at line 46 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return array(
+            'model.php',
+        );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classModelCode_a17dba92d96b9dd48c62f3ede3eef94d4}{
+\index{ModelCode@{ModelCode}!rules@{rules}}
+\index{rules@{rules}!ModelCode@{ModelCode}}
+\subsubsection[{rules}]{\setlength{\rightskip}{0pt plus 5cm}rules (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classModelCode_a17dba92d96b9dd48c62f3ede3eef94d4}
+
+
+Definition at line 20 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return array_merge(parent::rules(), array(
+            array('tablePrefix, databaseComponent, baseClass, tableName, modelCla
+      ss, modelPath', 'filter', 'filter'=>'trim'),
+            array('tableName, databaseComponent, modelPath, baseClass', 'required
+      '),
+            array('tablePrefix, databaseComponent, tableName, modelPath', 'match'
+      , 'pattern'=>'/^(\w+[\w\.]*|\*?|\w+\.\*)$/', 'message'=>'{attribute} should only 
+      contain word characters, dots, and an optional ending asterisk.'),
+            array('tableName', 'validateTableName', 'skipOnError'=>true),
+            array('tablePrefix, modelClass, baseClass', 'match', 'pattern'=>'/^\w
+      +$/', 'message'=>'{attribute} should only contain word characters.'),
+            array('modelPath', 'validateModelPath', 'skipOnError'=>true),
+            array('baseClass', 'validateBaseClass', 'skipOnError'=>true),
+            array('tablePrefix, modelPath, baseClass', 'sticky'),
+        ));
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classModelCode_ac532afcf2e4495bba874d71b56c59508}{
+\index{ModelCode@{ModelCode}!validateBaseClass@{validateBaseClass}}
+\index{validateBaseClass@{validateBaseClass}!ModelCode@{ModelCode}}
+\subsubsection[{validateBaseClass}]{\setlength{\rightskip}{0pt plus 5cm}validateBaseClass (
+\begin{DoxyParamCaption}
+\item[{\$}]{ attribute, }
+\item[{\$}]{ params}
+\end{DoxyParamCaption}
+)}}
+\label{classModelCode_ac532afcf2e4495bba874d71b56c59508}
+
+
+Definition at line 131 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $class=@Yii::import($this->baseClass,true);
+        if(!is_string($class) || !$this->classExists($class))
+            $this->addError('baseClass', "Class '{$this->baseClass}' does not exi
+      st or has syntax error.");
+        else if($class!=='CActiveRecord' && !is_subclass_of($class,'CActiveRecord
+      '))
+            $this->addError('baseClass', "'{$this->model}' must extend from CActi
+      veRecord.");
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classModelCode_af93ad690038df66799f9ddd39364e8d0}{
+\index{ModelCode@{ModelCode}!validateModelPath@{validateModelPath}}
+\index{validateModelPath@{validateModelPath}!ModelCode@{ModelCode}}
+\subsubsection[{validateModelPath}]{\setlength{\rightskip}{0pt plus 5cm}validateModelPath (
+\begin{DoxyParamCaption}
+\item[{\$}]{ attribute, }
+\item[{\$}]{ params}
+\end{DoxyParamCaption}
+)}}
+\label{classModelCode_af93ad690038df66799f9ddd39364e8d0}
+
+
+Definition at line 125 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if(Yii::getPathOfAlias($this->modelPath)===false)
+            $this->addError('modelPath','Model Path must be a valid path alias.')
+      ;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classModelCode_a4a6d3897ac77e9586589fdd4d6e5ecf9}{
+\index{ModelCode@{ModelCode}!validateTableName@{validateTableName}}
+\index{validateTableName@{validateTableName}!ModelCode@{ModelCode}}
+\subsubsection[{validateTableName}]{\setlength{\rightskip}{0pt plus 5cm}validateTableName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ attribute, }
+\item[{\$}]{ params}
+\end{DoxyParamCaption}
+)}}
+\label{classModelCode_a4a6d3897ac77e9586589fdd4d6e5ecf9}
+
+
+Definition at line 112 of file ModelCode.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if($this->tableName!='' && $this->tableName[strlen($this->tableName)-1]==
+      ='*')
+            $this->modelClass='';
+        else
+        {
+            if($this->getTableSchema($this->tableName)===null)
+                $this->addError('tableName',"Table '{$this->tableName}' does not 
+      exist.");
+            if($this->modelClass==='')
+                $this->addError('modelClass','Model Class cannot be blank.');
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classModelCode_a4a6d3897ac77e9586589fdd4d6e5ecf9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classModelCode_a190491cf77e760fce1f6a9c9f226a18e}{
+\index{ModelCode@{ModelCode}!\$baseClass@{\$baseClass}}
+\index{\$baseClass@{\$baseClass}!ModelCode@{ModelCode}}
+\subsubsection[{\$baseClass}]{\setlength{\rightskip}{0pt plus 5cm}\$baseClass = 'CActiveRecord'}}
+\label{classModelCode_a190491cf77e760fce1f6a9c9f226a18e}
+
+
+Definition at line 11 of file ModelCode.php.
+
+\hypertarget{classModelCode_a87a1491288adbff7947ce1bb223dcd3a}{
+\index{ModelCode@{ModelCode}!\$databaseComponent@{\$databaseComponent}}
+\index{\$databaseComponent@{\$databaseComponent}!ModelCode@{ModelCode}}
+\subsubsection[{\$databaseComponent}]{\setlength{\rightskip}{0pt plus 5cm}\$databaseComponent = 'db'}}
+\label{classModelCode_a87a1491288adbff7947ce1bb223dcd3a}
+
+
+Definition at line 12 of file ModelCode.php.
+
+\hypertarget{classModelCode_aaba2952ca851db29e7fffe58808aa4aa}{
+\index{ModelCode@{ModelCode}!\$modelClass@{\$modelClass}}
+\index{\$modelClass@{\$modelClass}!ModelCode@{ModelCode}}
+\subsubsection[{\$modelClass}]{\setlength{\rightskip}{0pt plus 5cm}\$modelClass}}
+\label{classModelCode_aaba2952ca851db29e7fffe58808aa4aa}
+
+
+Definition at line 9 of file ModelCode.php.
+
+\hypertarget{classModelCode_a349ce28f73e8c77a58b4f0eca3f4252b}{
+\index{ModelCode@{ModelCode}!\$modelPath@{\$modelPath}}
+\index{\$modelPath@{\$modelPath}!ModelCode@{ModelCode}}
+\subsubsection[{\$modelPath}]{\setlength{\rightskip}{0pt plus 5cm}\$modelPath = 'application.models'}}
+\label{classModelCode_a349ce28f73e8c77a58b4f0eca3f4252b}
+
+
+Definition at line 10 of file ModelCode.php.
+
+\hypertarget{classModelCode_a5787b67dccb801e89f4ff779d42edece}{
+\index{ModelCode@{ModelCode}!\$relations@{\$relations}}
+\index{\$relations@{\$relations}!ModelCode@{ModelCode}}
+\subsubsection[{\$relations}]{\setlength{\rightskip}{0pt plus 5cm}\$relations\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classModelCode_a5787b67dccb801e89f4ff779d42edece}
+
+
+Definition at line 18 of file ModelCode.php.
+
+\hypertarget{classModelCode_aea06aaf672e3fe5fbf45958ae2782244}{
+\index{ModelCode@{ModelCode}!\$tableName@{\$tableName}}
+\index{\$tableName@{\$tableName}!ModelCode@{ModelCode}}
+\subsubsection[{\$tableName}]{\setlength{\rightskip}{0pt plus 5cm}\$tableName}}
+\label{classModelCode_aea06aaf672e3fe5fbf45958ae2782244}
+
+
+Definition at line 8 of file ModelCode.php.
+
+\hypertarget{classModelCode_a061ded67e1c12c266312830d080f46a7}{
+\index{ModelCode@{ModelCode}!\$tablePrefix@{\$tablePrefix}}
+\index{\$tablePrefix@{\$tablePrefix}!ModelCode@{ModelCode}}
+\subsubsection[{\$tablePrefix}]{\setlength{\rightskip}{0pt plus 5cm}\$tablePrefix}}
+\label{classModelCode_a061ded67e1c12c266312830d080f46a7}
+
+
+Definition at line 7 of file ModelCode.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/gii/model/\hyperlink{ModelCode_8php}{ModelCode.php}\end{DoxyCompactItemize}

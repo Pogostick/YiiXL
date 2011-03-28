@@ -1,0 +1,968 @@
+\hypertarget{classCPSWidget}{
+\section{CPSWidget Class Reference}
+\label{classCPSWidget}\index{CPSWidget@{CPSWidget}}
+}
+
+
+Inheritance diagram for CPSWidget:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWidget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSWidget:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classCPSWidget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSWidget_adbfe8ea2bfbf717d6c5f17236251f1bc}{\_\-\_\-construct} (\$owner=null)
+\item 
+\hyperlink{classCPSWidget_a421831a265621325e1fdd19aace0c758}{\_\-\_\-destruct} ()
+\item 
+\hyperlink{classCPSWidget_a2dc262e99b1c246b56f27626bfe699ff}{preinit} ()
+\item 
+\hyperlink{classCPSWidget_a4be4055f3361d4800e16bc2e2e38cda6}{init} ()
+\item 
+\hyperlink{classCPSWidget_a563c3cfa2400bfb9cdb5af4777251d47}{pushCssFile} (\$path, \$media= 'screen')
+\item 
+\hyperlink{classCPSWidget_a836a112a31fa378be05d375ddf67a0c6}{popCssFile} ()
+\item 
+\hyperlink{classCPSWidget_a4589f8bb22c9e9837302ea2cc7c80570}{pushScriptFile} (\$path, \$position=CClientScript::POS\_\-HEAD)
+\item 
+\hyperlink{classCPSWidget_ab4b1e02bb3e8bab82c822ff04c43d12e}{popScriptFile} ()
+\item 
+\hyperlink{classCPSWidget_a59080ee7d7949e19f5af41e26ff53806}{registerClientScripts} ()
+\item 
+\hyperlink{classCPSWidget_a196225b59cf30535180836cdac821edb}{registerWidgetScript} (\$script=null, \$position=CClientScript::POS\_\-READY)
+\item 
+\hyperlink{classCPSWidget_ad93e793964a65dfac40131c7cf7fe901}{attachBehavior} (\$name, \$behavior)
+\item 
+\hyperlink{classCPSWidget_a00a75761a8790403ec39d56e44763ed5}{configure} (\$options=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSWidget_a54ebf4d8b63be34c7e54b579b97cc591}{getUniqueId} (\$id=null)
+\item 
+\hyperlink{classCPSWidget_aa18c8754403c04289ac8fbfc467df4ac}{getInternalName} ()
+\item 
+\hyperlink{classCPSWidget_a08e716b913e06fdbb77e84f81c0a3a35}{setInternalName} (\$value)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classCPSWidget_af09cbabc6ce2c1d9d9efb7ae308ea0f3}{create} (\$name=null, \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array} \$options=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSWidget_a2a2ea08f8240ed4c24058ab80ab89703}{generateJavascript} ()
+\item 
+\hyperlink{classCPSWidget_acc5a32d52db57b80885add51c076ed42}{generateHtml} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSWidget_a0a975e9ff0c33b78b80a00bf6f3429c3}{\$\_\-internalName}
+\item 
+\hyperlink{classCPSWidget_ab6be874da7762016d79471c575d32395}{\$\_\-initialized} = false
+\item 
+\hyperlink{classCPSWidget_ae4b83ae1081fc84475665024602b3582}{\$\_\-behaviorCache} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}()
+\item 
+\hyperlink{classCPSWidget_a7e9c2d60491b593a399659483d86f330}{\$\_\-cssFiles} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}()
+\item 
+\hyperlink{classCPSWidget_a3cbcf4738832eece2bdc4bee0a905d27}{\$\_\-scriptFiles} = \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 23 of file CPSWidget.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSWidget_adbfe8ea2bfbf717d6c5f17236251f1bc}{
+\index{CPSWidget@{CPSWidget}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSWidget@{CPSWidget}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ owner = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_adbfe8ea2bfbf717d6c5f17236251f1bc}
+Constructs a widget 
+
+Definition at line 66 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        parent::__construct( $owner );
+
+        //  Preinitialize
+        $this->preinit();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWidget_adbfe8ea2bfbf717d6c5f17236251f1bc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWidget_a421831a265621325e1fdd19aace0c758}{
+\index{CPSWidget@{CPSWidget}!\_\-\_\-destruct@{\_\-\_\-destruct}}
+\index{\_\-\_\-destruct@{\_\-\_\-destruct}!CPSWidget@{CPSWidget}}
+\subsubsection[{\_\-\_\-destruct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-destruct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_a421831a265621325e1fdd19aace0c758}
+Choose your destructor! 
+
+Definition at line 77 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Make sure scripts get regged before we die...
+        $this->registerClientScripts();
+
+        parent::__destruct();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWidget_a421831a265621325e1fdd19aace0c758_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSWidget_ad93e793964a65dfac40131c7cf7fe901}{
+\index{CPSWidget@{CPSWidget}!attachBehavior@{attachBehavior}}
+\index{attachBehavior@{attachBehavior}!CPSWidget@{CPSWidget}}
+\subsubsection[{attachBehavior}]{\setlength{\rightskip}{0pt plus 5cm}attachBehavior (
+\begin{DoxyParamCaption}
+\item[{\$}]{ name, }
+\item[{\$}]{ behavior}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_ad93e793964a65dfac40131c7cf7fe901}
+Attaches an Behavior to this component. We just cache the names here for lookup speed. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]the Behavior's name. It should uniquely identify this Behavior. \item[{\em mixed}]the Behavior configuration. This is passed as the first parameter to \hyperlink{}{YiiBase::createComponent} to create the Behavior object. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{interfaceIPSBehavior}{IPSBehavior} the Behavior object 
+\end{DoxyReturn}
+
+
+Definition at line 229 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Attach the Behavior at the parent and add options here...
+        if ( $_behavior = parent::attachBehavior( $name, $behavior ) )
+        {
+            //  Add to our cache...
+            $this->_behaviorCache[] = $name;
+        }
+
+        return $_behavior;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWidget_ad93e793964a65dfac40131c7cf7fe901_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWidget_a00a75761a8790403ec39d56e44763ed5}{
+\index{CPSWidget@{CPSWidget}!configure@{configure}}
+\index{configure@{configure}!CPSWidget@{CPSWidget}}
+\subsubsection[{configure}]{\setlength{\rightskip}{0pt plus 5cm}configure (
+\begin{DoxyParamCaption}
+\item[{\$}]{ options = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_a00a75761a8790403ec39d56e44763ed5}
+Alias for setOptions 
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$options \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+setOptions 
+\end{DoxySeeAlso}
+
+
+Definition at line 246 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->setOptions( $options );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWidget_af09cbabc6ce2c1d9d9efb7ae308ea0f3}{
+\index{CPSWidget@{CPSWidget}!create@{create}}
+\index{create@{create}!CPSWidget@{CPSWidget}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static create (
+\begin{DoxyParamCaption}
+\item[{\$}]{ name = {\ttfamily null}, }
+\item[{{\bf array} \$}]{ options = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classCPSWidget_af09cbabc6ce2c1d9d9efb7ae308ea0f3}
+Constructs and returns a widget
+
+The options passed in are dynamically added to the options array and will be accessible and modifiable as normal (.i.e. \$this-\/$>$theme, \$this-\/$>$baseUrl, etc.)
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$name The type of widget to create \item[{\em array}]\$options The options for the widget \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCPSWidget}{CPSWidget} 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classCPSCKEditorWidget_a0ffc269a208148ade57c7eb608a4562a}{CPSCKEditorWidget}, \hyperlink{classCPSEnhanceJSTree_a0ffc269a208148ade57c7eb608a4562a}{CPSEnhanceJSTree}, \hyperlink{classCPSjqAchtung_a0ffc269a208148ade57c7eb608a4562a}{CPSjqAchtung}, \hyperlink{classCPSjqMaskedInputWrapper_a0ffc269a208148ade57c7eb608a4562a}{CPSjqMaskedInputWrapper}, \hyperlink{classCPSjqSelectMenu_a0ffc269a208148ade57c7eb608a4562a}{CPSjqSelectMenu}, \hyperlink{classCPSjqToolsWrapper_a0ffc269a208148ade57c7eb608a4562a}{CPSjqToolsWrapper}, \hyperlink{classCPSjQueryWidget_af09cbabc6ce2c1d9d9efb7ae308ea0f3}{CPSjQueryWidget}, \hyperlink{classCPSjqValidate_a0ffc269a208148ade57c7eb608a4562a}{CPSjqValidate}, \hyperlink{classCPSMarkItUpWidget_a0ffc269a208148ade57c7eb608a4562a}{CPSMarkItUpWidget}, \hyperlink{classCPSMcDropdownWidget_a0ffc269a208148ade57c7eb608a4562a}{CPSMcDropdownWidget}, \hyperlink{classCPSWysiwygWidget_a0ffc269a208148ade57c7eb608a4562a}{CPSWysiwygWidget}, \hyperlink{classCPSfgMenu_a0ffc269a208148ade57c7eb608a4562a}{CPSfgMenu}, \hyperlink{classCPSjqGridWidget_a0ffc269a208148ade57c7eb608a4562a}{CPSjqGridWidget}, \hyperlink{classCPSjqUIAlerts_a0ffc269a208148ade57c7eb608a4562a}{CPSjqUIAlerts}, and \hyperlink{classCPSjqUIWrapper_a0ffc269a208148ade57c7eb608a4562a}{CPSjqUIWrapper}.
+
+
+
+Definition at line 312 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Allow shifted arguments...
+        if ( is_array( $name ) && array() === $options )
+        {
+            $options = $name;
+            $name = null;
+        }
+
+        //  Instantiate...
+        $_name = CPSHelperBase::nvl( $name, ( is_callable( 'get_called_class' ) ?
+       get_called_class() : $name ) );
+        $_class = CPSHelperBase::o( $options, 'class', ( is_callable( 'get_called
+      _class' ) ? get_called_class() : $_name ), true );
+        $_widget = new $_class();
+        $_widget->widgetName = $_name;
+        $_widget->id = $_widget->name = CPSHelperBase::o( $options, 'id', $_name 
+      );
+        $_widget->name = CPSHelperBase::o( $options, 'name', $_widget->id );
+
+        //  Push any optional scripts
+        foreach ( CPSHelperBase::o( $options, '_scripts', array(), true ) as $_sc
+      ript )
+            $_widget->pushScriptFile( $_widget->baseUrl . $_script );
+
+        //  And CSS
+        foreach ( CPSHelperBase::o( $options, '_cssFiles', array(), true ) as $_c
+      ss )
+            $_widget->pushCssFile( $_widget->baseUrl . $_css );
+
+        //  Now process the rest of the options...
+        $_widget->addOptions( $options );
+
+        //  Initialize our widget
+        $_widget->init();
+
+        //  And run it...
+        if ( $_widget->autoRun )
+            $_widget->run();
+
+        //  And return...
+        return $_widget;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classCPSWidget_af09cbabc6ce2c1d9d9efb7ae308ea0f3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWidget_acc5a32d52db57b80885add51c076ed42}{
+\index{CPSWidget@{CPSWidget}!generateHtml@{generateHtml}}
+\index{generateHtml@{generateHtml}!CPSWidget@{CPSWidget}}
+\subsubsection[{generateHtml}]{\setlength{\rightskip}{0pt plus 5cm}generateHtml (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSWidget_acc5a32d52db57b80885add51c076ed42}
+Generates the javascript code for the widget \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classCPSFacebookConnect_acc5a32d52db57b80885add51c076ed42}{CPSFacebookConnect}, \hyperlink{classCPSPortlet_acc5a32d52db57b80885add51c076ed42}{CPSPortlet}, \hyperlink{classCPSjqRatingWidget_acc5a32d52db57b80885add51c076ed42}{CPSjqRatingWidget}, \hyperlink{classCPSfgMenu_acc5a32d52db57b80885add51c076ed42}{CPSfgMenu}, and \hyperlink{classCPSjqGridWidget_acc5a32d52db57b80885add51c076ed42}{CPSjqGridWidget}.
+
+
+
+Definition at line 278 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classCPSWidget_acc5a32d52db57b80885add51c076ed42_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWidget_a2a2ea08f8240ed4c24058ab80ab89703}{
+\index{CPSWidget@{CPSWidget}!generateJavascript@{generateJavascript}}
+\index{generateJavascript@{generateJavascript}!CPSWidget@{CPSWidget}}
+\subsubsection[{generateJavascript}]{\setlength{\rightskip}{0pt plus 5cm}generateJavascript (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSWidget_a2a2ea08f8240ed4c24058ab80ab89703}
+Generates the javascript code for the widget \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classCPSFacebookConnect_a2a2ea08f8240ed4c24058ab80ab89703}{CPSFacebookConnect}, \hyperlink{classCPSgApiWidget_a2a2ea08f8240ed4c24058ab80ab89703}{CPSgApiWidget}, \hyperlink{classCPSgMapsWidget_a2a2ea08f8240ed4c24058ab80ab89703}{CPSgMapsWidget}, \hyperlink{classCPSjqRatingWidget_a2a2ea08f8240ed4c24058ab80ab89703}{CPSjqRatingWidget}, and \hyperlink{classCPSjqGridWidget_a2a2ea08f8240ed4c24058ab80ab89703}{CPSjqGridWidget}.
+
+
+
+Definition at line 270 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWidget_a2a2ea08f8240ed4c24058ab80ab89703_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWidget_aa18c8754403c04289ac8fbfc467df4ac}{
+\index{CPSWidget@{CPSWidget}!getInternalName@{getInternalName}}
+\index{getInternalName@{getInternalName}!CPSWidget@{CPSWidget}}
+\subsubsection[{getInternalName}]{\setlength{\rightskip}{0pt plus 5cm}getInternalName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_aa18c8754403c04289ac8fbfc467df4ac}
+Get our internal name \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfaceIPSComponent_aa18c8754403c04289ac8fbfc467df4ac}{IPSComponent}.
+
+
+
+Definition at line 290 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->_internalName; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWidget_a54ebf4d8b63be34c7e54b579b97cc591}{
+\index{CPSWidget@{CPSWidget}!getUniqueId@{getUniqueId}}
+\index{getUniqueId@{getUniqueId}!CPSWidget@{CPSWidget}}
+\subsubsection[{getUniqueId}]{\setlength{\rightskip}{0pt plus 5cm}getUniqueId (
+\begin{DoxyParamCaption}
+\item[{\$}]{ id = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_a54ebf4d8b63be34c7e54b579b97cc591}
+Given an ID, a unique name is built and returned
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$id \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 257 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return 'ps.' . CPSHash::hash( CPSHelperBase::nvl( $id, __CLASS__ ) . time
+      () . CPSWidgetHelper::getNextIdCount() );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classCPSWidget_a54ebf4d8b63be34c7e54b579b97cc591_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWidget_a54ebf4d8b63be34c7e54b579b97cc591_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWidget_a4be4055f3361d4800e16bc2e2e38cda6}{
+\index{CPSWidget@{CPSWidget}!init@{init}}
+\index{init@{init}!CPSWidget@{CPSWidget}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_a4be4055f3361d4800e16bc2e2e38cda6}
+Initialize our component. 
+
+Reimplemented in \hyperlink{classCPSjqToolsWrapper_a4be4055f3361d4800e16bc2e2e38cda6}{CPSjqToolsWrapper}, \hyperlink{classCPSjQueryWidget_a4be4055f3361d4800e16bc2e2e38cda6}{CPSjQueryWidget}, \hyperlink{classCPSPortlet_a4be4055f3361d4800e16bc2e2e38cda6}{CPSPortlet}, \hyperlink{classCPSThemeRoller_a4be4055f3361d4800e16bc2e2e38cda6}{CPSThemeRoller}, \hyperlink{classCPSfgMenu_a4be4055f3361d4800e16bc2e2e38cda6}{CPSfgMenu}, and \hyperlink{classCPSjqUIWrapper_a4be4055f3361d4800e16bc2e2e38cda6}{CPSjqUIWrapper}.
+
+
+
+Definition at line 101 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( ! $this->_initialized )
+        {
+            //  Now call parent's init...
+            parent::init();
+
+            //  Call our behaviors init() method if they exist
+            foreach ( $this->_behaviorCache as $_name )
+                $this->asa( $_name )->init();
+
+            //  Get the id/name of this widget
+            list( $this->name, $this->id ) = $this->resolveNameID();
+
+            if ( empty( $this->name ) )
+                $this->name = $this->_internalName;
+
+            //  We are now...
+            $this->_initialized = true;
+        }
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSWidget_a836a112a31fa378be05d375ddf67a0c6}{
+\index{CPSWidget@{CPSWidget}!popCssFile@{popCssFile}}
+\index{popCssFile@{popCssFile}!CPSWidget@{CPSWidget}}
+\subsubsection[{popCssFile}]{\setlength{\rightskip}{0pt plus 5cm}popCssFile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_a836a112a31fa378be05d375ddf67a0c6}
+Pops a css file off the top of the page load stack. \begin{DoxyReturn}{Returns}
+string$|$null 
+\end{DoxyReturn}
+
+
+Definition at line 143 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return array_shift( $this->_cssFiles );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWidget_a836a112a31fa378be05d375ddf67a0c6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWidget_ab4b1e02bb3e8bab82c822ff04c43d12e}{
+\index{CPSWidget@{CPSWidget}!popScriptFile@{popScriptFile}}
+\index{popScriptFile@{popScriptFile}!CPSWidget@{CPSWidget}}
+\subsubsection[{popScriptFile}]{\setlength{\rightskip}{0pt plus 5cm}popScriptFile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_ab4b1e02bb3e8bab82c822ff04c43d12e}
+Pops a script file off the top of the page load stack. \begin{DoxyReturn}{Returns}
+string$|$null 
+\end{DoxyReturn}
+
+
+Definition at line 172 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        return array_shift( $this->_scriptFiles );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWidget_ab4b1e02bb3e8bab82c822ff04c43d12e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWidget_a2dc262e99b1c246b56f27626bfe699ff}{
+\index{CPSWidget@{CPSWidget}!preinit@{preinit}}
+\index{preinit@{preinit}!CPSWidget@{CPSWidget}}
+\subsubsection[{preinit}]{\setlength{\rightskip}{0pt plus 5cm}preinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_a2dc262e99b1c246b56f27626bfe699ff}
+Preinitialize the component Override to add your own functionality before \hyperlink{classCPSWidget_a4be4055f3361d4800e16bc2e2e38cda6}{init()} is called. 
+
+Implements \hyperlink{interfaceIPSComponent_a2dc262e99b1c246b56f27626bfe699ff}{IPSComponent}.
+
+
+
+Reimplemented in \hyperlink{classCPSApiWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSApiWidget}, \hyperlink{classCPSCKEditorWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSCKEditorWidget}, \hyperlink{classCPSjqToolsWrapper_a2dc262e99b1c246b56f27626bfe699ff}{CPSjqToolsWrapper}, \hyperlink{classCPSjQueryWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSjQueryWidget}, \hyperlink{classCPSMarkItUpWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSMarkItUpWidget}, \hyperlink{classCPSMcDropdownWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSMcDropdownWidget}, \hyperlink{classCPSPortlet_a2dc262e99b1c246b56f27626bfe699ff}{CPSPortlet}, \hyperlink{classCPSThemeRoller_a2dc262e99b1c246b56f27626bfe699ff}{CPSThemeRoller}, \hyperlink{classCPSWysiwygWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSWysiwygWidget}, \hyperlink{classCPSgApiWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSgApiWidget}, \hyperlink{classCPSgMapsWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSgMapsWidget}, \hyperlink{classCPSjqRatingWidget_a2dc262e99b1c246b56f27626bfe699ff}{CPSjqRatingWidget}, \hyperlink{classCPSfgMenu_a2dc262e99b1c246b56f27626bfe699ff}{CPSfgMenu}, \hyperlink{classCPSjqUIAlerts_a2dc262e99b1c246b56f27626bfe699ff}{CPSjqUIAlerts}, and \hyperlink{classCPSjqUIWrapper_a2dc262e99b1c246b56f27626bfe699ff}{CPSjqUIWrapper}.
+
+
+
+Definition at line 89 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Create our internal name
+        CPSHelperBase::createInternalName( $this );
+
+        //  Attach our default Behavior
+        $this->attachBehavior( 'psWidget', 'pogostick.behaviors.CPSWidgetBehavior
+      ' );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWidget_a2dc262e99b1c246b56f27626bfe699ff_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classCPSWidget_a2dc262e99b1c246b56f27626bfe699ff_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWidget_a563c3cfa2400bfb9cdb5af4777251d47}{
+\index{CPSWidget@{CPSWidget}!pushCssFile@{pushCssFile}}
+\index{pushCssFile@{pushCssFile}!CPSWidget@{CPSWidget}}
+\subsubsection[{pushCssFile}]{\setlength{\rightskip}{0pt plus 5cm}pushCssFile (
+\begin{DoxyParamCaption}
+\item[{\$}]{ path, }
+\item[{\$}]{ media = {\ttfamily 'screen'}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_a563c3cfa2400bfb9cdb5af4777251d47}
+Pushes a css file onto the page load stack. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$path Path of css relative to doc\_\-root \item[{\em string}]\$id \end{DoxyParams}
+
+
+Definition at line 128 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        array_push(
+            $this->_cssFiles,
+            array(
+                'path' => $path,
+                'media' => $media,
+            )
+        );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWidget_a563c3cfa2400bfb9cdb5af4777251d47_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWidget_a4589f8bb22c9e9837302ea2cc7c80570}{
+\index{CPSWidget@{CPSWidget}!pushScriptFile@{pushScriptFile}}
+\index{pushScriptFile@{pushScriptFile}!CPSWidget@{CPSWidget}}
+\subsubsection[{pushScriptFile}]{\setlength{\rightskip}{0pt plus 5cm}pushScriptFile (
+\begin{DoxyParamCaption}
+\item[{\$}]{ path, }
+\item[{\$}]{ position = {\ttfamily CClientScript::POS\_\-HEAD}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_a4589f8bb22c9e9837302ea2cc7c80570}
+Pushes a script onto the page load stack.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$path Path of script relative to doc\_\-root \item[{\em integer}]\$position \item[{\em string}]\$id \end{DoxyParams}
+
+
+Definition at line 155 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        array_push(
+            $this->_scriptFiles,
+            array(
+                'path' => $path,
+                'position' => $position,
+            )
+        );
+
+        $this->_scriptFiles[] = array( $path, $position );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWidget_a4589f8bb22c9e9837302ea2cc7c80570_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWidget_a59080ee7d7949e19f5af41e26ff53806}{
+\index{CPSWidget@{CPSWidget}!registerClientScripts@{registerClientScripts}}
+\index{registerClientScripts@{registerClientScripts}!CPSWidget@{CPSWidget}}
+\subsubsection[{registerClientScripts}]{\setlength{\rightskip}{0pt plus 5cm}registerClientScripts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_a59080ee7d7949e19f5af41e26ff53806}
+
+
+Reimplemented in \hyperlink{classCPSFacebookConnect_a59080ee7d7949e19f5af41e26ff53806}{CPSFacebookConnect}, \hyperlink{classCPSgApiWidget_a59080ee7d7949e19f5af41e26ff53806}{CPSgApiWidget}, and \hyperlink{classCPSjqRatingWidget_a59080ee7d7949e19f5af41e26ff53806}{CPSjqRatingWidget}.
+
+
+
+Definition at line 181 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Register a special CSS file if we have one...
+        if ( $this->cssFile )
+        {
+            $this->pushCssFile( $this->cssFile );
+            $this->cssFile = null;
+        }
+
+        $_baseUrl = CPSHelperBase::_gbu();
+
+        //  Load css files and unset from array...
+        while ( null !== ( $_file = $this->popCssFile() ) )
+        {
+CPSLog::trace( __METHOD__, 'Popped css: ' . print_r($_file,true) );
+            CPSHelperBase::_rcf( $_baseUrl . $_file['path'], $_file['media'] );
+        }
+
+        //  Load script files and unset from array...
+        while ( null !== ( $_file = $this->popScriptFile() ) )
+        {
+CPSLog::trace( __METHOD__, 'Popped script: ' . print_r($_file,true) );
+            CPSHelperBase::_rsf( $_baseUrl . $_file['path'], $_file['position'] )
+      ;
+        }
+
+        //  Send upstream for convenience
+        return CPSHelperBase::_cs();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWidget_a59080ee7d7949e19f5af41e26ff53806_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{classCPSWidget_a59080ee7d7949e19f5af41e26ff53806_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWidget_a196225b59cf30535180836cdac821edb}{
+\index{CPSWidget@{CPSWidget}!registerWidgetScript@{registerWidgetScript}}
+\index{registerWidgetScript@{registerWidgetScript}!CPSWidget@{CPSWidget}}
+\subsubsection[{registerWidgetScript}]{\setlength{\rightskip}{0pt plus 5cm}registerWidgetScript (
+\begin{DoxyParamCaption}
+\item[{\$}]{ script = {\ttfamily null}, }
+\item[{\$}]{ position = {\ttfamily CClientScript::POS\_\-READY}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_a196225b59cf30535180836cdac821edb}
+Registers a widget script. If no script is provided, the object's \hyperlink{classCPSWidget_a2a2ea08f8240ed4c24058ab80ab89703}{generateJavascript()} method is called to get the sript. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$script \item[{\em integer}]Where to load the script. See \hyperlink{}{CClientScript} for values. \end{DoxyParams}
+
+
+Definition at line 216 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( null === $script ) $script = $this->generateJavascript();
+        if ( $script ) CPSHelperBase::_rs( $this->getUniqueId( $this->id ), $scri
+      pt, $position );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWidget_a196225b59cf30535180836cdac821edb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSWidget_a196225b59cf30535180836cdac821edb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSWidget_a08e716b913e06fdbb77e84f81c0a3a35}{
+\index{CPSWidget@{CPSWidget}!setInternalName@{setInternalName}}
+\index{setInternalName@{setInternalName}!CPSWidget@{CPSWidget}}
+\subsubsection[{setInternalName}]{\setlength{\rightskip}{0pt plus 5cm}setInternalName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSWidget_a08e716b913e06fdbb77e84f81c0a3a35}
+Set our internal name 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$name \end{DoxyParams}
+
+
+Implements \hyperlink{interfaceIPSComponent_a08e716b913e06fdbb77e84f81c0a3a35}{IPSComponent}.
+
+
+
+Definition at line 296 of file CPSWidget.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->_internalName = $value; }
+\end{DoxyCode}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSWidget_ae4b83ae1081fc84475665024602b3582}{
+\index{CPSWidget@{CPSWidget}!\$\_\-behaviorCache@{\$\_\-behaviorCache}}
+\index{\$\_\-behaviorCache@{\$\_\-behaviorCache}!CPSWidget@{CPSWidget}}
+\subsubsection[{\$\_\-behaviorCache}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-behaviorCache = {\bf array}()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSWidget_ae4b83ae1081fc84475665024602b3582}
+
+
+Definition at line 45 of file CPSWidget.php.
+
+\hypertarget{classCPSWidget_a7e9c2d60491b593a399659483d86f330}{
+\index{CPSWidget@{CPSWidget}!\$\_\-cssFiles@{\$\_\-cssFiles}}
+\index{\$\_\-cssFiles@{\$\_\-cssFiles}!CPSWidget@{CPSWidget}}
+\subsubsection[{\$\_\-cssFiles}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-cssFiles = {\bf array}()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSWidget_a7e9c2d60491b593a399659483d86f330}
+
+
+Definition at line 51 of file CPSWidget.php.
+
+\hypertarget{classCPSWidget_ab6be874da7762016d79471c575d32395}{
+\index{CPSWidget@{CPSWidget}!\$\_\-initialized@{\$\_\-initialized}}
+\index{\$\_\-initialized@{\$\_\-initialized}!CPSWidget@{CPSWidget}}
+\subsubsection[{\$\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-initialized = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSWidget_ab6be874da7762016d79471c575d32395}
+
+
+Definition at line 39 of file CPSWidget.php.
+
+\hypertarget{classCPSWidget_a0a975e9ff0c33b78b80a00bf6f3429c3}{
+\index{CPSWidget@{CPSWidget}!\$\_\-internalName@{\$\_\-internalName}}
+\index{\$\_\-internalName@{\$\_\-internalName}!CPSWidget@{CPSWidget}}
+\subsubsection[{\$\_\-internalName}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-internalName\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSWidget_a0a975e9ff0c33b78b80a00bf6f3429c3}
+
+
+Definition at line 33 of file CPSWidget.php.
+
+\hypertarget{classCPSWidget_a3cbcf4738832eece2bdc4bee0a905d27}{
+\index{CPSWidget@{CPSWidget}!\$\_\-scriptFiles@{\$\_\-scriptFiles}}
+\index{\$\_\-scriptFiles@{\$\_\-scriptFiles}!CPSWidget@{CPSWidget}}
+\subsubsection[{\$\_\-scriptFiles}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-scriptFiles = {\bf array}()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSWidget_a3cbcf4738832eece2bdc4bee0a905d27}
+
+
+Definition at line 57 of file CPSWidget.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/base/\hyperlink{CPSWidget_8php}{CPSWidget.php}\end{DoxyCompactItemize}

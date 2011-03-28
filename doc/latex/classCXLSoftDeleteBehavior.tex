@@ -1,0 +1,351 @@
+\hypertarget{classCXLSoftDeleteBehavior}{
+\section{CXLSoftDeleteBehavior Class Reference}
+\label{classCXLSoftDeleteBehavior}\index{CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}}
+}
+
+
+Inheritance diagram for CXLSoftDeleteBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classCXLSoftDeleteBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLSoftDeleteBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classCXLSoftDeleteBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLSoftDeleteBehavior_a8b97dc6e43a81ad5f0eff95d328e189e}{getSoftDeleteColumnName} ()
+\item 
+\hyperlink{classCXLSoftDeleteBehavior_a9defa1ad4922f0989fb4a871e0ae1d30}{setSoftDeleteColumnName} (\$value)
+\item 
+\hyperlink{classCXLSoftDeleteBehavior_a84870a429f67ad3a7166b51edb27728d}{getSoftDeleteValues} ()
+\item 
+\hyperlink{classCXLSoftDeleteBehavior_ad6f2a8929e6d6875a709cab43e37287b}{setSoftDeleteValues} (\$array)
+\item 
+\hyperlink{classCXLSoftDeleteBehavior_a9c49f1fbbec2cb6693f6566bafd3683c}{undelete} ()
+\item 
+\hyperlink{classCXLSoftDeleteBehavior_a470a61d16341c345d6cebeb932890113}{beforeDelete} (\$event)
+\item 
+\hyperlink{classCXLSoftDeleteBehavior_a0d137abaa3f9f1ae67349e02c627ac26}{beforeFind} (\$event)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLSoftDeleteBehavior_a9763b131149e72b641d056ae5e693502}{\$\_\-softDeleteColumnName} = null
+\item 
+\hyperlink{classCXLSoftDeleteBehavior_a5c8f6d3104b63b74d01187b6a400106b}{\$\_\-softDeleteValues}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 25 of file CXLSoftDeleteBehavior.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLSoftDeleteBehavior_a470a61d16341c345d6cebeb932890113}{
+\index{CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}!beforeDelete@{beforeDelete}}
+\index{beforeDelete@{beforeDelete}!CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}}
+\subsubsection[{beforeDelete}]{\setlength{\rightskip}{0pt plus 5cm}beforeDelete (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLSoftDeleteBehavior_a470a61d16341c345d6cebeb932890113}
+Soft deletes models that have that feature  CEvent \$event \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CDbException}]Thrown when we can't update the value \end{DoxyExceptions}
+
+
+Definition at line 119 of file CXLSoftDeleteBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    //  Pass it on...
+    if ( parent::beforeDelete( $event ) )
+    {
+      //  We want to be the top of the chain...
+      if ( $this->_softDeleteColumnName && $event->isValid && ! $event->handled )
+      
+      {
+        //  Perform a soft delete if this model allows
+        if ( $event->getSender()->hasAttribute( $this->_softDeleteColumnName ) )
+        {
+          $event->isValid = false;
+          $event->handled = true;
+          $event->sender->setAttribute( $this->_softDeleteColumnName, XL::o( $thi
+      s->_softDeleteValues, 1, 1 ) );
+
+          if ( !$event->sender->update( array( $this->_softDeleteColumnName ) ) )
+       
+            throw new CXLDatabaseException( 'Error saving soft delete row.' );
+        }
+      }
+
+      return true;
+    }
+
+    return false;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classCXLSoftDeleteBehavior_a470a61d16341c345d6cebeb932890113_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLSoftDeleteBehavior_a0d137abaa3f9f1ae67349e02c627ac26}{
+\index{CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}!beforeFind@{beforeFind}}
+\index{beforeFind@{beforeFind}!CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}}
+\subsubsection[{beforeFind}]{\setlength{\rightskip}{0pt plus 5cm}beforeFind (
+\begin{DoxyParamCaption}
+\item[{\$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLSoftDeleteBehavior_a0d137abaa3f9f1ae67349e02c627ac26}
+Automatically exclude soft-\/deleted rows 
+\begin{DoxyParams}{Parameters}
+\item[{\em CEvent}]\$event \end{DoxyParams}
+
+
+Definition at line 149 of file CXLSoftDeleteBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( $this->_softDeleteColumnName && $this->getOwner()->hasAttribute( $this->
+      _softDeleteColumnName ) )
+    {
+      //  Merge in the soft delete indicator
+      $event->getSender()->getDbCriteria()->mergeWith(
+        array(
+          'condition' => $this->_softDeleteColumnName . ' = :softDeleteValue',
+          'params' => array( ':softDeleteValue' => XL::o( $this->_softDeleteValue
+      s, 0, 0 ) ),
+        )
+      );
+    }
+
+    //  Pass it on...
+    return parent::beforeFind( $event );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classCXLSoftDeleteBehavior_a0d137abaa3f9f1ae67349e02c627ac26_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLSoftDeleteBehavior_a8b97dc6e43a81ad5f0eff95d328e189e}{
+\index{CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}!getSoftDeleteColumnName@{getSoftDeleteColumnName}}
+\index{getSoftDeleteColumnName@{getSoftDeleteColumnName}!CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}}
+\subsubsection[{getSoftDeleteColumnName}]{\setlength{\rightskip}{0pt plus 5cm}getSoftDeleteColumnName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLSoftDeleteBehavior_a8b97dc6e43a81ad5f0eff95d328e189e}
+Returns the soft-\/delete column for this model \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file CXLSoftDeleteBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_softDeleteColumnName;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLSoftDeleteBehavior_a84870a429f67ad3a7166b51edb27728d}{
+\index{CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}!getSoftDeleteValues@{getSoftDeleteValues}}
+\index{getSoftDeleteValues@{getSoftDeleteValues}!CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}}
+\subsubsection[{getSoftDeleteValues}]{\setlength{\rightskip}{0pt plus 5cm}getSoftDeleteValues (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLSoftDeleteBehavior_a84870a429f67ad3a7166b51edb27728d}
+Returns the soft-\/delete values for this model \mbox{[}false,true\mbox{]} \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file CXLSoftDeleteBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return $this->_softDeleteValues;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLSoftDeleteBehavior_a9defa1ad4922f0989fb4a871e0ae1d30}{
+\index{CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}!setSoftDeleteColumnName@{setSoftDeleteColumnName}}
+\index{setSoftDeleteColumnName@{setSoftDeleteColumnName}!CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}}
+\subsubsection[{setSoftDeleteColumnName}]{\setlength{\rightskip}{0pt plus 5cm}setSoftDeleteColumnName (
+\begin{DoxyParamCaption}
+\item[{\$}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLSoftDeleteBehavior_a9defa1ad4922f0989fb4a871e0ae1d30}
+
+
+Definition at line 62 of file CXLSoftDeleteBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_softDeleteColumnName = $value;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLSoftDeleteBehavior_ad6f2a8929e6d6875a709cab43e37287b}{
+\index{CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}!setSoftDeleteValues@{setSoftDeleteValues}}
+\index{setSoftDeleteValues@{setSoftDeleteValues}!CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}}
+\subsubsection[{setSoftDeleteValues}]{\setlength{\rightskip}{0pt plus 5cm}setSoftDeleteValues (
+\begin{DoxyParamCaption}
+\item[{\$}]{ array}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLSoftDeleteBehavior_ad6f2a8929e6d6875a709cab43e37287b}
+
+
+Definition at line 80 of file CXLSoftDeleteBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_softDeleteValues = $array;
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLSoftDeleteBehavior_a9c49f1fbbec2cb6693f6566bafd3683c}{
+\index{CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}!undelete@{undelete}}
+\index{undelete@{undelete}!CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}}
+\subsubsection[{undelete}]{\setlength{\rightskip}{0pt plus 5cm}undelete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLSoftDeleteBehavior_a9c49f1fbbec2cb6693f6566bafd3683c}
+Undeletes a soft-\/deleted model \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file CXLSoftDeleteBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    if ( $this->_softDeleteColumnName )
+    {
+      //  Perform a soft delete if this model allows
+      if ( $this->hasAttribute( $this->_softDeleteColumnName ) )
+      {
+        $this->setAttribute( $this->_softDeleteColumnName, XL::o( $this->_softDel
+      eteValues, 0, 0 ) );
+        return $this->update( array( $this->_softDeleteColumnName ) );
+      }
+    }
+
+    //  Otherwise, not possible
+    return false;
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{classCXLSoftDeleteBehavior_a9c49f1fbbec2cb6693f6566bafd3683c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLSoftDeleteBehavior_a9763b131149e72b641d056ae5e693502}{
+\index{CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}!\$\_\-softDeleteColumnName@{\$\_\-softDeleteColumnName}}
+\index{\$\_\-softDeleteColumnName@{\$\_\-softDeleteColumnName}!CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}}
+\subsubsection[{\$\_\-softDeleteColumnName}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-softDeleteColumnName = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLSoftDeleteBehavior_a9763b131149e72b641d056ae5e693502}
+
+
+Definition at line 35 of file CXLSoftDeleteBehavior.php.
+
+\hypertarget{classCXLSoftDeleteBehavior_a5c8f6d3104b63b74d01187b6a400106b}{
+\index{CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}!\$\_\-softDeleteValues@{\$\_\-softDeleteValues}}
+\index{\$\_\-softDeleteValues@{\$\_\-softDeleteValues}!CXLSoftDeleteBehavior@{CXLSoftDeleteBehavior}}
+\subsubsection[{\$\_\-softDeleteValues}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-softDeleteValues\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLSoftDeleteBehavior_a5c8f6d3104b63b74d01187b6a400106b}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ array( 
+    0, 
+    1
+  )
+\end{DoxyCode}
+
+
+Definition at line 40 of file CXLSoftDeleteBehavior.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLSoftDeleteBehavior_8php}{CXLSoftDeleteBehavior.php}\end{DoxyCompactItemize}

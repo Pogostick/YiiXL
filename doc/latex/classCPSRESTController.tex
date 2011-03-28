@@ -1,0 +1,501 @@
+\hypertarget{classCPSRESTController}{
+\section{CPSRESTController Class Reference}
+\label{classCPSRESTController}\index{CPSRESTController@{CPSRESTController}}
+}
+
+
+Inheritance diagram for CPSRESTController:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classCPSRESTController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSRESTController:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classCPSRESTController__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSRESTController_a35edd2b48289866a074a06910ec85865}{runAction} (\$action)
+\item 
+\hyperlink{classCPSRESTController_ae6184c2ab5f3c23fd889d48f6cb7b675}{createAction} (\$sActionId)
+\item 
+\hyperlink{classCPSRESTController_af9f23d22326ba3616718f2160c36c066}{arrayToJSON} (\$arData=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}())
+\item 
+\hyperlink{classCPSRESTController_a251aab9c88e5099680934f222b08201f}{toJSON} (\$oValue)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSRESTController_ac6e10189b95edb3c6b4e1c5128f7637f}{dispatchRequest} (CAction \$action)
+\item 
+\hyperlink{classCPSRESTController_ab3dd823ad0aaa9d02a55cd158f87c5ec}{\_\-createResponse} (\$resultList=\hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}(), \$isError=false, \$errorMessage= 'failure', \$errorCode=0)
+\item 
+\hyperlink{classCPSRESTController_abb8737486fa4ce063137238992c6d718}{\_\-translateErrors} (CActiveRecord \$model)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 23 of file CPSRESTController.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSRESTController_ab3dd823ad0aaa9d02a55cd158f87c5ec}{
+\index{CPSRESTController@{CPSRESTController}!\_\-createResponse@{\_\-createResponse}}
+\index{\_\-createResponse@{\_\-createResponse}!CPSRESTController@{CPSRESTController}}
+\subsubsection[{\_\-createResponse}]{\setlength{\rightskip}{0pt plus 5cm}\_\-createResponse (
+\begin{DoxyParamCaption}
+\item[{\$}]{ resultList = {\ttfamily {\bf array}()}, }
+\item[{\$}]{ isError = {\ttfamily false}, }
+\item[{\$}]{ errorMessage = {\ttfamily 'failure'}, }
+\item[{\$}]{ errorCode = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSRESTController_ab3dd823ad0aaa9d02a55cd158f87c5ec}
+Creates a JSON encoded array (as a string) with a standard REST response. Override to provide a different response format.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$resultList \item[{\em boolean}]\$isError \item[{\em string}]\$errorText \item[{\em integer}]\$errorCode \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string JSON encoded array 
+\end{DoxyReturn}
+
+
+Definition at line 211 of file CPSRESTController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $isError )
+        {
+            $_response = array(
+                'result' => 'failure',
+                'errorMessage' => $errorMessage,
+                'errorCode' => $errorCode,
+            );
+
+            if ( $resultList )
+                $_response['resultData'] = $resultList;
+        }
+        else
+        {
+            $_response = array(
+                'result' => 'success',
+            );
+
+            if ( $resultList )
+                $_response['resultData'] = $resultList;
+        }
+
+        return json_encode( $_response );
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSRESTController_abb8737486fa4ce063137238992c6d718}{
+\index{CPSRESTController@{CPSRESTController}!\_\-translateErrors@{\_\-translateErrors}}
+\index{\_\-translateErrors@{\_\-translateErrors}!CPSRESTController@{CPSRESTController}}
+\subsubsection[{\_\-translateErrors}]{\setlength{\rightskip}{0pt plus 5cm}\_\-translateErrors (
+\begin{DoxyParamCaption}
+\item[{CActiveRecord \$}]{ model}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSRESTController_abb8737486fa4ce063137238992c6d718}
+
+
+Definition at line 242 of file CPSRESTController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( $_errorList = $model->getErrors() )
+        {
+            if ( method_exists( $model, 'attributeRestMap' ) )
+            {
+                $_restMap = $model->attributeRestMap();
+                $_resultList = array();
+
+                foreach ( $_errorList as $_key => $_value )
+                {
+                    if ( in_array( $_key, array_keys( $_restMap ) ) )
+                        $_resultList[ $_restMap[ $_key ] ] = $_value;
+                }
+
+                $_errorList = $_resultList;
+            }
+        }
+
+        return $_errorList;
+    }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSRESTController_af9f23d22326ba3616718f2160c36c066}{
+\index{CPSRESTController@{CPSRESTController}!arrayToJSON@{arrayToJSON}}
+\index{arrayToJSON@{arrayToJSON}!CPSRESTController@{CPSRESTController}}
+\subsubsection[{arrayToJSON}]{\setlength{\rightskip}{0pt plus 5cm}arrayToJSON (
+\begin{DoxyParamCaption}
+\item[{\$}]{ arData = {\ttfamily {\bf array}()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSRESTController_af9f23d22326ba3616718f2160c36c066}
+Converts an array to JSON
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$arData \end{DoxyParams}
+
+
+Definition at line 75 of file CPSRESTController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_arOut = array();
+
+        foreach ( $arData as $_key => &$_value )
+            $_arOut[] = $_key . ':' . $this->toJSON( $_value );
+
+        return '{' . implode( ',', $_arOut ) . '}';
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classCPSRESTController_af9f23d22326ba3616718f2160c36c066_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classCPSRESTController_af9f23d22326ba3616718f2160c36c066_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSRESTController_ae6184c2ab5f3c23fd889d48f6cb7b675}{
+\index{CPSRESTController@{CPSRESTController}!createAction@{createAction}}
+\index{createAction@{createAction}!CPSRESTController@{CPSRESTController}}
+\subsubsection[{createAction}]{\setlength{\rightskip}{0pt plus 5cm}createAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sActionId}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSRESTController_ae6184c2ab5f3c23fd889d48f6cb7b675}
+Creates the action instance based on the action name. The action can be either an inline action or an object. The latter is created by looking up the action map specified in \hyperlink{}{actions}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]ID of the action. If empty, the \hyperlink{}{default action} will be used. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+CAction the action instance, null if the action does not exist. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classCPSController_ae353790f09e1f72e1cc81d21a6eb9bed}{actions} 
+\end{DoxySeeAlso}
+
+
+Definition at line 59 of file CPSRESTController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_actionId = ( $sActionId === '' ) ? $this->defaultAction : $sActionId;
+
+        //  Is it a valid request?
+        if ( ! method_exists( $this, 'get' . $_actionId ) && ! method_exists( $th
+      is, 'post' . $_actionId ) && ! method_exists( $this, 'request' . $_actionId ) )
+            return $this->missingAction( $_actionId );
+
+        return new CPSRESTAction( $this, $_actionId );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCPSRESTController_ae6184c2ab5f3c23fd889d48f6cb7b675_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSRESTController_ac6e10189b95edb3c6b4e1c5128f7637f}{
+\index{CPSRESTController@{CPSRESTController}!dispatchRequest@{dispatchRequest}}
+\index{dispatchRequest@{dispatchRequest}!CPSRESTController@{CPSRESTController}}
+\subsubsection[{dispatchRequest}]{\setlength{\rightskip}{0pt plus 5cm}dispatchRequest (
+\begin{DoxyParamCaption}
+\item[{CAction \$}]{ action}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSRESTController_ac6e10189b95edb3c6b4e1c5128f7637f}
+Runs the named REST action. Filters specified via \hyperlink{}{filters()} will be applied. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sActionId Action id \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em CHttpException}]if the action does not exist or the action name is not proper. \end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+filters 
+
+\hyperlink{classCPSRESTController_ae6184c2ab5f3c23fd889d48f6cb7b675}{createAction} 
+
+\hyperlink{classCPSRESTController_a35edd2b48289866a074a06910ec85865}{runAction}  protected 
+\end{DoxySeeAlso}
+
+
+Definition at line 120 of file CPSRESTController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_actionId = $action->getId();
+        $_parameters = $_REQUEST;
+        $_urlParameters = array();
+        $_options = array();
+
+        //  If additional parameters are specified in the URL, convert to paramet
+      ers...
+        $_uri = PS::_gr()->getRequestUri();
+        $_frag = '/' . $this->getId() . '/' . $_actionId;
+
+        if ( null != ( $_uri = trim( substr( $_uri, stripos( $_uri, $_frag ) + st
+      rlen( $_frag ) ), ' /?' ) ) )
+        {
+            $_options = ( ! empty( $_uri ) ? explode( '/', $_uri ) : array() );
+
+            foreach ( $_options as $_key => $_value )
+            {
+                if ( false !== strpos( $_value, '=' ) )
+                {
+                    if ( null != ( $_list = explode( '=', $_value ) ) )
+                        $_options[ $_list[0] ] = $_list[1];
+
+                    unset( $_options[ $_key ] );
+                }
+                else
+                    $_options[ $_key ] = $_value;
+            }
+        }
+
+        //  Any query string? (?x=y&...)
+        if ( null != ( $_queryString = parse_url( $_uri, PHP_URL_QUERY ) ) )
+        {
+            $_queryOptions = array();
+            parse_str( $_queryString, $_queryOptions );
+            $_options = array_merge( $_queryOptions, $_options );
+
+            //  Remove route
+            if ( isset( $_options['r'] ) )
+                unset( $_options['r']);
+        }
+
+        //  load into url params
+        foreach ( $_options as $_key => $_value )
+        {
+            if ( ! isset( $_urlParameters[ $_key ] ) )
+                $_urlParameters[ $_key ] = $_value;
+        }
+
+        //  Is it a valid request?
+        $_requestType = strtolower( $this->getRequest()->getRequestType() );
+        $_requestMethod = $_requestType . ucfirst( $_actionId );
+
+        if ( $_requestType == 'post' )
+        {
+            foreach ( $_POST as $_key => $_value )
+            {
+                if ( ! is_array( $_value ) )
+                    $_urlParameters[ $_key ] = $_value;
+                else
+                {
+                    foreach ( $_value as $_subKey => $_subValue )
+                        $_urlParameters[ $_subKey ] = $_subValue;
+                }
+            }
+        }
+
+        if ( ! method_exists( $this, $_requestMethod ) )
+        {
+            //  Is it a valid catchall request?
+            if ( ! method_exists( $this, 'request' . $_actionId ) )
+                //  No clue what it is, so must be bogus. Hand off to missing act
+      ion...
+                return $this->missingAction( $_actionId );
+
+            $_requestMethod = 'request' . $_actionId;
+        }
+
+//      CPSLog::trace( __METHOD__, 'calling ' . $_requestMethod . ' with params: 
+      ' . PHP_EOL . print_r( $_urlParameters, true ) );
+
+        echo call_user_func_array( array( $this, $_requestMethod ), array_values(
+       $_urlParameters ) );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=368pt]{classCPSRESTController_ac6e10189b95edb3c6b4e1c5128f7637f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classCPSRESTController_ac6e10189b95edb3c6b4e1c5128f7637f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSRESTController_a35edd2b48289866a074a06910ec85865}{
+\index{CPSRESTController@{CPSRESTController}!runAction@{runAction}}
+\index{runAction@{runAction}!CPSRESTController@{CPSRESTController}}
+\subsubsection[{runAction}]{\setlength{\rightskip}{0pt plus 5cm}runAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ action}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSRESTController_a35edd2b48289866a074a06910ec85865}
+Runs the action after passing through all filters. This method is invoked by \hyperlink{}{runActionWithFilters} after all possible filters have been executed and the action starts to run.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em CAction}]\$action Action to run \end{DoxyParams}
+
+
+Definition at line 36 of file CPSRESTController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->pushAction( $this->getAction() );
+
+        $this->setAction( $action );
+
+        if ( $this->beforeAction( $action ) )
+        {
+            $this->dispatchRequest( $action );
+            $this->afterAction( $action );
+        }
+
+        $this->setAction( $this->popAction() );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSRESTController_a35edd2b48289866a074a06910ec85865_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSRESTController_a251aab9c88e5099680934f222b08201f}{
+\index{CPSRESTController@{CPSRESTController}!toJSON@{toJSON}}
+\index{toJSON@{toJSON}!CPSRESTController@{CPSRESTController}}
+\subsubsection[{toJSON}]{\setlength{\rightskip}{0pt plus 5cm}toJSON (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSRESTController_a251aab9c88e5099680934f222b08201f}
+
+
+Definition at line 90 of file CPSRESTController.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        if ( is_array( $oValue ) )
+            $_oOut = $this->arrayToJSON( $oValue );
+        else if ( is_string( $oValue ) )
+            $_oOut = '"' . addslashes( $oValue ) . '"';
+        else if ( is_bool( $oValue ) )
+            $_oOut = $oValue ? 'true' : 'false';
+        else if ( is_null( $oValue ) )
+            $_oOut = '""';
+        else
+            $_oOut = $oValue;
+
+        return $_oOut;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classCPSRESTController_a251aab9c88e5099680934f222b08201f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classCPSRESTController_a251aab9c88e5099680934f222b08201f_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/controllers/\hyperlink{CPSRESTController_8php}{CPSRESTController.php}\end{DoxyCompactItemize}

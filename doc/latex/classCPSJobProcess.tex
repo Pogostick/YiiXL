@@ -1,0 +1,605 @@
+\hypertarget{classCPSJobProcess}{
+\section{CPSJobProcess Class Reference}
+\label{classCPSJobProcess}\index{CPSJobProcess@{CPSJobProcess}}
+}
+
+
+Inheritance diagram for CPSJobProcess:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classCPSJobProcess__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CPSJobProcess:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classCPSJobProcess__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSJobProcess_a43878aef3c85b396a28e4b8e4fce0fc2}{getResultCode} ()
+\item 
+\hyperlink{classCPSJobProcess_af1f91fdb702f9b13e5869aed94fa61ae}{setResultCode} (\$iValue)
+\item 
+\hyperlink{classCPSJobProcess_a9d21636071f529e2154051d3ea6e5921}{getStatus} ()
+\item 
+\hyperlink{classCPSJobProcess_aa6fdfc32edc157649619c5c549f7d651}{setStatus} (\$sValue)
+\item 
+\hyperlink{classCPSJobProcess_a8ec5d045b7c39a3712a14426a5fb9219}{getJobData} ()
+\item 
+\hyperlink{classCPSJobProcess_abafd9c8b01d9f53afd70c9746e2d8797}{setJobData} (\$oValue)
+\item 
+\hyperlink{classCPSJobProcess_ae077eb8a032a325ceb939bfabfa5f472}{getResult} ()
+\item 
+\hyperlink{classCPSJobProcess_af4e85e6b3dfe0f1383d7171ea7ddcf54}{\_\-\_\-construct} (\$oJob=null, \$autoRun=false)
+\item 
+\hyperlink{classCPSJobProcess_afb0fafe7e02a3ae1993c01c19fad2bae}{run} ()
+\item 
+\hyperlink{classCPSJobProcess_afe99d678d7ad80f340b9642ce1c2cd50}{getProcessingTime} (\$bRaw=false)
+\item 
+\hyperlink{classCPSJobProcess_a013c0d9ca789c13c56b13cb96d26174a}{stopTimer} ()
+\item 
+\hyperlink{classCPSJobProcess_a3f20c6773be010b2744fb3451651746c}{startTimer} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSJobProcess_a7d4ad4038b036a67eece619e6f88c89e}{process} ()
+\item 
+\hyperlink{classCPSJobProcess_a64cd9d30098246574f7ea72073bf79e5}{log} (\$sMessage, \$sLevel= 'trace', \$sCategory=null, \$bNoStatus=false)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCPSJobProcess_a63a0fe0120a9bdc4e87f600d2964a2a6}{\$m\_\-fStart} = null
+\item 
+\hyperlink{classCPSJobProcess_a98cd8e9f9042e529e7018d1c2ad9d15b}{\$m\_\-fEnd} = null
+\item 
+\hyperlink{classCPSJobProcess_a8fbbd777ad79ed6d98d46d1c50d81f3d}{\$m\_\-iResultCode} = null
+\item 
+\hyperlink{classCPSJobProcess_a59c6d34dc39a2eef90aca02aba384173}{\$m\_\-sStatus} = null
+\item 
+\hyperlink{classCPSJobProcess_aae15a90657d304e8bcbeffdc99db4fec}{\$m\_\-oJobData} = null
+\item 
+\hyperlink{classCPSJobProcess_a4a251a10e160111a73920d784e217fd7}{\$m\_\-oResult} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 39 of file CPSJobProcess.php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCPSJobProcess_af4e85e6b3dfe0f1383d7171ea7ddcf54}{
+\index{CPSJobProcess@{CPSJobProcess}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oJob = {\ttfamily null}, }
+\item[{\$}]{ autoRun = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSJobProcess_af4e85e6b3dfe0f1383d7171ea7ddcf54}
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mixed}]\$oJob Either a row from a job queue or data to process \item[{\em boolean}]\$autoRun If true, initializes and runs the job \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCPSJobProcess}{CPSJobProcess} 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file CPSJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Phone home...
+        parent::__construct();
+
+        //  Store our data...
+        $this->m_oJobData = $oJob;
+
+        //  Run?
+        if ( $autoRun )
+        {
+            $this->init();
+            $this->run();
+        }
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSJobProcess_af4e85e6b3dfe0f1383d7171ea7ddcf54_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCPSJobProcess_a8ec5d045b7c39a3712a14426a5fb9219}{
+\index{CPSJobProcess@{CPSJobProcess}!getJobData@{getJobData}}
+\index{getJobData@{getJobData}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{getJobData}]{\setlength{\rightskip}{0pt plus 5cm}getJobData (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSJobProcess_a8ec5d045b7c39a3712a14426a5fb9219}
+
+
+Definition at line 79 of file CPSJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_oJobData; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSJobProcess_afe99d678d7ad80f340b9642ce1c2cd50}{
+\index{CPSJobProcess@{CPSJobProcess}!getProcessingTime@{getProcessingTime}}
+\index{getProcessingTime@{getProcessingTime}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{getProcessingTime}]{\setlength{\rightskip}{0pt plus 5cm}getProcessingTime (
+\begin{DoxyParamCaption}
+\item[{\$}]{ bRaw = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSJobProcess_afe99d678d7ad80f340b9642ce1c2cd50}
+Returns the amount of time since the timer was started \begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Definition at line 133 of file CPSJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $_fSpan = CPSHelperBase::nvl( $this->m_fEnd, 
+      CPSHelperBase::currentTimeMillis() ) - $this->m_fStart;
+        return $bRaw ? $_fSpan : number_format( $_fSpan, 2 ) . 's';
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSJobProcess_afe99d678d7ad80f340b9642ce1c2cd50_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSJobProcess_ae077eb8a032a325ceb939bfabfa5f472}{
+\index{CPSJobProcess@{CPSJobProcess}!getResult@{getResult}}
+\index{getResult@{getResult}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{getResult}]{\setlength{\rightskip}{0pt plus 5cm}getResult (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSJobProcess_ae077eb8a032a325ceb939bfabfa5f472}
+
+
+Definition at line 87 of file CPSJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_oResult; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSJobProcess_a43878aef3c85b396a28e4b8e4fce0fc2}{
+\index{CPSJobProcess@{CPSJobProcess}!getResultCode@{getResultCode}}
+\index{getResultCode@{getResultCode}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{getResultCode}]{\setlength{\rightskip}{0pt plus 5cm}getResultCode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSJobProcess_a43878aef3c85b396a28e4b8e4fce0fc2}
+
+
+Definition at line 63 of file CPSJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_iResultCode; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSJobProcess_a9d21636071f529e2154051d3ea6e5921}{
+\index{CPSJobProcess@{CPSJobProcess}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{getStatus}]{\setlength{\rightskip}{0pt plus 5cm}getStatus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSJobProcess_a9d21636071f529e2154051d3ea6e5921}
+
+
+Definition at line 71 of file CPSJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+{ return $this->m_sStatus; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSJobProcess_a64cd9d30098246574f7ea72073bf79e5}{
+\index{CPSJobProcess@{CPSJobProcess}!log@{log}}
+\index{log@{log}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}log (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sMessage, }
+\item[{\$}]{ sLevel = {\ttfamily 'trace'}, }
+\item[{\$}]{ sCategory = {\ttfamily null}, }
+\item[{\$}]{ bNoStatus = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSJobProcess_a64cd9d30098246574f7ea72073bf79e5}
+Logs a message to the application log
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sMessage \item[{\em string}]\$sLevel \item[{\em string}]\$sCategory \item[{\em boolean}]\$bNoStatus If true, will NOT set status of job with error message \end{DoxyParams}
+
+
+Definition at line 175 of file CPSJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        //  Auto set status
+        if ( ! $bNoStatus && $sLevel == 'error' ) $this->setStatus( $sMessage );
+        Yii::log( $sMessage, $sLevel, CPSHelperBase::nvl( $sCategory, __CLASS__ )
+       );
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classCPSJobProcess_a64cd9d30098246574f7ea72073bf79e5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSJobProcess_a7d4ad4038b036a67eece619e6f88c89e}{
+\index{CPSJobProcess@{CPSJobProcess}!process@{process}}
+\index{process@{process}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}abstract, protected\mbox{]}}}}
+\label{classCPSJobProcess_a7d4ad4038b036a67eece619e6f88c89e}
+Process the job 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classCPSJobProcess_a7d4ad4038b036a67eece619e6f88c89e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSJobProcess_afb0fafe7e02a3ae1993c01c19fad2bae}{
+\index{CPSJobProcess@{CPSJobProcess}!run@{run}}
+\index{run@{run}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSJobProcess_afb0fafe7e02a3ae1993c01c19fad2bae}
+Runs the job process with timing \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 120 of file CPSJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->startTimer();
+        $_bResult = $this->process();
+        $this->stopTimer();
+
+        return $_bResult;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCPSJobProcess_afb0fafe7e02a3ae1993c01c19fad2bae_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classCPSJobProcess_afb0fafe7e02a3ae1993c01c19fad2bae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSJobProcess_abafd9c8b01d9f53afd70c9746e2d8797}{
+\index{CPSJobProcess@{CPSJobProcess}!setJobData@{setJobData}}
+\index{setJobData@{setJobData}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{setJobData}]{\setlength{\rightskip}{0pt plus 5cm}setJobData (
+\begin{DoxyParamCaption}
+\item[{\$}]{ oValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSJobProcess_abafd9c8b01d9f53afd70c9746e2d8797}
+
+
+Definition at line 80 of file CPSJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_oJobData = $oValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSJobProcess_af1f91fdb702f9b13e5869aed94fa61ae}{
+\index{CPSJobProcess@{CPSJobProcess}!setResultCode@{setResultCode}}
+\index{setResultCode@{setResultCode}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{setResultCode}]{\setlength{\rightskip}{0pt plus 5cm}setResultCode (
+\begin{DoxyParamCaption}
+\item[{\$}]{ iValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSJobProcess_af1f91fdb702f9b13e5869aed94fa61ae}
+
+
+Definition at line 64 of file CPSJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_iResultCode = $iValue; }
+\end{DoxyCode}
+
+
+\hypertarget{classCPSJobProcess_aa6fdfc32edc157649619c5c549f7d651}{
+\index{CPSJobProcess@{CPSJobProcess}!setStatus@{setStatus}}
+\index{setStatus@{setStatus}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{setStatus}]{\setlength{\rightskip}{0pt plus 5cm}setStatus (
+\begin{DoxyParamCaption}
+\item[{\$}]{ sValue}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSJobProcess_aa6fdfc32edc157649619c5c549f7d651}
+
+
+Definition at line 72 of file CPSJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+{ $this->m_sStatus = $sValue; }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classCPSJobProcess_aa6fdfc32edc157649619c5c549f7d651_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSJobProcess_a3f20c6773be010b2744fb3451651746c}{
+\index{CPSJobProcess@{CPSJobProcess}!startTimer@{startTimer}}
+\index{startTimer@{startTimer}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{startTimer}]{\setlength{\rightskip}{0pt plus 5cm}startTimer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSJobProcess_a3f20c6773be010b2744fb3451651746c}
+Starts the internal job timer 
+
+Definition at line 152 of file CPSJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_fStart = CPSHelperBase::currentTimeMillis();
+        $this->m_fEnd = null;
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=360pt]{classCPSJobProcess_a3f20c6773be010b2744fb3451651746c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classCPSJobProcess_a3f20c6773be010b2744fb3451651746c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCPSJobProcess_a013c0d9ca789c13c56b13cb96d26174a}{
+\index{CPSJobProcess@{CPSJobProcess}!stopTimer@{stopTimer}}
+\index{stopTimer@{stopTimer}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{stopTimer}]{\setlength{\rightskip}{0pt plus 5cm}stopTimer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classCPSJobProcess_a013c0d9ca789c13c56b13cb96d26174a}
+Stops the internal job timer 
+
+Definition at line 143 of file CPSJobProcess.php.
+
+
+
+
+\begin{DoxyCode}
+    {
+        $this->m_fEnd = CPSHelperBase::currentTimeMillis();
+    }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=360pt]{classCPSJobProcess_a013c0d9ca789c13c56b13cb96d26174a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classCPSJobProcess_a013c0d9ca789c13c56b13cb96d26174a_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCPSJobProcess_a98cd8e9f9042e529e7018d1c2ad9d15b}{
+\index{CPSJobProcess@{CPSJobProcess}!\$m\_\-fEnd@{\$m\_\-fEnd}}
+\index{\$m\_\-fEnd@{\$m\_\-fEnd}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{\$m\_\-fEnd}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-fEnd = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSJobProcess_a98cd8e9f9042e529e7018d1c2ad9d15b}
+
+
+Definition at line 56 of file CPSJobProcess.php.
+
+\hypertarget{classCPSJobProcess_a63a0fe0120a9bdc4e87f600d2964a2a6}{
+\index{CPSJobProcess@{CPSJobProcess}!\$m\_\-fStart@{\$m\_\-fStart}}
+\index{\$m\_\-fStart@{\$m\_\-fStart}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{\$m\_\-fStart}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-fStart = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSJobProcess_a63a0fe0120a9bdc4e87f600d2964a2a6}
+
+
+Definition at line 49 of file CPSJobProcess.php.
+
+\hypertarget{classCPSJobProcess_a8fbbd777ad79ed6d98d46d1c50d81f3d}{
+\index{CPSJobProcess@{CPSJobProcess}!\$m\_\-iResultCode@{\$m\_\-iResultCode}}
+\index{\$m\_\-iResultCode@{\$m\_\-iResultCode}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{\$m\_\-iResultCode}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-iResultCode = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSJobProcess_a8fbbd777ad79ed6d98d46d1c50d81f3d}
+
+
+Definition at line 62 of file CPSJobProcess.php.
+
+\hypertarget{classCPSJobProcess_aae15a90657d304e8bcbeffdc99db4fec}{
+\index{CPSJobProcess@{CPSJobProcess}!\$m\_\-oJobData@{\$m\_\-oJobData}}
+\index{\$m\_\-oJobData@{\$m\_\-oJobData}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{\$m\_\-oJobData}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-oJobData = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSJobProcess_aae15a90657d304e8bcbeffdc99db4fec}
+
+
+Definition at line 78 of file CPSJobProcess.php.
+
+\hypertarget{classCPSJobProcess_a4a251a10e160111a73920d784e217fd7}{
+\index{CPSJobProcess@{CPSJobProcess}!\$m\_\-oResult@{\$m\_\-oResult}}
+\index{\$m\_\-oResult@{\$m\_\-oResult}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{\$m\_\-oResult}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-oResult = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSJobProcess_a4a251a10e160111a73920d784e217fd7}
+
+
+Definition at line 86 of file CPSJobProcess.php.
+
+\hypertarget{classCPSJobProcess_a59c6d34dc39a2eef90aca02aba384173}{
+\index{CPSJobProcess@{CPSJobProcess}!\$m\_\-sStatus@{\$m\_\-sStatus}}
+\index{\$m\_\-sStatus@{\$m\_\-sStatus}!CPSJobProcess@{CPSJobProcess}}
+\subsubsection[{\$m\_\-sStatus}]{\setlength{\rightskip}{0pt plus 5cm}\$m\_\-sStatus = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCPSJobProcess_a59c6d34dc39a2eef90aca02aba384173}
+
+
+Definition at line 70 of file CPSJobProcess.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+/usr/local/yiixl/lib/original/base/\hyperlink{CPSJobProcess_8php}{CPSJobProcess.php}\end{DoxyCompactItemize}

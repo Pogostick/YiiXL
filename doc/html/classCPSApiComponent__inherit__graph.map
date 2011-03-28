@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node9" href="$classCPSFacebook.html" title="CPSFacebook" alt="" coords="684,5,791,35"/>
+<area shape="rect" id="node11" href="$classCPSOAuthComponent.html" title="CPSOAuthComponent" alt="" coords="656,59,819,88"/>
+<area shape="rect" id="node15" href="$classCPSOpenCalais.html" title="CPSOpenCalais" alt="" coords="677,112,797,141"/>
+<area shape="rect" id="node17" href="$classCPSWHMCSApi.html" title="CPSWHMCSApi" alt="" coords="679,165,796,195"/>
+<area shape="rect" id="node25" href="$classCPSYelpApi.html" title="CPSYelpApi" alt="" coords="692,219,783,248"/>
+<area shape="rect" id="node27" href="$classCSFBaseApplication.html" title="CSFBaseApplication" alt="" coords="663,272,812,301"/>
+<area shape="rect" id="node29" href="$classSonetrixClient.html" title="SonetrixClient" alt="" coords="683,325,792,355"/>
+<area shape="rect" id="node2" href="$classCPSComponent.html" title="CPSComponent" alt="" coords="293,165,416,195"/>
+<area shape="rect" id="node4" href="$interfaceIPSComponent.html" title="IPSComponent" alt="" coords="128,165,245,195"/>
+<area shape="rect" id="node6" href="$interfaceIPSBase.html" title="IPSBase" alt="" coords="5,165,80,195"/>
+<area shape="rect" id="node13" href="$classCPSTwitterApi.html" title="CPSTwitterApi" alt="" coords="899,59,1005,88"/>
+<area shape="rect" id="node19" href="$classCPSWHMCSBillingApi.html" title="CPSWHMCSBillingApi" alt="" coords="875,112,1029,141"/>
+<area shape="rect" id="node21" href="$classCPSWHMCSClientApi.html" title="CPSWHMCSClientApi" alt="" coords="875,165,1029,195"/>
+<area shape="rect" id="node23" href="$classCPSWHMCSSupportApi.html" title="CPSWHMCSSupportApi" alt="" coords="868,219,1036,248"/>
+</map>

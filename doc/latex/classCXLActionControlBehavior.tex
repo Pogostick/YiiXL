@@ -1,0 +1,345 @@
+\hypertarget{classCXLActionControlBehavior}{
+\section{CXLActionControlBehavior Class Reference}
+\label{classCXLActionControlBehavior}\index{CXLActionControlBehavior@{CXLActionControlBehavior}}
+}
+
+
+Inheritance diagram for CXLActionControlBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{classCXLActionControlBehavior__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CXLActionControlBehavior:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{classCXLActionControlBehavior__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLActionControlBehavior_add454aad5b6c4da4c505cfddc95b5c28}{getUserActionMap} (\$accessLevel)
+\item 
+\hyperlink{classCXLActionControlBehavior_a45b0d25829a9c6dc423327ad66d731ab}{addUserActionRole} (\$accessLevel, \$action, \$role)
+\item 
+\hyperlink{classCXLActionControlBehavior_a94aadec855a8f2a8c11ad692e944fbab}{removeUserAction} (\$accessLevel, \$action)
+\item 
+\hyperlink{classCXLActionControlBehavior_ad0ba36d866855d0f825be3ee705752dc}{addUserAction} (\$accessLevel, \$action)
+\item 
+\hyperlink{classCXLActionControlBehavior_a0674340deb38ba1bdd56925fde80857c}{addUserActions} (\$accessLevel, \$actions=array())
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLActionControlBehavior_a7a9cb51ff46e200b6475678ac407a8b5}{resetUserActionMap} ()
+\item 
+\hyperlink{classCXLActionControlBehavior_ab596b5f38307ae814ca5d0757babf136}{setUserActionMap} (\$accessLevel, \$value=array())
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCXLActionControlBehavior_a7632198654cfa044b1d5f296f634078e}{\$\_\-userActionMap} = array()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCXLActionControlBehavior}{CXLActionControlBehavior} Provides an alternative interface to configuring access to your actions 
+
+Definition at line 21 of file CXLActionControlControlBehavior.php.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCXLActionControlBehavior_ad0ba36d866855d0f825be3ee705752dc}{
+\index{CXLActionControlBehavior@{CXLActionControlBehavior}!addUserAction@{addUserAction}}
+\index{addUserAction@{addUserAction}!CXLActionControlBehavior@{CXLActionControlBehavior}}
+\subsubsection[{addUserAction}]{\setlength{\rightskip}{0pt plus 5cm}addUserAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ accessLevel, }
+\item[{\$}]{ action}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLActionControlBehavior_ad0ba36d866855d0f825be3ee705752dc}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]\$accessLevel \item[{\em type}]\$action \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file CXLActionControlControlBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $_map = PS::o( $this->_userActionMap, $accessLevel, array() );
+
+    if ( ! in_array( $action, $_map ) )
+      array_push( $_map, $action );
+
+    //  Make sure we don't lose our error handler...
+    if ( self::ACCESS_TO_ANY == $accessLevel )
+    {
+      if ( ! in_array( 'error', $_map ) )
+        array_push( $_map, 'error' );
+    }
+    
+    return $this->setUserActionMap( $accessLevel, $_map );
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{classCXLActionControlBehavior_ad0ba36d866855d0f825be3ee705752dc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classCXLActionControlBehavior_ad0ba36d866855d0f825be3ee705752dc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLActionControlBehavior_a45b0d25829a9c6dc423327ad66d731ab}{
+\index{CXLActionControlBehavior@{CXLActionControlBehavior}!addUserActionRole@{addUserActionRole}}
+\index{addUserActionRole@{addUserActionRole}!CXLActionControlBehavior@{CXLActionControlBehavior}}
+\subsubsection[{addUserActionRole}]{\setlength{\rightskip}{0pt plus 5cm}addUserActionRole (
+\begin{DoxyParamCaption}
+\item[{\$}]{ accessLevel, }
+\item[{\$}]{ action, }
+\item[{\$}]{ role}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLActionControlBehavior_a45b0d25829a9c6dc423327ad66d731ab}
+Adds a role to an access level/action 
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]\$accessLevel \item[{\em string}]\$action \item[{\em string}]\$role \end{DoxyParams}
+
+
+Definition at line 74 of file CXLActionControlControlBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    array_push( $this->_userActionMap[$accessLevel]['roles'], $value );
+    return $this->getOwner();
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLActionControlBehavior_a0674340deb38ba1bdd56925fde80857c}{
+\index{CXLActionControlBehavior@{CXLActionControlBehavior}!addUserActions@{addUserActions}}
+\index{addUserActions@{addUserActions}!CXLActionControlBehavior@{CXLActionControlBehavior}}
+\subsubsection[{addUserActions}]{\setlength{\rightskip}{0pt plus 5cm}addUserActions (
+\begin{DoxyParamCaption}
+\item[{\$}]{ accessLevel, }
+\item[{\$}]{ actions = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLActionControlBehavior_a0674340deb38ba1bdd56925fde80857c}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]\$accessLevel \item[{\em array}]\$actions \end{DoxyParams}
+
+
+Definition at line 117 of file CXLActionControlControlBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    foreach ( $actions as $_action ) 
+      $this->addUserAction( $accessLevel, $_action );
+    
+    return $this->getOwner();
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLActionControlBehavior_a0674340deb38ba1bdd56925fde80857c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLActionControlBehavior_add454aad5b6c4da4c505cfddc95b5c28}{
+\index{CXLActionControlBehavior@{CXLActionControlBehavior}!getUserActionMap@{getUserActionMap}}
+\index{getUserActionMap@{getUserActionMap}!CXLActionControlBehavior@{CXLActionControlBehavior}}
+\subsubsection[{getUserActionMap}]{\setlength{\rightskip}{0pt plus 5cm}getUserActionMap (
+\begin{DoxyParamCaption}
+\item[{\$}]{ accessLevel}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLActionControlBehavior_add454aad5b6c4da4c505cfddc95b5c28}
+Gets an UAM 
+\begin{DoxyParams}{Parameters}
+\item[{\em $\backslash$\$accessLevel}]Retrieves the UAM for this access level. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file CXLActionControlControlBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return PS::o( $this->_userActionMap, $accessLevel );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLActionControlBehavior_a94aadec855a8f2a8c11ad692e944fbab}{
+\index{CXLActionControlBehavior@{CXLActionControlBehavior}!removeUserAction@{removeUserAction}}
+\index{removeUserAction@{removeUserAction}!CXLActionControlBehavior@{CXLActionControlBehavior}}
+\subsubsection[{removeUserAction}]{\setlength{\rightskip}{0pt plus 5cm}removeUserAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{ accessLevel, }
+\item[{\$}]{ action}
+\end{DoxyParamCaption}
+)}}
+\label{classCXLActionControlBehavior_a94aadec855a8f2a8c11ad692e944fbab}
+Removes an access level/action pair 
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]\$accessLevel \item[{\em string}]\$action \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed Returns the previous value or null 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file CXLActionControlControlBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    return PS::o( $this->_userActionMap, $accessLevel, null, true );
+  }
+\end{DoxyCode}
+
+
+\hypertarget{classCXLActionControlBehavior_a7a9cb51ff46e200b6475678ac407a8b5}{
+\index{CXLActionControlBehavior@{CXLActionControlBehavior}!resetUserActionMap@{resetUserActionMap}}
+\index{resetUserActionMap@{resetUserActionMap}!CXLActionControlBehavior@{CXLActionControlBehavior}}
+\subsubsection[{resetUserActionMap}]{\setlength{\rightskip}{0pt plus 5cm}resetUserActionMap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLActionControlBehavior_a7a9cb51ff46e200b6475678ac407a8b5}
+Resets the UAM 
+
+Definition at line 49 of file CXLActionControlControlBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_userActionMap = array();
+    $this->addUserAction( self::ACCESS_TO_ANY, 'error' );
+    return $this->getOwner();
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLActionControlBehavior_a7a9cb51ff46e200b6475678ac407a8b5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCXLActionControlBehavior_ab596b5f38307ae814ca5d0757babf136}{
+\index{CXLActionControlBehavior@{CXLActionControlBehavior}!setUserActionMap@{setUserActionMap}}
+\index{setUserActionMap@{setUserActionMap}!CXLActionControlBehavior@{CXLActionControlBehavior}}
+\subsubsection[{setUserActionMap}]{\setlength{\rightskip}{0pt plus 5cm}setUserActionMap (
+\begin{DoxyParamCaption}
+\item[{\$}]{ accessLevel, }
+\item[{\$}]{ value = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLActionControlBehavior_ab596b5f38307ae814ca5d0757babf136}
+Resets the UAM 
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]\$accessLevel \item[{\em array}]\$value \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCXLActionControlBehavior}{CXLActionControlBehavior} 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file CXLActionControlControlBehavior.php.
+
+
+
+
+\begin{DoxyCode}
+  {
+    $this->_userActionMap[$accessLevel] = $value;
+    return $this->getOwner();
+  }
+\end{DoxyCode}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{classCXLActionControlBehavior_ab596b5f38307ae814ca5d0757babf136_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classCXLActionControlBehavior_a7632198654cfa044b1d5f296f634078e}{
+\index{CXLActionControlBehavior@{CXLActionControlBehavior}!\$\_\-userActionMap@{\$\_\-userActionMap}}
+\index{\$\_\-userActionMap@{\$\_\-userActionMap}!CXLActionControlBehavior@{CXLActionControlBehavior}}
+\subsubsection[{\$\_\-userActionMap}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-userActionMap = array()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classCXLActionControlBehavior_a7632198654cfa044b1d5f296f634078e}
+An array of actions permitted by any user 
+
+Definition at line 30 of file CXLActionControlControlBehavior.php.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CXLActionControlControlBehavior_8php}{CXLActionControlControlBehavior.php}\end{DoxyCompactItemize}

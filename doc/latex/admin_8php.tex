@@ -1,0 +1,133 @@
+\hypertarget{admin_8php}{
+\section{/usr/local/yiixl/lib/original/templates/crud/admin.php File Reference}
+\label{admin_8php}\index{/usr/local/yiixl/lib/original/templates/crud/admin.php@{/usr/local/yiixl/lib/original/templates/crud/admin.php}}
+}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacepsYiiExtensions_1_1templates}{psYiiExtensions::templates}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{admin_8php_ac7fee519d8f9e7616d91e089ce18a5ac}{\$\_\-sCols} = null
+\item 
+\hyperlink{admin_8php_acd6a475a6eeb092f4eea3e19e502d67d}{\$className} = 'admin view'
+\item 
+echo$<$$<$$<$ \hyperlink{module_8php_a2c8135527015cd4586959ac7c2ffec92}{HTML} echo CPSDataGrid::createEx(\$models, \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}( 'formHeader'=$>$ \hyperlink{admin_8php_a2394bd91cde70158acb50a4a7f860ab5}{array} ( 'title'=$>$ '\{\$modelClass\}Manager', 'menuButtons'=$>$ \hyperlink{list_8php_aa3205d038c7f8feb5c9f01ac4dfadc88}{array}( 'new'), 'itemName'=$>$ '\{\$modelClass\}',)
+\item 
+\hyperlink{admin_8php_a2c8135527015cd4586959ac7c2ffec92}{HTML}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{admin_8php_ac7fee519d8f9e7616d91e089ce18a5ac}{
+\index{admin.php@{admin.php}!\$\_\-sCols@{\$\_\-sCols}}
+\index{\$\_\-sCols@{\$\_\-sCols}!admin.php@{admin.php}}
+\subsubsection[{\$\_\-sCols}]{\setlength{\rightskip}{0pt plus 5cm}\$\_\-sCols = null}}
+\label{admin_8php_ac7fee519d8f9e7616d91e089ce18a5ac}
+
+
+Definition at line 28 of file admin.php.
+
+\hypertarget{admin_8php_acd6a475a6eeb092f4eea3e19e502d67d}{
+\index{admin.php@{admin.php}!\$className@{\$className}}
+\index{\$className@{\$className}!admin.php@{admin.php}}
+\subsubsection[{\$className}]{\setlength{\rightskip}{0pt plus 5cm}\$className = 'admin view'}}
+\label{admin_8php_acd6a475a6eeb092f4eea3e19e502d67d}
+
+
+Definition at line 33 of file admin.php.
+
+\hypertarget{admin_8php_a2394bd91cde70158acb50a4a7f860ab5}{
+\index{admin.php@{admin.php}!array@{array}}
+\index{array@{array}!admin.php@{admin.php}}
+\subsubsection[{array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf array}}}
+\label{admin_8php_a2394bd91cde70158acb50a4a7f860ab5}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+> 'setting', 
+            'columns' => {$_sCols},
+            'actions' => array( 'edit', 'delete' ), 
+            'sort' => $sort,
+            'pages' => $pages,
+            'pagerOptions' => array( 'header' => '' ),
+            'linkView' => 'update',
+        )
+    )
+\end{DoxyCode}
+Holds the default/configured formats for use when populating fields
+
+array( 'eventName' =$>$ array( // The event to apply format in 'dataType' =$>$ $<$format$>$ // The format for the display 'method' =$>$ $<$function$>$ // The function to call for formatting ), // Send array(object,method) for class methods 'eventName' =$>$ array( // The event to apply format in 'dataType' =$>$ $<$format$>$ // The format for the display 'method' =$>$ $<$function$>$ // The function to call for formatting ), // Send array(object,method) for class methods ...
+
+The current token list
+
+Soft delete indicator \mbox{[}false,true\mbox{]}
+
+Contains array of configuration data
+
+An array of categories to exclude from logging. Regex pattern matching is supported via \hyperlink{}{preg\_\-match}
+
+Context menu items. This property will be assigned to \hyperlink{}{CMenu::items}.
+
+The breadcrumbs of the current page. The value of this property will be assigned to \hyperlink{}{CBreadcrumbs::links}. Please refer to \hyperlink{}{CBreadcrumbs::links} for more details on how to specify this property.
+
+An associative array of POST commands and their applicable methods
+
+protected
+
+Action queue for keeping track of where we are...
+
+A list of actions registered by our portlets
+
+The array of data passed to views
+
+Any values in this array will be extracted into each view before it's rendered. The value \char`\"{}currentUser\char`\"{} is added automatically.
+
+Our hash seeds
+
+The rules for this option
+
+Our behaviors. Cached for speed here...
+
+Our CSS files
+
+Our JS files
+
+Access to prior data after a save
+
+The current token
+
+The actions we know are for REST
+
+The column names in \hyperlink{}{authModel} to use for authentication
+
+Stores the current search criteria
+
+The token
+
+A generic parameter array
+
+Transformation mapping
+
+Grid options
+
+A list of the support files for each tool
+
+The current valid themes for jqUI widgets
+
+Mapping of jQuery UI icons to page classes
+
+protected 
+
+Definition at line 41 of file admin.php.
+
+\hypertarget{admin_8php_a2c8135527015cd4586959ac7c2ffec92}{
+\index{admin.php@{admin.php}!HTML@{HTML}}
+\index{HTML@{HTML}!admin.php@{admin.php}}
+\subsubsection[{HTML}]{\setlength{\rightskip}{0pt plus 5cm}{\bf HTML}}}
+\label{admin_8php_a2c8135527015cd4586959ac7c2ffec92}
+
+
+Definition at line 50 of file admin.php.
+

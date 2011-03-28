@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classCXLWidget.html#a13868aafdf32adbae02f5a6f67b09a85" title="Renders either an open or close container tag for this widget." alt="" coords="139,5,272,35"/>
+<area shape="rect" id="node5" href="$classCXLWidget.html#a30bcc620a40b8f755dbafb28ff1c76d4" title="Renders the widget queues in the right order/sequence." alt="" coords="321,5,391,35"/>
+<area shape="rect" id="node7" href="$classCXLWidget.html#afb0fafe7e02a3ae1993c01c19fad2bae" title="Executes the widget." alt="" coords="440,5,483,35"/>
+</map>
