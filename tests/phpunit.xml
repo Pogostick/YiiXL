@@ -13,21 +13,21 @@
 	<testsuites>
 		<testsuite name="YiiXL">
 			<!-- yiixl.core.behaviors -->
-			<file>lib/core/components/CXLActionControlBehaviorTest.php</file>
-			<file>lib/core/components/CXLActiveRecordBehaviorTest.php</file>
-			<file>lib/core/components/CXLDataTransformBehaviorTest.php</file>
-			<file>lib/core/components/CXLOAuthBehaviorTest.php</file>
-			<file>lib/core/components/CXLSoftDeleteBehaviorTest.php</file>
-			<file>lib/core/components/CXLTimestampBehaviorTest.php</file>
+			<file>lib/core/components/xlActionControlBehaviorTest.php</file>
+			<file>lib/core/components/xlActiveRecordBehaviorTest.php</file>
+			<file>lib/core/components/xlDataTransformBehaviorTest.php</file>
+			<file>lib/core/components/xlOAuthBehaviorTest.php</file>
+			<file>lib/core/components/xlSoftDeleteBehaviorTest.php</file>
+			<file>lib/core/components/xlTimestampBehaviorTest.php</file>
 			
 			<!-- yiixl.core.components -->
-			<file>lib/core/components/CXLComponentTest.php</file>
+			<file>lib/core/components/xlComponentTest.php</file>
 			
 			<!-- yiixl.core.components.config -->
-			<file>lib/core/components/CXLConfigTest.php</file>
+			<file>lib/core/components/xlConfigTest.php</file>
 			
 			<!-- yiixl.core.ui -->
-			<file>lib/core/ui/CXLWidgetTest.php</file>
+			<file>lib/core/ui/xlWidgetTest.php</file>
 		</testsuite>
 	</testsuites>
 

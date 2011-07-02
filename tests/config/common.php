@@ -11,7 +11,7 @@
  * @license http://www.pogostick.com/licensing
  * @package yiixl
  * @subpackage tests
- * @author Jerry Ablan <jablan@pogostick.com>
+ * @author Jerry Ablan <yiixl@pogostick.com>
  */
 
 //	YiiXL bootstrap

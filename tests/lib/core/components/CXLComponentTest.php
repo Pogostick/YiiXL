@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname( __FILE__ ) . '/../../../../lib/core/components/CXLComponent.php';
+require_once dirname( __FILE__ ) . '/../../../../lib/core/components/xlApplicationComponent.php';
 
 Yii::import( 'yiixl.core.helpers.*' );
 

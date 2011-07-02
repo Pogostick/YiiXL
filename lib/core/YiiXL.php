@@ -1,16 +1,21 @@
 <?php
 /**
- * This file is part of YiiXL
- * Copyright (c) 2009-2011, Pogostick, LLC. All rights reserved.
+ * YiiXL(tm) : The Yii Extension Library of Doom! (http://github.com/Pogostick/yiixl/)
+ * Copyright 2009-2011, Pogostick, LLC. (http://www.pogostick.com/)
  *
- * @link http://www.pogostick.com Pogostick, LLC.
- * @license http://www.pogostick.com/licensing
- * @author Jerry Ablan <jablan@pogostick.com>
+ * Dual licensed under the MIT License and the GNU General Public License (GPL) Version 2.
+ * See {@link http://www.pogostick.com/licensing/} for complete information.
  *
- * @since v1.0.0
+ * @copyright		Copyright 2009-2011, Pogostick, LLC. (http://www.pogostick.com/)
+ * @link			https://github.com/Pogostick/yiixl/ The Yii Extension Library of Doom!
+ * @license			http://www.pogostick.com/licensing
+ * @author			Jerry Ablan <yiixl@pogostick.com>
  *
- * @package yiixl
- * @subpackage core
+ * @package			yiixl.core.components
+ * @category		Events
+ * @since			v1.0.0
+ *
+ * @brief
  *
  * @filesource
  */
@@ -42,18 +47,4 @@
 Yii::setPathOfAlias( 'yiixl', '/usr/local/yiixl/lib' );
 
 //	Required interfaces & components
-require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'YiiXLBase.php';
-
-/**
- * Main YiiXL entry point
- */
-class YiiXL extends YiiXLBase
-{
-}
-
-/**
- * Alias for YiiXL (three characters less typing FTW!)
- */
-class XL extends YiiXL
-{
-}
+require_once __DIR__ . '/YiiXLBase.php';

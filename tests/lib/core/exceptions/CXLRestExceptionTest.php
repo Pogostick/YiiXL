@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname( __FILE__ ) . '/../../../../lib/core/exceptions/CXLRestException.php';
+require_once dirname( __FILE__ ) . '/../../../../lib/core/exceptions/xlRestException.php';
 
 /**
  * Test class for CXLRestException.

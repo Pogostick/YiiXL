@@ -52,9 +52,9 @@ return array(
 	//	Application-level parameters
 	'params' => array(
 		'version' => '1.0',
-		'adminEmail' => 'jablan@pogostick.com',
+		'adminEmail' => 'yiixl@pogostick.com',
 		'@copyright' => 'Copyright &copy; ' . date('Y') . ' Pogostick, LLC.',
-		'@author' => 'Jerry Ablan <jablan@pogostick.com>',
+		'@author' => 'Jerry Ablan <yiixl@pogostick.com>',
 		'@link' => 'http://www.pogostick.com',
 		'@package' => 'yiixl',
 

@@ -5,7 +5,7 @@
  *
  * @link http://www.pogostick.com Pogostick, LLC.
  * @license http://www.pogostick.com/licensing
- * @author Jerry Ablan <jablan@pogostick.com>
+ * @author Jerry Ablan <yiixl@pogostick.com>
  *
  * @since v1.0.0
  *
@@ -18,25 +18,37 @@
 //	Our core imports
 Yii::import( 'yiixl.core.*' );
 Yii::import( 'yiixl.core.components.interfaces', true );
-Yii::import( 'yiixl.core.exceptions.CXLException', true );
-Yii::import( 'yiixl.core.helpers.CXLOptions' );
+Yii::import( 'yiixl.core.exceptions.xlException', true );
+Yii::import( 'yiixl.core.helpers.xlOptions' );
 
-//	Requirements
-require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'components' . DIRECTORY_SEPARATOR . 'CXLComponent.php';
+//	Require the base component
+require_once __DIR__ . '/components/xlComponent.php';
 
 /**
  * YiiXLBase
  *
  * The Mother Of All YiiXL Classes!
+ *
+ * @property CWebApplication $thisApp
+ * @property CHttpRequest $thisRequest
+ * @property CWebUser $thisUser
+ * @property array $validLogLevels
+ * @property CClientScript $clientScript
+ * @property integer $uniqueIdCounter
+ * @property CAttributeCollection $appParameters
+ * @property array $classPath
+ * @property integer $debugLevel
+ * @property YiiXLBase xl
+ * @property YiiXLBase XL
  */
-class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
+class YiiXLBase extends YiiBase implements xlIDebuggable, xlIForm, xlILog
 {
 	//********************************************************************************
 	//* Constants
 	//********************************************************************************
 
 	/**
-	 * Our logging tag
+	 * @const string Our logging tag
 	 */
 	const
 		CLASS_LOG_TAG = 'yiixl.core.YiiXLBase';
@@ -47,77 +59,66 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 
 	/**
 	 * Cache the current app for speed
-	 * @staticvar CWebApplication $thisApp
+	 * @static
+	 * @var CWebApplication
 	 */
 	protected static $_thisApp = null;
 	/**
 	 * Cache the current request
-	 * @staticvar CHttpRequest $thisRequest
+	 * @static
+	 * @var CHttpRequest
 	 */
 	protected static $_thisRequest = null;
 	/**
 	 * Cache the client script object for speed
-	 * @staticvar CClientScript $clientScript
+	 * @static
+	 * @var CClientScript
 	 */
 	protected static $_clientScript = null;
 	/**
 	 * Cache the user object for speed
-	 * @staticvar CWebUser $thisUser
+	 * @static
+	 * @var CWebUser
 	 */
 	protected static $_thisUser = null;
 	/**
 	 * Cache the current controller for speed
-	 * @staticvar CController $thisController
+	 * @static
+	 * @var CController
 	 */
 	protected static $_thisController = null;
 	/**
-	 * @staticvar array $_validLogLevels Our valid log levels based on interface definition
+	 * Our valid log levels based on interface definition
+	 * @static
+	 * @var array
 	 */
 	protected static $_validLogLevels;
 	/**
 	 * A static ID counter for generating unique names
-	 * @staticvar integer $_uniqueIdCounter
+	 * @static
+	 * @var integer
 	 */
 	protected static $_uniqueIdCounter = 1000;
 	/**
 	 * Cache the application parameters for speed
-	 * @staticvar CAttributeCollection $appParameters
+	 * @static
+	 * @var CAttributeCollection
 	 */
 	protected static $_appParameters = null;
 	/**
-	 * Returns the cached copy of the configured application parameters {@see CWebApplication::getParams}
-	 * @return array
-	 */
-	public static function getParams()
-	{
-		return self::$_appParameters;
-	}
-
-	/**
 	 * An array of class names to search in for missing static methods.
 	 * This is a quick an dirty little polymorpher.
-	 *
-	 * @staticvar array $classPath
+	 * @var array
+	 * @static
 	 */
 	protected static $_classPath = array(
-		'CXLOptions',
 		'CHtml',
 	);
-
-	public static function getClassPath()
-	{
-		return self::$_classPath;
-	}
-
-	public static function setClassPath( $classPath )
-	{
-		self::$_classPath = $classPath;
-	}
-
-	public static function addClassToPath( $className )
-	{
-		self::$_classPath[] = self::import( $className );
-	}
+	/**
+	 * @var int
+	 * @static
+	 */
+	protected static $_debugLevel = self::LOG_INFO;
 
 	//********************************************************************************
 	//* Public Methods
@@ -125,6 +126,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 
 	/**
 	 * Initialize our private statics
+	 * @param array $options
 	 */
 	public static function initialize( $options = array() )
 	{
@@ -135,73 +137,83 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 		try
 		{
 			if ( null !== self::$_thisApp )
+			{
 				self::$_clientScript = self::$_thisApp->getClientScript();
+			}
 		}
-		catch ( CXLException $_ex )
+		catch ( xlException $_ex )
 		{
 		}
 
 		try
 		{
 			if ( null !== self::$_thisApp )
+			{
 				self::$_thisUser = self::$_thisApp->getUser();
+			}
 		}
-		catch ( CXLException $_ex )
+		catch ( xlException $_ex )
 		{
 		}
 
 		try
 		{
 			if ( null !== self::$_thisApp )
+			{
 				self::$_thisRequest = self::$_thisApp->getRequest();
+			}
 		}
-		catch ( CXLException $_ex )
+		catch ( xlException $_ex )
 		{
 		}
 
 		try
 		{
 			if ( null !== self::$_thisApp )
+			{
 				self::$_appParameters = self::$_thisApp->getParams();
+			}
 		}
-		catch ( CXLException $_ex )
+		catch ( xlException $_ex )
 		{
 		}
 
-		//	Add our logging class to the class path
-		self::addClassToPath( 'yiixl.core.helpers.CXLHash' );
-		self::addClassToPath( 'yiixl.core.helpers.CXLLogHelper' );
+		//	Add our logging and hash classes to the class path
+		self::addClassToPath( 'yiixl.core.helpers.xlHash' );
+		self::addClassToPath( 'yiixl.core.helpers.xlLogHelper' );
+		self::addClassToPath( 'yiixl.core.helpers.xlYiiHelper' );
 	}
 
 	/**
 	 * Constructs a unique name based on component, hashes by default
-	 * @param IXLComponent $component
+	 * @param xlIComponent $component
 	 * @param boolean $humanReadable If true, names returned will not be hashed
 	 * @return string
 	 */
-	public static function createUniqueName( IXLComponent $component, $humanReadable = false )
+	public static function createUniqueName( xlIComponent $component, $humanReadable = false )
 	{
 		$_name = get_class( $component ) . '.' . self::$_uniqueIdCounter++;
-		return 'yiixl.' . ( $humanReadable ? $_name : CXLHash::hash( $_name ) );
+		return 'yiixl.' . ( $humanReadable ? $_name : xlHash::hash( $_name ) );
 	}
 
 	/**
 	 * NVL = Null VaLue. Copycat function from PL/SQL. Pass in a list of arguments and the first non-null
 	 * item is returned. Good for setting default values, etc. Last non-null value in list becomes the
 	 * new "default value".
-	 *
 	 * NOTE: Since PHP evaluates the arguments before calling a function, this is NOT a short-circuit method.
-	 *
-	 * @param mixed
+	 * @param mixed $_ [optional]
 	 * @return mixed
 	 */
-	public static function nvl( /* Polymorphic */ )
+	public static function nvl( &$_ = null )
 	{
 		$_defaultValue = null;
 
 		foreach ( func_get_args() as $_argument )
 		{
-			if ( null === $_argument ) return $_argument;
+			if ( null === $_argument )
+			{
+				return $_argument;
+			}
 			$_defaultValue = $_argument;
 		}
 
@@ -210,17 +222,13 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 
 	/**
 	 * Convenience "in_array" method. Takes variable args.
-	 *
 	 * The first argument is the needle, the rest are considered in the haystack. For example:
-	 *
-	 * CXLHelperBase::in( 'x', 'x', 'y', 'z' ) returns true
-	 * CXLHelperBase::in( 'a', 'x', 'y', 'z' ) returns false
-	 *
-	 * @param mixed
+	 * xlHelperBase::in( 'x', 'x', 'y', 'z' ) returns true
+	 * xlHelperBase::in( 'a', 'x', 'y', 'z' ) returns false
+	 * @param mixed $_ [optional]
 	 * @return boolean
-	 *
 	 */
-	public static function in()
+	public static function in( &$_ = null )
 	{
 		//	Clever or dumb? Dunno...
 		return in_array(
@@ -236,21 +244,18 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	public static function microtime()
 	{
 		list( $_uSeconds, $_seconds ) = explode( ' ', microtime() );
-		return ( ( float ) $_uSeconds + ( float ) $_seconds );
+		return ( ( float )$_uSeconds + ( float )$_seconds );
 	}
 
 	/**
-	 * Alias for {@link CXLHelperBase::o)
-	 *
+	 * Alias for {@link xlHelperBase::o)
 	 * @param array $options
 	 * @param string $key
 	 * @param mixed $defaultValue
 	 * @param boolean $unsetValue
 	 * @return mixed
-	 * @access public
-	 * @static
 	 */
-	public static function getOption( &$options = array( ), $key, $defaultValue = null, $unsetValue = false )
+	public static function getOption( &$options = array(), $key, $defaultValue = null, $unsetValue = false )
 	{
 		return self::o( $options, $key, $defaultValue, $unsetValue );
 	}
@@ -261,15 +266,12 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	 *
 	 * @param array $options
 	 * @param integer|string $key
-	 * @param integer|string $subKey
 	 * @param mixed $defaultValue
 	 * @param boolean $unsetValue
 	 * @return mixed
-	 * @access public
-	 * @static
-	 * @see CXLHelperBase::getOption
+	 * @see xlHelperBase::getOption
 	 */
-	public static function o( &$options = array( ), $key, $defaultValue = null, $unsetValue = false )
+	public static function o( &$options = array(), $key, $defaultValue = null, $unsetValue = false )
 	{
 		$_newValue = $defaultValue;
 
@@ -294,11 +296,18 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 			if ( isset( $options[$key] ) )
 			{
 				$_newValue = $options[$key];
-				if ( $unsetValue ) unset( $options[$key] );
+
+				if ( $unsetValue )
+				{
+					unset( $options[$key] );
+				}
 			}
 
 			//	Set it in the array if not an unsetter...
-			if ( !$unsetValue ) $options[$key] = $_newValue;
+			if ( ! $unsetValue )
+			{
+				$options[$key] = $_newValue;
+			}
 		}
 
 		//	Return...
@@ -306,8 +315,7 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	}
 
 	/**
-	 * Similar to {@link XL::o} except it will pull a value from a nested array.
-	 *
+	 * Similar to {@link YiiXLBase::o} except it will pull a value from a nested array.
 	 * @param array $options
 	 * @param integer|string $key
 	 * @param integer|string $subKey
@@ -315,19 +323,17 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	 * @param boolean $unsetValue Only applies to target value
 	 * @return mixed
 	 */
-	public static function oo( &$options = array( ), $key, $subKey, $defaultValue = null, $unsetValue = false )
+	public static function oo( &$options = array(), $key, $subKey, $defaultValue = null, $unsetValue = false )
 	{
-		return XL::o( XL::o( $options, $key, array( ) ), $subKey, $defaultValue, $unsetValue );
+		return self::o( self::o( $options, $key, array() ), $subKey, $defaultValue, $unsetValue );
 	}
 
 	/**
-	 * Alias for {@link CXLHelperBase::so}
-	 *
+	 * Alias for {@link xlHelperBase::so}
 	 * @param array $options
 	 * @param string $key
 	 * @param mixed $value
 	 * @return mixed The new value of the key
-	 * @static
 	 */
 	public static function setOption( array &$options, $key, $value = null )
 	{
@@ -340,7 +346,6 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	 * @param string $key
 	 * @param mixed $value Defaults to null
 	 * @return mixed The new value of the key
-	 * @static
 	 */
 	public static function so( array &$options, $key, $value = null )
 	{
@@ -348,11 +353,10 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	}
 
 	/**
-	 * Alias of {@link CXLHelperBase::unsetOption}
+	 * Alias of {@link xlHelperBase::unsetOption}
 	 * @param array $options
 	 * @param string $key
 	 * @return mixed The last value of the key
-	 * @static
 	 */
 	public static function unsetOption( array &$options, $key )
 	{
@@ -365,7 +369,6 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	 * @param array $options
 	 * @param string $key
 	 * @return mixed The last value of the key
-	 * @static
 	 */
 	public static function uo( array &$options, $key )
 	{
@@ -373,16 +376,18 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	}
 
 	/**
-	 * Takes parameters and returns an array of the values. Keys are maintained.
-	 * @param mixed Zero or more values to read and put into the return array.
+	 * Takes a list of things and returns them in an array as the values. Keys are maintained.
+	 * @param mixed $_ [optional]
 	 * @return array
 	 */
-	public static function makeArray( /* Polymorphic */ )
+	public static function makeArray( &$_ = null )
 	{
 		$_newArray = array();
 
 		foreach ( func_get_args() as $_key => $_argument )
+		{
 			$_newArray[$_key] = $_argument;
+		}
 
 		//	Return the fresh array...
 		return $_newArray;
@@ -391,639 +396,39 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	/**
 	 * Takes the arguments and makes a file path out of them. No leading or trailing
 	 * separator is added.
-	 * @param mixed File path parts
+	 * @param mixed $_ [optional]
 	 * @return string
 	 */
-	public static function makePath( /* Polymorphic */ )
+	public static function makePath( &$_ = null )
 	{
 		return implode( DIRECTORY_SEPARATOR, func_get_args() );
 	}
 
-	//********************************************************************************
-	//* Yii Convenience Mappings
-	//********************************************************************************
-
 	/**
-	 * Shorthand version of Yii::app()
-	 * @return CApplication the application singleton, null if the singleton has not been created yet.
+	 * Generic super-easy/lazy way to convert lots of different things (like SimpleXmlElement) to an array
+	 * @param object $object
+	 * @param int $options JSON decoding options
+	 * @return array|false
 	 */
-	public static function _a()
+	public static function toArray( $object, $options = JSON_HEX_TAG )
 	{
-		return self::$_thisApp;
-	}
-
-	/**
-	 * Convenience method returns the current app name
-	 * @see CWebApplication::name
-	 * @see CHtml::encode
-	 * @return string
-	 */
-	public static function getAppName( $notEncoded = false )
-	{
-		return self::_gan( $notEncoded );
-	}
-
-	public static function _gan( $notEncoded = false )
-	{
-		return $notEncoded ? self::_a()->name : self::encode( self::_a()->name );
-	}
-
-	/**
-	 * Convienice method returns the current page title
-	 * @see CController::pageTitle
-	 * @see CHtml::encode
-	 * @return string
-	 */
-	public static function getPageTitle( $notEncoded = false )
-	{
-		return self::_gpt( $notEncoded );
-	}
-
-	public static function _gpt( $notEncoded = false )
-	{
-		return $notEncoded ? self::_gc()->getPageTitle() : self::encode( self::_gc()->getPageTitle() );
-	}
-
-	/**
-	 * Convienice methond Returns the base url of the current app
-	 * @see CWebApplication::getBaseUrl
-	 * @see CHttpRequest::getBaseUrl
-	 * @return string
-	 */
-	public static function getBaseUrl( $absolute = false )
-	{
-		return self::$_thisRequest->getBaseUrl( $absolute );
-	}
-
-	public static function _gbu( $absolute = false )
-	{
-		return self::$_thisRequest->getBaseUrl( $absolute );
-	}
-
-	/**
-	 * Convienice methond Returns the base path of the current app
-	 * @see CWebApplication::getBasePath
-	 * @see CHttpRequest::getBasePath
-	 * @return string
-	 */
-	public static function getBasePath()
-	{
-		return self::$_thisApp->getBasePath();
-	}
-
-	public static function _gbp()
-	{
-		return self::$_thisApp->getBaseUrl();
-	}
-
-	/*	 * *
-	 * Retrieves and caches the Yii ClientScript object
-	 * @return CClientScript
-	 * @access public
-	 * @static
-	 */
-
-	public static function getClientScript()
-	{
-		return self::$_clientScript;
-	}
-
-	/**
-	 * Returns the current clientScript object. Caches for subsequent calls...
-	 * @return CClientScript
-	 * @access public
-	 * @static
-	 */
-	public static function _cs()
-	{
-		return self::$_clientScript;
-	}
-
-	/**
-	 * Terminates the application.
-	 * This method replaces PHP's exit() function by calling {@link onEndRequest} before exiting.
-	 * @param integer $status exit status (value 0 means normal exit while other values mean abnormal exit).
-	 * @param boolean $exit whether to exit the current request. This parameter has been available since version 1.1.5. It defaults to true, meaning the PHP's exit() function will be called at the end of this method.
-	 * @access public
-	 * @static
-	 */
-	public static function _end( $status = 0, $exit = true )
-	{
-		self::$_thisApp->end( $status, $exit );
-	}
-
-	/**
-	 * @return CDbConnection the database connection
-	 */
-	public static function getDb()
-	{
-		return self::_db();
-	}
-
-	public static function _db()
-	{
-		return self::$_thisApp->getDb();
-	}
-
-	/**
-	 * Registers a javascript file.
-	 *
-	 * @param string URL of the javascript file
-	 * @param integer the position of the JavaScript code. Valid values include the following:
-	 * <ul>
-	 * <li>CClientScript::POS_HEAD : the script is inserted in the head section right before the title element.</li>
-	 * <li>CClientScript::POS_BEGIN : the script is inserted at the beginning of the body section.</li>
-	 * <li>CClientScript::POS_END : the script is inserted at the end of the body section.</li>
-	 * </ul>
-	 * @access public
-	 * @static
-	 */
-	public static function registerScriptFile( $url, $ePosition = self::POS_HEAD, $fromPublished = false )
-	{
-		return self::_rsf( $url, $ePosition, $fromPublished );
-	}
-
-	/**
-	 * Registers a javascript file.
-	 *
-	 * @param array|string $urlList Urls of scripts to load. If URL starts with '!', asset library will be prepended. If first character is not a '/', the asset library directory is prepended.
-	 * @param integer $pagePosition the position of the JavaScript code. Valid values include the following:
-	 * <ul>
-	 * <li>CClientScript::POS_HEAD : the script is inserted in the head section right before the title element.</li>
-	 * <li>CClientScript::POS_BEGIN : the script is inserted at the beginning of the body section.</li>
-	 * <li>CClientScript::POS_END : the script is inserted at the end of the body section.</li>
-	 * </ul>
-	 * @param boolean $fromPublished If true, asset library directory is prepended to url
-	 * @access public
-	 * @static
-	 */
-	public static function _rsf( $urlList, $pagePosition = CClientScript::POS_HEAD, $fromPublished = false )
-	{
-		if ( !is_array( $urlList ) ) $urlList = array( $urlList );
-		$_prefix = ( $fromPublished ? XL::getExternalLibraryUrl() . DIRECTORY_SEPARATOR : null );
-
-		//	Need external library?
-		foreach ( $urlList as $_url )
-		{
-			if ( $_url[0] != '/' && $fromPublished ) $_url = $_prefix . $_url;
-
-			if ( !self::$_clientScript->isScriptFileRegistered( $_url ) ) self::$_clientScript->registerScriptFile( $_url, $pagePosition );
-		}
-	}
-
-	/**
-	 * Registers a CSS file
-	 *
-	 * @param string URL of the CSS file
-	 * @param string media that the CSS file should be applied to. If empty, it means all media types.
-	 * @param boolean If true, asset library directory is prepended to url
-	 * @access public
-	 * @static
-	 */
-	public static function registerCssFile( $url, $media = '', $fromPublished = false )
-	{
-		return self::_rcf( $url, $media, $fromPublished );
-	}
-
-	/**
-	 * Registers a CSS file
-	 *
-	 * @param string URL of the CSS file
-	 * @param string media that the CSS file should be applied to. If empty, it means all media types.
-	 * @access public
-	 * @static
-	 */
-	public static function _rcf( $urlList, $media = '', $fromPublished = false )
-	{
-		if ( !is_array( $urlList ) ) $urlList = array( $urlList );
-		$_prefix = ( $fromPublished ? XL::getExternalLibraryUrl() . DIRECTORY_SEPARATOR : null );
-
-		foreach ( $urlList as $_url )
-		{
-			if ( $_url[0] != '/' && $fromPublished ) $_url = $_prefix . $_url;
-
-			if ( !self::$_clientScript->isCssFileRegistered( $_url ) ) self::$_clientScript->registerCssFile( $_url, $media );
-		}
-	}
-
-	/**
-	 * Registers a CSS file relative to the current layout directory
-	 *
-	 * @param string relative URL of the CSS file
-	 * @param string media that the CSS file should be applied to. If empty, it means all media types.
-	 * @access public
-	 * @static
-	 */
-	public static function _rlcf( $urlList, $media = '', $fromPublished = false )
-	{
-		if ( !is_array( $urlList ) ) $urlList = array( $urlList );
-		$_prefix = ( $fromPublished ? Yii::getPathOfAlias( 'views.layouts' ) . DIRECTORY_SEPARATOR : null );
-
-		foreach ( $urlList as $_url )
-		{
-			if ( $_url[0] != '/' && $fromPublished ) $_url = $_prefix . $_url;
-
-			if ( !self::$_clientScript->isCssFileRegistered( $_url ) ) self::$_clientScript->registerCssFile( $_url, $media );
-		}
-	}
-
-	/**
-	 * Registers a piece of CSS code.
-	 *
-	 * @param string ID that uniquely identifies this piece of CSS code
-	 * @param string the CSS code
-	 * @param string media that the CSS code should be applied to. If empty, it means all media types.
-	 * @access public
-	 * @static
-	 */
-	public static function registerCss( $css, $options = array() )
-	{
-		$_media = self::o( $options, 'media', 'screen' );
-
-		if ( null === ( $_id = self::o( $options, 'media' ) ) )
-			$_id = self::createUniqueName( $css );
-
-		return self::_rc( $_id, $css, $_media );
-	}
-
-	/**
-	 * Registers a piece of CSS code.
-	 *
-	 * @param string ID that uniquely identifies this piece of CSS code
-	 * @param string the CSS code
-	 * @param string media that the CSS code should be applied to. If empty, it means all media types.
-	 * @access public
-	 * @static
-	 */
-	public static function _rc( $sId = null, $sCss, $media = '' )
-	{
-		if ( !self::$_clientScript->isCssRegistered( $sId ) ) return self::$_clientScript->registerCss( XL::nvl( $sId, CPSWidgetHelper::getWidgetId() ), $sCss, $media );
-	}
-
-	/**
-	 * Registers a piece of javascript code.
-	 *
-	 * @param string ID that uniquely identifies this piece of JavaScript code
-	 * @param string the javascript code
-	 * @param integer the position of the JavaScript code. Valid values include the following:
-	 * <ul>
-	 * <li>CClientScript::POS_HEAD : the script is inserted in the head section right before the title element.</li>
-	 * <li>CClientScript::POS_BEGIN : the script is inserted at the beginning of the body section.</li>
-	 * <li>CClientScript::POS_END : the script is inserted at the end of the body section.</li>
-	 * <li>CClientScript::POS_LOAD : the script is inserted in the window.onload() function.</li>
-	 * <li>CClientScript::POS_READY : the script is inserted in the jQuery's ready function.</li>
-	 * </ul>
-	 * @access public
-	 * @static
-	 */
-	public static function registerScript( $sId = null, $sScript, $ePosition = CClientScript::POS_READY )
-	{
-		return self::_rs( $sId, $sScript, $ePosition );
-	}
-
-	/**
-	 * Registers a piece of javascript code.
-	 *
-	 * @param string ID that uniquely identifies this piece of JavaScript code
-	 * @param string the javascript code
-	 * @param integer the position of the JavaScript code. Valid values include the following:
-	 * <ul>
-	 * <li>CClientScript::POS_HEAD : the script is inserted in the head section right before the title element.</li>
-	 * <li>CClientScript::POS_BEGIN : the script is inserted at the beginning of the body section.</li>
-	 * <li>CClientScript::POS_END : the script is inserted at the end of the body section.</li>
-	 * <li>CClientScript::POS_LOAD : the script is inserted in the window.onload() function.</li>
-	 * <li>CClientScript::POS_READY : the script is inserted in the jQuery's ready function.</li>
-	 * </ul>
-	 * @access public
-	 * @static
-	 */
-	public static function _rs( $sId = null, $sScript, $ePosition = CClientScript::POS_READY )
-	{
-		if ( !self::$_clientScript->isScriptRegistered( $sId ) ) self::$_clientScript->registerScript( XL::nvl( $sId, CPSWidgetHelper::getWidgetId() ), $sScript, $ePosition );
-	}
-
-	/**
-	 * Registers a meta tag that will be inserted in the head section (right before the title element) of the resulting page.
-	 *
-	 * @param string content attribute of the meta tag
-	 * @param string name attribute of the meta tag. If null, the attribute will not be generated
-	 * @param string http-equiv attribute of the meta tag. If null, the attribute will not be generated
-	 * @param array other options in name-value pairs (e.g. 'scheme', 'lang')
-	 * @access public
-	 * @static
-	 */
-	public static function registerMetaTag( $sContent, $sName = null, $sHttpEquiv = null, $options = array( ) )
-	{
-		return self::_rmt( $sContent, $sName, $sHttpEquiv, $options );
-	}
-
-	/**
-	 * Registers a meta tag that will be inserted in the head section (right before the title element) of the resulting page.
-	 *
-	 * @param string content attribute of the meta tag
-	 * @param string name attribute of the meta tag. If null, the attribute will not be generated
-	 * @param string http-equiv attribute of the meta tag. If null, the attribute will not be generated
-	 * @param array other options in name-value pairs (e.g. 'scheme', 'lang')
-	 * @access public
-	 * @static
-	 */
-	public static function _rmt( $sContent, $sName = null, $sHttpEquiv = null, $options = array( ) )
-	{
-		self::$_clientScript->registerMetaTag( $sContent, $sName, $sHttpEquiv, $options );
-	}
-
-	/**
-	 * Creates a relative URL based on the given controller and action information.
-	 * @param string the URL route. This should be in the format of 'ControllerID/ActionID'.
-	 * @param array additional GET parameters (name=>value). Both the name and value will be URL-encoded.
-	 * @param string the token separating name-value pairs in the URL.
-	 * @return string the constructed URL
-	 */
-	public static function _cu( $route, $options = array( ), $ampersand = '&' )
-	{
-		return self::$_thisApp->createUrl( $route, $options, $ampersand );
-	}
-
-	/**
-	 * Returns the current request. Equivalent of {@link CApplication::getRequest}
-	 * @see CApplication::getRequest
-	 * @return CHttpRequest
-	 */
-	public static function getRequest()
-	{
-		return self::_gr();
-	}
-
-	/**
-	 * Returns the current request. Equivalent of {@link CApplication::getRequest}
-	 * @see CApplication::getRequest
-	 * @return CHttpRequest
-	 */
-	public static function _gr()
-	{
-		return self::$_thisRequest;
-	}
-
-	/**
-	 * Returns the current user. Equivalent of {@link CWebApplication::getUser}
-	 * @see CWebApplication::getUser
-	 * @return CUserIdentity
-	 */
-	public static function getUser()
-	{
-		return self::_gu();
-	}
-
-	public static function _gu()
-	{
-		return self::$_thisUser;
-	}
-
-	/**
-	 * Returns the currently logged in user
-	 * @return CWebUser
-	 */
-	public static function getCurrentUser()
-	{
-		return self::_gcu();
-	}
-
-	public static function _gcu()
-	{
-		return self::_gs( 'currentUser' );
-	}
-
-	/**
-	 * Returns boolean indicating if user is logged in or not
-	 * @return boolean
-	 */
-	public static function isGuest()
-	{
-		return self::_ig();
-	}
-
-	public static function _ig()
-	{
-		return self::_gu()->isGuest;
-	}
-
-	/**
-	 * Returns application parameters or default value if not found
-	 * @see CModule::getParams
-	 * @see CModule::setParams
-	 * @return mixed
-	 */
-	public static function getParam( $paramName, $defaultValue = null )
-	{
-		return self::_gp( $paramName, $defaultValue );
-	}
-
-	public static function _gp( $paramName, $defaultValue = null )
-	{
-		if ( self::$_appParameters && self::$_appParameters->contains( $paramName ) ) return self::$_appParameters->itemAt( $paramName );
-
-		return $defaultValue;
-	}
-
-	/**
-	 * @return CController the currently active controller
-	 * @see CWebApplication::getController
-	 */
-	public static function getController()
-	{
-		return self::_gc();
-	}
-
-	public static function _gc()
-	{
-		return ( null === self::$_thisController ? self::$_thisController = self::$_thisApp->getController() : self::$_thisController );
-	}
-
-	/**
-	 * @return CComponent The component, if found
-	 * @see CWebApplication::getComponent
-	 */
-	public static function getComponent( $id, $createIfNull = true )
-	{
-		return self::_gco( $id, $createIfNull );
-	}
-
-	public static function _gco( $id, $createIfNull = true )
-	{
-		return self::$_thisApp->getComponent( $id, $createIfNull );
-	}
-
-	/**
-	 * Convenience access to CAssetManager::publish()
-	 *
-	 * Publishes a file or a directory.
-	 * This method will copy the specified asset to a web accessible directory
-	 * and return the URL for accessing the published asset.
-	 * <ul>
-	 * <li>If the asset is a file, its file modification time will be checked
-	 * to avoid unnecessary file copying;</li>
-	 * <li>If the asset is a directory, all files and subdirectories under it will
-	 * be published recursively. Note, in this case the method only checks the
-	 * existence of the target directory to avoid repetitive copying.</li>
-	 * </ul>
-	 * @param string the asset (file or directory) to be published
-	 * @param boolean whether the published directory should be named as the hashed basename.
-	 * If false, the name will be the hashed dirname of the path being published.
-	 * Defaults to false. Set true if the path being published is shared among
-	 * different extensions.
-	 * @param integer level of recursive copying when the asset is a directory.
-	 * Level -1 means publishing all subdirectories and files;
-	 * Level 0 means publishing only the files DIRECTLY under the directory;
-	 * level N means copying those directories that are within N levels.
-	 * @return string an absolute URL to the published asset
-	 * @throws CException if the asset to be published does not exist.
-	 * @see CAssetManager::publish
-	 */
-	public static function _publish( $path, $hashByName = false, $level = -1 )
-	{
-		return self::$_thisApp->getAssetManager()->publish( $path, $hashByName, $level );
-	}
-
-	/**
-	 * Performs a redirect. See {@link CHttpRequest::redirect}
-	 *
-	 * @param string $url
-	 * @param boolean $terminate
-	 * @param int $statusCode
-	 * @see CHttpRequest::redirect
-	 */
-	public static function redirect( $url, $terminate = true, $statusCode = 302 )
-	{
-		self::$_thisRequest->redirect( $url, $terminate, $statusCode );
-	}
-
-	/**
-	 * Returns the value of a variable that is stored in the user session.
-	 *
-	 * This function is designed to be used by CWebUser descendant classes to
-	 * store additional user information the user's session. A variable, if
-	 * stored in the session using {@link _ss} can be retrieved back using this
-	 * function.
-	 *
-	 * @param string variable name
-	 * @param mixed default value
-	 * @return mixed the value of the variable. If it doesn't exist in the session, the provided default value will be returned
-	 * @see _ss
-	 * @see CWebUser::setState
-	 */
-	public static function _gs( $stateName, $defaultValue = null )
-	{
-		$_user = self::_gu();
-		return ( null !== $_user ? $_user->getState( $stateName, $defaultValue ) : null );
-	}
-
-	/**
-	 * Alternative to {@link CWebUser::getState} that takes an array of key parts and assembles them into a hashed key
-	 * @param array Array of key parts
-	 * @param mixed default value
-	 * @return mixed the value of the variable. If it doesn't exist in the session, the provided default value will be returned
-	 * @see _ss
-	 * @see _gs
-	 * @see CWebUser::setState
-	 */
-	public static function _ghs( $stateKeyParts, $defaultValue = null )
-	{
-		return self::_gs( CPSHash::hash( implode( '.', $stateKeyParts ) ), $defaultValue );
-	}
-
-	/**
-	 * Returns a flash message.
-	 * A flash message is available only in the current and the next requests.
-	 * @param string $key key identifying the flash message
-	 * @param mixed $defaultValue value to be returned if the flash message is not available.
-	 * @param boolean $delete whether to delete this flash message after accessing it.
-	 * Defaults to true. This parameter has been available since version 1.0.2.
-	 * @return mixed the message message
-	 * @see _sf
-	 */
-	public function _gf( $key, $defaultValue = null, $delete = true )
-	{
-		$_user = self::_gu();
-		return ( null !== $_user ? $_user->getFlash( $key, $defaultValue, $delete ) : null );
-	}
-
-	/**
-	 * Stores a variable from the user session
-	 *
-	 * This function is designed to be used by CWebUser descendant classes
-	 * who want to store additional user information in user session.
-	 * By storing a variable using this function, the variable may be retrieved
-	 * back later using {@link _gs}. The variable will be persistent
-	 * across page requests during a user session.
-	 *
-	 * @param string variable name
-	 * @param mixed variable value
-	 * @param mixed default value. If $value === $defaultValue (i.e. null), the variable will be removed from the session
-	 * @see _gs
-	 * @see CWebUser::getState
-	 */
-	public static function _ss( $stateName, $stateValue, $defaultValue = null )
-	{
-		$_user = self::_gu();
-		return ( null !== $_user ? $_user->setState( $stateName, $stateValue, $defaultValue ) : false );
-	}
-
-	/**
-	 * Alternative to {@link CWebUser::setState} that takes an array of key parts and assembles them into a hashed key
-	 * @param array array of key parts
-	 * @param mixed variable value
-	 * @param mixed default value
-	 * @see _ss
-	 * @see _gs
-	 * @see CWebUser::setState
-	 */
-	public static function _shs( $stateKeyParts, $stateValue, $defaultValue = null )
-	{
-		return self::_ss( CPSHash::hash( implode( '.', $stateKeyParts ) ), $stateValue, $defaultValue );
-	}
-
-	/**
-	 * Stores a flash message.
-	 * A flash message is available only in the current and the next requests.
-	 * @param string $key key identifying the flash message
-	 * @param mixed $value flash message
-	 * @param mixed $defaultValue if this value is the same as the flash message, the flash message
-	 * will be removed. (Therefore, you can use setFlash('key',null) to remove a flash message.)
-	 * @see {@link CXLHelperBase#_gf}
-	 */
-	public static function _sf( $key, $value, $defaultValue = null )
-	{
-		if ( null !== ( $_user = self::_gu() ) ) $_user->setFlash( $key, $value, $defaultValue );
-	}
-
-	/**
-	 * Returns the details about the error that is currently being handled.
-	 * The error is returned in terms of an array, with the following information:
-	 * <ul>
-	 * <li>code - the HTTP status code (e.g. 403, 500)</li>
-	 * <li>type - the error type (e.g. 'CHttpException', 'PHP Error')</li>
-	 * <li>message - the error message</li>
-	 * <li>file - the name of the PHP script file where the error occurs</li>
-	 * <li>line - the line number of the code where the error occurs</li>
-	 * <li>trace - the call stack of the error</li>
-	 * <li>source - the context source code where the error occurs</li>
-	 * </ul>
-	 * @return array the error details. Null if there is no error.
-	 */
-	public static function _ge()
-	{
-		return self::_a()->getErrorHandler()->getError();
+		return @json_decode( @json_encode( $object ), $options  );
 	}
 
 	/**
 	 * Creates and returns a CDbCommand object from the specified SQL
 	 *
 	 * @param string $sql
+	 * @param CDbConnection $dbToUse
 	 * @return CDbCommand
 	 */
 	public static function _sql( $sql, $dbToUse = null )
 	{
-		if ( null !== ( $_db = XL::nvl( $dbToUse, self::$_thisApp->getDb() ) ) ) return $_db->createCommand( $sql );
+		/** @var $_db CDbConnection */
+		if ( null !== ( $_db = self::nvl( $dbToUse, self::$_thisApp->getDb() ) ) )
+		{
+			return $_db->createCommand( $sql );
+		}
 
 		return null;
 	}
@@ -1035,9 +440,13 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	 * @param CDbConnection $dbToUse
 	 * @return mixed
 	 */
-	public static function _sqlAll( $sql, $parameterList = array( ), $dbToUse = null )
+	public static function _sqlAll( $sql, $parameterList = array(), $dbToUse = null )
 	{
-		if ( null !== ( $_db = XL::nvl( $dbToUse, self::$_thisApp->getDb() ) ) ) return $_db->createCommand( $sql )->queryAll( true, $parameterList );
+		/** @var $_db CDbConnection */
+		if ( null !== ( $_db = self::nvl( $dbToUse, self::$_thisApp->getDb() ) ) )
+		{
+			return $_db->createCommand( $sql )->queryAll( true, $parameterList );
+		}
 
 		return null;
 	}
@@ -1053,13 +462,18 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	{
 		$_resultList = null;
 
-		if ( null !== ( $_db = XL::nvl( $dbToUse, self::$_thisApp->getDb() ) ) )
+		/** @var $_db CDbConnection */
+		if ( null !== ( $_db = self::nvl( $dbToUse, self::$_thisApp->getDb() ) ) )
 		{
+			/** @var $_rowList array */
 			if ( null !== ( $_rowList = $_db->createCommand( $sql )->queryAll( true, $parameterList ) ) )
 			{
-				$_resultList = array( );
+				$_resultList = array();
 
-				foreach ( $_rowList as $_row ) $_resultList[] = $_row[0];
+				foreach ( $_rowList as $_row )
+				{
+					$_resultList[] = $_row[0];
+				}
 			}
 		}
 
@@ -1099,7 +513,10 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	{
 		$_path = Yii::getPathOfAlias( $alias );
 
-		if ( false !== $_path && null !== $url ) $_path = str_replace( $_SERVER['DOCUMENT_ROOT'], '', $_path ) . $url;
+		if ( false !== $_path && null !== $url )
+		{
+			$_path = str_replace( $_SERVER['DOCUMENT_ROOT'], '', $_path ) . $url;
+		}
 
 		return $_path;
 	}
@@ -1120,108 +537,39 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 		return self::_gr()->getIsAjaxRequest();
 	}
 
-	//********************************************************************************
-	//* Filter Helpers
-	//********************************************************************************
+	/**
+	 * Returns the cached copy of the configured application parameters {@see CWebApplication::getParams}
+	 * @return array
+	 */
+	public static function getParams()
+	{
+		return self::$_appParameters;
+	}
 
 	/**
-	 * Filters an int optionally returns null
-	 * @param mixed $value
-	 * @param boolean $nullIfZero
-	 * @param integer $min
-	 * @param integer $max
-	 * @return integer Filtered value or false on error
+	 * @static
+	 * @param string $className
+	 * @return boolean Returns true if the class was added, false if it existed already
 	 */
-	public static function filterInt( $value, $nullIfZero = true, $min = null, $max = null )
+	public static function addClassToPath( $className )
 	{
-		$_value = false;
-
-		if ( false !== ( $_value = filter_var( $value, FILTER_SANITIZE_NUMBER_INT ) ) )
+		if ( ! in_array( $className, self::$_classPath ) )
 		{
-			if ( null !== $min && $_value < $min ) return false;
+			$_alias = XL::_gpoa( $className );
 
-			if ( null !== $max && $_value > $max ) return false;
-
-			if ( $nullIfZero && 0 == $_value ) return null;
+			if ( false !== require_once( $_alias ) )
+			{
+				self::$_classPath[] = $_alias;
+				return true;
+			}
 		}
 
-		return $_value;
+		return false;
 	}
-	
+
 	//********************************************************************************
 	//* Magic Methods
 	//********************************************************************************
-
-	/**
-	 * This is a standardized magic method "helper"
-	 * @param CXLComponent $object
-	 * @param array $behaviors
-	 * @param string $method
-	 * @param array $parameters
-	 * @return mixed
-	 */
-	public static function smartCall( CXLComponent $object, $method, $parameters = array() )
-	{
-		$_methods = $object->getBehaviorMethods();
-		
-		//	Make sure the function exists
-		if ( is_callable( $_methodClass = XL::o( $_methods, $method, null, true ) ) )
-		{
-			//	Throw myself at the front of the arguments
-			$_newParameters = $parameters;
-			
-			array_unshift( $_newParameters, $object );
-
-			//	And call the method
-			return call_user_func_array(
-				array(
-					$_methodClass,
-					$method
-				),
-				$_newParameters
-			);
-		}
-
-		//	Otherwise let Yii deal with it...
-		return self::smartCallStatic( $object, $method, $parameters );
-	}
-
-	/**
-	 * Calls a static method in classPath if not found here. Allows you to extend this object
-	 * at runtime with additional helpers. Injects $object into parameter list.
-	 * @param IXLComponent $object
-	 * @param string $method
-	 * @param array $parameters
-	 * @return mixed
-	 * @throws CXLMethodNotFoundException
-	 */
-	public static function smartCallStatic( IXLComponent $object, $method, $parameters = array() )
-	{
-		//	Throw myself at the front of the arguments
-		$_newParameters = $parameters;
-
-		array_unshift( $_newParameters, $object );
-
-		foreach ( self::$_classPath as $_class )
-		{
-			$_obj = new ReflectionClass( $_class );
-			$_newParameters = ( $_obj->implementsInterface( 'IXLShifter' ) ? $_newParameters : $parameters );
-			
-			if ( is_callable( array( $_class, $method ) ) )
-				return call_user_func_array( $_class . '::' . $method, $_newParameters );
-		}
-
-		throw new CXLMethodNotFoundException(
-			XL::t(
-				self::CLASS_LOG_TAG,
-				'Method "{class}.{method}" is read only.',
-				array(
-					'{class}' => get_class( $object ),
-					'{method}' => $method,
-				)
-			)
-		);
-	}
 
 	/**
 	 * Calls a static method in classPath if not found here. Allows you to extend this object
@@ -1238,12 +586,22 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 		foreach ( self::$_classPath as $_class )
 		{
 			if ( is_callable( array( $_class, $method ) ) )
-				return call_user_func_array( $_class . '::' . $method, $parameters );
+			{
+				return call_user_func_array(
+					$_class . '::' .
+					$method,
+					$parameters
+				);
+			}
 		}
-		
+
 		//	I give, it's all you...
-		parent::__callStatic( $method, $parameters );
+		return parent::__callStatic( $method, $parameters );
 	}
+
+	//*************************************************************************
+	//* Private Methods
+	//*************************************************************************
 
 	/**
 	 * Serializer that can handle SimpleXmlElement objects
@@ -1254,13 +612,16 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	{
 		try
 		{
-			if ( $value instanceof SimpleXMLElement || $value instanceof Util_SpXmlElement ) return $value->asXML();
+			if ( $value instanceof SimpleXMLElement )
+				/** @var SimpleXMLElement $value */
+				return $value->asXML();
 
-			if ( is_object( $value ) ) return serialize( $value );
+			if ( is_object( $value ) )
+				/** @var stdClass $value */
+				return serialize( $value );
 		}
-		catch ( CXLException $_ex )
+		catch ( xlException $_ex )
 		{
-
 		}
 
 		return $value;
@@ -1277,14 +638,16 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 		{
 			if ( self::_isSerialized( $value ) )
 			{
-				if ( $value instanceof SimpleXMLElement || $value instanceof Util_SpXmlElement ) return simplexml_load_string( $value );
+				if ( $value instanceof SimpleXMLElement )
+				{
+					return simplexml_load_string( $value );
+				}
 
 				return unserialize( $value );
 			}
 		}
-		catch ( CXLException $_ex )
+		catch ( xlException $_ex )
 		{
-
 		}
 
 		return $value;
@@ -1298,10 +661,191 @@ class YiiXLBase extends YiiBase implements IXLUIHelper, IXLLogger
 	protected static function _isSerialized( $value )
 	{
 		$_result = @unserialize( $value );
-		return!( false === $_result && $value != serialize( false ) );
+		return !( false === $_result && $value != serialize( false ) );
+	}
+
+	//*************************************************************************
+	//* Properties
+	//*************************************************************************
+
+	/**
+	 * @return array
+	 */
+	public static function getClassPath()
+	{
+		return self::$_classPath;
+	}
+
+	/**
+	 * @static
+	 * @param array $classPath
+	 * @return array Returns the prior value
+	 */
+	public static function setClassPath( $classPath = array() )
+	{
+		$_priorValue = self::$_classPath;
+		self::$_classPath = $classPath;
+		return $_priorValue;
+	}
+
+	/**
+	 * Gets the debug level
+	 * @return integer
+	 */
+	public static function getDebugLevel()
+	{
+		return self::$_debugLevel;
+	}
+
+	/**
+	 * Sets the debug level
+	 * @param integer $debugLevel
+	 * @return integer The previous value
+	 */
+	public static function setDebugLevel( $debugLevel = xlILog::LOG_INFO )
+	{
+		$_oldLevel = self::$_debugLevel;
+		self::$_debugLevel = $debugLevel;
+		return $_oldLevel;
+	}
+
+	/**
+	 * @param $appParameters
+	 * @return \CAttributeCollection|null
+	 */
+	public static function setAppParameters( $appParameters )
+	{
+		$_old = self::$_appParameters;
+		self::$_appParameters = $appParameters;
+		return $_old;
+	}
+
+	/**
+	 * @return null
+	 */
+	public static function getAppParameters()
+	{
+		return self::$_appParameters;
+	}
+
+	/**
+	 * @param $thisApp
+	 * @return \CWebApplication|null
+	 */
+	public static function setThisApp( $thisApp )
+	{
+		$_old = self::$_thisApp;
+		self::$_thisApp = $thisApp;
+		return $_old;
+	}
+
+	/**
+	 * @return null
+	 */
+	public static function getThisApp()
+	{
+		return self::$_thisApp;
+	}
+
+	/**
+	 * @param $thisController
+	 * @return \CController|null
+	 */
+	public static function setThisController( $thisController )
+	{
+		$_old = self::$_thisController;
+		self::$_thisController = $thisController;
+		return $_old;
+	}
+
+	/**
+	 * @return null
+	 */
+	public static function getThisController()
+	{
+		return self::$_thisController;
+	}
+
+	/**
+	 * @param $thisRequest
+	 * @return \CHttpRequest|null
+	 */
+	public static function setThisRequest( $thisRequest )
+	{
+		$_old = self::$_thisRequest;
+		self::$_thisRequest = $thisRequest;
+		return $_old;
+	}
+
+	/**
+	 * @return null
+	 */
+	public static function getThisRequest()
+	{
+		return self::$_thisRequest;
+	}
+
+	/**
+	 * @param $thisUser
+	 * @return \CWebUser|null
+	 */
+	public static function setThisUser( $thisUser )
+	{
+		$_old = self::$_thisUser;
+		self::$_thisUser = $thisUser;
+		return $_old;
+	}
+
+	/**
+	 * @return null
+	 */
+	public static function getThisUser()
+	{
+		return self::$_thisUser;
+	}
+
+	/**
+	 * @param $uniqueIdCounter
+	 * @return int
+	 */
+	public static function setUniqueIdCounter( $uniqueIdCounter )
+	{
+		$_old = self::$_uniqueIdCounter; 
+		self::$_uniqueIdCounter = $uniqueIdCounter;
+		return $_old;
+	}
+
+	/**
+	 * @return int
+	 */
+	public static function getUniqueIdCounter()
+	{
+		return self::$_uniqueIdCounter;
+	}
+
+	/**
+	 * @param $validLogLevels
+	 * @return array
+	 */
+	public static function setValidLogLevels( $validLogLevels )
+	{
+		$_old = self::$_validLogLevels;
+		self::$_validLogLevels = $validLogLevels;
+		return $_old;
+	}
+
+	/**
+	 * @return array
+	 */
+	public static function getValidLogLevels()
+	{
+		return self::$_validLogLevels;
 	}
 
 }
 
 //	Initialize our base...
 YiiXLBase::initialize();
+
+//	And our friendly short-cutter
+require_once 'XL.php';

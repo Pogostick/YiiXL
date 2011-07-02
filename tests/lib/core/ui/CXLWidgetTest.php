@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname( __FILE__ ) . '/../../../../lib/core/ui/CXLWidget.php';
+require_once dirname( __FILE__ ) . '/../../../../lib/core/ui/xlWidget.php';
 
 /**
  * Test class for CXLWidget.
