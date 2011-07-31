@@ -1,106 +1,63 @@
 <?php
 /**
- * YiiXL(tm) : The Yii Extension Library of Doom! (http://github.com/Pogostick/yiixl/)
- * Copyright 2009-2011, Pogostick, LLC. (http://www.pogostick.com/)
+ * xlCComponent
+ * Drop-in replacement for CComponent
  *
- * Dual licensed under the MIT License and the GNU General Public License (GPL) Version 2.
- * See {@link http://www.pogostick.com/licensing/} for complete information.
+ * @throws CException
  *
- * @copyright		Copyright 2009-2011, Pogostick, LLC. (http://www.pogostick.com/)
- * @link			https://github.com/Pogostick/yiixl/ The Yii Extension Library of Doom!
- * @license			http://www.pogostick.com/licensing
- * @author			Jerry Ablan <yiixl@pogostick.com>
- * @package			yiixl.core
- * @since			v1.0.0
- * @filesource
+ * @property bool $autoAttacheEvents
+ * @property-read array $behaviors
+ * @property bool $enableLogging
+ * @property-read ArrayObject $events
+ * @property-read array|SplStack $exceptionStack
+ * @property-read array $options
+ * @property-read array $triggers
  */
-
-//	Requirements
-require_once __DIR__ . '/../YiiXL.php';
-
-/**
- * xlComponent class
- * This is the base class for all YiiXL library objects. It extends the base
- * functionality of the Yii Framework without replacing core code.
- *
- * The two enhancements are:
- * 1. Introduces a new property called $debugLevel that allows fine-tuning of debug and tracing
- * 2. Has a constructor that accepts an array of configuration parameters.
- *
- * @property integer $debugLevel A user-defined debugging level
- * @property array $options The options passed to this object during construction
- */
-class xlComponent extends CComponent implements xlIComponent
+class xlCComponent implements xlIComponent
 {
-	//********************************************************************************
-	//* Constants
-	//********************************************************************************
-
-	/**
-	 * Our logging tag
-	 */
-	const
-		CLASS_LOG_TAG = 'yiixl.core.components.xlComponent'
-	;
-
-	//********************************************************************************
-	//* Properties
-	//********************************************************************************
+	//*************************************************************************
+	//* Private Members
+	//*************************************************************************
 
 	/***
-	 * @var boolean Automatically searches class for event handler signatures and attachs them
+	 * @var boolean Automatically searches class for event handler signatures and attaches them
 	 */
 	protected $_autoAttachEvents = true;
 	/**
-	 * @var xlBehavior[] This component's behaviors
+	 * @var xlIBehavior[] This component's behaviors
 	 */
-	protected $_behaviors;
-	/**
-	 * @var integer $_debugLevel User-defined debug flag. false = OFF, anything else is up to you.
-	 */
-	protected $_debugLevel = false;
+	protected $_behaviors = null;
 	/**
 	 * @var bool If true, exceptions will be logged to PHP error_log
 	 */
 	protected $_enableLogging = false;
 	/**
-	 * @var CList[] This component's events
+	 * @var xlEvent[] This component's events
 	 */
-	protected $_events;
+	protected $_events = null;
 	/**
 	 * @var SplStack|array
 	 */
-	protected $_exceptionStack;
-	/**
-	 * @var array $_options Our configuration options
+	protected $_exceptionStack = null;
+	/***
+	 * @var array This component's options
 	 */
-	protected $_options;
+	protected $_options = null;
 	/**
 	 * @var Closure[] This component's triggers
 	 */
-	protected $_triggers;
-	/**
-	 * @var bool If true, undefined properties will be added to the object
-	 */
-	protected $_autoAddMembers = true;
+	protected $_triggers = null;
 
-
-	//********************************************************************************
+	//*************************************************************************
 	//* Public Methods
-	//********************************************************************************
+	//*************************************************************************
 
 	/**
-	 * Constructs a component.
-	 * All components accept an array of configuration options. These options are placed into accessible
-	 * members (via "setter"). The entire array is stored in the member {@see xlIComponent::options}.
+	 * The base component constructor
 	 * @param array $options
-	 * @return \xlComponent
 	 */
 	public function __construct( $options = array() )
 	{
-		//	Initialize...
-		$this->_options = array();
-
 		//	If SplStack is available, use it!
 		if ( @class_exists( 'SplStack' ) )
 		{
@@ -111,8 +68,11 @@ class xlComponent extends CComponent implements xlIComponent
 			$this->_exceptionStack = array();
 		}
 
-		//	Set any properties via standard config array
-		xlOptions::loadConfiguration( $this, $options );
+		//	If an option list is specified, try to assign values to properties automatically
+		if ( !empty( $options ) )
+		{
+			$this->_loadConfiguration( $options );
+		}
 
 		//	Initialize our structures if not already
 		$this->_behaviors = ( null === $this->_behaviors ) ? : array();
@@ -131,26 +91,12 @@ class xlComponent extends CComponent implements xlIComponent
 	}
 
 	/**
-	 * Initialize the component
-	 * @return bool|void
-	 */
-	public function init()
-	{
-		//	An empty init for consistency.
-		return true;
-	}
-
-	//*************************************************************************
-	//* Magic Overrides 
-	//*************************************************************************
-	
-	/**
-	 * returns a property value, an event handler list or a behavior based on its name.
-	 * do not call this method. this is a php magic method that we override
+	 * Returns a property value, an event handler list or a behavior based on its name.
+	 * Do not call this method. This is a PHP magic method that we override
 	 * to allow using the following syntax to read a property or obtain event handlers:
 	 * <pre>
-	 * 		$value = $component->propertyName;
-	 * 		$handlers = $component->eventName;
+	 * $value=$component->propertyName;
+	 * $handlers=$component->eventName;
 	 * </pre>
 	 * @param string $name the property name or event name
 	 * @return mixed the property value, event handlers attached to the event, or the named behavior (since version 1.0.2)
@@ -159,65 +105,46 @@ class xlComponent extends CComponent implements xlIComponent
 	 */
 	public function __get( $name )
 	{
-		$_getter = 'get' . $name;
-		
-		//	Try a getter
-		if ( method_exists( $this, $_getter ) )
+		$getter = 'get' . $name;
+		if ( method_exists( $this, $getter ) )
 		{
-			return $this->{$_getter}();
+			return $this->$getter();
 		}
-
-		//	Try events, ignore errors
-		try
+		else
 		{
-			return $this->getEventHandlers( $name );
-		}
-		catch ( Exception $_ex )
-		{
-			//	No event!
-		}
-		
-		//	Is there are behavior?
-		if ( isset( $this->_behaviors, $this->_behaviors[$name] ) )
-		{
-			return $this->_behaviors[$name];
-		}
-
-		//	Check the methods within each behavior
-		if ( is_array( $this->_behaviors ) )
-		{
-			foreach ( $this->_behaviors as $_object )
+			if ( strncasecmp( $name, 'on', 2 ) === 0 && method_exists( $this, $name ) )
 			{
-				if ( $_object->getEnabled() && ( property_exists( $_object, $name ) || $_object->canGetProperty( $name ) ) )
+				// duplicating getEventHandlers() here for performance
+				$name = strtolower( $name );
+				if ( !isset( $this->_events[$name] ) )
 				{
-					return $_object->{$name};
+					$this->_events[$name] = new CList;
+				}
+				return $this->_events[$name];
+			}
+			else
+			{
+				if ( isset( $this->_behaviors[$name] ) )
+				{
+					return $this->_behaviors[$name];
+				}
+				else
+				{
+					if ( is_array( $this->_behaviors ) )
+					{
+						foreach ( $this->_behaviors as $object )
+						{
+							if ( $object->getEnabled() && ( property_exists( $object, $name ) || $object->canGetProperty( $name ) ) )
+							{
+								return $object->$name;
+							}
+						}
+					}
 				}
 			}
 		}
-
-		//	Auto-add...
-		if ( $this->_autoAddMembers )
-		{
-			$_member = '_' . $name;
-
-			if ( isset( $this->{$_member} ) )
-			{
-				return $this->{$_member};
-			}
-
-			//	Not there, add it and move on
-			$this->{$_member} = null;
-			return $this->{$_member};
-		}
-
-		//	Ok, bail
-		throw new xlInvalidOptionException(
-			sprintf(
-				'Property "%s.%s" is not defined.',
-				get_class( $this ),
-				$name
-			)
-		);
+		throw new CException( Yii::t( 'yii', 'Property "{class}.{property}" is not defined.',
+				array( '{class}' => get_class( $this ), '{property}' => $name ) ) );
 	}
 
 	/**
@@ -230,76 +157,52 @@ class xlComponent extends CComponent implements xlIComponent
 	 * </pre>
 	 * @param string $name the property name or the event name
 	 * @param mixed $value the property value or callback
-	 * @return xlIComponent|CComponent
+	 * @return #M#C\xlCComponent.|#M#P#C\xlCComponent._events.add|mixed|? #M#C\xlCComponent.|#M#P#C\xlCComponent._events.add|mixed|?* @throws
+	 * CException if the property/event is not defined or the@see __get
 	 */
 	public function __set( $name, $value )
 	{
 		$setter = 'set' . $name;
-
 		if ( method_exists( $this, $setter ) )
 		{
-			return $this->{$setter}( $value );
+			return $this->$setter( $value );
 		}
-
-		if ( 0 === strncasecmp( $name, 'on', 2 ) && method_exists( $this, $name ) )
+		else
 		{
-			$name = strtolower( $name );
-
-			if ( !isset( $this->_events[$name] ) )
+			if ( strncasecmp( $name, 'on', 2 ) === 0 && method_exists( $this, $name ) )
 			{
-				$this->_events[$name] = new CList();
-			}
-
-			return $this->_events[$name]->add( $value );
-		}
-
-		if ( is_array( $this->_behaviors ) )
-		{
-			foreach ( $this->_behaviors as $_object )
-			{
-				if ( $_object->getEnabled() && ( property_exists( $_object, $name ) || $_object->canSetProperty( $name ) ) )
+				// duplicating getEventHandlers() here for performance
+				$name = strtolower( $name );
+				if ( !isset( $this->_events[$name] ) )
 				{
-					return $_object->$name = $value;
+					$this->_events[$name] = new CList;
+				}
+				return $this->_events[$name]->add( $value );
+			}
+			else
+			{
+				if ( is_array( $this->_behaviors ) )
+				{
+					foreach ( $this->_behaviors as $object )
+					{
+						if ( $object->getEnabled() && ( property_exists( $object, $name ) || $object->canSetProperty( $name ) ) )
+						{
+							return $object->$name = $value;
+						}
+					}
 				}
 			}
 		}
-
-		//	If there is a getter, then this is a read-only property
 		if ( method_exists( $this, 'get' . $name ) )
 		{
-			throw new xlInvalidOptionException(
-				sprintf(
-					'Property "%s.%s" is read-only.',
-					get_class( $this ),
-					$name
-				)
-			);
+			throw new CException( Yii::t( 'yii', 'Property "{class}.{property}" is read only.',
+					array( '{class}' => get_class( $this ), '{property}' => $name ) ) );
 		}
-
-		//	Auto-add...
-		if ( $this->_autoAddMembers )
+		else
 		{
-			$_member = '_' . $name;
-
-			if ( isset( $this->{$_member} ) )
-			{
-				$this->{$_member} = $value;
-				return $this;
-			}
-
-			//	Not there, add it and move on
-			$this->{$_member} = null;
-			return $this;
+			throw new CException( Yii::t( 'yii', 'Property "{class}.{property}" is not defined.',
+					array( '{class}' => get_class( $this ), '{property}' => $name ) ) );
 		}
-
-		//	No clue about this
-		throw new xlInvalidOptionException(
-			sprintf(
-				'Property "%s.%s" is not defined.',
-				get_class( $this ),
-				$name
-			)
-		);
 	}
 
 	/**
@@ -312,11 +215,10 @@ class xlComponent extends CComponent implements xlIComponent
 	 */
 	public function __isset( $name )
 	{
-		$_getter = 'get' . $name;
-
-		if ( method_exists( $this, $_getter ) )
+		$getter = 'get' . $name;
+		if ( method_exists( $this, $getter ) )
 		{
-			return $this->{$_getter}() !== null;
+			return $this->$getter() !== null;
 		}
 		else
 		{
@@ -343,7 +245,6 @@ class xlComponent extends CComponent implements xlIComponent
 				}
 			}
 		}
-
 		return false;
 	}
 
@@ -357,15 +258,14 @@ class xlComponent extends CComponent implements xlIComponent
 	 */
 	public function __unset( $name )
 	{
-		$_setter = 'set' . $name;
-
-		if ( method_exists( $this, $_setter ) )
+		$setter = 'set' . $name;
+		if ( method_exists( $this, $setter ) )
 		{
-			$this->{$_setter}( null );
+			$this->$setter( null );
 		}
 		else
 		{
-			if ( 0 === strncasecmp( $name, 'on', 2 ) && method_exists( $this, $name ) )
+			if ( strncasecmp( $name, 'on', 2 ) === 0 && method_exists( $this, $name ) )
 			{
 				unset( $this->_events[strtolower( $name )] );
 			}
@@ -379,23 +279,19 @@ class xlComponent extends CComponent implements xlIComponent
 					}
 					else
 					{
-						foreach ( $this->_behaviors as $_object )
+						foreach ( $this->_behaviors as $object )
 						{
-							if ( $_object->getEnabled() )
+							if ( $object->getEnabled() )
 							{
-								if ( property_exists( $_object, $name ) )
+								if ( property_exists( $object, $name ) )
 								{
-									return $_object->{$name} = null;
+									return $object->$name = null;
 								}
 								else
 								{
-									if ( $_object->canSetProperty( $name ) )
+									if ( $object->canSetProperty( $name ) )
 									{
-										return $_object->{$_setter}( null );
-									}
-									else
-									{
-										throw new xlInvalidOptionException( 'Property "' . get_class( $this ) . '.' . $name . '" is read only.' );
+										return $object->$setter( null );
 									}
 								}
 							}
@@ -412,8 +308,6 @@ class xlComponent extends CComponent implements xlIComponent
 				}
 			}
 		}
-		
-		return $this;
 	}
 
 	/**
@@ -450,134 +344,6 @@ class xlComponent extends CComponent implements xlIComponent
 	}
 
 	/**
-	 * Gets a single configuration option
-	 * @param string $key
-	 * @param mixed $defaultValue
-	 * @param bool $unsetAfter
-	 * @return mixed
-	 */
-	public function getOption( $key, $defaultValue = null, $unsetAfter = false )
-	{
-		return XL::o( $this->_options, $key, $defaultValue, $unsetAfter );
-	}
-
-	/**
-	 * Sets a single configuration option
-	 * @param string $key
-	 * @param mixed $value
-	 * @return \xlComponent
-	 */
-	public function setOption( $key, $value = null )
-	{
-		XL::setOption( $this->_options, $key, $value );
-		return $this;
-	}
-
-	/**
-	 * Loads the configuration options
-	 * @param array $options
-	 * @return xlIBaseComponent
-	 */
-	public function loadOptions( $options = array() )
-	{
-		$this->_options = $options;
-		return $this;
-	}
-
-	/**
-	 * Attach/detach an event handler.
-	 * @param string $eventName
-	 * @param callback|null $eventHandler
-	 * @param boolean $onOff
-	 * @return boolean
-	 */
-	public function setEventHandler( $eventName, $eventHandler, $onOff = true )
-	{
-		if ( $onOff )
-		{
-			$this->getEventHandlers( $eventName )->add( $eventHandler );
-			return true;
-		}
-		else
-		{
-			if ( $this->hasEventHandler( $eventName ) )
-				return ( false !== $this->getEventHandlers( $eventName )->remove( $eventHandler ) );
-		}
-
-		return false;
-	}
-
-	/**
-	 * Retrieves the next exception off the stack
-	 * @return Exception
-	 */
-	public function popException()
-	{
-		if ( $this->_exceptionStack instanceof SplStack )
-		{
-			return $this->_exceptionStack->pop();
-		}
-
-		return array_pop( $this->_exceptionStack );
-	}
-
-	/**
-	 * @param Exception $exception
-	 * @param bool $logToError
-	 * @return \xlCComponent $this
-	 */
-	public function pushException( $exception, $logToError = false )
-	{
-		if ( $this->_exceptionStack instanceof SplStack )
-		{
-			$this->_exceptionStack->push( $exception );
-		}
-		else
-		{
-			array_push( $this->_exceptionStack, $exception );
-		}
-
-		if ( $logToError )
-		{
-			xlLog::error( 'Exception: ' . $exception->getMessage() );
-		}
-
-		return $this;
-	}
-
-	//********************************************************************************
-	//* Private Methods
-	//********************************************************************************
-
-	/**
-	 * Walks the backtrace to find the calling object
-	 * @param string $instanceFilter Only return objects of this instance
-	 * @return string
-	 */
-	protected static function _getCallerObject( $instanceFilter = null )
-	{
-		$_stack = debug_backtrace( true );
-
-		for ( $_i = 0, $_count = count( $_stack ); $_i < $_count; $_i++ )
-		{
-			if ( null !== ( $_caller = XL::o( $_stack[$_i], 'object' ) ) )
-			{
-				if ( null !== $instanceFilter )
-				{
-					if ( $_caller instanceof $instanceFilter )
-						return $_caller;
-
-					continue;
-				}
-
-				return $_caller;
-			}
-		}
-
-		return null;
-	}
-
-	/**
 	 * Returns the named behavior object.
 	 * The name 'asa' stands for 'as a'.
 	 * @param string $behavior the behavior name
@@ -600,7 +366,7 @@ class xlComponent extends CComponent implements xlIComponent
 		{
 			$this->attachBehavior( $_name, $_behavior );
 		}
-
+		
 		return $this;
 	}
 
@@ -776,6 +542,29 @@ class xlComponent extends CComponent implements xlIComponent
 	{
 		$name = trim( strtolower( $name ) );
 		return isset( $this->_events[$name] ) && ! empty( $this->_events[$name] );
+	}
+
+	/**
+	 * Returns the list of attached event handlers for an event.
+	 * @param string $name the event name
+	 * @return ArrayObject list of attached event handlers for the event
+	 * @throws CException if the event is not defined
+	 */
+	public function &getEventHandlers( $name )
+	{
+		$name = trim( strtolower( $name ) );
+
+		if ( $this->hasEvent( $name ) )
+		{
+			if ( ! isset( $this->_events[$name] ) )
+			{
+				$this->_events[$name] = new ArrayObject();
+			}
+
+			return $this->_events[$name];
+		}
+
+		throw new xlEventException( 'Event "' . get_called_class( $this ) . '.' . $name . '" is not defined.' );
 	}
 
 	/**
@@ -968,29 +757,65 @@ class xlComponent extends CComponent implements xlIComponent
 		}
 	}
 
+	/**
+	 * Down and dirty logger
+	 * @param string $message
+	 * @param string $destination The file name to output to
+	 */
+	protected function _rawLog( $message, $destination = null )
+	{
+		if ( $this->_enableLogging )
+		{
+			if ( null === $destination )
+			{
+				$destination = './' . strtolower( get_class() ) . '.php.raw.log';
+			}
+
+			error_log( date( 'Y-m-d H:i:s' ) . ' :: ' . $message . PHP_EOL, 3, $destination );
+		}
+	}
+
+	/**
+	 * Retrieves the next exception off the stack
+	 * @return Exception
+	 */
+	public function popException()
+	{
+		if ( $this->_exceptionStack instanceof SplStack )
+		{
+			return $this->_exceptionStack->pop();
+		}
+
+		return array_pop( $this->_exceptionStack );
+	}
+
+	/**
+	 * @param Exception $exception
+	 * @param bool $logToError
+	 * @return \xlCComponent $this
+	 */
+	public function pushException( $exception, $logToError = false )
+	{
+		if ( $this->_exceptionStack instanceof SplStack )
+		{
+			$this->_exceptionStack->push( $exception );
+		}
+		else
+		{
+			array_push( $this->_exceptionStack, $exception );
+		}
+
+		if ( $logToError )
+		{
+			xlLog::error( 'Exception: ' . $exception->getMessage() );
+		}
+
+		return $this;
+	}
+
 	//*************************************************************************
 	//* Properties
 	//*************************************************************************
-
-	/**
-	 * Gets the debug level
-	 * @return integer
-	 */
-	public function getDebugLevel()
-	{
-		return $this->_debugLevel;
-	}
-
-	/**
-	 * Sets the debug level
-	 * @param bool $value
-	 * @return \xlComponent
-	 */
-	public function setDebugLevel( $value = false )
-	{
-		$this->_debugLevel = $value;
-		return $this;
-	}
 
 	/**
 	 * @param array $events
@@ -1011,7 +836,7 @@ class xlComponent extends CComponent implements xlIComponent
 	}
 
 	/**
-	 * @param xlIBehavior[] $behaviors
+	 * @param array $behaviors
 	 * @return \xlCComponent
 	 */
 	protected function _setBehaviors( $behaviors = array() )
@@ -1021,7 +846,7 @@ class xlComponent extends CComponent implements xlIComponent
 	}
 
 	/**
-	 * @return xlIBehavior[]
+	 * @return array
 	 */
 	public function getBehaviors()
 	{
@@ -1034,6 +859,18 @@ class xlComponent extends CComponent implements xlIComponent
 	public function getOptions()
 	{
 		return $this->_options;
+	}
+
+	/**
+	 * Retrieves named value from the option array
+	 * @param string|integer $which The key of the value you want to retrieve
+	 * @param mixed $defaultValue The default value to return if the option does not exist. Defaults to null
+	 * @param boolean $unsetValue If true, the value at $which will be unset
+	 * @return mixed The value at $which or the $defaultValue specified
+	 */
+	public function getOption( $which, $defaultValue = null, $unsetValue = false )
+	{
+		return xl::o( $this->_options, $which, $defaultValue, $unsetValue );
 	}
 
 	/**
@@ -1109,24 +946,6 @@ class xlComponent extends CComponent implements xlIComponent
 	public function getTriggers()
 	{
 		return $this->_triggers;
-	}
-
-	/**
-	 * @param boolean $autoAddMembers
-	 * @return \xlComponent $this
-	 */
-	public function setAutoAddMembers( $autoAddMembers )
-	{
-		$this->_autoAddMembers = $autoAddMembers;
-		return $this;
-	}
-
-	/**
-	 * @return boolean
-	 */
-	public function getAutoAddMembers()
-	{
-		return $this->_autoAddMembers;
 	}
 
 }

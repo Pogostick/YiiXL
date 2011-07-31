@@ -19,8 +19,12 @@ php<?php
  * Utilizes the PHP syslog predefined logging constants.
  * See {@link http://php.net/manual/en/function.syslog.php}
  * for more information.
+ *
+ * @property string $caller
+ * @property int $callerLineNumber
+ * @property array $validLogLevels
  */
-class xlLog extends xlBaseHelper implements xlILogger
+class xlLog extends xlBaseHelper implements xlILog
 {
 	//********************************************************************************
 	//* Private Members
@@ -36,17 +40,15 @@ class xlLog extends xlBaseHelper implements xlILogger
 	//********************************************************************************
 
 	/**
-	 * @var string $_caller The class::method or function that made the call
+	 * @var string The class::method or function that made the call
 	 */
 	protected static $_caller;
-
 	/**
-	 * @var integer $_callerLineNumber The line number called from
+	 * @var integer The line number called from
 	 */
 	protected static $_callerLineNumber;
-
 	/**
-	 * @var array $_validLogLevels Our valid log levels based on interface definition
+	 * @var array Our valid log levels based on interface definition
 	 */
 	protected static $_validLogLevels;
 
@@ -61,8 +63,8 @@ class xlLog extends xlBaseHelper implements xlILogger
 	{
 		//	Phone home...
 		parent::initialize();
-		
-		//	Initialize our valid log lvles
+
+		//	Initialize our valid log levels
 		self::$_validLogLevels = array();
 
 		$_class = new ReflectionClass( __CLASS__ );
@@ -71,7 +73,9 @@ class xlLog extends xlBaseHelper implements xlILogger
 		foreach ( $_constants as $_name => $_value )
 		{
 			if ( 0 == strncasecmp( $_name, 'LOG_', 4 ) )
+			{
 				self::$_validLogLevels[strtolower( substr( $_name, 4 ) )] = $_value;
+			}
 		}
 	}
 
@@ -91,7 +95,9 @@ class xlLog extends xlBaseHelper implements xlILogger
 				if ( null !== $instanceFilter )
 				{
 					if ( $_caller instanceof $instanceFilter )
+					{
 						return $_caller;
+					}
 
 					continue;
 				}
@@ -112,131 +118,285 @@ class xlLog extends xlBaseHelper implements xlILogger
 	 * @param string $message
 	 * @param string $category
 	 */
-	public function logTrace( $message, $category = null )
+	public static function logTrace( $message, $category = null )
 	{
 		self::_log( $message, self::LOG_DEBUG, $category );
 	}
-	
+
+	/**
+	 * Logs a trace message (really a debug)
+	 * @param string $message
+	 * @param string $category
+	 */
+	public static function trace( $message, $category = null )
+	{
+		self::_log( $message, self::LOG_DEBUG, $category );
+	}
+
 	/**
 	 * Logs a message
 	 * @param string $message
 	 * @param string $category
+	 * @return bool
 	 */
-	public function logEmergency( $message, $category = null )
+	public static function logEmergency( $message, $category = null )
 	{
 		return self::_log( $message, self::LOG_EMERG, $category );
 	}
-	
+
 	/**
 	 * Logs a message
 	 * @param string $message
 	 * @param string $category
+	 * @return bool
 	 */
-	public function logAlert( $message, $category = null )
+	public static function emergency( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_EMERG, $category );
+	}
+
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 * @return bool
+	 */
+	public static function logAlert( $message, $category = null )
 	{
 		return self::_log( $message, self::LOG_ALERT, $category );
 	}
-	
+
 	/**
 	 * Logs a message
 	 * @param string $message
 	 * @param string $category
+	 * @return bool
 	 */
-	public function logCritical( $message, $category = null )
+	public static function alert( $message, $category = null )
 	{
-		return self::_log( $message, self::LOG_CRITICAL, $category );
+		return self::_log( $message, self::LOG_ALERT, $category );
 	}
-	
+
 	/**
 	 * Logs a message
 	 * @param string $message
 	 * @param string $category
+	 * @return bool
 	 */
-	public function logError( $message, $category = null )
+	public static function logCritical( $message, $category = null )
 	{
-		return self::_log( $message, self::LOG_ERROR, $category );
+		return self::_log( $message, self::LOG_CRIT, $category );
 	}
-	
+
 	/**
 	 * Logs a message
 	 * @param string $message
 	 * @param string $category
+	 * @return bool
 	 */
-	public function logWarning( $message, $category = null )
+	public static function critical( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_CRIT, $category );
+	}
+
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 * @return bool
+	 */
+	public static function logError( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_ERR, $category );
+	}
+
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 * @return bool
+	 */
+	public static function error( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_ERR, $category );
+	}
+
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 * @return bool
+	 */
+	public static function logWarning( $message, $category = null )
 	{
 		return self::_log( $message, self::LOG_WARNING, $category );
 	}
-	
+
 	/**
 	 * Logs a message
 	 * @param string $message
 	 * @param string $category
+	 * @return bool
 	 */
-	public function logNotice( $message, $category = null )
+	public static function warning( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_WARNING, $category );
+	}
+
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 * @return bool
+	 */
+	public static function logNotice( $message, $category = null )
 	{
 		return self::_log( $message, self::LOG_NOTICE, $category );
 	}
-	
+
 	/**
 	 * Logs a message
 	 * @param string $message
 	 * @param string $category
+	 * @return bool
 	 */
-	public function logInfo( $message, $category = null )
+	public static function notice( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_NOTICE, $category );
+	}
+
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 * @return bool
+	 */
+	public static function logInfo( $message, $category = null )
 	{
 		return self::_log( $message, self::LOG_INFO, $category );
 	}
-	
+
 	/**
 	 * Logs a message
 	 * @param string $message
 	 * @param string $category
+	 * @return bool
 	 */
-	public function logDebug( $message, $category = null )
+	public static function info( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_INFO, $category );
+	}
+
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 * @return bool
+	 */
+	public static function logDebug( $message, $category = null )
 	{
 		return self::_log( $message, self::LOG_DEBUG, $category );
 	}
-	
+
 	/**
 	 * Logs a message
 	 * @param string $message
 	 * @param string $category
+	 * @return bool
 	 */
-	public function logUser( $message, $category = null )
+	public static function debug( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_DEBUG, $category );
+	}
+
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 * @return bool
+	 */
+	public static function logUser( $message, $category = null )
 	{
 		return self::_log( $message, self::LOG_USER, $category );
 	}
-	
+
 	/**
 	 * Logs a message
 	 * @param string $message
 	 * @param string $category
+	 * @return bool
 	 */
-	public function logAuth( $message, $category = null )
+	public static function user( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_USER, $category );
+	}
+
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 * @return bool
+	 */
+	public static function logAuth( $message, $category = null )
 	{
 		return self::_log( $message, self::LOG_AUTH, $category );
 	}
-	
+
 	/**
 	 * Logs a message
 	 * @param string $message
 	 * @param string $category
+	 * @return bool
 	 */
-	public function logSyslog( $message, $category = null )
+	public static function auth( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_AUTH, $category );
+	}
+
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 * @return bool
+	 */
+	public static function logSyslog( $message, $category = null )
 	{
 		return self::_log( $message, self::LOG_SYSLOG, $category );
 	}
-	
+
 	/**
 	 * Logs a message
 	 * @param string $message
 	 * @param string $category
+	 * @return bool
 	 */
-	public function logAuthPriv( $message, $category = null )
+	public static function syslog( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_SYSLOG, $category );
+	}
+
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 * @return bool
+	 */
+	public static function logAuthPriv( $message, $category = null )
 	{
 		return self::_log( $message, self::LOG_AUTHPRIV, $category );
 	}
-	
+
+	/**
+	 * Logs a message
+	 * @param string $message
+	 * @param string $category
+	 * @return bool
+	 */
+	public static function authPriv( $message, $category = null )
+	{
+		return self::_log( $message, self::LOG_AUTHPRIV, $category );
+	}
+
 	//*******************************************************************************
 	//* Private Methods
 	//*******************************************************************************
@@ -287,10 +447,19 @@ class xlLog extends xlBaseHelper implements xlILogger
 	 * </table>
 	 * </p>
 	 * @param string $category
-	 * @return bool Returns true on success or false on failure.
+	 * @return bool Returns true or throws an exception
 	 */
-	protected function _log( $message, $level = LOG_INFO, $category = null )
+	protected static function _log( $message, $level = LOG_INFO, $category = null )
 	{
-		return Yii::log( $message, $level, $category );
+		try
+		{
+			Yii::log( $message, $level, $category );
+		}
+		catch ( Exception $_ex )
+		{
+			throw new xlLogException( $_ex->getMessage(), $_ex->getCode() );
+		}
+
+		return true;
 	}
 }

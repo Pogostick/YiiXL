@@ -51,7 +51,8 @@ class YiiXLBase extends YiiBase implements xlIDebuggable, xlIForm, xlILog
 	 * @const string Our logging tag
 	 */
 	const
-		CLASS_LOG_TAG = 'yiixl.core.YiiXLBase';
+		CLASS_LOG_TAG = 'yiixl.core.YiiXLBase'
+	;
 
 	//********************************************************************************
 	//* Private Members
@@ -413,71 +414,6 @@ class YiiXLBase extends YiiBase implements xlIDebuggable, xlIForm, xlILog
 	public static function toArray( $object, $options = JSON_HEX_TAG )
 	{
 		return @json_decode( @json_encode( $object ), $options  );
-	}
-
-	/**
-	 * Creates and returns a CDbCommand object from the specified SQL
-	 *
-	 * @param string $sql
-	 * @param CDbConnection $dbToUse
-	 * @return CDbCommand
-	 */
-	public static function _sql( $sql, $dbToUse = null )
-	{
-		/** @var $_db CDbConnection */
-		if ( null !== ( $_db = self::nvl( $dbToUse, self::$_thisApp->getDb() ) ) )
-		{
-			return $_db->createCommand( $sql );
-		}
-
-		return null;
-	}
-
-	/**
-	 * Executes the given sql statement and returns all results
-	 * @param string $sql
-	 * @param array $parameterList List of parameters for call
-	 * @param CDbConnection $dbToUse
-	 * @return mixed
-	 */
-	public static function _sqlAll( $sql, $parameterList = array(), $dbToUse = null )
-	{
-		/** @var $_db CDbConnection */
-		if ( null !== ( $_db = self::nvl( $dbToUse, self::$_thisApp->getDb() ) ) )
-		{
-			return $_db->createCommand( $sql )->queryAll( true, $parameterList );
-		}
-
-		return null;
-	}
-
-	/**
-	 * Executes the given sql statement and returns the first column of all results in an array
-	 * @param string $sql
-	 * @param array $parameterList List of parameters for call
-	 * @param CDbConnection $dbToUse
-	 * @return array
-	 */
-	public static function _sqlAllScalar( $sql, $parameterList = null, $dbToUse = null )
-	{
-		$_resultList = null;
-
-		/** @var $_db CDbConnection */
-		if ( null !== ( $_db = self::nvl( $dbToUse, self::$_thisApp->getDb() ) ) )
-		{
-			/** @var $_rowList array */
-			if ( null !== ( $_rowList = $_db->createCommand( $sql )->queryAll( true, $parameterList ) ) )
-			{
-				$_resultList = array();
-
-				foreach ( $_rowList as $_row )
-				{
-					$_resultList[] = $_row[0];
-				}
-			}
-		}
-
-		return $_resultList;
 	}
 
 	/**

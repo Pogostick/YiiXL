@@ -82,7 +82,7 @@ class xlBehavior extends xlComponent implements xlIBehavior
 	 * The default implementation will set the {@link $owner} property
 	 * and attach event handlers as declared in {@link events()}.
 	 * Ensure the parent implementation is called when overridden.
-	 * @param CComponent $owner the component that this behavior is to be attached to.
+	 * @param xlComponent $owner the component that this behavior is to be attached to.
 	 * @return \xlBehavior
 	 */
 	public function attach( $owner )
@@ -102,7 +102,7 @@ class xlBehavior extends xlComponent implements xlIBehavior
 	 * The default implementation will unset the {@link $owner} property
 	 * and detach event handlers declared in {@link events()}.
 	 * Make sure you call the parent implementation if you override this method.
-	 * @param CComponent $owner the component from which to detach this behavior
+	 * @param xlComponent $owner the component from which to detach this behavior
 	 * @return \xlBehavior
 	 */
 	public function detach( $owner )

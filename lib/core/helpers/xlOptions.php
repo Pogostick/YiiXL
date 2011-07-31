@@ -41,30 +41,38 @@ class xlOptions extends xlBaseHelper implements xlIShifter, xlIUtilityHelper
 	 */
 	public static function setOptions( xlIComponent $object, array $options )
 	{
-		if ( ! is_object( $object ) )
+		if ( !is_object( $object ) )
+		{
 			return;
+		}
 
 		foreach ( $options as $_key => $_value )
 		{
 			$_method = 'set' . self::_cleanKey( $_key );
 
 			if ( is_callable( array( $object, $_method ) ) )
+			{
 				$object->$_method( $_value );
+			}
 		}
 	}
 
 	/**
 	 * Sets the options in $object
 	 * @param xlIComponent  $object
-	 * @param array $options 
+	 * @param array $options
 	 */
 	public static function setConstructorOptions( xlIComponent $object, $options )
 	{
 		if ( $options instanceof xlConfig )
+		{
 			$options = $options->toArray();
+		}
 
 		if ( is_array( $options ) )
+		{
 			self::setOptions( $object, $options );
+		}
 	}
 
 	/**
@@ -80,13 +88,17 @@ class xlOptions extends xlBaseHelper implements xlIShifter, xlIUtilityHelper
 
 		//	Get a handle on the options to modify
 		$_objectOptions = $object->getOptions();
-		
+
 		//	Make a copy for posterity
 		if ( $overwriteExisting || empty( $_objectOptions ) )
+		{
 			$_objectOptions = $options;
+		}
 		else
+		{
 			$_objectOptions = array_merge( $_objectOptions, $options );
-		
+		}
+
 		$object->loadOptions( $_objectOptions );
 
 		//	Try to set each one
@@ -98,9 +110,20 @@ class xlOptions extends xlBaseHelper implements xlIShifter, xlIUtilityHelper
 				{
 					//	See if __set has a better time with this...
 					if ( is_callable( array( $object, 'set' . $_key ) ) )
-						$object->{'set' . $_key}( $_value );
-					else if ( property_exists( $object, $_key ) )
-						$object->{$_key} = $_key;
+					{
+						$object->
+						{
+						'set' . $_key
+						}( $_value );
+					}
+					else
+					{
+						if ( property_exists( $object, $_key ) )
+						{
+							$object->
+							{$_key} = $_key;
+						}
+					}
 				}
 				catch ( Exception $_ex )
 				{
@@ -113,7 +136,7 @@ class xlOptions extends xlBaseHelper implements xlIShifter, xlIUtilityHelper
 			XL::logError( 'Exception while loading configuration options: ' . $_ex->getMessage(), $object::CLASS_LOG_TAG );
 			return false;
 		}
-		
+
 		return true;
 	}
 
@@ -128,17 +151,7 @@ class xlOptions extends xlBaseHelper implements xlIShifter, xlIUtilityHelper
 	 */
 	protected static function _cleanKey( $key )
 	{
-		return str_replace( 
-			' ', 
-			'', 
-			ucwords( 
-				str_replace( 
-					'_', 
-					'', 
-					strtolower( $key )
-				)
-			)
-		);
+		return str_replace( ' ', '', ucwords( str_replace( '_', '', strtolower( $key ) ) ) );
 	}
 
 }

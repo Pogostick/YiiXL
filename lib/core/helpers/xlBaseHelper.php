@@ -53,4 +53,23 @@ class xlBaseHelper extends xlComponent implements xlIHelper
 		$variable = $value;
 		return $_oldValue;
 	}
+
+	/**
+	 * Down and dirty logger
+	 * @param string $message
+	 * @param string $destination The file name to output to
+	 */
+	protected function _rawLog( $message, $destination = null )
+	{
+		if ( $this->_enableLogging )
+		{
+			if ( null === $destination )
+			{
+				$destination = './' . strtolower( get_class() ) . '.php.raw.log';
+			}
+
+			error_log( date( 'Y-m-d H:i:s' ) . ' :: ' . $message . PHP_EOL, 3, $destination );
+		}
+	}
+
 }
