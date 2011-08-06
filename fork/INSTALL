@@ -1,0 +1,26 @@
+----------------------------------------------------------
+- Configuring the environment (Linux, any flavour)
+----------------------------------------------------------
+You need a copy of latest php source code (http://www.php.net),
+php>4.2 should work fine.
+Decompress the tar.gz archieve, then run the folloging commands:
+
+sh>configure --enable-pcntl --enable-shmop --enable-cli --without-apache
+--disable-cgi --enable-posix --enable-pcre
+sh>make
+
+Now you should found a copy of the php executable into the "sapi/cli"
+directory (php4.3) or elsewhere into the source code tree (refer to PHP
+documentation).
+
+If you want, you can rename this file, this can be useful because this copy
+of the php binary is specifically build to run multi-process applications.
+It's not suitable for use with a webserver!
+
+sh>mv php php-cli
+
+----------------------------------------------------------
+VERY IMPORTANT !!!
+----------------------------------------------------------
+Please notice that PCNTL extension does NOT run on windows,
+due to the lack of system fork() command.
